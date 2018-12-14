@@ -4,7 +4,8 @@ import { Message } from "element-ui"  // 弹框组件
 // import { store } from '../store/index.js'; // vuex引入
 let cancel, promiseArr = {}
 const CancelToken = axios.CancelToken;
-// axios.defaults.baseURL = BM_config.api;
+
+axios.defaults.baseURL = BM_config.api;
 //设置默认请求头
 axios.defaults.headers = {
   // 'X-Requested-With': 'XMLHttpRequest',
@@ -13,6 +14,7 @@ axios.defaults.headers = {
    'Content-Type':'application/json;charset=UTF-8',
   //  'Content-Type':BM_config.headerContent
 }
+
 axios.defaults.timeout = BM_config.timeout;
 //请求拦截器
 axios.interceptors.request.use(config => {

@@ -7,7 +7,7 @@ import logint from '../pages/login/loginAccount.vue'
 import table from '../components/home/homeTable.vue'
 import testTable from '../components/table/testTable.vue'
 Vue.use(Router)
-export default new Router({
+let router =  new Router({
 	mode: "history",
 	// base: '/dist-demo/',
 	routes: [
@@ -15,6 +15,9 @@ export default new Router({
 		{
 			path: '/home',
 			component: home,
+			meta: {
+                loginTag: true
+            },
 			children: [
 				{ path: 'hometable', name: '表格', component: table },
 				{ path: 'testTable', name: '多级表头（万能）表格', component: testTable }
@@ -30,6 +33,24 @@ export default new Router({
 		}
 	]
 });
+//路由拦截
+router.beforeEach((to, from, next) => {
+    if (to.meta.loginTag) {
+        // if (getCookie('login_token')) {
+        //     next();
+        // } else {
+        //     next({
+        //         path: "/login"
+        //     });
+		// }
+		next();
+    } else {
+        next();
+    }
+})
+export default router;
+
+
 
 
 

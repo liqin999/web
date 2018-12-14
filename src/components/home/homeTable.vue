@@ -36,6 +36,14 @@
       width="120">
     </el-table-column>
   </el-table>
+  <div>
+    <h2>
+      1212
+      <div>
+        1212
+      </div>
+    </h2>
+  </div>
 </div>
 </template>
 
@@ -125,3 +133,13 @@ export default {
   } 
 };
 </script>
+
+<style lang="scss" scoped>
+  h2{
+    color: yellow;
+    div{
+      color: red
+    }
+  }
+</style>
+

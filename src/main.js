@@ -65,15 +65,4 @@ new Vue({
 	template: '<App/>',
 	store:store
 })
-// 全局路由守卫
-// router.beforeEach((to, from, next) => {
-// 	console.log('navigation-guards');
-// 	console.log("to",to,"from",from);
-// 	router.push({name: '/home'})
-// 	next();
-// });
-// router.afterEach((to,from) => {
-//     console.log(to);
-//     console.log(from);
-//     // next();如果使用next()添加形参next
-// });
+
