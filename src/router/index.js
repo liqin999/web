@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import home from '../pages/home/home.vue'
 import login from '../pages/login/login.vue'
 import logint from '../pages/login/loginAccount.vue'
 import table from '../components/home/homeTable.vue'
 import testTable from '../components/table/testTable.vue'
+import {routes} from "./routes.js"
+
 Vue.use(Router)
 let router =  new Router({
 	mode: "history",
@@ -20,7 +21,8 @@ let router =  new Router({
             },
 			children: [
 				{ path: 'hometable', name: '表格', component: table },
-				{ path: 'testTable', name: '多级表头（万能）表格', component: testTable }
+				{ path: 'testTable', name: '多级表头（万能）表格', component: testTable },
+				...routes
 			]
 		},
 		{

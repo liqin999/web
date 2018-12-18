@@ -18,7 +18,6 @@ export default {
     methods: {
         pm_toggleShow() {
             this.pm_showChoose = !this.pm_showChoose;
-            console.log("混入字段优先输出",this.pm_power);
         }
     }
 }

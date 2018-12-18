@@ -39,13 +39,12 @@ export default {
       // 	}
       // });
       // 用户输入非空判断
-
       if (isNotBlank(this.userForm.userName) && isNotBlank(this.userForm.password)) {
           this.$api.loginuser(this.userForm).then(res => {
              
           })
           this.$router.push({
-            path: "/home/hometable"
+            path: "/columnsLayout"
           });
           // 保存登录名
           // this.$store.commit("setUser", this.userForm.userName);

@@ -1,26 +1,26 @@
 <template>
 <div>
     <div class="top">
-        <navigation-bar></navigation-bar>
+        <!-- <navigation-bar></navigation-bar> -->
+        <header-bar></header-bar>
     </div>
-    <div class="left">
+    <!-- <div class="left">
         <left-menu></left-menu>
-    </div>
+    </div> -->
     <div class="main">
         <router-view />
     </div>
-    <!-- <div>
-        <bottomBar></bottomBar>
-    </div> -->
-
 </div>
 </template>
 
  
 
 <script>
-import leftMenu from "@/components/leftmenu/leftMenu.vue";
-import navigationBar from "@/components/navigation/navigationBar.vue";
+
+
+// import leftMenu from "@/components/leftmenu/leftMenu.vue";
+import headerBar from "@/components/navigation/headerBar.vue";
+// import navigationBar from "@/components/navigation/navigationBar.vue";
 import loginIn from "@/server/server";
 import bottomBar from "@/components/bottombar/bottomBar.vue";
 import mixin from "@/components/shared/mixins/powerMixins.js"
@@ -30,8 +30,9 @@ export default {
         return {};
     },
     components: {
-        leftMenu,
-        navigationBar,
+        // leftMenu,
+        // navigationBar,
+        headerBar,
         bottomBar
     },
     mounted() {
