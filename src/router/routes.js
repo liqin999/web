@@ -33,6 +33,20 @@ const writeManuscript = r =>require.ensure([], () => r(require("@/pages/writeMan
 const sendManuscript = r =>require.ensure([], () => r(require("@/pages/sendManuscript/index.vue")), "sendManuscript");
 const newsCalendar = r =>require.ensure([], () => r(require("@/pages/newsCalendar/index.vue")), "newsCalendar");
 
+// buttons路由
+const sendDraft = r =>require.ensure([], () => r(require("@/components/buttons/sendDraft/sendDraft.vue")), "sendDraft");
+const deleteDraft = r =>require.ensure([], () => r(require("@/components/buttons/deleteDraft/deleteDraft.vue")), "deleteDraft");
+const edit = r =>require.ensure([], () => r(require("@/components/buttons/edit/edit.vue")), "edit");
+const issuance = r =>require.ensure([], () => r(require("@/components/buttons/issuance/issuance.vue")), "issuance");
+const markRead = r =>require.ensure([], () => r(require("@/components/buttons/markRead/markRead.vue")), "sendmarkReadDraft");
+const reviewers = r =>require.ensure([], () => r(require("@/components/buttons/reviewers/reviewers.vue")), "reviewers");
+const split = r =>require.ensure([], () => r(require("@/components/buttons/split/split.vue")), "split");
+const submit = r =>require.ensure([], () => r(require("@/components/buttons/submit/submit.vue")), "submit");
+const version = r =>require.ensure([], () => r(require("@/components/buttons/version/version.vue")), "version");
+// buttons弹窗路由
+const draftMessageBox = r =>require.ensure([], () => r(require("@/components/buttons/sendDraft/box/draftMessageBox.vue")), "sendDraft");
+const issuanceMessageBox = r =>require.ensure([], () => r(require("@/components/buttons/issuance/box/issuanceMessageBox.vue")), "issuanceMessageBox");
+
 export const routes = [
     {
         path: "/columnsLayout",
@@ -66,35 +80,80 @@ export const routes = [
         components: {//命名视图形式
             default: signedManuscript
         },
-      },
+    },
 
-      {
+    {
         path: "/reviewDetail",
         component: reviewDetail,
-      },
-      {
+    },
+    {
         path: "/searchManuscript",
         component: searchManuscript,
-      },
-      {
+    },
+    {
         path: "/manuscriptFlow",
         component: manuscriptFlow,
-      },
-      {
+    },
+    {
          path: "/manuscriptSetting",
          component: manuscriptSetting,
-     },
-        {
-            path: "/writeManuscript",
-            component: writeManuscript,
-        },
-        {
-            path: "/sendManuscript",
-            component: sendManuscript,
-        },
-        {
-            path: "/newsCalendar",
-            component: newsCalendar,
-        },
-
+    },
+    {
+        path: "/writeManuscript",
+        component: writeManuscript,
+    },
+    {
+        path: "/sendManuscript",
+        component: sendManuscript,
+    },
+    {
+        path: "/newsCalendar",
+        component: newsCalendar,
+    },
+    // buttons路由定义
+    {
+        path: "/sendDraft",
+        component: sendDraft,
+    },
+    {
+        path: "/draftMessageBox",
+        component: draftMessageBox,
+    },
+    {
+        path: "/deleteDraft",
+        component: deleteDraft,
+    },
+    {
+        path: "/edit",
+        component: edit,
+    },
+    {
+        path: "/issuance",
+        component: issuance,
+    },
+    {
+        path: "/markRead",
+        component: markRead,
+    },
+    {
+        path: "/reviewers",
+        component: reviewers,
+    },
+    {
+        path: "/split",
+        component: split,
+    },
+    {
+        path: "/submit",
+        component: submit,
+    },
+    {
+        path: "/version",
+        component: version,
+    },
+    // buttons弹窗路由
+    {
+        path: "/issuanceMessageBox",
+        component: issuanceMessageBox,
+    },
 ];
