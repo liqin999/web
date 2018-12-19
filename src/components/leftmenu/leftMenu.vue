@@ -1,8 +1,6 @@
 <template>
 	<!-- <div>左侧菜单</div> -->
-    
     <div class="box" id="box">
-       
         <div class="tip"> 
             <el-menu
                 default-active="2"

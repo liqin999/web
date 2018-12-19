@@ -22,7 +22,7 @@
 import headerBar from "@/components/navigation/headerBar.vue";
 // import navigationBar from "@/components/navigation/navigationBar.vue";
 import loginIn from "@/server/server";
-import bottomBar from "@/components/bottombar/bottomBar.vue";
+
 import mixin from "@/components/shared/mixins/powerMixins.js"
 export default {
     mixins: [mixin],
@@ -33,7 +33,7 @@ export default {
         // leftMenu,
         // navigationBar,
         headerBar,
-        bottomBar
+      
     },
     mounted() {
         // 混入中的方法
