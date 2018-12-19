@@ -8,7 +8,7 @@ import testTable from '../components/table/testTable.vue'
 import {routes} from "./routes.js"
 
 Vue.use(Router)
-let router =  new Router({
+let router = new Router({
 	mode: "history",
 	// base: '/dist-demo/',
 	routes: [

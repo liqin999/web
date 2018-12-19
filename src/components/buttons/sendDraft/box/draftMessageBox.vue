@@ -5,9 +5,13 @@
             <!-- 待传稿件列表 -->
             <el-row :gutter="20" class="message-list clearfix">
                 <el-col :span="4"><b class="font-h1">待传稿件</b></el-col>
-                <el-col :span="8"><i></i>23728784374374372983982378478refergege</el-col>
-                <el-col :span="8">一个西红柿的世界</el-col>
-                <el-col :span="4">329084字</el-col>
+                <el-col :span="20">
+                    <template v-for="item in draftData.draftList">
+                        <el-col :span="9"><i></i>{{ item.title }}</el-col>
+                        <el-col :span="9">{{ item.name }}</el-col>
+                        <el-col :span="6">{{ item.size }}</el-col>
+                    </template>
+                </el-col>
             </el-row>
             <!-- 选项内容区 -->
             <el-row :gutter="20" class="message-content clearfix">
@@ -17,21 +21,9 @@
                         <el-col :span="3"><b class="font-h1 title-bottom">送往</b></el-col>
                         <el-col :span="14">
                             <el-row :gutter="0">
-                                <template>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项1">备选项备选项备选项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项2">备选项备选项备选项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项3">备选备选项项备选项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项4">备选备选项项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项5">备选备选项项</el-radio>
+                                <template v-for="label in radioLabel">
+                                    <el-col :span="12" class="radio-label" :key="label">
+                                        <el-radio v-model="radioName" :label="label" @change="labelChange">{{ label }}</el-radio>
                                     </el-col>
                                 </template>
                             </el-row>
@@ -40,12 +32,13 @@
                             <el-row :gutter="0">
                                 <el-col :span="24">
                                     <template>
-                                        <el-select v-model="value" placeholder="请选择">
+                                        <el-select v-model="topValue" placeholder="请选择">
                                             <el-option
-                                            v-for="item in options"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
+                                                v-for="item in topTitle"
+                                                :key="item.label"
+                                                :label="item.label"
+                                                :value="item.value"
+                                                @change="topChange">
                                             </el-option>
                                         </el-select>
                                     </template>
@@ -59,21 +52,9 @@
                             <el-row>
                                 <el-col :span="12" class="message-checkbox">
                                     <el-tree
-                                        :data="data2"
+                                        :data="dataList"
                                         show-checkbox
                                         node-key="id"
-                                        :default-expanded-keys="[2, 3]"
-                                        :default-checked-keys="[5]"
-                                        :props="defaultProps">
-                                    </el-tree>
-                                </el-col>
-                                <el-col :span="12" class="message-checkbox">
-                                    <el-tree
-                                        :data="data2"
-                                        show-checkbox
-                                        node-key="id"
-                                        :default-expanded-keys="[2, 3]"
-                                        :default-checked-keys="[5]"
                                         :props="defaultProps">
                                     </el-tree>
                                 </el-col>
@@ -90,19 +71,20 @@
                                 <template>
                                     <div class="block">
                                         <el-date-picker
-                                            v-model="value7"
+                                            v-model="pickerValue"
                                             type="daterange"
                                             align="right"
                                             unlink-panels
                                             range-separator="至"
                                             start-placeholder="开始日期"
                                             end-placeholder="结束日期"
-                                            :picker-options="pickerOptions2">
+                                            :picker-options="pickerOptions"
+                                            @change="pickerChange">
                                         </el-date-picker>
                                     </div>
                                 </template>
                             </el-col>
-                            <el-col :span="7"><el-button class="btn-search">查询</el-button></el-col>
+                            <el-col :span="7"><el-button class="btn-search" @click="searchTime">查询</el-button></el-col>
                         </el-row>
                     </el-row>
                     <!-- 传稿意见 -->
@@ -114,7 +96,8 @@
                                     type="textarea"
                                     :rows="12"
                                     placeholder="请输入内容"
-                                    v-model="textarea">
+                                    v-model="textarea"
+                                    @change="textareaChange">
                                 </el-input>
                             </el-col>
                         </el-row>
@@ -140,105 +123,190 @@ export default {
     },
     data () {
         return {
+            submitData: null,
             textarea: "请输入文字",
-            radio: 'lanmu',
-            options: [
-                {
-                    value: '选项1',
-                    label: '黄金糕'
-                }, 
-                {
-                    value: '选项2',
-                    label: '双皮奶'
-                }, 
-                {
-                    value: '选项3',
-                    label: '蚵仔煎'
-                }, 
-                {
-                    value: '选项4',
-                    label: '龙须面'
-                }, 
-                {
-                    value: '选项5',
-                    label: '北京烤鸭'
-                }
+            // 栏目选择
+            radioName: '版面/栏目稿库',
+            radioLabel: [
+                '版面/栏目稿库',
+                '媒体公共库',
+                '我的稿库',
+                '组室公共库',
+                '其他人员库',
+                '专题库'
             ],
-            value: '',
-            data2: [
-                {
-                    id: 1,
-                    label: '一级 1',
-                    children: [{
-                        id: 4,
-                        label: '二级 1-1',
-                    }]
-                }, 
-                {
-                    id: 2,
-                    label: '一级 2',
-                    children: [{
-                        id: 5,
-                        label: '二级 2-1'
-                    },
-                    {
-                        id: 6,
-                        label: '二级 2-2'
-                    }]
-                }, 
-                {
-                    id: 3,
-                    label: '一级 3',
-                    children: [
+            topValue: '新华每日电讯',
+            dataList: [
                         {
-                        id: 7,
-                        label: '二级 3-1'
+                            id: 2,
+                            label: '新华每日电讯 2',
+                            children: [{
+                                id: 5,
+                                label: '新华每日电讯 2-1'
+                            },
+                            {
+                                id: 6,
+                                label: '新华每日电讯 2-2'
+                            }]
                         }, 
                         {
-                            id: 8,
-                            label: '二级 3-2'
+                            id: 3,
+                            label: '新华每日电讯 3',
+                            children: [
+                                {
+                                id: 7,
+                                label: '新华每日电讯 3-1'
+                                }, 
+                                {
+                                    id: 8,
+                                    label: '新华每日电讯 3-2'
+                                }
+                            ]
+                        }
+                    ],
+            topTitle: [
+                {
+                    value: '1',
+                    label: '新华每日电讯',
+                    list: [
+                        {
+                            id: 2,
+                            label: '新华每日电讯 2',
+                            children: [{
+                                id: 5,
+                                label: '新华每日电讯 2-1'
+                            },
+                            {
+                                id: 6,
+                                label: '新华每日电讯 2-2'
+                            }]
+                        }, 
+                        {
+                            id: 3,
+                            label: '新华每日电讯 3',
+                            children: [
+                                {
+                                id: 7,
+                                label: '新华每日电讯 3-1'
+                                }, 
+                                {
+                                    id: 8,
+                                    label: '新华每日电讯 3-2'
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    value: '2',
+                    label: '每日电讯微博',
+                    list: [
+                        {
+                            id: 2,
+                            label: '每日电讯微博 2',
+                            children: [{
+                                id: 5,
+                                label: '每日电讯微博 2-1'
+                            },
+                            {
+                                id: 6,
+                                label: '每日电讯微博 2-2'
+                            }]
+                        }, 
+                        {
+                            id: 3,
+                            label: '每日电讯微博 3',
+                            children: [
+                                {
+                                id: 7,
+                                label: '每日电讯微博 3-1'
+                                }, 
+                                {
+                                    id: 8,
+                                    label: '每日电讯微博 3-2'
+                                }
+                            ]
                         }
                     ]
                 }
             ],
+            // 多选框列表
             defaultProps: {
                 children: 'children',
                 label: 'label'
             },
-            pickerOptions2: {
-                shortcuts: [{
-                    text: '最近一周',
-                    onClick(picker) {
-                    const end = new Date();
-                    const start = new Date();
-                    start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-                    picker.$emit('pick', [start, end]);
+            pickerOptions: {
+                shortcuts: [
+                    {
+                        text: '最近一周',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, 
+                    {
+                        text: '最近一个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, 
+                    {
+                        text: '最近三个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                            picker.$emit('pick', [start, end]);
+                        }
                     }
-                }, {
-                    text: '最近一个月',
-                    onClick(picker) {
-                    const end = new Date();
-                    const start = new Date();
-                    start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-                    picker.$emit('pick', [start, end]);
-                    }
-                }, {
-                    text: '最近三个月',
-                    onClick(picker) {
-                    const end = new Date();
-                    const start = new Date();
-                    start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-                    picker.$emit('pick', [start, end]);
-                    }
-                }]
+                ]
             },
-            value6: '',
-            value7: ''
+            pickerValue: ''
         }
     },
     methods: {
+        // 栏目选择变化（单选）
+        labelChange(value){
+            // this.radioName = value;
+        },
+        // 一级栏目选择变化（下拉框）
+        topChange(value){
+            // this.topValue = value;
+        },
+        //点击关闭回调函数
         messageBoxClose(){
-            //点击关闭回调函数
+        },
+        // 日期选择值
+        pickerChange(val){
+            // this.pickerValue = val; 
+        },
+        // 选择日期查询
+        searchTime(){
+        },
+        // 传稿意见
+        textareaChange(val){
+            // this.textarea = val;
+        },
+        // 点击确定按钮（提交）
+        draftConfirm(){
+
+        }
+    },
+    computed: {
+        dataList1(){
+            // let idx = 0;
+            // this.topTitle.forEach((item,index) => {
+            //     if (this.topValue == item.label){
+            //         idx = index;
+            //     }
+            // });
+            // let dataList = this.topTitle[0].list;
+            return this.dataList;
         }
     }
 }
@@ -260,7 +328,7 @@ export default {
     display: block;
     padding-bottom: 10px;
 }
-.el-row .el-col:first-child{
+.el-row>.el-col:first-child{
     padding-left: 0px!important;
 }
 .el-range-editor.el-input__inner{
@@ -293,7 +361,10 @@ export default {
     padding-right: 10px;
 }
 .message-checkbox{
-    border: 1px solid #ccc;
+    height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid #ddd;
     padding: 20px;
 }
 </style>

@@ -3,140 +3,137 @@
         <!-- 内容区 -->
         <div class="message-box clearfix">
             <!-- 签发信息 -->
-            <el-row :gutter="20" class="message-list clearfix">
-                <el-col :span="4"><b class="font-h1">签发信息</b></el-col>
-                <el-col :span="20">
-                    <template>
-                        <el-radio v-model="radio" label="1">备选项</el-radio>
-                        <el-radio v-model="radio" label="2">备选项</el-radio>
+            <el-row :gutter="20" class="clearfix">
+                <el-col :span="3"><b class="font-h1">签发信息</b></el-col>
+                <el-col :span="21">
+                    <template v-for="item in radioLabel">
+                        <el-radio v-model="radioName" :label="item" :key="item">{{ item }}</el-radio>
                     </template>
                     <el-row>
                         <!-- 处理时间 -->
                         <el-col :span="8">
-
+                            <template>
+                                <div class="block">
+                                    <span class="demonstration">处理时间</span>
+                                    <el-date-picker
+                                        v-model="pickerTime"
+                                        type="date"
+                                        placeholder="选择日期"
+                                        @change="pickerChange">
+                                    </el-date-picker>
+                                </div>
+                            </template>
                         </el-col>
                         <!-- 刊发位次 -->
                         <el-col :span="6">
+                            <template>
+                                <span>刊发位次</span>
+                                <el-select v-model="kanfaValue" class="select-float">
+                                    <el-option
+                                        v-for="item in kanfaData"
+                                        :key="item"
+                                        :label="item"
+                                        :value="item">
+                                    </el-option>
+                                </el-select>
+                                </template>
                         </el-col>
                         <!-- checkbox -->
                         <el-col :span="10">
+                            <template>
+                                <el-checkbox-group v-model="checkList">
+                                    <template v-for="item in checkLabel">
+                                        <el-checkbox :label="item" :key="item"></el-checkbox>
+                                    </template>
+                                </el-checkbox-group>
+                            </template>
                         </el-col>
                     </el-row>
                 </el-col>
             </el-row>
-            <!-- 选项内容区 -->
-            <el-row :gutter="20" class="message-content clearfix">
-                <!-- 送往 -->
-                <el-col :span="15">
-                    <el-row :gutter="5">
-                        <el-col :span="3"><b class="font-h1 title-bottom">送往</b></el-col>
-                        <el-col :span="14">
-                            <el-row :gutter="0">
-                                <template>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项1">备选项备选项备选项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项2">备选项备选项备选项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项3">备选备选项项备选项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项4">备选备选项项</el-radio>
-                                    </el-col>
-                                    <el-col :span="12" class="radio-label">
-                                        <el-radio v-model="radio" label="备选项5">备选备选项项</el-radio>
-                                    </el-col>
-                                </template>
-                            </el-row>
-                        </el-col>
-                        <el-col :span="7">
-                            <el-row :gutter="0">
-                                <el-col :span="24">
-                                    <template>
-                                        <el-select v-model="value" placeholder="请选择">
-                                            <el-option
-                                            v-for="item in options"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                            </el-option>
-                                        </el-select>
-                                    </template>
-                                </el-col>
-                            </el-row>
-                        </el-col>
-                    </el-row>
-                    <!-- 多选框 -->
+            <!-- 字体和字号 -->
+            <el-row :gutter="20" class="clearfix">
+                <el-col :span="3"><b class="font-h1">字体和字号</b></el-col>
+                <el-col :span="21">
                     <el-row>
                         <el-col :span="21" :offset="3">
-                            <el-row>
-                                <el-col :span="12" class="message-checkbox">
-                                    <el-tree
-                                        :data="data2"
-                                        show-checkbox
-                                        node-key="id"
-                                        :default-expanded-keys="[2, 3]"
-                                        :default-checked-keys="[5]"
-                                        :props="defaultProps">
-                                    </el-tree>
-                                </el-col>
-                                <el-col :span="12" class="message-checkbox">
-                                    <el-tree
-                                        :data="data2"
-                                        show-checkbox
-                                        node-key="id"
-                                        :default-expanded-keys="[2, 3]"
-                                        :default-checked-keys="[5]"
-                                        :props="defaultProps">
-                                    </el-tree>
-                                </el-col>
-                            </el-row>
+                            <el-col :span="8"><span>字体和字号</span></el-col>
+                            <el-col :span="8"><span>字体和字号</span></el-col>
+                            <el-col :span="8"><span>字体和字号</span></el-col>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :span="3">
+                            <template>
+                                <el-checkbox v-model="checked">备选项</el-checkbox>
+                            </template>
+                        </el-col>
+                        <el-col :span="7">
+                            <template>
+                                <el-select v-model="fontValue">
+                                    <el-option
+                                        v-for="item in fontData"
+                                        :key="item"
+                                        :label="item"
+                                        :value="item">
+                                    </el-option>
+                                </el-select>
+                            </template>
+                        </el-col>
+                        <el-col :span="7">
+                            <template>
+                                <el-select v-model="fontValue">
+                                    <el-option
+                                        v-for="item in fontData"
+                                        :key="item"
+                                        :label="item"
+                                        :value="item">
+                                    </el-option>
+                                </el-select>
+                            </template>
+                        </el-col>
+                        <el-col :span="7">
+                            <template>
+                                <el-select v-model="fontValue">
+                                    <el-option
+                                        v-for="item in fontData"
+                                        :key="item"
+                                        :label="item"
+                                        :value="item">
+                                    </el-option>
+                                </el-select>
+                            </template>
                         </el-col>
                     </el-row>
                 </el-col>
-                <!-- 专题 -->
-                <el-col :span="9">
-                    <el-row :gutter="10">
-                        <el-col :span="24" class="clearfix"><b class="font-h1 title-bottom">专题</b></el-col>
-                        <el-row>
-                            <el-col :span="17">
-                                <template>
-                                    <div class="block">
-                                        <el-date-picker
-                                            v-model="value7"
-                                            type="daterange"
-                                            align="right"
-                                            unlink-panels
-                                            range-separator="至"
-                                            start-placeholder="开始日期"
-                                            end-placeholder="结束日期"
-                                            :picker-options="pickerOptions2">
-                                        </el-date-picker>
-                                    </div>
-                                </template>
-                            </el-col>
-                            <el-col :span="7"><el-button class="btn-search">查询</el-button></el-col>
-                        </el-row>
-                    </el-row>
-                    <!-- 传稿意见 -->
-                    <el-row :gutter="10">
-                        <el-col :span="24" class="clearfix"><b class="font-h1 title-bottom">传稿意见</b></el-col>
-                        <el-row>
-                            <el-col :span="24">
-                                <el-input
-                                    type="textarea"
-                                    :rows="12"
-                                    placeholder="请输入内容"
-                                    v-model="textarea">
-                                </el-input>
-                            </el-col>
-                        </el-row>
-                    </el-row>
+            </el-row>
+            <!-- 签发目标 -->
+            <el-row :gutter="20">
+                <el-col :span="3"><b class="font-h1">签发目标</b></el-col>
+                <el-col :span="21">
+                    <el-col :span="8">
+                        <el-input
+                            type="textarea"
+                            :rows="12"
+                            placeholder="请输入内容"
+                            v-model="textarea"
+                            @change="textareaChange">
+                        </el-input>
+                    </el-col>
+                    <el-col :span="16">
+                        <el-col :span="5"><b class="font-h1">签发意见</b></el-col>
+                        <el-col :span="19">
+                            <el-input
+                                type="textarea2"
+                                :rows="8"
+                                placeholder="请输入内容"
+                                v-model="textarea2"
+                                @change="textareaChange2">
+                            </el-input>
+                        </el-col>
+                    </el-col>
                 </el-col>
             </el-row>
-            <!-- 送往 栏目列表 -->
         </div>
         <!-- 内容区 结束 -->
         <div slot="footer" class="dialog-footer">
@@ -155,105 +152,44 @@ export default {
     },
     data () {
         return {
+            checked:'',
             textarea: "请输入文字",
-            radio: 'lanmu',
-            options: [
-                {
-                    value: '选项1',
-                    label: '黄金糕'
-                }, 
-                {
-                    value: '选项2',
-                    label: '双皮奶'
-                }, 
-                {
-                    value: '选项3',
-                    label: '蚵仔煎'
-                }, 
-                {
-                    value: '选项4',
-                    label: '龙须面'
-                }, 
-                {
-                    value: '选项5',
-                    label: '北京烤鸭'
-                }
+            textarea2: "请输入文字",
+            radioName: '版面库',
+            radioLabel: [
+                '版面库',
+                '栏目库'
             ],
-            value: '',
-            data2: [
-                {
-                    id: 1,
-                    label: '一级 1',
-                    children: [{
-                        id: 4,
-                        label: '二级 1-1',
-                    }]
-                }, 
-                {
-                    id: 2,
-                    label: '一级 2',
-                    children: [{
-                        id: 5,
-                        label: '二级 2-1'
-                    },
-                    {
-                        id: 6,
-                        label: '二级 2-2'
-                    }]
-                }, 
-                {
-                    id: 3,
-                    label: '一级 3',
-                    children: [
-                        {
-                        id: 7,
-                        label: '二级 3-1'
-                        }, 
-                        {
-                            id: 8,
-                            label: '二级 3-2'
-                        }
-                    ]
-                }
+            kanfaData: [1,2,3,4,5],
+            fontValue: '宋体',
+            fontData: [
+                '宋体',
+                '微软雅黑'
             ],
-            defaultProps: {
-                children: 'children',
-                label: 'label'
-            },
-            pickerOptions2: {
-                shortcuts: [{
-                    text: '最近一周',
-                    onClick(picker) {
-                    const end = new Date();
-                    const start = new Date();
-                    start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-                    picker.$emit('pick', [start, end]);
-                    }
-                }, {
-                    text: '最近一个月',
-                    onClick(picker) {
-                    const end = new Date();
-                    const start = new Date();
-                    start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-                    picker.$emit('pick', [start, end]);
-                    }
-                }, {
-                    text: '最近三个月',
-                    onClick(picker) {
-                    const end = new Date();
-                    const start = new Date();
-                    start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-                    picker.$emit('pick', [start, end]);
-                    }
-                }]
-            },
-            value6: '',
-            value7: ''
-        }
+            kanfaValue: 1,
+            pickerTime: '',
+            checkLabel: [
+                '预刊登日期优先',
+                '重稿检查'
+            ],
+            checkList: ['预刊登日期优先']
+      };
     },
     methods: {
+        //点击关闭回调函数
         messageBoxClose(){
-            //点击关闭回调函数
+        },
+        // 日期改变
+        pickerChange(val){
+            this.pickerTime = val;
+        },
+        // 文本框值改变
+        textareaChange(val){
+            this.textarea = val;
+        },
+        // 文本框值改变
+        textareaChange2(val){
+            this.textarea2 = val;
         }
     }
 }
@@ -265,11 +201,6 @@ export default {
 }
 .el-row{
     padding-bottom: 20px;
-}
-.message-list{
-    padding: 20px 0px;
-    border-bottom: 1px solid #ccc;
-
 }
 .title-bottom{
     display: block;
@@ -298,9 +229,6 @@ export default {
 .font-h1{
     font-size: 16px;
 }
-.message-content{
-    padding: 20px 0;
-}
 .radio-label{
     overflow: hidden;
     text-overflow: ellipsis;
@@ -310,5 +238,14 @@ export default {
 .message-checkbox{
     border: 1px solid #ccc;
     padding: 20px;
+}
+.select-float{
+    width: 60%;
+}
+.block{
+    width: 100%;
+}
+.el-date-editor.el-input, .el-date-editor.el-input__inner{
+    width: 70%;
 }
 </style>
