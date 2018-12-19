@@ -1,16 +1,14 @@
 <template>
     <div>
        <div class="serchBar">
-           处理时间
-           关键字
-           类型
-           全选
-           文本
-           图片
-           图表
-           视频
-           音频
-           应用
+           <search-input :searchForm="searchForm" :allTypes = "allTypes" @sendFormData="getFormData">
+               <el-form-item label="媒体" slot="media">
+                    <el-select v-model="searchForm.media"  size="small"  placeholder="请选择媒体">
+                        <el-option label="媒体一" value="shanghai"></el-option>
+                        <el-option label="媒体二" value="beijing"></el-option>
+                    </el-select>
+               </el-form-item>
+           </search-input>
        </div>
        <div class="leftCon">
            <left-menu :treeData="data2" :defaultProps="defaultProps" @sendTreeObj="getTreeObj"></left-menu>
@@ -22,13 +20,25 @@
 </template>
 <script>
 import leftMenu from "@/components/treeMenu/leftTree.vue";
+import searchInput from "@/components/searchConditions/searchInput.vue";
 export default {
     components: {
-        leftMenu
+        leftMenu,
+        searchInput
     },
     data(){
         return{
-              data2: [
+             searchForm: {
+                dateValue: '',
+                keywords: '',
+                checkAll: false,
+                media:'',
+                checkedTypes: ['文本', '图片'],
+                isIndeterminate:true
+             },
+             allTypes: ['文本', '图片','图表','视频','音频','应用'],
+
+             data2: [
                     {
                     id: 1,
                     label: '一级 1',
@@ -83,7 +93,12 @@ export default {
     methods:{
         getTreeObj(data){//获得树形菜单的对象
             console.log("获得自组件的点击的节点对象",data)
-        }
+        },
+     
+        getFormData(data){//搜索表单的选项
+             console.log("获得自组件的搜索框数据",data)
+        },
+      
     }
 }
 </script>
