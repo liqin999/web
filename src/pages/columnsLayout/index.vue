@@ -7,6 +7,18 @@
            <span slot="iconName">签发</span>
        </issuance>
 
+        <split>
+           <span slot="iconName">拆分</span>
+       </split>
+
+       <concat :data="concatData" 
+        @sendConcatData = "getConcatData"
+        @sendConcatDataUp = "getConcatDataUp"
+        @sendConcatDataDown = "getConcatDataDown"
+        >
+           <span slot="iconName">合并</span>
+       </concat>
+
          <div class="serchBar">
            <search-input :searchForm="searchForm" :allTypes = "allTypes" @sendFormData="getFormData">
                <el-form-item label="媒体" slot="media">
@@ -29,6 +41,8 @@
 <script>
 import sendDraft from "@/components/buttons/sendDraft/sendDraft"
 import issuance from "@/components/buttons/issuance/issuance"
+import split from "@/components/buttons/split/split"
+import concat from "@/components/buttons/concat/concat"
 import leftMenu from "@/components/treeMenu/leftTree.vue";
 import searchInput from "@/components/searchConditions/searchInput.vue";
 export default {
@@ -36,10 +50,24 @@ export default {
         leftMenu,
         searchInput,
         sendDraft,
-        issuance
+        issuance,
+        split,
+        concat
     },
     data(){
         return{
+             concatData:{
+                    contentShow:false,
+                    tableData: [{
+                        num: '2',
+                        title: '王小虎',
+                    
+                    }, {
+                        num: '3',
+                        title: '王小虎',
+                    
+                    }]
+            },
              searchForm: {
                 dateValue: '',
                 keywords: '',
@@ -96,7 +124,6 @@ export default {
                     label: 'label'
                  }
 
-
         }
     },
     mounted(){
@@ -106,11 +133,18 @@ export default {
         getTreeObj(data){//获得树形菜单的对象
             console.log("获得自组件的点击的节点对象",data)
         },
-     
         getFormData(data){//搜索表单的选项
              console.log("获得自组件的搜索框数据",data)
         },
-      
+        getConcatData(data){//获得合并的元素的参数信息
+            console.log("获得子组件的合并的元素数据",data)
+        },
+        getConcatDataUp(data){//获得合并弹框的上移操作
+             console.log("获得合并子组件弹框的上移操作元素数据",data)
+        },
+        getConcatDataDown(data){//获得合并弹框的下移操作
+              console.log("获得合并子组件弹框的下移操作元素数据",data)
+        }
     }
 }
 </script>
