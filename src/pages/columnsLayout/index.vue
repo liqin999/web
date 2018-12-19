@@ -1,6 +1,11 @@
 <template>
     <div>
-       栏目/版面
+       <div class="leftCon">
+           
+       </div>
+       <div class="rightCon">
+
+       </div>
     </div>
 </template>
 <script>
