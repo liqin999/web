@@ -1,8 +1,10 @@
 <template>
     <div>
        <el-input
+            class="tree-search"
             placeholder="输入关键字进行过滤"
             v-model="filterText">
+             <i slot="suffix" class="el-input__icon el-icon-search"></i>
        </el-input>
         <el-tree
             class="filter-tree"
@@ -60,10 +62,17 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-   
+  
 </style>
-<style>
-
+<style  lang="scss">
+     .tree-search {
+         .el-input__inner{
+             border-radius: 50px;
+             height: 33px;
+             line-height: 33px;
+         }
+           
+    }
 </style>
 
 

@@ -59,7 +59,7 @@ export default {
 }
 
 .top {
-    height: 70px;
+    /* height: 70px; */
     width: 100%;
     /* padding-top: 1px; */
 }

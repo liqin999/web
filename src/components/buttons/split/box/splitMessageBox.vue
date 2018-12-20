@@ -1,12 +1,12 @@
 <template>
-    <el-dialog class="" title="拆分" @close="messageBoxClose()" :visible.sync="splitData.contentShow" width="80%" top="15vh" :append-to-body="true">
+    <el-dialog custom-class="split-dialog" title="拆分" @close="messageBoxClose()" :visible.sync="splitData.contentShow" width="70%" top="15vh" :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box">
         
           <el-row :gutter="20">
             <el-col :span="10">
-                <div class="grid-content bg-purple">
-                    <h2>原稿件内容<span class="ft-red">(可拖动内容到右上列表)</span></h2>                
+                <div class="split-content bg-purple">
+                    <h2 class="split-title">原稿件内容<span class="ft-red">(可拖动内容到右上列表)</span></h2>                
                      <div class="content"></div>
                     <div class="ta-center mt10">
                          <el-button>形成新稿件</el-button>
@@ -14,12 +14,13 @@
                 </div>
             </el-col>
             <el-col :span="14">
-                <div class="grid-content bg-purple">
+                <div class="split-content  ">
                          <h2>新稿件列表</h2>
                          <template>
                          <el-table
+                            border
                             :data="tableData"
-                            style="width: 100%">
+                            style="width: 100%;margin-top:10px">
                             <el-table-column
                                 prop="num"
                                 label="序号"
@@ -38,7 +39,7 @@
                         </el-table>
                         </template>
 
-                         <h2>新稿件内容</h2>
+                         <h2 class="mt10">新稿件内容</h2>
                          <div class="new-content"></div>
                 </div>
             </el-col>
@@ -105,12 +106,25 @@ export default {
      .content{
         height: 410px;
         border:1px solid #ddd;
+        margin-top: 10px;
     }
     .new-content{
         border:1px solid #ddd;
-        height: 200px;
+        height: 227px;
+        margin-top: 10px;
+    }
+    .split-content{
+        margin-top: 0px;
     }
     
+</style>
+<style lang="scss">
+ .split-dialog{
+        .el-dialog__body{
+            padding-top: 0;
+            padding-bottom:0px
+        }
+    }
 </style>
 
 

@@ -21,8 +21,8 @@
 
          <div class="serchBar">
            <search-input :searchForm="searchForm" :allTypes = "allTypes" @sendFormData="getFormData">
-               <el-form-item label="媒体" slot="media">
-                    <el-select v-model="searchForm.media"  size="small"  placeholder="请选择媒体">
+               <el-form-item label="媒体:" slot="media">
+                    <el-select v-model="searchForm.media" class="w100"  size="small"  placeholder="请选择媒体">
                         <el-option label="媒体一" value="shanghai"></el-option>
                         <el-option label="媒体二" value="beijing"></el-option>
                     </el-select>
@@ -163,7 +163,9 @@ export default {
 <style lang="scss" scoped>
 </style>
 <style>
-
+     .w100{
+        width: 100px;
+    }
 </style>
 
 
