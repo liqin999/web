@@ -1,10 +1,13 @@
 <template>
-    <div>
+    <div class="tree-wrap">
        <el-input
+            class="tree-search"
             placeholder="输入关键字进行过滤"
             v-model="filterText">
+             <i slot="suffix" class="el-input__icon el-icon-search"></i>
        </el-input>
         <el-tree
+            :highlight-current="true"
             class="filter-tree"
             :data="treeData"
             :props="defaultProps"
@@ -12,6 +15,11 @@
             :filter-node-method="filterNode"
              @node-click="handleNodeClick"
              ref="tree2">
+               <span class="custom-tree-node" slot-scope="{ node, data }">
+                    <span>
+                        <i :class="node.icon"></i>{{ node.label }}
+                    </span>              
+                </span>
         </el-tree>
     </div>
 </template>
@@ -60,10 +68,32 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-   
+  
 </style>
-<style>
+<style  lang="scss">
+    .tree-wrap{
+        padding:10px;
+        .filter-tree{
+            margin-top:7px;
+        }
+    }
+     .tree-search {
+         margin-top:10px;
+         .el-input__inner{
+             border-radius: 50px;
+             height: 33px;
+             line-height: 33px;
+         }
+    }
 
+    .el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+           background-color: #0ba9ef !important;
+           color:#fff !important;
+   }
+    .ft-ffd658{
+        color:#ffd658
+    }
+    
 </style>
 
 

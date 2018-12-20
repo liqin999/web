@@ -1,7 +1,8 @@
 <template>
-        <el-form :inline="true" :model="searchForm" >
-            <el-form-item label="处理时间">
+        <el-form :inline="true" :model="searchForm" class="search-form">
+            <el-form-item label="处理时间:">
                  <el-date-picker
+                        style="width:226px"
                         v-model="searchForm.dateValue"
                         size="small"
                         type="daterange"
@@ -13,13 +14,13 @@
                         :picker-options="pickerOptions2">
                     </el-date-picker>
             </el-form-item>
-             <el-form-item label="关键字">
-                <el-input size="small" v-model="searchForm.keywords" placeholder="关键字"></el-input>
+             <el-form-item label="关键字:">
+                <el-input size="small" class="w100" v-model="searchForm.keywords" placeholder="关键字"></el-input>
             </el-form-item>
 
             <slot name="media"></slot>
 
-            <el-form-item label="类型">
+            <el-form-item label="类型:">
                  <el-checkbox :indeterminate="searchForm.isIndeterminate" v-model="searchForm.checkAll" @change="handleCheckAllChange">全选</el-checkbox>
                  <el-checkbox-group style="display:inline-block" v-model="searchForm.checkedTypes" @change="handleCheckedTypesChange">
                         <el-checkbox class="che" v-for="type in allTypes" :label="type" :key="type">{{type}}</el-checkbox>
@@ -99,9 +100,16 @@ export default {
    .che{
        margin-left: 7px;
    }
+   .search-form{
+       min-width: 1300px;
+       padding-left: 10px;
+       box-sizing: border-box;
+   }
 </style>
 <style>
-
+    .w100{
+        width: 100px;
+    }
 </style>
 
 

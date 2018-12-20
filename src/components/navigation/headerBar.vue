@@ -2,13 +2,13 @@
     <div class="headerNav">
                 <div class="centerNav">
                     <el-menu
-                        :default-active="activeIndex2"
+                        :default-active="$route.path"
                         class="el-menu-demo"
                         mode="horizontal"
                         :router="true"
                         @select="handleSelect"
                         text-color="#4f545f"
-                        active-text-color="#4f545f">
+                        active-text-color="#0ba9ef">
                          <template v-for="item in navBar">
                               <template v-if="item.chiled">
                                   <el-submenu :index="item.id" popper-class="childMenu" :key="item.id" >
@@ -41,7 +41,6 @@
 export default {
     data(){
         return{
-            activeIndex2: '1',
             navBar:[
                 {
                     name: "栏目/版面库",//导航的名字
@@ -156,41 +155,47 @@ export default {
 
 <style lang="scss" scoped>
     .headerNav{
-        //   height: 27px;
-        //   line-height: 27px;
-        //   background-color: #fff;
-        //   color: #4f545f;
-        //   overflow:hidden;
-        //   min-width: 1100px;
-        //   border-bottom: 1px solid #ddd;
+          height: 32px;
+          line-height: 32px;
     }
-//     .el-menu--horizontal>.el-menu-item.is-active{
-//          border-bottom: 2px solid #0ba9ef;
-//     }
-//     .el-menu--horizontal>.el-submenu .el-submenu__title{
-//         background-color: transparent
-//     }
-//     .el-menu--horizontal>.el-submenu:hover{
-//          background-color: transparent !important
-//     }
-//     .childMenu{
-//         li{
-//             color: #000 !important
-//         }
-//     }
-//   .el-menu--horizontal>.el-submenu .el-submenu__icon-arrow{
-//       color: #4f545f;
-//   }
-  
-//    .el-menu--horizontal>.el-menu-item ,  .el-menu--horizontal>.el-submenu {
-//        height: 27px;
-//        line-height: 27px;
-//     }
-   
-//     .el-menu--horizontal>.el-submenu .el-submenu__title {
-//         height: 27px !important;
-//         line-height: 27px !important;
-//     }
-
+    .el-menu--horizontal>.el-menu-item {
+        height: 32px;
+        line-height: 32px;
+    }
+    .el-menu--horizontal>.el-menu-item.is-active{
+         border-bottom: 2px solid #0ba9ef !important;
+         color: #0ba9ef !important;
+    }
+    .el-menu--horizontal>.el-menu-item:hover{
+          border-bottom: 2px solid #0ba9ef !important;
+          color: #0ba9ef !important;
+    }
+     .el-menu--horizontal>.el-submenu .el-submenu__title:hover {
+        border-bottom: 2px solid #409EFF !important;
+        
+    }
+    .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+        border-bottom: 2px solid #409EFF !important;
+    }
+   .el-menu--horizontal>.el-menu-item ,  .el-menu--horizontal>.el-submenu {
+       height: 32px;
+       line-height: 32px;
+    }
+    .el-menu--horizontal.childMenu .el-menu-item:hover{
+         color: #0ba9ef !important;
+    }
 </style>
+<style>
+.el-menu--horizontal>.el-submenu .el-submenu__title {
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 2px solid #0ba9ef;
+    color: #0ba9ef;
+}
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title{
+    border-bottom-color:  #0ba9ef !important;
+     color: #0ba9ef !important;
+}
+</style>
+
 

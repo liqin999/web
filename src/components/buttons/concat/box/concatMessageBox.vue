@@ -1,5 +1,5 @@
 <template>
-    <el-dialog class="" title="合并稿件" @close="messageBoxClose()" :visible.sync="concatData.contentShow" width="80%" top="15vh" :append-to-body="true">
+    <el-dialog custom-class="concat-dialog" title="合并稿件" @close="messageBoxClose()" :visible.sync="concatData.contentShow" width="50%" top="15vh" :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box">
         
@@ -99,10 +99,16 @@ export default {
     .el-row{
         padding-bottom: 20px;
     }
- 
-
-    
 </style>
+<style lang="scss">
+ .concat-dialog{
+        .el-dialog__body{
+            padding-top: 0;
+            padding-bottom:0px
+        }
+    }
+</style>
+
 
 
 

@@ -22,7 +22,6 @@
 import headerBar from "@/components/navigation/headerBar.vue";
 // import navigationBar from "@/components/navigation/navigationBar.vue";
 import loginIn from "@/server/server";
-
 import mixin from "@/components/shared/mixins/powerMixins.js"
 export default {
     mixins: [mixin],
@@ -51,25 +50,18 @@ export default {
 
 <style>
 .main {
-    height: 400px;
-    /* width: calc(100% - 300px); */
     min-width: 940px;
-    overflow-x: auto;
-    float: left;
+    overflow-x: hidden;
 }
 
 .top {
-    height: 70px;
     width: 100%;
-    /* padding-top: 1px; */
 }
 
 .left {
-    /* width: 300px; */
     height: 400px;
     padding-top: 1px;
     /* height: calc(100% - 50px); */
     float: left;
-
 }
 </style>
