@@ -90,6 +90,9 @@ export default {
            background-color: #0ba9ef !important;
            color:#fff !important;
    }
+    .ft-ffd658{
+        color:#ffd658
+    }
     
 </style>
 

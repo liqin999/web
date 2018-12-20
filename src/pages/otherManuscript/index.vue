@@ -95,10 +95,12 @@ export default {
                         children: [{
                                     id: 9,
                                     label: '方立新',
-                                    icon:'el-icon-success',
+                                    icon:'iconfont icon-file-b- ft-ffd658',
                                 }, {
                                     id: 10,
-                                    label: '李仁虎'
+                                    label: '李仁虎',
+                                    icon:'iconfont icon-file-b- ft-ffd658'
+
                                 }]
                         },
                          {
@@ -106,10 +108,13 @@ export default {
                             label: '总编室',
                             children: [{
                                         id: 12,
-                                        label: '留学室'
+                                        label: '留学室',
+                                         icon:'iconfont icon-file1'
+
                                     }, {
                                         id: 13,
-                                        label: '卢刚'
+                                        label: '卢刚',
+                                         icon:'iconfont icon-file1'
                                     }]
                         }
                      ]
