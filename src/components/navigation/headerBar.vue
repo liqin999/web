@@ -2,13 +2,13 @@
     <div class="headerNav">
                 <div class="centerNav">
                     <el-menu
-                        :default-active="activeIndex2"
+                        :default-active="$route.path"
                         class="el-menu-demo"
                         mode="horizontal"
                         :router="true"
                         @select="handleSelect"
                         text-color="#4f545f"
-                        active-text-color="#4f545f">
+                        active-text-color="#0ba9ef">
                          <template v-for="item in navBar">
                               <template v-if="item.chiled">
                                   <el-submenu :index="item.id" popper-class="childMenu" :key="item.id" >
@@ -41,7 +41,6 @@
 export default {
     data(){
         return{
-            activeIndex2: '1',
             navBar:[
                 {
                     name: "栏目/版面库",//导航的名字
@@ -181,6 +180,9 @@ export default {
    .el-menu--horizontal>.el-menu-item ,  .el-menu--horizontal>.el-submenu {
        height: 32px;
        line-height: 32px;
+    }
+    .el-menu--horizontal.childMenu .el-menu-item:hover{
+         color: #0ba9ef !important;
     }
 </style>
 <style>

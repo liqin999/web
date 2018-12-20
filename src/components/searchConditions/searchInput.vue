@@ -1,5 +1,5 @@
 <template>
-        <el-form :inline="true" :model="searchForm" >
+        <el-form :inline="true" :model="searchForm" class="search-form">
             <el-form-item label="处理时间:">
                  <el-date-picker
                         style="width:226px"
@@ -100,9 +100,16 @@ export default {
    .che{
        margin-left: 7px;
    }
+   .search-form{
+       min-width: 1300px;
+       padding-left: 10px;
+       box-sizing: border-box;
+   }
 </style>
 <style>
-   
+    .w100{
+        width: 100px;
+    }
 </style>
 
 
