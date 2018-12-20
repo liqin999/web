@@ -1,5 +1,5 @@
 <template>
-    <div class="btn">
+    <div class="btn primary-btn">
         <span @click="sendConcatIcon">
             <i class="el-icon-ump-gaojian-zhaiyao"></i>
             <slot name="iconName"></slot>

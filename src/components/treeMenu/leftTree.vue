@@ -83,6 +83,7 @@ export default {
              border-radius: 50px;
              height: 33px;
              line-height: 33px;
+             width: 193px;
          }
     }
 

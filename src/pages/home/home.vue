@@ -1,5 +1,8 @@
 <template>
 <div>
+    <div style="height:40px">
+        <img :src="imgUrl" alt="" style="width:100%;height:100%">
+    </div>
     <div class="top">
         <!-- <navigation-bar></navigation-bar> -->
         <header-bar></header-bar>
@@ -26,7 +29,9 @@ import mixin from "@/components/shared/mixins/powerMixins.js"
 export default {
     mixins: [mixin],
     data() {
-        return {};
+        return {
+             imgUrl:require("@/assets/img/fadeHead.png")
+        };
     },
     components: {
         // leftMenu,
