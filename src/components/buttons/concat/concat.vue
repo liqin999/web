@@ -1,7 +1,6 @@
 <template>
-    <div class="btn">
+    <div class="primary-btn">
         <span @click="sendConcatIcon">
-            <i class="el-icon-ump-gaojian-zhaiyao"></i>
             <slot name="iconName"></slot>
         </span>
         <!-- 合并按钮 -->
@@ -49,7 +48,4 @@ export default {
 }
 </script>
 <style>
-.btn span{
-    cursor: pointer;
-}
 </style>

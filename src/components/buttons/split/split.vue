@@ -1,5 +1,5 @@
 <template>
-    <div class="btn">
+    <div class="primary-btn">
         <span @click="sendSplitIcon">
             <i class="el-icon-ump-gaojian-zhaiyao"></i>
             <slot name="iconName"></slot>
@@ -36,7 +36,4 @@ export default {
 }
 </script>
 <style>
-.btn span{
-    cursor: pointer;
-}
 </style>

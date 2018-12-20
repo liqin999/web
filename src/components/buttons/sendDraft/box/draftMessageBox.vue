@@ -24,7 +24,7 @@
                         <el-col :span="14">
                             <el-row>
                                 <template v-for="label in radioLabel">
-                                    <el-col :span="12" class="title-overflow" :key="label">
+                                    <el-col :span="12" class="text-overflow" :key="label">
                                         <el-radio v-model="radioName" :label="label" @change="labelChange">{{ label }}</el-radio>
                                     </el-col>
                                 </template>
@@ -94,12 +94,12 @@
                                 </div>
                             </template>
                         </el-col>
-                        <el-col :span="7"><el-button class="btn-search" @click="searchTime">查询</el-button></el-col>
+                        <el-col :span="7"><el-button plain class="btn-inquire" @click="searchTime">查询</el-button></el-col>
                         <!-- </el-row> -->
                     </el-row>
                     <!-- 传稿意见 -->
-                    <el-row :gutter="10" class="opinionText">
-                        <el-col :span="24" class="clearfix"><b class="message-title padding-bottom10 yijian">传稿意见</b><span class="redColor">（不超过255个字）</span></el-col>
+                    <el-row :gutter="10" class="">
+                        <el-col :span="24" class="clearfix"><b class="message-title padding-bottom10 inline-block">传稿意见</b><span class="redColor">（不超过255个字）</span></el-col>
                         <!-- <el-row> -->
                         <el-col :span="24">
                             <el-input
@@ -323,57 +323,82 @@ export default {
 </script>
 
 <style lang="scss">
-
+// 定义全局样式变量
 $primary-color: rgba(0, 152, 210, 1) rgba(11, 169, 239, 1);    //系统色调 默认、hover状态 
 $font-color:#333 !default;   //字体颜色（默认）
 $white-color: #fff;          //白色
-$font-size:14px 16px;      //字体大小
+$font-size:12px 14px 16px;      //字体大小
 $border-color:#737373 !default;   //边框颜色（默认）
 $border-radius: 3px;                //边角弧度
 $line-height:30px !default;       //行高（默认）
 $pointer: pointer;             //hover状态 鼠标pointer
 $border-area-color:#E3E7E9;  //浅色边框颜色
 
+// elm 弹出框样式定义变量
+$header-bg-Color: #F2F2F2; //头部背景色颜色
+$header-border-color: #C9C9C9;  //头部下边框颜色
+$header-title-color: #515151;  //头部标题颜色
+$box-width:733px;     //定义弹出框最小宽度
 
-$titleColor: #F2F2F2;
-$titleBorder: #C9C9C9;
 
 // 公共样式应用
+.margin-bottom15{
+    margin-bottom:15px;
+}
+.font-size16{
+    font-size: nth($font-size,3);
+}
+/* 字体居中 */
+.text-center{
+    text-align: center;
+}
 .tab-padding{       // 强制缩进
     padding-left: 0px!important;    
+}
+.padding-right{
+    padding-right: 10px;
+}
+.text-right{
+    text-align: right;
 }
 .padding-bottom10{
     padding-bottom: 10px;
 }
-.padding-top10{
+.padding-top8{
     padding-top:8px;
 }
 .margin-top20{
     margin-top:20px;
 }
-.title-overflow{    // 超出内容区，显示省略号
+.inline-block{
+    display: inline-block;
+}
+.text-overflow{    // 超出内容区，显示省略号
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-right: 5px;
 }
-.scroll-y{
+.scroll-y{   //滚动条
     overflow: hidden;
     overflow-y: auto;
 }
 
 .message-box{
     padding: 0px 10px;
-    font-size: nth($font-size,1);
+    font-size: nth($font-size,2);
     color: $font-color;
     line-height: $line-height;
     & .message-title{
-        font-size: nth($font-size,2);
+        font-size: nth($font-size,3);
     }
     & .message-lists{
         border-bottom: 1px solid $border-color;
         & .message-list{
             padding-bottom: 20px;
+            & .el-col{
+                @extend .text-overflow;
+            }
             & .listName{
                 font-weight: bold;
             }
@@ -390,8 +415,32 @@ $titleBorder: #C9C9C9;
 
         padding: 5px 0px;
     }
+    & .btn-inquire{
+        box-sizing: border-box;
+        border: 1px solid $border-color;
+        color: $font-color;
+        padding: 0px 20px;
+        height: $line-height;
+        font-size: nth($font-size,1);
+        border-radius: $border-radius;
+    }
 }
+
 // 修改elm组件样式
+// 弹出框样式修改
+.el-dialog {
+    width: 70%;
+    min-width: $box-width;
+    overflow:auto;
+}
+.el-dialog__header{
+    background: $header-bg-Color;
+    border-bottom: 1px solid $header-border-color;
+}
+.el-dialog__title{
+    font-weight: bold;
+    color: $header-title-color;
+}
 .el-dialog__body{
     padding: 20px;
 }
@@ -401,7 +450,6 @@ $titleBorder: #C9C9C9;
 }
 // 下拉框样式修改
 .el-input__inner{
-    // padding-left:10px;
     border-radius: $border-radius;
     border-color:$border-color;
     height: $line-height;
@@ -410,152 +458,64 @@ $titleBorder: #C9C9C9;
 .el-select:hover .el-input__inner {
     border-color: $border-color;
 }
+// input框样式修改
 .el-input__inner:hover {
     border-color: $border-color;
 }
-
+.el-input__icon{
+    line-height: $line-height;
+}
+.el-input{
+    font-size: nth($font-size,1);
+}
+// 单选框样式修改
 .el-radio__inner{
-    border: 1px solid #737373;
+    border: 1px solid $border-color;
+}
+.el-radio__inner:hover {
+    border-color: $border-color;
 }
 .el-radio__input.is-checked+.el-radio__label {
-    color: #333;
+    color: $font-color;
 }
 .el-radio__input.is-checked .el-radio__inner{
-    border-color: #737373;
-    background: #fff;
+    border-color: $border-color;
+    background: $white-color;
 }
 .el-radio__inner::after {
     width: 6px;
     height: 6px;
     background-color: #000;
 }
-.redColor{
-    color:red;
-    font-size: 12px;
-}
-.el-radio__inner:hover {
-    border-color: #737373;
-}
-.el-dialog__header{
-    background: $titleColor;
-    border-bottom: 1px solid $titleBorder;
-}
-.el-dialog__title{
-    font-weight: bold;
-    color:#515151;
-}
-
-.el-dialog {
-    color:#515151;
-    width: 70%;
-    min-width: 733px!important;
-    overflow:auto;
-}
-</style>
-
-<style>
-.listName{
-    color: #2E343C;
-    font-weight: bold;
-}
-
-
+// 提交框样式修改
 .el-textarea__inner{
-    border: 1px solid #E3E7E9;
-    border-radius: 3px;
+    border: 1px solid $border-area-color;
+    border-radius: $border-radius;
 }
 .el-textarea__inner:focus {
-    border-color: #737373;
+    border-color: $border-color;
 }
-.listSize{
-    color:#2E343C
-}
-
-.yijian{
-    display: inline-block!important;
-}
-.opinionText{
-    margin-top:25px;
-}
-.el-row{
-    color: #2E343C;
-}
-
-/* .el-row>.el-col:first-child{
-    padding-left: 0px!important;
-} */
+// 时间插件修改样式
 .el-range-editor.el-input__inner{
     width: 100%;
+    padding: 3px 6px;
 }
-/* .el-row>.el-col:last-child{
-    padding-right: 0px!important;
-} */
-/* .el-button:focus, .el-button:hover{
-    color: #515151;
-    border-color: #a1a1a1;
-    background-color: #F2F2F2;
-} */
-.message-lists .el-col{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.message-lists h2{
-    display: inline-block;
-}
-.btn-search{
-    float: right;
-    height: 30px;
-    border: 1px solid #A1A1A1;
-    color: #515151;
-    border-radius:3px;
-    line-height: 25px;
-    padding:0px 15px;
-    text-align: center;
-}
-.el-button--medium {
-    padding: 10px 20px;
-    font-size: 14px;
-    border-radius: 3px;
-}
-/* .el-button--success {
-    color: #fff;
-    background-color: rgba(0, 152, 210, 1);
-    border-color: rgba(0, 152, 210, 1);
-}
-.el-button--success:focus, .el-button--success:hover {
-    background: rgba(11, 169, 239, 1);
-    border-color: rgba(11, 169, 239, 1);
-    color: #fff;
-} */
-
-
-
-
-.block .el-input__inner{
-    padding-left:10px;
-    border-radius: 3px;
-    border: 1px solid #707070;
-    color: #333;
-    font-size: inherit;
-    height: 30px;
-    line-height: 30px;
-}
-.el-input__icon{
-    line-height: 30px;
-}
-.el-input{
-    font-size: 12px;
-}
-
 .el-date-editor .el-range-separator{
     line-height: 22px;
-    color:#868686;
+    color: $font-color;
+    padding:0 8px;
 }
 .el-date-editor .el-range__icon{
     line-height: 22px;
 }
 .el-date-editor .el-range-input, .el-date-editor .el-range-separator{
-    font-size:12px;
+    font-size: nth($font-size,1);
+}
+
+
+//暂时
+.redColor{
+    color:red;
+    font-size: nth($font-size,1);
 }
 </style>
