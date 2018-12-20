@@ -2,12 +2,7 @@
     <div style="containers">
         <div class="search-wrap">
              <search-input :searchForm="searchForm" :allTypes = "allTypes" @sendFormData="getFormData">
-               <el-form-item label="媒体:" slot="media">
-                    <el-select v-model="searchForm.media" class="w100"  size="small"  placeholder="请选择媒体">
-                        <el-option label="媒体一" value="shanghai"></el-option>
-                        <el-option label="媒体二" value="beijing"></el-option>
-                    </el-select>
-               </el-form-item>
+              
             </search-input>
         </div>
 
@@ -79,7 +74,6 @@ export default {
                 dateValue: '',
                 keywords: '',
                 checkAll: false,
-                media:'',
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate:true
              },

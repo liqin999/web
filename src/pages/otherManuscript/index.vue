@@ -182,11 +182,11 @@ export default {
 
     },
     methods:{
-        getTreeObj(data){
-
+       getTreeObj(data){//获得树形菜单的对象
+            console.log("获得自组件的点击的节点对象",data)
         },
-        getFormData(data){
-
+        getFormData(data){//搜索表单的选项
+             console.log("获得自组件的搜索框数据",data)
         },
          handleSelectionChange(val) {
              this.multipleSelection = val;
