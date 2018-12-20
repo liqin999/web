@@ -21,6 +21,44 @@
         <div class="rightCon">
            <div class="btnGroup">
                <!-- 引入按钮的组的插件 -->
+                <send-draft :draft="draft">
+                    <span slot="iconName">传稿</span>
+                </send-draft>
+                <issuance>
+                    <span slot="iconName">签发</span>
+                </issuance>
+                <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">审稿</span>
+                    </span> 
+                </div>
+                 <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">淘汰</span>
+                    </span> 
+                </div>
+                 <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">版本</span>
+                    </span> 
+                </div>
+                 <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">编辑</span>
+                    </span> 
+                </div>
+                <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">提交</span>
+                    </span> 
+                </div>
+                <split>
+                        <span slot="iconName">拆分</span>
+                </split>
+                <concat :data="concatData" 
+                            @sendConcatData = "getConcatData"
+                            @sendConcatDataUp = "getConcatDataUp"
+                            @sendConcatDataDown = "getConcatDataDown"
+                            >
+                            <span slot="iconName">合并</span>
+                 </concat>
+
+
            </div>
            <el-table
                 ref="multipleTable"
@@ -65,12 +103,20 @@
     </div>
 </template>
 <script>
+import sendDraft from "@/components/buttons/sendDraft/sendDraft"
+import issuance from "@/components/buttons/issuance/issuance"
 import searchInput from "@/components/searchConditions/searchInput.vue";
 import leftMenu from "@/components/treeMenu/leftTree.vue";
+import split from "@/components/buttons/split/split"
+import concat from "@/components/buttons/concat/concat"
 export default {
     components: {
          searchInput,
-         leftMenu
+         leftMenu,
+          sendDraft,
+          issuance,
+           split,
+           concat,
     },
     data(){
         return{
@@ -142,6 +188,18 @@ export default {
                     }]
                 }
             ],
+             concatData:{
+                    contentShow:false,
+                    tableData: [{
+                        num: '2',
+                        title: '王小虎',
+                    
+                    }, {
+                        num: '3',
+                        title: '王小虎',
+                    
+                    }]
+            },
             defaultProps: {
                 children: 'children',
                 label: 'label'
@@ -196,6 +254,15 @@ export default {
         },
         handleCurrentChange(val){
 
+        },
+         getConcatData(data){//获得合并的元素的参数信息
+            console.log("获得子组件的合并的元素数据",data)
+        },
+        getConcatDataUp(data){//获得合并弹框的上移操作
+             console.log("获得合并子组件弹框的上移操作元素数据",data)
+        },
+        getConcatDataDown(data){//获得合并弹框的下移操作
+              console.log("获得合并子组件弹框的下移操作元素数据",data)
         }
     }
 }
@@ -231,7 +298,9 @@ export default {
     }
     .btnGroup{
         height: 68px;
-        line-height: 68px;
+        padding-top: 15px;
+        padding-left: 15px;
+        box-sizing: border-box;
         border-bottom: 1px solid #ddd;
     }
     .mt10{

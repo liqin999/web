@@ -2,20 +2,63 @@
     <div style="containers">
         <div class="search-wrap">
              <search-input :searchForm="searchForm" :allTypes = "allTypes" @sendFormData="getFormData">
-              
+               <el-form-item label="媒体:" slot="media">
+                    <el-select v-model="searchForm.media" class="w100"  size="small"  placeholder="请选择媒体">
+                        <el-option label="媒体一" value="shanghai"></el-option>
+                        <el-option label="媒体二" value="beijing"></el-option>
+                    </el-select>
+               </el-form-item>
             </search-input>
         </div>
 
 
         <div class="con-wrap">
-
-        <!-- <div class="leftCon">
+        <!-- 
+        <div class="leftCon">
            <left-menu :treeData="data2" :defaultProps="defaultProps" @sendTreeObj="getTreeObj"></left-menu>
         </div> -->
 
         <div class="rightCon">
            <div class="btnGroup">
                <!-- 引入按钮的组的插件 -->
+                <send-draft :draft="draft">
+                    <span slot="iconName">传稿</span>
+                </send-draft>
+                <issuance>
+                    <span slot="iconName">签发</span>
+                </issuance>
+                <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">审稿</span>
+                    </span> 
+                </div>
+                 <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">淘汰</span>
+                    </span> 
+                </div>
+                 <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">版本</span>
+                    </span> 
+                </div>
+                 <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">编辑</span>
+                    </span> 
+                </div>
+                <div data-v-6eb3df45="" class="primary-btn"><span>
+                    <span data-v-6eb3df45="">提交</span>
+                    </span> 
+                </div>
+                <split>
+                        <span slot="iconName">拆分</span>
+                </split>
+                <concat :data="concatData" 
+                            @sendConcatData = "getConcatData"
+                            @sendConcatDataUp = "getConcatDataUp"
+                            @sendConcatDataDown = "getConcatDataDown"
+                            >
+                            <span slot="iconName">合并</span>
+                 </concat>
+
+
            </div>
            <el-table
                 ref="multipleTable"
@@ -60,12 +103,20 @@
     </div>
 </template>
 <script>
+import sendDraft from "@/components/buttons/sendDraft/sendDraft"
+import issuance from "@/components/buttons/issuance/issuance"
 import searchInput from "@/components/searchConditions/searchInput.vue";
-// import leftMenu from "@/components/treeMenu/leftTree.vue";
+import leftMenu from "@/components/treeMenu/leftTree.vue";
+import split from "@/components/buttons/split/split"
+import concat from "@/components/buttons/concat/concat"
 export default {
     components: {
          searchInput,
-        //  leftMenu
+         leftMenu,
+          sendDraft,
+          issuance,
+           split,
+           concat,
     },
     data(){
         return{
@@ -74,66 +125,85 @@ export default {
                 dateValue: '',
                 keywords: '',
                 checkAll: false,
+                media:'',
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate:true
              },
              allTypes: ['文本', '图片','图表','视频','音频','应用'],
-            //  data2: [
-            //     {
-            //     id: 1,
-            //     label: '新华每日电讯',
-            //     children: [
-            //             {
-            //             id: 4,
-            //             label: '电讯领导',
-            //             children: [{
-            //                         id: 9,
-            //                         label: '方立新'
-            //                     }, {
-            //                         id: 10,
-            //                         label: '李仁虎'
-            //                     }]
-            //             },
-            //              {
-            //                 id: 7,
-            //                 label: '总编室',
-            //                 children: [{
-            //                             id: 12,
-            //                             label: '留学室'
-            //                         }, {
-            //                             id: 13,
-            //                             label: '卢刚'
-            //                         }]
-            //             }
-            //          ]
-            //     },
-            //     {
-            //         id: 2,
-            //         label: '一级 2',
-            //         children: [{
-            //             id: 5,
-            //             label: '二级 2-1'
-            //         }, {
-            //             id: 6,
-            //             label: '二级 2-2'
-            //         }]
-            //         },
-            //     {
-            //     id: 3,
-            //     label: '一级 3',
-            //         children: [{
-            //             id: 7,
-            //             label: '二级 3-1'
-            //         }, {
-            //             id: 8,
-            //             label: '二级 3-2'
-            //         }]
-            //     }
-            // ],
-            // defaultProps: {
-            //     children: 'children',
-            //     label: 'label'
-            // },
+             data2: [
+                {
+                id: 1,
+                label: '新华每日电讯',
+                children: [
+                        {
+                        id: 4,
+                        label: '电讯领导',
+                        children: [{
+                                    id: 9,
+                                    label: '方立新',
+                                    icon:'iconfont icon-file-b- ft-ffd658',
+                                }, {
+                                    id: 10,
+                                    label: '李仁虎',
+                                    icon:'iconfont icon-file-b- ft-ffd658'
+
+                                }]
+                        },
+                         {
+                            id: 7,
+                            label: '总编室',
+                            children: [{
+                                        id: 12,
+                                        label: '留学室',
+                                         icon:'iconfont icon-file1'
+
+                                    }, {
+                                        id: 13,
+                                        label: '卢刚',
+                                         icon:'iconfont icon-file1'
+                                    }]
+                        }
+                     ]
+                },
+                {
+                    id: 2,
+                    label: '一级 2',
+                    children: [{
+                        id: 5,
+                        label: '二级 2-1'
+                    }, {
+                        id: 6,
+                        label: '二级 2-2'
+                    }]
+                    },
+                {
+                id: 3,
+                label: '一级 3',
+                    children: [{
+                        id: 7,
+                        label: '二级 3-1'
+                    }, {
+                        id: 8,
+                        label: '二级 3-2'
+                    }]
+                }
+            ],
+             concatData:{
+                    contentShow:false,
+                    tableData: [{
+                        num: '2',
+                        title: '王小虎',
+                    
+                    }, {
+                        num: '3',
+                        title: '王小虎',
+                    
+                    }]
+            },
+            defaultProps: {
+                children: 'children',
+                label: 'label'
+            },
              tableData3: [{
                 date: '2016-05-03',
                 name: '王小虎',
@@ -170,11 +240,11 @@ export default {
 
     },
     methods:{
-        // getTreeObj(data){
-
-        // },
-        getFormData(data){
-
+       getTreeObj(data){//获得树形菜单的对象
+            console.log("获得自组件的点击的节点对象",data)
+        },
+        getFormData(data){//搜索表单的选项
+             console.log("获得自组件的搜索框数据",data)
         },
          handleSelectionChange(val) {
              this.multipleSelection = val;
@@ -184,6 +254,15 @@ export default {
         },
         handleCurrentChange(val){
 
+        },
+         getConcatData(data){//获得合并的元素的参数信息
+            console.log("获得子组件的合并的元素数据",data)
+        },
+        getConcatDataUp(data){//获得合并弹框的上移操作
+             console.log("获得合并子组件弹框的上移操作元素数据",data)
+        },
+        getConcatDataDown(data){//获得合并弹框的下移操作
+              console.log("获得合并子组件弹框的下移操作元素数据",data)
         }
     }
 }
@@ -207,7 +286,7 @@ export default {
         width: 250px;
         background-color: #fff;
         border-right:1px solid #ddd;
-         border-top:1px solid #ddd;
+        border-top:1px solid #ddd;
         height: calc(100vh - 90px);
         margin-right: 10px;
     }
@@ -219,7 +298,9 @@ export default {
     }
     .btnGroup{
         height: 68px;
-        line-height: 68px;
+        padding-top: 15px;
+        padding-left: 15px;
+        box-sizing: border-box;
         border-bottom: 1px solid #ddd;
     }
     .mt10{
