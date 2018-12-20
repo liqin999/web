@@ -107,7 +107,6 @@ export default {
                         label: '二级 2-2'
                     }]
                     },
-<<<<<<< HEAD
                 {
                 id: 3,
                 label: '一级 3',
@@ -137,36 +136,9 @@ export default {
                     size: '329084字'
                 }
             ]
-=======
-                     {
-                        id: 2,
-                        label: '一级 2',
-                        children: [{
-                            id: 5,
-                            label: '二级 2-1'
-                        }, {
-                            id: 6,
-                            label: '二级 2-2'
-                        }]
-                        },
-                   {
-                    id: 3,
-                    label: '一级 3',
-                        children: [{
-                            id: 7,
-                            label: '二级 3-1'
-                        }, {
-                            id: 8,
-                            label: '二级 3-2'
-                        }]
-                    }
-                 ],
-                 defaultProps: {
-                    children: 'children',
-                    label: 'label'
-                 }
+                    
 
->>>>>>> 350ee63a3121ba62d323e22ee542af5a91c3eb0f
+
         }
     },
     mounted(){
