@@ -47,7 +47,7 @@
                     <span data-v-6eb3df45="">提交</span>
                     </span> 
                 </div>
-                <split>
+                <!-- <split>
                         <span slot="iconName">拆分</span>
                 </split>
                 <concat :data="concatData" 
@@ -56,7 +56,7 @@
                             @sendConcatDataDown = "getConcatDataDown"
                             >
                             <span slot="iconName">合并</span>
-                 </concat>
+                 </concat> -->
 
 
            </div>
