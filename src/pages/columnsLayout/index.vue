@@ -56,7 +56,20 @@ export default {
     },
     data(){
         return{
-             concatData:{
+            // 传稿参数
+            draft: [
+                {
+                    title: '23728784374374372983982378478refergege',
+                    name: '西虹市首富',
+                    size: '329084字'
+                },
+                {
+                    title: '23728784374374372983982378478refergege',
+                    name: '西虹市首富',
+                    size: '329084字'
+                }
+            ],
+            concatData:{
                     contentShow:false,
                     tableData: [{
                         num: '2',
@@ -107,37 +120,6 @@ export default {
                         label: '二级 2-2'
                     }]
                     },
-<<<<<<< HEAD
-                {
-                id: 3,
-                label: '一级 3',
-                    children: [{
-                        id: 7,
-                        label: '二级 3-1'
-                    }, {
-                        id: 8,
-                        label: '二级 3-2'
-                    }]
-                }
-            ],
-            defaultProps: {
-                children: 'children',
-                label: 'label'
-            },
-            // 传稿参数
-            draft: [
-                {
-                    title: '23728784374374372983982378478refergege',
-                    name: '西虹市首富',
-                    size: '329084字'
-                },
-                {
-                    title: '23728784374374372983982378478refergege',
-                    name: '西虹市首富',
-                    size: '329084字'
-                }
-            ]
-=======
                      {
                         id: 2,
                         label: '一级 2',
@@ -166,7 +148,6 @@ export default {
                     label: 'label'
                  }
 
->>>>>>> 350ee63a3121ba62d323e22ee542af5a91c3eb0f
         }
     },
     mounted(){

@@ -6,10 +6,12 @@
             <el-row :gutter="20" class="message-list clearfix">
                 <el-col :span="4"><b class="font-h1">待传稿件</b></el-col>
                 <el-col :span="20">
-                    <template v-for="item in draftData.draftList">
-                        <el-col :span="9"><i></i>{{ item.title }}</el-col>
-                        <el-col :span="9">{{ item.name }}</el-col>
-                        <el-col :span="6">{{ item.size }}</el-col>
+                    <template v-for="(item,index) in draftData.draftList">
+                        <div :key="index">
+                            <el-col :span="9"><i></i>{{ item.title }}</el-col>
+                            <el-col :span="9">{{ item.name }}</el-col>
+                            <el-col :span="6">{{ item.size }}</el-col>
+                        </div>
                     </template>
                 </el-col>
             </el-row>
