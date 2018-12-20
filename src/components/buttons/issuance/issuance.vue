@@ -1,5 +1,5 @@
 <template>
-    <div class="btn">
+    <div class="primary-btn">
         <span @click="issuanceIcon()">
             <!-- <i class="el-icon-ump-gaojian-zhaiyao"></i> -->
             <slot name="iconName"></slot>
@@ -7,7 +7,8 @@
         <!-- 签发弹框 -->
         <issuance-message-box
             ref="issuanceBox"
-            :issuanceData="issuanceData"></issuance-message-box>
+            :issuanceData="issuanceData">
+        </issuance-message-box>
     </div>
 </template>
 
@@ -40,8 +41,5 @@ export default {
 </script>
 
 <style>
-.btn span{
-    cursor: pointer;
-}
 </style>
 

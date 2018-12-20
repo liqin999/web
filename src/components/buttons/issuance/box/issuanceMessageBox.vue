@@ -3,15 +3,15 @@
         <!-- 内容区 -->
         <div class="message-box clearfix">
             <!-- 签发信息 -->
-            <el-row :gutter="20" class="clearfix">
-                <el-col :span="3"><b class="font-h1">签发信息</b></el-col>
+            <el-row :gutter="20" class="clearfix row-bottom">
+                <el-col :span="3"><b class="message-title">签发信息</b></el-col>
                 <el-col :span="21">
                     <template v-for="item in radioLabel">
-                        <el-radio v-model="radioName" :label="item" :key="item">{{ item }}</el-radio>
+                        <el-radio class="marginBottom" v-model="radioName" :label="item" :key="item">{{ item }}</el-radio>
                     </template>
-                    <el-row>
+                    <el-row class="clearfix">
                         <!-- 处理时间 -->
-                        <el-col :span="8">
+                        <el-col :span="8" class="chooseTime">
                             <template>
                                 <div class="block">
                                     <span class="demonstration">处理时间</span>
@@ -25,9 +25,9 @@
                             </template>
                         </el-col>
                         <!-- 刊发位次 -->
-                        <el-col :span="6">
+                        <el-col :span="6" class="timesChoose">
                             <template>
-                                <span>刊发位次</span>
+                                <span class="demonstration">刊发位次</span>
                                 <el-select v-model="kanfaValue" class="select-float">
                                     <el-option
                                         v-for="item in kanfaData"
@@ -52,86 +52,182 @@
                 </el-col>
             </el-row>
             <!-- 字体和字号 -->
-            <el-row :gutter="20" class="clearfix">
-                <el-col :span="3"><b class="font-h1">字体和字号</b></el-col>
+            <el-row :gutter="20" class="clearfix row-bottom">
+                <el-col :span="3"><b class="message-title">字体和字号</b></el-col>
                 <el-col :span="21">
-                    <el-row>
-                        <el-col :span="21" :offset="3">
-                            <el-col :span="8"><span>字体和字号</span></el-col>
-                            <el-col :span="8"><span>字体和字号</span></el-col>
-                            <el-col :span="8"><span>字体和字号</span></el-col>
-                        </el-col>
+                    <el-row :gutter="20" class="row-bottom">
+                        <div>
+                            <el-col :span="18" :offset="3">
+                                <el-col :span="8" class="title-center"><span>标题字体</span></el-col>
+                                <el-col :span="8" class="title-center"><span>横向字号</span></el-col>
+                                <el-col :span="8" class="title-center"><span>纵向字号</span></el-col>
+                            </el-col>
+                        </div>
                     </el-row>
-                    <el-row>
-                        <el-col :span="3">
-                            <template>
-                                <el-checkbox v-model="checked">备选项</el-checkbox>
-                            </template>
-                        </el-col>
-                        <el-col :span="7">
-                            <template>
-                                <el-select v-model="fontValue">
-                                    <el-option
-                                        v-for="item in fontData"
-                                        :key="item"
-                                        :label="item"
-                                        :value="item">
-                                    </el-option>
-                                </el-select>
-                            </template>
-                        </el-col>
-                        <el-col :span="7">
-                            <template>
-                                <el-select v-model="fontValue">
-                                    <el-option
-                                        v-for="item in fontData"
-                                        :key="item"
-                                        :label="item"
-                                        :value="item">
-                                    </el-option>
-                                </el-select>
-                            </template>
-                        </el-col>
-                        <el-col :span="7">
-                            <template>
-                                <el-select v-model="fontValue">
-                                    <el-option
-                                        v-for="item in fontData"
-                                        :key="item"
-                                        :label="item"
-                                        :value="item">
-                                    </el-option>
-                                </el-select>
-                            </template>
-                        </el-col>
+                    <el-row :gutter="20" class="select-row row-bottom">
+                        <div>
+                            <el-col :span="3">
+                                <template>
+                                    <el-checkbox v-model="checked">备选项</el-checkbox>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                        </div>
+                    </el-row>
+                    <el-row :gutter="20" class="select-row row-bottom">
+                        <div>
+                            <el-col :span="3">
+                                <template>
+                                    <el-checkbox v-model="checked">备选项</el-checkbox>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                        </div>
+                    </el-row>
+                    <el-row :gutter="20" class="select-row row-bottom">
+                        <div>
+                            <el-col :span="3">
+                                <template>
+                                    <el-checkbox v-model="checked">备选项</el-checkbox>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue">
+                                        <el-option
+                                            v-for="item in fontData"
+                                            :key="item"
+                                            :label="item"
+                                            :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                        </div>
                     </el-row>
                 </el-col>
             </el-row>
             <!-- 签发目标 -->
             <el-row :gutter="20">
-                <el-col :span="3"><b class="font-h1">签发目标</b></el-col>
+                <el-col :span="3"><b class="message-title">签发目标</b></el-col>
                 <el-col :span="21">
-                    <el-col :span="8">
-                        <el-input
-                            type="textarea"
-                            :rows="12"
-                            placeholder="请输入内容"
-                            v-model="textarea"
-                            @change="textareaChange">
-                        </el-input>
-                    </el-col>
-                    <el-col :span="16">
-                        <el-col :span="5"><b class="font-h1">签发意见</b></el-col>
-                        <el-col :span="19">
+                    <el-row>
+                        <el-col :span="8">
                             <el-input
-                                type="textarea2"
-                                :rows="8"
+                                type="textarea"
+                                :rows="12"
                                 placeholder="请输入内容"
-                                v-model="textarea2"
-                                @change="textareaChange2">
+                                v-model="textarea"
+                                @change="textareaChange">
                             </el-input>
                         </el-col>
-                    </el-col>
+                        <el-col :span="16">
+                            <el-col :span="5" class="title-left"><b class="message-title">签发意见</b></el-col>
+                            <el-col :span="19">
+                                <el-input
+                                    type="textarea"
+                                    :rows="8"
+                                    placeholder="请输入内容"
+                                    v-model="textarea2"
+                                    @change="textareaChange2">
+                                </el-input>
+                            </el-col>
+                        </el-col>
+                    </el-row>
                 </el-col>
             </el-row>
         </div>
@@ -196,56 +292,58 @@ export default {
 </script>
 
 <style>
-.message-box{
-    padding:0 10px;
+.marginBottom{
+    margin-bottom:10px;
 }
-.el-row{
-    padding-bottom: 20px;
-}
-.title-bottom{
-    display: block;
-    padding-bottom: 10px;
-}
-.el-row .el-col:first-child{
-    padding-left: 0px!important;
-}
-.el-range-editor.el-input__inner{
-    width: 100%;
-}
-.el-row .el-col:last-child{
-    padding-right: 0px!important;
-}
-.message-list .el-col{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.message-list h2{
-    display: inline-block;
-}
-.btn-search{
-    width: 100%;
-}
-.font-h1{
+.title-center{
     font-size: 16px;
+    text-align: center;
 }
-.radio-label{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding-right: 10px;
+.el-col .title-center:first-child{
+    padding-left:0px!important;
 }
-.message-checkbox{
-    border: 1px solid #ccc;
-    padding: 20px;
+.chooseTime .el-date-editor.el-input,.chooseTime .el-date-editor.el-input__inner{
+    width: 150px;
+    margin-left: 10px;
 }
-.select-float{
-    width: 60%;
+.chooseTime .block .el-input__inner{
+    padding-left: 30px;
 }
-.block{
+.timesChoose .el-input{
+    width: 55px;
+    
+}
+.timesChoose .el-select{
+    float: right;
+    margin-right:10px;
+}
+.timesChoose .demonstration{
+    line-height: 30px;
+    padding-left:25px;
+}
+.el-select .el-input__inner:focus{
+    border-color: #707070;
+}
+.el-select .el-input.is-focus .el-input__inner {
+    border-color: #707070;
+}
+.row-bottom{
+    margin-bottom: 15px;
+}
+.select-row .el-select{
     width: 100%;
 }
-.el-date-editor.el-input, .el-date-editor.el-input__inner{
-    width: 70%;
+.el-checkbox-group{
+    line-height: 30px;
+    height: 30px;
+    padding-left: 10px;
+}
+.select-row .el-input__inner {
+    border: 1px solid #BCBCBC;
+    color: #6D6D6D;
+    background: #E5E5E5;
+}
+.title-left{
+    padding-left:15px;
 }
 </style>

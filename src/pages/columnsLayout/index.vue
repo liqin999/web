@@ -62,11 +62,6 @@ export default {
                     title: '23728784374374372983982378478refergege',
                     name: '西虹市首富',
                     size: '329084字'
-                },
-                {
-                    title: '23728784374374372983982378478refergege',
-                    name: '西虹市首富',
-                    size: '329084字'
                 }
             ],
             concatData:{
