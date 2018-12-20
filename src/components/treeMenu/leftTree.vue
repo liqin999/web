@@ -94,6 +94,11 @@ export default {
     .ft-ffd658{
         color:#ffd658
     }
+    .custom-tree-node{
+        .iconfont {
+            margin-right: 5px;
+        }
+    }
     
 </style>
 
