@@ -120,6 +120,7 @@ export default {
     },
     data(){
         return{
+            draft:[],
              currentPage:1,
              searchForm: {
                 dateValue: '',
@@ -189,12 +190,30 @@ export default {
              concatData:{
                     contentShow:false,
                     tableData: [{
+                        num: '1',
+                        title: '王小虎1',
+                    
+                    },{
                         num: '2',
-                        title: '王小虎',
+                        title: '王小虎2',
                     
                     }, {
                         num: '3',
-                        title: '王小虎',
+                        title: '王小虎3',
+                    
+                    },
+                    {
+                        num: '4',
+                        title: '王小虎4',
+                    
+                    }, {
+                        num: '5',
+                        title: '王小虎5',
+                    
+                    },
+                    {
+                        num: '6',
+                        title: '王小虎6',
                     
                     }]
             },

@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
     <div class="primary-btn">
+=======
+    <div class="btn primary-btn">
+>>>>>>> 7aeb5b9c2d105d025069c3177bfcd1720d3f5e8f
         <span @click="sendConcatIcon">
             <slot name="iconName"></slot>
         </span>

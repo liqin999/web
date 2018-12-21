@@ -47,7 +47,7 @@
                     <span data-v-6eb3df45="">提交</span>
                     </span> 
                 </div>
-                <split>
+                <!-- <split>
                         <span slot="iconName">拆分</span>
                 </split>
                 <concat :data="concatData" 
@@ -56,7 +56,7 @@
                             @sendConcatDataDown = "getConcatDataDown"
                             >
                             <span slot="iconName">合并</span>
-                 </concat>
+                 </concat> -->
 
 
            </div>
@@ -120,6 +120,7 @@ export default {
     },
     data(){
         return{
+            draft:[],
              currentPage:1,
              searchForm: {
                 dateValue: '',
@@ -165,28 +166,28 @@ export default {
                         }
                      ]
                 },
-                {
-                    id: 2,
-                    label: '一级 2',
-                    children: [{
-                        id: 5,
-                        label: '二级 2-1'
-                    }, {
-                        id: 6,
-                        label: '二级 2-2'
-                    }]
-                    },
-                {
-                id: 3,
-                label: '一级 3',
-                    children: [{
-                        id: 7,
-                        label: '二级 3-1'
-                    }, {
-                        id: 8,
-                        label: '二级 3-2'
-                    }]
-                }
+                // {
+                //     id: 2,
+                //     label: '一级 2',
+                //     children: [{
+                //         id: 5,
+                //         label: '二级 2-1'
+                //     }, {
+                //         id: 6,
+                //         label: '二级 2-2'
+                //     }]
+                //     },
+                // {
+                // id: 3,
+                // label: '一级 3',
+                //     children: [{
+                //         id: 7,
+                //         label: '二级 3-1'
+                //     }, {
+                //         id: 8,
+                //         label: '二级 3-2'
+                //     }]
+                // }
             ],
              concatData:{
                     contentShow:false,
