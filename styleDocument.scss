@@ -1,0 +1,261 @@
+// 定义全局样式变量
+$primary-color: rgba(0, 152, 210, 1) rgba(11, 169, 239, 1);    //系统色调 默认、hover状态 
+$font-color:#333 !default;   //字体颜色（默认）
+$white-color: #fff;          //白色
+$font-size:12px 14px 16px;      //字体大小
+$border-color:#737373 !default;   //边框颜色（默认）
+$border-area-color:#E3E7E9;  //浅色边框颜色（用于文本框）
+$border-radius: 3px;                //边角弧度
+$line-height:30px !default;       //行高（默认）
+$pointer: pointer;             //hover状态 鼠标pointer
+
+// elm 弹出框样式定义变量
+$header-bg-Color: #F2F2F2; //头部背景色颜色
+$header-border-color: #C9C9C9;  //头部下边框颜色
+$header-title-color: #515151;  //头部标题颜色
+$box-width:733px;     //定义弹出框最小宽度
+
+// 公共样式应用
+// 清除浮动  加类.clearfix
+// margin  标准15px
+    .mb15{     //margin-bottom:15px;
+        margin-bottom:15px;
+    }
+    .mt15{    // padding-bottom: 10px;
+        margin-top:15px;
+    }
+// padding  标准10px
+    .tab-padding{       // 强制缩进 padding-left: 0px
+        padding-left: 0px!important;    
+    }
+    .pr10{     // padding-right: 10px;
+        padding-right: 10px;
+    }
+    .pb10{   // padding-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    .pt10{    // padding-top: 10px;
+        padding-top:10px;
+    }
+    .pl10{    // padding-left: 10px;
+        padding-top:10px;
+    }
+// margin padding 混合宏 传值 mOp = margin or padding 默认为0
+    @mixin mar-pad($mOp, $top:0px, $right:0px, $bottom:0px, $left:0px) {
+        #{$mOp}: $top $right $bottom $left;
+    }
+    // 用法示例
+    .el-textarea{
+        @include mar-pad(padding,23px,24px,45px,89px);  //设置padding各边距
+        @include mar-pad(margin,23px,24px,45px,89px);   //设置margin各边距
+    }
+    .el-textarea{
+        @include mar-pad(padding,24px,89px);   //设置padding各边距 padding: 24px 89px 0px 0px;
+        @include mar-pad(margin);     //设置margin各边距 margin: 0px 0px 0px 0px;
+    }
+    
+
+// 边框样式颜色宽度设置
+    // 默认border-bottom  若$option = all 则设置整个边框
+    @mixin border($option: bottom, $width:1px, $style:solid, $color:$border-color) {
+        @if $option == all {
+            border: $width $style $color;
+        } @else {
+            border-#{$option}: $width $style $color;
+        }
+    }
+    // 示例
+    .el-textarea{
+        @include border;    // border-bottom: 1px solid #737373;
+        @include border(all,3px, solid, $border-color);  // border: 3px solid #737373;
+        @include border(bottom,3px, solid, $border-color);
+    }
+
+// 滚动条样式设置
+    %scroll{
+        &::-webkit-scrollbar{
+            width: 6px;
+            height: 6px;
+        }
+        &::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background: nth($primary-color,1);
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+        }
+    }
+    .scroll-y{   //纵向滚动条
+        overflow: hidden;
+        overflow-y: auto;
+        @extend %scroll;
+    }
+    .scroll-x{   //横向滚动条
+        overflow: hidden;
+        overflow-x: auto;
+        @extend %scroll;
+    }
+    // 示例
+    .el-textarea{
+        @extend .scroll-y;   //纵向滚动条
+    }
+
+// 文本、字体、省略号等样式设置
+    .text-overflow{    // 超出内容区，显示省略号
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    // 用法 1、直接加类.text-overflow  或者 @extend .text-overflow;
+    @mixin text-option($option){
+        text-align: $option;
+    }
+    // 文字居中显示  直接加类 .text-center
+    .text-center{
+        @include text-option(center);
+    }
+    // 文字居右显示  直接加类 .text-right
+    .text-right{
+        @include text-option(right);
+    }
+    // 字体设置
+    .font12{
+        font-size: nth($font-size,1)
+    }
+    .font14{
+        font-size: nth($font-size,2)
+    }
+    .font16{
+        font-size: nth($font-size,3)
+    }
+    .font18{
+        font-size: nth($font-size,3)
+    }
+    // 用法  直接加类.font12   或者设置font-size: nth($font-size,3)  或者 @extend .font12
+
+// 组件按钮样式设置 用法直接加类 .primary-btn（确定）.reset-btn（取消）
+    .primary-btn{
+        background: nth($primary-color,1);
+        border-radius: $border-radius;
+        border-color: nth($primary-color,1);
+        cursor: $pointer;
+        color: $white-color;
+        font-size: nth($font-size,2);
+        display: inline-block;
+        margin-right: 5px;
+        padding: 8px 15px;
+
+        //hover状态
+        &:hover{
+            background: nth($primary-color,2);
+            border-color: nth($primary-color,2);
+            color: $white-color;
+        }
+    }
+    // 取消按钮样式
+    .reset-btn{
+        background: $white-color;
+        border-radius: $border-radius;
+        border-color: nth($primary-color,1);
+        cursor: $pointer;
+        color: nth($primary-color,1);
+
+        display: inline-block;
+        margin-right: 5px;
+        padding: 8px 15px;
+
+        //hover状态
+        &:hover{
+            border-color: nth($primary-color,2);
+            color: nth($primary-color,2);
+        }
+    }
+
+// 修改elm组件样式（待定）
+// 弹出框样式修改
+.el-dialog {
+    width: 70%;
+    min-width: $box-width;
+    @extend .scroll-x;
+    @extend .scroll-y;
+}
+.el-dialog__header{
+    background: $header-bg-Color;
+    border-bottom: 1px solid $header-border-color;
+}
+.el-dialog__title{
+    font-weight: bold;
+    color: $header-title-color;
+}
+.el-dialog__body{
+    padding: 20px;
+}
+// 单选框修改
+.el-radio__label{
+    padding-left: 5px;
+}
+// 下拉框样式修改
+.el-input__inner{
+    border-radius: $border-radius;
+    border-color:$border-color;
+    height: $line-height;
+    line-height: $line-height;
+}
+.el-select:hover .el-input__inner {
+    border-color: $border-color;
+}
+// input框样式修改
+.el-input__inner:hover {
+    border-color: $border-color;
+}
+.el-input__icon{
+    line-height: $line-height;
+}
+.el-input{
+    font-size: nth($font-size,1);
+}
+// 单选框样式修改
+.el-radio__inner{
+    border: 1px solid $border-color;
+}
+.el-radio__inner:hover {
+    border-color: $border-color;
+}
+.el-radio__input.is-checked+.el-radio__label {
+    color: $font-color;
+}
+.el-radio__input.is-checked .el-radio__inner{
+    border-color: $border-color;
+    background: $white-color;
+}
+.el-radio__inner::after {
+    width: 6px;
+    height: 6px;
+    background-color: #000;
+}
+// 提交框样式修改
+.el-textarea__inner{
+    border: 1px solid $border-area-color;
+    border-radius: $border-radius;
+}
+.el-textarea__inner:focus {
+    border-color: $border-color;
+}
+// 时间插件修改样式
+.el-range-editor.el-input__inner{
+    width: 100%;
+    padding: 3px 6px;
+}
+.el-date-editor .el-range-separator{
+    line-height: 22px;
+    color: $font-color;
+    padding:0 8px;
+}
+.el-date-editor .el-range__icon{
+    line-height: 22px;
+}
+.el-date-editor .el-range-input, .el-date-editor .el-range-separator{
+    font-size: nth($font-size,1);
+}
+
+

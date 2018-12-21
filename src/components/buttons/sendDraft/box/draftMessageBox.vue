@@ -89,6 +89,7 @@
                                         start-placeholder="开始日期"
                                         end-placeholder="结束日期"
                                         :picker-options="pickerOptions"
+                                        :clearable='false'
                                         @change="pickerChange">
                                     </el-date-picker>
                                 </div>
@@ -379,10 +380,6 @@ $box-width:733px;     //定义弹出框最小宽度
     white-space: nowrap;
     padding-right: 5px;
 }
-.scroll-y{   //滚动条
-    overflow: hidden;
-    overflow-y: auto;
-}
 
 .message-box{
     padding: 0px 10px;
@@ -405,10 +402,13 @@ $box-width:733px;     //定义弹出框最小宽度
         }
     }
 }
+
+
+
 .message-content{
     padding: 20px 0px;
     & .message-checkbox{
-        @extend .scroll-y;
+        // @extend .scroll-y;
         height: 290px;  
         border: 1px solid $border-area-color;
         border-radius: $border-radius;
@@ -517,5 +517,16 @@ $box-width:733px;     //定义弹出框最小宽度
 .redColor{
     color:red;
     font-size: nth($font-size,1);
+}
+
+@mixin border($option: bottom, $width:1px, $style:solid, $color:$border-color) {
+        @if $option == all {
+            border: $width $style $color;
+        } @else {
+            border-#{$option}: $width $style $color;
+        } 
+    }
+.el-textarea{
+    @include border(all,3px);
 }
 </style>

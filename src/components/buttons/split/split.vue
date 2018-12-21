@@ -1,11 +1,6 @@
 <template>
-<<<<<<< HEAD
     <div class="primary-btn">
-=======
-    <div class="btn primary-btn">
->>>>>>> b14a38ec8881205d53d49cbb1716aaf5c5b6019a
         <span @click="sendSplitIcon">
-            <i class="el-icon-ump-gaojian-zhaiyao"></i>
             <slot name="iconName"></slot>
         </span>
         <!-- 拆分按钮 -->

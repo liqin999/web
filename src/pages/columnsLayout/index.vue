@@ -1,5 +1,5 @@
 <template>
-    <div style="containers">
+    <div class="clearfix">
         <div class="search-wrap">
              <search-input :searchForm="searchForm" :allTypes = "allTypes" @sendFormData="getFormData">
                <el-form-item label="媒体:" slot="media">
@@ -21,7 +21,7 @@
         <div class="rightCon">
            <div class="btnGroup">
                <!-- 引入按钮的组的插件 -->
-                <send-draft :draft="draft">
+                <send-draft>
                     <span slot="iconName">传稿</span>
                 </send-draft>
                 <issuance>
@@ -266,12 +266,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-   .containers:after{
-            display: block;
-            content:'';
-            clear: both;
-            visibility: hidden;
-   }
+//    .containers:after{
+//         display: block;
+//         content:'';
+//         clear: both;
+//         visibility: hidden;
+//    }
     .search-wrap{
         padding-top: 10px;
         height: 50px;
