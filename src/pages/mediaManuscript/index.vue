@@ -120,6 +120,7 @@ export default {
     },
     data(){
         return{
+            draft:[],
              currentPage:1,
              searchForm: {
                 dateValue: '',
