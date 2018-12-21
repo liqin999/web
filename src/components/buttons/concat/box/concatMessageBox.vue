@@ -7,13 +7,14 @@
             <el-col :span="24">
                 <div class="grid-content bg-purple">
                          <div>
-                             <el-button type="text">上移</el-button>
-                             <el-button type="text">下移</el-button>
-                             <el-button type="text">移除</el-button>
+                             <el-button type="text" @click="handleMoreUpClick" >上移</el-button>
+                             <el-button type="text" @click="handleMoreDownClick" >下移</el-button>
+                             <el-button type="text" @click="removeSelection">移除</el-button>
                          </div>
                          <template>
                          <el-table
                             :data="concatData.tableData"
+                            ref="multipleTable"
                              @selection-change="handleSelectionChange"
                             style="width: 100%">
                             <el-table-column
@@ -35,8 +36,8 @@
                                 prop="fontNum"
                                 label="操作">
                                    <template slot-scope="scope">
-                                        <el-button @click="handleUpClick(scope.row)" type="text" size="small">上移</el-button>
-                                        <el-button @click="handleDownClick(scope.row)" type="text" size="small">下移</el-button>
+                                       <i v-if="scope.$index > 0" @click="handleUpClick(scope.$index)" class="iconfont icon-shangyi cursorPointer"></i>
+                                       <i v-if="scope.$index < concatData.tableData.length -1"  @click="handleDownClick(scope.$index)" class="iconfont icon-xiayi cursorPointer"></i>
                                     </template>
                             </el-table-column>
                         </el-table>
@@ -77,17 +78,39 @@ export default {
         concatConfirm(){//确认按钮
             this.$emit("sendConcatData",this.multipleSelection)
         },
-        handleUpClick(row){//上移
-             this.$emit("sendConcatDataUp",row)
+        handleUpClick(index){//上移
+               let temp = this.concatData.tableData[index-1];
+               this.$set(this.concatData.tableData, index-1, this.concatData.tableData[index])
+               this.$set(this.concatData.tableData, index, temp)
+            //  this.$emit("sendConcatDataUp",row)
         },
-        handleDownClick(row){//下移
-            this.$emit("sendConcatDataDown",row)
+        handleDownClick(index){//下移
+               let i = this.concatData.tableData[index+1];
+               this.$set(this.concatData.tableData, index+1, this.concatData.tableData[index])
+               this.$set(this.concatData.tableData, index, i)
+            //  this.$emit("sendConcatDataDown",row)
+          
         },
          handleSelectionChange(val) {//多选的操作
-        
             this.multipleSelection = val;
-        }
-
+        },
+        removeSelection(){//移除选中的项
+             this.$refs.multipleTable.clearSelection();
+        },
+        handleMoreUpClick(){//批量的上移
+            this.multipleSelection.forEach((item,index)=>{
+               let _index = this.concatData.tableData.indexOf(item);
+               this.concatData.tableData.splice(_index,1);
+               this.concatData.tableData.unshift(item)
+            })
+        },
+        handleMoreDownClick(){//批量的上移
+            this.multipleSelection.forEach((item,index)=>{
+               let _index = this.concatData.tableData.indexOf(item);
+               this.concatData.tableData.splice(_index,1);
+               this.concatData.tableData.push(item)
+            })
+        },
     }
 }
 </script>
@@ -98,6 +121,9 @@ export default {
     }
     .el-row{
         padding-bottom: 20px;
+    }
+    .cursorPointer{
+        cursor: pointer;
     }
 </style>
 <style lang="scss">
