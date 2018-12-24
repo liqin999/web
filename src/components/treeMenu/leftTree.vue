@@ -41,49 +41,42 @@ export default {
                     label: 'label'
                 }
             }
-
+        },
+        showSearch: {
+            type: Boolean,
+            default: function () {
+                return true
+            }
         }
     },
     components: {
 
     },
-    showSearch: {
-        type: Boolean,
-        default: function () {
-            return true
+    data () {
+        return {
+            filterText: ''
         }
     },
-    defaultProps: {
-        type: Object,
-        default: function () {
-            return {
-                filterText: ''
-            }
-        },
-        mounted () {
+    mounted () {
 
+    },
+    methods: {
+        filterNode (value, data) { // 过滤节点
+            if (!value) return true
+            return data.label.indexOf(value) !== -1
         },
-        methods: {
-            filterNode (value, data) { // 过滤节点
-                if (!value) return true
-                return data.label.indexOf(value) !== -1
-            },
-            handleNodeClick (data) { // 获得点击节点的对象
-                this.$emit('sendTreeObj', data)
-            }
-        },
-        watch: {
-            filterText (val) { // 过滤节点
-                this.$refs.tree2.filter(val)
-            }
+        handleNodeClick (data) { // 获得点击节点的对象
+            this.$emit('sendTreeObj', data)
         }
-
+    },
+    watch: {
+        filterText (val) { // 过滤节点
+            this.$refs.tree2.filter(val)
+        }
     }
 }
 </script>
-<style lang="scss" scoped>
-</style>
-<style  lang="scss">
+<style  lang="scss" scoped>
 .tree-wrap {
     padding: 10px;
     .filter-tree {
