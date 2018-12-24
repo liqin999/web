@@ -1,11 +1,13 @@
 <template>
   <div class="tree-wrap">
     <el-input class="tree-search"
+              v-if="showSearch"
               placeholder="输入关键字进行过滤"
               v-model="filterText">
       <i slot="suffix"
          class="el-input__icon el-icon-search"></i>
     </el-input>
+
     <el-tree :highlight-current="true"
              class="filter-tree"
              :data="treeData"
@@ -30,6 +32,12 @@ export default {
     treeData: {
       type: Array,
       required: true
+    },
+    showSearch: {
+      type: Boolean,
+      default: function () {
+        return true
+      }
     },
     defaultProps: {
       type: Object,

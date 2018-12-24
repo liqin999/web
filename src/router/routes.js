@@ -109,7 +109,7 @@ export const routes = [{
   path: '/newsCalendar',
   component: newsCalendar
 },
-  // buttons路由定义
+ // buttons路由定义
 {
   path: '/sendDraft',
   component: sendDraft
@@ -150,7 +150,7 @@ export const routes = [{
   path: '/version',
   component: version
 },
-  // buttons弹窗路由
+ // buttons弹窗路由
 {
   path: '/issuanceMessageBox',
   component: issuanceMessageBox
