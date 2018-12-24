@@ -107,8 +107,13 @@
                                    :total="100">
                     </el-pagination>
                 </div>
+                <draft-label>
+                    <span slot="iconName">稿签</span>
+                </draft-label>
+                <history>
+                    <span slot="iconName">历史</span>
+                </history>
             </div>
-
         </div>
     </div>
 </template>
@@ -120,6 +125,8 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import split from '@/components/buttons/split/split'
 import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
+import draftLabel from '@/components/buttons/draftLabel/draftLabel'
+import history from '@/components/buttons/history/history.vue'
 export default {
     components: {
         searchInput,
@@ -128,7 +135,9 @@ export default {
         issuance,
         split,
         concat,
-        version
+        version,
+        draftLabel,
+        history
     },
     data () {
         return {

@@ -8,7 +8,8 @@ import App from './App'
 // 公共样式
 import './assets/css/reset.css'
 import './assets/iconfont/iconfont.css'
-
+// 史薇薇 公共样式scss
+// import './assets/css/style.scss'
 // 路由组件
 import router from './router'
 // axios 使用方法继承到 Vue原型链上 使用： this.$http.xxx

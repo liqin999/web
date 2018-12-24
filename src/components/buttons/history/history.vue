@@ -1,25 +1,24 @@
 <template>
     <div class="btn-hover">
-        <span @click="draftLabelIcon()">
+        <span @click="historyIcon">
             <slot name="iconName"></slot>
         </span>
-        <!-- 传稿弹框 -->
-        <label-message-box ref="labelBox"
-                           :labelData="labelData">
-        </label-message-box>
+        <!-- 弹框 -->
+        <history-message-box ref="historyBox"
+                             :historyData="historyData">
+        </history-message-box>
     </div>
 </template>
-
 <script>
 // 弹出框
-import labelMessageBox from './box/labelMessageBox'
+import historyMessageBox from './box/historyMessageBox'
 export default {
     components: {
-        labelMessageBox
+        historyMessageBox
     },
     data () {
         return {
-            labelData: {
+            historyData: {
                 labelList: [],
                 contentShow: false
             }
@@ -27,7 +26,7 @@ export default {
     },
     methods: {
         // 点击传稿按钮
-        draftLabelIcon () {
+        historyIcon () {
             // 判断draft是数组还是对象（若为数组则是批量操作）
             // if (this.draft instanceof Array){
             //     this.draftData.draftList = this.draft;
@@ -35,7 +34,7 @@ export default {
             //     this.draftData.draftList.push(this.draft);
             // }
             // 弹窗出现
-            this.labelData.contentShow = true
+            this.historyData.contentShow = true
         }
     }
 }

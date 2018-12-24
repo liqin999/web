@@ -433,7 +433,7 @@ $box-width: 733px; //定义弹出框最小宽度
 }
 
 .message-content {
-    padding: 20px 0px;
+    padding: 20px 0px 0 0;
     & .message-checkbox {
         // @extend .scroll-y;
         height: 290px;
@@ -557,8 +557,5 @@ $box-width: 733px; //定义弹出框最小宽度
     } @else {
         border-#{$option}: $width $style $color;
     }
-}
-.el-textarea {
-    @include border(all, 3px);
 }
 </style>

@@ -45,11 +45,11 @@ $box-width:733px;     //定义弹出框最小宽度
         #{$mOp}: $top $right $bottom $left;
     }
     // 用法示例
-    .el-textarea{
+    .el-example{
         @include mar-pad(padding,23px,24px,45px,89px);  //设置padding各边距
         @include mar-pad(margin,23px,24px,45px,89px);   //设置margin各边距
     }
-    .el-textarea{
+    .el-example{
         @include mar-pad(padding,24px,89px);   //设置padding各边距 padding: 24px 89px 0px 0px;
         @include mar-pad(margin);     //设置margin各边距 margin: 0px 0px 0px 0px;
     }
@@ -65,7 +65,7 @@ $box-width:733px;     //定义弹出框最小宽度
         }
     }
     // 示例
-    .el-textarea{
+    .el-example{
         @include border;    // border-bottom: 1px solid #737373;
         @include border(all,3px, solid, $border-color);  // border: 3px solid #737373;
         @include border(bottom,3px, solid, $border-color);
@@ -96,7 +96,7 @@ $box-width:733px;     //定义弹出框最小宽度
         @extend %scroll;
     }
     // 示例
-    .el-textarea{
+    .el-example{
         @extend .scroll-y;   //纵向滚动条
     }
 
@@ -236,11 +236,11 @@ $box-width:733px;     //定义弹出框最小宽度
     background-color: #000;
 }
 // 提交框样式修改
-.el-textarea__inner{
+.el-example__inner{
     border: 1px solid $border-area-color;
     border-radius: $border-radius;
 }
-.el-textarea__inner:focus {
+.el-example__inner:focus {
     border-color: $border-color;
 }
 // 时间插件修改样式
