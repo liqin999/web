@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-24 17:22:41
+ * @LastEditTime: 2018-12-24 18:21:49
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $primary-color: #3871f5 #6d99ff;    //系统色调 默认、hover状态 
@@ -13,17 +13,18 @@ $font-size:12px 14px 16px 18px;      //字体大小
 $border-color:#cbcbcb !default;   //边框颜色（默认）
 $tint-border-color:#dbdbdb;  //浅色边框颜色
 $border-radius: 3px;                //边角弧度
- 
+
+$nav-height:40px !default;       //导航条行高（默认）
 $line-height:30px !default;       //行高（默认）
 
 $pointer: pointer;             //hover状态 鼠标pointer
 
 // 背景色渐变
 %gradient-bgcolor {
-    background: -webkit-linear-gradient(#3c6cde, #6d99ff); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(#3c6cde, #6d99ff); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(#3c6cde, #6d99ff); /* Firefox 3.6 - 15 */
-    background: linear-gradient(#3c6cde, #6d99ff); /* 标准的语法 */
+    background: -webkit-linear-gradient(left,#3c6cde, #6d99ff); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left,#3c6cde, #6d99ff); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,#3c6cde, #6d99ff); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left,#3c6cde, #6d99ff); /* 标准的语法 */
 }
 // 使用方法 @extend %gradient-bgcolor;
 
@@ -48,38 +49,26 @@ $box-width:733px; //定义弹出框最小宽度
 // 清除浮动  加类.clearfix
 // margin  标准15px
 .mb15 {
-    //margin-bottom:15px;
     margin-bottom: 15px;
 }
-
 .mt15 {
-    // padding-bottom: 10px;
     margin-top: 15px;
 }
 
 // padding  标准10px
 .tab-padding {
-    // 强制缩进 padding-left: 0px
     padding-left: 0px !important;
 }
-
 .pr10 {
-    // padding-right: 10px;
     padding-right: 10px;
 }
-
 .pb10 {
-    // padding-bottom: 10px;
     padding-bottom: 10px;
 }
-
 .pt10 {
-    // padding-top: 10px;
     padding-top: 10px;
 }
-
 .pl10 {
-    // padding-left: 10px;
     padding-top: 10px;
 }
 
@@ -106,7 +95,6 @@ $box-width:733px; //定义弹出框最小宽度
     @if $option==all {
         border: $width $style $color;
     }
-
     @else {
         border-#{$option}: $width $style $color;
     }
@@ -125,12 +113,10 @@ $box-width:733px; //定义弹出框最小宽度
         width: 6px;
         height: 6px;
     }
-
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: nth($primary-color, 1);
     }
-
     &::-webkit-scrollbar-track {
         border-radius: 10px;
     }
@@ -203,48 +189,63 @@ $box-width:733px; //定义弹出框最小宽度
     font-size: nth($font-size, 2);
     display: inline-block;
     margin-right: 5px;
-    padding: 8px 15px;
+    padding: 5px 16px;
 
     //hover状态
     &:hover {
-        background: nth($primary-color, 2);
-        border-color: nth($primary-color, 2);
+        background: nth($primary-color,2);
+        border-color: nth($primary-color,2);
         color: $white-color;
-        font-size: nth($font-size,2);
-        display: inline-block;
-        margin-right: 5px;
-        padding: 4px 16px;
-
-        //hover状态
-        &:hover{
-            background: nth($primary-color,2);
-            border-color: nth($primary-color,2);
-            color: $white-color;
-        }
     }
-    // 取消按钮样式
-    .reset-btn{
-        background: $white-color;
-        border-radius: $border-radius;
-        border-color: nth($primary-color,1);
-        cursor: $pointer;
-        color: nth($primary-color,1);
+}
+// 取消按钮样式
+.reset-btn{
+    background: $white-color;
+    border-radius: $border-radius;
+    border-color: nth($primary-color,1);
+    cursor: $pointer;
+    color: nth($primary-color,1);
 
-        display: inline-block;
-        margin-right: 5px;
-        padding: 4px 16px;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 16px;
 
-        //hover状态
-        &:hover{
-            border-color: nth($primary-color,2);
-            color: nth($primary-color,2);
-        }
+    //hover状态
+    &:hover{
+        border-color: nth($primary-color,2);
+        color: nth($primary-color,2);
     }
 }
 
-// 页面左侧样式
+// 页面导航条样式
+.el-menu--horizontal{
+    @include border(bottom, 1px, solid, $tint-border-color);
+}
+.el-menu--horizontal>.el-menu-item{
+    height: $nav-height;
+    line-height: $nav-height;
+    border:none!important;
+}
+.el-menu--horizontal>.el-submenu .el-submenu__title {
+    height: $nav-height;
+    line-height: $nav-height;
+    border-bottom: 0px solid transparent;
+}
+.el-menu--horizontal .el-menu-item.is-active{
+    @extend %gradient-bgcolor;
+}
+.el-menu--horizontal>.el-submenu:focus .el-submenu__title, .el-menu--horizontal>.el-submenu:hover .el-submenu__title,.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+    color: nth($primary-color,1);
+}
+.el-submenu.is-active .el-submenu__title i {
+    color: $wcolor!important;
+}
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title{
+    @extend %gradient-bgcolor;
+    border:none!important;
+}
 
-
+// 页面二级导航样式
 
 
 

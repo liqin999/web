@@ -186,6 +186,9 @@ export default {
     },
     data () {
         return {
+            textarea: null,
+            input: null,
+            tableData: []
         }
     },
     methods: {
