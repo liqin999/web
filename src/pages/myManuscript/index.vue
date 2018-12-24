@@ -305,7 +305,7 @@ export default {
 }
 .mt10 {
     margin-top: 10px;
-    padding-left: 10px;
+    // padding-left: 10px;
 }
 </style>
 <style>
