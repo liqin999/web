@@ -3,7 +3,7 @@
                title="历史版本"
                @close="messageBoxClose()"
                :visible.sync="versionData.contentShow"
-               width="50%"
+               width="60%"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
