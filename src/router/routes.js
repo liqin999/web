@@ -116,10 +116,6 @@ export const routes = [{
     component: sendDraft
 },
 {
-    path: '/draftMessageBox',
-    component: draftMessageBox
-},
-{
     path: '/deleteDraft',
     component: deleteDraft
 },
@@ -156,6 +152,10 @@ export const routes = [{
     component: draftLabel
 },
 // buttons弹窗路由
+{
+    path: '/draftMessageBox',
+    component: draftMessageBox
+},
 {
     path: '/issuanceMessageBox',
     component: issuanceMessageBox

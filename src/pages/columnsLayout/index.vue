@@ -46,11 +46,15 @@
                             <span data-v-6eb3df45="">淘汰</span>
                         </span>
                     </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">版本</span>
-                        </span>
-                    </div>
+                    <!-- <div data-v-6eb3df45=""
+               class="primary-btn"><span>
+              <span data-v-6eb3df45="">版本</span>
+            </span>
+          </div> -->
+                    <version :data="versionData">
+                        <span slot="iconName">版本</span>
+                    </version>
+
                     <div data-v-6eb3df45=""
                          class="primary-btn"><span>
                             <span data-v-6eb3df45="">编辑</span>
@@ -103,21 +107,19 @@
                                    :total="100">
                     </el-pagination>
                 </div>
-                <draft-label>
-                    <span slot="iconName">稿签</span>
-                </draft-label>
             </div>
+
         </div>
     </div>
 </template>
 <script>
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
-import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import issuance from '@/components/buttons/issuance/issuance'
 import searchInput from '@/components/searchConditions/searchInput.vue'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 import split from '@/components/buttons/split/split'
 import concat from '@/components/buttons/concat/concat'
+import version from '@/components/buttons/version/version.vue'
 export default {
     components: {
         searchInput,
@@ -126,7 +128,7 @@ export default {
         issuance,
         split,
         concat,
-        draftLabel
+        version
     },
     data () {
         return {
@@ -197,6 +199,38 @@ export default {
                 }
 
             ],
+
+            versionData: {
+                contentShow: false,
+                tableData: [{
+                    num: 1,
+                    title: '12',
+                    date: '2016-05-03',
+                    dealPerson: '1王小虎',
+                    img: '',
+                    type: '文本',
+                    doubt: '0',
+                    textFormat: 'txt'
+                }, {
+                    num: 2,
+                    title: '333',
+                    date: '2015-05-03',
+                    dealPerson: '2王小虎',
+                    img: '',
+                    type: '文本',
+                    doubt: '0',
+                    textFormat: 'txt'
+                }, {
+                    num: 3,
+                    title: '8888',
+                    date: '2016-05-03',
+                    dealPerson: '3王小虎',
+                    img: '',
+                    type: '文本',
+                    doubt: '0',
+                    textFormat: 'txt'
+                }]
+            },
             concatData: {
                 contentShow: false,
                 tableData: [{

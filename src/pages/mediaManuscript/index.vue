@@ -20,9 +20,9 @@
         </div>
 
         <div class="con-wrap">
-
             <div class="leftCon">
                 <left-menu :treeData="data2"
+                           :showSearch="false"
                            :defaultProps="defaultProps"
                            @sendTreeObj="getTreeObj"></left-menu>
             </div>

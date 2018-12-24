@@ -1,11 +1,13 @@
 <template>
     <div class="tree-wrap">
         <el-input class="tree-search"
+                  v-if="showSearch"
                   placeholder="输入关键字进行过滤"
                   v-model="filterText">
             <i slot="suffix"
                class="el-input__icon el-icon-search"></i>
         </el-input>
+
         <el-tree :highlight-current="true"
                  class="filter-tree"
                  :data="treeData"
@@ -45,29 +47,38 @@ export default {
     components: {
 
     },
-    data () {
-        return {
-            filterText: ''
+    showSearch: {
+        type: Boolean,
+        default: function () {
+            return true
         }
     },
-    mounted () {
-
-    },
-    methods: {
-        filterNode (value, data) { // 过滤节点
-            if (!value) return true
-            return data.label.indexOf(value) !== -1
+    defaultProps: {
+        type: Object,
+        default: function () {
+            return {
+                filterText: ''
+            }
         },
-        handleNodeClick (data) { // 获得点击节点的对象
-            this.$emit('sendTreeObj', data)
-        }
-    },
-    watch: {
-        filterText (val) { // 过滤节点
-            this.$refs.tree2.filter(val)
-        }
-    }
+        mounted () {
 
+        },
+        methods: {
+            filterNode (value, data) { // 过滤节点
+                if (!value) return true
+                return data.label.indexOf(value) !== -1
+            },
+            handleNodeClick (data) { // 获得点击节点的对象
+                this.$emit('sendTreeObj', data)
+            }
+        },
+        watch: {
+            filterText (val) { // 过滤节点
+                this.$refs.tree2.filter(val)
+            }
+        }
+
+    }
 }
 </script>
 <style lang="scss" scoped>
