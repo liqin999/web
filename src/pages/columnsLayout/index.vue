@@ -107,12 +107,45 @@
                                    :total="100">
                     </el-pagination>
                 </div>
-                <draft-label>
-                    <span slot="iconName">稿签</span>
-                </draft-label>
-                <history>
-                    <span slot="iconName">历史</span>
-                </history>
+                <el-row>
+                    <el-col :span="24">
+                        <div class="btn-bottom">
+                            <div class="btn-hover">
+                                <span>浏览</span>
+                            </div>
+                            <div class="btn-hover">
+                                <span>|</span>
+                            </div>
+                            <div class="btn-hover">
+                                <span>留稿</span>
+                            </div>
+                            <div class="btn-hover">
+                                <span>|</span>
+                            </div>
+                            <div class="btn-hover">
+                                <span>打印</span>
+                            </div>
+                            <div class="btn-hover">
+                                <span>|</span>
+                            </div>
+                            <div class="btn-hover">
+                                <span>关闭</span>
+                            </div>
+                            <div class="btn-hover">
+                                <span>|</span>
+                            </div>
+                            <draft-label>
+                                <span slot="iconName">稿签</span>
+                            </draft-label>
+                            <div class="btn-hover">
+                                <span>|</span>
+                            </div>
+                            <history>
+                                <span slot="iconName">历史</span>
+                            </history>
+                        </div>
+                    </el-col>
+                </el-row>
             </div>
         </div>
     </div>
@@ -338,12 +371,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-//    .containers:after{
-//         display: block;
-//         content:'';
-//         clear: both;
-//         visibility: hidden;
-//    }
+.btn-hover {
+    cursor: pointer;
+    float: left;
+    padding: 0px 10px;
+}
+.btn-bottom {
+    padding: 10px 0;
+    position: absolute;
+    right: 0px;
+}
 .search-wrap {
     padding-top: 10px;
     height: 50px;

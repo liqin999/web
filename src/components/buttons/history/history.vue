@@ -42,5 +42,6 @@ export default {
 <style lang="scss" scoped>
 .btn-hover {
     cursor: pointer;
+    float: left;
 }
 </style>

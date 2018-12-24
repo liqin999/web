@@ -1,9 +1,38 @@
-// 定义全局样式变量
-$primary-color: rgba(0, 152, 210, 1) rgba(11, 169, 239, 1);    //系统色调 默认、hover状态 
+/*
+ * @Author: 史薇薇
+ * @Date: 2018-12-24 14:08:15
+ * @LastEditTime: 2018-12-24 17:16:37
+ * @Description: scss定义全局样式变量 12.24样式设计（第一版）
+ */
+$primary-color: #3871f5 #6d99ff;    //系统色调 默认、hover状态 
+$wcolor: #fff;          //白色
+$bg-color:#fafafa #ebebeb ;   //背景色
+$font-color: #333 #676767 #999;   //字体颜色
+$font-size:12px 14px 16px 18px;      //字体大小
+
+$border-color:#cbcbcb !default;   //边框颜色（默认）
+$tint-border-color:#dbdbdb;  //浅色边框颜色
+$border-radius: 3px;                //边角弧度
+ 
+$line-height:30px !default;       //行高（默认）
+
+$pointer: pointer;             //hover状态 鼠标pointer
+
+// 背景色渐变
+%gradient-bgcolor {
+    background: -webkit-linear-gradient(#3c6cde, #6d99ff); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#3c6cde, #6d99ff); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#3c6cde, #6d99ff); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#3c6cde, #6d99ff); /* 标准的语法 */
+}
+// 使用方法 @extend %gradient-bgcolor;
+
+// 结束
+// $primary-color: rgba(0, 152, 210, 1) rgba(11, 169, 239, 1);    //系统色调 默认、hover状态 
 $font-color:#333 !default;   //字体颜色（默认）
 $white-color: #fff;          //白色
 $font-size:12px 14px 16px;      //字体大小
-$border-color:#737373 !default;   //边框颜色（默认）
+// $border-color:#737373 !default;   //边框颜色（默认）
 $border-area-color:#E3E7E9;  //浅色边框颜色（用于文本框）
 $border-radius: 3px;                //边角弧度
 $line-height:30px !default;       //行高（默认）
@@ -140,7 +169,7 @@ $box-width:733px;     //定义弹出框最小宽度
         font-size: nth($font-size,2);
         display: inline-block;
         margin-right: 5px;
-        padding: 8px 15px;
+        padding: 4px 16px;
 
         //hover状态
         &:hover{
@@ -159,7 +188,7 @@ $box-width:733px;     //定义弹出框最小宽度
 
         display: inline-block;
         margin-right: 5px;
-        padding: 8px 15px;
+        padding: 4px 16px;
 
         //hover状态
         &:hover{
