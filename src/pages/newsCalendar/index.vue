@@ -1,32 +1,27 @@
 <template>
-    <div>
-       newCalendar  新闻日历
-    </div>
+  <div>
+    newCalendar 新闻日历
+  </div>
 </template>
 <script>
 export default {
-    components: {
+  components: {
 
-    },
-    data(){
-        return{
-
-        }
-    },
-    mounted(){
-
-    },
-    methods:{
+  },
+  data () {
+    return {
 
     }
+  },
+  mounted () {
+
+  },
+  methods: {
+
+  }
 }
 </script>
 <style lang="scss" scoped>
-
 </style>
 <style>
-
 </style>
-
-
-

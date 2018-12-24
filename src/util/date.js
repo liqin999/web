@@ -14,15 +14,16 @@ export function formatDate (date, fmt) {
     'm+': date.getMinutes(),
     's+': date.getSeconds()
   }
-  console.log(date.getMonth(),date.getMinutes());
+  console.log(date.getMonth(), date.getMinutes())
   for (let k in o) {
-  if (new RegExp(`(${k})`).test(fmt)) {
+    if (new RegExp(`(${k})`).test(fmt)) {
       let str = o[k] + ''
       fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str))
     }
   }
   return fmt
 }
+
 function padLeftZero (str) {
   return ('00' + str).substr(str.length)
 }

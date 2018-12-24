@@ -1,72 +1,68 @@
 <template>
-<div>
+  <div>
     <div style="height:40px">
-        <img :src="imgUrl" alt="" style="width:100%;height:100%">
+      <img :src="imgUrl"
+           alt=""
+           style="width:100%;height:100%">
     </div>
     <div class="top">
-        <!-- <navigation-bar></navigation-bar> -->
-        <header-bar></header-bar>
+      <!-- <navigation-bar></navigation-bar> -->
+      <header-bar></header-bar>
     </div>
     <!-- <div class="left">
         <left-menu></left-menu>
     </div> -->
     <div class="main">
-        <router-view />
+      <router-view />
     </div>
-</div>
+  </div>
 </template>
-
- 
 
 <script>
 
-
 // import leftMenu from "@/components/leftmenu/leftMenu.vue";
-import headerBar from "@/components/navigation/headerBar.vue";
+import headerBar from '@/components/navigation/headerBar.vue'
 // import navigationBar from "@/components/navigation/navigationBar.vue";
-import loginIn from "@/server/server";
-import mixin from "@/components/shared/mixins/powerMixins.js"
+// import loginIn from '@/server/server'
+import mixin from '@/components/shared/mixins/powerMixins.js'
 export default {
-    mixins: [mixin],
-    data() {
-        return {
-             imgUrl:require("@/assets/img/fadeHead.png")
-        };
-    },
-    components: {
-        // leftMenu,
-        // navigationBar,
-        headerBar,
-      
-    },
-    mounted() {
-        // 混入中的方法
-        this.pm_toggleShow();
-        // 显示关闭等待页 
-        // this.$store.dispatch('showLoading');
-        // setTimeout(() => {
-        //     this.$store.dispatch('cloaseLoading');
-        // }, 2000);
-    },
-    methods: {}
-};
-</script>
- 
+  mixins: [mixin],
+  data () {
+    return {
+      imgUrl: require('@/assets/img/fadeHead.png')
+    }
+  },
+  components: {
+    // leftMenu,
+    // navigationBar,
+    headerBar
 
+  },
+  mounted () {
+    // 混入中的方法
+    this.pm_toggleShow()
+    // this.$store.dispatch('showLoading');
+    // setTimeout(() => {
+    //     this.$store.dispatch('cloaseLoading');
+    // }, 2000);
+  },
+  methods: {}
+}
+</script>
 <style>
 .main {
-    min-width: 940px;
-    overflow-x: hidden;
+  min-width: 940px;
+  overflow-x: hidden;
 }
 
 .top {
-    width: 100%;
+  width: 100%;
 }
 
 .left {
-    height: 400px;
-    padding-top: 1px;
-    /* height: calc(100% - 50px); */
-    float: left;
+  height: 400px;
+  padding-top: 1px;
+  /* height: calc(100% - 50px); */
+  float: left;
 }
 </style>

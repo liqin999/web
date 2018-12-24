@@ -1,32 +1,27 @@
 <template>
-    <div>
-        writeManuscript 写稿器
-    </div>
+  <div>
+    writeManuscript 写稿器
+  </div>
 </template>
 <script>
 export default {
-    components: {
+  components: {
 
-    },
-    data(){
-        return{
-
-        }
-    },
-    mounted(){
-
-    },
-    methods:{
+  },
+  data () {
+    return {
 
     }
+  },
+  mounted () {
+
+  },
+  methods: {
+
+  }
 }
 </script>
 <style lang="scss" scoped>
-
 </style>
 <style>
-
 </style>
-
-
-

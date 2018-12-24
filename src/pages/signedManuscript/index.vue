@@ -1,32 +1,27 @@
 <template>
-    <div>
-      signedManuscript  已签稿件
-    </div>
+  <div>
+    signedManuscript 已签稿件
+  </div>
 </template>
 <script>
 export default {
-    components: {
+  components: {
 
-    },
-    data(){
-        return{
-
-        }
-    },
-    mounted(){
-
-    },
-    methods:{
+  },
+  data () {
+    return {
 
     }
+  },
+  mounted () {
+
+  },
+  methods: {
+
+  }
 }
 </script>
 <style lang="scss" scoped>
-
 </style>
 <style>
-
 </style>
-
-
-
