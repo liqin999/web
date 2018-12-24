@@ -1,24 +1,24 @@
 <template>
-  <div>
-    newCalendar 新闻日历
-  </div>
+    <div>
+        newCalendar 新闻日历
+    </div>
 </template>
 <script>
 export default {
-  components: {
+    components: {
 
-  },
-  data () {
-    return {
+    },
+    data () {
+        return {
+
+        }
+    },
+    mounted () {
+
+    },
+    methods: {
 
     }
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  }
 }
 </script>
 <style lang="scss" scoped>

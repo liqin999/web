@@ -43,116 +43,125 @@ const reviewers = r => require.ensure([], () => r(require('@/components/buttons/
 const split = r => require.ensure([], () => r(require('@/components/buttons/split/split.vue')), 'split')
 const submit = r => require.ensure([], () => r(require('@/components/buttons/submit/submit.vue')), 'submit')
 const version = r => require.ensure([], () => r(require('@/components/buttons/version/version.vue')), 'version')
+const draftLabel = r => require.ensure([], () => r(require('@/components/buttons/draftLabel/draftLabel.vue')), 'draftLabel')
 // buttons弹窗路由
-const draftMessageBox = r => require.ensure([], () => r(require('@/components/buttons/sendDraft/box/draftMessageBox.vue')), 'sendDraft')
+const draftMessageBox = r => require.ensure([], () => r(require('@/components/buttons/sendDraft/box/draftMessageBox.vue')), 'draftMessageBox')
 const issuanceMessageBox = r => require.ensure([], () => r(require('@/components/buttons/issuance/box/issuanceMessageBox.vue')), 'issuanceMessageBox')
+const labelMessageBox = r => require.ensure([], () => r(require('@/components/buttons/draftLabel/box/labelMessageBox.vue')), 'labelMessageBox')
 
 export const routes = [{
-  path: '/columnsLayout',
-  component: columnsLayout
+    path: '/columnsLayout',
+    component: columnsLayout
 },
 {
-  path: '/myManuscript',
-  component: myManuscript
+    path: '/myManuscript',
+    component: myManuscript
 },
 {
-  path: '/otherManuscript',
-  component: otherManuscript
-},
-
-{
-  path: '/mediaManuscript',
-  component: mediaManuscript
-},
-{
-  path: '/groupManuscript',
-  component: groupManuscript
-},
-{
-  path: '/specialManuscript',
-  component: specialManuscript
+    path: '/otherManuscript',
+    component: otherManuscript
 },
 
 {
-  path: '/signedManuscript',
-  name: 'signedManuscript',
-  components: { // 命名视图形式
-    default: signedManuscript
-  }
+    path: '/mediaManuscript',
+    component: mediaManuscript
+},
+{
+    path: '/groupManuscript',
+    component: groupManuscript
+},
+{
+    path: '/specialManuscript',
+    component: specialManuscript
 },
 
 {
-  path: '/reviewDetail',
-  component: reviewDetail
+    path: '/signedManuscript',
+    name: 'signedManuscript',
+    components: {
+        default: signedManuscript
+    }
 },
 {
-  path: '/searchManuscript',
-  component: searchManuscript
+    path: '/reviewDetail',
+    component: reviewDetail
 },
 {
-  path: '/manuscriptFlow',
-  component: manuscriptFlow
+    path: '/searchManuscript',
+    component: searchManuscript
 },
 {
-  path: '/manuscriptSetting',
-  component: manuscriptSetting
+    path: '/manuscriptFlow',
+    component: manuscriptFlow
 },
 {
-  path: '/writeManuscript',
-  component: writeManuscript
+    path: '/manuscriptSetting',
+    component: manuscriptSetting
 },
 {
-  path: '/sendManuscript',
-  component: sendManuscript
+    path: '/writeManuscript',
+    component: writeManuscript
 },
 {
-  path: '/newsCalendar',
-  component: newsCalendar
-},
-  // buttons路由定义
-{
-  path: '/sendDraft',
-  component: sendDraft
+    path: '/sendManuscript',
+    component: sendManuscript
 },
 {
-  path: '/draftMessageBox',
-  component: draftMessageBox
+    path: '/newsCalendar',
+    component: newsCalendar
+},
+// buttons路由定义
+{
+    path: '/sendDraft',
+    component: sendDraft
 },
 {
-  path: '/deleteDraft',
-  component: deleteDraft
+    path: '/draftMessageBox',
+    component: draftMessageBox
 },
 {
-  path: '/edit',
-  component: edit
+    path: '/deleteDraft',
+    component: deleteDraft
 },
 {
-  path: '/issuance',
-  component: issuance
+    path: '/edit',
+    component: edit
 },
 {
-  path: '/markRead',
-  component: markRead
+    path: '/issuance',
+    component: issuance
 },
 {
-  path: '/reviewers',
-  component: reviewers
+    path: '/markRead',
+    component: markRead
 },
 {
-  path: '/split',
-  component: split
+    path: '/reviewers',
+    component: reviewers
 },
 {
-  path: '/submit',
-  component: submit
+    path: '/split',
+    component: split
 },
 {
-  path: '/version',
-  component: version
+    path: '/submit',
+    component: submit
 },
-  // buttons弹窗路由
 {
-  path: '/issuanceMessageBox',
-  component: issuanceMessageBox
+    path: '/version',
+    component: version
+},
+{
+    path: '/draftLabel',
+    component: draftLabel
+},
+// buttons弹窗路由
+{
+    path: '/issuanceMessageBox',
+    component: issuanceMessageBox
+},
+{
+    path: '/labelMessageBox',
+    component: labelMessageBox
 }
 ]

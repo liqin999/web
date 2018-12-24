@@ -1,24 +1,24 @@
 <template>
-  <div>
-    sendManuscript 投稿
-  </div>
+    <div>
+        sendManuscript 投稿
+    </div>
 </template>
 <script>
 export default {
-  components: {
+    components: {
 
-  },
-  data () {
-    return {
+    },
+    data () {
+        return {
+
+        }
+    },
+    mounted () {
+
+    },
+    methods: {
 
     }
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  }
 }
 </script>
 <style lang="scss" scoped>

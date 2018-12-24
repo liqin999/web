@@ -6,18 +6,18 @@
  * 5.支持多混入，extends 引入混入优先级最高，mixins [] 中可以写多个混入
  */
 export default {
-  data () {
-    return {
-      pm_power: '混入定义字段',
-      pm_showChoose: false
+    data () {
+        return {
+            pm_power: '混入定义字段',
+            pm_showChoose: false
+        }
+    },
+    mounted () {
+        this.pm_toggleShow()
+    },
+    methods: {
+        pm_toggleShow () {
+            this.pm_showChoose = !this.pm_showChoose
+        }
     }
-  },
-  mounted () {
-    this.pm_toggleShow()
-  },
-  methods: {
-    pm_toggleShow () {
-      this.pm_showChoose = !this.pm_showChoose
-    }
-  }
 }

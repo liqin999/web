@@ -1,24 +1,24 @@
 <template>
-  <div>
-    searchManuscript 搜索稿件
-  </div>
+    <div>
+        searchManuscript 搜索稿件
+    </div>
 </template>
 <script>
 export default {
-  components: {
+    components: {
 
-  },
-  data () {
-    return {
+    },
+    data () {
+        return {
+
+        }
+    },
+    mounted () {
+
+    },
+    methods: {
 
     }
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  }
 }
 </script>
 <style lang="scss" scoped>

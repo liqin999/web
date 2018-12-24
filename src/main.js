@@ -15,7 +15,7 @@ import router from './router'
 // import axios from 'axios'
 // store 是 vuex 全局状态管理 使用: this.$store.xxx
 import {
-  store
+    store
 } from './store'
 import VueI18n from 'vue-i18n'
 import api from './server/server'
@@ -30,11 +30,11 @@ Vue.prototype.$md5 = md5
 
 // 添加过滤器
 for (let key in myFilter) {
-  Vue.filter(key, myFilter[key])
+    Vue.filter(key, myFilter[key])
 }
 // 添加全局指令
 for (let key in myDirective) {
-  Vue.directive(key, myDirective[key])
+    Vue.directive(key, myDirective[key])
 }
 Vue.use(VueI18n)
 // 设置为 false 以阻止 vue 在启动时生成生产提示
@@ -59,12 +59,12 @@ Vue.prototype.$api = api
 // eventBus 组件间通讯
 window.Bus = new Vue()
 new Vue({
-  el: '#app',
-  router,
-  // i18n,
-  components: {
-    App
-  },
-  template: '<App/>',
-  store: store
+    el: '#app',
+    router,
+    // i18n,
+    components: {
+        App
+    },
+    template: '<App/>',
+    store: store
 })

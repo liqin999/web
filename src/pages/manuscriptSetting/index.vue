@@ -1,24 +1,24 @@
 <template>
-  <div>
-    manuscriptSetting 稿件管理
-  </div>
+    <div>
+        manuscriptSetting 稿件管理
+    </div>
 </template>
 <script>
 export default {
-  components: {
+    components: {
 
-  },
-  data () {
-    return {
+    },
+    data () {
+        return {
+
+        }
+    },
+    mounted () {
+
+    },
+    methods: {
 
     }
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  }
 }
 </script>
 <style lang="scss" scoped>

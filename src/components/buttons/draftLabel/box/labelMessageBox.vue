@@ -2,7 +2,7 @@
     <el-dialog class=""
                title="传稿"
                @close="messageBoxClose()"
-               :visible.sync="draftData.contentShow"
+               :visible.sync="labelData.contentShow"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
@@ -14,7 +14,7 @@
                         class="tab-padding"><b class="message-title">待传稿件</b></el-col>
                 <el-col :span="21"
                         class="tab-padding">
-                    <template v-for="(item,index) in draftData.draftList">
+                    <template v-for="(item,index) in labelData.draftList">
                         <div :key="index"
                              class="message-list clearfix">
                             <el-col :span="9"><i></i>{{ item.title }}</el-col>
@@ -148,7 +148,7 @@
                        @click="draftConfirm()">确认</el-button>
             <el-button class="reset-btn"
                        size="medium"
-                       @click="draftData.contentShow = false">取消</el-button>
+                       @click="labelData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
 </template>
@@ -156,7 +156,7 @@
 <script>
 export default {
     props: {
-        draftData: {
+        labelData: {
             type: Object
         }
     },

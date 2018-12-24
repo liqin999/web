@@ -1,24 +1,24 @@
 <template>
-  <div>
-    manuscriptFlow 稿件流向
-  </div>
+    <div>
+        manuscriptFlow 稿件流向
+    </div>
 </template>
 <script>
 export default {
-  components: {
+    components: {
 
-  },
-  data () {
-    return {
+    },
+    data () {
+        return {
+
+        }
+    },
+    mounted () {
+
+    },
+    methods: {
 
     }
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  }
 }
 </script>
 <style lang="scss" scoped>
