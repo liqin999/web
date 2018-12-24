@@ -25,90 +25,90 @@
                 <ul class="content-list">
                     <li>
                         <div class="img-wrap">
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
+                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                     <li>
-                        <div>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
+                        <div class="img-wrap">
+                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                     <li>
-                        <div>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
+                        <div class="img-wrap">
+                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                     <li>
-                        <div>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
+                        <div class="img-wrap">
+                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                     <li>
-                        <div>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
+                        <div class="img-wrap">
+                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                     <li>
-                        <div>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
+                        <div class="img-wrap">
+                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="img-wrap">
                             <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="img-wrap">
                             <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
                                  alt="">
                         </div>
                         <div class="texts">
-                            <span>新华每日电讯</span><br>
-                            <span>A叠-一版</span><br>
-                            <span>已建</span>
+                            <span class="t1">新华每日电讯</span><br>
+                            <span class="t2">A叠-一版</span><br>
+                            <span class="t3">已建</span>
                         </div>
                     </li>
                 </ul>
@@ -130,13 +130,59 @@ export default {
                 {
                     id: 1,
                     label: '新华每日电讯',
-                    icon: 'iconfont icon-file-b- ft-ffd658'
-                }, {
+                    children: [
+                        {
+                            id: 4,
+                            label: '头版1',
+                            icon: 'el-icon-success'
+                        },
+                        {
+                            id: 12,
+                            label: '国内新闻',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 4,
+                            label: '国际焦点',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 12,
+                            label: '评论声音',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        }
+
+                    ]
+                },
+                {
                     id: 2,
-                    label: '新华每日电讯2',
-                    icon: 'iconfont icon-file-b- ft-ffd658'
+                    label: 'A叠【版面】',
+                    children: [
+                        {
+                            id: 5,
+                            label: '一版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 6,
+                            label: '二版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 5,
+                            label: '三版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 6,
+                            label: '四版',
+                            icon: 'iconfont icon-file1'
+                        }
+                    ]
                 }
+
             ],
+
             defaultProps: {
                 children: 'children',
                 label: 'label'
@@ -180,6 +226,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$font-red: #fe5959;
+$font-blue: #049a9a;
 .containers:after {
     display: block;
     content: "";
@@ -227,23 +275,41 @@ export default {
     visibility: hidden;
 }
 .content-list {
+    padding: 10px;
     li {
         float: left;
-        width: 130px;
-        border: 1px solid red;
-        margin: 10px;
+        width: 140px;
+        margin-right: 10px;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        &:hover {
+            background-color: #f6f7f9;
+        }
+        .img-wrap {
+            text-align: center;
+            border: 1px solid transparent;
+            width: 120px;
+            display: inline-block;
+            height: 160px;
+        }
         img {
+            display: inline-block;
             width: 100%;
             height: 160px;
         }
         .texts {
             text-align: center;
+            .t1 {
+                color: $font-blue;
+            }
+            .t3 {
+                color: $font-red;
+            }
         }
     }
-    .content-list {
-        li:hover {
-            border: 1px solid rgba(0, 152, 210, 1);
-        }
+    li:hover .img-wrap {
+        border: 1px solid rgba(0, 152, 210, 1);
     }
 }
 </style>
