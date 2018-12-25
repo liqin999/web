@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-24 18:21:49
+ * @LastEditTime: 2018-12-25 09:13:25
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $primary-color: #3871f5 #6d99ff;    //系统色调 默认、hover状态 
@@ -218,29 +218,29 @@ $box-width:733px; //定义弹出框最小宽度
 }
 
 // 页面导航条样式
-.el-menu--horizontal{
+.header-nav .el-menu--horizontal{
     @include border(bottom, 1px, solid, $tint-border-color);
 }
-.el-menu--horizontal>.el-menu-item{
+.header-nav .el-menu--horizontal>.el-menu-item{
     height: $nav-height;
     line-height: $nav-height;
     border:none!important;
 }
-.el-menu--horizontal>.el-submenu .el-submenu__title {
+.header-nav .el-menu--horizontal>.el-submenu .el-submenu__title {
     height: $nav-height;
     line-height: $nav-height;
     border-bottom: 0px solid transparent;
 }
-.el-menu--horizontal .el-menu-item.is-active{
+.header-nav .el-menu--horizontal .el-menu-item.is-active{
     @extend %gradient-bgcolor;
 }
-.el-menu--horizontal>.el-submenu:focus .el-submenu__title, .el-menu--horizontal>.el-submenu:hover .el-submenu__title,.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+.header-nav .el-menu--horizontal>.el-submenu:focus .el-submenu__title,.header-nav .el-menu--horizontal>.el-submenu:hover .el-submenu__title,.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
     color: nth($primary-color,1);
 }
-.el-submenu.is-active .el-submenu__title i {
+.header-nav .el-submenu.is-active .el-submenu__title i {
     color: $wcolor!important;
 }
-.el-menu--horizontal>.el-submenu.is-active .el-submenu__title{
+.header-nav .el-menu--horizontal>.el-submenu.is-active .el-submenu__title{
     @extend %gradient-bgcolor;
     border:none!important;
 }

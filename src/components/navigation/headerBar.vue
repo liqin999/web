@@ -1,44 +1,44 @@
 <template>
-    <!-- <div class="headerNav"> -->
-    <!-- <div class="centerNav"> -->
-    <el-menu :default-active="$route.path"
-             mode="horizontal"
-             :router="true"
-             active-text-color="#fff"
-             @select="handleSelect">
-        <template v-for="item in navBar">
-            <template v-if="item.chiled">
-                <el-submenu :index="item.id"
-                            popper-class="childMenu"
-                            :key="item.id">
-                    <template slot="title">
-                        <i class="menu_icon"
-                           :class="item.icon"></i>{{ item.name }}
-                    </template>
-                    <el-menu-item v-for="(subItem,i) in item.chiled"
-                                  :key="i"
-                                  :index="subItem.path"
-                                  :route='{ path: subItem.path }'>
-                        {{ subItem.name }}
-                    </el-menu-item>
-                </el-submenu>
-            </template>
-            <template v-else>
-                <el-menu-item :key="item.id"
-                              :index="item.path"
-                              :route='{ path: item.path }'>
-                    <template><span>
+    <div class="header-nav">
+        <!-- <div class="centerNav"> -->
+        <el-menu :default-active="$route.path"
+                 mode="horizontal"
+                 :router="true"
+                 active-text-color="#fff"
+                 @select="handleSelect">
+            <template v-for="item in navBar">
+                <template v-if="item.chiled">
+                    <el-submenu :index="item.id"
+                                popper-class="childMenu"
+                                :key="item.id">
+                        <template slot="title">
                             <i class="menu_icon"
                                :class="item.icon"></i>{{ item.name }}
-                        </span>
-                    </template>
-                </el-menu-item>
+                        </template>
+                        <el-menu-item v-for="(subItem,i) in item.chiled"
+                                      :key="i"
+                                      :index="subItem.path"
+                                      :route='{ path: subItem.path }'>
+                            {{ subItem.name }}
+                        </el-menu-item>
+                    </el-submenu>
+                </template>
+                <template v-else>
+                    <el-menu-item :key="item.id"
+                                  :index="item.path"
+                                  :route='{ path: item.path }'>
+                        <template><span>
+                                <i class="menu_icon"
+                                   :class="item.icon"></i>{{ item.name }}
+                            </span>
+                        </template>
+                    </el-menu-item>
 
+                </template>
             </template>
-        </template>
-    </el-menu>
-    <!-- </div> -->
-    <!-- </div> -->
+        </el-menu>
+        <!-- </div> -->
+    </div>
 </template>
 <script>
 export default {
