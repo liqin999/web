@@ -156,6 +156,14 @@ export default {
 .el-menu {
     border-right: none;
 }
+.el-menu-item {
+    height: 40px;
+    line-height: 40px;
+}
+.el-submenu__title {
+    height: 40px;
+    line-height: 40px;
+}
 .right-con {
     padding: 10px;
     border: 1px solid #ddd;
