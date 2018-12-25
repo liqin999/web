@@ -139,6 +139,12 @@ export default {
                             path: '/newsCalendar'
                         }
                     ]
+                },
+                {
+                    name: '后台管理',
+                    icon: 'el-icon-index',
+                    id: '11',
+                    path: '/systemBackground'
                 }
 
             ]

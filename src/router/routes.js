@@ -14,6 +14,7 @@
     写稿         writeManuscript
     投稿         sendManuscript
     新闻日历      newsCalendar
+    后台管理      systemBackground
  */
 const columnsLayout = r => require.ensure([], () => r(require('@/pages/columnsLayout/index.vue')), 'columnsLayout')
 const myManuscript = r => require.ensure([], () => r(require('@/pages/myManuscript/index.vue')), 'myManuscript')
@@ -32,6 +33,15 @@ const manuscriptSetting = r => require.ensure([], () => r(require('@/pages/manus
 const writeManuscript = r => require.ensure([], () => r(require('@/pages/writeManuscript/index.vue')), 'writeManuscript')
 const sendManuscript = r => require.ensure([], () => r(require('@/pages/sendManuscript/index.vue')), 'sendManuscript')
 const newsCalendar = r => require.ensure([], () => r(require('@/pages/newsCalendar/index.vue')), 'newsCalendar')
+const systemBackground = r => require.ensure([], () => r(require('@/pages/systemBackground/index.vue')), 'systemBackground')
+
+// 后台设置
+const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet.vue')), 'mediaSet')
+const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand.vue')), 'mediaExpand')
+const pageSet = r => require.ensure([], () => r(require('@/pages/systemBackground/pageSet.vue')), 'pageSet')
+const stackSet = r => require.ensure([], () => r(require('@/pages/systemBackground/stackSet.vue')), 'stackSet')
+const columnSet = r => require.ensure([], () => r(require('@/pages/systemBackground/columnSet.vue')), 'columnSet')
+const specialSet = r => require.ensure([], () => r(require('@/pages/systemBackground/specialSet.vue')), 'specialSet')
 
 // buttons路由
 const sendDraft = r => require.ensure([], () => r(require('@/components/buttons/sendDraft/sendDraft.vue')), 'sendDraft')
@@ -110,7 +120,36 @@ export const routes = [{
     path: '/newsCalendar',
     component: newsCalendar
 },
-// buttons路由定义
+{
+    path: '/systemBackground',
+    component: systemBackground,
+    children: [{
+        path: '/mediaSet',
+        component: mediaSet
+    },
+    {
+        path: '/mediaExpand',
+        component: mediaExpand
+    },
+    {
+        path: '/pageSet',
+        component: pageSet
+    },
+    {
+        path: '/stackSet',
+        component: stackSet
+    },
+    {
+        path: '/columnSet',
+        component: columnSet
+    },
+    {
+        path: '/specialSet',
+        component: specialSet
+    }
+    ]
+},
+  // buttons路由定义
 {
     path: '/sendDraft',
     component: sendDraft
@@ -151,7 +190,7 @@ export const routes = [{
     path: '/draftLabel',
     component: draftLabel
 },
-// buttons弹窗路由
+  // buttons弹窗路由
 {
     path: '/draftMessageBox',
     component: draftMessageBox
