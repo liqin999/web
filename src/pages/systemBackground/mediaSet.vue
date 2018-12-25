@@ -1,6 +1,67 @@
 <template>
     <div>
-        媒体设置
+        <el-form :inline="true"
+                 :model="mediaForm"
+                 class="demo-form-inline">
+            <el-form-item label="媒体名称">
+                <el-input v-model="mediaForm.name"
+                          size="small"
+                          placeholder="媒体名称"></el-input>
+            </el-form-item>
+            <el-form-item label="媒体编码">
+                <el-input v-model="mediaForm.code"
+                          size="small"
+                          placeholder="媒体编码"></el-input>
+            </el-form-item>
+
+            <el-form-item>
+                <el-button type="primary"
+                           size="small"
+                           @click="onSubmit">查询</el-button>
+            </el-form-item>
+        </el-form>
+        <div class="btnGroup">
+
+            <div data-v-6eb3df45=""
+                 class="primary-btn"><span>
+                    <span data-v-6eb3df45="">拓展</span>
+                </span>
+            </div>
+            <div data-v-6eb3df45=""
+                 class="primary-btn"><span>
+                    <span data-v-6eb3df45="">新增</span>
+                </span>
+            </div>
+
+            <div data-v-6eb3df45=""
+                 class="primary-btn"><span>
+                    <span data-v-6eb3df45="">修改</span>
+                </span>
+            </div>
+
+            <div data-v-6eb3df45=""
+                 class="primary-btn"><span>
+                    <span data-v-6eb3df45="">删除</span>
+                </span>
+            </div>
+        </div>
+        <template>
+            <el-table :data="tableData"
+                      style="width: 100%">
+                <el-table-column prop="date"
+                                 label="日期"
+                                 width="180">
+                </el-table-column>
+                <el-table-column prop="name"
+                                 label="姓名"
+                                 width="180">
+                </el-table-column>
+                <el-table-column prop="address"
+                                 label="地址">
+                </el-table-column>
+            </el-table>
+        </template>
+
     </div>
 </template>
 <script>
@@ -10,14 +71,36 @@ export default {
     },
     data () {
         return {
-
+            mediaForm: {
+                name: '',
+                code: ''
+            },
+            tableData: [{
+                date: '2016-05-02',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-04',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1517 弄'
+            }, {
+                date: '2016-05-01',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1519 弄'
+            }, {
+                date: '2016-05-03',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1516 弄'
+            }]
         }
     },
     mounted () {
 
     },
     methods: {
-
+        onSubmit () {
+            console.log('submit!')
+        }
     }
 }
 </script>

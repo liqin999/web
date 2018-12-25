@@ -105,19 +105,19 @@ export default {
                             path: ''
                         },
                         {
-                            name: '叠次设置',
+                            name: '菜单设置',
                             icon: 'el-icon-index',
                             id: '2-4',
                             path: ''
                         },
                         {
-                            name: '菜单管理',
+                            name: '界面管理',
                             icon: 'el-icon-index',
                             id: '2-5',
                             path: ''
                         },
                         {
-                            name: '部门',
+                            name: '部门管理',
                             icon: 'el-icon-index',
                             id: '2-6',
                             path: ''

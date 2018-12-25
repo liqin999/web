@@ -124,6 +124,11 @@ export const routes = [{
     path: '/systemBackground',
     component: systemBackground,
     children: [{
+        path: '',
+        redirect: '/mediaSet',
+        component: mediaSet
+    },
+    {
         path: '/mediaSet',
         component: mediaSet
     },
