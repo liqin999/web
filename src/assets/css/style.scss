@@ -1,49 +1,58 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
+<<<<<<< HEAD
  * @LastEditTime: 2018-12-25 17:13:26
+=======
+ * @LastEditTime: 2018-12-25 18:35:41
+>>>>>>> 48279300c73be40e7cbee2f99c2e2f5d3eb95d2a
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
-$primary-color: #3871f5 #6d99ff;    //系统色调 默认、hover状态 
-$wcolor: #fff;          //白色
-$bg-color:#fafafa #ebebeb ;   //背景色
-$font-color: #333 #676767 #999;   //字体颜色
-$font-size:12px 14px 16px 18px;      //字体大小
+$primary-color: #3871f5 #6d99ff; //系统色调 默认、hover状态
+$wcolor: #fff; //白色
+$bg-color: #fafafa #ebebeb; //背景色
+$font-color: #333 #676767 #999; //字体颜色
+$font-size: 12px 14px 16px 18px; //字体大小
 
-$border-color:#cbcbcb !default;   //边框颜色（默认）
-$tint-border-color:#dbdbdb;  //浅色边框颜色
-$border-radius: 3px;                //边角弧度
+$border-color: #cbcbcb !default; //边框颜色（默认）
+$tint-border-color: #dbdbdb; //浅色边框颜色
+$border-radius: 3px; //边角弧度
 
-$nav-height:40px !default;       //导航条行高（默认）
-$line-height:30px !default;       //行高（默认）
+$nav-height: 40px !default; //导航条行高（默认）
+$line-height: 30px !default; //行高（默认）
 
-$pointer: pointer;             //hover状态 鼠标pointer
+$pointer: pointer; //hover状态 鼠标pointer
 
 // 背景色渐变
 %gradient-bgcolor {
-    background: -webkit-linear-gradient(left,#3c6cde, #6d99ff); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(left,#3c6cde, #6d99ff); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(left,#3c6cde, #6d99ff); /* Firefox 3.6 - 15 */
-    background: linear-gradient(left,#3c6cde, #6d99ff); /* 标准的语法 */
+    background: -webkit-linear-gradient(left, #3c6cde, #6d99ff);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left, #3c6cde, #6d99ff);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left, #3c6cde, #6d99ff);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(left, #3c6cde, #6d99ff);
+    /* 标准的语法 */
 }
+
 // 使用方法 @extend %gradient-bgcolor;
 
 // 结束
-// $primary-color: rgba(0, 152, 210, 1) rgba(11, 169, 239, 1);    //系统色调 默认、hover状态 
-$font-color:#333 !default;   //字体颜色（默认）
-$white-color: #fff;          //白色
-$font-size:12px 14px 16px;      //字体大小
+// $primary-color: rgba(0, 152, 210, 1) rgba(11, 169, 239, 1);    //系统色调 默认、hover状态
+$font-color: #333 !default; //字体颜色（默认）
+$white-color: #fff; //白色
+$font-size: 12px 14px 16px; //字体大小
 // $border-color:#737373 !default;   //边框颜色（默认）
-$border-area-color:#E3E7E9;  //浅色边框颜色（用于文本框）
-$border-radius: 3px;                //边角弧度
-$line-height:30px !default;       //行高（默认）
-$pointer: pointer;             //hover状态 鼠标pointer
+$border-area-color: #e3e7e9; //浅色边框颜色（用于文本框）
+$border-radius: 3px; //边角弧度
+$line-height: 30px !default; //行高（默认）
+$pointer: pointer; //hover状态 鼠标pointer
 
 // elm 弹出框样式定义变量
-$header-bg-Color: #F2F2F2; //头部背景色颜色
-$header-border-color: #C9C9C9; //头部下边框颜色
+$header-bg-Color: #f2f2f2; //头部背景色颜色
+$header-border-color: #c9c9c9; //头部下边框颜色
 $header-title-color: #515151; //头部标题颜色
-$box-width:733px; //定义弹出框最小宽度
+$box-width: 733px; //定义弹出框最小宽度
 
 // 公共样式应用
 *{
@@ -54,6 +63,7 @@ $box-width:733px; //定义弹出框最小宽度
 .mb15 {
     margin-bottom: 15px;
 }
+
 .mt15 {
     margin-top: 15px;
 }
@@ -68,18 +78,21 @@ $box-width:733px; //定义弹出框最小宽度
 .pr10 {
     padding-right: 10px;
 }
+
 .pb10 {
     padding-bottom: 10px;
 }
+
 .pt10 {
     padding-top: 10px;
 }
+
 .pl10 {
     padding-left: 10px;
 }
 
 // margin padding 混合宏 传值 mOp = margin or padding 默认为0
-@mixin mar-pad($mOp, $top:0px, $right:0px, $bottom:0px, $left:0px) {
+@mixin mar-pad($mOp, $top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
     #{$mOp}: $top $right $bottom $left;
 }
 
@@ -90,18 +103,25 @@ $box-width:733px; //定义弹出框最小宽度
 }
 
 .el-example {
-    @include mar-pad(padding, 24px, 89px); //设置padding各边距 padding: 24px 89px 0px 0px;
+    @include mar-pad(
+        padding,
+        24px,
+        89px
+    ); //设置padding各边距 padding: 24px 89px 0px 0px;
     @include mar-pad(margin); //设置margin各边距 margin: 0px 0px 0px 0px;
 }
 
-
 // 边框样式颜色宽度设置
 // 默认border-bottom  若$option = all 则设置整个边框
-@mixin border($option: bottom, $width:1px, $style:solid, $color:$border-color) {
+@mixin border(
+    $option: bottom,
+    $width: 1px,
+    $style: solid,
+    $color: $border-color
+) {
     @if $option==all {
         border: $width $style $color;
-    }
-    @else {
+    } @else {
         border-#{$option}: $width $style $color;
     }
 }
@@ -109,7 +129,12 @@ $box-width:733px; //定义弹出框最小宽度
 // 示例
 .el-example {
     @include border; // border-bottom: 1px solid #737373;
-    @include border(all, 3px, solid, $border-color); // border: 3px solid #737373;
+    @include border(
+        all,
+        3px,
+        solid,
+        $border-color
+    ); // border: 3px solid #737373;
     @include border(bottom, 3px, solid, $border-color);
 }
 
@@ -119,10 +144,12 @@ $box-width:733px; //定义弹出框最小宽度
         width: 6px;
         height: 6px;
     }
+
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: nth($primary-color, 1);
     }
+
     &::-webkit-scrollbar-track {
         border-radius: 10px;
     }
@@ -168,19 +195,19 @@ $box-width:733px; //定义弹出框最小宽度
 
 // 字体设置
 .font12 {
-    font-size: nth($font-size, 1)
+    font-size: nth($font-size, 1);
 }
 
 .font14 {
-    font-size: nth($font-size, 2)
+    font-size: nth($font-size, 2);
 }
 
 .font16 {
-    font-size: nth($font-size, 3)
+    font-size: nth($font-size, 3);
 }
 
 .font18 {
-    font-size: nth($font-size, 3)
+    font-size: nth($font-size, 3);
 }
 
 // 用法  直接加类.font12   或者设置font-size: nth($font-size,3)  或者 @extend .font12
@@ -199,55 +226,64 @@ $box-width:733px; //定义弹出框最小宽度
 
     //hover状态
     &:hover {
-        background: nth($primary-color,2);
-        border-color: nth($primary-color,2);
+        background: nth($primary-color, 2);
+        border-color: nth($primary-color, 2);
         color: $white-color;
     }
 }
+
 // 取消按钮样式
-.reset-btn{
+.reset-btn {
     background: $white-color;
     border-radius: $border-radius;
-    border-color: nth($primary-color,1);
+    border-color: nth($primary-color, 1);
     cursor: $pointer;
-    color: nth($primary-color,1);
+    color: nth($primary-color, 1);
 
     display: inline-block;
     margin-right: 5px;
     padding: 5px 16px;
 
     //hover状态
-    &:hover{
-        border-color: nth($primary-color,2);
-        color: nth($primary-color,2);
+    &:hover {
+        border-color: nth($primary-color, 2);
+        color: nth($primary-color, 2);
     }
 }
 // 页面导航条样式
-.header-nav .el-menu--horizontal{
+.header-nav .el-menu--horizontal {
     @include border(bottom, 1px, solid, $tint-border-color);
 }
-.header-nav .el-menu--horizontal>.el-menu-item{
+
+.header-nav .el-menu--horizontal > .el-menu-item {
     height: $nav-height;
     line-height: $nav-height;
-    border:none!important;
+    border: none !important;
 }
-.header-nav .el-menu--horizontal>.el-submenu .el-submenu__title {
+
+.header-nav .el-menu--horizontal > .el-submenu .el-submenu__title {
     height: $nav-height;
     line-height: $nav-height;
     border-bottom: 0px solid transparent;
 }
-.header-nav .el-menu--horizontal .el-menu-item.is-active{
+
+.header-nav .el-menu--horizontal .el-menu-item.is-active {
     @extend %gradient-bgcolor;
 }
-.header-nav .el-menu--horizontal>.el-submenu:focus .el-submenu__title,.header-nav .el-menu--horizontal>.el-submenu:hover .el-submenu__title,.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
-    color: nth($primary-color,1);
+
+.header-nav .el-menu--horizontal > .el-submenu:focus .el-submenu__title,
+.header-nav .el-menu--horizontal > .el-submenu:hover .el-submenu__title,
+.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    color: nth($primary-color, 1);
 }
+
 .header-nav .el-submenu.is-active .el-submenu__title i {
-    color: $wcolor!important;
+    color: $wcolor !important;
 }
-.header-nav .el-menu--horizontal .el-submenu.is-active .el-submenu__title{
+.header-nav .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
     @extend %gradient-bgcolor;
-    border:none!important;
+    border: none !important;
 }
 
 // 页面二级导航样式
