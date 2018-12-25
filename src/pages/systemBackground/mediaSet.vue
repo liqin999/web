@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="media-set-wrap">
         <el-form :inline="true"
                  :model="mediaForm"
                  class="demo-form-inline">
@@ -105,6 +105,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.el-form-item {
+    margin-bottom: 0;
+}
+.btnGroup {
+    padding: 10px;
+    background-color: #f5f5f5;
+}
 </style>
 <style>
 </style>

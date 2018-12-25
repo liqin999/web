@@ -153,10 +153,14 @@ export default {
     height: calc(100vh - 90px);
     margin-right: 10px;
 }
+.el-menu {
+    border-right: none;
+}
 .right-con {
+    padding: 10px;
     border: 1px solid #ddd;
     border-bottom: none;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 110px);
     width: 100%;
 }
 </style>
