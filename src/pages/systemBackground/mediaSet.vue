@@ -61,6 +61,16 @@
                 </el-table-column>
             </el-table>
         </template>
+        <div class="page mt10">
+            <el-pagination @size-change="handleSizeChange"
+                           @current-change="handleCurrentChange"
+                           :current-page="currentPage4"
+                           :page-sizes="[10, 20, 30, 40]"
+                           :page-size="10"
+                           layout="total, sizes, prev, pager, next, jumper"
+                           :total="100">
+            </el-pagination>
+        </div>
 
     </div>
 </template>
@@ -71,6 +81,7 @@ export default {
     },
     data () {
         return {
+            currentPage: 1,
             mediaForm: {
                 name: '',
                 code: ''
@@ -100,6 +111,12 @@ export default {
     methods: {
         onSubmit () {
             console.log('submit!')
+        },
+        handleSizeChange (val) {
+            console.log(`每页 ${val} 条`)
+        },
+        handleCurrentChange (val) {
+            console.log(`当前页: ${val}`)
         }
     }
 }
@@ -114,4 +131,7 @@ export default {
 }
 </style>
 <style>
+.mt10 {
+    margin-top: 10px;
+}
 </style>
