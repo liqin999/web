@@ -10,6 +10,7 @@
 
         <el-tree :highlight-current="true"
                  class="filter-tree"
+                 :indent=5
                  :data="treeData"
                  :props="defaultProps"
                  default-expand-all
@@ -76,33 +77,37 @@ export default {
     }
 }
 </script>
-<style  lang="scss" scoped>
+<style  lang="scss">
+// 左侧树结构
 .tree-wrap {
-    padding: 10px;
-    .filter-tree {
-        margin-top: 7px;
+    @include mar-pad(padding, 25px);
+    .tree-search {
+        @include mar-pad(padding, 0, 10px, 0, 10px);
+        .el-input__suffix {
+            right: 10px;
+        }
+    }
+    .el-tree {
+        padding-top: 15px;
+        background-color: nth($bg-color, 1);
+        .custom-tree-node i {
+            margin-right: 5px;
+        }
+        .el-tree-node__content {
+            height: $line-height;
+            &:hover {
+                background-color: $wcolor;
+                color: nth($primary-color, 1);
+            }
+            & > .el-tree-node__expand-icon {
+                padding: 10px;
+            }
+        }
     }
 }
-.tree-search {
-    margin-top: 10px;
-    .el-input__inner {
-        border-radius: 50px;
-        height: 33px;
-        line-height: 33px;
-        width: 193px;
-    }
-}
-
 .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
-    background-color: #0ba9ef !important;
-    color: #fff !important;
-}
-.ft-ffd658 {
-    color: #ffd658;
-}
-.custom-tree-node {
-    .iconfont {
-        margin-right: 5px;
-    }
+    background-color: $wcolor;
+    color: nth($primary-color, 1);
+    border-left: 4px solid nth($primary-color, 1);
 }
 </style>

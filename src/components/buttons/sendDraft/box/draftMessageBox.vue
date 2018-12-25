@@ -421,7 +421,7 @@ $box-width: 733px; //定义弹出框最小宽度
     & .message-lists {
         border-bottom: 1px solid $border-color;
         & .message-list {
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             & .el-col {
                 @extend .text-overflow;
             }

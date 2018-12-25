@@ -6,12 +6,8 @@
                  style="width:100%;height:100%">
         </div>
         <div class="top">
-            <!-- <navigation-bar></navigation-bar> -->
             <header-bar></header-bar>
         </div>
-        <!-- <div class="left">
-        <left-menu></left-menu>
-    </div> -->
         <div class="main">
             <router-view />
         </div>
@@ -50,19 +46,7 @@ export default {
 }
 </script>
 <style>
-.main {
-    min-width: 940px;
-    overflow-x: hidden;
-}
-
-.top {
+/* .top {
     width: 100%;
-}
-
-.left {
-    height: 400px;
-    padding-top: 1px;
-    /* height: calc(100% - 50px); */
-    float: left;
-}
+} */
 </style>

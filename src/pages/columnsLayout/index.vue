@@ -7,8 +7,6 @@
                 <el-form-item label="媒体:"
                               slot="media">
                     <el-select v-model="searchForm.media"
-                               class="w100"
-                               size="small"
                                placeholder="请选择媒体">
                         <el-option label="媒体一"
                                    value="shanghai"></el-option>
@@ -20,15 +18,13 @@
         </div>
 
         <div class="con-wrap">
-
-            <div class="leftCon">
+            <div class="left">
                 <left-menu :treeData="data2"
                            :defaultProps="defaultProps"
                            @sendTreeObj="getTreeObj"></left-menu>
             </div>
-
-            <div class="rightCon">
-                <div class="btnGroup">
+            <div class="right">
+                <div class="btn-group pb10">
                     <!-- 引入按钮的组的插件 -->
                     <send-draft>
                         <span slot="iconName">传稿</span>
@@ -46,11 +42,7 @@
                             <span data-v-6eb3df45="">淘汰</span>
                         </span>
                     </div>
-                    <!-- <div data-v-6eb3df45=""
-               class="primary-btn"><span>
-              <span data-v-6eb3df45="">版本</span>
-            </span>
-          </div> -->
+
                     <version :data="versionData">
                         <span slot="iconName">版本</span>
                     </version>
@@ -81,71 +73,64 @@
                           tooltip-effect="dark"
                           style="width: 100%"
                           @selection-change="handleSelectionChange">
-                    <el-table-column type="selection"
-                                     width="55">
+                    <el-table-column type="selection">
                     </el-table-column>
-                    <el-table-column label="日期"
-                                     width="120">
+                    <el-table-column label="日期">
                         <template slot-scope="scope">{{ scope.row.date }}</template>
                     </el-table-column>
                     <el-table-column prop="name"
-                                     label="姓名"
-                                     width="120">
+                                     label="姓名">
                     </el-table-column>
                     <el-table-column prop="address"
                                      label="地址"
                                      show-overflow-tooltip>
                     </el-table-column>
                 </el-table>
-                <div class="mt10">
+                <div class="mt15 pagination-box">
                     <el-pagination @size-change="handleSizeChange"
                                    @current-change="handleCurrentChange"
+                                   class="ac"
                                    :current-page="currentPage"
-                                   :page-sizes="[10, 20, 30, 40]"
-                                   :page-size="10"
-                                   layout="total, sizes, prev, pager, next, jumper"
+                                   :page-size="20"
+                                   layout="total, prev, pager, next"
                                    :total="100">
                     </el-pagination>
                 </div>
-                <el-row>
-                    <el-col :span="24">
-                        <div class="btn-bottom">
-                            <div class="btn-hover">
-                                <span>浏览</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>留稿</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>打印</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>关闭</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <draft-label>
-                                <span slot="iconName">稿签</span>
-                            </draft-label>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <history>
-                                <span slot="iconName">历史</span>
-                            </history>
-                        </div>
-                    </el-col>
-                </el-row>
+                <div class="btn-bottom">
+                    <div class="btn-nav">
+                        <span>浏览</span>
+                    </div>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <div class="btn-nav">
+                        <span>留稿</span>
+                    </div>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <div class="btn-nav">
+                        <span>打印</span>
+                    </div>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <div class="btn-nav">
+                        <span>关闭</span>
+                    </div>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <draft-label>
+                        <span slot="iconName">稿签</span>
+                    </draft-label>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <history>
+                        <span slot="iconName">历史</span>
+                    </history>
+                </div>
             </div>
         </div>
     </div>
@@ -335,6 +320,70 @@ export default {
                 date: '2016-05-07',
                 name: '王小虎',
                 address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
             }],
             multipleSelection: []
         }
@@ -371,49 +420,29 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.btn-hover {
-    cursor: pointer;
-    float: left;
-    padding: 0px 10px;
+.con-wrap .el-table {
+    max-height: calc(100vh - 240px);
+}
+.pagination-box {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
 }
 .btn-bottom {
     padding: 10px 0;
     position: absolute;
-    right: 0px;
+    right: 15px;
+    bottom: 0px;
+    .btn-line {
+        float: left;
+        padding: 0px 10px;
+    }
+    .btn-nav {
+        @extend .btn-line;
+        cursor: pointer;
+        &:hover {
+            color: nth($primary-color, 1);
+        }
+    }
 }
-.search-wrap {
-    padding-top: 10px;
-    height: 50px;
-    background-color: #f5f5f5;
-}
-.con-wrap {
-    display: flex;
-}
-.leftCon {
-    width: 250px;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    height: calc(100vh - 90px);
-    margin-right: 10px;
-}
-.rightCon {
-    border: 1px solid #ddd;
-    border-bottom: none;
-    height: calc(100vh - 90px);
-    width: 100%;
-}
-.btnGroup {
-    height: 68px;
-    padding-top: 15px;
-    padding-left: 15px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #ddd;
-}
-.mt10 {
-    margin-top: 10px;
-    padding-left: 10px;
-}
-</style>
-<style>
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-hover">
+    <div class="btn-nav">
         <span @click="draftLabelIcon()">
             <slot name="iconName"></slot>
         </span>
@@ -40,9 +40,3 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.btn-hover {
-    cursor: pointer;
-    float: left;
-}
-</style>

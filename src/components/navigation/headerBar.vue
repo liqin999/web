@@ -1,6 +1,12 @@
+<!--
+ * @Author: 史薇薇
+ * @Date: 2018-12-19 09:34:45
+ * @LastEditors: 史薇薇
+ * @LastEditTime: 2018-12-25 09:53:13
+ * @Description: 导航条样式改版
+ -->
 <template>
     <div class="header-nav">
-        <!-- <div class="centerNav"> -->
         <el-menu :default-active="$route.path"
                  mode="horizontal"
                  :router="true"
@@ -33,11 +39,9 @@
                             </span>
                         </template>
                     </el-menu-item>
-
                 </template>
             </template>
         </el-menu>
-        <!-- </div> -->
     </div>
 </template>
 <script>
@@ -156,46 +160,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .headerNav {
-//     height: 32px;
-//     line-height: 32px;
-// }
-// .el-menu--horizontal > .el-menu-item {
-//     height: 32px;
-//     line-height: 32px;
-// }
-// .el-menu--horizontal > .el-menu-item.is-active {
-//     border-bottom: 2px solid #0ba9ef !important;
-//     color: #0ba9ef !important;
-// }
-// .el-menu--horizontal > .el-menu-item:hover {
-//     border-bottom: 2px solid #0ba9ef !important;
-//     color: #0ba9ef !important;
-// }
-// .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
-//     border-bottom: 2px solid #409eff !important;
-// }
-// .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
-//     border-bottom: 2px solid #409eff !important;
-// }
-// .el-menu--horizontal > .el-menu-item,
-// .el-menu--horizontal > .el-submenu {
-//     height: 32px;
-//     line-height: 32px;
-// }
-// .el-menu--horizontal.childMenu .el-menu-item:hover {
-//     color: #0ba9ef !important;
-// }
-</style>
-<style>
-/* .el-menu--horizontal > .el-submenu .el-submenu__title {
-    height: 32px;
-    line-height: 32px;
-    border-bottom: 2px solid #0ba9ef;
-    color: #0ba9ef;
+// 若导航条有下拉菜单
+.el-menu--horizontal .el-menu-item.is-active {
+    @extend %gradient-bgcolor;
 }
-.el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
-    border-bottom-color: #0ba9ef !important;
-    color: #0ba9ef !important;
-} */
 </style>

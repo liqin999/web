@@ -2,48 +2,56 @@
     <el-form :inline="true"
              :model="searchForm"
              class="search-form">
-        <el-form-item label="处理时间:">
-            <el-date-picker style="width:226px"
-                            v-model="searchForm.dateValue"
-                            size="small"
-                            type="daterange"
-                            align="right"
-                            unlink-panels
-                            range-separator="至"
-                            start-placeholder="开始日期"
-                            end-placeholder="结束日期"
-                            :picker-options="pickerOptions2">
-            </el-date-picker>
-        </el-form-item>
-        <el-form-item label="关键字:">
-            <el-input size="small"
-                      class="w100"
-                      v-model="searchForm.keywords"
-                      placeholder="关键字"></el-input>
-        </el-form-item>
-
-        <slot name="media"></slot>
-
-        <el-form-item label="类型:">
-            <el-checkbox :indeterminate="searchForm.isIndeterminate"
-                         v-model="searchForm.checkAll"
-                         @change="handleCheckAllChange">全选</el-checkbox>
-            <el-checkbox-group style="display:inline-block"
-                               v-model="searchForm.checkedTypes"
-                               @change="handleCheckedTypesChange">
-                <el-checkbox class="che"
-                             v-for="type in allTypes"
-                             :label="type"
-                             :key="type">{{type}}</el-checkbox>
-            </el-checkbox-group>
-        </el-form-item>
-        <el-form-item>
-            <el-button type="primary"
-                       size="small"
-                       @click="onSearch">查询</el-button>
-        </el-form-item>
+        <el-row :gutter="20">
+            <el-col :span="12"
+                    class="search-ipt">
+                <el-row :gutter="20">
+                    <el-col :span="10">
+                        <el-form-item label="处理时间:">
+                            <el-date-picker v-model="searchForm.dateValue"
+                                            type="daterange"
+                                            align="right"
+                                            unlink-panels
+                                            range-separator="至"
+                                            start-placeholder="开始日期"
+                                            end-placeholder="结束日期"
+                                            :picker-options="pickerOptions2">
+                            </el-date-picker>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="7">
+                        <el-form-item label="关键字:"
+                                      class="search-key">
+                            <el-input v-model="searchForm.keywords"
+                                      placeholder="关键字"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="7">
+                        <slot name="media"></slot>
+                    </el-col>
+                </el-row>
+            </el-col>
+            <el-col :span="12"
+                    class="rtab-padding text-right">
+                <el-form-item label="类型:"
+                              class="search-check">
+                    <el-checkbox :indeterminate="searchForm.isIndeterminate"
+                                 v-model="searchForm.checkAll"
+                                 @change="handleCheckAllChange">全选</el-checkbox>
+                    <el-checkbox-group v-model="searchForm.checkedTypes"
+                                       @change="handleCheckedTypesChange">
+                        <el-checkbox v-for="type in allTypes"
+                                     :label="type"
+                                     :key="type">{{type}}</el-checkbox>
+                    </el-checkbox-group>
+                </el-form-item>
+                <el-form-item class="search-btn">
+                    <el-button class="primary-btn"
+                               @click="onSearch">查询</el-button>
+                </el-form-item>
+            </el-col>
+        </el-row>
     </el-form>
-
 </template>
 
 <script>
@@ -112,18 +120,52 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.che {
-    margin-left: 7px;
-}
+<style lang="scss">
 .search-form {
-    min-width: 1300px;
-    padding-left: 10px;
     box-sizing: border-box;
 }
-</style>
-<style>
-.w100 {
-    width: 100px;
+.search-form .el-form-item {
+    margin-bottom: 0px;
+    margin-right: 0;
+}
+// 处理时间
+.search-form .search-ipt .el-form--inline .el-form-item__label {
+    width: 40%;
+}
+.search-form .search-ipt .el-form-item__content {
+    float: right;
+    width: 68%;
+}
+// 关键字
+.search-form .search-ipt .search-key .el-form-item__content {
+    float: right;
+    width: 60%;
+}
+
+// 多选框
+.search-form .search-check {
+    padding-right: 80px;
+    width: 100%;
+}
+.search-form .search-check .el-form-item__content {
+    height: 40px !important;
+}
+.search-form .el-checkbox-group {
+    display: inline-block;
+    margin-left: 8px;
+}
+.search-form .el-checkbox + .el-checkbox {
+    margin-left: 8px;
+}
+.search-form .el-checkbox__label {
+    padding-left: 8px;
+}
+.search-form .search-btn {
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+.search-form .el-col.rtab-padding {
+    position: relative;
 }
 </style>
