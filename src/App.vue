@@ -7,6 +7,6 @@
 // 页面最小宽度
 #app {
     min-width: 1200px;
-    overflow: auto;
+    overflow: hidden;
 }
 </style>

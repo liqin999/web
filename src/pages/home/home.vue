@@ -1,17 +1,18 @@
 <template>
-    <div>
-        <div style="height:40px">
+    <el-container>
+        <!-- <div style="height:40px">
             <img :src="imgUrl"
                  alt=""
                  style="width:100%;height:100%">
-        </div>
-        <div class="top">
+        </div> -->
+        <el-header height="40">
             <header-bar></header-bar>
-        </div>
-        <div class="main">
-            <router-view />
-        </div>
-    </div>
+        </el-header>
+
+        <!-- <el-container> -->
+        <router-view />
+        <!-- </el-container> -->
+    </el-container>
 </template>
 
 <script>
@@ -46,7 +47,4 @@ export default {
 }
 </script>
 <style>
-/* .top {
-    width: 100%;
-} */
 </style>

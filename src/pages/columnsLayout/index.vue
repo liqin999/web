@@ -1,139 +1,156 @@
 <template>
-    <div class="clearfix">
-        <div class="search-wrap">
-            <search-input :searchForm="searchForm"
-                          :allTypes="allTypes"
-                          @sendFormData="getFormData">
-                <el-form-item label="媒体:"
-                              slot="media">
-                    <el-select v-model="searchForm.media"
-                               placeholder="请选择媒体">
-                        <el-option label="媒体一"
-                                   value="shanghai"></el-option>
-                        <el-option label="媒体二"
-                                   value="beijing"></el-option>
-                    </el-select>
-                </el-form-item>
-            </search-input>
-        </div>
-
-        <div class="con-wrap">
-            <div class="left">
+    <el-container>
+        <el-header height="40">
+            <div class="search-wrap">
+                <search-input :searchForm="searchForm"
+                              :allTypes="allTypes"
+                              @sendFormData="getFormData">
+                    <el-form-item label="媒体:"
+                                  slot="media">
+                        <el-select v-model="searchForm.media"
+                                   placeholder="请选择媒体">
+                            <el-option label="媒体一"
+                                       value="shanghai"></el-option>
+                            <el-option label="媒体二"
+                                       value="beijing"></el-option>
+                        </el-select>
+                    </el-form-item>
+                </search-input>
+            </div>
+        </el-header>
+        <el-container>
+            <el-aside width="250px"
+                      class="left-aside">
                 <left-menu :treeData="data2"
                            :defaultProps="defaultProps"
                            @sendTreeObj="getTreeObj"></left-menu>
-            </div>
-            <div class="right">
-                <div class="btn-group pb10">
-                    <!-- 引入按钮的组的插件 -->
-                    <send-draft>
-                        <span slot="iconName">传稿</span>
-                    </send-draft>
-                    <issuance>
-                        <span slot="iconName">签发</span>
-                    </issuance>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">审稿</span>
-                        </span>
-                    </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">淘汰</span>
-                        </span>
-                    </div>
+            </el-aside>
+            <el-main id="el-main">
+                <el-container>
+                    <el-header height="40">
+                        <div class="btn-group pb10">
+                            <!-- 引入按钮的组的插件 -->
+                            <send-draft>
+                                <span slot="iconName">传稿</span>
+                            </send-draft>
+                            <issuance>
+                                <span slot="iconName">签发</span>
+                            </issuance>
+                            <div data-v-6eb3df45=""
+                                 class="primary-btn"><span>
+                                    <span data-v-6eb3df45="">审稿</span>
+                                </span>
+                            </div>
+                            <div data-v-6eb3df45=""
+                                 class="primary-btn"><span>
+                                    <span data-v-6eb3df45="">淘汰</span>
+                                </span>
+                            </div>
 
-                    <version :data="versionData">
-                        <span slot="iconName">版本</span>
-                    </version>
+                            <version :data="versionData">
+                                <span slot="iconName">版本</span>
+                            </version>
 
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">编辑</span>
-                        </span>
-                    </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">提交</span>
-                        </span>
-                    </div>
-                    <split>
-                        <span slot="iconName">拆分</span>
-                    </split>
-                    <concat :data="concatData"
-                            @sendConcatData="getConcatData"
-                            @sendConcatDataUp="getConcatDataUp"
-                            @sendConcatDataDown="getConcatDataDown">
-                        <span slot="iconName">合并</span>
-                    </concat>
+                            <div data-v-6eb3df45=""
+                                 class="primary-btn"><span>
+                                    <span data-v-6eb3df45="">编辑</span>
+                                </span>
+                            </div>
+                            <div data-v-6eb3df45=""
+                                 class="primary-btn"><span>
+                                    <span data-v-6eb3df45="">提交</span>
+                                </span>
+                            </div>
+                            <split>
+                                <span slot="iconName">拆分</span>
+                            </split>
+                            <concat :data="concatData"
+                                    @sendConcatData="getConcatData"
+                                    @sendConcatDataUp="getConcatDataUp"
+                                    @sendConcatDataDown="getConcatDataDown">
+                                <span slot="iconName">合并</span>
+                            </concat>
 
-                </div>
-                <el-table ref="multipleTable"
-                          :data="tableData3"
-                          tooltip-effect="dark"
-                          style="width: 100%"
-                          @selection-change="handleSelectionChange">
-                    <el-table-column type="selection">
-                    </el-table-column>
-                    <el-table-column label="日期">
-                        <template slot-scope="scope">{{ scope.row.date }}</template>
-                    </el-table-column>
-                    <el-table-column prop="name"
-                                     label="姓名">
-                    </el-table-column>
-                    <el-table-column prop="address"
-                                     label="地址"
-                                     show-overflow-tooltip>
-                    </el-table-column>
-                </el-table>
-                <div class="mt15 pagination-box">
-                    <el-pagination @size-change="handleSizeChange"
-                                   @current-change="handleCurrentChange"
-                                   class="ac"
-                                   :current-page="currentPage"
-                                   :page-size="20"
-                                   layout="total, prev, pager, next"
-                                   :total="100">
-                    </el-pagination>
-                </div>
-                <div class="btn-bottom">
-                    <div class="btn-nav">
-                        <span>浏览</span>
-                    </div>
-                    <div class="btn-line">
-                        <span>|</span>
-                    </div>
-                    <div class="btn-nav">
-                        <span>留稿</span>
-                    </div>
-                    <div class="btn-line">
-                        <span>|</span>
-                    </div>
-                    <div class="btn-nav">
-                        <span>打印</span>
-                    </div>
-                    <div class="btn-line">
-                        <span>|</span>
-                    </div>
-                    <div class="btn-nav">
-                        <span>关闭</span>
-                    </div>
-                    <div class="btn-line">
-                        <span>|</span>
-                    </div>
-                    <draft-label>
-                        <span slot="iconName">稿签</span>
-                    </draft-label>
-                    <div class="btn-line">
-                        <span>|</span>
-                    </div>
-                    <history>
-                        <span slot="iconName">历史</span>
-                    </history>
-                </div>
-            </div>
-        </div>
-    </div>
+                        </div>
+                    </el-header>
+                    <el-main class="main-padding">
+                        <el-table ref="multipleTable"
+                                  :data="tableData3"
+                                  tooltip-effect="dark"
+                                  @selection-change="handleSelectionChange">
+                            <el-table-column type="selection">
+                            </el-table-column>
+                            <el-table-column label="日期">
+                                <template slot-scope="scope">{{ scope.row.date }}</template>
+                            </el-table-column>
+                            <el-table-column prop="name"
+                                             label="姓名">
+                            </el-table-column>
+                            <el-table-column prop="address"
+                                             label="地址"
+                                             show-overflow-tooltip>
+                            </el-table-column>
+                        </el-table>
+                    </el-main>
+                    <el-footer height="80">
+                        <div class="mt15">
+                            <el-pagination @size-change="handleSizeChange"
+                                           @current-change="handleCurrentChange"
+                                           class="ac"
+                                           :current-page="currentPage"
+                                           :page-size="20"
+                                           layout="total, prev, pager, next"
+                                           :total="100">
+                            </el-pagination>
+                        </div>
+                        <div class="btn-bottom">
+                            <div class="btn-nav">
+                                <i class="iconfont icon-liulan"></i>
+                                <span>浏览</span>
+                            </div>
+                            <div class="btn-line">
+                                <span>|</span>
+                            </div>
+                            <div class="btn-nav">
+                                <i class="iconfont icon-wenben1"></i>
+                                <span>留稿</span>
+                            </div>
+                            <div class="btn-line">
+                                <span>|</span>
+                            </div>
+                            <div class="btn-nav">
+                                <i class="iconfont icon-ico_print"></i>
+                                <span>打印</span>
+                            </div>
+                            <div class="btn-line">
+                                <span>|</span>
+                            </div>
+                            <draft-label>
+                                <i slot="icon"
+                                   class="iconfont icon-wenben1"></i>
+                                <span slot="iconName">稿签</span>
+                            </draft-label>
+                            <div class="btn-line">
+                                <span>|</span>
+                            </div>
+                            <history>
+                                <i slot="icon"
+                                   class="iconfont icon-ic_history"></i>
+                                <span slot="iconName">历史</span>
+                            </history>
+                            <div class="btn-line">
+                                <span>|</span>
+                            </div>
+                            <div class="btn-nav">
+                                <i class="iconfont icon-guanbi"></i>
+                                <span>关闭</span>
+                            </div>
+                        </div>
+                    </el-footer>
+                </el-container>
+            </el-main>
+        </el-container>
+    </el-container>
 </template>
 <script>
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
@@ -389,7 +406,14 @@ export default {
         }
     },
     mounted () {
-
+        // Localstorage
+        // this.storage = new this.$Fn.Localstorage();
+        // 组件加载后获取 当前浏览器的高度
+        // this.mainHeight = document.body.clientHeight
+        // console.log(this.mainHeight)
+        // this.$store.commit('setContentHeight', this.windowHeight.height);
+        // 监听浏览器窗口大小改变 高度
+        // this.mainHeight = document.getElementById('main-padding').offsetHeight
     },
     methods: {
         getTreeObj (data) { // 获得树形菜单的对象
@@ -416,29 +440,35 @@ export default {
         getConcatDataDown (data) { // 获得合并弹框的下移操作
             console.log('获得合并子组件弹框的下移操作元素数据', data)
         }
+    },
+    computed: {
     }
 }
 </script>
 <style lang="scss" scoped>
-.con-wrap .el-table {
-    max-height: calc(100vh - 240px);
+.main-padding {
+    padding: 0px;
+    @extend .scroll-y;
+    @extend .scroll-x;
 }
-.pagination-box {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
+.left-aside {
+    overflow: hidden;
+}
+.left-aside .filter-tree {
+    @extend .scroll-y;
+    @extend .scroll-x;
 }
 .btn-bottom {
-    padding: 10px 0;
-    position: absolute;
-    right: 15px;
-    bottom: 0px;
+    @extend .clearfix;
+    @extend .text-right;
+    padding: 10px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
     .btn-line {
-        float: left;
         padding: 0px 10px;
     }
     .btn-nav {
-        @extend .btn-line;
         cursor: pointer;
         &:hover {
             color: nth($primary-color, 1);

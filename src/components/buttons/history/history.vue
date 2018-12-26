@@ -1,5 +1,6 @@
 <template>
     <div class="btn-nav">
+        <slot name="icon"></slot>
         <span @click="historyIcon">
             <slot name="iconName"></slot>
         </span>
