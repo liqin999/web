@@ -35,6 +35,15 @@ const sendManuscript = r => require.ensure([], () => r(require('@/pages/sendManu
 const newsCalendar = r => require.ensure([], () => r(require('@/pages/newsCalendar/index.vue')), 'newsCalendar')
 const systemBackground = r => require.ensure([], () => r(require('@/pages/systemBackground/index.vue')), 'systemBackground')
 
+// 媒体流向的二级菜单
+const person = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/person.vue')), 'person')
+const media = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/media.vue')), 'media')
+const group = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/group.vue')), 'group')
+const other = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/other.vue')), 'other')
+const page = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/page.vue')), 'page')
+const column = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/column.vue')), 'column')
+const special = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/special.vue')), 'special')
+
 // 后台设置
 const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet.vue')), 'mediaSet')
 const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand.vue')), 'mediaExpand')
@@ -102,7 +111,41 @@ export const routes = [{
 },
 {
     path: '/manuscriptFlow',
-    component: manuscriptFlow
+    component: manuscriptFlow,
+    children: [{
+        path: '',
+        redirect: '/manuscriptFlow/person',
+        component: person
+    },
+    {
+        path: '/manuscriptFlow/person',
+        component: person
+    },
+    {
+        path: '/manuscriptFlow/media',
+        component: media
+    },
+    {
+        path: '/manuscriptFlow/group',
+        component: group
+    },
+    {
+        path: '/manuscriptFlow/other',
+        component: other
+    },
+    {
+        path: '/manuscriptFlow/page',
+        component: page
+    },
+    {
+        path: '/manuscriptFlow/column',
+        component: column
+    },
+    {
+        path: '/manuscriptFlow/special',
+        component: special
+    }
+    ]
 },
 {
     path: '/manuscriptSetting',

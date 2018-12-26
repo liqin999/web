@@ -292,13 +292,12 @@ export default {
     border-right: 1px solid #ddd;
     border-top: 1px solid #ddd;
     height: calc(100vh - 90px);
-    margin-right: 10px;
 }
 .rightCon {
     border: 1px solid #ddd;
     border-bottom: none;
     height: calc(100vh - 90px);
-    width: 100%;
+    flex: 1;
 }
 .btnGroup {
     height: 68px;
