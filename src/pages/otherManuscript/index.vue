@@ -297,6 +297,7 @@ export default {
     border: 1px solid #ddd;
     border-bottom: none;
     height: calc(100vh - 90px);
+    flex: 1;
 }
 .btnGroup {
     height: 68px;
