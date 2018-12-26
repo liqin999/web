@@ -106,7 +106,7 @@ export default {
 
 <style lang="scss" scoped>
 .message-box {
-    padding: 0 10px;
+    padding: 0px;
 }
 .el-row {
     padding-bottom: 20px;
@@ -121,8 +121,7 @@ export default {
 <style lang="scss">
 .concat-dialog {
     .el-dialog__body {
-        padding-top: 0;
-        padding-bottom: 0px;
+        padding: 0;
     }
 }
 </style>
