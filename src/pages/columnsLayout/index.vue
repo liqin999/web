@@ -73,9 +73,11 @@
 
                         </div>
                     </el-header>
-                    <el-main class="main-padding">
+                    <el-main class="main-padding"
+                             ref="mainTable">
                         <el-table ref="multipleTable"
                                   :data="tableData3"
+                                  :height="mainTableHeight"
                                   tooltip-effect="dark"
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
@@ -402,7 +404,8 @@ export default {
                 name: '王小虎',
                 address: '上海市普陀区金沙江路 1518 弄'
             }],
-            multipleSelection: []
+            multipleSelection: [],
+            mainTableHeight: null
         }
     },
     mounted () {
@@ -414,6 +417,13 @@ export default {
         // this.$store.commit('setContentHeight', this.windowHeight.height);
         // 监听浏览器窗口大小改变 高度
         // this.mainHeight = document.getElementById('main-padding').offsetHeight
+        let that = this
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        window.onresize = () => {
+            return (() => {
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+            })()
+        }
     },
     methods: {
         getTreeObj (data) { // 获得树形菜单的对象
@@ -448,8 +458,8 @@ export default {
 <style lang="scss" scoped>
 .main-padding {
     padding: 0px;
-    @extend .scroll-y;
-    @extend .scroll-x;
+    // @extend .scroll-y;
+    // @extend .scroll-x;
 }
 .left-aside {
     overflow: hidden;
@@ -474,5 +484,8 @@ export default {
             color: nth($primary-color, 1);
         }
     }
+}
+.el-table {
+    overflow-y: hidden;
 }
 </style>
