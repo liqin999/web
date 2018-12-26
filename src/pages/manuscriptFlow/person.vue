@@ -1,5 +1,5 @@
 <template>
-    <div style="margin:0 20px">
+    <div style="">
         <div class="search-list">
             <el-checkbox-group v-model="checkList"
                                class="inline-block">
@@ -80,6 +80,7 @@ export default {
     },
     data () {
         return {
+            currentPage: 1,
             checkList: ['A'],
             options: [{
                 value: '选项1',
@@ -120,7 +121,14 @@ export default {
     mounted () {
 
     },
-    methods: {}
+    methods: {
+        handleSizeChange () {
+
+        },
+        handleCurrentChange () {
+
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

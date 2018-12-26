@@ -46,28 +46,33 @@
             </div>
         </div>
         <template>
-            <el-table :data="tableData"
-                      style="width: 100%">
-                <el-table-column prop="date"
-                                 label="日期"
-                                 width="180">
+            <el-table ref="multipleTable"
+                      :data="tableData3"
+                      tooltip-effect="dark"
+                      style="width: 100%"
+                      @selection-change="handleSelectionChange">
+                <el-table-column type="selection"
+                                 width="55">
+                </el-table-column>
+                <el-table-column label="日期">
+                    <template slot-scope="scope">{{ scope.row.date }}</template>
                 </el-table-column>
                 <el-table-column prop="name"
-                                 label="姓名"
-                                 width="180">
+                                 label="姓名">
                 </el-table-column>
                 <el-table-column prop="address"
-                                 label="地址">
+                                 label="地址"
+                                 show-overflow-tooltip>
                 </el-table-column>
             </el-table>
         </template>
         <div class="page mt10">
             <el-pagination @size-change="handleSizeChange"
                            @current-change="handleCurrentChange"
-                           :current-page="currentPage4"
-                           :page-sizes="[10, 20, 30, 40]"
-                           :page-size="10"
-                           layout="total, sizes, prev, pager, next, jumper"
+                           class="ac"
+                           :current-page="currentPage"
+                           :page-size="20"
+                           layout="total, prev, pager, next"
                            :total="100">
             </el-pagination>
         </div>
@@ -86,23 +91,36 @@ export default {
                 name: '',
                 code: ''
             },
-            tableData: [{
+            tableData3: [{
+                date: '2016-05-03',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
                 date: '2016-05-02',
                 name: '王小虎',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-04',
                 name: '王小虎',
-                address: '上海市普陀区金沙江路 1517 弄'
+                address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-01',
                 name: '王小虎',
-                address: '上海市普陀区金沙江路 1519 弄'
+                address: '上海市普陀区金沙江路 1518 弄'
             }, {
-                date: '2016-05-03',
+                date: '2016-05-08',
                 name: '王小虎',
-                address: '上海市普陀区金沙江路 1516 弄'
-            }]
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }],
+            multipleSelection: []
         }
     },
     mounted () {
@@ -117,6 +135,9 @@ export default {
         },
         handleCurrentChange (val) {
             console.log(`当前页: ${val}`)
+        },
+        handleSelectionChange (val) {
+            this.multipleSelection = val
         }
     }
 }

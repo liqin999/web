@@ -289,14 +289,15 @@ $font-blue: #049a9a;
         .img-wrap {
             text-align: center;
             border: 1px solid transparent;
-            width: 120px;
+            width: 121px;
             display: inline-block;
             height: 160px;
+            text-align: center;
         }
         img {
             display: inline-block;
             width: 100%;
-            height: 160px;
+            height: 158px;
         }
         .texts {
             text-align: center;

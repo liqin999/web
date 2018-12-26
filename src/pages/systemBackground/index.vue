@@ -1,7 +1,7 @@
 <template>
     <div class="clearfix">
         <div class="con-wrap">
-            <div class="left-con">
+            <div class="left">
                 <el-menu :default-active="$route.path"
                          :router="true"
                          class="el-menu-vertical-demo"
@@ -26,7 +26,7 @@
 
                 </el-menu>
             </div>
-            <div class="right-con">
+            <div class="right">
                 <!-- 后台设置的页面 -->
                 <router-view></router-view>
             </div>
@@ -145,14 +145,6 @@ export default {
 .con-wrap {
     display: flex;
 }
-.left-con {
-    width: 250px;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    height: calc(100vh - 90px);
-    margin-right: 10px;
-}
 .el-menu {
     border-right: none;
 }
@@ -164,13 +156,4 @@ export default {
     height: 40px;
     line-height: 40px;
 }
-.right-con {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-bottom: none;
-    height: calc(100vh - 110px);
-    width: 100%;
-}
-</style>
-<style>
 </style>

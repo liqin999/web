@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import flow from './modules/flow'
 // 引入当前开发者的状态管理.js
 import {
     Loading
@@ -85,5 +86,8 @@ export const store = new Vuex.Store({
         cloaseLoading (store) {
             store.commit('cloaseLoading')
         }
+    },
+    modules: {
+        flow: flow
     }
 })

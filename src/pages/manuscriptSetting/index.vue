@@ -467,7 +467,19 @@ export default {
 .btn-bottom {
     padding: 10px 0;
     position: absolute;
-    right: 0px;
+    right: 15px;
+    bottom: 0px;
+    .btn-line {
+        float: left;
+        padding: 0px 10px;
+    }
+    .btn-nav {
+        @extend .btn-line;
+        cursor: pointer;
+        &:hover {
+            color: nth($primary-color, 1);
+        }
+    }
 }
 .search-wrap {
     padding-top: 10px;

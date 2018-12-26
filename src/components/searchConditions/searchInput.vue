@@ -19,7 +19,8 @@
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="7">
+                    <el-col :span="7"
+                            v-if="showKeyWords">
                         <el-form-item label="关键字:"
                                       class="search-key">
                             <el-input v-model="searchForm.keywords"
@@ -66,6 +67,12 @@ export default {
             type: [Array, Function],
             default: function () {
                 return ['文本', '图片', '图表', '视频', '音频', '应用']
+            }
+        },
+        showKeyWords: {
+            type: [Boolean],
+            default: function () {
+                return true
             }
         }
     },
