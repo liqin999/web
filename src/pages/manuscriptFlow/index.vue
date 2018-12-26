@@ -15,6 +15,7 @@
                          mode="horizontal"
                          @select="handleSelect">
                     <el-menu-item v-for="item in tabTitleList"
+                                  :disabled="item.disabled"
                                   :route='{ path: item.path }'
                                   :key="item.id"
                                   :index="item.path">
@@ -53,25 +54,29 @@ export default {
                 {
                     id: '1-3',
                     name: '组室公共稿件',
-                    path: '/manuscriptFlow/group'
+                    path: '/manuscriptFlow/group',
+                    disabled: true
 
                 },
                 {
                     id: '1-4',
                     name: '其他人员稿件',
-                    path: '/manuscriptFlow/other'
+                    path: '/manuscriptFlow/other',
+                    disabled: true
 
                 },
                 {
                     id: '1-5',
                     name: '版面稿件',
-                    path: '/manuscriptFlow/page'
+                    path: '/manuscriptFlow/page',
+                    disabled: true
 
                 },
                 {
                     id: '1-6',
                     name: '栏目稿件',
-                    path: '/manuscriptFlow/column'
+                    path: '/manuscriptFlow/column',
+                    disabled: true
 
                 },
                 {
