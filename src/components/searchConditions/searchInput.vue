@@ -3,10 +3,10 @@
              :model="searchForm"
              class="search-form">
         <el-row :gutter="20">
-            <el-col :span="12"
+            <el-col :span="24"
                     class="search-ipt">
                 <el-row :gutter="20">
-                    <el-col :span="10">
+                    <el-col :span="6">
                         <el-form-item label="处理时间:">
                             <el-date-picker v-model="searchForm.dateValue"
                                             type="daterange"
@@ -19,7 +19,7 @@
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="7"
+                    <el-col :span="4"
                             v-if="showKeyWords">
                         <el-form-item label="关键字:"
                                       class="search-key">
@@ -27,29 +27,34 @@
                                       placeholder="关键字"></el-input>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="7">
+                    <el-col :span="14">
                         <slot name="media"></slot>
                     </el-col>
                 </el-row>
             </el-col>
-            <el-col :span="12"
-                    class="rtab-padding text-right">
-                <el-form-item label="类型:"
-                              class="search-check">
-                    <el-checkbox :indeterminate="searchForm.isIndeterminate"
-                                 v-model="searchForm.checkAll"
-                                 @change="handleCheckAllChange">全选</el-checkbox>
-                    <el-checkbox-group v-model="searchForm.checkedTypes"
-                                       @change="handleCheckedTypesChange">
-                        <el-checkbox v-for="type in allTypes"
-                                     :label="type"
-                                     :key="type">{{type}}</el-checkbox>
-                    </el-checkbox-group>
-                </el-form-item>
-                <el-form-item class="search-btn">
-                    <el-button class="primary-btn"
-                               @click="onSearch">查询</el-button>
-                </el-form-item>
+            <el-col :span="24">
+                <el-row :gutter="20">
+                    <el-col :span="24">
+                        <el-form-item label="类型:"
+                                      class="search-check">
+                            <el-checkbox :indeterminate="searchForm.isIndeterminate"
+                                         v-model="searchForm.checkAll"
+                                         @change="handleCheckAllChange">全选</el-checkbox>
+                            <el-checkbox-group v-model="searchForm.checkedTypes"
+                                               @change="handleCheckedTypesChange">
+                                <el-checkbox v-for="type in allTypes"
+                                             :label="type"
+                                             :key="type">{{type}}</el-checkbox>
+                            </el-checkbox-group>
+                        </el-form-item>
+                        <!-- </el-col> -->
+                        <!-- <el-col :span="3"> -->
+                        <el-form-item class="search-btn">
+                            <el-button class="primary-btn"
+                                       @click="onSearch">查询</el-button>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
             </el-col>
         </el-row>
     </el-form>
@@ -151,8 +156,8 @@ export default {
 
 // 多选框
 .search-form .search-check {
-    padding-right: 80px;
-    width: 100%;
+    padding-right: 8px;
+    // width: 100%;
 }
 .search-form .search-check .el-form-item__content {
     height: 40px !important;
@@ -166,13 +171,5 @@ export default {
 }
 .search-form .el-checkbox__label {
     padding-left: 8px;
-}
-.search-form .search-btn {
-    position: absolute;
-    top: 0px;
-    right: 0;
-}
-.search-form .el-col.rtab-padding {
-    position: relative;
 }
 </style>

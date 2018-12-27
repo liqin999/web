@@ -1,246 +1,330 @@
 <template>
-    <div class="clearfix">
-        <div class="search-wrap">
-            <el-form :inline="true"
-                     :model="searchForm"
-                     class="search-form">
-                <el-form-item label="投送日期">
-                    <el-date-picker v-model="searchForm.sendDate"
-                                    style="width:226px"
-                                    type="daterange"
-                                    range-separator="至"
-                                    start-placeholder="开始日期"
-                                    end-placeholder="结束日期">
-                    </el-date-picker>
-                </el-form-item>
-
-                <el-form-item label="稿件状态">
-                    <el-select v-model="searchForm.state1"
-                               class="w100"
-                               placeholder="稿件状态">
-                        <el-option label="全部"
-                                   value="shanghai">
-                        </el-option>
-                        <el-option label="待审"
-                                   value="beijing">
-                        </el-option>
-                        <el-option label="待处理"
-                                   value="shan22ghai">
-                        </el-option>
-                        <el-option label="已处理"
-                                   value="be1ijing">
-                        </el-option>
-                    </el-select>
-                </el-form-item>
-
-                <el-form-item label="约稿状态">
-                    <el-select v-model="searchForm.state2"
-                               class="w100"
-                               placeholder="稿件状态">
-                        <el-option label="全部"
-                                   value="shanghai">
-                        </el-option>
-                        <el-option label="待审"
-                                   value="beijing">
-                        </el-option>
-                        <el-option label="待处理"
-                                   value="shan22ghai">
-                        </el-option>
-                        <el-option label="已处理"
-                                   value="be1ijing">
-                        </el-option>
-                    </el-select>
-                </el-form-item>
-
-                <el-form-item label="稿件号">
-                    <el-input v-model="searchForm.num"
-                              placeholder=""></el-input>
-                </el-form-item>
-                <el-form-item label="关键字">
-                    <el-input v-model="searchForm.keyWords"
-                              class="w100"
-                              placeholder=""></el-input>
-                </el-form-item>
-
-                <el-form-item label="第一作者">
-                    <el-input v-model="searchForm.author"
-                              class="w100"
-                              placeholder=""></el-input>
-                </el-form-item>
-
-                <el-form-item label="稿件来源">
-                    <el-select v-model="searchForm.source"
-                               class="w100"
-                               placeholder="稿件来源">
-                        <el-option label="全部"
-                                   value="shanghai">
-                        </el-option>
-                        <el-option label="来源1"
-                                   value="beijing">
-                        </el-option>
-                        <el-option label="来源2"
-                                   value="shan22ghai">
-                        </el-option>
-                    </el-select>
-                </el-form-item>
-
-                <el-form-item label="产品类型">
-                    <el-select v-model="searchForm.source"
-                               class="w100"
-                               placeholder="产品类型">
-                        <el-option label="全部"
-                                   value="shangddhai12">
-                        </el-option>
-                        <el-option label="类型1"
-                                   value="beijing">
-                        </el-option>
-                        <el-option label="类型2"
-                                   value="12的方法">
-                        </el-option>
-                    </el-select>
-                </el-form-item>
-
-                <el-form-item label="类型:">
-                    <el-checkbox :indeterminate="searchForm.isIndeterminate"
-                                 v-model="searchForm.checkAll"
-                                 @change="handleCheckAllChange">全选</el-checkbox>
-                    <el-checkbox-group style="display:inline-block"
-                                       @change="handleCheckedTypesChange"
-                                       v-model="searchForm.checkedTypes">
-                        <el-checkbox class="che"
-                                     v-for="type in allTypes"
-                                     :label="type"
-                                     :key="type">{{type}}</el-checkbox>
-                    </el-checkbox-group>
-                </el-form-item>
-
-                <el-form-item>
-                    <el-button type="primary"
-                               size="small"
-                               @click="onSearch">检索</el-button>
-                </el-form-item>
-            </el-form>
-        </div>
-
-        <div class="con-wrap">
-            <div class="left-con">
+    <el-container class="manuscript-setting">
+        <el-header height="85">
+            <div class="search-wrap">
+                <el-form :inline="true"
+                         :model="searchForm"
+                         class="search-form">
+                    <el-row :gutter="20">
+                        <el-col :span="6"
+                                class="search-ipt">
+                            <el-form-item label="处理时间">
+                                <el-date-picker v-model="searchForm.dateValue"
+                                                type="daterange"
+                                                unlink-panels
+                                                range-separator="至"
+                                                start-placeholder="开始日期"
+                                                end-placeholder="结束日期"
+                                                :picker-options="pickerOptions2">
+                                </el-date-picker>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="6"
+                                v-if="showKeyWords">
+                            <el-form-item label="关键字"
+                                          class="search-key">
+                                <el-input v-model="searchForm.keywords"
+                                          placeholder="关键字"></el-input>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-form-item label="稿件状态">
+                                <el-select v-model="searchForm.state1"
+                                           placeholder="稿件状态">
+                                    <el-option label="全部"
+                                               value="shanghai">
+                                    </el-option>
+                                    <el-option label="待审"
+                                               value="beijing">
+                                    </el-option>
+                                    <el-option label="待处理"
+                                               value="shan22ghai">
+                                    </el-option>
+                                    <el-option label="已处理"
+                                               value="be1ijing">
+                                    </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-form-item label="稿件来源">
+                                <el-select v-model="searchForm.source"
+                                           placeholder="稿件来源">
+                                    <el-option label="全部"
+                                               value="shanghai">
+                                    </el-option>
+                                    <el-option label="来源1"
+                                               value="beijing">
+                                    </el-option>
+                                    <el-option label="来源2"
+                                               value="shan22ghai">
+                                    </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-form-item label="第一作者">
+                                <el-input v-model="searchForm.author"
+                                          placeholder=""></el-input>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="6"
+                                v-if="showKeyWords">
+                            <el-form-item label="稿件号">
+                                <el-input v-model="searchForm.num"
+                                          placeholder=""></el-input>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-form-item label="约稿状态">
+                                <el-select v-model="searchForm.state2"
+                                           placeholder="稿件状态">
+                                    <el-option label="全部"
+                                               value="shanghai">
+                                    </el-option>
+                                    <el-option label="待审"
+                                               value="beijing">
+                                    </el-option>
+                                    <el-option label="待处理"
+                                               value="shan22ghai">
+                                    </el-option>
+                                    <el-option label="已处理"
+                                               value="be1ijing">
+                                    </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-form-item label="产品类型">
+                                <el-select v-model="searchForm.source"
+                                           placeholder="产品类型">
+                                    <el-option label="全部"
+                                               value="shangddhai12">
+                                    </el-option>
+                                    <el-option label="类型1"
+                                               value="beijing">
+                                    </el-option>
+                                    <el-option label="类型2"
+                                               value="12的方法">
+                                    </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row :gutter="20">
+                        <el-col :span="24">
+                            <el-row :gutter="20">
+                                <el-col :span="24">
+                                    <el-form-item label="类型:"
+                                                  class="search-check">
+                                        <el-checkbox :indeterminate="searchForm.isIndeterminate"
+                                                     v-model="searchForm.checkAll"
+                                                     @change="handleCheckAllChange">全选</el-checkbox>
+                                        <el-checkbox-group style="display:inline-block"
+                                                           @change="handleCheckedTypesChange"
+                                                           v-model="searchForm.checkedTypes">
+                                            <el-checkbox class="che"
+                                                         v-for="type in allTypes"
+                                                         :label="type"
+                                                         :key="type">{{type}}</el-checkbox>
+                                        </el-checkbox-group>
+                                    </el-form-item>
+                                    <el-form-item>
+                                        <el-button class="primary-btn"
+                                                   @click="onSearch">检索</el-button>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                </el-form>
+            </div>
+        </el-header>
+        <el-container>
+            <el-aside width="250px"
+                      class="left-aside">
                 <left-menu :treeData="data2"
                            :defaultProps="defaultProps"
                            @sendTreeObj="getTreeObj"></left-menu>
-            </div>
-
-            <div class="right-con">
-                <div class="btn-group">
-                    <!-- 引入按钮的组的插件 -->
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">刷新</span>
-                        </span>
-                    </div>
-                    <send-draft>
-                        <span slot="iconName">传稿</span>
-                    </send-draft>
-
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">阅稿</span>
-                        </span>
-                    </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">留稿</span>
-                        </span>
-                    </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">稿签</span>
-                        </span>
-                    </div>
-
-                </div>
-                <el-table ref="multipleTable"
-                          :data="tableData3"
-                          tooltip-effect="dark"
-                          style="width: 100%"
-                          @selection-change="handleSelectionChange">
-                    <el-table-column type="selection"
-                                     width="55">
-                    </el-table-column>
-                    <el-table-column label="日期"
-                                     width="120">
-                        <template slot-scope="scope">{{ scope.row.date }}</template>
-                    </el-table-column>
-                    <el-table-column prop="name"
-                                     label="姓名"
-                                     width="120">
-                    </el-table-column>
-                    <el-table-column prop="address"
-                                     label="地址"
-                                     show-overflow-tooltip>
-                    </el-table-column>
-                </el-table>
-                <div class="mt10">
-                    <el-pagination @size-change="handleSizeChange"
-                                   @current-change="handleCurrentChange"
-                                   :current-page="currentPage"
-                                   :page-sizes="[10, 20, 30, 40]"
-                                   :page-size="10"
-                                   layout="total, sizes, prev, pager, next, jumper"
-                                   :total="100">
-                    </el-pagination>
-                </div>
-                <el-row>
-                    <el-col :span="24">
-                        <div class="btn-bottom">
-                            <div class="btn-hover">
-                                <span>浏览</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-
-                            <div class="btn-hover">
-                                <span>打印</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>关闭</span>
-                            </div>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <draft-label>
-                                <span slot="iconName">稿签</span>
-                            </draft-label>
-                            <div class="btn-hover">
-                                <span>|</span>
-                            </div>
-                            <history>
-                                <span slot="iconName">历史</span>
-                            </history>
+            </el-aside>
+            <el-container>
+                <el-header height="40"
+                           class="setting-right-header">
+                    <div class="btn-group">
+                        <!-- 引入按钮的组的插件 -->
+                        <send-draft>
+                            <span slot="iconName">传稿</span>
+                        </send-draft>
+                        <issuance>
+                            <span slot="iconName">签发</span>
+                        </issuance>
+                        <div data-v-6eb3df45=""
+                             class="primary-btn"><span>
+                                <span data-v-6eb3df45="">审稿</span>
+                            </span>
                         </div>
-                    </el-col>
-                </el-row>
-            </div>
-        </div>
-    </div>
+                        <div data-v-6eb3df45=""
+                             class="primary-btn"><span>
+                                <span data-v-6eb3df45="">淘汰</span>
+                            </span>
+                        </div>
+
+                        <version :data="versionData">
+                            <span slot="iconName">版本</span>
+                        </version>
+
+                        <div data-v-6eb3df45=""
+                             class="primary-btn"><span>
+                                <span data-v-6eb3df45="">编辑</span>
+                            </span>
+                        </div>
+                        <div data-v-6eb3df45=""
+                             class="primary-btn"><span>
+                                <span data-v-6eb3df45="">提交</span>
+                            </span>
+                        </div>
+                        <split>
+                            <span slot="iconName">拆分</span>
+                        </split>
+                        <concat :data="concatData"
+                                @sendConcatData="getConcatData"
+                                @sendConcatDataUp="getConcatDataUp"
+                                @sendConcatDataDown="getConcatDataDown">
+                            <span slot="iconName">合并</span>
+                        </concat>
+
+                    </div>
+                </el-header>
+                <el-main class="main-padding"
+                         ref="mainTable">
+                    <el-table ref="multipleTable"
+                              :data="tableData3"
+                              :height="mainTableHeight"
+                              tooltip-effect="dark"
+                              @selection-change="handleSelectionChange">
+                        <el-table-column type="selection">
+                        </el-table-column>
+                        <el-table-column label="日期">
+                            <template slot-scope="scope">{{ scope.row.date }}</template>
+                        </el-table-column>
+                        <el-table-column prop="name"
+                                         label="姓名">
+                        </el-table-column>
+                        <el-table-column prop="address"
+                                         label="地址"
+                                         show-overflow-tooltip>
+                        </el-table-column>
+                    </el-table>
+                </el-main>
+                <el-footer height="80">
+                    <div class="mt15">
+                        <el-pagination @size-change="handleSizeChange"
+                                       @current-change="handleCurrentChange"
+                                       class="ac"
+                                       :current-page="currentPage"
+                                       :page-size="20"
+                                       layout="total, prev, pager, next"
+                                       :total="100">
+                        </el-pagination>
+                    </div>
+                    <div class="btn-bottom">
+                        <div class="btn-nav">
+                            <i class="iconfont icon-liulan"></i>
+                            <span>浏览</span>
+                        </div>
+                        <div class="btn-line">
+                            <span>|</span>
+                        </div>
+                        <div class="btn-nav">
+                            <i class="iconfont icon-wenben1"></i>
+                            <span>留稿</span>
+                        </div>
+                        <div class="btn-line">
+                            <span>|</span>
+                        </div>
+                        <div class="btn-nav">
+                            <i class="iconfont icon-ico_print"></i>
+                            <span>打印</span>
+                        </div>
+                        <div class="btn-line">
+                            <span>|</span>
+                        </div>
+                        <draft-label>
+                            <i slot="icon"
+                               class="iconfont icon-wenben1"></i>
+                            <span slot="iconName">稿签</span>
+                        </draft-label>
+                        <div class="btn-line">
+                            <span>|</span>
+                        </div>
+                        <history>
+                            <i slot="icon"
+                               class="iconfont icon-ic_history"></i>
+                            <span slot="iconName">历史</span>
+                        </history>
+                        <div class="btn-line">
+                            <span>|</span>
+                        </div>
+                        <div class="btn-nav">
+                            <i class="iconfont icon-guanbi"></i>
+                            <span>关闭</span>
+                        </div>
+                    </div>
+                </el-footer>
+            </el-container>
+        </el-container>
+    </el-container>
 </template>
 <script>
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+import issuance from '@/components/buttons/issuance/issuance'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
+import split from '@/components/buttons/split/split'
+import concat from '@/components/buttons/concat/concat'
+import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 export default {
     components: {
         leftMenu,
         sendDraft,
+        issuance,
+        split,
+        concat,
+        version,
         draftLabel,
         history
     },
     data () {
         return {
+            showKeyWords: true,
+            pickerOptions2: {
+                shortcuts: [{
+                    text: '最近一周',
+                    onClick (picker) {
+                        const end = new Date()
+                        const start = new Date()
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
+                        picker.$emit('pick', [start, end])
+                    }
+                }, {
+                    text: '最近一个月',
+                    onClick (picker) {
+                        const end = new Date()
+                        const start = new Date()
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
+                        picker.$emit('pick', [start, end])
+                    }
+                }, {
+                    text: '最近三个月',
+                    onClick (picker) {
+                        const end = new Date()
+                        const start = new Date()
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
+                        picker.$emit('pick', [start, end])
+                    }
+                }]
+            },
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -409,11 +493,18 @@ export default {
                 name: '王小虎',
                 address: '上海市普陀区金沙江路 1518 弄'
             }],
-            multipleSelection: []
+            multipleSelection: [],
+            mainTableHeight: null
         }
     },
     mounted () {
-
+        let that = this
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        window.onresize = () => {
+            return (() => {
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+            })()
+        }
     },
     methods: {
         handleCheckAllChange (val) {
@@ -453,72 +544,76 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.search-form {
-    padding-left: 10px;
+.manuscript-setting {
+    .search-wrap {
+        padding-top: 5px;
+    }
+    .setting-right-header {
+        padding: 10px;
+    }
 }
-.el-form-item {
-    margin-bottom: 0;
-}
-.btn-hover {
-    cursor: pointer;
-    float: left;
+.main-padding {
     padding: 0px 10px;
+    // @extend .scroll-y;
+    // @extend .scroll-x;
+}
+.left-aside {
+    overflow: hidden;
+}
+.left-aside .filter-tree {
+    @extend .scroll-y;
+    @extend .scroll-x;
 }
 .btn-bottom {
-    padding: 10px 0;
-    position: absolute;
-    right: 15px;
-    bottom: 0px;
+    @extend .clearfix;
+    @extend .text-right;
+    padding: 10px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
     .btn-line {
-        float: left;
         padding: 0px 10px;
     }
     .btn-nav {
-        @extend .btn-line;
         cursor: pointer;
         &:hover {
             color: nth($primary-color, 1);
         }
     }
 }
-.search-wrap {
-    padding-top: 10px;
-    background-color: #f5f5f5;
-}
-.con-wrap {
-    display: flex;
-}
-.left-con {
-    width: 250px;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    height: calc(100vh - 90px);
-    margin-right: 10px;
-}
-.right-con {
-    border: 1px solid #ddd;
-    border-bottom: none;
-    height: calc(100vh - 90px);
-    width: 100%;
-}
-.btn-group {
-    height: 68px;
-    padding-top: 15px;
-    padding-left: 15px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #ddd;
-}
-.mt10 {
-    margin-top: 10px;
-    padding-left: 10px;
-}
-.w100 {
-    width: 100px;
-}
-.che {
-    margin-left: 7px;
+.el-table {
+    overflow-y: hidden;
 }
 </style>
-<style>
+<style lang="scss">
+.search-form .el-form-item {
+    margin-bottom: 0px;
+    margin-right: 0;
+}
+// 处理时间
+.search-form .search-ipt .el-form-item__label {
+    // width: 40%;
+}
+.search-form .search-ipt .el-form-item__content {
+    // float: right;
+    width: 62%;
+}
+// 多选框
+.search-form .search-check {
+    padding-right: 8px;
+    // width: 100%;
+}
+.search-form .search-check .el-form-item__content {
+    height: 40px !important;
+}
+.search-form .el-checkbox-group {
+    display: inline-block;
+    margin-left: 8px;
+}
+.search-form .el-checkbox + .el-checkbox {
+    margin-left: 8px;
+}
+.search-form .el-checkbox__label {
+    padding-left: 8px;
+}
 </style>

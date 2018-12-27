@@ -8,10 +8,7 @@
         <el-header height="40">
             <header-bar></header-bar>
         </el-header>
-
-        <!-- <el-container> -->
         <router-view />
-        <!-- </el-container> -->
     </el-container>
 </template>
 

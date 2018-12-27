@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-26 18:56:03
+ * @LastEditTime: 2018-12-27 15:57:43
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $primary-color: #3871f5 #6d99ff; //系统色调 默认、hover状态
@@ -68,6 +68,9 @@ $box-width: 733px; //定义弹出框最小宽度
         clear:both;
         overflow:hidden;
     }
+}
+.ac{
+    text-align: center;
 }
 // 清除浮动  加类.clearfix
 // margin  标准15px
@@ -439,7 +442,7 @@ $box-width: 733px; //定义弹出框最小宽度
 }
 
 // 时间插件修改样式
-.el-range-editor.el-input__inner {
+.el-date-editor.el-input, .el-date-editor.el-input__inner {
     width: 100%;
     padding: 3px 6px;
 }
@@ -477,8 +480,6 @@ $box-width: 733px; //定义弹出框最小宽度
     border-radius: $border-radius;
     font-size: 13px;
     color:nth($font-color,2);
-    @extend .scroll-y;
-    @extend .scroll-x;
     thead th{
         background-color: nth($bg-color,2);
         color:nth($font-color,2);
@@ -502,4 +503,13 @@ $box-width: 733px; //定义弹出框最小宽度
 }
 .el-pagination button:hover {
     color: nth($primary-color,1);
+}
+// 导航条样式修改
+.el-menu--horizontal>.el-menu-item{
+    height: 40px;
+    line-height: 40px;
+}
+.el-menu--horizontal>.el-menu-item.is-active{
+    @include border(bottom,2px,solid,nth($primary-color,1));
+    color:nth($primary-color,1);
 }

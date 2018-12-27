@@ -1,131 +1,243 @@
 <template>
-    <div style="containers">
-        <div class="con-wrap">
-            <div class="leftCon">
-                <div class="date-con">
+    <el-container>
+        <el-aside width="250px"
+                  class="left-aside">
+            <el-row :gutter="20"
+                    class="date-row">
+                <el-col :span="18">
                     <el-date-picker v-model="curdate"
-                                    class="cur-date"
-                                    size="small"
-                                    align="right"
                                     type="date"
                                     placeholder="选择日期"
                                     :picker-options="pickerOptions1">
                     </el-date-picker>
-
-                    <el-button size="small"
-                               type="primary">调阅</el-button>
-
+                </el-col>
+                <el-col :span="6"
+                        class="tab-padding">
+                    <el-button class="primary-btn">调阅</el-button>
+                </el-col>
+            </el-row>
+            <left-menu :treeData="data2"
+                       :defaultProps="defaultProps"
+                       @sendTreeObj="getTreeObj"></left-menu>
+        </el-aside>
+        <el-container>
+            <el-main ref="mainTable"
+                     class="main-scroll">
+                <el-row :gutter="20"
+                        class="main-row">
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                </el-row>
+            </el-main>
+            <el-footer height="80">
+                <div class="mt15">
+                    <el-pagination @size-change="handleSizeChange"
+                                   @current-change="handleCurrentChange"
+                                   class="ac"
+                                   :current-page="currentPage"
+                                   :page-size="20"
+                                   layout="total, prev, pager, next"
+                                   :total="100">
+                    </el-pagination>
                 </div>
-                <left-menu :treeData="data2"
-                           :defaultProps="defaultProps"
-                           @sendTreeObj="getTreeObj"></left-menu>
-            </div>
-
-            <div class="rightCon">
-                <ul class="content-list">
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-wrap">
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=764856423,3994964277&fm=27&gp=0.jpg"
-                                 alt="">
-                        </div>
-                        <div class="texts">
-                            <span class="t1">新华每日电讯</span><br>
-                            <span class="t2">A叠-一版</span><br>
-                            <span class="t3">已建</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
+                <div class="btn-bottom">
+                    <div class="btn-nav">
+                        <i class="iconfont icon-liulan"></i>
+                        <span>浏览</span>
+                    </div>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <div class="btn-nav">
+                        <i class="iconfont icon-wenben1"></i>
+                        <span>留稿</span>
+                    </div>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <div class="btn-nav">
+                        <i class="iconfont icon-ico_print"></i>
+                        <span>打印</span>
+                    </div>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <draft-label>
+                        <i slot="icon"
+                           class="iconfont icon-wenben1"></i>
+                        <span slot="iconName">稿签</span>
+                    </draft-label>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <history>
+                        <i slot="icon"
+                           class="iconfont icon-ic_history"></i>
+                        <span slot="iconName">历史</span>
+                    </history>
+                    <div class="btn-line">
+                        <span>|</span>
+                    </div>
+                    <div class="btn-nav">
+                        <i class="iconfont icon-guanbi"></i>
+                        <span>关闭</span>
+                    </div>
+                </div>
+            </el-footer>
+        </el-container>
+    </el-container>
 </template>
 <script>
 import leftMenu from '@/components/treeMenu/leftTree.vue'
-
+import draftLabel from '@/components/buttons/draftLabel/draftLabel'
+import history from '@/components/buttons/history/history.vue'
 export default {
     components: {
-        leftMenu
+        leftMenu,
+        draftLabel,
+        history
     },
     data () {
         return {
+            currentPage: 1,
             data2: [
                 {
                     id: 1,
@@ -221,98 +333,108 @@ export default {
     methods: {
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
+        },
+        handleSizeChange (val) {
+
+        },
+        handleCurrentChange (val) {
+
         }
     }
 }
 </script>
 <style lang="scss" scoped>
-$font-red: #fe5959;
-$font-blue: #049a9a;
-.containers:after {
-    display: block;
-    content: "";
-    clear: both;
-    visibility: hidden;
+.main-scroll {
+    @extend .scroll-y;
 }
-.cur-date {
-    margin-left: 10px;
-    width: 133px;
-    display: inline-block;
+.main-row {
+    margin-right: 0px !important;
+    .img-col {
+        padding: 0px 0px 10px 10px !important;
+        .img-box {
+            padding: 10px;
+            @include border(all);
+            height: 300px;
+            .img-wrap {
+                display: flex;
+                justify-content: center;
+                height: 200px;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            .texts {
+                @extend .text-right;
+                padding-top: 10px;
+                b {
+                    @extend .font16;
+                    @extend .text-overflow;
+                    display: block;
+                    line-height: 25px;
+                    padding-bottom: 6px;
+                }
+                span {
+                    display: block;
+                    @extend .text-overflow;
+                    line-height: 20px;
+                    @extend .font12;
+                }
+            }
+        }
+    }
 }
-.mt10 {
-    margin-top: 10px;
+.el-date-editor.el-input__inner .date-row {
+    padding: 10px 10px;
 }
-
-.con-wrap {
-    display: flex;
-}
-.leftCon {
-    width: 250px;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    height: calc(100vh - 90px);
-    margin-right: 10px;
-}
-.rightCon {
-    border: 1px solid #ddd;
-    border-bottom: none;
-    height: calc(100vh - 90px);
-    width: 100%;
-}
-.date-con {
-    margin-top: 10px;
-    min-width: 208px;
-}
-.mt10 {
-    margin-top: 10px;
-    //padding-left: 10px;
-}
-.content-list:after {
-    display: block;
-    content: "";
-    clear: both;
-    visibility: hidden;
-}
-.content-list {
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner {
     padding: 10px;
-    li {
-        float: left;
-        width: 140px;
-        margin-right: 10px;
-        margin-top: 10px;
-        padding-bottom: 10px;
-        text-align: center;
+    padding-bottom: 0px;
+}
+.primary-btn {
+    height: 30px;
+    margin-top: 10px;
+    margin-left: -10px;
+    padding: 5px 13px;
+}
+.main-padding {
+    padding: 0px;
+    // @extend .scroll-y;
+    // @extend .scroll-x;
+}
+.left-aside {
+    overflow: hidden;
+}
+.left-aside .filter-tree {
+    @extend .scroll-y;
+    @extend .scroll-x;
+}
+.btn-bottom {
+    @extend .clearfix;
+    @extend .text-right;
+    padding: 10px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    .btn-line {
+        padding: 0px 10px;
+    }
+    .btn-nav {
+        cursor: pointer;
         &:hover {
-            background-color: #f6f7f9;
-        }
-        .img-wrap {
-            text-align: center;
-            border: 1px solid transparent;
-            width: 121px;
-            display: inline-block;
-            height: 160px;
-            text-align: center;
-        }
-        img {
-            display: inline-block;
-            width: 100%;
-            height: 158px;
-        }
-        .texts {
-            text-align: center;
-            .t1 {
-                color: $font-blue;
-            }
-            .t3 {
-                color: $font-red;
-            }
+            color: nth($primary-color, 1);
         }
     }
-    li:hover .img-wrap {
-        border: 1px solid rgba(0, 152, 210, 1);
-    }
+}
+.el-table {
+    overflow-y: hidden;
 }
 </style>
-<style>
+<style lang="scss">
+.date-row .el-input__prefix {
+    left: 10px;
+    height: 30px;
+    top: 10px;
+}
 </style>
