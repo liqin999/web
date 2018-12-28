@@ -301,34 +301,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.mt10 {
-    margin-top: 10px;
-}
-.con-wrap .el-table {
-    max-height: calc(100vh - 240px);
-}
-.pagination-box {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-}
-.btn-bottom {
-    padding: 10px 0;
-    position: absolute;
-    right: 15px;
-    bottom: 0px;
-    .btn-line {
-        float: left;
-        padding: 0px 10px;
-    }
-    .btn-nav {
-        @extend .btn-line;
-        cursor: pointer;
-        &:hover {
-            color: nth($primary-color, 1);
-        }
-    }
-}
 .search-list2 {
     border-bottom: 1px solid #ddd;
     padding: 10px;
