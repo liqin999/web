@@ -242,7 +242,7 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 41,
                             label: '头版1',
                             icon: 'el-icon-success'
                         },

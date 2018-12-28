@@ -191,7 +191,7 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 45,
                             label: '头版1',
                             icon: 'el-icon-success'
                         },
@@ -313,7 +313,7 @@ export default {
                     label: '11新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 47,
                             label: '22头版1',
                             icon: 'el-icon-success'
                         },

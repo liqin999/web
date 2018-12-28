@@ -1,6 +1,6 @@
 <template>
     <el-container class="manuscript-setting">
-        <el-header height="85px">
+        <el-header height="125px">
             <div class="search-wrap">
                 <el-form :inline="true"
                          :model="searchForm"
@@ -320,7 +320,7 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 48,
                             label: '头版1',
                             icon: 'el-icon-success'
                         },

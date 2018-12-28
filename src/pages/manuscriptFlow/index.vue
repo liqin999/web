@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header height="40px">
+        <el-header height="50px">
             <div class="search-wrap">
                 <el-form :inline="true"
                          :model="searchForm"

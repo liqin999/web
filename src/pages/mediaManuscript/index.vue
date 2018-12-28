@@ -191,10 +191,45 @@ export default {
                 {
                     id: 1,
                     label: '新华每日电讯',
-                    children: [
-                    ]
+                    icon: 'iconfont icon-file-b- ft-ffd658'
+                },
+                {
+                    id: 2,
+                    label: '测试导航1',
+                    icon: 'iconfont icon-file-b- ft-ffd658'
                 }
             ],
+            versionData: {
+                contentShow: false,
+                tableData: [{
+                    num: 1,
+                    title: '12',
+                    date: '2016-05-03',
+                    dealPerson: '1王小虎',
+                    img: '',
+                    type: '文本',
+                    doubt: '0',
+                    textFormat: 'txt'
+                }, {
+                    num: 2,
+                    title: '333',
+                    date: '2015-05-03',
+                    dealPerson: '2王小虎',
+                    img: '',
+                    type: '文本',
+                    doubt: '0',
+                    textFormat: 'txt'
+                }, {
+                    num: 3,
+                    title: '8888',
+                    date: '2016-05-03',
+                    dealPerson: '3王小虎',
+                    img: '',
+                    type: '文本',
+                    doubt: '0',
+                    textFormat: 'txt'
+                }]
+            },
             concatData: {
                 contentShow: false,
                 tableData: [{

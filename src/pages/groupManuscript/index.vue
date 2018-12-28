@@ -191,7 +191,7 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 40,
                             label: '电讯领导',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },

@@ -191,9 +191,19 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 46,
                             label: '头版1',
-                            icon: 'el-icon-success'
+                            icon: 'el-icon-success',
+                            children: [
+                                {
+                                    id: 469,
+                                    label: '头版1-1'
+                                },
+                                {
+                                    id: 4697,
+                                    label: '头版1-2'
+                                }
+                            ]
                         },
                         {
                             id: 12,

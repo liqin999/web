@@ -1,4 +1,5 @@
 <template>
+
     <div class="tree-wrap">
         <el-input class="tree-search"
                   v-if="showSearch"
@@ -12,8 +13,9 @@
                  class="filter-tree"
                  :indent=5
                  :data="treeData"
+                 node-key="id"
                  :props="defaultProps"
-                 default-expand-all
+                 :default-expanded-keys="expandedKeys"
                  :filter-node-method="filterNode"
                  @node-click="handleNodeClick"
                  ref="tree2">
@@ -55,16 +57,30 @@ export default {
     },
     data () {
         return {
-            filterText: ''
+            filterText: '',
+            expandedKeys: []
+
         }
     },
     mounted () {
         // 左侧默认高亮
+        if (this.treeData[0].children) {
+            this.expandedKeys.push(this.treeData[0].children[0])
+        }
         this.$nextTick(() => {
-            this.$refs.tree2.setCurrentKey(2)
+            if (this.treeData[0].children && this.treeData[0].children.length > 0) {
+                if (this.treeData[0].children[0].children && this.treeData[0].children[0].children.length > 0) {
+                    this.$refs.tree2.setCurrentKey(this.treeData[0].children[0].children[0].id)
+                } else {
+                    this.$refs.tree2.setCurrentKey(this.treeData[0].children[0].id)
+                }
+            } else {
+                this.$refs.tree2.setCurrentKey(this.treeData[0].id)
+            }
         })
     },
     methods: {
+
         filterNode (value, data) { // 过滤节点
             if (!value) return true
             return data.label.indexOf(value) !== -1
@@ -72,6 +88,7 @@ export default {
         handleNodeClick (data) { // 获得点击节点的对象
             this.$emit('sendTreeObj', data)
         }
+
     },
     watch: {
         filterText (val) { // 过滤节点
@@ -91,7 +108,8 @@ export default {
         }
     }
     .el-tree {
-        padding-top: 15px;
+        margin-top: 15px;
+        padding: 1px;
         background-color: nth($bg-color, 1);
         .custom-tree-node i {
             margin-right: 5px;
