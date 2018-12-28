@@ -53,19 +53,14 @@
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
                         <send-draft>
-                            <span slot="iconName">传稿</span>
+                            <span slot="iconName">撤稿</span>
                         </send-draft>
                         <issuance>
-                            <span slot="iconName">签发</span>
+                            <span slot="iconName">改签</span>
                         </issuance>
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
-                                <span data-v-6eb3df45="">审稿</span>
-                            </span>
-                        </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">淘汰</span>
+                                <span data-v-6eb3df45="">查错</span>
                             </span>
                         </div>
 
@@ -75,23 +70,9 @@
 
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
-                                <span data-v-6eb3df45="">编辑</span>
+                                <span data-v-6eb3df45="">处理</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">提交</span>
-                            </span>
-                        </div>
-                        <split>
-                            <span slot="iconName">拆分</span>
-                        </split>
-                        <concat :data="concatData"
-                                @sendConcatData="getConcatData"
-                                @sendConcatDataUp="getConcatDataUp"
-                                @sendConcatDataDown="getConcatDataDown">
-                            <span slot="iconName">合并</span>
-                        </concat>
 
                     </div>
                 </el-header>
@@ -177,8 +158,6 @@ import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 import issuance from '@/components/buttons/issuance/issuance'
 import searchInput from '@/components/searchConditions/searchInput.vue'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
-import split from '@/components/buttons/split/split'
-import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
@@ -188,8 +167,6 @@ export default {
         leftMenu,
         sendDraft,
         issuance,
-        split,
-        concat,
         version,
         draftLabel,
         history

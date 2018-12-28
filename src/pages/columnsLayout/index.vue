@@ -5,7 +5,7 @@
                 <search-input :searchForm="searchForm"
                               :allTypes="allTypes"
                               @sendFormData="getFormData">
-                    <el-col :span="6"
+                    <!-- <el-col :span="6"
                             slot="media">
                         <el-form-item label="媒体:">
                             <el-select v-model="searchForm.media"
@@ -16,7 +16,7 @@
                                            value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
-                    </el-col>
+                    </el-col> -->
                 </search-input>
             </div>
         </el-header>

@@ -6,7 +6,7 @@
                 <search-input :searchForm="searchForm"
                               :allTypes="allTypes"
                               @sendFormData="getFormData">
-                    <el-col :span="6"
+                    <!-- <el-col :span="6"
                             slot="media">
                         <el-form-item label="媒体:">
                             <el-select v-model="searchForm.media"
@@ -17,7 +17,7 @@
                                            value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
-                    </el-col>
+                    </el-col> -->
                 </search-input>
             </div>
         </el-header>
@@ -63,7 +63,7 @@
                                 <span data-v-6eb3df45="">提交</span>
                             </span>
                         </div>
-                        <split>
+                        <!-- <split>
                             <span slot="iconName">拆分</span>
                         </split>
                         <concat :data="concatData"
@@ -71,7 +71,7 @@
                                 @sendConcatDataUp="getConcatDataUp"
                                 @sendConcatDataDown="getConcatDataDown">
                             <span slot="iconName">合并</span>
-                        </concat>
+                        </concat> -->
 
                     </div>
                 </el-header>
@@ -157,8 +157,8 @@ import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 import issuance from '@/components/buttons/issuance/issuance'
 import searchInput from '@/components/searchConditions/searchInput.vue'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
-import split from '@/components/buttons/split/split'
-import concat from '@/components/buttons/concat/concat'
+// import split from '@/components/buttons/split/split'
+// import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
@@ -168,8 +168,8 @@ export default {
         leftMenu,
         sendDraft,
         issuance,
-        split,
-        concat,
+        // split,
+        // concat,
         version,
         draftLabel,
         history
