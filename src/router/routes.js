@@ -45,12 +45,12 @@ const column = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/c
 const special = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/special.vue')), 'special')
 
 // 后台设置
-const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet.vue')), 'mediaSet')
-const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand.vue')), 'mediaExpand')
-const pageSet = r => require.ensure([], () => r(require('@/pages/systemBackground/pageSet.vue')), 'pageSet')
-const stackSet = r => require.ensure([], () => r(require('@/pages/systemBackground/stackSet.vue')), 'stackSet')
-const columnSet = r => require.ensure([], () => r(require('@/pages/systemBackground/columnSet.vue')), 'columnSet')
-const specialSet = r => require.ensure([], () => r(require('@/pages/systemBackground/specialSet.vue')), 'specialSet')
+const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet/mediaSet.vue')), 'mediaSet')
+const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand/mediaExpand.vue')), 'mediaExpand')
+const pageSet = r => require.ensure([], () => r(require('@/pages/systemBackground/pageSet/pageSet.vue')), 'pageSet')
+const stackSet = r => require.ensure([], () => r(require('@/pages/systemBackground/stackSet/stackSet.vue')), 'stackSet')
+const columnSet = r => require.ensure([], () => r(require('@/pages/systemBackground/columnSet/columnSet.vue')), 'columnSet')
+const specialSet = r => require.ensure([], () => r(require('@/pages/systemBackground/specialSet/specialSet.vue')), 'specialSet')
 
 // buttons路由
 const sendDraft = r => require.ensure([], () => r(require('@/components/buttons/sendDraft/sendDraft.vue')), 'sendDraft')
