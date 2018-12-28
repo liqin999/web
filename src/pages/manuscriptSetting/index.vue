@@ -150,46 +150,31 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
+                        <div data-v-6eb3df45=""
+                             class="primary-btn"><span>
+                                <span data-v-6eb3df45="">刷新</span>
+                            </span>
+                        </div>
+
                         <send-draft>
                             <span slot="iconName">传稿</span>
                         </send-draft>
-                        <issuance>
-                            <span slot="iconName">签发</span>
-                        </issuance>
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
-                                <span data-v-6eb3df45="">审稿</span>
-                            </span>
-                        </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">淘汰</span>
+                                <span data-v-6eb3df45="">留稿</span>
                             </span>
                         </div>
 
-                        <version :data="versionData">
-                            <span slot="iconName">版本</span>
-                        </version>
-
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
-                                <span data-v-6eb3df45="">编辑</span>
+                                <span data-v-6eb3df45="">约稿</span>
                             </span>
                         </div>
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
-                                <span data-v-6eb3df45="">提交</span>
+                                <span data-v-6eb3df45="">翻译</span>
                             </span>
                         </div>
-                        <split>
-                            <span slot="iconName">拆分</span>
-                        </split>
-                        <concat :data="concatData"
-                                @sendConcatData="getConcatData"
-                                @sendConcatDataUp="getConcatDataUp"
-                                @sendConcatDataDown="getConcatDataDown">
-                            <span slot="iconName">合并</span>
-                        </concat>
 
                     </div>
                 </el-header>
@@ -272,21 +257,13 @@
 </template>
 <script>
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
-import issuance from '@/components/buttons/issuance/issuance'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
-import split from '@/components/buttons/split/split'
-import concat from '@/components/buttons/concat/concat'
-import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 export default {
     components: {
         leftMenu,
         sendDraft,
-        issuance,
-        split,
-        concat,
-        version,
         draftLabel,
         history
     },

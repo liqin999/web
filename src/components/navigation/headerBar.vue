@@ -1,8 +1,8 @@
 <!--
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
- * @LastEditors: 史薇薇
- * @LastEditTime: 2018-12-25 09:53:13
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2018-12-28 16:37:26
  * @Description: 导航条样式改版
  -->
 <template>
@@ -115,7 +115,7 @@ export default {
                     path: '/manuscriptFlow'
                 },
                 {
-                    name: '稿件管理',
+                    name: '稿源库管理',
                     icon: 'el-icon-index',
                     id: '9',
                     path: '/manuscriptSetting'
@@ -128,15 +128,16 @@ export default {
                     path: '',
                     chiled: [// 展示二级路由
                         {
-                            name: '写稿器',
-                            id: '10-1',
-                            path: '/writeManuscript'
-                        },
-                        {
                             name: '投稿',
-                            id: '10-2',
+                            id: '10-1',
                             path: '/sendManuscript'
                         },
+                        {
+                            name: '写稿器',
+                            id: '10-2',
+                            path: '/writeManuscript'
+                        },
+
                         {
                             name: '新闻日历',
                             id: '10-3',
