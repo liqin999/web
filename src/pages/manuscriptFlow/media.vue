@@ -1,15 +1,13 @@
 <template>
-    <div class="clearfix mt10">
-
-        <div class="con-wrap">
-            <div class="left">
-                <left-menu :treeData="data2"
-                           :defaultProps="defaultProps"
-                           @sendTreeObj="getTreeObj"></left-menu>
-            </div>
-            <div class="right">
-                <el-table ref="multipleTable"
-                          height="calc(100vh - 240px)"
+    <el-container class="person-container">
+        <el-aside width="250px">
+            <left-menu :treeData="data2"
+                       :defaultProps="defaultProps"
+                       @sendTreeObj="getTreeObj"></left-menu>
+        </el-aside>
+        <el-container>
+            <el-main ref="mainTable">
+                <el-table :height="mainTableHeight"
                           :data="tableData3"
                           tooltip-effect="dark"
                           style="width: 100%"
@@ -27,16 +25,16 @@
                                      show-overflow-tooltip>
                     </el-table-column>
                 </el-table>
-                <div class="mt15 pagination-box">
-                    <el-pagination @size-change="handleSizeChange"
-                                   @current-change="handleCurrentChange"
-                                   class="ac"
-                                   :current-page="currentPage"
-                                   :page-size="20"
-                                   layout="total, prev, pager, next"
-                                   :total="100">
-                    </el-pagination>
-                </div>
+            </el-main>
+            <el-footer height="70">
+                <el-pagination @size-change="handleSizeChange"
+                               @current-change="handleCurrentChange"
+                               class="ac"
+                               :current-page="currentPage"
+                               :page-size="20"
+                               layout="total, prev, pager, next"
+                               :total="100">
+                </el-pagination>
                 <div class="btn-bottom">
                     <div class="btn-nav">
                         <span>追回</span>
@@ -45,6 +43,8 @@
                         <span>|</span>
                     </div>
                     <history>
+                        <i slot="icon"
+                           class="iconfont icon-ic_history"></i>
                         <span slot="iconName">历史</span>
                     </history>
                     <div class="btn-line">
@@ -52,12 +52,13 @@
                     </div>
 
                     <div class="btn-nav">
+                        <i class="iconfont icon-guanbi"></i>
                         <span>关闭</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </el-footer>
+        </el-container>
+    </el-container>
 </template>
 <script>
 
@@ -225,11 +226,18 @@ export default {
                 name: '王小虎',
                 address: '上海市普陀区金沙江路 1518 弄'
             }],
-            multipleSelection: []
+            multipleSelection: [],
+            mainTableHeight: null
         }
     },
     mounted () {
-
+        let that = this
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        window.onresize = () => {
+            return (() => {
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+            })()
+        }
     },
     methods: {
         getTreeObj (data) { // 获得树形菜单的对象
@@ -248,32 +256,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.mt10 {
-    margin-top: 10px;
-}
-.con-wrap .el-table {
-    max-height: calc(100vh - 240px);
-}
-.pagination-box {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-}
-.btn-bottom {
-    padding: 10px 0;
-    position: absolute;
-    right: 15px;
-    bottom: 0px;
-    .btn-line {
-        float: left;
-        padding: 0px 10px;
-    }
-    .btn-nav {
-        @extend .btn-line;
-        cursor: pointer;
-        &:hover {
-            color: nth($primary-color, 1);
-        }
-    }
-}
 </style>

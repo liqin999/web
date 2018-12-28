@@ -1,31 +1,31 @@
 <template>
-    <div class="clearfix mt10">
+    <el-container class="clearfix">
+        <el-aside width="250px">
+            <div class="search-list2">
+                <h2>专题条件:</h2>
+                <el-checkbox class="mt5 special-che"
+                             v-model="showPersonchecked">只显示本人创建</el-checkbox>
+                <el-date-picker v-model="createDateValue"
+                                class="mt5"
+                                type="daterange"
+                                align="right"
+                                unlink-panels
+                                range-separator="至"
+                                start-placeholder="开始日期"
+                                end-placeholder="结束日期"
+                                :picker-options="pickerOptions2">
+                </el-date-picker>
+                <el-button class="primary-btn mt5"
+                           @click="onSearch">查询</el-button>
 
-        <div class="con-wrap">
-            <div class="left">
-                <div class="search-list2">
-                    <h2>专题条件:</h2>
-                    <el-checkbox class="mt5 special-che"
-                                 v-model="showPersonchecked">只显示本人创建</el-checkbox>
-                    <el-date-picker v-model="createDateValue"
-                                    class="mt5"
-                                    type="daterange"
-                                    align="right"
-                                    unlink-panels
-                                    range-separator="至"
-                                    start-placeholder="开始日期"
-                                    end-placeholder="结束日期"
-                                    :picker-options="pickerOptions2">
-                    </el-date-picker>
-                    <el-button class="primary-btn mt5"
-                               @click="onSearch">查询</el-button>
-
-                </div>
-                <left-menu :treeData="data2"
-                           :defaultProps="defaultProps"
-                           @sendTreeObj="getTreeObj"></left-menu>
             </div>
-            <div class="right">
+            <left-menu :treeData="data2"
+                       :defaultProps="defaultProps"
+                       @sendTreeObj="getTreeObj">
+            </left-menu>
+        </el-aside>
+        <el-container>
+            <el-main ref="mainTable">
                 <el-table ref="multipleTable"
                           height="calc(100vh - 240px)"
                           :data="tableData3"
@@ -45,16 +45,16 @@
                                      show-overflow-tooltip>
                     </el-table-column>
                 </el-table>
-                <div class="mt15 pagination-box">
-                    <el-pagination @size-change="handleSizeChange"
-                                   @current-change="handleCurrentChange"
-                                   class="ac"
-                                   :current-page="currentPage"
-                                   :page-size="20"
-                                   layout="total, prev, pager, next"
-                                   :total="100">
-                    </el-pagination>
-                </div>
+            </el-main>
+            <el-footer height="70">
+                <el-pagination @size-change="handleSizeChange"
+                               @current-change="handleCurrentChange"
+                               class="ac"
+                               :current-page="currentPage"
+                               :page-size="20"
+                               layout="total, prev, pager, next"
+                               :total="100">
+                </el-pagination>
                 <div class="btn-bottom">
                     <div class="btn-nav">
                         <span>追回</span>
@@ -63,6 +63,8 @@
                         <span>|</span>
                     </div>
                     <history>
+                        <i slot="icon"
+                           class="iconfont icon-ic_history"></i>
                         <span slot="iconName">历史</span>
                     </history>
                     <div class="btn-line">
@@ -70,12 +72,13 @@
                     </div>
 
                     <div class="btn-nav">
+                        <i class="iconfont icon-guanbi"></i>
                         <span>关闭</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </el-footer>
+        </el-container>
+    </el-container>
 </template>
 <script>
 
