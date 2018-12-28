@@ -5,6 +5,7 @@
             <el-menu :default-active="$route.path"
                      :router="true"
                      class="backMenu"
+                     unique-opened="true"
                      @open="handleOpen"
                      @close="handleClose">
 
@@ -120,37 +121,94 @@ export default {
                             name: '角色管理',
                             icon: 'el-icon-index',
                             id: '2-1',
-                            path: ''
+                            path: '/role'
                         },
                         {
                             name: '权限管理',
                             icon: 'el-icon-index',
                             id: '2-2',
-                            path: ''
+                            path: '/authority'
                         },
                         {
                             name: '用户管理',
                             icon: 'el-icon-index',
                             id: '2-3',
-                            path: ''
+                            path: '/userManage'
                         },
                         {
                             name: '菜单设置',
                             icon: 'el-icon-index',
                             id: '2-4',
-                            path: ''
+                            path: '/menu'
                         },
                         {
                             name: '界面管理',
                             icon: 'el-icon-index',
                             id: '2-5',
-                            path: ''
+                            path: '/interfaces'
                         },
                         {
                             name: '部门管理',
                             icon: 'el-icon-index',
                             id: '2-6',
-                            path: ''
+                            path: '/department'
+                        }
+
+                    ]
+                },
+                {
+                    name: '基本信息设置',
+                    icon: 'el-icon-setting',
+                    id: '3',
+                    path: '',
+                    chiled: [// 展示二级路由]
+                        {
+                            name: '公共线索来源设置',
+                            icon: 'el-icon-index',
+                            id: '3-1',
+                            path: '/clueSource'
+                        },
+                        {
+                            name: '公共参数设置',
+                            icon: 'el-icon-index',
+                            id: '3-2',
+                            path: '/commonParam'
+                        },
+                        {
+                            name: '稿件类型设置',
+                            icon: 'el-icon-index',
+                            id: '3-3',
+                            path: '/manuscriptType'
+                        },
+                        {
+                            name: '作者类型设置',
+                            icon: 'el-icon-index',
+                            id: '3-4',
+                            path: '/authorType'
+                        },
+                        {
+                            name: '电讯稿产品设置',
+                            icon: 'el-icon-index',
+                            id: '3-5',
+                            path: '/telecProducts'
+                        },
+                        {
+                            name: '稿件题材设置',
+                            icon: 'el-icon-index',
+                            id: '3-6',
+                            path: '/manuscriptTheme'
+                        },
+                        {
+                            name: '稿件来源设置',
+                            icon: 'el-icon-index',
+                            id: '3-7',
+                            path: '/manuscriptSource'
+                        },
+                        {
+                            name: '稿件分类设置',
+                            icon: 'el-icon-index',
+                            id: '3-8',
+                            path: '/manuscriptClassify'
                         }
 
                     ]
