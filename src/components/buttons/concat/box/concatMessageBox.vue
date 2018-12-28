@@ -7,60 +7,57 @@
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
-        <div class="message-box">
-            <el-row>
-                <el-col :span="24">
-                    <div class="grid-content bg-purple">
-                        <div>
-                            <el-button type="text"
-                                       @click="handleMoreUpClick">上移</el-button>
-                            <el-button type="text"
-                                       @click="handleMoreDownClick">下移</el-button>
-                            <el-button type="text"
-                                       @click="removeSelection">移除</el-button>
-                        </div>
-                        <template>
-                            <el-table :data="concatData.tableData"
-                                      ref="multipleTable"
-                                      @selection-change="handleSelectionChange"
-                                      style="width: 100%">
-                                <el-table-column type="selection"
-                                                 width="55">
-                                </el-table-column>
-                                <el-table-column prop="num"
-                                                 label="稿号"
-                                                 width="80">
-                                </el-table-column>
-                                <el-table-column prop="title"
-                                                 label="标题">
-                                </el-table-column>
-                                <el-table-column width="100"
-                                                 prop="fontNum"
-                                                 label="操作">
-                                    <template slot-scope="scope">
-                                        <i v-if="scope.$index > 0"
-                                           @click="handleUpClick(scope.$index)"
-                                           class="iconfont icon-shangyi cursorPointer"></i>
-                                        <i v-if="scope.$index < concatData.tableData.length -1"
-                                           @click="handleDownClick(scope.$index)"
-                                           class="iconfont icon-xiayi cursorPointer"></i>
-                                    </template>
-                                </el-table-column>
-                            </el-table>
-                        </template>
-                    </div>
-                </el-col>
-            </el-row>
-        </div>
-        <!-- 内容区 结束 -->
+        <el-container>
+            <el-header height="35px">
+                <div class="concat-group">
+                    <el-button class="primary-btn"
+                               @click="handleMoreUpClick">上移</el-button>
+                    <el-button class="primary-btn"
+                               @click="handleMoreDownClick">下移</el-button>
+                    <el-button class="primary-btn"
+                               @click="removeSelection">移除</el-button>
+                </div>
+            </el-header>
+            <el-main class="concat-main">
+                <template>
+                    <el-table :data="concatData.tableData"
+                              ref="multipleTable"
+                              @selection-change="handleSelectionChange"
+                              style="width: 100%">
+                        <el-table-column type="selection"
+                                         width="55">
+                        </el-table-column>
+                        <el-table-column prop="num"
+                                         label="稿号"
+                                         width="80">
+                        </el-table-column>
+                        <el-table-column prop="title"
+                                         label="标题">
+                        </el-table-column>
+                        <el-table-column width="100"
+                                         prop="fontNum"
+                                         label="操作">
+                            <template slot-scope="scope">
+                                <i v-if="scope.$index > 0"
+                                   @click="handleUpClick(scope.$index)"
+                                   class="iconfont icon-shangyi cursorPointer"></i>
+                                <i v-if="scope.$index < concatData.tableData.length -1"
+                                   @click="handleDownClick(scope.$index)"
+                                   class="iconfont icon-xiayi cursorPointer"></i>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </template>
+            </el-main>
+        </el-container>
         <div slot="footer"
              class="dialog-footer">
-            <el-button type="success"
-                       size="medium"
+            <el-button class="primary-btn"
                        @click="concatConfirm()">确认</el-button>
-            <el-button size="medium"
-                       @click="concatData.contentShow = false">取 消</el-button>
+            <el-button class="reset-btn"
+                       @click="concatData.contentShow = false">取消</el-button>
         </div>
+        <!-- 内容区 结束 -->
     </el-dialog>
 </template>
 
@@ -119,23 +116,11 @@ export default {
     }
 }
 </script>
-
 <style lang="scss" scoped>
-.message-box {
-    padding: 0 10px;
+.concat-group {
+    padding: 0px 0px 10px 0px;
 }
-.el-row {
-    padding-bottom: 20px;
-}
-.cursorPointer {
-    cursor: pointer;
-}
-</style>
-<style lang="scss">
-.concat-dialog {
-    .el-dialog__body {
-        padding-top: 0;
-        padding-bottom: 0px;
-    }
+.concat-main {
+    padding: 0px;
 }
 </style>

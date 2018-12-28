@@ -249,10 +249,8 @@
         <div slot="footer"
              class="dialog-footer">
             <el-button class="primary-btn"
-                       size="medium"
                        @click="issuanceConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       size="medium"
                        @click="issuanceData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
@@ -311,36 +309,37 @@ export default {
 </script>
 
 <style lang="scss">
-// 更改elm样式
-.choose-time {
-    & .el-date-editor.el-input,
-    .chooseTime .el-date-editor.el-input__inner {
-        width: 130px;
-        margin-left: 10px;
-    }
-    & .block .el-input__inner {
-        padding-left: 30px;
-    }
-    & .el-input {
-        width: 55px;
-    }
-    & .el-select {
-        float: right;
-        margin-right: 10px;
-    }
-}
+// // 更改elm样式
+// .choose-time {
+//     & .el-date-editor.el-input,
+//     .chooseTime .el-date-editor.el-input__inner {
+//         width: 130px;
+//         margin-left: 10px;
+//     }
+//     & .block .el-input__inner {
+//         padding-left: 30px;
+//     }
+//     & .el-input {
+//         width: 55px;
+//     }
+//     & .el-select {
+//         float: right;
+//         margin-right: 10px;
+//     }
+// }
 
-.font-select {
-    & .el-select .el-input__inner:focus {
-        border-color: #707070;
-    }
-    & .el-select .el-input.is-focus .el-input__inner {
-        border-color: #707070;
-    }
-    & .el-input__inner {
-        border: 1px solid #bcbcbc;
-        color: #6d6d6d;
-        background: #e5e5e5;
-    }
-}
+// .font-select {
+//     & .el-select .el-input__inner:focus {
+//         border-color: #707070;
+//     }
+//     & .el-select .el-input.is-focus .el-input__inner {
+//         border-color: #707070;
+//     }
+//     & .el-input__inner {
+//         border: 1px solid #bcbcbc;
+//         color: #6d6d6d;
+//         background: #e5e5e5;
+//     }
+// }
+//
 </style>

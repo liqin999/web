@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-28 15:34:59
+ * @LastEditTime: 2018-12-28 18:24:34
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $primary-color: #3871f5 #6d99ff; //系统色调 默认、hover状态
@@ -258,7 +258,7 @@ $box-width: 733px; //定义弹出框最小宽度
     color: nth($primary-color, 1);
 
     display: inline-block;
-    margin-right: 5px;
+    // margin-right: 5px;
     padding: 5px 16px;
 
     //hover状态
@@ -432,19 +432,44 @@ $box-width: 733px; //定义弹出框最小宽度
     @extend .scroll-x;
     @extend .scroll-y;
 }
-
 .el-dialog__header {
     background: $header-bg-Color;
     border-bottom: 1px solid $header-border-color;
 }
-
 .el-dialog__title {
     font-weight: bold;
     color: $header-title-color;
 }
-
 .el-dialog__body {
     padding: 20px;
+}
+.message-box {
+    padding: 0px 10px;
+    // .message-lists {
+    //     padding-bottom: 10px;
+    //     @include border;
+    //     .message-list {
+    //         .el-col {
+    //             @extend .text-overflow;
+    //             line-height: 30px;
+    //         }
+    //     }
+    // }
+    .message-content {
+        padding-top: 15px;
+        line-height: 30px;
+        // .message-checkbox {
+        //     height: 200px;
+        //     @include border(all);
+        //     border-radius: $border-radius;
+        // }
+    }
+}
+
+// 弹出框标题
+.message-title{
+font-size:nth($font-size,3);
+line-height: 35px;
 }
 
 
@@ -572,6 +597,10 @@ $box-width: 733px; //定义弹出框最小宽度
     border-radius: $border-radius;
     font-size: 13px;
     color:nth($font-color,2);
+    .el-table__body-wrapper{
+        @extend .scroll-x;
+        @extend .scroll-y;
+    }
     thead th{
         background-color: nth($bg-color,2);
         color:nth($font-color,2);

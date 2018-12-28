@@ -171,7 +171,6 @@
         <div slot="footer"
              class="dialog-footer">
             <el-button class="reset-btn"
-                       size="medium"
                        @click="labelData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
