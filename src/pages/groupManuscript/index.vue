@@ -1,33 +1,34 @@
 <template>
     <el-container>
-        <el-header height="80">
+        <el-header height="85">
             <div class="search-wrap">
                 <search-input :searchForm="searchForm"
                               :allTypes="allTypes"
                               @sendFormData="getFormData">
-                    <el-form-item label="媒体:"
-                                  slot="media">
-                        <el-select v-model="searchForm.media"
-                                   placeholder="请选择媒体">
-                            <el-option label="媒体一"
-                                       value="shanghai"></el-option>
-                            <el-option label="媒体二"
-                                       value="beijing"></el-option>
-                        </el-select>
-                    </el-form-item>
+                    <el-col :span="6"
+                            slot="media">
+                        <el-form-item label="媒体:">
+                            <el-select v-model="searchForm.media"
+                                       placeholder="请选择媒体">
+                                <el-option label="媒体一"
+                                           value="shanghai"></el-option>
+                                <el-option label="媒体二"
+                                           value="beijing"></el-option>
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
                 </search-input>
             </div>
         </el-header>
         <el-container>
-            <el-aside width="250px"
-                      class="left-aside">
+            <el-aside width="250px">
                 <left-menu :treeData="data2"
                            :defaultProps="defaultProps"
                            @sendTreeObj="getTreeObj"></left-menu>
             </el-aside>
             <el-container>
                 <el-header height="40">
-                    <div class="btn-group">
+                    <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
                         <send-draft>
                             <span slot="iconName">传稿</span>
@@ -92,17 +93,15 @@
                         </el-table-column>
                     </el-table>
                 </el-main>
-                <el-footer height="80">
-                    <div class="mt15">
-                        <el-pagination @size-change="handleSizeChange"
-                                       @current-change="handleCurrentChange"
-                                       class="ac"
-                                       :current-page="currentPage"
-                                       :page-size="20"
-                                       layout="total, prev, pager, next"
-                                       :total="100">
-                        </el-pagination>
-                    </div>
+                <el-footer height="70">
+                    <el-pagination @size-change="handleSizeChange"
+                                   @current-change="handleCurrentChange"
+                                   class="ac"
+                                   :current-page="currentPage"
+                                   :page-size="20"
+                                   layout="total, prev, pager, next"
+                                   :total="100">
+                    </el-pagination>
                     <div class="btn-bottom">
                         <div class="btn-nav">
                             <i class="iconfont icon-liulan"></i>
@@ -452,35 +451,3 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.btn-group {
-    padding: 10px 10px 0px 10px;
-}
-.left-aside {
-    overflow: hidden;
-}
-.left-aside .filter-tree {
-    @extend .scroll-y;
-    @extend .scroll-x;
-}
-.btn-bottom {
-    @extend .clearfix;
-    @extend .text-right;
-    padding: 10px;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: flex-end;
-    .btn-line {
-        padding: 0px 10px;
-    }
-    .btn-nav {
-        cursor: pointer;
-        &:hover {
-            color: nth($primary-color, 1);
-        }
-    }
-}
-.el-table {
-    overflow-y: hidden;
-}
-</style>

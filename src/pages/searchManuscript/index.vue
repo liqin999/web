@@ -1,11 +1,11 @@
 <template>
-    <el-main class="search-manuscript">
+    <el-container class="input-manuscript search-manuscript">
         <el-container>
-            <el-aside class="left-content"
+            <el-aside class="aside-content"
                       width="300px">
                 <div class="pl10"><b class="font18">检索方式</b></div>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <template v-for="label in radioLabel1">
                         <el-col :span="12"
                                 class="text-radio"
@@ -18,7 +18,7 @@
                 </el-row>
                 <div class="pl10"><b class="font18">搜索内容</b></div>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="24">
                         <el-input placeholder="请输入内容"
                                   v-model="input">
@@ -27,7 +27,7 @@
                 </el-row>
                 <div class="pl10"><b class="font18">资源类型</b></div>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <template v-for="label in radioLabel1">
                         <el-col :span="12"
                                 class="text-overflow"
@@ -40,7 +40,7 @@
                 </el-row>
                 <div class="pl10"><b class="font18">日期</b></div>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="24">
                         <el-date-picker type="daterange"
                                         align="right"
@@ -56,7 +56,7 @@
                         class="pl10 pr10">
                     <div class="pl10"><b class="font18">精确搜索</b></div>
                     <el-row :gutter="20"
-                            class="pl10 pr10 mb15">
+                            class="pl10 pr10 mb10">
                         <el-col :span="24">
                             <template>
                                 <el-checkbox-group v-model="checkList">
@@ -69,7 +69,7 @@
                 </el-row>
                 <div class="pl10"><b class="font18">稿号</b></div>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="24">
                         <el-input placeholder="请输入稿号"
                                   v-model="input">
@@ -82,9 +82,9 @@
                 </div>
                 <!-- </el-row> -->
             </el-aside>
-            <el-main class="right-content">
+            <el-main class="main-content">
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="3"><b class="font18">工作稿库</b></el-col>
                     <el-col :span="21">
                         <div class="btn-group">
@@ -95,7 +95,7 @@
                     </el-col>
                     <el-col :span="24">
                         <el-table ref="multipleTable"
-                                  class="mt15"
+                                  class="mt10"
                                   height="170"
                                   :data="tableData3"
                                   tooltip-effect="dark"
@@ -116,11 +116,11 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10">
                     <el-col :span="24"><b class="font18">部门公共库（稿源库）</b></el-col>
                     <el-col :span="24">
                         <el-table ref="multipleTable"
-                                  class="mt15"
+                                  class="mt10"
                                   height="170"
                                   :data="tableData3"
                                   tooltip-effect="dark"
@@ -146,7 +146,7 @@
             <el-button class="primary-btn">确定</el-button>
             <el-button class="reset-btn">取消</el-button>
         </el-footer>
-    </el-main>
+    </el-container>
 </template>
 <script>
 export default {
@@ -314,40 +314,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .search-manuscript {
-    overflow: hidden;
-    background: nth($bg-color, 2);
     .el-container {
-        .left-content {
-            box-shadow: 0px 0px 5px #cacaca;
-            border: none !important;
+        .aside-content {
             margin-right: 10px;
-            padding: 20px 10px;
-            background: $wcolor;
-            overflow: hidden;
-            @extend .scroll-y;
-            @extend .scroll-x;
-            b {
-                display: inline-block;
-                padding-bottom: 10px;
-            }
-            .text-radio {
-                @extend .text-overflow;
-                // @extend .pt10;
-            }
-            .select-type .el-select {
-                width: 78%;
-            }
-            .select-default {
-                .el-select {
-                    float: left;
-                    width: 60%;
-                }
-            }
-            .ipt-title {
-                .el-input {
-                    width: 90%;
-                }
-            }
             .btn-group {
                 @extend .ac;
                 .reset-btn {
@@ -355,26 +324,14 @@ export default {
                 }
             }
         }
-        .right-content {
-            @extend .left-content;
-            margin: 0px;
-            b {
-                display: inline-block;
-                padding-bottom: 0px;
-            }
+        .main-content {
             .btn-group {
                 @extend .text-right;
+                line-height: 35px;
                 .primary-btn {
                     margin: 0px;
                 }
             }
-        }
-    }
-    .el-footer {
-        @extend .ac;
-        padding-top: 15px;
-        button {
-            padding: 10px 25px;
         }
     }
 }

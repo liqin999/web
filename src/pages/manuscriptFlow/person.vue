@@ -43,17 +43,15 @@
                 </el-table>
             </template>
         </el-main>
-        <el-footer height="80">
-            <div class="mt15">
-                <el-pagination @size-change="handleSizeChange"
-                               @current-change="handleCurrentChange"
-                               class="ac"
-                               :current-page="currentPage"
-                               :page-size="20"
-                               layout="total, prev, pager, next"
-                               :total="100">
-                </el-pagination>
-            </div>
+        <el-footer height="70">
+            <el-pagination @size-change="handleSizeChange"
+                           @current-change="handleCurrentChange"
+                           class="ac"
+                           :current-page="currentPage"
+                           :page-size="20"
+                           layout="total, prev, pager, next"
+                           :total="100">
+            </el-pagination>
             <div class="btn-bottom">
                 <div class="btn-nav">
                     <span>追回</span>
@@ -145,26 +143,6 @@ export default {
     }
     .el-checkbox + .el-checkbox {
         margin: 0px 30px;
-    }
-    .btn-bottom {
-        @extend .clearfix;
-        @extend .text-right;
-        padding: 10px;
-        display: flex;
-        display: -webkit-flex;
-        justify-content: flex-end;
-        .btn-line {
-            padding: 0px 10px;
-        }
-        .btn-nav {
-            cursor: pointer;
-            &:hover {
-                color: nth($primary-color, 1);
-            }
-        }
-    }
-    .el-table {
-        overflow-y: hidden;
     }
 }
 </style>

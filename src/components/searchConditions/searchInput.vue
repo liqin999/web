@@ -3,11 +3,11 @@
              :model="searchForm"
              class="search-form">
         <el-row :gutter="20">
-            <el-col :span="24"
-                    class="search-ipt">
+            <el-col :span="24">
                 <el-row :gutter="20">
                     <el-col :span="6">
-                        <el-form-item label="处理时间:">
+                        <el-form-item label="处理时间:"
+                                      class="search-time">
                             <el-date-picker v-model="searchForm.dateValue"
                                             type="daterange"
                                             align="right"
@@ -19,7 +19,7 @@
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="4"
+                    <el-col :span="6"
                             v-if="showKeyWords">
                         <el-form-item label="关键字:"
                                       class="search-key">
@@ -27,9 +27,9 @@
                                       placeholder="关键字"></el-input>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="14">
-                        <slot name="media"></slot>
-                    </el-col>
+                    <!-- <el-col :span="14"> -->
+                    <slot name="media"></slot>
+                    <!-- </el-col> -->
                 </el-row>
             </el-col>
             <el-col :span="24">
@@ -132,44 +132,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-.search-form {
-    box-sizing: border-box;
-}
-.search-form .el-form-item {
-    margin-bottom: 0px;
-    margin-right: 0;
-}
-// 处理时间
-.search-form .search-ipt .el-form--inline .el-form-item__label {
-    width: 40%;
-}
-.search-form .search-ipt .el-form-item__content {
-    float: right;
-    width: 68%;
-}
-// 关键字
-.search-form .search-ipt .search-key .el-form-item__content {
-    float: right;
-    width: 60%;
-}
-
-// 多选框
-.search-form .search-check {
-    padding-right: 8px;
-    // width: 100%;
-}
-.search-form .search-check .el-form-item__content {
-    height: 40px !important;
-}
-.search-form .el-checkbox-group {
-    display: inline-block;
-    margin-left: 8px;
-}
-.search-form .el-checkbox + .el-checkbox {
-    margin-left: 8px;
-}
-.search-form .el-checkbox__label {
-    padding-left: 8px;
-}
-</style>

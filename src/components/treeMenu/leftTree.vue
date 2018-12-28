@@ -59,7 +59,10 @@ export default {
         }
     },
     mounted () {
-
+        // 左侧默认高亮
+        this.$nextTick(() => {
+            this.$refs.tree2.setCurrentKey(2)
+        })
     },
     methods: {
         filterNode (value, data) { // 过滤节点

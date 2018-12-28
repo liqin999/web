@@ -1,9 +1,9 @@
 <template>
-    <el-container class="send-manuscript">
+    <el-container class="input-manuscript send-manuscript">
         <el-container>
-            <el-main class="left-content">
+            <el-main class="main-content">
                 <el-row :gutter="20"
-                        class="mb15">
+                        class="mb15 pl10 pr10">
                     <el-col :span="3"><b class="font18">基本信息</b></el-col>
                     <el-col :span="21">
                         <el-row :gutter="20"
@@ -54,7 +54,7 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20"
-                        class="mb15">
+                        class="mb15 pl10 pr10">
                     <el-col :span="3"><b class="font18">已选稿件</b></el-col>
                     <el-col :span="21"
                             class="tab-padding">
@@ -85,7 +85,7 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20"
-                        class="mb15">
+                        class="mb15 pl10 pr10">
                     <el-col :span="3"><b class="font18">内容</b></el-col>
                     <el-col :span="21"
                             class="tab-padding">
@@ -98,10 +98,10 @@
                 </el-row>
             </el-main>
             <el-aside width="400px"
-                      class="right-content">
+                      class="aside-content">
                 <div class="pl10"><b class="font18">稿签信息</b></div>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="6">
                         <span>第一作者</span>
                     </el-col>
@@ -112,7 +112,7 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="6">
                         <span>第一作者</span>
                     </el-col>
@@ -122,7 +122,7 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="6">
                         <span>来源</span>
                     </el-col>
@@ -137,7 +137,7 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="6">
                         <span>稿件体裁</span>
                     </el-col>
@@ -152,7 +152,7 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20"
-                        class="pl10 pr10 mb15">
+                        class="pl10 pr10 mb10">
                     <el-col :span="6">
                         <span>稿件分类</span>
                     </el-col>
@@ -172,11 +172,11 @@
                         class="pl10 pr10">
                     <div class="pl10"><b class="font18">投向电讯稿库</b></div>
                     <el-row :gutter="20"
-                            class="pl10 pr10 mb15">
+                            class="pl10 pr10 mb10 radio-content">
                         <el-col :span="18">
                             <template v-for="label in radioLabel">
                                 <el-col :span="12"
-                                        class="text-overflow"
+                                        class="text-overflow tab-padding"
                                         :key="label">
                                     <el-radio v-model="radioName"
                                               :label="label"
@@ -194,18 +194,8 @@
                         class="pl10 pr10">
                     <div class="pl10"><b class="font18">投送位置</b></div>
                     <el-row :gutter="20"
-                            class="pl10 pr10 mb15">
-                        <el-col :span="24"
-                                class="col-border">
-                            <!-- <template v-for="label in radioOpsition">
-                                        <el-col :span="12"
-                                                class="text-overflow"
-                                                :key="label">
-                                            <el-radio v-model="radioName"
-                                                      :label="label"
-                                                      @change="labelChange">{{ label }}</el-radio>
-                                        </el-col>
-                                    </template> -->
+                            class="pl10 pr10 mb10">
+                        <el-col :span="24">
                             <el-input type="textarea"
                                       :rows="2"
                                       placeholder="请输入内容"
@@ -267,26 +257,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .send-manuscript {
-    overflow: hidden;
-    background: nth($bg-color, 2);
-    line-height: 30px;
+    line-height: 35px;
     .el-container {
-        padding: 10px;
-        .left-content {
+        .main-content {
+            padding-top: 15px;
             margin-right: 10px;
-            box-shadow: 0px 0px 5px #cacaca;
-            border: none !important;
-            padding: 20px;
-            background: $wcolor;
-            overflow: hidden;
-            @extend .scroll-y;
-            @extend .scroll-x;
             .select-type .el-select {
                 width: 78%;
             }
             .select-default {
                 .el-select {
-                    float: left;
                     width: 60%;
                 }
             }
@@ -304,50 +284,24 @@ export default {
                 }
             }
         }
-        .right-content {
-            overflow: auto;
-            @extend .left-content;
-            @extend .scroll-y;
-            @extend .scroll-x;
-            margin: 0px;
+        .aside-content {
             .btn-group {
+                display: flex;
+                justify-content: space-between;
                 .primary-btn {
                     margin: 0px;
-                    &:last-child {
-                        margin-top: 2px;
-                        float: right;
+                }
+            }
+            .radio-content {
+                line-height: 30px;
+                .choose-btn {
+                    text-align: right;
+                    .primary-btn {
+                        margin: 0px;
                     }
                 }
             }
-            .choose-btn {
-                text-align: right;
-                .primary-btn {
-                    margin: 0px;
-                }
-            }
         }
     }
-    .el-footer {
-        @extend .ac;
-        padding-top: 15px;
-        button {
-            padding: 10px 25px;
-        }
-    }
-}
-</style>
-<style lang="scss">
-.right-content::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-.right-content::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: nth($primary-color, 1);
-}
-
-.right-content::-webkit-scrollbar-track {
-    border-radius: 10px;
 }
 </style>

@@ -6,9 +6,9 @@
                          :model="searchForm"
                          class="search-form">
                     <el-row :gutter="20">
-                        <el-col :span="6"
-                                class="search-ipt">
-                            <el-form-item label="处理时间">
+                        <el-col :span="6">
+                            <el-form-item label="处理时间:"
+                                          class="search-time">
                                 <el-date-picker v-model="searchForm.dateValue"
                                                 type="daterange"
                                                 unlink-panels
@@ -21,14 +21,14 @@
                         </el-col>
                         <el-col :span="6"
                                 v-if="showKeyWords">
-                            <el-form-item label="关键字"
+                            <el-form-item label="关键字:"
                                           class="search-key">
                                 <el-input v-model="searchForm.keywords"
                                           placeholder="关键字"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="稿件状态">
+                            <el-form-item label="稿件状态:">
                                 <el-select v-model="searchForm.state1"
                                            placeholder="稿件状态">
                                     <el-option label="全部"
@@ -47,7 +47,7 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="稿件来源">
+                            <el-form-item label="稿件来源:">
                                 <el-select v-model="searchForm.source"
                                            placeholder="稿件来源">
                                     <el-option label="全部"
@@ -63,20 +63,20 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="第一作者">
+                            <el-form-item label="第一作者:">
                                 <el-input v-model="searchForm.author"
                                           placeholder=""></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="6"
                                 v-if="showKeyWords">
-                            <el-form-item label="稿件号">
+                            <el-form-item label="稿件号:">
                                 <el-input v-model="searchForm.num"
                                           placeholder=""></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="约稿状态">
+                            <el-form-item label="约稿状态:">
                                 <el-select v-model="searchForm.state2"
                                            placeholder="稿件状态">
                                     <el-option label="全部"
@@ -95,7 +95,7 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="产品类型">
+                            <el-form-item label="产品类型:">
                                 <el-select v-model="searchForm.source"
                                            placeholder="产品类型">
                                     <el-option label="全部"
@@ -141,16 +141,14 @@
             </div>
         </el-header>
         <el-container>
-            <el-aside width="250px"
-                      class="left-aside">
+            <el-aside width="250px">
                 <left-menu :treeData="data2"
                            :defaultProps="defaultProps"
                            @sendTreeObj="getTreeObj"></left-menu>
             </el-aside>
             <el-container>
-                <el-header height="40"
-                           class="setting-right-header">
-                    <div class="btn-group">
+                <el-header height="40">
+                    <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
                         <send-draft>
                             <span slot="iconName">传稿</span>
@@ -195,8 +193,7 @@
 
                     </div>
                 </el-header>
-                <el-main class="main-padding"
-                         ref="mainTable">
+                <el-main ref="mainTable">
                     <el-table ref="multipleTable"
                               :data="tableData3"
                               :height="mainTableHeight"
@@ -216,17 +213,15 @@
                         </el-table-column>
                     </el-table>
                 </el-main>
-                <el-footer height="80">
-                    <div class="mt15">
-                        <el-pagination @size-change="handleSizeChange"
-                                       @current-change="handleCurrentChange"
-                                       class="ac"
-                                       :current-page="currentPage"
-                                       :page-size="20"
-                                       layout="total, prev, pager, next"
-                                       :total="100">
-                        </el-pagination>
-                    </div>
+                <el-footer height="70">
+                    <el-pagination @size-change="handleSizeChange"
+                                   @current-change="handleCurrentChange"
+                                   class="ac"
+                                   :current-page="currentPage"
+                                   :page-size="20"
+                                   layout="total, prev, pager, next"
+                                   :total="100">
+                    </el-pagination>
                     <div class="btn-bottom">
                         <div class="btn-nav">
                             <i class="iconfont icon-liulan"></i>
@@ -543,77 +538,3 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.manuscript-setting {
-    .search-wrap {
-        padding-top: 5px;
-    }
-    .setting-right-header {
-        padding: 10px;
-    }
-}
-.main-padding {
-    padding: 0px 10px;
-    // @extend .scroll-y;
-    // @extend .scroll-x;
-}
-.left-aside {
-    overflow: hidden;
-}
-.left-aside .filter-tree {
-    @extend .scroll-y;
-    @extend .scroll-x;
-}
-.btn-bottom {
-    @extend .clearfix;
-    @extend .text-right;
-    padding: 10px;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: flex-end;
-    .btn-line {
-        padding: 0px 10px;
-    }
-    .btn-nav {
-        cursor: pointer;
-        &:hover {
-            color: nth($primary-color, 1);
-        }
-    }
-}
-.el-table {
-    overflow-y: hidden;
-}
-</style>
-<style lang="scss">
-.search-form .el-form-item {
-    margin-bottom: 0px;
-    margin-right: 0;
-}
-// 处理时间
-.search-form .search-ipt .el-form-item__label {
-    // width: 40%;
-}
-.search-form .search-ipt .el-form-item__content {
-    // float: right;
-    width: 62%;
-}
-// 多选框
-.search-form .search-check {
-    padding-right: 8px;
-    // width: 100%;
-}
-.search-form .search-check .el-form-item__content {
-    height: 40px !important;
-}
-.search-form .el-checkbox-group {
-    display: inline-block;
-    margin-left: 8px;
-}
-.search-form .el-checkbox + .el-checkbox {
-    margin-left: 8px;
-}
-.search-form .el-checkbox__label {
-    padding-left: 8px;
-}
-</style>
