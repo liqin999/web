@@ -5,7 +5,7 @@
                  alt=""
                  style="width:100%;height:100%">
         </div> -->
-        <el-header height="40">
+        <el-header height="40px">
             <header-bar></header-bar>
         </el-header>
         <router-view />

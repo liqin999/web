@@ -1,6 +1,6 @@
 <template>
     <el-container class="person-container">
-        <el-header height="40">
+        <el-header height="40px">
             <el-row :gutter="20"
                     class="clearfix">
                 <el-col>
@@ -43,7 +43,7 @@
                 </el-table>
             </template>
         </el-main>
-        <el-footer height="70">
+        <el-footer height="70px">
             <el-pagination @size-change="handleSizeChange"
                            @current-change="handleCurrentChange"
                            class="ac"

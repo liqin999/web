@@ -167,7 +167,7 @@
                     </el-col>
                 </el-row>
             </el-main>
-            <el-footer height="70">
+            <el-footer height="70px">
                 <el-pagination @size-change="handleSizeChange"
                                @current-change="handleCurrentChange"
                                class="ac"

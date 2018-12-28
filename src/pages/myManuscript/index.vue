@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header height="85">
+        <el-header height="85px">
             <div class="search-wrap">
                 <search-input :searchForm="searchForm"
                               :allTypes="allTypes"
@@ -21,7 +21,7 @@
             </div>
         </el-header>
         <el-container>
-            <el-header height="40">
+            <el-header height="40px">
                 <div class="main-header-group">
                     <!-- 引入按钮的组的插件 -->
                     <send-draft>
@@ -87,7 +87,7 @@
                     </el-table-column>
                 </el-table>
             </el-main>
-            <el-footer height="70">
+            <el-footer height="70px">
                 <el-pagination @size-change="handleSizeChange"
                                @current-change="handleCurrentChange"
                                class="ac"

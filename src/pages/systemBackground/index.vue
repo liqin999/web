@@ -1,14 +1,12 @@
 <template>
     <el-container>
-        <el-aside width="200px"
-                  class="left-aside">
+        <el-aside width="260px"
+                  class="system-aside">
             <el-menu :default-active="$route.path"
                      :router="true"
-                     class="backMenu"
                      unique-opened="true"
                      @open="handleOpen"
                      @close="handleClose">
-
                 <el-submenu :index="item.id"
                             v-for="item in menuData"
                             :key="item.id">
@@ -26,42 +24,7 @@
 
             </el-menu>
         </el-aside>
-        <el-main>
-            <router-view></router-view>
-        </el-main>
-
-        <!-- <div class="clearfix">
-            <div class="con-wrap">
-                <div class="left">
-                    <el-menu :default-active="$route.path"
-                             :router="true"
-                             class="el-menu-vertical-demo"
-                             @open="handleOpen"
-                             @close="handleClose">
-
-                        <el-submenu :index="item.id"
-                                    v-for="item in menuData"
-                                    :key="item.id">
-                            <template slot="title">
-                                <i :class="item.icon"></i>
-                                <span>{{item.name}}</span>
-                            </template>
-                            <el-menu-item v-for="subItem in item.chiled"
-                                          :key="subItem.id"
-                                          :index="subItem.path"
-                                          :route='{ path: subItem.path }'>
-                                {{ subItem.name }}
-                            </el-menu-item>
-
-                        </el-submenu>
-
-                    </el-menu>
-                </div>
-                <div class="right">
-                    <router-view></router-view>
-                </div>
-            </div>
-        </div> -->
+        <router-view></router-view>
     </el-container>
 </template>
 <script>
@@ -229,42 +192,27 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.main-padding {
-    padding: 0px;
-    // @extend .scroll-y;
-    // @extend .scroll-x;
-}
-.left-aside {
-    overflow: hidden;
-}
-.left-aside .filter-tree {
-    @extend .scroll-y;
-    @extend .scroll-x;
-}
-.btn-bottom {
-    @extend .clearfix;
-    @extend .text-right;
-    padding: 10px;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: flex-end;
-    .btn-line {
-        padding: 0px 10px;
-    }
-    .btn-nav {
-        cursor: pointer;
-        &:hover {
-            color: nth($primary-color, 1);
+<style lang="scss">
+.system-aside {
+    padding: 10px 0;
+    .el-menu {
+        border: none !important;
+        background: none !important;
+        .el-menu-item,
+        .el-submenu__title {
+            height: 30px;
+            line-height: 30px;
         }
     }
 }
-.el-table {
-    overflow-y: hidden;
+.el-menu-item.is-active {
+    background-color: #fff;
+    color: nth($primary-color, 1);
+    border-left: 4px solid nth($primary-color, 1);
 }
-</style>
-<style  lang="scss" >
-.backMenu.el-memu {
-    border-right: none;
+.el-menu-item:focus,
+.el-menu-item:hover {
+    background-color: #fff;
+    color: nth($primary-color, 1);
 }
 </style>

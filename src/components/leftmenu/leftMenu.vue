@@ -1,26 +1,21 @@
 <template>
     <!-- <div>左侧菜单</div> -->
-    <div class="box"
-         id="box">
-        <div class="tip">
-            <el-menu default-active="2"
-                     class="el-menu-vertical-demo"
-                     @open="handleOpen"
-                     @close="handleClose">
-                <el-menu-item :index="(index+1)+''"
-                              v-for="(item,index) in menuList"
-                              :key="index"
-                              @click="clickMenu(index+1)">
-                    <i class="el-icon-setting"></i>
-                    <span slot="title">{{item.name}}</span>
-                </el-menu-item>
-            </el-menu>
-        </div>
+    <div>
+        <el-menu default-active="2"
+                 @open="handleOpen"
+                 @close="handleClose">
+            <el-menu-item :index="(index+1)+''"
+                          v-for="(item,index) in menuList"
+                          :key="index"
+                          @click="clickMenu(index+1)">
+                <i class="el-icon-setting"></i>
+                <span slot="title">{{item.name}}</span>
+            </el-menu-item>
+        </el-menu>
         <!-- 可拖拽位置 -->
         <div class="dlg_right"
              id="dlg_right"></div>
     </div>
-
 </template>
 
 <script>
@@ -119,16 +114,6 @@ export default {
 </script>
 
 <style scoped>
-.box {
-    display: -webkit-box;
-    min-width: 250px;
-    max-width: 400px;
-}
-.tip {
-    /* margin-left: 20px; */
-    float: left;
-    width: calc(100% - 15px);
-}
 .dlg_right {
     width: 15px;
     float: left;

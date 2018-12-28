@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-28 14:48:37
+ * @LastEditTime: 2018-12-28 15:34:59
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $primary-color: #3871f5 #6d99ff; //系统色调 默认、hover状态
@@ -311,10 +311,6 @@ $box-width: 733px; //定义弹出框最小宽度
 
     // 处理时间 选择框宽度控制
     .search-form {
-        .el-form-item {
-            margin-bottom: 0px;
-            margin-right: 0;
-        }
         .search-time .el-form-item__content {
             width: 70%;
         }
@@ -424,6 +420,10 @@ $box-width: 733px; //定义弹出框最小宽度
 // 布局样式修改
 .el-header{
     padding:0px;
+}
+.el-form-item {
+    margin-bottom: 0px;
+    margin-right: 0;
 }
 // 弹出框样式修改
 .el-dialog {

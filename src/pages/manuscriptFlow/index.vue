@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header height="40">
+        <el-header height="40px">
             <div class="search-wrap">
                 <el-form :inline="true"
                          :model="searchForm"
@@ -48,7 +48,7 @@
                 </el-form>
             </div>
         </el-header>
-        <el-header height="40"
+        <el-header height="40px"
                    class="flow-header">
             <template>
                 <el-menu class="el-menu-demo"

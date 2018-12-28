@@ -1,11 +1,25 @@
 <template>
     <el-container>
-        <el-header height="40">
+        <el-header height="90px">
 
             <el-form :inline="true"
                      :model="searchForm"
-                     class="demo-form-inline">
-
+                     class="main-header-group">
+                <el-form-item label="创建日期">
+                    <el-date-picker v-model="searchForm.createDate"
+                                    type="daterange"
+                                    align="right"
+                                    unlink-panels
+                                    range-separator="至"
+                                    start-placeholder="开始日期"
+                                    end-placeholder="结束日期"
+                                    :picker-options="pickerOptions2">
+                    </el-date-picker>
+                </el-form-item>
+                <el-form-item label="关键字">
+                    <el-input v-model="searchForm.keywords"
+                              placeholder="关键字"></el-input>
+                </el-form-item>
                 <el-form-item label="媒体名称">
                     <el-select v-model="searchForm.name"
                                placeholder="活动区域">
@@ -26,101 +40,76 @@
                     </el-select>
                 </el-form-item>
 
-                <el-form-item label="创建日期">
-                    <el-date-picker v-model="searchForm.createDate"
-                                    type="daterange"
-                                    align="right"
-                                    class="w200"
-                                    unlink-panels
-                                    range-separator="至"
-                                    start-placeholder="开始日期"
-                                    end-placeholder="结束日期"
-                                    :picker-options="pickerOptions2">
-                    </el-date-picker>
-                </el-form-item>
-
-                <el-form-item label="关键字">
-                    <el-input v-model="searchForm.keywords"
-                              size="small"
-                              placeholder="关键字"></el-input>
-                </el-form-item>
-
                 <el-form-item>
-                    <el-button type="primary"
-                               size="small"
+                    <el-button class="primary-btn"
                                @click="onSubmit">查询</el-button>
                 </el-form-item>
             </el-form>
         </el-header>
-        <el-container>
-            <el-header height="40">
-                <div class="btnGroup">
+        <el-header height="40px">
+            <div class="main-header-group">
 
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">内容</span>
-                        </span>
-                    </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">修改</span>
-                        </span>
-                    </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">作废</span>
-                        </span>
-                    </div>
-
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">恢复</span>
-                        </span>
-                    </div>
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">终结</span>
-                        </span>
-                    </div>
+                <div data-v-6eb3df45=""
+                     class="primary-btn"><span>
+                        <span data-v-6eb3df45="">内容</span>
+                    </span>
                 </div>
-            </el-header>
-            <el-main>
-                <template>
-                    <el-table ref="multipleTable"
-                              :data="tableData3"
-                              tooltip-effect="dark"
-                              style="width: 100%"
-                              @selection-change="handleSelectionChange">
-                        <el-table-column type="selection"
-                                         width="55">
-                        </el-table-column>
-                        <el-table-column label="日期">
-                            <template slot-scope="scope">{{ scope.row.date }}</template>
-                        </el-table-column>
-                        <el-table-column prop="name"
-                                         label="姓名">
-                        </el-table-column>
-                        <el-table-column prop="address"
-                                         label="地址"
-                                         show-overflow-tooltip>
-                        </el-table-column>
-                    </el-table>
-                </template>
-            </el-main>
-            <el-footer height="80">
-                <div class="page mt10">
-                    <el-pagination @size-change="handleSizeChange"
-                                   @current-change="handleCurrentChange"
-                                   class="ac"
-                                   :current-page="currentPage"
-                                   :page-size="20"
-                                   layout="total, prev, pager, next"
-                                   :total="100">
-                    </el-pagination>
+                <div data-v-6eb3df45=""
+                     class="primary-btn"><span>
+                        <span data-v-6eb3df45="">修改</span>
+                    </span>
                 </div>
-            </el-footer>
-        </el-container>
+                <div data-v-6eb3df45=""
+                     class="primary-btn"><span>
+                        <span data-v-6eb3df45="">作废</span>
+                    </span>
+                </div>
 
+                <div data-v-6eb3df45=""
+                     class="primary-btn"><span>
+                        <span data-v-6eb3df45="">恢复</span>
+                    </span>
+                </div>
+                <div data-v-6eb3df45=""
+                     class="primary-btn"><span>
+                        <span data-v-6eb3df45="">终结</span>
+                    </span>
+                </div>
+            </div>
+        </el-header>
+        <el-main>
+            <template>
+                <el-table ref="multipleTable"
+                          :data="tableData3"
+                          tooltip-effect="dark"
+                          style="width: 100%"
+                          @selection-change="handleSelectionChange">
+                    <el-table-column type="selection"
+                                     width="55">
+                    </el-table-column>
+                    <el-table-column label="日期">
+                        <template slot-scope="scope">{{ scope.row.date }}</template>
+                    </el-table-column>
+                    <el-table-column prop="name"
+                                     label="姓名">
+                    </el-table-column>
+                    <el-table-column prop="address"
+                                     label="地址"
+                                     show-overflow-tooltip>
+                    </el-table-column>
+                </el-table>
+            </template>
+        </el-main>
+        <el-footer height="40px">
+            <el-pagination @size-change="handleSizeChange"
+                           @current-change="handleCurrentChange"
+                           class="ac"
+                           :current-page="currentPage"
+                           :page-size="20"
+                           layout="total, prev, pager, next"
+                           :total="100">
+            </el-pagination>
+        </el-footer>
     </el-container>
 </template>
 <script>
@@ -216,18 +205,3 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.el-form-item {
-    margin-bottom: 0;
-}
-.btnGroup {
-    padding: 10px;
-    background-color: #f5f5f5;
-}
-.w200 {
-    width: 200px !important;
-}
-.mt10 {
-    margin-top: 10px;
-}
-</style>
