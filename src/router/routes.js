@@ -45,12 +45,28 @@ const column = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/c
 const special = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/special.vue')), 'special')
 
 // 后台设置
-const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet.vue')), 'mediaSet')
-const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand.vue')), 'mediaExpand')
-const pageSet = r => require.ensure([], () => r(require('@/pages/systemBackground/pageSet.vue')), 'pageSet')
-const stackSet = r => require.ensure([], () => r(require('@/pages/systemBackground/stackSet.vue')), 'stackSet')
-const columnSet = r => require.ensure([], () => r(require('@/pages/systemBackground/columnSet.vue')), 'columnSet')
-const specialSet = r => require.ensure([], () => r(require('@/pages/systemBackground/specialSet.vue')), 'specialSet')
+const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet/mediaSet.vue')), 'mediaSet')
+const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand/mediaExpand.vue')), 'mediaExpand')
+const pageSet = r => require.ensure([], () => r(require('@/pages/systemBackground/pageSet/pageSet.vue')), 'pageSet')
+const stackSet = r => require.ensure([], () => r(require('@/pages/systemBackground/stackSet/stackSet.vue')), 'stackSet')
+const columnSet = r => require.ensure([], () => r(require('@/pages/systemBackground/columnSet/columnSet.vue')), 'columnSet')
+const specialSet = r => require.ensure([], () => r(require('@/pages/systemBackground/specialSet/specialSet.vue')), 'specialSet')
+
+const role = r => require.ensure([], () => r(require('@/pages/systemBackground/role/role.vue')), 'role')
+const authority = r => require.ensure([], () => r(require('@/pages/systemBackground/authority/authority.vue')), 'authority')
+const userManage = r => require.ensure([], () => r(require('@/pages/systemBackground/userManage/userManage.vue')), 'userManage')
+const menu = r => require.ensure([], () => r(require('@/pages/systemBackground/menu/menu.vue')), 'menu')
+const interfaces = r => require.ensure([], () => r(require('@/pages/systemBackground/interfaces/interfaces.vue')), 'interfaces')
+const department = r => require.ensure([], () => r(require('@/pages/systemBackground/department/department.vue')), 'department')
+
+const clueSource = r => require.ensure([], () => r(require('@/pages/systemBackground/clueSource/clueSource.vue')), 'clueSource')
+const commonParam = r => require.ensure([], () => r(require('@/pages/systemBackground/commonParam/commonParam.vue')), 'commonParam')
+const manuscriptType = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptType/manuscriptType.vue')), 'manuscriptType')
+const authorType = r => require.ensure([], () => r(require('@/pages/systemBackground/authorType/authorType.vue')), 'authorType')
+const telecProducts = r => require.ensure([], () => r(require('@/pages/systemBackground/telecProducts/telecProducts.vue')), 'telecProducts')
+const manuscriptTheme = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptTheme/manuscriptTheme.vue')), 'manuscriptTheme')
+const manuscriptSource = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptSource/manuscriptSource.vue')), 'manuscriptSource')
+const manuscriptClassify = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptClassify/manuscriptClassify.vue')), 'manuscriptClassify')
 
 // buttons路由
 const sendDraft = r => require.ensure([], () => r(require('@/components/buttons/sendDraft/sendDraft.vue')), 'sendDraft')
@@ -194,7 +210,64 @@ export const routes = [{
     {
         path: '/specialSet',
         component: specialSet
+    },
+    {
+        path: '/role',
+        component: role
+    },
+    {
+        path: '/authority',
+        component: authority
+    },
+    {
+        path: '/userManage',
+        component: userManage
+    },
+    {
+        path: '/menu',
+        component: menu
+    },
+    {
+        path: '/interfaces',
+        component: interfaces
+    },
+    {
+        path: '/department',
+        component: department
+    },
+    {
+        path: '/clueSource',
+        component: clueSource
+    },
+    {
+        path: '/commonParam',
+        component: commonParam
+    },
+    {
+        path: '/manuscriptType',
+        component: manuscriptType
+    },
+    {
+        path: '/authorType',
+        component: authorType
+    },
+    {
+        path: '/telecProducts',
+        component: telecProducts
+    },
+    {
+        path: '/manuscriptTheme',
+        component: manuscriptTheme
+    },
+    {
+        path: '/manuscriptSource',
+        component: manuscriptSource
+    },
+    {
+        path: '/manuscriptClassify',
+        component: manuscriptClassify
     }
+
     ]
 },
   // buttons路由定义
