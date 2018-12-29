@@ -85,6 +85,7 @@
 
                 <el-table ref="multipleTable"
                           :data="tableData3"
+                          @row-click="tabclick"
                           :height="mainTableHeight"
                           tooltip-effect="dark"
                           @selection-change="handleSelectionChange">
@@ -409,6 +410,9 @@ export default {
         }
     },
     methods: {
+        tabclick () {
+            this.$router.push({ path: '/review' })
+        },
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
         },
@@ -445,6 +449,9 @@ export default {
 <style lang="scss" scoped>
 .tree-wrap {
     padding: 0;
+}
+.el-table {
+    cursor: pointer;
 }
 </style>
 <style lang="scss">

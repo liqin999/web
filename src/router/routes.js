@@ -16,6 +16,7 @@
     新闻日历      newsCalendar
     后台管理      systemBackground
  */
+const review = r => require.ensure([], () => r(require('@/pages/dataService/review.vue')), 'review')
 const dataService = r => require.ensure([], () => r(require('@/pages/dataService/dataService.vue')), 'dataService')
 const columnsLayout = r => require.ensure([], () => r(require('@/pages/columnsLayout/index.vue')), 'columnsLayout')
 const myManuscript = r => require.ensure([], () => r(require('@/pages/myManuscript/index.vue')), 'myManuscript')
@@ -88,6 +89,10 @@ const labelMessageBox = r => require.ensure([], () => r(require('@/components/bu
 export const routes = [{
     path: '/dataService',
     component: dataService
+},
+{
+    path: '/review',
+    component: review
 },
 {
     path: '/columnsLayout',
@@ -275,7 +280,7 @@ export const routes = [{
 
     ]
 },
-  // buttons路由定义
+// buttons路由定义
 {
     path: '/sendDraft',
     component: sendDraft
@@ -316,7 +321,7 @@ export const routes = [{
     path: '/draftLabel',
     component: draftLabel
 },
-  // buttons弹窗路由
+// buttons弹窗路由
 {
     path: '/draftMessageBox',
     component: draftMessageBox
