@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-28 18:24:34
+ * @LastEditTime: 2018-12-29 09:26:02
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $primary-color: #3871f5 #6d99ff; //系统色调 默认、hover状态
@@ -445,24 +445,9 @@ $box-width: 733px; //定义弹出框最小宽度
 }
 .message-box {
     padding: 0px 10px;
-    // .message-lists {
-    //     padding-bottom: 10px;
-    //     @include border;
-    //     .message-list {
-    //         .el-col {
-    //             @extend .text-overflow;
-    //             line-height: 30px;
-    //         }
-    //     }
-    // }
     .message-content {
         padding-top: 15px;
         line-height: 30px;
-        // .message-checkbox {
-        //     height: 200px;
-        //     @include border(all);
-        //     border-radius: $border-radius;
-        // }
     }
 }
 

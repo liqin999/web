@@ -10,7 +10,7 @@
         <div class="message-box clearfix">
             <!-- 签发信息 -->
             <el-row :gutter="20"
-                    class="clearfix margin-bottom15">
+                    class="clearfix">
                 <el-col :span="3"
                         class="tab-padding"><b class="message-title">签发信息</b></el-col>
                 <el-col :span="21">
@@ -21,27 +21,26 @@
                                       :key="item">{{ item }}</el-radio>
                         </template>
                     </el-row>
-                    <el-row class="clearfix padding-top8">
+                    <el-row class="clearfix pt10 pb10">
                         <!-- 处理时间 -->
                         <el-col :span="8"
-                                class="choose-time">
+                                class="times-select">
                             <template>
-                                <div class="block">
-                                    <span class="">处理时间</span>
-                                    <el-date-picker v-model="pickerTime"
-                                                    type="date"
-                                                    placeholder="选择日期"
-                                                    @change="pickerChange">
-                                    </el-date-picker>
-                                </div>
+                                <span>处理时间</span>
+                                <el-date-picker v-model="pickerTime"
+                                                type="date"
+                                                placeholder="选择日期"
+                                                @change="pickerChange">
+                                </el-date-picker>
                             </template>
                         </el-col>
                         <!-- 刊发位次 -->
                         <el-col :span="6"
-                                class="choose-time text-right">
+                                class="text-right">
                             <template>
-                                <span class="padding-right">刊发位次</span>
-                                <el-select v-model="kanfaValue">
+                                <span>刊发位次</span>
+                                <el-select v-model="kanfaValue"
+                                           class="sort-select">
                                     <el-option v-for="item in kanfaData"
                                                :key="item"
                                                :label="item"
@@ -71,7 +70,7 @@
                         class="tab-padding"><b class="message-title">字体和字号</b></el-col>
                 <el-col :span="21">
                     <el-row :gutter="20"
-                            class="font-size16 margin-bottom15">
+                            class="font16">
                         <div>
                             <el-col :span="18"
                                     :offset="3">
@@ -85,9 +84,9 @@
                         </div>
                     </el-row>
                     <el-row :gutter="20"
-                            class="font-select margin-bottom15">
+                            class="font-select">
                         <div>
-                            <el-col :span="3">
+                            <el-col :span="4">
                                 <template>
                                     <el-checkbox v-model="checked">备选项</el-checkbox>
                                 </template>
@@ -128,9 +127,9 @@
                         </div>
                     </el-row>
                     <el-row :gutter="20"
-                            class="font-select margin-bottom15">
+                            class="font-select">
                         <div>
-                            <el-col :span="3">
+                            <el-col :span="4">
                                 <template>
                                     <el-checkbox v-model="checked">备选项</el-checkbox>
                                 </template>
@@ -171,9 +170,9 @@
                         </div>
                     </el-row>
                     <el-row :gutter="20"
-                            class="font-select margin-bottom15">
+                            class="font-select">
                         <div>
-                            <el-col :span="3">
+                            <el-col :span="4">
                                 <template>
                                     <el-checkbox v-model="checked">备选项</el-checkbox>
                                 </template>
@@ -216,7 +215,8 @@
                 </el-col>
             </el-row>
             <!-- 签发目标 -->
-            <el-row :gutter="20">
+            <el-row :gutter="20"
+                    class="mt10">
                 <el-col :span="3"
                         class="tab-padding"><b class="message-title">签发目标</b></el-col>
                 <el-col :span="21">
@@ -231,8 +231,9 @@
                         </el-col>
                         <el-col :span="16">
                             <el-col :span="5"
-                                    class="text-right padding-right"><b class="message-title">签发意见</b></el-col>
-                            <el-col :span="19">
+                                    class="text-right"><b class="message-title">签发意见</b></el-col>
+                            <el-col :span="19"
+                                    class="pl10">
                                 <el-input type="textarea"
                                           :rows="8"
                                           placeholder="请输入内容"
@@ -308,38 +309,27 @@ export default {
 }
 </script>
 
-<style lang="scss">
-// // 更改elm样式
-// .choose-time {
-//     & .el-date-editor.el-input,
-//     .chooseTime .el-date-editor.el-input__inner {
-//         width: 130px;
-//         margin-left: 10px;
-//     }
-//     & .block .el-input__inner {
-//         padding-left: 30px;
-//     }
-//     & .el-input {
-//         width: 55px;
-//     }
-//     & .el-select {
-//         float: right;
-//         margin-right: 10px;
-//     }
-// }
-
-// .font-select {
-//     & .el-select .el-input__inner:focus {
-//         border-color: #707070;
-//     }
-//     & .el-select .el-input.is-focus .el-input__inner {
-//         border-color: #707070;
-//     }
-//     & .el-input__inner {
-//         border: 1px solid #bcbcbc;
-//         color: #6d6d6d;
-//         background: #e5e5e5;
-//     }
-// }
-//
+<style lang="scss" scoped>
+.message-box {
+    line-height: 30px;
+    // 时间插件修改样式
+    .times-select {
+        .el-date-editor.el-input,
+        .el-date-editor.el-input__inner {
+            width: 70%;
+            padding: 0;
+        }
+    }
+    .sort-select {
+        width: 40%;
+        float: right;
+        margin: 0 10px;
+    }
+    .el-checkbox-group {
+        text-align: right;
+    }
+    .font-select {
+        margin: 10px 0;
+    }
+}
 </style>

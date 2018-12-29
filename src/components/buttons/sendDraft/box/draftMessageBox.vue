@@ -348,7 +348,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .message-box {
-    padding: 0px 10px;
     .message-lists {
         padding-bottom: 10px;
         @include border;
@@ -360,8 +359,6 @@ export default {
         }
     }
     .message-content {
-        padding-top: 15px;
-        line-height: 30px;
         .message-checkbox {
             height: 200px;
             @include border(all);
