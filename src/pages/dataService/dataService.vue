@@ -91,14 +91,31 @@
                           @selection-change="handleSelectionChange">
                     <el-table-column type="selection">
                     </el-table-column>
-                    <el-table-column label="日期">
-                        <template slot-scope="scope">{{ scope.row.date }}</template>
+                    <el-table-column label="标题"
+                                     show-overflow-tooltip>
+                        <template slot-scope="scope">{{ scope.row.a }}</template>
                     </el-table-column>
-                    <el-table-column prop="name"
-                                     label="姓名">
+                    <el-table-column prop="b"
+                                     label="字数">
                     </el-table-column>
-                    <el-table-column prop="address"
-                                     label="地址"
+                    <el-table-column prop="c"
+                                     label="作者/翻译"
+                                     show-overflow-tooltip>
+                    </el-table-column>
+                    <el-table-column prop="d"
+                                     label="签发时间"
+                                     show-overflow-tooltip>
+                    </el-table-column>
+                    <el-table-column prop="e"
+                                     label="签发组"
+                                     show-overflow-tooltip>
+                    </el-table-column>
+                    <el-table-column prop="f"
+                                     label="签发人"
+                                     show-overflow-tooltip>
+                    </el-table-column>
+                    <el-table-column prop="g"
+                                     label="编辑"
                                      show-overflow-tooltip>
                     </el-table-column>
                 </el-table>
@@ -296,98 +313,121 @@ export default {
 
             ],
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
             }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
             }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }],
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            },
+            {
+                a: '新疆和田：黑山村的致富路',
+                b: '1200',
+                c: '辛未悦',
+                d: '2018-12-31 15:00',
+                e: '技术局-中心签稿室',
+                f: '王建',
+                g: '刘畅'
+            }
+
+            ],
             multipleSelection: [],
             mainTableHeight: null
         }

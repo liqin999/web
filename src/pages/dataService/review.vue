@@ -25,7 +25,8 @@
                     <el-col :span="4"
                             class="text-right">
                         <el-button class="primary-btn">查询</el-button>
-                        <el-button class="reset-btn">关闭</el-button>
+                        <el-button class="reset-btn"
+                                   @click="closeFn">关闭</el-button>
                     </el-col>
                 </el-row>
                 <el-col :span="18"
@@ -107,6 +108,11 @@ export default {
                 label: '新华社本数据库提交待编'
             }],
             value: '新华社本数据库提交待编'
+        }
+    },
+    methods: {
+        closeFn () {
+            this.$router.go('-1')
         }
     }
 }
