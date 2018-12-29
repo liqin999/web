@@ -5,7 +5,9 @@
                  alt=""
                  style="width:100%;height:100%">
         </div>
-        <el-header height="40px">
+
+        <el-header height="40px"
+                   v-show="showNavBar">
             <header-bar></header-bar>
         </el-header>
         <router-view />
@@ -23,7 +25,16 @@ export default {
     mixins: [mixin],
     data () {
         return {
-            imgUrl: require('@/assets/img/fadeHead.png')
+            imgUrl: require('@/assets/img/fadeHead.png'),
+            showNavBar: true
+
+        }
+    },
+    beforeMount () {
+        if (this.$route.path === '/dataService') {
+            this.showNavBar = false
+        } else {
+            this.showNavBar = true
         }
     },
     components: {
@@ -40,7 +51,17 @@ export default {
         //     this.$store.dispatch('cloaseLoading');
         // }, 2000);
     },
-    methods: {}
+    methods: {},
+    watch: {
+        '$route' (to, from) {
+            if (this.$route.path === '/dataService') {
+                this.showNavBar = false
+            } else {
+                this.showNavBar = true
+            }
+        }
+    }
+
 }
 </script>
 <style>
