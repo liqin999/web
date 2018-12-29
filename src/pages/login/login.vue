@@ -53,7 +53,7 @@ export default {
 
                 })
                 this.$router.push({
-                    path: '/columnsLayout'
+                    path: '/dataService'
                 })
                 // 保存登录名
                 // this.$store.commit("setUser", this.userForm.userName);

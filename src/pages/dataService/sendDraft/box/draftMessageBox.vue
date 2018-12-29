@@ -37,7 +37,10 @@
                                 <el-col :span="24"
                                         class="padding-top10">
                                     <template>
-                                        <span class="message-title">媒体：</span>
+                                        <el-col :span="3">
+                                            <span class="message-title">媒体：</span>
+                                        </el-col>
+
                                         <el-select v-model="topValue"
                                                    placeholder="请选择">
                                             <el-option v-for="item in topTitle"
@@ -59,7 +62,8 @@
                             <el-row>
                                 <el-col :span="12"
                                         class="message-checkbox">
-                                    <el-tree :data="dataList"
+                                    <el-tree :data="dataList1"
+                                             default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -67,7 +71,8 @@
                                 </el-col>
                                 <el-col :span="12"
                                         class="message-checkbox">
-                                    <el-tree :data="dataList"
+                                    <el-tree :data="dataList2"
+                                             default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -85,14 +90,14 @@
                                 <el-col :span="3">
                                     <span class="message-title">下次：</span>
                                 </el-col>
-                                <template v-for="label in radioLabel">
+                                <template>
                                     <el-col :span="7"
                                             class="text-overflow"
                                             :key="label">
                                         <el-radio v-model="radioName"
-                                                  :label="入库前提示">{{ 入库前提示 }}</el-radio>
+                                                  :label="1">入库前提示 </el-radio>
                                         <el-radio v-model="radioName"
-                                                  :label="label">{{ label }}</el-radio>
+                                                  :label="2">直接入库</el-radio>
                                     </el-col>
                                 </template>
                             </el-row>
@@ -135,31 +140,52 @@ export default {
                 '我的稿库'
             ],
             topValue: '新华每日电讯',
-            dataList: [
+            dataList1: [
                 {
-                    id: 2,
-                    label: '新华每日电讯 2',
+                    id: 1,
+                    label: '栏目',
                     children: [{
                         id: 5,
-                        label: '新华每日电讯 2-1'
+                        label: '头版'
                     },
                     {
                         id: 6,
-                        label: '新华每日电讯 2-2'
-                    }]
-                },
+                        label: '要闻'
+                    }, {
+                        id: 54,
+                        label: '国内新闻'
+                    },
+                    {
+                        id: 62,
+                        label: '新闻焦点'
+                    }
+
+                    ]
+                }
+
+            ],
+            dataList2: [
                 {
                     id: 3,
-                    label: '新华每日电讯 3',
+                    label: 'A叠',
                     children: [
                         {
                             id: 7,
-                            label: '新华每日电讯 3-1'
+                            label: '一版'
                         },
                         {
                             id: 8,
-                            label: '新华每日电讯 3-2'
+                            label: '二版'
+                        },
+                        {
+                            id: 6,
+                            label: '三版'
+                        },
+                        {
+                            id: 2,
+                            label: '四版'
                         }
+
                     ]
                 }
             ],
@@ -293,20 +319,14 @@ export default {
         },
         // 点击确定按钮（提交）
         draftConfirm () {
-
+            // 路由的跳转
+            this.$router.push({
+                path: '/columnsLayout'
+            })
         }
     },
     computed: {
-        dataList1 () {
-            // let idx = 0;
-            // this.topTitle.forEach((item,index) => {
-            //     if (this.topValue == item.label){
-            //         idx = index;
-            //     }
-            // });
-            // let dataList = this.topTitle[0].list;
-            return this.dataList
-        }
+
     }
 }
 </script>
