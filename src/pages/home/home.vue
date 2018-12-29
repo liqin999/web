@@ -31,7 +31,7 @@ export default {
         }
     },
     beforeMount () {
-        if (this.$route.path === '/dataService') {
+        if (this.$route.path === '/dataService' || this.$route.path === '/review') {
             this.showNavBar = false
         } else {
             this.showNavBar = true
@@ -54,7 +54,7 @@ export default {
     methods: {},
     watch: {
         '$route' (to, from) {
-            if (this.$route.path === '/dataService') {
+            if (this.$route.path === '/dataService' || this.$route.path === '/review') {
                 this.showNavBar = false
             } else {
                 this.showNavBar = true
