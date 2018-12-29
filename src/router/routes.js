@@ -16,6 +16,7 @@
     新闻日历      newsCalendar
     后台管理      systemBackground
  */
+const dataService = r => require.ensure([], () => r(require('@/pages/dataService/dataService.vue')), 'dataService')
 const columnsLayout = r => require.ensure([], () => r(require('@/pages/columnsLayout/index.vue')), 'columnsLayout')
 const myManuscript = r => require.ensure([], () => r(require('@/pages/myManuscript/index.vue')), 'myManuscript')
 const otherManuscript = r => require.ensure([], () => r(require('@/pages/otherManuscript/index.vue')), 'otherManuscript')
@@ -85,6 +86,10 @@ const issuanceMessageBox = r => require.ensure([], () => r(require('@/components
 const labelMessageBox = r => require.ensure([], () => r(require('@/components/buttons/draftLabel/box/labelMessageBox.vue')), 'labelMessageBox')
 
 export const routes = [{
+    path: '/dataService',
+    component: dataService
+},
+{
     path: '/columnsLayout',
     component: columnsLayout
 },

@@ -1,10 +1,10 @@
 <template>
     <el-container>
-        <!-- <div style="height:40px">
+        <div style="height:40px">
             <img :src="imgUrl"
                  alt=""
                  style="width:100%;height:100%">
-        </div> -->
+        </div>
         <el-header height="40px">
             <header-bar></header-bar>
         </el-header>
