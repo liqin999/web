@@ -188,6 +188,9 @@ export default {
         }
     },
     methods: {
+        messageBoxClose () {
+
+        },
         // 点击确定按钮（提交）
         draftConfirm () {
         }
@@ -210,8 +213,8 @@ export default {
 <style lang="scss" scoped>
 .message-box {
     line-height: 35px;
-}
-.label-border {
-    @include border(bottom, 1px, solid, $border-area-color);
+    .label-border {
+        @include border(bottom, 1px, solid, $tint-border-color);
+    }
 }
 </style>

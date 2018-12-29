@@ -47,7 +47,7 @@
                             </span>
                         </div>
 
-                        <version :data="versionData">
+                        <version>
                             <span slot="iconName">版本</span>
                         </version>
 
@@ -216,7 +216,7 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
@@ -238,12 +238,12 @@ export default {
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 5,
+                            id: 7,
                             label: '三版',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 6,
+                            id: 8,
                             label: '四版',
                             icon: 'iconfont icon-file1'
                         }
@@ -251,39 +251,7 @@ export default {
                 }
 
             ],
-
-            versionData: {
-                contentShow: false,
-                tableData: [{
-                    num: 1,
-                    title: '12',
-                    date: '2016-05-03',
-                    dealPerson: '1王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }, {
-                    num: 2,
-                    title: '333',
-                    date: '2015-05-03',
-                    dealPerson: '2王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }, {
-                    num: 3,
-                    title: '8888',
-                    date: '2016-05-03',
-                    dealPerson: '3王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }]
-            },
-            concatData: {
+            catData: {
                 contentShow: false,
                 tableData: [{
                     num: '1',
@@ -416,10 +384,10 @@ export default {
     },
     mounted () {
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
     },

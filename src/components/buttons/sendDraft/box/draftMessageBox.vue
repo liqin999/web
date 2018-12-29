@@ -353,8 +353,8 @@ export default {
         @include border;
         .message-list {
             .el-col {
-                @extend .text-overflow;
                 line-height: 30px;
+                @extend .text-overflow;
             }
         }
     }

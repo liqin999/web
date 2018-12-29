@@ -302,15 +302,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .search-list2 {
-    border-bottom: 1px solid #ddd;
     padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 .mt5 {
     margin-top: 5px;
 }
 .special-che {
-    font-weight: normal;
     font-size: 12px;
+    font-weight: normal;
     color: #606266;
 }
 </style>

@@ -117,8 +117,8 @@ export default {
         .el-tree-node__content {
             height: $line-height;
             &:hover {
-                background-color: $wcolor;
                 color: nth($primary-color, 1);
+                background-color: $wcolor;
             }
             & > .el-tree-node__expand-icon {
                 padding: 10px;
@@ -127,8 +127,8 @@ export default {
     }
 }
 .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
-    background-color: $wcolor;
     color: nth($primary-color, 1);
+    background-color: $wcolor;
     border-left: 4px solid nth($primary-color, 1);
 }
 </style>

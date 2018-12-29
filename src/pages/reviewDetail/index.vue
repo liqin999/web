@@ -257,7 +257,7 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
@@ -279,12 +279,12 @@ export default {
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 5,
+                            id: 7,
                             label: '三版',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 6,
+                            id: 8,
                             label: '四版',
                             icon: 'iconfont icon-file1'
                         }
@@ -351,8 +351,8 @@ export default {
         padding: 0px 0px 10px 10px !important;
         .img-box {
             padding: 10px;
-            @include border(all);
             height: 300px;
+            @include border(all);
             .img-wrap {
                 display: flex;
                 justify-content: center;
@@ -366,17 +366,17 @@ export default {
                 @extend .text-right;
                 padding-top: 10px;
                 b {
-                    @extend .font16;
-                    @extend .text-overflow;
                     display: block;
-                    line-height: 25px;
                     padding-bottom: 6px;
+                    @extend .font16;
+                    line-height: 25px;
+                    @extend .text-overflow;
                 }
                 span {
                     display: block;
-                    @extend .text-overflow;
-                    line-height: 20px;
                     @extend .font12;
+                    line-height: 20px;
+                    @extend .text-overflow;
                 }
             }
         }
@@ -399,8 +399,8 @@ export default {
 </style>
 <style lang="scss">
 .date-row .el-input__prefix {
+    top: 10px;
     left: 10px;
     height: 30px;
-    top: 10px;
 }
 </style>

@@ -321,8 +321,8 @@ export default {
         }
     }
     .sort-select {
-        width: 40%;
         float: right;
+        width: 40%;
         margin: 0 10px;
     }
     .el-checkbox-group {

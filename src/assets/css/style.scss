@@ -1,23 +1,22 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-29 09:26:02
+ * @LastEditTime: 2018-12-29 17:30:40
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
+$nav-height: 40px !default; //导航条行高（默认）
+$line-height: 30px !default; //行高（默认）
+
+$font-size: 12px 14px 16px 18px; //字体大小
+$font-color: #333 #676767 #999; //字体颜色
+
 $primary-color: #3871f5 #6d99ff; //系统色调 默认、hover状态
 $wcolor: #fff; //白色
 $bg-color: #fafafa #ebebeb; //背景色
-$font-color: #333 #676767 #999; //字体颜色
-$font-size: 12px 14px 16px 18px; //字体大小
 
 $border-color: #cbcbcb !default; //边框颜色（默认）
 $tint-border-color: #dbdbdb; //浅色边框颜色
 $border-radius: 3px; //边角弧度
-
-$nav-height: 40px !default; //导航条行高（默认）
-$line-height: 30px !default; //行高（默认）
-
-$pointer: pointer; //hover状态 鼠标pointer
 
 // 背景色渐变
 %gradient-bgcolor {
@@ -30,25 +29,14 @@ $pointer: pointer; //hover状态 鼠标pointer
     background: linear-gradient(left, #3c6cde, #6d99ff);
     /* 标准的语法 */
 }
-
 // 使用方法 @extend %gradient-bgcolor;
-
 // 结束
-// $primary-color: rgba(0, 152, 210, 1) rgba(11, 169, 239, 1);    //系统色调 默认、hover状态
-$font-color: #333 !default; //字体颜色（默认）
-$white-color: #fff; //白色
-$font-size: 12px 14px 16px; //字体大小
-// $border-color:#737373 !default;   //边框颜色（默认）
-$border-area-color: #e3e7e9; //浅色边框颜色（用于文本框）
-$border-radius: 3px; //边角弧度
-$line-height: 30px !default; //行高（默认）
-$pointer: pointer; //hover状态 鼠标pointer
 
 // elm 弹出框样式定义变量
+$box-width: 733px; //定义弹出框最小宽度
 $header-bg-Color: #f2f2f2; //头部背景色颜色
 $header-border-color: #c9c9c9; //头部下边框颜色
 $header-title-color: #515151; //头部标题颜色
-$box-width: 733px; //定义弹出框最小宽度
 
 // 公共样式应用
 *{
@@ -73,18 +61,18 @@ $box-width: 733px; //定义弹出框最小宽度
     text-align: center;
 }
 // 清除浮动  加类.clearfix
-// margin  标准15px
+// margin
+.mt15 {
+    margin-top: 15px;
+}
 .mb15 {
     margin-bottom: 15px;
-}
-.mb10 {
-    margin-bottom: 10px;
 }
 .mt10 {
     margin-top: 10px;
 }
-.mt15 {
-    margin-top: 15px;
+.mb10 {
+    margin-bottom: 10px;
 }
 
 // padding  标准10px
@@ -94,18 +82,15 @@ $box-width: 733px; //定义弹出框最小宽度
 .rtab-padding {
     padding-right: 0px !important;
 }
-.pr10 {
-    padding-right: 10px;
-}
-
-.pb10 {
-    padding-bottom: 10px;
-}
-
 .pt10 {
     padding-top: 10px;
 }
-
+.pr10 {
+    padding-right: 10px;
+}
+.pb10 {
+    padding-bottom: 10px;
+}
 .pl10 {
     padding-left: 10px;
 }
@@ -114,13 +99,11 @@ $box-width: 733px; //定义弹出框最小宽度
 @mixin mar-pad($mOp, $top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
     #{$mOp}: $top $right $bottom $left;
 }
-
 // 用法示例
 .el-example {
     @include mar-pad(padding, 23px, 24px, 45px, 89px); //设置padding各边距
     @include mar-pad(margin, 23px, 24px, 45px, 89px); //设置margin各边距
 }
-
 .el-example {
     @include mar-pad(
         padding,
@@ -129,7 +112,6 @@ $box-width: 733px; //定义弹出框最小宽度
     ); //设置padding各边距 padding: 24px 89px 0px 0px;
     @include mar-pad(margin); //设置margin各边距 margin: 0px 0px 0px 0px;
 }
-
 // 边框样式颜色宽度设置
 // 默认border-bottom  若$option = all 则设置整个边框
 @mixin border(
@@ -144,7 +126,6 @@ $box-width: 733px; //定义弹出框最小宽度
         border-#{$option}: $width $style $color;
     }
 }
-
 // 示例
 .el-example {
     @include border; // border-bottom: 1px solid #737373;
@@ -153,7 +134,7 @@ $box-width: 733px; //定义弹出框最小宽度
         3px,
         solid,
         $border-color
-    ); // border: 3px solid #737373;
+    );
     @include border(bottom, 3px, solid, $border-color);
 }
 
@@ -163,34 +144,28 @@ $box-width: 733px; //定义弹出框最小宽度
         width: 6px;
         height: 6px;
     }
-
     &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
         background: nth($primary-color, 1);
+        border-radius: 10px;
     }
-
     &::-webkit-scrollbar-track {
         border-radius: 10px;
     }
 }
-
 .scroll-y {
     //纵向滚动条
     overflow-y: auto;
     @extend %scroll;
 }
-
 .scroll-x {
     //横向滚动条
     overflow-x: auto;
     @extend %scroll;
 }
-
 // 示例
 .el-example {
     @extend .scroll-y; //纵向滚动条
 }
-
 // 文本、字体、省略号等样式设置
 .text-overflow {
     // 超出内容区，显示省略号
@@ -198,109 +173,63 @@ $box-width: 733px; //定义弹出框最小宽度
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 // 用法 1、直接加类.text-overflow  或者 @extend .text-overflow;
 @mixin text-option($option) {
     text-align: $option;
 }
-
 // 文字居中显示  直接加类 .ac
 // 文字居右显示  直接加类 .text-right
 .text-right {
     @include text-option(right);
 }
-
 // 字体设置
 .font12 {
     font-size: nth($font-size, 1);
 }
-
 .font14 {
     font-size: nth($font-size, 2);
 }
-
 .font16 {
     font-size: nth($font-size, 3);
 }
-
 .font18 {
     font-size: nth($font-size, 3);
 }
-
 // 用法  直接加类.font12   或者设置font-size: nth($font-size,3)  或者 @extend .font12
 
 // 组件按钮样式设置 用法直接加类 .primary-btn（确定）.reset-btn（取消）
 .primary-btn {
+    display: inline-block;
+    padding: 5px 16px;
+    margin-right: 5px;
+    font-size: nth($font-size, 2);
+    color: $wcolor;
     background: nth($primary-color, 1);
     border-radius: $border-radius;
     border-color: nth($primary-color, 1);
-    cursor: $pointer;
-    color: $white-color;
-    font-size: nth($font-size, 2);
-    display: inline-block;
-    margin-right: 5px;
-    padding: 5px 16px;
-
+    cursor: pointer;
     //hover状态
     &:hover {
+        color: $wcolor;
         background: nth($primary-color, 2);
         border-color: nth($primary-color, 2);
-        color: $white-color;
+        
     }
 }
-
 // 取消按钮样式
 .reset-btn {
-    background: $white-color;
+    display: inline-block;
+    padding: 5px 16px;
+    color: nth($primary-color, 1);
+    background: $wcolor;
     border-radius: $border-radius;
     border-color: nth($primary-color, 1);
-    cursor: $pointer;
-    color: nth($primary-color, 1);
-
-    display: inline-block;
-    // margin-right: 5px;
-    padding: 5px 16px;
-
+    cursor: pointer;
     //hover状态
     &:hover {
-        border-color: nth($primary-color, 2);
         color: nth($primary-color, 2);
+        border-color: nth($primary-color, 2);
     }
-}
-// 页面导航条样式
-.header-nav .el-menu--horizontal {
-    @include border(bottom, 1px, solid, $tint-border-color);
-}
-
-.header-nav .el-menu--horizontal > .el-menu-item {
-    height: $nav-height;
-    line-height: $nav-height;
-    border: none !important;
-}
-
-.header-nav .el-menu--horizontal > .el-submenu .el-submenu__title {
-    height: $nav-height;
-    line-height: $nav-height;
-    border-bottom: 0px solid transparent;
-}
-
-.header-nav .el-menu--horizontal .el-menu-item.is-active {
-    @extend %gradient-bgcolor;
-}
-
-.header-nav .el-menu--horizontal > .el-submenu:focus .el-submenu__title,
-.header-nav .el-menu--horizontal > .el-submenu:hover .el-submenu__title,
-.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
-.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
-    color: nth($primary-color, 1);
-}
-
-.header-nav .el-submenu.is-active .el-submenu__title i {
-    color: $wcolor !important;
-}
-.header-nav .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
-    @extend %gradient-bgcolor;
-    border: none !important;
 }
 
 // 页面二级导航样式
@@ -308,7 +237,6 @@ $box-width: 733px; //定义弹出框最小宽度
     @include mar-pad(padding,5px,10px,0px,10px);
     background: nth($bg-color,2);
     @include border(bottom, 1px, solid, $tint-border-color);
-
     // 处理时间 选择框宽度控制
     .search-form {
         .search-time .el-form-item__content {
@@ -365,12 +293,12 @@ $box-width: 733px; //定义弹出框最小宽度
 .el-footer{
     padding:0px 20px 0px 20px;
     .btn-bottom {
-        @extend .clearfix;
-        @extend .text-right;
-        padding: 10px;
         display: flex;
         display: -webkit-flex;
         justify-content: flex-end;
+        padding: 10px;
+        @extend .text-right;
+        @extend .clearfix;
         .btn-line {
             padding: 0px 10px;
         }
@@ -385,31 +313,30 @@ $box-width: 733px; //定义弹出框最小宽度
 
 // 搜索页
 .input-manuscript{
-    overflow: hidden;
     background: nth($bg-color, 2);
+    overflow: hidden;
     .el-container {
         padding: 10px;
         .aside-content {
-            box-shadow: 0px 0px 5px #cacaca;
-            border: none !important;
             padding: 10px;
             background: $wcolor;
+            border: none !important;
+            box-shadow: 0px 0px 5px #cacaca;
             @extend .scroll-y;
             @extend .scroll-x;
             b {
-                line-height: 35px;
                 display: inline-block;
+                line-height: 35px;
             }
         }
         .main-content {
             @extend .aside-content;
             margin:0px;
         }
-        
     }
     .el-footer {
-        @extend .ac;
         padding: 15px 10px 5px;
+        @extend .ac;
         button {
             padding: 10px 25px;
         }
@@ -453,11 +380,9 @@ $box-width: 733px; //定义弹出框最小宽度
 
 // 弹出框标题
 .message-title{
-font-size:nth($font-size,3);
-line-height: 35px;
+    font-size:nth($font-size,3);
+    line-height: 35px;
 }
-
-
 // 下拉框样式修改
 .el-select .el-input.is-focus .el-input__inner {
     border-color: nth($primary-color,1);
@@ -474,10 +399,10 @@ line-height: 35px;
 }
 // input框样式修改
 .el-input__inner {
-    border-radius: $border-radius;
-    border-color: $border-color;
     height: $line-height;
     line-height: $line-height;
+    border-radius: $border-radius;
+    border-color: $border-color;
 }
 .el-input__inner:hover {
     border-color: $border-color;
@@ -485,7 +410,6 @@ line-height: 35px;
 .el-input__icon {
     line-height: $line-height;
 }
-
 .el-input {
     font-size: nth($font-size, 1);
 }
@@ -499,17 +423,15 @@ line-height: 35px;
 .el-radio__inner {
     border: 1px solid $border-color;
 }
-
 .el-radio__inner:hover {
     border-color: $border-color;
 }
-
 .el-radio__input.is-checked+.el-radio__label {
     color: nth($primary-color,1);
 }
 .el-radio__input.is-checked .el-radio__inner {
+    background: $wcolor;
     border-color: nth($primary-color,1);
-    background: $white-color;
 }
 .el-radio__inner::after {
     width: 6px;
@@ -535,33 +457,28 @@ line-height: 35px;
 }
 // 提交框样式修改
 .el-example__inner {
-    border: 1px solid $border-area-color;
+    border: 1px solid $tint-border-color;
     border-radius: $border-radius;
 }
-
 .el-example__inner:focus {
     border-color: $border-color;
 }
-
 // 时间插件修改样式
 .el-date-editor.el-input, .el-date-editor.el-input__inner {
     width: 100%;
     padding: 3px 6px;
 }
-
 .el-date-editor .el-range-separator {
-    line-height: 22px;
-    color: nth($font-color,2);
-    padding: 0px;
     display: inline-block;
     width: 12px;
+    padding: 0px;
+    color: nth($font-color,2);
+    line-height: 22px;
     text-align: center;
 }
-
 .el-date-editor .el-range__icon {
     line-height: 22px;
 }
-
 .el-date-editor .el-range-input,
 .el-date-editor .el-range-separator {
     font-size: nth($font-size, 1);
@@ -570,27 +487,26 @@ line-height: 35px;
     border-color: nth($primary-color,1);
 }
 .el-date-editor .el-range__close-icon {
-    font-size: 12px;
     width: 20px;
     margin-right: -5px;
+    font-size: 12px;
     line-height: 22px;
 }
 // 表格样式
 .el-table{
-    @include border(all, 1px, solid, $tint-border-color);
-    border-collapse: separate;
-    border-radius: $border-radius;
     font-size: 13px;
     color:nth($font-color,2);
+    @include border(all, 1px, solid, $tint-border-color);
+    border-radius: $border-radius;
     .el-table__body-wrapper{
         @extend .scroll-x;
         @extend .scroll-y;
     }
     thead th{
-        background-color: nth($bg-color,2);
-        color:nth($font-color,2);
-        @extend .font12;
         padding: 5px 0;
+        @extend .font12;
+        color:nth($font-color,2);
+        background-color: nth($bg-color,2);
     }
     td{
         padding: 7px 0px;
@@ -610,12 +526,43 @@ line-height: 35px;
 .el-pagination button:hover {
     color: nth($primary-color,1);
 }
+
+
+// 页面导航条样式
+.header-nav .el-menu--horizontal {
+    @include border(bottom, 1px, solid, $tint-border-color);
+}
+.header-nav .el-menu--horizontal > .el-menu-item {
+    height: $nav-height;
+    line-height: $nav-height;
+    border: none !important;
+}
+.header-nav .el-menu--horizontal > .el-submenu .el-submenu__title {
+    height: $nav-height;
+    line-height: $nav-height;
+    border-bottom: 0px solid transparent;
+}
+.header-nav .el-menu--horizontal .el-menu-item.is-active {
+    @extend %gradient-bgcolor;
+}
+.header-nav .el-menu--horizontal > .el-submenu:focus .el-submenu__title,
+.header-nav .el-menu--horizontal > .el-submenu:hover .el-submenu__title,
+.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+.header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    color: nth($primary-color, 1);
+}
+.header-nav .el-submenu.is-active .el-submenu__title i {
+    color: $wcolor !important;
+}
+.header-nav .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
+    @extend %gradient-bgcolor;
+    border: none !important;
+}
 // 导航条样式修改
 .el-menu--horizontal>.el-menu-item{
     height: 40px;
     line-height: 40px;
 }
 .el-menu--horizontal>.el-menu-item.is-active{
-    @include border(bottom,2px,solid,nth($primary-color,1));
     color:nth($primary-color,1);
 }

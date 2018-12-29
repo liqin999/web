@@ -150,6 +150,9 @@ export default {
         }
     },
     methods: {
+        messageBoxClose () {
+
+        },
         topChange (value) {
             // this.topValue = value;
         }
@@ -159,7 +162,7 @@ export default {
 
 <style lang="scss" scoped>
 .label-border {
-    @include border(bottom, 1px, solid, $border-area-color);
+    @include border(bottom, 1px, solid, $tint-border-color);
 }
 .el-select {
     float: right;

@@ -115,12 +115,12 @@ export default {
 
 <style scoped>
 .dlg_right {
-    width: 15px;
+    z-index: 3;
     float: left;
+    width: 15px;
+    margin-left: -15px;
     cursor: e-resize;
     overflow: hidden;
     opacity: 0;
-    z-index: 3;
-    margin-left: -15px;
 }
 </style>

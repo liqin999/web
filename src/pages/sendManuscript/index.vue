@@ -260,8 +260,8 @@ export default {
     line-height: 35px;
     .el-container {
         .main-content {
-            padding-top: 15px;
             margin-right: 10px;
+            padding-top: 15px;
             .select-type .el-select {
                 width: 78%;
             }

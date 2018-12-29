@@ -206,7 +206,7 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '副刊部（新华视界）',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
@@ -228,12 +228,12 @@ export default {
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 5,
+                            id: 7,
                             label: '三版',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 6,
+                            id: 8,
                             label: '四版',
                             icon: 'iconfont icon-file1'
                         }
@@ -241,7 +241,6 @@ export default {
                 }
 
             ],
-
             versionData: {
                 contentShow: false,
                 tableData: [{
@@ -405,19 +404,11 @@ export default {
         }
     },
     mounted () {
-        // Localstorage
-        // this.storage = new this.$Fn.Localstorage();
-        // 组件加载后获取 当前浏览器的高度
-        // this.mainHeight = document.body.clientHeight
-        // console.log(this.mainHeight)
-        // this.$store.commit('setContentHeight', this.windowHeight.height);
-        // 监听浏览器窗口大小改变 高度
-        // this.mainHeight = document.getElementById('main-padding').offsetHeight
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
     },

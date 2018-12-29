@@ -24,7 +24,6 @@
             <el-aside width="250px"
                       class="left-aside">
                 <left-menu :treeData="data2"
-                           :defaultProps="defaultProps"
                            @sendTreeObj="getTreeObj"></left-menu>
             </el-aside>
             <el-container>
@@ -175,7 +174,54 @@ export default {
     },
     data () {
         return {
+            tableData3: [{
+                date: '2016-05-03',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-02',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-04',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-01',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-08',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }
+            ],
             draft: [],
+            versionData: null,
             currentPage: 1,
             searchForm: {
                 dateValue: '',
@@ -249,19 +295,11 @@ export default {
         }
     },
     mounted () {
-        // Localstorage
-        // this.storage = new this.$Fn.Localstorage();
-        // 组件加载后获取 当前浏览器的高度
-        // this.mainHeight = document.body.clientHeight
-        // console.log(this.mainHeight)
-        // this.$store.commit('setContentHeight', this.windowHeight.height);
-        // 监听浏览器窗口大小改变 高度
-        // this.mainHeight = document.getElementById('main-padding').offsetHeight
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
     },

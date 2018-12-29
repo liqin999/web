@@ -87,20 +87,20 @@ export default {
 </script>
 <style lang="scss" scoped>
 .split-box {
-    @include border(all);
-    height: 248px;
     width: 100%;
-    border-radius: $border-radius;
+    height: 248px;
     padding: 10px;
+    @include border(all);
+    border-radius: $border-radius;
 }
 .ft-red {
     color: red;
 }
 .new-content {
-    @include border(all);
-    height: 100px;
     width: 100%;
-    border-radius: $border-radius;
+    height: 100px;
     padding: 10px;
+    @include border(all);
+    border-radius: $border-radius;
 }
 </style>

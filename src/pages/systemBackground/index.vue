@@ -196,8 +196,8 @@ export default {
 .system-aside {
     padding: 10px 0;
     .el-menu {
-        border: none !important;
         background: none !important;
+        border: none !important;
         .el-menu-item,
         .el-submenu__title {
             height: 30px;
@@ -206,13 +206,13 @@ export default {
     }
 }
 .el-menu-item.is-active {
-    background-color: #fff;
     color: nth($primary-color, 1);
+    background-color: #fff;
     border-left: 4px solid nth($primary-color, 1);
 }
 .el-menu-item:focus,
 .el-menu-item:hover {
-    background-color: #fff;
     color: nth($primary-color, 1);
+    background-color: #fff;
 }
 </style>

@@ -471,10 +471,10 @@ export default {
     },
     mounted () {
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
     },

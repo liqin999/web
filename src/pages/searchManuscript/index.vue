@@ -96,7 +96,7 @@
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
-                                  height="170"
+                                  height="160"
                                   :data="tableData3"
                                   tooltip-effect="dark"
                                   @selection-change="handleSelectionChange">
@@ -121,7 +121,7 @@
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
-                                  height="170"
+                                  height="160"
                                   :data="tableData3"
                                   tooltip-effect="dark"
                                   @selection-change="handleSelectionChange">
@@ -326,8 +326,8 @@ export default {
         }
         .main-content {
             .btn-group {
-                @extend .text-right;
                 line-height: 35px;
+                @extend .text-right;
                 .primary-btn {
                     margin: 0px;
                 }
