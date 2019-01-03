@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2018-12-29 17:30:40
+ * @LastEditTime: 2019-01-03 18:36:57
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $nav-height: 40px !default; //导航条行高（默认）
@@ -529,12 +529,18 @@ $header-title-color: #515151; //头部标题颜色
 
 
 // 页面导航条样式
-.header-nav .el-menu--horizontal {
+// 导航条样式修改
+.el-menu--horizontal>.el-menu-item{
+    height: 40px;
+    line-height: 40px;
+}
+.el-menu--horizontal>.el-menu-item.is-active{
+    color:nth($primary-color,1);
+}
+.el-menu--horizontal {
     @include border(bottom, 1px, solid, $tint-border-color);
 }
 .header-nav .el-menu--horizontal > .el-menu-item {
-    height: $nav-height;
-    line-height: $nav-height;
     border: none !important;
 }
 .header-nav .el-menu--horizontal > .el-submenu .el-submenu__title {
@@ -557,12 +563,4 @@ $header-title-color: #515151; //头部标题颜色
 .header-nav .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
     @extend %gradient-bgcolor;
     border: none !important;
-}
-// 导航条样式修改
-.el-menu--horizontal>.el-menu-item{
-    height: 40px;
-    line-height: 40px;
-}
-.el-menu--horizontal>.el-menu-item.is-active{
-    color:nth($primary-color,1);
 }

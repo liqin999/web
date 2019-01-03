@@ -46,7 +46,7 @@
                     </el-table-column>
                 </el-table>
             </el-main>
-            <el-footer height="70">
+            <el-footer height="70px">
                 <el-pagination @size-change="handleSizeChange"
                                @current-change="handleCurrentChange"
                                class="ac"
@@ -300,17 +300,3 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.search-list2 {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-.mt5 {
-    margin-top: 5px;
-}
-.special-che {
-    font-size: 12px;
-    font-weight: normal;
-    color: #606266;
-}
-</style>

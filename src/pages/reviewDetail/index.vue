@@ -382,19 +382,21 @@ export default {
         }
     }
 }
-.el-date-editor.el-input__inner .date-row {
-    padding: 10px 10px;
-}
+// .el-date-editor.el-input__inner .date-row {
+//     padding: 10px 10px;
+// }
 .el-date-editor.el-input,
 .el-date-editor.el-input__inner {
     padding: 10px;
     padding-bottom: 0px;
 }
-.primary-btn {
-    height: 30px;
-    margin-top: 10px;
-    margin-left: -10px;
-    padding: 5px 13px;
+.date-row {
+    margin-right: 0px !important;
+    .primary-btn {
+        height: 30px;
+        margin-top: 10px;
+        padding: 5px 13px;
+    }
 }
 </style>
 <style lang="scss">
