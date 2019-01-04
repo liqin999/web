@@ -174,6 +174,7 @@ export default {
     },
     data () {
         return {
+            concatData: {},
             draft: [],
             currentPage: 1,
             searchForm: {
