@@ -251,7 +251,7 @@ export default {
                 }
 
             ],
-            catData: {
+            concatData: {
                 contentShow: false,
                 tableData: [{
                     num: '1',
