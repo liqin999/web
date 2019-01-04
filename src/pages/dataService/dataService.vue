@@ -150,7 +150,7 @@ export default {
             activeTreeName: 'first',
             activeTreeName1: 'first1',
             draft: [],
-            currentPage: 6,
+            currentPage: 0,
             searchForm: {
                 dateValue: '',
                 keywords: '',
