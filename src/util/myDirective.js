@@ -25,7 +25,6 @@ const myDirective = {
     focus: {
         inserted: function (el) {
             // 聚焦元素
-            debugger
             el.focus()
         }
     }

@@ -30,15 +30,20 @@
                 <el-table :data="tableData"
                           style="width: 100%;">
                     <el-table-column prop="date"
-                                     label="日期"
+                                     label="稿件号"
                                      width="180">
+                    </el-table-column>
+                    <el-table-column prop="title"
+                                     show-overflow-tooltip
+                                     label="标题">
                     </el-table-column>
                     <el-table-column prop="name"
-                                     label="姓名"
+                                     label="作者"
                                      width="180">
                     </el-table-column>
+
                     <el-table-column prop="address"
-                                     label="地址">
+                                     label="位置">
                     </el-table-column>
                 </el-table>
             </template>
@@ -105,20 +110,24 @@ export default {
             }],
             value: '',
             tableData: [{
-                date: '2016-05-02',
+                date: '20190102123',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
-                date: '2016-05-04',
+                date: '20190102123',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1517 弄'
             }, {
-                date: '2016-05-01',
+                date: '20190102123',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1519 弄'
             }, {
-                date: '2016-05-03',
+                date: '20190102123',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1516 弄'
             }]
         }

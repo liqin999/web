@@ -13,7 +13,7 @@
                     <div class="split-content bg-purple">
                         <b class="message-title">原稿件内容</b><span class="ft-red">（可拖动内容到右上列表）</span>
                         <div class="split-box">
-                            <span>原稿件内容</span>
+                            <span>2016年1月5日，习近平总书记在重庆召开推动长江经济带发展座谈会并发表重要讲话，他强调，推动长江经济带发展必须从中华民族长远利益考虑，走生态优先、绿色发展之路，使绿水青山产生巨大生态效益、经济效益、社会效益，使母亲河永葆生机活力。</span>
                         </div>
                         <el-button class="primary-btn mt10">形成新稿件</el-button>
                     </div>
@@ -65,12 +65,12 @@ export default {
         return {
             textarea: '',
             tableData: [{
-                num: '2',
-                title: '王小虎',
+                num: '1',
+                title: '习近平把脉长江',
                 fontNum: '1518'
             }, {
-                num: '3',
-                title: '王小虎',
+                num: '2',
+                title: '习近平把脉长江',
                 fontNum: '18'
             }]
         }

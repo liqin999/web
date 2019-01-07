@@ -94,10 +94,10 @@
                                     <el-col :span="7"
                                             class="text-overflow"
                                             :key="label">
-                                        <el-radio v-model="radioName"
-                                                  :label="1">入库前提示 </el-radio>
-                                        <el-radio v-model="radioName"
-                                                  :label="2">直接入库</el-radio>
+                                        <el-radio v-model="radioName1"
+                                                  label="1">入库前提示 </el-radio>
+                                        <el-radio v-model="radioName1"
+                                                  label="2">直接入库</el-radio>
                                     </el-col>
                                 </template>
                             </el-row>
@@ -131,9 +131,10 @@ export default {
     data () {
         return {
             submitData: null,
+            radioName1: '1',
             textarea: '请输入文字',
             // 栏目选择
-            radioName: '版面/栏目稿库',
+            radioName: '栏目稿库',
             radioLabel: [
                 '栏目稿库',
                 '版面稿库',
