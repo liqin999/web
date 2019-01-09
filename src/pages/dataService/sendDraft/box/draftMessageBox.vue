@@ -63,7 +63,7 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList1"
-                                             default-expand-all="true"
+                                             :default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -72,7 +72,7 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
-                                             default-expand-all="true"
+                                             :default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
