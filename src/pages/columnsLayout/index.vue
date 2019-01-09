@@ -61,10 +61,11 @@
                                 <span data-v-6eb3df45="">提交</span>
                             </span>
                         </div>
-                        <split>
+                        <split :splitData="splitData"
+                               @sendSplitData="getSplitData">
                             <span slot="iconName">拆分</span>
                         </split>
-                        <concat :data="concatData"
+                        <concat :concatData="concatData"
                                 @sendConcatData="getConcatData"
                                 @sendConcatDataUp="getConcatDataUp"
                                 @sendConcatDataDown="getConcatDataDown">
@@ -81,13 +82,13 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="入库时间"
+                        <!-- <el-table-column label="入库时间"
                                          width="200px">
                             <template slot-scope="scope">{{ scope.row.date }}</template>
                         </el-table-column>
-                        <el-table-column prop="title"
+                        <el-table-column prop="content"
                                          show-overflow-tooltip
-                                         label="标题">
+                                         label="内容">
                         </el-table-column>
                         <el-table-column prop="name"
                                          label="投送人">
@@ -95,6 +96,16 @@
                         <el-table-column prop="address"
                                          label="位置"
                                          show-overflow-tooltip>
+                        </el-table-column> -->
+
+                        <el-table-column label="摘要">
+                            <template slot-scope="scope">{{ scope.row.abstractt }}</template>
+                        </el-table-column>
+                        <el-table-column label="内容">
+                            <template slot-scope="scope">{{ scope.row.content }}</template>
+                        </el-table-column>
+                        <el-table-column label="引题">
+                            <template slot-scope="scope">{{ scope.row.leadinLine }}</template>
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -165,6 +176,8 @@ import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+
+import { getColumnsList, columnsListMerge, columnsListSplit } from '../../server/server.js'
 export default {
     components: {
         searchInput,
@@ -179,36 +192,10 @@ export default {
     },
     data () {
         return {
-            concatData: {
-                contentShow: false,
-                tableData: [{
-                    num: '1',
-                    title: '王小虎1'
-
-                }, {
-                    num: '2',
-                    title: '王小虎2'
-
-                }, {
-                    num: '3',
-                    title: '王小虎3'
-
-                },
-                {
-                    num: '4',
-                    title: '王小虎4'
-
-                }, {
-                    num: '5',
-                    title: '王小虎5'
-
-                },
-                {
-                    num: '6',
-                    title: '王小虎6'
-
-                }]
-            },
+            // concatData: {
+            //     contentShow: false,
+            //     tableData: []
+            // },
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -287,7 +274,6 @@ export default {
 
             ],
             catData: {
-                contentShow: false,
                 tableData: [{
                     num: '1',
                     title: '王小虎1'
@@ -321,7 +307,8 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2016-05-03',
+                a: '1',
+                b: '2016-05-03',
                 name: '王小虎',
                 title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
@@ -447,8 +434,16 @@ export default {
                 that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
+
+        this.findList()
     },
     methods: {
+        findList () {
+            getColumnsList({}).then(res => {
+                this.tableData3 = res
+            })
+        },
+        // getColumnsList
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
         },
@@ -457,6 +452,7 @@ export default {
         },
         handleSelectionChange (val) {
             this.multipleSelection = val
+            console.log(this.multipleSelection)
         },
         handleSizeChange (val) {
 
@@ -464,8 +460,40 @@ export default {
         handleCurrentChange (val) {
 
         },
-        getConcatData (data) { // 获得合并的元素的参数信息
-            console.log('获得子组件的合并的元素数据', data)
+        getConcatData (checkData) { // 获得合并的元素的参数信息
+            let param = {}
+            let arr = []
+            checkData.forEach(item => {
+                arr.push({
+                    docId: item.docId
+                })
+            })
+            param.count = checkData.length
+            param.data = (arr)
+            columnsListMerge(param).then(res => {
+                this.findList()
+            })
+        },
+        getSplitData (checkData) {
+            console.log('checkData', checkData)
+            let param = {}
+            let arr = []
+            param.count = checkData.length
+            checkData.forEach(item => {
+                arr.push({
+                    DocContentsVo: {
+                        // 'subHeadLine': '副标题',
+                        'leadinLine': item.leadinLine,
+                        'seqNum': item.seqNum,
+                        'wordNum': item.wordNum
+                    }
+                })
+            })
+            param.data = (arr)
+
+            columnsListSplit(param).then(res => {
+                this.findList()
+            })
         },
         getConcatDataUp (data) { // 获得合并弹框的上移操作
             console.log('获得合并子组件弹框的上移操作元素数据', data)
@@ -475,6 +503,16 @@ export default {
         }
     },
     computed: {
+        concatData () {
+            return {
+                tableData: this.tableData3
+            }
+        },
+        splitData () {
+            return {
+                tableData: this.multipleSelection
+            }
+        }
     }
 }
 </script>

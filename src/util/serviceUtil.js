@@ -6,17 +6,17 @@ import {
 // import { store } from '../store/index.js'; // vuex引入
 const CancelToken = axios.CancelToken
 
-axios.defaults.baseURL = window.BM_config.api
+axios.defaults.baseURL = window.bmConfig.api
 // 设置默认请求头
 axios.defaults.headers = {
     // 'X-Requested-With': 'XMLHttpRequest',
     // 'Content-Type': 'application/x-www-form-urlencoded'
     // "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
     'Content-Type': 'application/json;charset=UTF-8'
-    //  'Content-Type':BM_config.headerContent
+    //  'Content-Type':bmConfig.headerContent
 }
 
-axios.defaults.timeout = window.BM_config.timeout
+axios.defaults.timeout = window.bmConfig.timeout
 // 请求拦截器
 axios.interceptors.request.use(config => {
     // 发起请求时
