@@ -64,16 +64,16 @@
                                 <el-table-column type="selection"
                                                  width="55">
                                 </el-table-column>
-                                <el-table-column prop="date"
+                                <el-table-column prop="id"
                                                  label="序号">
                                 </el-table-column>
                                 <el-table-column prop="name"
                                                  label="标题">
                                 </el-table-column>
-                                <el-table-column prop="address"
+                                <el-table-column prop="type"
                                                  label="类型">
                                 </el-table-column>
-                                <el-table-column prop="address"
+                                <el-table-column prop="source"
                                                  label="源文件">
                                 </el-table-column>
                             </el-table>
@@ -228,7 +228,13 @@ export default {
     data () {
         return {
             checked: '',
-            tableData: [],
+            tableData: [
+                { id: '20181031000034',
+                    name: '这是一条测试稿件20181031',
+                    source: '自写稿',
+                    type: '文本'
+                }
+            ],
             kanfaData: [1, 2, 3, 4, 5],
             kanfaValue: 1,
             input: null,

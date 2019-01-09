@@ -102,15 +102,42 @@
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="日期">
-                                <template slot-scope="scope">{{ scope.row.date }}</template>
+                            <el-table-column label="稿号">
+                                <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
-                                             label="姓名">
+                                             label="标题">
                             </el-table-column>
-                            <el-table-column prop="address"
-                                             label="地址"
+                            <el-table-column prop="media"
+                                             label="所属媒体"
                                              show-overflow-tooltip>
+                            </el-table-column>
+                            <el-table-column prop="status"
+                                             label="状态">
+                            </el-table-column>
+                            <el-table-column prop="time"
+                                             label="处理时间">
+                            </el-table-column>
+                            <el-table-column prop="author"
+                                             label="第一作者">
+                            </el-table-column>
+                            <el-table-column prop="source"
+                                             label="来源">
+                            </el-table-column>
+                            <el-table-column prop="type"
+                                             label="类型">
+                            </el-table-column>
+                            <el-table-column prop="map"
+                                             label="代表图">
+                            </el-table-column>
+                            <el-table-column prop="format"
+                                             label="文件格式">
+                            </el-table-column>
+                            <el-table-column prop="wordNumber"
+                                             label="字数">
+                            </el-table-column>
+                            <el-table-column prop="articleNumber"
+                                             label="稿数">
                             </el-table-column>
                         </el-table>
                     </el-col>
@@ -127,15 +154,42 @@
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="日期">
-                                <template slot-scope="scope">{{ scope.row.date }}</template>
+                            <el-table-column label="稿号">
+                                <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
-                                             label="姓名">
+                                             label="标题">
                             </el-table-column>
-                            <el-table-column prop="address"
-                                             label="地址"
+                             <el-table-column prop="media"
+                                             label="所属媒体"
                                              show-overflow-tooltip>
+                            </el-table-column>
+                            <el-table-column prop="status"
+                                             label="状态">
+                            </el-table-column>
+                            <el-table-column prop="time"
+                                             label="处理时间">
+                            </el-table-column>
+                            <el-table-column prop="author"
+                                             label="第一作者">
+                            </el-table-column>
+                            <el-table-column prop="source"
+                                             label="来源">
+                            </el-table-column>
+                            <el-table-column prop="type"
+                                             label="类型">
+                            </el-table-column>
+                            <el-table-column prop="map"
+                                             label="代表图">
+                            </el-table-column>
+                            <el-table-column prop="format"
+                                             label="文件格式">
+                            </el-table-column>
+                            <el-table-column prop="wordNumber"
+                                             label="字数">
+                            </el-table-column>
+                            <el-table-column prop="articleNumber"
+                                             label="稿数">
                             </el-table-column>
                         </el-table>
                     </el-col>
@@ -157,99 +211,61 @@ export default {
         return {
             tableData3: [
                 {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
+                    id: '20181031000034',
+                    name: '这是一条测试稿件20181031',
+                    media: '新华每日电讯',
+                    status: '待审',
+                    time: '2018-10-31 11:09:34',
+                    author: '强晓玲',
+                    source: '自写稿',
+                    type: '文本',
+                    map: '',
+                    format: '.txt',
+                    wordNumber: '1345',
+                    articleNumber: '1'
+
                 },
                 {
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
+                    id: '20181031000034',
+                    name: '这是一条测试稿件20181031',
+                    media: '新华每日电讯',
+                    status: '待审',
+                    time: '2018-10-31 11:09:34',
+                    author: '强晓玲',
+                    source: '自写稿',
+                    type: '文本',
+                    map: '',
+                    format: '.txt',
+                    wordNumber: '1345',
+                    articleNumber: '1'
                 },
                 {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
+                    id: '20181031000034',
+                    name: '这是一条测试稿件20181031',
+                    media: '新华每日电讯',
+                    status: '待审',
+                    time: '2018-10-31 11:09:34',
+                    author: '强晓玲',
+                    source: '自写稿',
+                    type: '文本',
+                    map: '',
+                    format: '.txt',
+                    wordNumber: '1345',
+                    articleNumber: '1'
                 },
                 {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-08',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-06',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                {
-                    date: '2016-05-07',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
+                    id: '20181031000034',
+                    name: '这是一条测试稿件20181031',
+                    media: '新华每日电讯',
+                    status: '待审',
+                    time: '2018-10-31 11:09:34',
+                    author: '强晓玲',
+                    source: '自写稿',
+                    type: '文本',
+                    map: '',
+                    format: '.txt',
+                    wordNumber: '1345',
+                    articleNumber: '1'
                 }
             ],
             checkList: ['稿源库'],
