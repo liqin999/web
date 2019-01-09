@@ -84,15 +84,48 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="日期">
-                            <template slot-scope="scope">{{ scope.row.date }}</template>
+                        <el-table-column prop="zugao"
+                                         label="组稿"
+                                         width="100px">
                         </el-table-column>
-                        <el-table-column prop="name"
-                                         label="姓名">
+                        <el-table-column prop="number"
+                                         width="150px"
+                                         label="稿号">
                         </el-table-column>
-                        <el-table-column prop="address"
-                                         label="地址"
+                        <el-table-column prop="title"
+                                         width="180px"
+                                         show-overflow-tooltip
+                                         label="标题">
+                        </el-table-column>
+                        <el-table-column prop="repDrawing"
+                                         label="代表图">
+                        </el-table-column>
+                        <el-table-column prop="state"
+                                         label="状态">
+                        </el-table-column>
+                        <el-table-column prop="banmian"
+                                         show-overflow-tooltip
+                                         label="版面名称">
+                        </el-table-column>
+                        <el-table-column prop="size"
+                                         label="字数">
+                        </el-table-column>
+                        <el-table-column prop="dealingPeople"
+                                         label="处理人">
+                        </el-table-column>
+                        <el-table-column prop="data"
+                                         label="刊发日期"
+                                         width="180px">
+                        </el-table-column>
+                        <el-table-column prop="medio"
+                                         label="媒体"
                                          show-overflow-tooltip>
+                        </el-table-column>
+                        <el-table-column prop="firstAuthor"
+                                         label="第一作者">
+                        </el-table-column>
+                        <el-table-column prop="type"
+                                         label="类型">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -192,30 +225,67 @@ export default {
                     children: [
                         {
                             id: 45,
-                            label: '头版1',
-                            icon: 'el-icon-success'
-                        },
-                        {
-                            id: 12,
-                            label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 4,
-                            label: '国际焦点',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 13,
-                            label: '评论声音',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            label: 'A叠',
+                            icon: 'iconfont icon-file-b- ft-ffd658',
+                            children: [
+                                {
+                                    id: 5,
+                                    label: '一版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 6,
+                                    label: '二版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 7,
+                                    label: '三版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 8,
+                                    label: '四版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 811,
+                                    label: '五版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 812,
+                                    label: '六版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 814,
+                                    label: '七版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 8123,
+                                    label: '八版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 823,
+                                    label: '九版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 9,
+                                    label: '测试版面',
+                                    icon: 'iconfont icon-file1'
+                                }
+                            ]
                         }
 
                     ]
                 },
                 {
                     id: 2,
-                    label: 'A叠【版面】',
+                    label: '每日电讯微博',
                     children: [
                         {
                             id: 5,
@@ -343,97 +413,44 @@ export default {
 
             ],
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                zugao: '',
+                number: '20181029000029',
+                title: '一个西红柿的“世界地图”',
+                repDrawing: '',
+                state: '已处理',
+                banmian: '一版',
+                size: '3578',
+                dealingPeople: '唐牛',
+                data: '10-31',
+                medio: '新华每日资讯',
+                firstAuthor: '郝玉',
+                type: '文本'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                zugao: '',
+                number: '20181030000037',
+                title: '（新华全媒头条）西藏阿里楚松村四代房：中国边境的...',
+                repDrawing: '',
+                state: '已处理',
+                banmian: '一版',
+                size: '378',
+                dealingPeople: '唐牛',
+                data: '10-31',
+                medio: '新华每日资讯',
+                firstAuthor: '国内部',
+                type: '文本'
             }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                zugao: '',
+                number: '20181030000057',
+                title: '巾帼心向党  奋进新时代',
+                repDrawing: '',
+                state: '已处理',
+                banmian: '一版',
+                size: '328',
+                dealingPeople: '唐牛',
+                data: '10-31',
+                medio: '新华每日资讯',
+                firstAuthor: '杨维汉',
+                type: '文本'
             }],
             multipleSelection: [],
             mainTableHeight: null

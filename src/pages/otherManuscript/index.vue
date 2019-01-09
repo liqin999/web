@@ -81,15 +81,46 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="日期">
+                        <el-table-column label="入库时间"
+                                         width="100px">
                             <template slot-scope="scope">{{ scope.row.date }}</template>
                         </el-table-column>
-                        <el-table-column prop="name"
-                                         label="姓名">
+                        <el-table-column prop="title"
+                                         width="180px"
+                                         show-overflow-tooltip
+                                         label="标题">
                         </el-table-column>
-                        <el-table-column prop="address"
-                                         label="地址"
+                        <el-table-column prop="repDrawing"
+                                         label="代表图">
+                        </el-table-column>
+                        <el-table-column prop="number"
+                                         label="字数">
+                        </el-table-column>
+                        <el-table-column prop="state"
+                                         label="状态">
+                        </el-table-column>
+                        <el-table-column prop="dealingPeople"
+                                         label="处理人">
+                        </el-table-column>
+                        <el-table-column prop="processingTime"
+                                         label="处理时间"
+                                         width="180px">
+                        </el-table-column>
+                        <el-table-column prop="firstAuthor"
+                                         label="第一作者">
+                        </el-table-column>
+                        <el-table-column prop="medio"
+                                         label="媒体"
                                          show-overflow-tooltip>
+                        </el-table-column>
+                        <el-table-column prop="preData"
+                                         label="预计刊登日期">
+                        </el-table-column>
+                        <el-table-column prop="type"
+                                         label="类型">
+                        </el-table-column>
+                        <el-table-column prop="doubt"
+                                         label="疑点">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -175,51 +206,32 @@ export default {
     data () {
         return {
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2018-10-31',
+                title: '“氢能小镇”炼成记',
+                repDrawing: '',
+                number: 2267,
+                state: '待审',
+                dealingPeople: '卢刚',
+                processingTime: '2018-10-31 14:23',
+                firstAuthor: '卢刚',
+                medio: '新华每日电讯',
+                type: '文本',
+                doubt: 0,
+                preData: ''
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }
-            ],
+                date: '2018-10-29',
+                title: '龙海市：文化沁人心  廉洁清风来',
+                repDrawing: '',
+                number: 163,
+                state: '待审',
+                dealingPeople: '刘学奎',
+                processingTime: '2018-10-29 17:18 ',
+                firstAuthor: '刘学奎',
+                medio: '新华每日电讯',
+                type: '图片',
+                doubt: 0,
+                preData: ''
+            }],
             draft: [],
             versionData: null,
             currentPage: 1,
@@ -242,13 +254,13 @@ export default {
                             label: '电讯领导',
                             children: [{
                                 id: 9,
-                                label: '方立新',
-                                icon: 'iconfont icon-file-b- ft-ffd658'
+                                label: '方立新'
                             }, {
                                 id: 10,
-                                label: '李仁虎',
-                                icon: 'iconfont icon-file-b- ft-ffd658'
-
+                                label: '李仁虎'
+                            }, {
+                                id: 11,
+                                label: '王晓林'
                             }]
                         },
                         {
@@ -256,13 +268,18 @@ export default {
                             label: '总编室',
                             children: [{
                                 id: 12,
-                                label: '留学室',
-                                icon: 'iconfont icon-file1'
-
+                                label: '刘学奎'
                             }, {
                                 id: 13,
-                                label: '卢刚',
-                                icon: 'iconfont icon-file1'
+                                label: '卢刚'
+                            }]
+                        },
+                        {
+                            id: 8,
+                            label: '技术部',
+                            children: [{
+                                id: 256,
+                                label: '王二虎'
                             }]
                         }
                     ]
