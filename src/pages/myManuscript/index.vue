@@ -75,14 +75,19 @@
                           @selection-change="handleSelectionChange">
                     <el-table-column type="selection">
                     </el-table-column>
-                    <el-table-column label="日期">
+                    <el-table-column label="入库时间"
+                                     width="200px">
                         <template slot-scope="scope">{{ scope.row.date }}</template>
                     </el-table-column>
+                    <el-table-column prop="title"
+                                     show-overflow-tooltip
+                                     label="标题">
+                    </el-table-column>
                     <el-table-column prop="name"
-                                     label="姓名">
+                                     label="投稿人">
                     </el-table-column>
                     <el-table-column prop="address"
-                                     label="地址"
+                                     label="位置"
                                      show-overflow-tooltip>
                     </el-table-column>
                 </el-table>
@@ -301,6 +306,7 @@ export default {
             tableData3: [{
                 date: '2016-05-03',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-02',

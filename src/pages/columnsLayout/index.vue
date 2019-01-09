@@ -81,14 +81,19 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="日期">
+                        <el-table-column label="入库时间"
+                                         width="200px">
                             <template slot-scope="scope">{{ scope.row.date }}</template>
                         </el-table-column>
+                        <el-table-column prop="title"
+                                         show-overflow-tooltip
+                                         label="标题">
+                        </el-table-column>
                         <el-table-column prop="name"
-                                         label="姓名">
+                                         label="投送人">
                         </el-table-column>
                         <el-table-column prop="address"
-                                         label="地址"
+                                         label="位置"
                                          show-overflow-tooltip>
                         </el-table-column>
                     </el-table>
@@ -174,6 +179,36 @@ export default {
     },
     data () {
         return {
+            concatData: {
+                contentShow: false,
+                tableData: [{
+                    num: '1',
+                    title: '王小虎1'
+
+                }, {
+                    num: '2',
+                    title: '王小虎2'
+
+                }, {
+                    num: '3',
+                    title: '王小虎3'
+
+                },
+                {
+                    num: '4',
+                    title: '王小虎4'
+
+                }, {
+                    num: '5',
+                    title: '王小虎5'
+
+                },
+                {
+                    num: '6',
+                    title: '王小虎6'
+
+                }]
+            },
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -251,36 +286,6 @@ export default {
                 }
 
             ],
-            concatData: {
-                contentShow: false,
-                tableData: [{
-                    num: '1',
-                    title: '王小虎1'
-
-                }, {
-                    num: '2',
-                    title: '王小虎2'
-
-                }, {
-                    num: '3',
-                    title: '王小虎3'
-
-                },
-                {
-                    num: '4',
-                    title: '王小虎4'
-
-                }, {
-                    num: '5',
-                    title: '王小虎5'
-
-                },
-                {
-                    num: '6',
-                    title: '王小虎6'
-
-                }]
-            },
             defaultProps: {
                 children: 'children',
                 label: 'label'
@@ -288,26 +293,62 @@ export default {
             tableData3: [{
                 date: '2016-05-03',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-02',
                 name: '王小虎',
+                title: '（脱贫攻坚）羊信发“羊财”',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-04',
                 name: '王小虎',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计...',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-01',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-08',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-06',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-07',
+                name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                address: '上海市普陀区金沙江路 1518 弄'
+            }, {
+                date: '2016-05-06',
+                name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-07',
@@ -316,66 +357,52 @@ export default {
             }, {
                 date: '2016-05-06',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-07',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-06',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-07',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-06',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-07',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-06',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-07',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-06',
                 name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }, {
                 date: '2016-05-07',
                 name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
+                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
                 address: '上海市普陀区金沙江路 1518 弄'
             }],
             multipleSelection: [],
