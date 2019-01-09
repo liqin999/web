@@ -5,37 +5,48 @@ import login from '../pages/login/login.vue'
 import logint from '../pages/login/loginAccount.vue'
 import table from '../components/home/homeTable.vue'
 import testTable from '../components/table/testTable.vue'
-import {routes} from "./routes.js"
+import {
+    routes
+} from './routes.js'
 
 Vue.use(Router)
-let router =  new Router({
-	mode: "history",
-	// base: '/dist-demo/',
-	routes: [
-		{ path: '*', component: login },
-		{
-			path: '/home',
-			component: home,
-			meta: {
-                loginTag: true
-            },
-			children: [
-				{ path: 'hometable', name: '表格', component: table },
-				{ path: 'testTable', name: '多级表头（万能）表格', component: testTable },
-				...routes
-			]
-		},
-		{
-			path: '/',
-			component: login
-		},
-		{
-			path: '/logint',
-			component: logint
-		}
-	]
-});
-//路由拦截
+let router = new Router({
+    mode: 'history',
+    // base: '/dist-demo/',
+    routes: [{
+        path: '*',
+        component: login
+    },
+    {
+        path: '/home',
+        component: home,
+        meta: {
+            'loginTag': true
+        },
+        children: [{
+            path: 'hometable',
+            name: '表格',
+            component: table
+        },
+        {
+            path: 'testTable',
+            name: '多级表头（万能）表格',
+            component: testTable
+        },
+            ...routes
+        ]
+    },
+    {
+        path: '/',
+        component: login
+    },
+    {
+        path: '/logint',
+        component: logint
+    }
+    ]
+})
+// 路由拦截
 router.beforeEach((to, from, next) => {
     if (to.meta.loginTag) {
         // if (getCookie('login_token')) {
@@ -44,19 +55,10 @@ router.beforeEach((to, from, next) => {
         //     next({
         //         path: "/login"
         //     });
-		// }
-		next();
+        // }
+        next()
     } else {
-        next();
+        next()
     }
 })
-export default router;
-
-
-
-
-
-
-
-
-
+export default router

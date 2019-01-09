@@ -8,25 +8,16 @@ export default {
     components: {
 
     },
-    data(){
-        return{
+    data () {
+        return {
 
         }
     },
-    mounted(){
+    mounted () {
 
     },
-    methods:{
+    methods: {
 
     }
 }
 </script>
-<style lang="scss" scoped>
-
-</style>
-<style>
-
-</style>
-
-
-

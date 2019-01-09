@@ -1,75 +1,68 @@
 <template>
-<div>
-    <div class="top">
-        <!-- <navigation-bar></navigation-bar> -->
-        <header-bar></header-bar>
-    </div>
-    <!-- <div class="left">
-        <left-menu></left-menu>
-    </div> -->
-    <div class="main">
-        <router-view />
-    </div>
-</div>
-</template>
+    <el-container>
+        <div style="height:40px">
+            <img :src="imgUrl"
+                 alt=""
+                 style="width:100%;height:100%">
+        </div>
 
- 
+        <el-header height="40px"
+                   v-show="showNavBar">
+            <header-bar></header-bar>
+        </el-header>
+        <router-view />
+    </el-container>
+</template>
 
 <script>
 
-
 // import leftMenu from "@/components/leftmenu/leftMenu.vue";
-import headerBar from "@/components/navigation/headerBar.vue";
+import headerBar from '@/components/navigation/headerBar.vue'
 // import navigationBar from "@/components/navigation/navigationBar.vue";
-import loginIn from "@/server/server";
-
-import mixin from "@/components/shared/mixins/powerMixins.js"
+// import loginIn from '@/server/server'
+import mixin from '@/components/shared/mixins/powerMixins.js'
 export default {
     mixins: [mixin],
-    data() {
-        return {};
+    data () {
+        return {
+            imgUrl: require('@/assets/img/fadeHead.png'),
+            showNavBar: true
+
+        }
+    },
+    beforeMount () {
+        if (this.$route.path === '/dataService' || this.$route.path === '/review') {
+            this.showNavBar = false
+        } else {
+            this.showNavBar = true
+        }
     },
     components: {
         // leftMenu,
         // navigationBar,
-        headerBar,
-      
+        headerBar
+
     },
-    mounted() {
+    mounted () {
         // 混入中的方法
-        this.pm_toggleShow();
-        // 显示关闭等待页 
+        this.pm_toggleShow()
         // this.$store.dispatch('showLoading');
         // setTimeout(() => {
         //     this.$store.dispatch('cloaseLoading');
         // }, 2000);
     },
-    methods: {}
-};
+    methods: {},
+    watch: {
+        '$route' (to, from) {
+            if (this.$route.path === '/dataService' || this.$route.path === '/review') {
+                this.showNavBar = false
+            } else {
+                this.showNavBar = true
+            }
+        }
+    }
+
+}
 </script>
- 
-
 <style>
-.main {
-    height: 400px;
-    /* width: calc(100% - 300px); */
-    min-width: 940px;
-    overflow-x: auto;
-    float: left;
-}
-
-.top {
-    height: 70px;
-    width: 100%;
-    /* padding-top: 1px; */
-}
-
-.left {
-    /* width: 300px; */
-    height: 400px;
-    padding-top: 1px;
-    /* height: calc(100% - 50px); */
-    float: left;
-
-}
 </style>

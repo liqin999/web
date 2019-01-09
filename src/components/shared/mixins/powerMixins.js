@@ -9,15 +9,15 @@ export default {
     data () {
         return {
             pm_power: '混入定义字段',
-            pm_showChoose:false
+            pm_showChoose: false
         }
     },
-    mounted() {
-        this.pm_toggleShow();
+    mounted () {
+        this.pm_toggleShow()
     },
     methods: {
-        pm_toggleShow() {
-            this.pm_showChoose = !this.pm_showChoose;
+        pm_toggleShow () {
+            this.pm_showChoose = !this.pm_showChoose
         }
     }
 }
