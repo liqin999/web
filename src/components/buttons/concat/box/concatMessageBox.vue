@@ -2,7 +2,7 @@
     <el-dialog custom-class="concat-dialog"
                title="合并稿件"
                @close="messageBoxClose()"
-               :visible.sync="concatData.contentShow"
+               :visible.sync="contentShow"
                width="50%"
                top="15vh"
                :append-to-body="true">
@@ -22,17 +22,20 @@
                 <template>
                     <el-table :data="concatData.tableData"
                               ref="multipleTable"
+                              tooltip-effect="dark"
                               @selection-change="handleSelectionChange"
                               style="width: 100%">
                         <el-table-column type="selection"
                                          width="55">
                         </el-table-column>
-                        <el-table-column prop="num"
-                                         label="稿号"
+
+                        <el-table-column prop="abstractt"
+                                         label="摘要"
                                          width="80">
                         </el-table-column>
-                        <el-table-column prop="title"
-                                         label="标题">
+                        <el-table-column prop="content"
+                                         show-overflow-tooltip
+                                         label="内容">
                         </el-table-column>
                         <el-table-column width="100"
                                          prop="fontNum"
@@ -55,7 +58,7 @@
             <el-button class="primary-btn"
                        @click="concatConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="concatData.contentShow = false">取消</el-button>
+                       @click="contentShow = false">取消</el-button>
         </div>
         <!-- 内容区 结束 -->
     </el-dialog>
@@ -70,7 +73,8 @@ export default {
     },
     data () {
         return {
-            multipleSelection: []
+            multipleSelection: [],
+            contentShow: false
 
         }
     },
@@ -113,6 +117,9 @@ export default {
                 this.concatData.tableData.push(item)
             })
         }
+    },
+    computed: {
+
     }
 }
 </script>
