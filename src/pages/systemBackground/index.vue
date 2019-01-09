@@ -4,7 +4,7 @@
                   class="system-aside">
             <el-menu :default-active="$route.path"
                      :router="true"
-                     unique-opened="true"
+                     :unique-opened=true
                      @open="handleOpen"
                      @close="handleClose">
                 <el-submenu :index="item.id"

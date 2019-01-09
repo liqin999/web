@@ -304,6 +304,9 @@ export default {
         // 文本框值改变
         textareaChange2 (val) {
             this.textarea2 = val
+        },
+        issuanceConfirm () {
+
         }
     }
 }

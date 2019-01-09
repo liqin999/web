@@ -227,6 +227,8 @@ export default {
     },
     data () {
         return {
+            checked: '',
+            tableData: [],
             kanfaData: [1, 2, 3, 4, 5],
             kanfaValue: 1,
             input: null,
@@ -238,19 +240,22 @@ export default {
                 '版面库',
                 '媒体公共库',
                 '其他稿库'
-            ]
+            ],
             // radioOpsition: [
             //     '新华每日电讯'
             // ],
-            // checkList: [
-            //     '原稿保护'
-            // ]
+            checkList: [
+                '原稿保护'
+            ]
         }
     },
     mounted () {
 
     },
     methods: {
+        labelChange () {
+
+        }
 
     }
 }

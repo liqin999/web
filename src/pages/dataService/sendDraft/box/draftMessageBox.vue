@@ -25,7 +25,7 @@
                                     <el-col :span="7"
                                             class="text-overflow"
                                             :key="label">
-                                        <el-radio v-model="radioName"
+                                        <el-radio v-model="radioData"
                                                   :label="label"
                                                   @change="labelChange">{{ label }}</el-radio>
                                     </el-col>
@@ -63,7 +63,7 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList1"
-                                             default-expand-all="true"
+                                             :default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -72,7 +72,7 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
-                                             default-expand-all="true"
+                                             :default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -93,10 +93,10 @@
                                 <template>
                                     <el-col :span="7"
                                             class="text-overflow"
-                                            :key="label">
-                                        <el-radio v-model="radioName"
+                                           >
+                                        <el-radio v-model="radioData"
                                                   :label="1">入库前提示 </el-radio>
-                                        <el-radio v-model="radioName"
+                                        <el-radio v-model="radioData"
                                                   :label="2">直接入库</el-radio>
                                     </el-col>
                                 </template>
@@ -133,7 +133,7 @@ export default {
             submitData: null,
             textarea: '请输入文字',
             // 栏目选择
-            radioName: '版面/栏目稿库',
+            radioData: '版面/栏目稿库',
             radioLabel: [
                 '栏目稿库',
                 '版面稿库',

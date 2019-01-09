@@ -81,6 +81,13 @@ export default {
         },
         splitConfirm () { // 确认按钮
 
+        },
+        concatConfirm () {
+
+        },
+        // 取消按钮
+        concatData () {
+
         }
     }
 }

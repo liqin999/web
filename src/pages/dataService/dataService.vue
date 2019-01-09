@@ -4,8 +4,8 @@
         <el-aside width="250px">
             <div class="tabTree">
                 <el-tabs v-model="activeTreeName"
-                         stretch="true"
-                         @tab-click="switchTreeMemu">
+                            :stretch=true
+                            @tab-click="switchTreeMemu">
                     <el-tab-pane label="成品稿"
                                  name="first">
                         <left-menu :treeData="data2"
@@ -51,8 +51,8 @@
             <el-main ref="mainTable">
 
                 <el-tabs v-model="activeTreeName1"
-                         stretch="true"
-                         @tab-click="switchTreeMemu1">
+                            :stretch=true
+                            @tab-click="switchTreeMemu1">
                     <el-tab-pane label="全部(12888)"
                                  name="first1">
 

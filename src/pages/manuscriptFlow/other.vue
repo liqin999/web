@@ -90,12 +90,12 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 4,
+                            id: 5,
                             label: '国际焦点',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }

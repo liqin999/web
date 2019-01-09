@@ -335,7 +335,7 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
