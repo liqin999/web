@@ -47,9 +47,9 @@
         <div slot="footer"
              class="dialog-footer">
             <el-button class="primary-btn"
-                       @click="concatConfirm()">确认</el-button>
+                       @click="splitConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="concatData.contentShow = false">取消</el-button>
+                       @click="splitData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
 </template>

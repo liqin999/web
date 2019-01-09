@@ -36,10 +36,10 @@
                     <el-table-column prop="status"
                                      label="状态">
                     </el-table-column>
-                     <el-table-column prop="author"
+                    <el-table-column prop="author"
                                      label="第一作者">
                     </el-table-column>
-                     <el-table-column prop="processingTime"
+                    <el-table-column prop="processingTime"
                                      label="处理时间">
                     </el-table-column>
                 </el-table>
@@ -96,9 +96,9 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 1,
-                            label: '头版',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            id: 48,
+                            label: '头版1',
+                            icon: 'el-icon-success'
                         },
                         {
                             id: 2,
@@ -131,18 +131,8 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 8,
-                            label: '世界报道',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 9,
-                            label: '原创',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 10,
-                            label: '经济·民生',
+                            id: 13,
+                            label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
@@ -153,14 +143,24 @@ export default {
                     label: '每日电讯微博',
                     children: [
                         {
-                            id: 1,
-                            label: '军事',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            id: 5,
+                            label: '一版',
+                            icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 2,
-                            label: '民生',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            id: 6,
+                            label: '二版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 7,
+                            label: '三版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 8,
+                            label: '四版',
+                            icon: 'iconfont icon-file1'
                         }
                     ]
                 }

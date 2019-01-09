@@ -14,7 +14,7 @@
                           tooltip-effect="dark"
                           style="width: 100%"
                           @selection-change="handleSelectionChange">
-                     <el-table-column prop="id"
+                    <el-table-column prop="id"
                                      label="稿号"
                                      width="180">
                     </el-table-column>
@@ -36,10 +36,10 @@
                     <el-table-column prop="status"
                                      label="状态">
                     </el-table-column>
-                     <el-table-column prop="author"
+                    <el-table-column prop="author"
                                      label="第一作者">
                     </el-table-column>
-                     <el-table-column prop="processingTime"
+                    <el-table-column prop="processingTime"
                                      label="处理时间">
                     </el-table-column>
                 </el-table>
@@ -96,9 +96,9 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 1,
-                            label: '电讯领导',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            id: 48,
+                            label: '头版1',
+                            icon: 'el-icon-success'
                         },
                         {
                             id: 2,
@@ -121,28 +121,8 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 6,
-                            label: '办公室',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 7,
-                            label: '副刊部（新华视界）',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 8,
-                            label: '创意策划中心',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 9,
-                            label: '其他',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 10,
-                            label: '编委',
+                            id: 13,
+                            label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
@@ -153,20 +133,24 @@ export default {
                     label: '每日电讯微博',
                     children: [
                         {
-                            id: 1,
-                            label: '网络部',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        }
-                    ]
-                },
-                {
-                    id: 3,
-                    label: '公共部门',
-                    children: [
+                            id: 5,
+                            label: '一版',
+                            icon: 'iconfont icon-file1'
+                        },
                         {
-                            id: 1,
-                            label: '网络部',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            id: 6,
+                            label: '二版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 7,
+                            label: '三版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 8,
+                            label: '四版',
+                            icon: 'iconfont icon-file1'
                         }
                     ]
                 }

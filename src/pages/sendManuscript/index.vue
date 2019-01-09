@@ -227,7 +227,6 @@ export default {
     },
     data () {
         return {
-            checked: '',
             tableData: [
                 { id: '20181031000034',
                     name: '这是一条测试稿件20181031',
@@ -237,6 +236,7 @@ export default {
             ],
             kanfaData: [1, 2, 3, 4, 5],
             kanfaValue: 1,
+            checked: false, // 备选项
             input: null,
             textarea: null,
             // 栏目选择
@@ -251,7 +251,7 @@ export default {
             //     '新华每日电讯'
             // ],
             checkList: [
-                '原稿保护'
+                '原稿保护', '本地存留'
             ]
         }
     },
@@ -259,10 +259,7 @@ export default {
 
     },
     methods: {
-        labelChange () {
-
-        }
-
+        labelChange () { }
     }
 }
 </script>

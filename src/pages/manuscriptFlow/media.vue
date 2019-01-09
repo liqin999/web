@@ -12,7 +12,7 @@
                           tooltip-effect="dark"
                           style="width: 100%"
                           @selection-change="handleSelectionChange">
-                     <el-table-column prop="id"
+                    <el-table-column prop="id"
                                      label="稿号"
                                      width="180">
                     </el-table-column>
@@ -34,10 +34,10 @@
                     <el-table-column prop="status"
                                      label="状态">
                     </el-table-column>
-                     <el-table-column prop="author"
+                    <el-table-column prop="author"
                                      label="第一作者">
                     </el-table-column>
-                     <el-table-column prop="processingTime"
+                    <el-table-column prop="processingTime"
                                      label="处理时间">
                     </el-table-column>
                 </el-table>
@@ -94,6 +94,27 @@ export default {
                     label: '新华每日电讯',
                     icon: 'iconfont icon-file-b- ft-ffd658',
                     children: [
+                        {
+                            id: 48,
+                            label: '头版1',
+                            icon: 'el-icon-success'
+                        },
+                        {
+                            id: 12,
+                            label: '国内新闻',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 4,
+                            label: '国际焦点',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 13,
+                            label: '评论声音',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        }
+
                     ]
                 },
                 {
@@ -101,6 +122,26 @@ export default {
                     label: '新华每日电讯',
                     icon: 'iconfont icon-file-b- ft-ffd658',
                     children: [
+                        {
+                            id: 5,
+                            label: '一版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 6,
+                            label: '二版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 7,
+                            label: '三版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 8,
+                            label: '四版',
+                            icon: 'iconfont icon-file1'
+                        }
                     ]
                 }
 

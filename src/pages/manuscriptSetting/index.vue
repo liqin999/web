@@ -198,8 +198,8 @@
                         </el-table-column>
                         <el-table-column label="采用否">
                             <template slot-scope="scope">
-                            <span>{{scope.row.isactive ? '是' : '否'}}</span>
-                        </template>
+                                <span>{{scope.row.isactive ? '是' : '否'}}</span>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="wordNumber"
                                          label="字数">
@@ -346,62 +346,35 @@ export default {
                     label: '全部稿件',
                     children: [
                         {
-                            id: 1,
-                            label: '未分类稿件',
-                            children: [
-                                {
-                                    id: 1 - 1,
-                                    label: '头版1',
-                                    icon: 'el-icon-success'
-                                }
-                            ]
-
+                            id: 48,
+                            label: '头版1',
+                            icon: 'el-icon-success'
                         },
                         {
-                            id: 2,
-                            label: '国际新闻信息分类',
-                            children: [
-                                {
-                                    id: 1,
-                                    label: '政治法律',
-                                    icon: 'iconfont icon-file1'
-                                },
-                                {
-                                    id: 2,
-                                    label: '军事',
-                                    icon: 'iconfont icon-file1'
-                                },
-                                {
-                                    id: 3,
-                                    label: '社会',
-                                    icon: 'iconfont icon-file1'
-                                },
-                                {
-                                    id: 4,
-                                    label: '生态环境',
-                                    icon: 'iconfont icon-file1'
-                                },
-                                {
-                                    id: 5,
-                                    label: '科技',
-                                    icon: 'iconfont icon-file1'
-                                },
-                                {
-                                    id: 6,
-                                    label: '教育',
-                                    icon: 'iconfont icon-file1'
-                                },
-                                {
-                                    id: 7,
-                                    label: '宏观经济',
-                                    icon: 'iconfont icon-file1'
-                                },
-                                {
-                                    id: 8,
-                                    label: '行业经济',
-                                    icon: 'iconfont icon-file1'
-                                }
-                            ]
+                            id: 12,
+                            label: '国内新闻',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 4,
+                            label: '国际焦点',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 13,
+                            label: '评论声音',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+
+                        {
+                            id: 7,
+                            label: '三版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 8,
+                            label: '四版',
+                            icon: 'iconfont icon-file1'
                         }
                     ]
                 }
