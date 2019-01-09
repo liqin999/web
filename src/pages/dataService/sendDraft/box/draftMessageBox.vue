@@ -63,7 +63,7 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList1"
-                                             default-expand-all="true"
+                                             :default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -72,7 +72,7 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
-                                             default-expand-all="true"
+                                             :default-expand-all="true"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -92,12 +92,11 @@
                                 </el-col>
                                 <template>
                                     <el-col :span="7"
-                                            class="text-overflow"
-                                            :key="label">
-                                        <el-radio v-model="radioName"
-                                                  :label="1">入库前提示 </el-radio>
-                                        <el-radio v-model="radioName"
-                                                  :label="2">直接入库</el-radio>
+                                            class="text-overflow">
+                                        <el-radio v-model="radioData"
+                                                  label="1">入库前提示 </el-radio>
+                                        <el-radio v-model="radioData"
+                                                  label="2">直接入库</el-radio>
                                     </el-col>
                                 </template>
                             </el-row>
@@ -130,6 +129,7 @@ export default {
     },
     data () {
         return {
+            radioData: '1',
             submitData: null,
             textarea: '请输入文字',
             // 栏目选择

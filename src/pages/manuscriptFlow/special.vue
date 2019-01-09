@@ -127,7 +127,7 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 48,
                             label: '头版1',
                             icon: 'el-icon-success'
                         },
@@ -142,7 +142,7 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
@@ -164,12 +164,12 @@ export default {
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 5,
+                            id: 7,
                             label: '三版',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 6,
+                            id: 8,
                             label: '四版',
                             icon: 'iconfont icon-file1'
                         }
