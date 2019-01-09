@@ -72,6 +72,7 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList"
+                                             :default-expanded-keys="[2, 3]"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -79,7 +80,8 @@
                                 </el-col>
                                 <el-col :span="12"
                                         class="message-checkbox">
-                                    <el-tree :data="dataList"
+                                    <el-tree :data="dataList2"
+                                             :default-expanded-keys="[2, 3]"
                                              show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
@@ -174,30 +176,56 @@ export default {
             dataList: [
                 {
                     id: 2,
-                    label: '新华每日电讯 2',
+                    label: '栏目',
                     children: [{
                         id: 5,
-                        label: '新华每日电讯 2-1'
+                        label: '头版'
                     },
                     {
                         id: 6,
-                        label: '新华每日电讯 2-2'
+                        label: '要闻'
+                    },
+                    {
+                        id: 55,
+                        label: '国内新闻'
+                    },
+                    {
+                        id: 56,
+                        label: '国际新闻'
+                    },
+                    {
+                        id: 546,
+                        label: '新闻素材'
                     }]
-                },
-                {
-                    id: 3,
-                    label: '新华每日电讯 3',
-                    children: [
-                        {
-                            id: 7,
-                            label: '新华每日电讯 3-1'
-                        },
-                        {
-                            id: 8,
-                            label: '新华每日电讯 3-2'
-                        }
-                    ]
                 }
+
+            ],
+            dataList2: [
+                {
+                    id: 2,
+                    label: 'A叠',
+                    children: [{
+                        id: 5,
+                        label: '一版'
+                    },
+                    {
+                        id: 6,
+                        label: '二版'
+                    },
+                    {
+                        id: 55,
+                        label: '三版'
+                    },
+                    {
+                        id: 56,
+                        label: '四版'
+                    },
+                    {
+                        id: 546,
+                        label: '五版'
+                    }]
+                }
+
             ],
             topTitle: [
                 {
@@ -329,7 +357,7 @@ export default {
         },
         // 点击确定按钮（提交）
         draftConfirm () {
-
+            this.draftData.contentShow = false
         }
     },
     computed: {
