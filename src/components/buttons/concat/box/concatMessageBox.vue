@@ -28,8 +28,7 @@
                                          width="55">
                         </el-table-column>
                         <el-table-column prop="num"
-                                         label="稿号"
-                                         width="80">
+                                         label="稿号">
                         </el-table-column>
                         <el-table-column prop="title"
                                          label="标题">

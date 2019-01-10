@@ -209,30 +209,20 @@ export default {
             concatData: {
                 contentShow: false,
                 tableData: [{
-                    num: '1',
-                    title: '王小虎1'
+                    num: '20181029000029',
+                    title: '普惠小微企业 减税再出新举措'
 
                 }, {
-                    num: '2',
-                    title: '王小虎2'
+                    num: '20181029000030',
+                    title: '秦岭违建别墅整治始末 一抓到底正风纪'
 
                 }, {
-                    num: '3',
-                    title: '王小虎3'
-
-                },
-                {
-                    num: '4',
-                    title: '王小虎4'
+                    num: '20181029000030',
+                    title: '唱响新时代的英雄赞歌'
 
                 }, {
-                    num: '5',
-                    title: '王小虎5'
-
-                },
-                {
-                    num: '6',
-                    title: '王小虎6'
+                    num: '20181029000032',
+                    title: '商务部：中美在京举行经贸问题副部级磋商'
 
                 }]
             },

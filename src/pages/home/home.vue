@@ -6,21 +6,25 @@
                  style="width:100%;height:100%">
         </el-header>
         <el-container>
-            <transition name="fade">
-                <el-aside class="aside-left"
-                          width="60px"
-                          v-if="show">
-                    <div class="left-i"
-                         @click="show=false"><i class="iconfont icon-caidan"></i><br />
+            <template v-if="showNavBar">
+                <transition name="fade">
+                    <el-aside class="aside-left"
+                              width="60px"
+                              v-if="show">
+                        <div class="left-i"
+                             @click="show=false"><i class="iconfont icon-caidan"></i><br />
 
-                    </div>
-                    <div class="left-span mt10"><i class="iconfont icon-zuoce-tongxun"></i>
-                        <span>通讯</span>
-                    </div>
-                </el-aside>
-            </transition>
+                        </div>
+                        <div class="left-span mt10"><i class="iconfont icon-zuoce-tongxun"></i>
+                            <span>通讯</span>
+                        </div>
+                    </el-aside>
+                </transition>
+            </template>
+
             <el-container>
                 <el-header height="40px"
+                           v-show="showNavBar"
                            :class="{'headerA':!show}">
                     <div v-if="!show"
                          @click="show=true"

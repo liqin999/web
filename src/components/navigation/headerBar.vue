@@ -2,7 +2,7 @@
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2018-12-28 16:37:26
+ * @LastEditTime: 2019-01-10 14:46:19
  * @Description: 导航条样式改版
  -->
 <template>
@@ -122,15 +122,20 @@ export default {
                 },
 
                 {
-                    name: '写稿',
+                    name: '更多',
                     icon: 'el-icon-index',
                     id: '10',
                     path: '',
                     chiled: [// 展示二级路由
                         {
                             name: '投稿',
-                            id: '10-1',
+                            id: '10-4',
                             path: '/sendManuscript'
+                        },
+                        {
+                            name: '废稿库',
+                            id: '10-1',
+                            path: '/invalidManuscript'
                         },
                         {
                             name: '写稿器',
@@ -144,13 +149,13 @@ export default {
                             path: '/newsCalendar'
                         }
                     ]
-                },
-                {
-                    name: '后台管理',
-                    icon: 'el-icon-index',
-                    id: '11',
-                    path: '/systemBackground'
                 }
+                // {
+                //     name: '后台管理',
+                //     icon: 'el-icon-index',
+                //     id: '11',
+                //     path: '/systemBackground'
+                // }
 
             ]
         }

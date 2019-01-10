@@ -32,7 +32,7 @@
                     class="message-content clearfix">
                 <el-col :span="24"
                         class="tab-padding">
-                    <b class="message-title">电讯稿库历史</b>
+                    <b class="message-title">工作稿库历史</b>
                     <template>
                         <el-select v-model="topValue"
                                    placeholder="请选择">
