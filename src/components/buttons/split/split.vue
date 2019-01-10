@@ -6,6 +6,7 @@
         <!-- 拆分按钮 -->
         <split-message-box ref="splitBox"
                            @sendSplitData="sendSplitData"
+                           @splitCancleConfirm="splitCancleConfirm"
                            :splitData="splitData"></split-message-box>
     </div>
 
@@ -30,6 +31,12 @@ export default {
     methods: {
         sendSplitData (concatData) {
             this.$emit('sendSplitData', concatData)
+            this.$refs.splitBox.contentShow = false
+            this.$refs.splitBox.tableData.length = 0
+            this.$refs.splitBox.newContent = ''
+        },
+        splitCancleConfirm () {
+            this.$emit('splitCancleConfirm')
             this.$refs.splitBox.contentShow = false
             this.$refs.splitBox.tableData.length = 0
             this.$refs.splitBox.newContent = ''

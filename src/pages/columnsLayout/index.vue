@@ -62,6 +62,7 @@
                             </span>
                         </div>
                         <split :splitData="splitData"
+                               @splitCancleConfirm="splitCancleConfirm"
                                @sendSplitData="getSplitData">
                             <span slot="iconName">拆分</span>
                         </split>
@@ -101,7 +102,8 @@
                         <el-table-column label="摘要">
                             <template slot-scope="scope">{{ scope.row.abstractt }}</template>
                         </el-table-column>
-                        <el-table-column label="内容">
+                        <el-table-column label="内容"
+                                         show-overflow-tooltip>
                             <template slot-scope="scope">{{ scope.row.content }}</template>
                         </el-table-column>
                         <el-table-column label="引题">
@@ -116,7 +118,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="totalNumber">
                     </el-pagination>
                     <div class="btn-bottom">
                         <div class="btn-nav">
@@ -196,6 +198,7 @@ export default {
             //     contentShow: false,
             //     tableData: []
             // },
+            totalNumber: 1, // 总页数
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -441,6 +444,7 @@ export default {
         findList () {
             getColumnsList({}).then(res => {
                 this.tableData3 = res
+                this.totalNumber = res.length
             })
         },
         // getColumnsList
@@ -479,13 +483,14 @@ export default {
             let param = {}
             let arr = []
             param.count = checkData.length
-            checkData.forEach(item => {
+            checkData.forEach((item, index) => {
                 arr.push({
                     DocContentsVo: {
-                        // 'subHeadLine': '副标题',
+                        'abstractt': `摘要${index}`,
                         'leadinLine': item.leadinLine,
                         'seqNum': item.seqNum,
-                        'wordNum': item.wordNum
+                        'wordNum': item.wordNum,
+                        'content': item.content
                     }
                 })
             })
@@ -494,6 +499,10 @@ export default {
             columnsListSplit(param).then(res => {
                 this.findList()
             })
+        },
+
+        splitCancleConfirm () {
+            this.findList()
         },
         getConcatDataUp (data) { // 获得合并弹框的上移操作
             console.log('获得合并子组件弹框的上移操作元素数据', data)

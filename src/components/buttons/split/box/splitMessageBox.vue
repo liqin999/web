@@ -52,9 +52,9 @@
         <div slot="footer"
              class="dialog-footer">
             <el-button class="primary-btn"
-                       @click="splitConfirm()">确认</el-button>
+                       @click="splitConfirm">确认</el-button>
             <el-button class="reset-btn"
-                       @click="contentShow = false">取消</el-button>
+                       @click="splitCancleConfirm">取消</el-button>
         </div>
     </el-dialog>
 </template>
@@ -93,7 +93,18 @@ export default {
             // 点击关闭回调函数
         },
         splitConfirm () { // 确认按钮
-            this.$emit('sendSplitData', this.tableData)
+            if (this.tableData.length === 0) {
+                this.$message({
+                    message: '先点击左侧生成的稿件',
+                    type: 'warning'
+                })
+                return false
+            } else {
+                this.$emit('sendSplitData', this.tableData)
+            }
+        },
+        splitCancleConfirm () {
+            this.$emit('splitCancleConfirm')
         },
         getSelectText () {
             let userSelection = ''
@@ -104,10 +115,21 @@ export default {
             }
             if (userSelection.toString().length > 0) {
                 this.newContent = userSelection.toString()
+
+                let _index = 10
+                if (this.newContent.indexOf('。') !== -1) {
+                    _index = this.newContent.indexOf('。')
+                } else if (this.newContent.indexOf(',') !== -1) {
+                    _index = this.newContent.indexOf(',')
+                } else if (this.newContent.indexOf('，') !== -1) {
+                    _index = this.newContent.indexOf('，')
+                }
+
                 this.tableData.push({
                     seqNum: this.tableData.length + 1,
-                    leadinLine: this.newContent.substring(0, this.newContent.indexOf('。')),
-                    wordNum: this.newContent.length
+                    leadinLine: this.newContent.substring(0, _index),
+                    wordNum: this.newContent.length,
+                    content: this.newContent
                 })
                 let regExp = new RegExp(this.newContent.replace(/\s*/g, ''), 'g')
                 this.content = this.content.replace(/\s*/g, '').toString().replace(regExp, '')
