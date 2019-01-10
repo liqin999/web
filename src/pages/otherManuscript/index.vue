@@ -207,7 +207,7 @@ export default {
         return {
             tableData3: [{
                 date: '2018-10-31',
-                title: '“氢能小镇”炼成记',
+                title: '这是一条测试稿件20181031',
                 repDrawing: '',
                 number: 2267,
                 state: '待审',

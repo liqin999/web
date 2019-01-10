@@ -210,19 +210,19 @@ export default {
                 contentShow: false,
                 tableData: [{
                     num: '20181029000029',
-                    title: '普惠小微企业 减税再出新举措'
+                    title: '这是一条测试稿件20181031'
 
                 }, {
                     num: '20181029000030',
-                    title: '秦岭违建别墅整治始末 一抓到底正风纪'
+                    title: '脱贫攻坚,羊信发“羊财'
 
                 }, {
                     num: '20181029000030',
-                    title: '唱响新时代的英雄赞歌'
+                    title: '脱贫攻坚,“80后”移民夫妻“百元计...'
 
                 }, {
                     num: '20181029000032',
-                    title: '商务部：中美在京举行经贸问题副部级磋商'
+                    title: '脱贫攻坚,“80后”移民夫妻“百元计...'
 
                 }]
             },
@@ -329,7 +329,7 @@ export default {
             },
             tableData3: [{
                 date: '2018-10-30',
-                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                title: '这是一条测试稿件20181031',
                 address: '脱贫攻坚',
                 number: 3578,
                 state: '待审',
@@ -341,7 +341,7 @@ export default {
                 preData: ''
             }, {
                 date: '2018-10-29',
-                title: '（脱贫攻坚）羊信发“羊财”',
+                title: '脱贫攻坚羊信发“羊财”',
                 address: '脱贫攻坚',
                 number: 768,
                 state: '待审',
@@ -353,7 +353,19 @@ export default {
                 preData: ''
             }, {
                 date: '2016-05-04',
-                title: '（脱贫攻坚）“80后”移民夫妻“百元计...',
+                title: '脱贫攻坚“80后”移民夫妻“百元计...',
+                address: '脱贫攻坚',
+                number: 1024,
+                state: '待审',
+                deliverer: '方立新',
+                processingTime: '2018-10-29 10:45',
+                dealingPeople: '方立新',
+                firstAuthor: '方立新',
+                medio: '新华每日电讯',
+                preData: ''
+            }, {
+                date: '2016-05-04',
+                title: '脱贫攻坚“80后”移民夫妻“百元计...',
                 address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',

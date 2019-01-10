@@ -153,7 +153,7 @@ export default {
             },
             tableData3: [{
                 id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
+                title: '这是一条测试稿件20181031',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',

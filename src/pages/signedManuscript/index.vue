@@ -415,7 +415,7 @@ export default {
             tableData3: [{
                 zugao: '',
                 number: '20181029000029',
-                title: '一个西红柿的“世界地图”',
+                title: '这是一条测试稿件20181031',
                 repDrawing: '',
                 state: '已处理',
                 banmian: '一版',

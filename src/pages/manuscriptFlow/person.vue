@@ -51,10 +51,10 @@
                     <el-table-column prop="status"
                                      label="状态">
                     </el-table-column>
-                     <el-table-column prop="author"
+                    <el-table-column prop="author"
                                      label="第一作者">
                     </el-table-column>
-                     <el-table-column prop="processingTime"
+                    <el-table-column prop="processingTime"
                                      label="处理时间">
                     </el-table-column>
                 </el-table>
@@ -123,7 +123,7 @@ export default {
             value: '',
             tableData: [{
                 id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
+                title: '这是一条测试稿件20181031',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',
