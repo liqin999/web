@@ -1,17 +1,22 @@
 <template>
     <el-dialog class=""
-               title="传稿"
+               :title="sendData ? '传稿' : '撤稿'"
                @close="messageBoxClose()"
                :visible.sync="draftData.contentShow"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-            <!-- 待传稿件列表 -->
+            <!-- 待撤稿件列表 -->
             <el-row :gutter="20"
                     class="message-lists clearfix">
                 <el-col :span="3"
-                        class="tab-padding"><b class="message-title">待传稿件</b></el-col>
+                        class="tab-padding">
+                            <!-- <span slot="iconName" v-if='sendData'>待传稿件</span> -->
+                            <b class="message-title" v-if='sendData'>待传稿件</b>
+                            <!-- <span slot="iconName" v-else-if='!sendData'>待撤稿件</span> -->
+                            <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
+                        </el-col>
                 <el-col :span="21"
                         class="tab-padding">
                     <template v-for="(item,index) in draftData.draftList">
@@ -124,7 +129,17 @@
                     <el-row :gutter="10"
                             class="">
                         <el-col :span="24"
-                                class="clearfix"><b class="message-title padding-bottom10 inline-block">传稿意见</b><span class="redColor">（不超过255个字）</span></el-col>
+                                class="tab-padding">
+                            <b class="message-title" v-if='sendData'>待传稿件</b>
+                            <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
+                            <span class="redColor">（不超过255个字）</span>
+                        </el-col>
+                        <!-- <el-col :span="24"
+                                class="clearfix"> -->
+                                <!-- <b class="message-title padding-bottom10 inline-block" v-if='sendData'>撤稿意见</b>
+                                <b class="message-title padding-bottom10 inline-block" v-else-if='!sendData'>撤稿意见</b> -->
+                                <!-- <span class="redColor">（不超过255个字）</span> -->
+                                <!-- </el-col> -->
                         <!-- <el-row> -->
                         <el-col :span="24">
                             <el-input type="textarea"
@@ -154,6 +169,9 @@
 <script>
 export default {
     props: {
+        sendData: {
+            type: Boolean
+        },
         draftData: {
             type: Object
         }

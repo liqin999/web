@@ -48,6 +48,20 @@
                 <el-row :gutter="20"
                         class="pb10">
                     <el-col :span="6">
+                        <span>2019-1-11 13:50:56</span>
+                    </el-col>
+                    <el-col :span="18">
+                        <el-col :span="24">
+                            <span>由【编辑策划中心-张三】 新建 </span>
+                        </el-col>
+                        <el-col :span="24">
+                            <span>*处理意见：2019-1-11 13:50:56 开始新建</span>
+                        </el-col>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="20"
+                        class="pb10">
+                    <el-col :span="6">
                         <span>2018-10-31 12:34:56</span>
                     </el-col>
                     <el-col :span="18">

@@ -150,6 +150,7 @@
 </template>
 <script>
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// 签发组件
 import issuance from '@/components/buttons/issuance/issuance'
 import searchInput from '@/components/searchConditions/searchInput.vue'
 // import split from '@/components/buttons/split/split'
