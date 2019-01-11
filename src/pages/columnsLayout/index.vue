@@ -514,7 +514,7 @@ export default {
     computed: {
         concatData () {
             return {
-                tableData: this.tableData3
+                tableData: this.multipleSelection
             }
         },
         splitData () {

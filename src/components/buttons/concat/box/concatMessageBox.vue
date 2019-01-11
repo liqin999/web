@@ -83,7 +83,7 @@ export default {
             // 点击关闭回调函数
         },
         concatConfirm () { // 确认按钮
-            this.$emit('sendConcatData', this.multipleSelection)
+            this.$emit('sendConcatData', this.concatData.tableData)
         },
         handleUpClick (index) { // 上移
             let temp = this.concatData.tableData[index - 1]
@@ -101,7 +101,11 @@ export default {
             this.multipleSelection = val
         },
         removeSelection () { // 移除选中的项
-            this.$refs.multipleTable.clearSelection()
+            this.multipleSelection.forEach((item, index) => {
+                if (this.concatData.tableData.indexOf(item) > -1) {
+                    this.concatData.tableData.splice(this.concatData.tableData.indexOf(item), 1)
+                }
+            })
         },
         handleMoreUpClick () { // 批量的上移
             this.multipleSelection.forEach((item, index) => {
