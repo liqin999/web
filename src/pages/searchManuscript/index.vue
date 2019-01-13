@@ -102,7 +102,9 @@
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="稿号">
+                            <el-table-column label="稿号"
+                                             width="100"
+                                             >
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
@@ -116,7 +118,8 @@
                                              label="状态">
                             </el-table-column>
                             <el-table-column prop="time"
-                                             label="处理时间">
+                                             label="处理时间"
+                                             width="100">
                             </el-table-column>
                             <el-table-column prop="author"
                                              label="第一作者">
@@ -154,7 +157,8 @@
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="稿号">
+                            <el-table-column label="稿号"
+                                             width="100">
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
@@ -168,7 +172,8 @@
                                              label="状态">
                             </el-table-column>
                             <el-table-column prop="time"
-                                             label="处理时间">
+                                             label="处理时间"
+                                             width="100">
                             </el-table-column>
                             <el-table-column prop="author"
                                              label="第一作者">
@@ -211,11 +216,11 @@ export default {
         return {
             tableData3: [
                 {
-                    id: '20181031000034',
-                    name: '这是一条测试稿件20181031',
+                    id: '2018103100',
+                    name: '测试稿件',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31 11:09:34',
+                    time: '2018-10-31',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -226,11 +231,11 @@ export default {
 
                 },
                 {
-                    id: '20181031000034',
-                    name: '这是一条测试稿件20181031',
+                    id: '2018103101',
+                    name: '1测试稿件1',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31 11:09:34',
+                    time: '2018-10-31',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -240,11 +245,11 @@ export default {
                     articleNumber: '1'
                 },
                 {
-                    id: '20181031000034',
-                    name: '这是一条测试稿件20181031',
+                    id: '2018103102',
+                    name: '测试稿件2',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31 11:09:34',
+                    time: '2018-10-31',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -254,11 +259,11 @@ export default {
                     articleNumber: '1'
                 },
                 {
-                    id: '20181031000034',
-                    name: '这是一条测试稿件20181031',
+                    id: '2018103103',
+                    name: '测试稿件',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31 11:09:34',
+                    time: '2018-10-31',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',

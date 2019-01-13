@@ -68,18 +68,18 @@
                     class="clearfix">
                 <el-col :span="3"
                         class="tab-padding"><b class="message-title">字体和字号</b></el-col>
-                <el-col :span="21">
+                <el-col :span="18">
                     <el-row :gutter="20"
                             class="font16">
                         <div>
                             <el-col :span="18"
-                                    :offset="3">
+                                    :offset="4" class="tab-padding rtab-padding">
                                 <el-col :span="8"
-                                        class="text-center"><span>标题字体</span></el-col>
+                                        class="ac"><span>标题字体</span></el-col>
                                 <el-col :span="8"
-                                        class="text-center"><span>横向字号</span></el-col>
+                                        class="ac"><span>横向字号</span></el-col>
                                 <el-col :span="8"
-                                        class="text-center"><span>纵向字号</span></el-col>
+                                        class="ac"><span>纵向字号</span></el-col>
                             </el-col>
                         </div>
                     </el-row>
@@ -93,7 +93,7 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue">
+                                    <el-select v-model="fontValue" class="issuance-select">
                                         <el-option v-for="item in fontData"
                                                    :key="item"
                                                    :label="item"
@@ -104,7 +104,7 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue">
+                                    <el-select v-model="fontValue" class="issuance-select">
                                         <el-option v-for="item in fontData"
                                                    :key="item"
                                                    :label="item"
@@ -115,50 +115,7 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue">
-                                        <el-option v-for="item in fontData"
-                                                   :key="item"
-                                                   :label="item"
-                                                   :value="item">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-col>
-                        </div>
-                    </el-row>
-                    <el-row :gutter="20"
-                            class="font-select">
-                        <div>
-                            <el-col :span="4">
-                                <template>
-                                    <el-checkbox v-model="checked">备选项</el-checkbox>
-                                </template>
-                            </el-col>
-                            <el-col :span="6">
-                                <template>
-                                    <el-select v-model="fontValue">
-                                        <el-option v-for="item in fontData"
-                                                   :key="item"
-                                                   :label="item"
-                                                   :value="item">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-col>
-                            <el-col :span="6">
-                                <template>
-                                    <el-select v-model="fontValue">
-                                        <el-option v-for="item in fontData"
-                                                   :key="item"
-                                                   :label="item"
-                                                   :value="item">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-col>
-                            <el-col :span="6">
-                                <template>
-                                    <el-select v-model="fontValue">
+                                    <el-select v-model="fontValue" class="issuance-select">
                                         <el-option v-for="item in fontData"
                                                    :key="item"
                                                    :label="item"
@@ -179,7 +136,7 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue">
+                                    <el-select v-model="fontValue" class="issuance-select">
                                         <el-option v-for="item in fontData"
                                                    :key="item"
                                                    :label="item"
@@ -190,7 +147,7 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue">
+                                    <el-select v-model="fontValue" class="issuance-select">
                                         <el-option v-for="item in fontData"
                                                    :key="item"
                                                    :label="item"
@@ -201,7 +158,50 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue">
+                                    <el-select v-model="fontValue" class="issuance-select">
+                                        <el-option v-for="item in fontData"
+                                                   :key="item"
+                                                   :label="item"
+                                                   :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                        </div>
+                    </el-row>
+                    <el-row :gutter="20"
+                            class="font-select">
+                        <div>
+                            <el-col :span="4">
+                                <template>
+                                    <el-checkbox v-model="checked">备选项</el-checkbox>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue" class="issuance-select">
+                                        <el-option v-for="item in fontData"
+                                                   :key="item"
+                                                   :label="item"
+                                                   :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue" class="issuance-select">
+                                        <el-option v-for="item in fontData"
+                                                   :key="item"
+                                                   :label="item"
+                                                   :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="fontValue" class="issuance-select">
                                         <el-option v-for="item in fontData"
                                                    :key="item"
                                                    :label="item"
@@ -320,7 +320,7 @@ export default {
         .el-date-editor.el-input,
         .el-date-editor.el-input__inner {
             width: 70%;
-            padding: 0;
+            padding: 40;
         }
     }
     .sort-select {
@@ -333,6 +333,12 @@ export default {
     }
     .font-select {
         margin: 10px 0;
+    }
+    // .text-right{
+    //     padding-left: 40px;
+    // }
+    .issuance-select{
+        width: 100%;
     }
 }
 </style>

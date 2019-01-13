@@ -5,18 +5,6 @@
                 <search-input :searchForm="searchForm"
                               :allTypes="allTypes"
                               @sendFormData="getFormData">
-                    <!-- <el-col :span="6"
-                            slot="media">
-                        <el-form-item label="媒体:">
-                            <el-select v-model="searchForm.media"
-                                       placeholder="请选择媒体">
-                                <el-option label="媒体一"
-                                           value="shanghai"></el-option>
-                                <el-option label="媒体二"
-                                           value="beijing"></el-option>
-                            </el-select>
-                        </el-form-item>
-                    </el-col> -->
                 </search-input>
             </div>
         </el-header>
@@ -30,7 +18,7 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
-                        <send-draft>
+                        <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
                         <issuance>
