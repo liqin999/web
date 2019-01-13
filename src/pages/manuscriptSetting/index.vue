@@ -347,7 +347,7 @@ export default {
                     children: [
                         {
                             id: 48,
-                            label: '头版1',
+                            label: '头版',
                             icon: 'el-icon-success'
                         },
                         {
@@ -368,12 +368,22 @@ export default {
 
                         {
                             id: 7,
-                            label: '三版',
+                            label: '科技',
                             icon: 'iconfont icon-file1'
                         },
                         {
                             id: 8,
-                            label: '四版',
+                            label: '教育',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 76,
+                            label: '宏观经济',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 58,
+                            label: '行业经济',
                             icon: 'iconfont icon-file1'
                         }
                     ]
@@ -449,7 +459,7 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                id: '20181029000029',
+                id: '20181029029',
                 name: '一个西红柿的”世界地图“',
                 wordNumber: '3578',
                 status: '已处理',
@@ -459,7 +469,7 @@ export default {
                 authorType: '',
                 type: '文本'
             }, {
-                id: '20181029000029',
+                id: '20181029029',
                 name: '一个西红柿的”世界地图“',
                 wordNumber: '3578',
                 status: '已处理',
@@ -469,7 +479,7 @@ export default {
                 authorType: '',
                 type: '文本'
             }, {
-                id: '20181029000029',
+                id: '20181029029',
                 name: '一个西红柿的”世界地图“',
                 wordNumber: '3578',
                 status: '已处理',

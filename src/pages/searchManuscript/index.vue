@@ -103,8 +103,7 @@
                             <el-table-column type="selection">
                             </el-table-column>
                             <el-table-column label="稿号"
-                                             width="100"
-                                             >
+                                             width="100">
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
@@ -164,7 +163,7 @@
                             <el-table-column prop="name"
                                              label="标题">
                             </el-table-column>
-                             <el-table-column prop="media"
+                            <el-table-column prop="media"
                                              label="所属媒体"
                                              show-overflow-tooltip>
                             </el-table-column>
@@ -217,7 +216,7 @@ export default {
             tableData3: [
                 {
                     id: '2018103100',
-                    name: '测试稿件',
+                    name: '测试稿件1',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',
@@ -232,7 +231,7 @@ export default {
                 },
                 {
                     id: '2018103101',
-                    name: '1测试稿件1',
+                    name: '测试稿件2',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',
@@ -246,7 +245,7 @@ export default {
                 },
                 {
                     id: '2018103102',
-                    name: '测试稿件2',
+                    name: '测试稿件3',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',

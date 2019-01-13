@@ -81,7 +81,10 @@
                             </div>
                         </div>
                     </el-col>
-                    <!-- <el-col :span="6"
+                </el-row>
+                <el-row :gutter="20"
+                        class="main-row">
+                    <el-col :span="6"
                             class="img-col">
                         <div class="img-box">
                             <div class="img-wrap">
@@ -90,11 +93,53 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
-                    </el-col> -->
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-二版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-三版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-四版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
                 </el-row>
             </el-main>
             <el-footer height="70px">

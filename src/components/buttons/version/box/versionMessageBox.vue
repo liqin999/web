@@ -10,6 +10,7 @@
 
         <template>
             <el-table :data="versionData.tableData"
+                      class="version-table"
                       ref="multipleTable"
                       @selection-change="handleSelectionChange"
                       style="width: 100%">
@@ -95,5 +96,12 @@ export default {
 .dialog-footer {
     display: flex;
     justify-content: space-between;
+}
+</style>
+<style lang="scss">
+.version-table {
+    .el-table__body tr:hover > td {
+        background-color: #cbc4ba !important;
+    }
 }
 </style>

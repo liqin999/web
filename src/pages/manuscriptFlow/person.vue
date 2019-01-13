@@ -5,6 +5,7 @@
                     class="clearfix">
                 <el-col>
                     <el-checkbox label="A"
+                                 v-model="handlechecked"
                                  class="che">
                         包含我处理过的稿件
                     </el-checkbox>
@@ -103,22 +104,14 @@ export default {
     data () {
         return {
             currentPage: 1,
+            handlechecked: true,
             checkList: ['A'],
             options: [{
-                value: '选项1',
-                label: '黄金糕'
+                value: '初投1',
+                label: '初投1'
             }, {
-                value: '选项2',
-                label: '双皮奶'
-            }, {
-                value: '选项3',
-                label: '蚵仔煎'
-            }, {
-                value: '选项4',
-                label: '龙须面'
-            }, {
-                value: '选项5',
-                label: '北京烤鸭'
+                value: '初投2',
+                label: '初投2'
             }],
             value: '',
             tableData: [{
