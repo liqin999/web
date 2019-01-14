@@ -81,7 +81,6 @@
                             </div>
                         </div>
                     </el-col>
-                    <!-- <el-col :span="6"
                     <el-col :span="6"
                             class="img-col">
                         <div class="img-box">
@@ -111,7 +110,7 @@
                             </div>
                         </div>
                     </el-col>
-                    <el-col :span="6"
+                    <!-- <el-col :span="6"
                             class="img-col">
                         <div class="img-box">
                             <div class="img-wrap">
@@ -124,7 +123,7 @@
                                 <span class="t3">已建</span>
                             </div>
                         </div>
-                    </el-col>
+                    </el-col> -->
                     <el-col :span="6"
                             class="img-col">
                         <div class="img-box">
@@ -152,7 +151,7 @@
                                 <span class="t3">已建</span>
                             </div>
                         </div>
-                    </el-col> -->
+                    </el-col>
                 </el-row>
             </el-main>
             <el-footer height="70px">

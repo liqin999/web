@@ -30,7 +30,7 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
-                        <send-draft>
+                        <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
                         <issuance>

@@ -232,7 +232,7 @@ export default {
                 },
                 {
                     id: '2018103101',
-                    name: '1测试稿件1',
+                    name: '测试稿件',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',
@@ -246,7 +246,7 @@ export default {
                 },
                 {
                     id: '2018103102',
-                    name: '测试稿件2',
+                    name: '测试稿件',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',

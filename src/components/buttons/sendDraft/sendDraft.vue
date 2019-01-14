@@ -21,6 +21,7 @@ export default {
     props: {
         sendData: {
             type: Boolean,
+            // 传稿/撤稿判断，默认为false,则为撤稿
             default: false
         }
         // draft: {

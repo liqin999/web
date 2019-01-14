@@ -156,7 +156,7 @@
                             </span>
                         </div>
 
-                        <send-draft>
+                        <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
                         <div data-v-6eb3df45=""

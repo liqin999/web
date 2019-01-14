@@ -7,14 +7,12 @@
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-            <!-- 待撤稿件列表 -->
+            <!-- 待撤稿/传稿件列表 -->
             <el-row :gutter="20"
                     class="message-lists clearfix">
                 <el-col :span="3"
                         class="tab-padding">
-
                             <b class="message-title" v-if='sendData'>待传稿件</b>
-
                             <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
                         </el-col>
                 <el-col :span="21"

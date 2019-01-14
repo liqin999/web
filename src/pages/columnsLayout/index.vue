@@ -137,10 +137,15 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-ico_print"></i>
                             <span>打印</span>
-                        </div>
+                        </div> -->
+                        <printing>
+                            <i slot="icon"
+                               class="iconfont icon-ico_print"></i>
+                            <span slot="iconName">打印</span>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -180,6 +185,7 @@ import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
         searchInput,
@@ -190,7 +196,8 @@ export default {
         concat,
         version,
         draftLabel,
-        history
+        history,
+        printing
     },
     data () {
         return {
@@ -321,6 +328,36 @@ export default {
                 }
 
             ],
+            // concatData: {
+            //     // contentShow: false,
+            //     tableData: [{
+            //         num: '1',
+            //         title: '王小虎1'
+
+            //     }, {
+            //         num: '2',
+            //         title: '王小虎2'
+
+            //     }, {
+            //         num: '3',
+            //         title: '王小虎3'
+
+            //     },
+            //     {
+            //         num: '4',
+            //         title: '王小虎4'
+
+            //     }, {
+            //         num: '5',
+            //         title: '王小虎5'
+
+            //     },
+            //     {
+            //         num: '6',
+            //         title: '王小虎6'
+
+            //     }]
+            // },
             defaultProps: {
                 children: 'children',
                 label: 'label'
