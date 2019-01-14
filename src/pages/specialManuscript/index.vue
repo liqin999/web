@@ -81,15 +81,46 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="日期">
+                        <el-table-column label="入库时间"
+                                         width="100px">
                             <template slot-scope="scope">{{ scope.row.date }}</template>
                         </el-table-column>
-                        <el-table-column prop="name"
-                                         label="姓名">
+                        <el-table-column prop="title"
+                                         width="180px"
+                                         show-overflow-tooltip
+                                         label="标题">
                         </el-table-column>
-                        <el-table-column prop="address"
-                                         label="地址"
+                        <el-table-column prop="repDrawing"
+                                         label="代表图">
+                        </el-table-column>
+                        <el-table-column prop="number"
+                                         label="字数">
+                        </el-table-column>
+                        <el-table-column prop="state"
+                                         label="状态">
+                        </el-table-column>
+                        <el-table-column prop="dealingPeople"
+                                         label="处理人">
+                        </el-table-column>
+                        <el-table-column prop="processingTime"
+                                         label="处理时间"
+                                         width="180px">
+                        </el-table-column>
+                        <el-table-column prop="firstAuthor"
+                                         label="第一作者">
+                        </el-table-column>
+                        <el-table-column prop="medio"
+                                         label="媒体"
                                          show-overflow-tooltip>
+                        </el-table-column>
+                        <el-table-column prop="preData"
+                                         label="预计刊登日期">
+                        </el-table-column>
+                        <el-table-column prop="type"
+                                         label="类型">
+                        </el-table-column>
+                        <el-table-column prop="doubt"
+                                         label="疑点">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -192,51 +223,21 @@ export default {
                     children: [
                         {
                             id: 48,
-                            label: '头版1',
-                            icon: 'el-icon-success'
-                        },
-                        {
-                            id: 12,
-                            label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 4,
-                            label: '国际焦点',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 13,
-                            label: '评论声音',
+                            label: 'test',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
-
                     ]
                 },
                 {
                     id: 2,
-                    label: 'A叠【版面】',
+                    label: '每日电讯微博',
                     children: [
                         {
-                            id: 5,
-                            label: '一版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 7,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 8,
-                            label: '四版',
-                            icon: 'iconfont icon-file1'
+                            id: 24,
+                            label: 'test',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         }
+
                     ]
                 }
 
@@ -308,97 +309,31 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2018-10-31',
+                title: '这是一条测试稿件20181031',
+                repDrawing: '',
+                number: 992,
+                state: '待审',
+                dealingPeople: '强晓玲',
+                processingTime: '2018-10-31 14:23',
+                firstAuthor: '强晓玲',
+                medio: '新华每日电讯',
+                type: '文本',
+                doubt: 0,
+                preData: ''
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2018-10-31',
+                title: '这是一条测试稿件20181031',
+                repDrawing: '',
+                number: 992,
+                state: '待审',
+                dealingPeople: '强晓玲',
+                processingTime: '2018-10-31 14:23',
+                firstAuthor: '强晓玲',
+                medio: '新华每日电讯',
+                type: '文本',
+                doubt: 0,
+                preData: ''
             }],
             multipleSelection: [],
             mainTableHeight: null

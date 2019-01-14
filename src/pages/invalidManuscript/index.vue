@@ -28,11 +28,11 @@
                 <div class="pl10"><b class="font18">资源类型</b></div>
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <template v-for="label in radioLabel1">
+                    <template v-for="label in radioLabel2">
                         <el-col :span="12"
                                 class="text-overflow"
                                 :key="label">
-                            <el-radio v-model="radioName1"
+                            <el-radio v-model="radioName2"
                                       :label="label"
                                       @change="labelChange">{{ label }}</el-radio>
                         </el-col>
@@ -85,10 +85,13 @@
             <el-main class="main-content">
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <el-col :span="3"><b class="font18">工作稿库</b></el-col>
+                    <el-col :span="3"><b class="font18">电讯稿库</b></el-col>
                     <el-col :span="21">
                         <div class="btn-group">
                             <el-button class="primary-btn">恢复</el-button>
+                            <el-button class="primary-btn">编辑</el-button>
+                            <el-button class="primary-btn">选送</el-button>
+                            <el-button class="primary-btn">撤稿</el-button>
                             <el-button class="primary-btn">内容</el-button>
                             <el-button class="primary-btn">历史</el-button>
                         </div>
@@ -102,8 +105,7 @@
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="稿号"
-                                             width="100">
+                            <el-table-column label="稿号">
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
@@ -117,8 +119,7 @@
                                              label="状态">
                             </el-table-column>
                             <el-table-column prop="time"
-                                             label="处理时间"
-                                             width="100">
+                                             label="处理时间">
                             </el-table-column>
                             <el-table-column prop="author"
                                              label="第一作者">
@@ -146,54 +147,46 @@
                 </el-row>
                 <el-row :gutter="20"
                         class="pl10 pr10">
-                    <el-col :span="24"><b class="font18">部门公共库（稿源库）</b></el-col>
+                    <el-col :span="24"><b class="font18">稿源库</b></el-col>
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
                                   height="160"
-                                  :data="tableData3"
+                                  :data="tableData4"
                                   tooltip-effect="dark"
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="稿号"
-                                             width="100">
+                            <el-table-column label="稿号">
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
-                            <el-table-column prop="name"
+                            <el-table-column prop="title"
                                              label="标题">
                             </el-table-column>
-                            <el-table-column prop="media"
-                                             label="所属媒体"
-                                             show-overflow-tooltip>
-                            </el-table-column>
-                            <el-table-column prop="status"
-                                             label="状态">
-                            </el-table-column>
+
                             <el-table-column prop="time"
-                                             label="处理时间"
-                                             width="100">
+                                             label="创建时间">
                             </el-table-column>
                             <el-table-column prop="author"
                                              label="第一作者">
                             </el-table-column>
-                            <el-table-column prop="source"
-                                             label="来源">
-                            </el-table-column>
                             <el-table-column prop="type"
                                              label="类型">
                             </el-table-column>
+
                             <el-table-column prop="map"
                                              label="代表图">
                             </el-table-column>
+
                             <el-table-column prop="format"
                                              label="文件格式">
                             </el-table-column>
+
                             <el-table-column prop="wordNumber"
                                              label="字数">
                             </el-table-column>
-                            <el-table-column prop="articleNumber"
-                                             label="稿数">
+                            <el-table-column prop="source"
+                                             label="来源">
                             </el-table-column>
                         </el-table>
                     </el-col>
@@ -215,11 +208,11 @@ export default {
         return {
             tableData3: [
                 {
-                    id: '2018103100',
-                    name: '测试稿件1',
+                    id: '20181031000034',
+                    name: '测试稿件20181031',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31',
+                    time: '2018-10-31 11:09:34',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -230,11 +223,11 @@ export default {
 
                 },
                 {
-                    id: '2018103101',
-                    name: '测试稿件2',
+                    id: '20181031000034',
+                    name: '测试稿件20181031',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31',
+                    time: '2018-10-31 11:09:34',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -244,11 +237,11 @@ export default {
                     articleNumber: '1'
                 },
                 {
-                    id: '2018103102',
-                    name: '测试稿件3',
+                    id: '20181031000034',
+                    name: '这是一条测试',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31',
+                    time: '2018-10-31 11:09:34',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -258,11 +251,11 @@ export default {
                     articleNumber: '1'
                 },
                 {
-                    id: '2018103103',
-                    name: '测试稿件',
+                    id: '20181031000034',
+                    name: '这是一条测试',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31',
+                    time: '2018-10-31 11:09:34',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -270,6 +263,31 @@ export default {
                     format: '.txt',
                     wordNumber: '1345',
                     articleNumber: '1'
+                }
+            ],
+
+            tableData4: [
+                {
+                    id: '20181031000034',
+                    title: '这是一条测试',
+                    time: '2018-10-31 11:09:34',
+                    author: '强晓玲',
+                    type: '文本',
+                    map: '',
+                    format: '.txt',
+                    wordNumber: '1345',
+                    source: '自写稿'
+                },
+                {
+                    id: '20181031000034',
+                    title: '这是一条测试',
+                    time: '2018-10-31 11:09:34',
+                    author: '强晓玲',
+                    type: '文本',
+                    map: '',
+                    format: '.txt',
+                    wordNumber: '1345',
+                    source: '自写稿'
                 }
             ],
             checkList: ['稿源库'],
@@ -281,6 +299,11 @@ export default {
             radioLabel1: [
                 '内容匹配',
                 '中文分词'
+            ],
+            radioName2: '稿件',
+            radioLabel2: [
+                '稿件',
+                '线索/采访单/专题'
             ],
             // 栏目选择
             radioName: '栏目库',

@@ -1,12 +1,14 @@
 <template>
     <el-container class="clearfix">
-        <el-aside width="250px">
+        <el-aside class="aside-content"
+                  width="250px">
             <div class="search-list2">
-                <h2>专题条件:</h2>
-                <el-checkbox class="mt5 special-che"
-                             v-model="showPersonchecked">只显示本人创建</el-checkbox>
-                <el-date-picker v-model="createDateValue"
-                                class="mt5"
+                <div class="pl10 pr10 mb10 mt10 fcolor">专题条件:</div>
+                    <el-checkbox class="mb10 pl10 pr10 text-overflow fcolor" style="width:100%"
+                        v-model="showPersonchecked">只显示本人创建</el-checkbox>
+                    <div class="date-time">
+                        <el-date-picker v-model="createDateValue"
+
                                 type="daterange"
                                 align="right"
                                 unlink-panels
@@ -14,10 +16,13 @@
                                 start-placeholder="开始日期"
                                 end-placeholder="结束日期"
                                 :picker-options="pickerOptions2">
-                </el-date-picker>
-                <el-button class="primary-btn mt5"
-                           @click="onSearch">查询</el-button>
+                        </el-date-picker>
+                    </div>
 
+                <div class="btn-group mt15 ac">
+                <el-button class="primary-btn"
+                           @click="onSearch">查询</el-button>
+                </div>
             </div>
             <left-menu :treeData="data2"
                        :defaultProps="defaultProps"
@@ -32,17 +37,33 @@
                           tooltip-effect="dark"
                           style="width: 100%"
                           @selection-change="handleSelectionChange">
-                    <el-table-column type="selection">
+                    <el-table-column prop="id"
+                                     label="稿号"
+                                     width="180">
                     </el-table-column>
-                    <el-table-column label="日期">
-                        <template slot-scope="scope">{{ scope.row.date }}</template>
+                    <el-table-column prop="title"
+                                     show-overflow-tooltip
+                                     label="标题">
                     </el-table-column>
-                    <el-table-column prop="name"
-                                     label="姓名">
+                    <el-table-column prop="media"
+                                     label="媒体"
+                                     width="180">
                     </el-table-column>
-                    <el-table-column prop="address"
-                                     label="地址"
-                                     show-overflow-tooltip>
+
+                    <el-table-column prop="type"
+                                     label="类型">
+                    </el-table-column>
+                    <el-table-column prop="location"
+                                     label="位置">
+                    </el-table-column>
+                    <el-table-column prop="status"
+                                     label="状态">
+                    </el-table-column>
+                    <el-table-column prop="author"
+                                     label="第一作者">
+                    </el-table-column>
+                    <el-table-column prop="processingTime"
+                                     label="处理时间">
                     </el-table-column>
                 </el-table>
             </el-main>
@@ -127,7 +148,7 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
+                            id: 48,
                             label: '头版1',
                             icon: 'el-icon-success'
                         },
@@ -142,19 +163,18 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
-
                     ]
                 },
                 {
                     id: 2,
-                    label: 'A叠【版面】',
+                    label: '新华每日电讯',
                     children: [
                         {
-                            id: 5,
+                            id: 1,
                             label: '一版',
                             icon: 'iconfont icon-file1'
                         },
@@ -164,12 +184,12 @@ export default {
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 5,
+                            id: 7,
                             label: '三版',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 6,
+                            id: 8,
                             label: '四版',
                             icon: 'iconfont icon-file1'
                         }
@@ -183,97 +203,41 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '这是一条测试稿件20181031',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '一个西红柿的”世界地图“',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '一个西红柿的”世界地图“',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '一个西红柿的”世界地图“',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }],
             multipleSelection: []
         }
@@ -300,3 +264,12 @@ export default {
     }
 }
 </script>
+<style scoped>
+.date-time{
+    width: 100%;
+    padding:0 10px;
+}
+.fcolor{
+    color: #676767;
+}
+</style>

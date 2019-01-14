@@ -5,6 +5,7 @@
                     class="clearfix">
                 <el-col>
                     <el-checkbox label="A"
+                                 v-model="handlechecked"
                                  class="che">
                         包含我处理过的稿件
                     </el-checkbox>
@@ -29,21 +30,33 @@
             <template>
                 <el-table :data="tableData"
                           style="width: 100%;">
-                    <el-table-column prop="date"
-                                     label="稿件号"
+                    <el-table-column prop="id"
+                                     label="稿号"
                                      width="180">
                     </el-table-column>
                     <el-table-column prop="title"
                                      show-overflow-tooltip
                                      label="标题">
                     </el-table-column>
-                    <el-table-column prop="name"
-                                     label="作者"
+                    <el-table-column prop="media"
+                                     label="媒体"
                                      width="180">
                     </el-table-column>
 
-                    <el-table-column prop="address"
+                    <el-table-column prop="type"
+                                     label="类型">
+                    </el-table-column>
+                    <el-table-column prop="location"
                                      label="位置">
+                    </el-table-column>
+                    <el-table-column prop="status"
+                                     label="状态">
+                    </el-table-column>
+                    <el-table-column prop="author"
+                                     label="第一作者">
+                    </el-table-column>
+                    <el-table-column prop="processingTime"
+                                     label="处理时间">
                     </el-table-column>
                 </el-table>
             </template>
@@ -91,44 +104,52 @@ export default {
     data () {
         return {
             currentPage: 1,
+            handlechecked: true,
             checkList: ['A'],
             options: [{
-                value: '选项1',
-                label: '黄金糕'
+                value: '初投1',
+                label: '初投1'
             }, {
-                value: '选项2',
-                label: '双皮奶'
-            }, {
-                value: '选项3',
-                label: '蚵仔煎'
-            }, {
-                value: '选项4',
-                label: '龙须面'
-            }, {
-                value: '选项5',
-                label: '北京烤鸭'
+                value: '初投2',
+                label: '初投2'
             }],
             value: '',
             tableData: [{
-                date: '20190102123',
-                name: '王小虎',
-                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '这是一条测试稿件20181031',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }, {
-                date: '20190102123',
-                name: '王小虎',
-                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
-                address: '上海市普陀区金沙江路 1517 弄'
+                id: '20181029000029',
+                title: '一个西红柿的”世界地图“',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }, {
-                date: '20190102123',
-                name: '王小虎',
-                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
-                address: '上海市普陀区金沙江路 1519 弄'
+                id: '20181029000029',
+                title: '一个西红柿的”世界地图“',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }, {
-                date: '20190102123',
-                name: '王小虎',
-                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
-                address: '上海市普陀区金沙江路 1516 弄'
+                id: '20181029000029',
+                title: '一个西红柿的”世界地图“',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31'
             }]
         }
     },

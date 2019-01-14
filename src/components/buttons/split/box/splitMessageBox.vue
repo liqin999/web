@@ -47,9 +47,9 @@
         <div slot="footer"
              class="dialog-footer">
             <el-button class="primary-btn"
-                       @click="concatConfirm()">确认</el-button>
+                       @click="splitConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="concatData.contentShow = false">取消</el-button>
+                       @click="splitData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
 </template>
@@ -80,6 +80,13 @@ export default {
             // 点击关闭回调函数
         },
         splitConfirm () { // 确认按钮
+
+        },
+        concatConfirm () {
+
+        },
+        // 取消按钮
+        concatData () {
 
         }
     }

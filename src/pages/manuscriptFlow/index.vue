@@ -1,5 +1,5 @@
 <template>
-    <el-container>
+    <el-container class="right-container">
         <el-header height="50px">
             <div class="search-wrap">
                 <el-form :inline="true"
@@ -230,5 +230,10 @@ export default {
 <style lang="scss">
 .search-form .search-check .el-form-item__content {
     height: 40px !important;
+}
+</style>
+<style>
+.el-container .right-container{
+    background-color: #ffffff
 }
 </style>

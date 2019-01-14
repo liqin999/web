@@ -34,7 +34,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-二版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-三版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -76,7 +76,24 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-四版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="20"
+                        class="main-row">
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -90,7 +107,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-二版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -104,7 +121,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-三版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -118,49 +135,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
-                                <span class="t3">已建</span>
-                            </div>
-                        </div>
-                    </el-col>
-                    <el-col :span="6"
-                            class="img-col">
-                        <div class="img-box">
-                            <div class="img-wrap">
-                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                     alt="">
-                            </div>
-                            <div class="texts">
-                                <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
-                                <span class="t3">已建</span>
-                            </div>
-                        </div>
-                    </el-col>
-                    <el-col :span="6"
-                            class="img-col">
-                        <div class="img-box">
-                            <div class="img-wrap">
-                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                     alt="">
-                            </div>
-                            <div class="texts">
-                                <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
-                                <span class="t3">已建</span>
-                            </div>
-                        </div>
-                    </el-col>
-                    <el-col :span="6"
-                            class="img-col">
-                        <div class="img-box">
-                            <div class="img-wrap">
-                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                     alt="">
-                            </div>
-                            <div class="texts">
-                                <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
+                                <span class="t2">A叠-四版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -242,31 +217,68 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 41,
-                            label: '头版1',
-                            icon: 'el-icon-success'
-                        },
-                        {
-                            id: 12,
-                            label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 4,
-                            label: '国际焦点',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 13,
-                            label: '评论声音',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            id: 45,
+                            label: 'A叠',
+                            icon: 'iconfont icon-file-b- ft-ffd658',
+                            children: [
+                                {
+                                    id: 5,
+                                    label: '一版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 6,
+                                    label: '二版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 7,
+                                    label: '三版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 8,
+                                    label: '四版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 811,
+                                    label: '五版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 812,
+                                    label: '六版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 814,
+                                    label: '七版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 8123,
+                                    label: '八版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 823,
+                                    label: '九版',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 9,
+                                    label: '测试版面',
+                                    icon: 'iconfont icon-file1'
+                                }
+                            ]
                         }
 
                     ]
                 },
                 {
                     id: 2,
-                    label: 'A叠【版面】',
+                    label: '每日电讯微博',
                     children: [
                         {
                             id: 5,

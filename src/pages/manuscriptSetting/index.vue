@@ -186,15 +186,41 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="日期">
-                            <template slot-scope="scope">{{ scope.row.date }}</template>
+                        <el-table-column label="组稿">
+                            <template slot-scope="scope">{{ scope.row.article }}</template>
+                        </el-table-column>
+                        <el-table-column prop="id"
+                                         label="稿号">
                         </el-table-column>
                         <el-table-column prop="name"
-                                         label="姓名">
-                        </el-table-column>
-                        <el-table-column prop="address"
-                                         label="地址"
+                                         label="标题"
                                          show-overflow-tooltip>
+                        </el-table-column>
+                        <el-table-column label="采用否">
+                            <template slot-scope="scope">
+                                <span>{{scope.row.isactive ? '是' : '否'}}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="wordNumber"
+                                         label="字数">
+                        </el-table-column>
+                        <el-table-column prop="status"
+                                         label="状态">
+                        </el-table-column>
+                        <el-table-column prop="map"
+                                         label="代表图">
+                        </el-table-column>
+                        <el-table-column prop="createDate"
+                                         label="创建日期">
+                        </el-table-column>
+                        <el-table-column prop="author"
+                                         label="第一作者">
+                        </el-table-column>
+                        <el-table-column prop="authorType"
+                                         label="作者类型">
+                        </el-table-column>
+                        <el-table-column prop="type"
+                                         label="类型">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -317,11 +343,11 @@ export default {
             data2: [
                 {
                     id: 1,
-                    label: '新华每日电讯',
+                    label: '全部稿件',
                     children: [
                         {
                             id: 48,
-                            label: '头版1',
+                            label: '头版',
                             icon: 'el-icon-success'
                         },
                         {
@@ -335,42 +361,35 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
+                            id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
-                        }
+                        },
 
-                    ]
-                },
-                {
-                    id: 2,
-                    label: 'A叠【版面】',
-                    children: [
                         {
-                            id: 5,
-                            label: '一版',
+                            id: 7,
+                            label: '科技',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 6,
-                            label: '二版',
+                            id: 8,
+                            label: '教育',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 5,
-                            label: '三版',
+                            id: 76,
+                            label: '宏观经济',
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 6,
-                            label: '四版',
+                            id: 58,
+                            label: '行业经济',
                             icon: 'iconfont icon-file1'
                         }
                     ]
                 }
 
             ],
-
             versionData: {
                 contentShow: false,
                 tableData: [{
@@ -381,7 +400,8 @@ export default {
                     img: '',
                     type: '文本',
                     doubt: '0',
-                    textFormat: 'txt'
+                    textFormat: 'txt',
+                    isactive: true
                 }, {
                     num: 2,
                     title: '333',
@@ -390,7 +410,8 @@ export default {
                     img: '',
                     type: '文本',
                     doubt: '0',
-                    textFormat: 'txt'
+                    textFormat: 'txt',
+                    isactive: true
                 }, {
                     num: 3,
                     title: '8888',
@@ -399,7 +420,8 @@ export default {
                     img: '',
                     type: '文本',
                     doubt: '0',
-                    textFormat: 'txt'
+                    textFormat: 'txt',
+                    isactive: true
                 }]
             },
             concatData: {
@@ -437,33 +459,35 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029029',
+                name: '一个西红柿的”世界地图“',
+                wordNumber: '3578',
+                status: '已处理',
+                map: '',
+                createDate: '201810-31 ',
+                author: '郝玉',
+                authorType: '',
+                type: '文本'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029029',
+                name: '一个西红柿的”世界地图“',
+                wordNumber: '3578',
+                status: '已处理',
+                map: '',
+                createDate: '201810-31 ',
+                author: '郝玉',
+                authorType: '',
+                type: '文本'
             }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029029',
+                name: '一个西红柿的”世界地图“',
+                wordNumber: '3578',
+                status: '已处理',
+                map: '',
+                createDate: '201810-31 ',
+                author: '郝玉',
+                authorType: '',
+                type: '文本'
             }],
             multipleSelection: [],
             mainTableHeight: null
