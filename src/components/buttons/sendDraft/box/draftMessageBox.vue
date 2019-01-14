@@ -12,9 +12,9 @@
                     class="message-lists clearfix">
                 <el-col :span="3"
                         class="tab-padding">
-                            <!-- <span slot="iconName" v-if='sendData'>待传稿件</span> -->
+
                             <b class="message-title" v-if='sendData'>待传稿件</b>
-                            <!-- <span slot="iconName" v-else-if='!sendData'>待撤稿件</span> -->
+
                             <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
                         </el-col>
                 <el-col :span="21"

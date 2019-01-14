@@ -293,6 +293,8 @@ export default {
         // 点击关闭回调函数
         messageBoxClose () {
         },
+        issuanceConfirm () { // 确认按钮
+        },
         // 日期改变
         pickerChange (val) {
             this.pickerTime = val
@@ -304,10 +306,10 @@ export default {
         // 文本框值改变
         textareaChange2 (val) {
             this.textarea2 = val
-        },
-        issuanceConfirm () {
-
         }
+        // issuanceConfirm () {
+
+        // }
     }
 }
 </script>

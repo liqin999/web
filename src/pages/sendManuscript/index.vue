@@ -237,8 +237,10 @@ export default {
             ],
             kanfaData: [1, 2, 3, 4, 5],
             kanfaValue: 1,
+            // checked: false, // 备选项
             input: null,
             textarea: null,
+            // tableData: [], // 已选稿件数据
             // 栏目选择
             radioName: '栏目库',
             radioLabel: [
@@ -251,7 +253,7 @@ export default {
             //     '新华每日电讯'
             // ],
             checkList: [
-                '原稿保护'
+                '原稿保护', '本地存留'
             ]
         }
     },
@@ -262,7 +264,6 @@ export default {
         labelChange () {
 
         }
-
     }
 }
 </script>
