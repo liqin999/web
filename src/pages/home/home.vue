@@ -11,8 +11,7 @@
                           width="60px"
                           v-if="show">
                     <div class="left-i"
-                         @click="show=false"><i class="iconfont icon-caidan"></i><br />
-
+                         @click="show=false"><i class="iconfont icon-caidan"></i>
                     </div>
                     <div class="left-span mt10"><i class="iconfont icon-zuoce-tongxun"></i>
                         <span>通讯</span>
