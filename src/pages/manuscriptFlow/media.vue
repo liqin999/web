@@ -92,57 +92,13 @@ export default {
                 {
                     id: 1,
                     label: '新华每日电讯',
-                    icon: 'iconfont icon-file-b- ft-ffd658',
-                    children: [
-                        {
-                            id: 48,
-                            label: '头版1',
-                            icon: 'el-icon-success'
-                        },
-                        {
-                            id: 12,
-                            label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 4,
-                            label: '国际焦点',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 13,
-                            label: '评论声音',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        }
-
-                    ]
+                    icon: 'iconfont icon-file-b- ft-ffd658'
                 },
                 {
                     id: 2,
-                    label: '新华每日电讯',
-                    icon: 'iconfont icon-file-b- ft-ffd658',
-                    children: [
-                        {
-                            id: 5,
-                            label: '一版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 7,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 8,
-                            label: '四版',
-                            icon: 'iconfont icon-file1'
-                        }
-                    ]
+                    label: '每日电讯微博',
+                    icon: 'iconfont icon-file-b- ft-ffd658'
+
                 }
 
             ],

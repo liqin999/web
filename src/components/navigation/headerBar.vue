@@ -141,13 +141,13 @@ export default {
                             name: '写稿器',
                             id: '10-2',
                             path: '/writeManuscript'
-                        },
-
-                        {
-                            name: '新闻日历',
-                            id: '10-3',
-                            path: '/newsCalendar'
                         }
+
+                        // {
+                        //     name: '新闻日历',
+                        //     id: '10-3',
+                        //     path: '/newsCalendar'
+                        // }
                     ]
                 }
                 // {

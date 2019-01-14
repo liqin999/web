@@ -97,7 +97,7 @@ export default {
                     children: [
                         {
                             id: 48,
-                            label: '头版1',
+                            label: '头版',
                             icon: 'el-icon-success'
                         },
                         {
@@ -134,6 +134,16 @@ export default {
                             id: 13,
                             label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 55,
+                            label: '家园',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 65,
+                            label: '军事',
+                            icon: 'iconfont icon-file1'
                         }
 
                     ]
@@ -144,24 +154,15 @@ export default {
                     children: [
                         {
                             id: 5,
-                            label: '一版',
+                            label: '民生',
                             icon: 'iconfont icon-file1'
                         },
                         {
                             id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 7,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 8,
-                            label: '四版',
+                            label: '军事',
                             icon: 'iconfont icon-file1'
                         }
+
                     ]
                 }
 

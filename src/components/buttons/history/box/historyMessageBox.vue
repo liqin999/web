@@ -48,14 +48,28 @@
                 <el-row :gutter="20"
                         class="pb10">
                     <el-col :span="6">
-                        <span>2018-10-31 12:34:56</span>
+                        <span>2019-1-1 13:50:56</span>
+                    </el-col>
+                    <el-col :span="18">
+                        <el-col :span="24">
+                            <span>由【编辑策划中心-强晓玲】 编辑 </span>
+                        </el-col>
+                        <el-col :span="24">
+                            <span>*处理意见：2019-1-1 13:50:56 开始编辑</span>
+                        </el-col>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="20"
+                        class="pb10">
+                    <el-col :span="6">
+                        <span>2019-1-11 12:34:56</span>
                     </el-col>
                     <el-col :span="18">
                         <el-col :span="24">
                             <span>由【创意策划中心-强晓玲】 编辑 </span>
                         </el-col>
                         <el-col :span="24">
-                            <span>*处理意见：2018-10-31 11:24:56 开始编辑</span>
+                            <span>*处理意见：2019-1-11 18:24:56 结束编辑</span>
                         </el-col>
                     </el-col>
                 </el-row>

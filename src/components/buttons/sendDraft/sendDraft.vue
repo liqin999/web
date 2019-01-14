@@ -5,7 +5,8 @@
         </span>
         <!-- 传稿弹框 -->
         <draft-message-box ref="draftBox"
-                           :draftData="draftData">
+                           :draftData="draftData"
+                           :sendData="sendData">
         </draft-message-box>
     </div>
 </template>
@@ -17,28 +18,32 @@ export default {
     components: {
         draftMessageBox
     },
-    // props: {
-    //     draft: {
-    //         type: [Object, Array],
-    //         default: [
-    //             {
-    //                 title: '23728784374374372983982378478refergege',
-    //                 name: '西虹市首富',
-    //                 size: '329084字'
-    //             },
-    //             {
-    //                 title: '23728784374374372983982378478refergege',
-    //                 name: '西虹市首富',
-    //                 size: '329084字'
-    //             },
-    //             {
-    //                 title: '23728784374374372983982378478refergege',
-    //                 name: '西虹市首富',
-    //                 size: '329084字'
-    //             }
-    //         ]
-    //     }
-    // },
+    props: {
+        sendData: {
+            type: Boolean,
+            default: false
+        }
+        // draft: {
+        //     type: [Object, Array],
+        //     default: [
+        //         {
+        //             title: '23728784374374372983982378478refergege',
+        //             name: '西虹市首富',
+        //             size: '329084字'
+        //         },
+        //         {
+        //             title: '23728784374374372983982378478refergege',
+        //             name: '西虹市首富',
+        //             size: '329084字'
+        //         },
+        //         {
+        //             title: '23728784374374372983982378478refergege',
+        //             name: '西虹市首富',
+        //             size: '329084字'
+        //         }
+        //     ]
+        // }
+    },
     data () {
         return {
             draftData: {

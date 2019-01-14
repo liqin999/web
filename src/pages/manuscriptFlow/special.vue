@@ -1,12 +1,14 @@
 <template>
     <el-container class="clearfix">
-        <el-aside width="250px">
+        <el-aside class="aside-content"
+                  width="250px">
             <div class="search-list2">
-                <h2>专题条件：</h2>
-                <el-checkbox class="mt5 special-che"
-                             v-model="showPersonchecked">只显示本人创建</el-checkbox>
-                <el-date-picker v-model="createDateValue"
-                                class="mt5"
+                <div class="pl10 pr10 mb10 mt10 fcolor">专题条件:</div>
+                    <el-checkbox class="mb10 pl10 pr10 text-overflow fcolor" style="width:100%"
+                        v-model="showPersonchecked">只显示本人创建</el-checkbox>
+                    <div class="date-time">
+                        <el-date-picker v-model="createDateValue"
+
                                 type="daterange"
                                 align="right"
                                 unlink-panels
@@ -14,10 +16,13 @@
                                 start-placeholder="开始日期"
                                 end-placeholder="结束日期"
                                 :picker-options="pickerOptions2">
-                </el-date-picker>
-                <el-button class="primary-btn mt5"
-                           @click="onSearch">查询</el-button>
+                        </el-date-picker>
+                    </div>
 
+                <div class="btn-group mt15 ac">
+                <el-button class="primary-btn"
+                           @click="onSearch">查询</el-button>
+                </div>
             </div>
             <left-menu :treeData="data2"
                        :defaultProps="defaultProps"
@@ -259,3 +264,12 @@ export default {
     }
 }
 </script>
+<style scoped>
+.date-time{
+    width: 100%;
+    padding:0 10px;
+}
+.fcolor{
+    color: #676767;
+}
+</style>

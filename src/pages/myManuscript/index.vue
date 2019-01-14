@@ -20,7 +20,7 @@
                 </search-input>
             </div>
         </el-header>
-        <el-container>
+        <el-container class="right-container">
             <el-header height="40px">
                 <div class="main-header-group">
                     <!-- 引入按钮的组的插件 -->
@@ -185,6 +185,7 @@
 </template>
 <script>
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// 签发组件
 import issuance from '@/components/buttons/issuance/issuance'
 import searchInput from '@/components/searchConditions/searchInput.vue'
 // import split from '@/components/buttons/split/split'
@@ -430,3 +431,8 @@ export default {
     }
 }
 </script>
+<style>
+.el-container .right-container{
+    background-color: #ffffff
+}
+</style>

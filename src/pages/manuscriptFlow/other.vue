@@ -97,7 +97,7 @@ export default {
                     children: [
                         {
                             id: 48,
-                            label: '头版1',
+                            label: '电讯领导',
                             icon: 'el-icon-success'
                         },
                         {
@@ -116,13 +116,18 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
+                            id: 12,
+                            label: '办公室',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
                             id: 5,
-                            label: '评论部',
+                            label: '其他',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
                             id: 13,
-                            label: '评论声音',
+                            label: '编委',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
@@ -133,23 +138,19 @@ export default {
                     label: '每日电讯微博',
                     children: [
                         {
-                            id: 5,
-                            label: '一版',
+                            id: 8,
+                            label: '网络部',
                             icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 7,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
-                        },
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    label: '公共部门',
+                    children: [
                         {
                             id: 8,
-                            label: '四版',
+                            label: '技术部',
                             icon: 'iconfont icon-file1'
                         }
                     ]
