@@ -65,8 +65,8 @@
                                     <el-tree :data="dataList1"
                                              ref="tree1"
                                              @check-change="handleCheckChange1"
+                                             :highlight-current="true"
                                              :default-expand-all="true"
-                                             show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -76,8 +76,8 @@
                                     <el-tree :data="dataList2"
                                              ref="tree2"
                                              @check-change="handleCheckChange2"
+                                             :highlight-current="true"
                                              :default-expand-all="true"
-                                             show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>

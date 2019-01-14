@@ -190,7 +190,8 @@
                             <template slot-scope="scope">{{ scope.row.article }}</template>
                         </el-table-column>
                         <el-table-column prop="id"
-                                         label="稿号">
+                                         label="稿号"
+                                         width="110">
                         </el-table-column>
                         <el-table-column prop="name"
                                          label="标题"

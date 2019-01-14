@@ -146,7 +146,7 @@
                 </el-row>
                 <el-row :gutter="20"
                         class="pl10 pr10">
-                    <el-col :span="24"><b class="font18">部门公共库（稿源库）</b></el-col>
+                    <el-col :span="24"><b class="font18">稿源库</b></el-col>
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
