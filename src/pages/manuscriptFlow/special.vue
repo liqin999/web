@@ -2,7 +2,7 @@
     <el-container class="clearfix">
         <el-aside width="250px">
             <div class="search-list2">
-                <h2>专题条件:</h2>
+                <h2>专题条件：</h2>
                 <el-checkbox class="mt5 special-che"
                              v-model="showPersonchecked">只显示本人创建</el-checkbox>
                 <el-date-picker v-model="createDateValue"
