@@ -100,14 +100,14 @@
                         </el-table-column> -->
 
                         <el-table-column label="摘要">
-                            <template slot-scope="scope">{{ scope.row.abstractt }}</template>
+                            <template slot-scope="scope">{{ scope.row.docContentsVo.abstractt }}</template>
                         </el-table-column>
                         <el-table-column label="内容"
                                          show-overflow-tooltip>
-                            <template slot-scope="scope">{{ scope.row.content }}</template>
+                            <template slot-scope="scope">{{ scope.row.docContentsVo.content }}</template>
                         </el-table-column>
                         <el-table-column label="引题">
-                            <template slot-scope="scope">{{ scope.row.leadinLine }}</template>
+                            <template slot-scope="scope">{{ scope.row.docContentsVo.leadinLine }}</template>
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -209,6 +209,11 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
+            tempSearchForm: {
+                page: 1,
+                pageSize: 2
+            },
+
             allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
             data2: [
                 {
@@ -427,6 +432,7 @@ export default {
             }],
             multipleSelection: [],
             mainTableHeight: null
+
         }
     },
     mounted () {
@@ -442,9 +448,9 @@ export default {
     },
     methods: {
         findList () {
-            getColumnsList({}).then(res => {
-                this.tableData3 = res
-                this.totalNumber = res.length
+            getColumnsList(this.tempSearchForm).then(res => {
+                this.tableData3 = res.dataBeanVo
+                this.totalNumber = res.pageTotal
             })
         },
         // getColumnsList
@@ -462,7 +468,8 @@ export default {
 
         },
         handleCurrentChange (val) {
-
+            this.tempSearchForm.page = val
+            this.findList()
         },
         getConcatData (checkData) { // 获得合并的元素的参数信息
             let param = {}
