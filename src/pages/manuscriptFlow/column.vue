@@ -42,6 +42,12 @@
                     <el-table-column prop="processingTime"
                                      label="处理时间">
                     </el-table-column>
+                    <el-table-column prop="handlePeople"
+                                     label="最近处理人">
+                    </el-table-column>
+                    <el-table-column prop="type2"
+                                     label="类型">
+                    </el-table-column>
                 </el-table>
             </el-main>
             <el-footer height="70">
@@ -96,9 +102,9 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 48,
+                            id: 1,
                             label: '头版',
-                            icon: 'el-icon-success'
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
                             id: 2,
@@ -131,8 +137,8 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 13,
-                            label: '评论声音',
+                            id: 8,
+                            label: '世界报道',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
@@ -141,9 +147,9 @@ export default {
                             icon: 'iconfont icon-file1'
                         },
                         {
-                            id: 65,
-                            label: '军事',
-                            icon: 'iconfont icon-file1'
+                            id: 10,
+                            label: '经济·民生',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
                     ]
@@ -153,14 +159,14 @@ export default {
                     label: '每日电讯微博',
                     children: [
                         {
-                            id: 5,
-                            label: '民生',
-                            icon: 'iconfont icon-file1'
+                            id: 1,
+                            label: '军事',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 6,
-                            label: '军事',
-                            icon: 'iconfont icon-file1'
+                            id: 2,
+                            label: '民生',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
                     ]
@@ -174,13 +180,15 @@ export default {
             },
             tableData3: [{
                 id: '20181029000029',
-                title: '这是一条测试稿件20181031',
+                title: '城市生活垃圾分类的“银川模式”',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',
                 status: '待审',
                 author: '郝玉',
-                processingTime: '10-29 10:31'
+                processingTime: '10-29 10:31',
+                handlePeople: '刘晶瑶',
+                type2: '文本'
             }, {
                 id: '20181029000029',
                 title: '一个西红柿的”世界地图“',
@@ -189,25 +197,9 @@ export default {
                 location: 'A叠-十四版',
                 status: '待审',
                 author: '郝玉',
-                processingTime: '10-29 10:31'
-            }, {
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
-                media: '新华每日电讯',
-                type: '版面',
-                location: 'A叠-十四版',
-                status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
-            }, {
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
-                media: '新华每日电讯',
-                type: '版面',
-                location: 'A叠-十四版',
-                status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
+                processingTime: '10-29 10:31',
+                handlePeople: '张三',
+                type2: '文本'
             }],
             multipleSelection: [],
             mainTableHeight: null

@@ -138,10 +138,15 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-ico_print"></i>
                             <span>打印</span>
-                        </div>
+                        </div> -->
+                        <printing>
+                            <i slot="icon"
+                               class="iconfont icon-ico_print"></i>
+                            <span slot="iconName">打印</span>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -181,6 +186,8 @@ import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
         searchInput,
@@ -191,7 +198,8 @@ export default {
         concat,
         version,
         draftLabel,
-        history
+        history,
+        printing
     },
     data () {
         return {
@@ -204,6 +212,9 @@ export default {
                 media: '',
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
+            },
+            concat: {
+
             },
             allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
             data2: [

@@ -153,10 +153,11 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-ico_print"></i>
-                            <span>打印</span>
-                        </div>
+                        <printing>
+                            <i slot="icon"
+                                class="iconfont icon-ico_print"></i>
+                            <span slot="iconName">打印</span>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -194,6 +195,8 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
         searchInput,
@@ -202,7 +205,8 @@ export default {
         issuance,
         version,
         draftLabel,
-        history
+        history,
+        printing
     },
     data () {
         return {

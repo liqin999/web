@@ -5,8 +5,7 @@
         </span>
         <!-- 传稿弹框 -->
         <draft-message-box ref="draftBox"
-                           :draftData="draftData"
-                           :sendData="sendData">
+                           :draftData="draftData">
         </draft-message-box>
     </div>
 </template>
@@ -18,37 +17,37 @@ export default {
     components: {
         draftMessageBox
     },
-    props: {
-        sendData: {
-            type: Boolean,
-            // 传稿/撤稿判断，默认为false,则为撤稿
-            default: false
-        }
-        // draft: {
-        //     type: [Object, Array],
-        //     default: [
-        //         {
-        //             title: '23728784374374372983982378478refergege',
-        //             name: '西虹市首富',
-        //             size: '329084字'
-        //         },
-        //         {
-        //             title: '23728784374374372983982378478refergege',
-        //             name: '西虹市首富',
-        //             size: '329084字'
-        //         },
-        //         {
-        //             title: '23728784374374372983982378478refergege',
-        //             name: '西虹市首富',
-        //             size: '329084字'
-        //         }
-        //     ]
-        // }
-    },
+    // props: {
+    //     draft: {
+    //         type: [Object, Array],
+    //         default: [
+    //             {
+    //                 title: '23728784374374372983982378478refergege',
+    //                 name: '西虹市首富',
+    //                 size: '329084字'
+    //             },
+    //             {
+    //                 title: '23728784374374372983982378478refergege',
+    //                 name: '西虹市首富',
+    //                 size: '329084字'
+    //             },
+    //             {
+    //                 title: '23728784374374372983982378478refergege',
+    //                 name: '西虹市首富',
+    //                 size: '329084字'
+    //             }
+    //         ]
+    //     }
+    // },
     data () {
         return {
             draftData: {
                 draftList: [
+                    {
+                        title: '23728784374374372983982378478refergege',
+                        name: '西虹市首富',
+                        size: '329084字'
+                    },
                     {
                         title: '23728784374374372983982378478refergege',
                         name: '西虹市首富',

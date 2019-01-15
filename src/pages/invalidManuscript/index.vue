@@ -85,13 +85,16 @@
             <el-main class="main-content">
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <el-col :span="3"><b class="font18">电讯稿库</b></el-col>
+                    <el-col :span="3"><b class="font18">工作稿库</b></el-col>
                     <el-col :span="21">
                         <div class="btn-group">
                             <el-button class="primary-btn">恢复</el-button>
                             <el-button class="primary-btn">编辑</el-button>
                             <el-button class="primary-btn">选送</el-button>
                             <el-button class="primary-btn">撤稿</el-button>
+                            <!-- <send-draft>
+                                <span slot="iconName">撤稿</span>
+                            </send-draft> -->
                             <el-button class="primary-btn">内容</el-button>
                             <el-button class="primary-btn">历史</el-button>
                         </div>
@@ -105,21 +108,27 @@
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="稿号">
+                            <!-- <el-table-column prop="zugao"
+                                             label="组稿">
+                            </el-table-column> -->
+                            <el-table-column label="稿号"
+                                             width="130px">
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
-                                             label="标题">
+                                             label="标题"
+                                             width="180px">
                             </el-table-column>
                             <el-table-column prop="media"
                                              label="所属媒体"
                                              show-overflow-tooltip>
-                            </el-table-column>
+                            </el-table-column> -->
                             <el-table-column prop="status"
                                              label="状态">
                             </el-table-column>
                             <el-table-column prop="time"
-                                             label="处理时间">
+                                             label="处理时间"
+                                             width="150px">
                             </el-table-column>
                             <el-table-column prop="author"
                                              label="第一作者">
@@ -142,6 +151,12 @@
                             <el-table-column prop="articleNumber"
                                              label="稿数">
                             </el-table-column>
+                            <!-- <el-table-column prop="attachment"
+                                             label="附件">
+                            </el-table-column>
+                            <el-table-column prop="type"
+                                             label="类型">
+                            </el-table-column> -->
                         </el-table>
                     </el-col>
                 </el-row>
@@ -157,15 +172,18 @@
                                   @selection-change="handleSelectionChange">
                             <el-table-column type="selection">
                             </el-table-column>
-                            <el-table-column label="稿号">
+                            <el-table-column label="稿号"
+                                             width="130px">
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="title"
-                                             label="标题">
+                                             label="标题"
+                                             width="180px">
                             </el-table-column>
 
                             <el-table-column prop="time"
-                                             label="创建时间">
+                                             label="创建时间"
+                                             width="150px">
                             </el-table-column>
                             <el-table-column prop="author"
                                              label="第一作者">
@@ -200,34 +218,40 @@
     </el-container>
 </template>
 <script>
+// 撤稿按钮组件
+// import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 export default {
     components: {
+        // sendDraft
 
     },
     data () {
         return {
             tableData3: [
                 {
+                    zugao: '',
                     id: '20181031000034',
-                    name: '测试稿件20181031',
+                    name: '一个西红柿的”世界地图“',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31 11:09:34',
-                    author: '强晓玲',
+                    time: '2019-1-11 11:09:34',
+                    author: '赵倩',
                     source: '自写稿',
                     type: '文本',
                     map: '',
                     format: '.txt',
                     wordNumber: '1345',
                     articleNumber: '1'
+                    // attachment: '',
+                    // type: ''
 
                 },
                 {
-                    id: '20181031000034',
+                    id: '20181031000045',
                     name: '测试稿件20181031',
                     media: '新华每日电讯',
-                    status: '待审',
-                    time: '2018-10-31 11:09:34',
+                    status: '已审',
+                    time: '2018-4-31 11:09:34',
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
@@ -237,12 +261,12 @@ export default {
                     articleNumber: '1'
                 },
                 {
-                    id: '20181031000034',
-                    name: '这是一条测试',
+                    id: '20181031000023',
+                    name: '城市垃圾分类“银川模式”',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31 11:09:34',
-                    author: '强晓玲',
+                    author: '郝玉',
                     source: '自写稿',
                     type: '文本',
                     map: '',
@@ -251,12 +275,12 @@ export default {
                     articleNumber: '1'
                 },
                 {
-                    id: '20181031000034',
+                    id: '20181031000012',
                     name: '这是一条测试',
                     media: '新华每日电讯',
                     status: '待审',
-                    time: '2018-10-31 11:09:34',
-                    author: '强晓玲',
+                    time: '2018-01-31 11:09:34',
+                    author: '刘晶瑶',
                     source: '自写稿',
                     type: '文本',
                     map: '',
@@ -268,10 +292,10 @@ export default {
 
             tableData4: [
                 {
-                    id: '20181031000034',
-                    title: '这是一条测试',
-                    time: '2018-10-31 11:09:34',
-                    author: '强晓玲',
+                    id: '20181031000013',
+                    title: '城市垃圾分类“银川模式”',
+                    time: '2019-1-3 9:09:34',
+                    author: '赵倩',
                     type: '文本',
                     map: '',
                     format: '.txt',
@@ -279,10 +303,10 @@ export default {
                     source: '自写稿'
                 },
                 {
-                    id: '20181031000034',
-                    title: '这是一条测试',
+                    id: '20181031000015',
+                    title: '一次建成里程最长高铁',
                     time: '2018-10-31 11:09:34',
-                    author: '强晓玲',
+                    author: '刘晶瑶',
                     type: '文本',
                     map: '',
                     format: '.txt',

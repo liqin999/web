@@ -307,7 +307,6 @@ export default {
         textareaChange2 (val) {
             this.textarea2 = val
         }
-
     }
 }
 </script>

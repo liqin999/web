@@ -134,7 +134,7 @@ export default {
     },
     data () {
         return {
-            radioData: '1',
+            // radioData: '1',
             submitData: null,
             radioName1: '1',
             textarea: '请输入文字',

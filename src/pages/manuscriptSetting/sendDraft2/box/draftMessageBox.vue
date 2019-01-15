@@ -1,58 +1,46 @@
 <template>
-    <el-dialog class=""
-               :title="sendData ? '传稿' : '撤稿'"
+    <el-dialog title="建稿"
                @close="messageBoxClose()"
                :visible.sync="draftData.contentShow"
                top="15vh"
+               width="400px"
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-            <!-- 待撤稿/传稿件列表 -->
-            <el-row :gutter="20"
-                    class="message-lists clearfix">
-                <el-col :span="3"
-                        class="tab-padding">
-                            <b class="message-title" v-if='sendData'>待传稿件</b>
-                            <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
-                        </el-col>
-                <el-col :span="21"
-                        class="tab-padding">
-                    <template v-for="(item,index) in draftData.draftList">
-                        <div :key="index"
-                             class="message-list clearfix">
-                            <el-col :span="9"><i></i>{{ item.title }}</el-col>
-                            <el-col :span="9"><b>{{ item.name }}</b></el-col>
-                            <el-col :span="6">{{ item.size }}</el-col>
-                        </div>
-                    </template>
-                </el-col>
-            </el-row>
+
             <!-- 选项内容区 -->
             <el-row :gutter="20"
                     class="message-content clearfix">
                 <!-- 送往 -->
-                <el-col :span="15">
+                <el-col :span="24">
                     <el-row :gutter="20">
-                        <el-col :span="3"
-                                class="tab-padding"><b class="message-title padding-bottom10">送往</b></el-col>
-                        <el-col :span="14">
+
+                        <el-col :span="24">
+
                             <el-row>
+                                <el-col :span="3">
+                                    <span class="message-title">目标：</span>
+                                </el-col>
                                 <template v-for="label in radioLabel">
-                                    <el-col :span="12"
+                                    <el-col :span="7"
                                             class="text-overflow"
                                             :key="label">
-                                        <el-radio v-model="radioName"
+                                        <el-radio v-model="radioData"
                                                   :label="label"
                                                   @change="labelChange">{{ label }}</el-radio>
                                     </el-col>
                                 </template>
                             </el-row>
                         </el-col>
-                        <el-col :span="7">
+                        <el-col :span="24">
                             <el-row :gutter="0">
                                 <el-col :span="24"
                                         class="padding-top10">
                                     <template>
+                                        <el-col :span="3">
+                                            <span class="message-title">媒体：</span>
+                                        </el-col>
+
                                         <el-select v-model="topValue"
                                                    placeholder="请选择">
                                             <el-option v-for="item in topTitle"
@@ -74,9 +62,9 @@
                             <el-row>
                                 <el-col :span="12"
                                         class="message-checkbox">
-                                    <el-tree :data="dataList"
-                                             :default-expanded-keys="[2, 3]"
-                                             :highlight-current="true"
+                                    <el-tree :data="dataList1"
+                                             :default-expand-all="true"
+                                             show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -84,8 +72,8 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
-                                             :default-expanded-keys="[2, 3]"
-                                             :highlight-current="true"
+                                             :default-expand-all="true"
+                                             show-checkbox
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -93,63 +81,32 @@
                             </el-row>
                         </el-col>
                     </el-row>
+
+                    <el-row>
+
+                        <el-col :span="24">
+
+                            <el-row>
+                                <el-col :span="3">
+                                    <span class="message-title">下次：</span>
+                                </el-col>
+                                <template>
+                                    <el-col :span="7"
+                                            class="text-overflow"
+                                            :key="label">
+                                        <el-radio v-model="radioName1"
+                                                  label="1">入库前提示 </el-radio>
+                                        <el-radio v-model="radioName1"
+                                                  label="2">直接入库</el-radio>
+                                    </el-col>
+                                </template>
+                            </el-row>
+                        </el-col>
+
+                    </el-row>
                 </el-col>
                 <!-- 专题 -->
-                <el-col :span="9">
-                    <el-row :gutter="10">
-                        <!-- <el-col :span="24"
-                                class="clearfix"><b class="message-title padding-bottom10">专题</b></el-col>
-                        <el-col :span="17">
-                            <template>
-                                <div class="block">
-                                    <el-date-picker v-model="pickerValue"
-                                                    type="daterange"
-                                                    align="right"
-                                                    unlink-panels
-                                                    range-separator="至"
-                                                    start-placeholder="开始日期"
-                                                    end-placeholder="结束日期"
-                                                    :picker-options="pickerOptions"
-                                                    :clearable='false'
-                                                    @change="pickerChange">
-                                    </el-date-picker>
-                                </div>
-                            </template>
-                        </el-col> -->
-                        <!-- <el-col :span="7">
-                            <el-button plain
-                                       class="btn-inquire"
-                                       @click="searchTime">查询</el-button>
-                        </el-col> -->
-                        <!-- </el-row> -->
-                    </el-row>
-                    <!-- 传稿意见 -->
-                    <el-row :gutter="10"
-                            class="">
-                        <el-col :span="24"
-                                class="tab-padding">
-                            <b class="message-title" v-if='sendData'>待传稿件</b>
-                            <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
-                            <span class="redColor">（不超过255个字）</span>
-                        </el-col>
-                        <!-- <el-col :span="24"
-                                class="clearfix"> -->
-                                <!-- <b class="message-title padding-bottom10 inline-block" v-if='sendData'>撤稿意见</b>
-                                <b class="message-title padding-bottom10 inline-block" v-else-if='!sendData'>撤稿意见</b> -->
-                                <!-- <span class="redColor">（不超过255个字）</span> -->
-                                <!-- </el-col> -->
-                        <!-- <el-row> -->
-                        <el-col :span="24">
-                            <el-input type="textarea"
-                                      :rows="12"
-                                      placeholder="请输入内容"
-                                      v-model="textarea"
-                                      @change="textareaChange">
-                            </el-input>
-                        </el-col>
-                        <!-- </el-row> -->
-                    </el-row>
-                </el-col>
+
             </el-row>
             <!-- 送往 栏目列表 -->
         </div>
@@ -167,31 +124,27 @@
 <script>
 export default {
     props: {
-        sendData: {
-            type: Boolean
-        },
         draftData: {
             type: Object
         }
     },
     data () {
         return {
+            // radioData: '1',
             submitData: null,
+            radioName1: '1',
             textarea: '请输入文字',
             // 栏目选择
-            radioName: '版面/栏目稿库',
+            radioData: '版面/栏目稿库',
             radioLabel: [
-                '版面/栏目稿库',
-                '媒体公共库',
-                '我的稿库',
-                '组室公共库',
-                '其他人员库',
-                '专题库'
+                '栏目稿库',
+                '版面稿库',
+                '我的稿库'
             ],
             topValue: '新华每日电讯',
-            dataList: [
+            dataList1: [
                 {
-                    id: 2,
+                    id: 1,
                     label: '栏目',
                     children: [{
                         id: 5,
@@ -200,48 +153,43 @@ export default {
                     {
                         id: 6,
                         label: '要闻'
-                    },
-                    {
-                        id: 55,
+                    }, {
+                        id: 54,
                         label: '国内新闻'
                     },
                     {
-                        id: 56,
-                        label: '国际新闻'
-                    },
-                    {
-                        id: 546,
-                        label: '新闻素材'
-                    }]
+                        id: 62,
+                        label: '新闻焦点'
+                    }
+
+                    ]
                 }
 
             ],
             dataList2: [
                 {
-                    id: 2,
+                    id: 3,
                     label: 'A叠',
-                    children: [{
-                        id: 5,
-                        label: '一版'
-                    },
-                    {
-                        id: 6,
-                        label: '二版'
-                    },
-                    {
-                        id: 55,
-                        label: '三版'
-                    },
-                    {
-                        id: 56,
-                        label: '四版'
-                    },
-                    {
-                        id: 546,
-                        label: '五版'
-                    }]
-                }
+                    children: [
+                        {
+                            id: 7,
+                            label: '一版'
+                        },
+                        {
+                            id: 8,
+                            label: '二版'
+                        },
+                        {
+                            id: 6,
+                            label: '三版'
+                        },
+                        {
+                            id: 2,
+                            label: '四版'
+                        }
 
+                    ]
+                }
             ],
             topTitle: [
                 {
@@ -373,36 +321,33 @@ export default {
         },
         // 点击确定按钮（提交）
         draftConfirm () {
-            this.draftData.contentShow = false
+            // 路由的跳转
+            this.$router.push({
+                path: '/columnsLayout'
+            })
         }
     },
     computed: {
-        dataList1 () {
-            // let idx = 0;
-            // this.topTitle.forEach((item,index) => {
-            //     if (this.topValue == item.label){
-            //         idx = index;
-            //     }
-            // });
-            // let dataList = this.topTitle[0].list;
-            return this.dataList
-        }
+
     }
 }
 </script>
 <style lang="scss" scoped>
 .message-box {
+    padding: 0px 10px;
     .message-lists {
         padding-bottom: 10px;
         @include border;
         .message-list {
             .el-col {
-                line-height: 30px;
                 @extend .text-overflow;
+                line-height: 30px;
             }
         }
     }
     .message-content {
+        padding-top: 15px;
+        line-height: 30px;
         .message-checkbox {
             height: 200px;
             @include border(all);
@@ -410,10 +355,4 @@ export default {
         }
     }
 }
-</style>
-<style>
-.message-box .message-title{
-    line-height: 25px
-}
-
 </style>

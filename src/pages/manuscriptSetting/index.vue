@@ -155,8 +155,11 @@
                                 <span data-v-6eb3df45="">刷新</span>
                             </span>
                         </div>
-
-                        <send-draft>
+                        <!-- 建稿按钮组件 -->
+                        <send-draft2>
+                            <span slot="iconName">建稿</span>
+                        </send-draft2>
+                        <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
                         <div data-v-6eb3df45=""
@@ -249,10 +252,11 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-ico_print"></i>
-                            <span>打印</span>
-                        </div>
+                        <printing>
+                            <i slot="icon"
+                                class="iconfont icon-ico_print"></i>
+                            <span slot="iconName">打印</span>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -287,12 +291,18 @@ import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 建稿按钮弹框
+import sendDraft2 from '@/pages/manuscriptSetting/sendDraft2/sendDraft2'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
         leftMenu,
         sendDraft,
         draftLabel,
-        history
+        history,
+        sendDraft2,  // 建稿按钮弹框
+        printing
     },
     data () {
         return {
@@ -347,45 +357,63 @@ export default {
                     label: '全部稿件',
                     children: [
                         {
-                            id: 48,
-                            label: '头版',
-                            icon: 'el-icon-success'
-                        },
-                        {
-                            id: 12,
-                            label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 4,
-                            label: '国际焦点',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 13,
-                            label: '评论声音',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            id: 1,
+                            label: '未分类稿件',
+                            children: [
+                                {
+                                    id: 1 - 1,
+                                    label: '头版1',
+                                    icon: 'el-icon-success'
+                                }
+                            ]
+
                         },
 
                         {
-                            id: 7,
-                            label: '科技',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 8,
-                            label: '教育',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 76,
-                            label: '宏观经济',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 58,
-                            label: '行业经济',
-                            icon: 'iconfont icon-file1'
+                            id: 2,
+                            label: '国际新闻信息分类',
+                            children: [
+                                {
+                                    id: 1,
+                                    label: '政治法律',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 2,
+                                    label: '军事',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 3,
+                                    label: '社会',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 4,
+                                    label: '生态环境',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 5,
+                                    label: '科技',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 6,
+                                    label: '教育',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 7,
+                                    label: '宏观经济',
+                                    icon: 'iconfont icon-file1'
+                                },
+                                {
+                                    id: 8,
+                                    label: '行业经济',
+                                    icon: 'iconfont icon-file1'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -402,12 +430,12 @@ export default {
                 status: '已处理',
                 map: '',
                 createDate: '201810-31 ',
-                author: '郝玉',
+                author: '赵倩',
                 authorType: '',
                 type: '文本'
             }, {
-                id: '20181029029',
-                name: '一个西红柿的”世界地图“',
+                id: '20181029011',
+                name: '城市生活垃圾分类的“银川模式”',
                 wordNumber: '3578',
                 status: '已处理',
                 map: '',
@@ -416,13 +444,13 @@ export default {
                 authorType: '',
                 type: '文本'
             }, {
-                id: '20181029029',
-                name: '一个西红柿的”世界地图“',
+                id: '20181029050',
+                name: '腾讯体育是中国知名的体育门户网站',
                 wordNumber: '3578',
-                status: '已处理',
+                status: '待审',
                 map: '',
                 createDate: '201810-31 ',
-                author: '郝玉',
+                author: '刘晶瑶',
                 authorType: '',
                 type: '文本'
             }],

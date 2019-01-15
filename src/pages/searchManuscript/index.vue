@@ -28,11 +28,11 @@
                 <div class="pl10"><b class="font18">资源类型</b></div>
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <template v-for="label in radioLabel1">
-                        <el-col :span="12"
+                    <template v-for="label in radioLabel2">
+                        <el-col :span="17"
                                 class="text-overflow"
                                 :key="label">
-                            <el-radio v-model="radioName1"
+                            <el-radio v-model="radioName2"
                                       :label="label"
                                       @change="labelChange">{{ label }}</el-radio>
                         </el-col>
@@ -77,7 +77,7 @@
                     </el-col>
                 </el-row>
                 <div class="btn-group mt15">
-                    <el-button class="primary-btn">投送</el-button>
+                    <el-button class="primary-btn">搜索</el-button>
                     <el-button class="reset-btn">关闭</el-button>
                 </div>
                 <!-- </el-row> -->
@@ -85,7 +85,7 @@
             <el-main class="main-content">
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <el-col :span="3"><b class="font18">工作稿库</b></el-col>
+                    <el-col :span="3"><b class="font18">电讯稿库</b></el-col>
                     <el-col :span="21">
                         <div class="btn-group">
                             <el-button class="primary-btn">恢复</el-button>
@@ -107,7 +107,8 @@
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
-                                             label="标题">
+                                             label="标题"
+                                              width="170">
                             </el-table-column>
                             <el-table-column prop="media"
                                              label="所属媒体"
@@ -161,7 +162,8 @@
                                 <template slot-scope="scope">{{ scope.row.id }}</template>
                             </el-table-column>
                             <el-table-column prop="name"
-                                             label="标题">
+                                             label="标题"
+                                             width="170">
                             </el-table-column>
                             <el-table-column prop="media"
                                              label="所属媒体"
@@ -171,14 +173,11 @@
                                              label="状态">
                             </el-table-column>
                             <el-table-column prop="time"
-                                             label="处理时间"
+                                             label="创建时间"
                                              width="100">
                             </el-table-column>
                             <el-table-column prop="author"
                                              label="第一作者">
-                            </el-table-column>
-                            <el-table-column prop="source"
-                                             label="来源">
                             </el-table-column>
                             <el-table-column prop="type"
                                              label="类型">
@@ -194,6 +193,9 @@
                             </el-table-column>
                             <el-table-column prop="articleNumber"
                                              label="稿数">
+                            </el-table-column>
+                            <el-table-column prop="source"
+                                             label="来源">
                             </el-table-column>
                         </el-table>
                     </el-col>
@@ -216,7 +218,7 @@ export default {
             tableData3: [
                 {
                     id: '2018103100',
-                    name: '测试稿件1',
+                    name: '脱贫攻坚羊信发“羊财”',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',
@@ -230,45 +232,17 @@ export default {
 
                 },
                 {
-                    id: '2018103101',
-                    name: '测试稿件2',
-                    media: '新华每日电讯',
-                    status: '待审',
-                    time: '2018-10-31',
-                    author: '强晓玲',
-                    source: '自写稿',
-                    type: '文本',
-                    map: '',
-                    format: '.txt',
-                    wordNumber: '1345',
-                    articleNumber: '1'
-                },
-                {
-                    id: '2018103102',
-                    name: '测试稿件3',
-                    media: '新华每日电讯',
-                    status: '待审',
-                    time: '2018-10-31',
-                    author: '强晓玲',
-                    source: '自写稿',
-                    type: '文本',
-                    map: '',
-                    format: '.txt',
-                    wordNumber: '1345',
-                    articleNumber: '1'
-                },
-                {
                     id: '2018103103',
-                    name: '测试稿件',
+                    name: '城市生活垃圾分类',
                     media: '新华每日电讯',
-                    status: '待审',
-                    time: '2018-10-31',
-                    author: '强晓玲',
+                    status: '已审',
+                    time: '2019-1-11',
+                    author: '刘晶瑶',
                     source: '自写稿',
                     type: '文本',
                     map: '',
-                    format: '.txt',
-                    wordNumber: '1345',
+                    format: '.doc',
+                    wordNumber: '65231',
                     articleNumber: '1'
                 }
             ],
@@ -281,6 +255,11 @@ export default {
             radioLabel1: [
                 '内容匹配',
                 '中文分词'
+            ],
+            radioName2: '资源类型',
+            radioLabel2: [
+                '稿件',
+                '线索/采访单/专题'
             ],
             // 栏目选择
             radioName: '栏目库',
