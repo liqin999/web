@@ -20,10 +20,12 @@
                                  label="版本">
                 </el-table-column>
                 <el-table-column prop="title"
-                                 label="标题">
+                                 width="150px"
+                                 label="标题"
+                                 show-overflow-tooltip>
                 </el-table-column>
                 <el-table-column prop="date"
-                                 width="100px"
+                                 width="150px"
                                  label="处理时间">
                 </el-table-column>
                 <el-table-column prop="dealPerson"

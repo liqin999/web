@@ -96,7 +96,7 @@
                         </el-table-column>
                         <el-table-column prop="processingTime"
                                          label="处理时间"
-                                         width="180px">
+                                         width="150px">
                         </el-table-column>
                         <el-table-column prop="dealingPeople"
                                          label="处理人">
@@ -109,7 +109,8 @@
                                          show-overflow-tooltip>
                         </el-table-column>
                         <el-table-column prop="preData"
-                                         label="预计刊登日期">
+                                         label="预计刊登日期"
+                                         width="150px">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -194,26 +195,6 @@ export default {
     },
     data () {
         return {
-            concatData: {
-                contentShow: false,
-                tableData: [{
-                    num: '20181029000029',
-                    title: '这是一条测试稿件20181031'
-
-                }, {
-                    num: '20181029000030',
-                    title: '脱贫攻坚,羊信发“羊财'
-
-                }, {
-                    num: '20181029000030',
-                    title: '脱贫攻坚,“80后”移民夫妻“百元计...'
-
-                }, {
-                    num: '20181029000032',
-                    title: '脱贫攻坚,“80后”移民夫妻“百元计...'
-
-                }]
-            },
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -248,6 +229,11 @@ export default {
                         {
                             id: 12,
                             label: '国内新闻',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 1222,
+                            label: '脱贫攻坚',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
@@ -317,50 +303,38 @@ export default {
             },
             tableData3: [{
                 date: '2018-10-30',
-                title: '这是一条测试稿件20181031',
+                title: '（新华每日电讯）千年古镇里走中药种植路 百折不挠尝！',
                 address: '脱贫攻坚',
                 number: 3578,
-                state: '待审',
+                state: '已审',
                 deliverer: '方立新',
                 processingTime: '2018-10-30 14:23',
-                dealingPeople: '方立新',
-                firstAuthor: '方立新',
+                dealingPeople: '强晓玲',
+                firstAuthor: '关俏俏',
                 medio: '新华每日电讯',
                 preData: ''
             }, {
                 date: '2018-10-29',
-                title: '脱贫攻坚羊信发“羊财”',
+                title: '（脱贫攻坚）羊信发“羊财”',
                 address: '脱贫攻坚',
                 number: 768,
                 state: '待审',
                 deliverer: '方立新',
                 processingTime: '2018-10-29 17:18',
-                dealingPeople: '方立新',
-                firstAuthor: '方立新',
+                dealingPeople: '刘学奎',
+                firstAuthor: '徐海波',
                 medio: '新华每日电讯',
                 preData: ''
             }, {
-                date: '2016-05-04',
-                title: '脱贫攻坚“80后”移民夫妻“百元计...',
+                date: '2018-10-20',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
                 address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',
-                deliverer: '方立新',
+                deliverer: '刘学奎',
                 processingTime: '2018-10-29 10:45',
                 dealingPeople: '方立新',
-                firstAuthor: '方立新',
-                medio: '新华每日电讯',
-                preData: ''
-            }, {
-                date: '2016-05-04',
-                title: '脱贫攻坚“80后”移民夫妻“百元计...',
-                address: '脱贫攻坚',
-                number: 1024,
-                state: '待审',
-                deliverer: '方立新',
-                processingTime: '2018-10-29 10:45',
-                dealingPeople: '方立新',
-                firstAuthor: '方立新',
+                firstAuthor: '李浩',
                 medio: '新华每日电讯',
                 preData: ''
             }],

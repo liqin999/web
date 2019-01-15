@@ -223,24 +223,16 @@ export default {
                     children: [
                         {
                             id: 48,
-                            label: 'test',
+                            label: '科技',
                             icon: 'iconfont icon-file-b- ft-ffd658'
-                        }
-                    ]
-                },
-                {
-                    id: 2,
-                    label: '每日电讯微博',
-                    children: [
+                        },
                         {
-                            id: 24,
-                            label: 'test',
+                            id: 49,
+                            label: '文化娱乐',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
-
                     ]
                 }
-
             ],
 
             versionData: {
@@ -310,30 +302,36 @@ export default {
             },
             tableData3: [{
                 date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
+                title: '（脱贫攻坚）陕西耀州：革命老区再绘脱贫攻坚新图景',
                 repDrawing: '',
-                number: 992,
+                number: 1709,
                 state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-31 14:23',
-                firstAuthor: '强晓玲',
+                dealingPeople: '刘学奎',
+                processingTime: '2018-10-31 15:22:12',
+                firstAuthor: '李浩',
                 medio: '新华每日电讯',
                 type: '文本',
                 doubt: 0,
-                preData: ''
+                source: '自写稿',
+                gnumber: 1,
+                file: '.txt',
+                fujian: 0
             }, {
-                date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
+                date: '2018-10-29',
+                title: '（新华时评）下足绣花功才能啃下硬骨头',
                 repDrawing: '',
-                number: 992,
+                number: 1709,
                 state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-31 14:23',
-                firstAuthor: '强晓玲',
+                dealingPeople: '方立新',
+                processingTime: '2018-10-29 10:09:34',
+                firstAuthor: '于文静',
                 medio: '新华每日电讯',
                 type: '文本',
                 doubt: 0,
-                preData: ''
+                source: '自写稿',
+                gnumber: 1,
+                file: '.txt',
+                fujian: 0
             }],
             multipleSelection: [],
             mainTableHeight: null

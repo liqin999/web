@@ -292,7 +292,7 @@ export default {
             },
             tableData3: [{
                 date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
+                title: '一个西红柿的“世界地图”',
                 repDrawing: '',
                 number: 992,
                 state: '待审',
@@ -304,17 +304,16 @@ export default {
                 doubt: 0,
                 preData: ''
             }, {
-                date: '2018-10-29',
-                title: '这是一条测试稿件20181031',
-                repDrawing: '',
+                date: '2018-10-20',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
+                address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-29 14:23',
-                firstAuthor: '强晓玲',
+                deliverer: '刘学奎',
+                processingTime: '2018-10-29 10:45',
+                dealingPeople: '方立新',
+                firstAuthor: '李浩',
                 medio: '新华每日电讯',
-                type: '文本',
-                doubt: 0,
                 preData: ''
             }],
             multipleSelection: [],

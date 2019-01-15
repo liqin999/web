@@ -414,19 +414,6 @@ export default {
             ],
             tableData3: [{
                 zugao: '',
-                number: '20181029000029',
-                title: '这是一条测试稿件20181031',
-                repDrawing: '',
-                state: '已处理',
-                banmian: '一版',
-                size: '3578',
-                dealingPeople: '唐牛',
-                data: '10-31',
-                medio: '新华每日资讯',
-                firstAuthor: '郝玉',
-                type: '文本'
-            }, {
-                zugao: '',
                 number: '20181030000037',
                 title: '（新华全媒头条）西藏阿里楚松村四代房：中国边境的...',
                 repDrawing: '',

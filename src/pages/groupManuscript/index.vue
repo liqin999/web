@@ -293,83 +293,33 @@ export default {
                 }
 
             ],
-            versionData: {
-                contentShow: false,
-                tableData: [{
-                    num: 1,
-                    title: '12',
-                    date: '2016-05-03',
-                    dealPerson: '1王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }, {
-                    num: 2,
-                    title: '333',
-                    date: '2015-05-03',
-                    dealPerson: '2王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }, {
-                    num: 3,
-                    title: '8888',
-                    date: '2016-05-03',
-                    dealPerson: '3王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }]
-            },
-            concatData: {
-                contentShow: false,
-                tableData: [{
-                    num: '1',
-                    title: '王小虎1'
-
-                }, {
-                    num: '2',
-                    title: '王小虎2'
-
-                }, {
-                    num: '3',
-                    title: '王小虎3'
-
-                },
-                {
-                    num: '4',
-                    title: '王小虎4'
-
-                }, {
-                    num: '5',
-                    title: '王小虎5'
-
-                },
-                {
-                    num: '6',
-                    title: '王小虎6'
-
-                }]
-            },
             defaultProps: {
                 children: 'children',
                 label: 'label'
             },
             tableData3: [{
-                date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
-                repDrawing: '',
-                number: 992,
+                date: '2018-10-29',
+                title: '（脱贫攻坚）羊信发“羊财”',
+                address: '脱贫攻坚',
+                number: 768,
                 state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-31 14:23',
-                firstAuthor: '强晓玲',
+                deliverer: '方立新',
+                processingTime: '2018-10-29 17:18',
+                dealingPeople: '刘学奎',
+                firstAuthor: '徐海波',
                 medio: '新华每日电讯',
-                type: '文本',
-                doubt: 0,
+                preData: ''
+            }, {
+                date: '2018-10-20',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
+                address: '脱贫攻坚',
+                number: 1024,
+                state: '待审',
+                deliverer: '刘学奎',
+                processingTime: '2018-10-29 10:45',
+                dealingPeople: '方立新',
+                firstAuthor: '李浩',
+                medio: '新华每日电讯',
                 preData: ''
             }],
             multipleSelection: [],

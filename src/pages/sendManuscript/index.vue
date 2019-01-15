@@ -229,7 +229,7 @@ export default {
         return {
             tableData: [
                 { id: '20181031000034',
-                    name: '这是一条测试稿件20181031',
+                    name: '一个西红柿的“世界地图”',
                     source: '自写稿',
                     type: '文本'
                 }
