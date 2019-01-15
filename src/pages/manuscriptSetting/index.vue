@@ -155,7 +155,10 @@
                                 <span data-v-6eb3df45="">刷新</span>
                             </span>
                         </div>
-
+                        <!-- 建稿按钮组件 -->
+                        <send-draft2>
+                            <span slot="iconName">建稿</span>
+                        </send-draft2>
                         <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
@@ -286,12 +289,15 @@ import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 建稿按钮弹框
+import sendDraft2 from '@/pages/manuscriptSetting/sendDraft2/sendDraft2'
 export default {
     components: {
         leftMenu,
         sendDraft,
         draftLabel,
-        history
+        history,
+        sendDraft2  // 建稿按钮弹框
     },
     data () {
         return {

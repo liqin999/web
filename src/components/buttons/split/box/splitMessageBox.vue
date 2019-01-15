@@ -70,7 +70,7 @@ export default {
                 fontNum: '1518'
             }, {
                 num: '2',
-                title: '习近平把脉长江',
+                title: '绿色发展之路',
                 fontNum: '18'
             }]
         }
