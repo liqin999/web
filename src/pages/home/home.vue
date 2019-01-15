@@ -1,26 +1,40 @@
 <template>
     <el-container>
-        <el-header style="height:40px">
+        <el-header style="height:40px;position:relative">
             <img :src="imgUrl"
                  alt=""
                  style="width:100%;height:100%">
+            <div @click="switchDataService"
+                 style="border: 1px solid transparent;
+                        height: 40px;
+                        width: 6%;
+                        position: absolute;
+                        left: 22%;
+                        cursor: pointer;
+                        top: 0px;">
+
+            </div>
         </el-header>
         <el-container>
-            <transition name="fade">
-                <el-aside class="aside-left"
-                          width="60px"
-                          v-if="show">
-                    <div class="left-i"
-                         @click="show=false"><i class="iconfont icon-caidan"></i><br />
+            <template v-if="showNavBar">
+                <transition name="fade">
+                    <el-aside class="aside-left"
+                              width="60px"
+                              v-if="show">
+                        <div class="left-i"
+                             @click="show=false"><i class="iconfont icon-caidan"></i><br />
 
-                    </div>
-                    <div class="left-span mt10"><i class="iconfont icon-zuoce-tongxun"></i>
-                        <span>通讯</span>
-                    </div>
-                </el-aside>
-            </transition>
+                        </div>
+                        <div class="left-span mt10"><i class="iconfont icon-zuoce-tongxun"></i>
+                            <span>通讯</span>
+                        </div>
+                    </el-aside>
+                </transition>
+            </template>
+
             <el-container>
                 <el-header height="40px"
+                           v-show="showNavBar"
                            :class="{'headerA':!show}">
                     <div v-if="!show"
                          @click="show=true"
@@ -72,6 +86,11 @@ export default {
         // }, 2000);
     },
     methods: {
+        switchDataService () {
+            this.$router.push({
+                path: '/dataService'
+            })
+        }
     },
     watch: {
         '$route' (to, from) {

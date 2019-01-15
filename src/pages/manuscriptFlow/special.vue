@@ -37,7 +37,7 @@
                           tooltip-effect="dark"
                           style="width: 100%"
                           @selection-change="handleSelectionChange">
-                     <el-table-column prop="id"
+                    <el-table-column prop="id"
                                      label="稿号"
                                      width="180">
                     </el-table-column>
@@ -59,11 +59,17 @@
                     <el-table-column prop="status"
                                      label="状态">
                     </el-table-column>
-                     <el-table-column prop="author"
+                    <el-table-column prop="author"
                                      label="第一作者">
                     </el-table-column>
-                     <el-table-column prop="processingTime"
+                    <el-table-column prop="processingTime"
                                      label="处理时间">
+                    </el-table-column>
+                    <el-table-column prop="handlePeople"
+                                     label="最近处理人">
+                    </el-table-column>
+                    <el-table-column prop="type2"
+                                     label="类型">
                     </el-table-column>
                 </el-table>
             </el-main>
@@ -148,8 +154,23 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 1,
-                            label: 'Test',
+                            id: 48,
+                            label: '头版1',
+                            icon: 'el-icon-success'
+                        },
+                        {
+                            id: 12,
+                            label: '国内新闻',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 4,
+                            label: '国际焦点',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 13,
+                            label: '评论声音',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
                     ]
@@ -161,6 +182,21 @@ export default {
                         {
                             id: 1,
                             label: '一版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 6,
+                            label: '二版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 7,
+                            label: '三版',
+                            icon: 'iconfont icon-file1'
+                        },
+                        {
+                            id: 8,
+                            label: '四版',
                             icon: 'iconfont icon-file1'
                         }
                     ]
@@ -174,13 +210,15 @@ export default {
             },
             tableData3: [{
                 id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
+                title: '城市生活垃圾分类的“银川模式”',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',
                 status: '待审',
                 author: '郝玉',
-                processingTime: '10-29 10:31'
+                processingTime: '10-29 10:31',
+                handlePeople: '刘晶瑶',
+                type2: '文本'
             }, {
                 id: '20181029000029',
                 title: '一个西红柿的”世界地图“',
@@ -189,25 +227,9 @@ export default {
                 location: 'A叠-十四版',
                 status: '待审',
                 author: '郝玉',
-                processingTime: '10-29 10:31'
-            }, {
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
-                media: '新华每日电讯',
-                type: '版面',
-                location: 'A叠-十四版',
-                status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
-            }, {
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
-                media: '新华每日电讯',
-                type: '版面',
-                location: 'A叠-十四版',
-                status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
+                processingTime: '10-29 10:31',
+                handlePeople: '张三',
+                type2: '文本'
             }],
             multipleSelection: []
         }

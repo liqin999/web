@@ -81,6 +81,9 @@
                             </div>
                         </div>
                     </el-col>
+                </el-row>
+                <el-row :gutter="20"
+                        class="main-row">
                     <el-col :span="6"
                             class="img-col">
                         <div class="img-box">
@@ -90,8 +93,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版一一版一版版一版一版一版一版一版</span>
-                                <span class="t2">A叠-五版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -105,35 +107,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-六版</span>
-                                <span class="t3">已建</span>
-                            </div>
-                        </div>
-                    </el-col>
-                    <!-- <el-col :span="6"
-                            class="img-col">
-                        <div class="img-box">
-                            <div class="img-wrap">
-                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                     alt="">
-                            </div>
-                            <div class="texts">
-                                <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-七版</span>
-                                <span class="t3">已建</span>
-                            </div>
-                        </div>
-                    </el-col> -->
-                    <el-col :span="6"
-                            class="img-col">
-                        <div class="img-box">
-                            <div class="img-wrap">
-                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
-                                     alt="">
-                            </div>
-                            <div class="texts">
-                                <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-八版</span>
+                                <span class="t2">A叠-二版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -147,7 +121,21 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-九版</span>
+                                <span class="t2">A叠-三版</span>
+                                <span class="t3">已建</span>
+                            </div>
+                        </div>
+                    </el-col>
+                    <el-col :span="6"
+                            class="img-col">
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg"
+                                     alt="">
+                            </div>
+                            <div class="texts">
+                                <b class="t1">新华每日电讯</b>
+                                <span class="t2">A叠-四版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -178,10 +166,11 @@
                     <div class="btn-line">
                         <span>|</span>
                     </div>
-                    <div class="btn-nav">
-                        <i class="iconfont icon-ico_print"></i>
-                        <span>打印</span>
-                    </div>
+                    <printing>
+                        <i slot="icon"
+                            class="iconfont icon-ico_print"></i>
+                        <span slot="iconName">打印</span>
+                    </printing>
                     <div class="btn-line">
                         <span>|</span>
                     </div>
@@ -214,11 +203,14 @@
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
         leftMenu,
         draftLabel,
-        history
+        history,
+        printing
     },
     data () {
         return {

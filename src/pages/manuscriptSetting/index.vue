@@ -193,7 +193,8 @@
                             <template slot-scope="scope">{{ scope.row.article }}</template>
                         </el-table-column>
                         <el-table-column prop="id"
-                                         label="稿号">
+                                         label="稿号"
+                                         width="120px">
                         </el-table-column>
                         <el-table-column prop="name"
                                          label="标题"
@@ -201,8 +202,8 @@
                         </el-table-column>
                         <el-table-column label="采用否">
                             <template slot-scope="scope">
-                            <span>{{scope.row.isactive ? '是' : '否'}}</span>
-                        </template>
+                                <span>{{scope.row.isactive ? '是' : '否'}}</span>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="wordNumber"
                                          label="字数">
@@ -251,10 +252,11 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-ico_print"></i>
-                            <span>打印</span>
-                        </div>
+                        <printing>
+                            <i slot="icon"
+                                class="iconfont icon-ico_print"></i>
+                            <span slot="iconName">打印</span>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -291,13 +293,16 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 建稿按钮弹框
 import sendDraft2 from '@/pages/manuscriptSetting/sendDraft2/sendDraft2'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
         leftMenu,
         sendDraft,
         draftLabel,
         history,
-        sendDraft2  // 建稿按钮弹框
+        sendDraft2,  // 建稿按钮弹框
+        printing
     },
     data () {
         return {
@@ -363,6 +368,7 @@ export default {
                             ]
 
                         },
+
                         {
                             id: 2,
                             label: '国际新闻信息分类',
@@ -482,8 +488,18 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                id: '20181029000029',
+                id: '20181029029',
                 name: '一个西红柿的”世界地图“',
+                wordNumber: '3578',
+                status: '已处理',
+                map: '',
+                createDate: '201810-31 ',
+                author: '赵倩',
+                authorType: '',
+                type: '文本'
+            }, {
+                id: '20181029011',
+                name: '城市生活垃圾分类的“银川模式”',
                 wordNumber: '3578',
                 status: '已处理',
                 map: '',
@@ -492,23 +508,13 @@ export default {
                 authorType: '',
                 type: '文本'
             }, {
-                id: '20181029000029',
-                name: '一个西红柿的”世界地图“',
+                id: '20181029050',
+                name: '腾讯体育是中国知名的体育门户网站',
                 wordNumber: '3578',
-                status: '已处理',
+                status: '待审',
                 map: '',
                 createDate: '201810-31 ',
-                author: '郝玉',
-                authorType: '',
-                type: '文本'
-            }, {
-                id: '20181029000029',
-                name: '一个西红柿的”世界地图“',
-                wordNumber: '3578',
-                status: '已处理',
-                map: '',
-                createDate: '201810-31 ',
-                author: '郝玉',
+                author: '刘晶瑶',
                 authorType: '',
                 type: '文本'
             }],

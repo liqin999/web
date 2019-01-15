@@ -14,6 +14,7 @@
     写稿         writeManuscript
     投稿         sendManuscript
     新闻日历      newsCalendar
+    废稿库       invalidManuscript
     后台管理      systemBackground
  */
 const review = r => require.ensure([], () => r(require('@/pages/dataService/review.vue')), 'review')
@@ -35,6 +36,7 @@ const manuscriptSetting = r => require.ensure([], () => r(require('@/pages/manus
 const writeManuscript = r => require.ensure([], () => r(require('@/pages/writeManuscript/index.vue')), 'writeManuscript')
 const sendManuscript = r => require.ensure([], () => r(require('@/pages/sendManuscript/index.vue')), 'sendManuscript')
 const newsCalendar = r => require.ensure([], () => r(require('@/pages/newsCalendar/index.vue')), 'newsCalendar')
+const invalidManuscript = r => require.ensure([], () => r(require('@/pages/invalidManuscript/index.vue')), 'invalidManuscript')
 const systemBackground = r => require.ensure([], () => r(require('@/pages/systemBackground/index.vue')), 'systemBackground')
 
 // 媒体流向的二级菜单
@@ -114,6 +116,10 @@ export const routes = [{
 {
     path: '/groupManuscript',
     component: groupManuscript
+},
+{
+    path: '/invalidManuscript',
+    component: invalidManuscript
 },
 {
     path: '/specialManuscript',
@@ -280,7 +286,7 @@ export const routes = [{
 
     ]
 },
-// buttons路由定义
+  // buttons路由定义
 {
     path: '/sendDraft',
     component: sendDraft
@@ -321,7 +327,7 @@ export const routes = [{
     path: '/draftLabel',
     component: draftLabel
 },
-// buttons弹窗路由
+  // buttons弹窗路由
 {
     path: '/draftMessageBox',
     component: draftMessageBox

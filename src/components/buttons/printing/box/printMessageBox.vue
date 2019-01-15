@@ -3,47 +3,48 @@
                title="打印设置"
                @close="messageBoxClose()"
                :visible.sync="printData.contentShow"
+               width="40%"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
-        <el-row :gutter="20"
+        <el-row :gutter="0"
                     class="clearfix mb15">
                 <el-col :span="7"
                         class="text-right">
                     <span>设置每行打印字数：</span>
                 </el-col>
-                <el-col :span="12">
-                    <el-input placeholder="请输入内容" clearable></el-input>
+                <el-col :span="8">
+                    <el-input  clearable></el-input>
                 </el-col>
             </el-row>
-            <el-row :gutter="20"
+            <el-row :gutter="0"
                     class="clearfix mb15">
                 <el-col :span="7"
                         class="text-right">
                     <span>设置打印栏数：</span>
                 </el-col>
-                <el-col :span="12">
-                    <el-input placeholder="请输入内容" clearable></el-input>
+                <el-col :span="8">
+                    <el-input  clearable></el-input>
                 </el-col>
             </el-row>
-            <el-row :gutter="20"
+            <el-row :gutter="0"
                     class="clearfix mb15">
                 <el-col :span="7"
                         class="text-right">
                     <span>设置打印字数大小：</span>
                 </el-col>
-                <el-col :span="12">
-                    <el-input placeholder="请输入内容" clearable></el-input>
+                <el-col :span="8">
+                    <el-input  clearable></el-input>
                 </el-col>
             </el-row>
-            <el-row :gutter="20"
+            <el-row :gutter="0"
                     class="clearfix mb15">
                 <el-col :span="7"
                         class="text-right">
                     <span>行间距大小：</span>
                 </el-col>
-                <el-col :span="12">
-                    <el-input placeholder="请输入内容" clearable></el-input>
+                <el-col :span="8">
+                    <el-input  clearable></el-input>
                 </el-col>
             </el-row>
             <!-- <hr> -->
@@ -52,25 +53,24 @@
                     <el-checkbox>左右居中打印</el-checkbox>
                 </el-col>
             </el-row>
-
-            <el-row  :gutter="20"
+            <el-row  :gutter="15"
                       class="clearfix mb15">
-                <el-col :span="6"  :offset="6" style="position:relative">
+                <el-col :span="5"  :offset="5" style="position:relative">
                     <span class="left-space">左空: </span>
                     <el-input class="input-style"></el-input>
                     <span class="left-space">毫米</span>
                 </el-col>
             </el-row>
-            <el-row  :gutter="20" class="clearfix mb15">
-                <el-col :span="6"  :offset="6"
+            <el-row  :gutter="15" class="clearfix mb15">
+                <el-col :span="5"  :offset="5"
                         style="position:relative">
                     <span class="left-space">上空: </span>
                     <el-input class="input-style"></el-input>
                     <span class="left-space">毫米</span>
                 </el-col>
             </el-row>
-            <el-row  :gutter="20" class="clearfix mb15">
-                <el-col :span="6"  :offset="6"
+            <el-row  :gutter="15" class="clearfix mb15">
+                <el-col :span="5"  :offset="5"
                         style="position:relative">
                     <span class="left-space">下空: </span>
                     <el-input class="input-style"></el-input>
@@ -85,7 +85,7 @@
             </el-row>
         <!-- 内容区 结束 -->
         <div slot="footer"
-             class="dialog-footer">
+             class="dialog-footer ac">
             <el-button class="primary-btn"
                            @click="createConfirm()">确认</el-button>
             <el-button class="reset-btn"

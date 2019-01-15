@@ -22,7 +22,7 @@
                                 </template>
                             </el-col>
                             <el-col :span="3">
-                                <el-checkbox v-model="checked">备选项</el-checkbox>
+                                <el-checkbox v-model="checked">组稿</el-checkbox>
                             </el-col>
                             <el-col :span="8"
                                     class="select-default">
@@ -111,20 +111,20 @@
                         <!-- <span>作者</span> -->
                     </el-col>
                 </el-row>
-                <el-row :gutter="20"
+                <!-- <el-row :gutter="20"
                         class="pl10 pr10 mb10">
                     <el-col :span="6">
-                        <span>第一作者</span>
+                        <span>稿件来源</span>
                     </el-col>
                     <el-col :span="18">
                         <el-input v-model="input"
                                   placeholder="作者"></el-input>
                     </el-col>
-                </el-row>
+                </el-row> -->
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
                     <el-col :span="6">
-                        <span>来源</span>
+                        <span>稿件来源</span>
                     </el-col>
                     <el-col :span="18">
                         <el-select v-model="kanfaValue">
@@ -227,7 +227,6 @@ export default {
     },
     data () {
         return {
-            checked: '',
             tableData: [
                 { id: '20181031000034',
                     name: '这是一条测试稿件20181031',
@@ -240,7 +239,6 @@ export default {
             // checked: false, // 备选项
             input: null,
             textarea: null,
-            // tableData: [], // 已选稿件数据
             // 栏目选择
             radioName: '栏目库',
             radioLabel: [
@@ -261,9 +259,7 @@ export default {
 
     },
     methods: {
-        labelChange () {
-
-        }
+        labelChange () { }
     }
 }
 </script>

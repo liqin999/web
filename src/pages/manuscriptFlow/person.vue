@@ -5,6 +5,7 @@
                     class="clearfix">
                 <el-col>
                     <el-checkbox label="A"
+                                 v-model="handlechecked"
                                  class="che">
                         包含我处理过的稿件
                     </el-checkbox>
@@ -51,11 +52,17 @@
                     <el-table-column prop="status"
                                      label="状态">
                     </el-table-column>
-                     <el-table-column prop="author"
+                    <el-table-column prop="author"
                                      label="第一作者">
                     </el-table-column>
-                     <el-table-column prop="processingTime"
+                    <el-table-column prop="processingTime"
                                      label="处理时间">
+                    </el-table-column>
+                    <el-table-column prop="handlePeople"
+                                     label="最近处理人">
+                    </el-table-column>
+                    <el-table-column prop="type2"
+                                     label="类型">
                     </el-table-column>
                 </el-table>
             </template>
@@ -103,60 +110,27 @@ export default {
     data () {
         return {
             currentPage: 1,
+            handlechecked: true,
             checkList: ['A'],
             options: [{
-                value: '选项1',
-                label: '黄金糕'
+                value: '初投1',
+                label: '初投1'
             }, {
-                value: '选项2',
-                label: '双皮奶'
-            }, {
-                value: '选项3',
-                label: '蚵仔煎'
-            }, {
-                value: '选项4',
-                label: '龙须面'
-            }, {
-                value: '选项5',
-                label: '北京烤鸭'
+                value: '初投2',
+                label: '初投2'
             }],
             value: '',
             tableData: [{
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
+                id: '20181026000005',
+                title: '城市生活垃圾分类的“银川模式”',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',
                 status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
-            }, {
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
-                media: '新华每日电讯',
-                type: '版面',
-                location: 'A叠-十四版',
-                status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
-            }, {
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
-                media: '新华每日电讯',
-                type: '版面',
-                location: 'A叠-十四版',
-                status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
-            }, {
-                id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
-                media: '新华每日电讯',
-                type: '版面',
-                location: 'A叠-十四版',
-                status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31'
+                author: '赵倩',
+                processingTime: '10-29 10:31',
+                handlePeople: '刘晶瑶',
+                type2: '文本'
             }]
         }
     },

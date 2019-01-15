@@ -185,6 +185,7 @@ import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
@@ -204,30 +205,20 @@ export default {
             concatData: {
                 contentShow: false,
                 tableData: [{
-                    num: '1',
-                    title: '王小虎1'
+                    num: '20181029000029',
+                    title: '这是一条测试稿件20181031'
 
                 }, {
-                    num: '2',
-                    title: '王小虎2'
+                    num: '20181029000030',
+                    title: '脱贫攻坚,羊信发“羊财'
 
                 }, {
-                    num: '3',
-                    title: '王小虎3'
-
-                },
-                {
-                    num: '4',
-                    title: '王小虎4'
+                    num: '20181029000030',
+                    title: '脱贫攻坚,“80后”移民夫妻“百元计...'
 
                 }, {
-                    num: '5',
-                    title: '王小虎5'
-
-                },
-                {
-                    num: '6',
-                    title: '王小虎6'
+                    num: '20181029000032',
+                    title: '脱贫攻坚,“80后”移民夫妻“百元计...'
 
                 }]
             },
@@ -328,43 +319,13 @@ export default {
                 }
 
             ],
-            // concatData: {
-            //     // contentShow: false,
-            //     tableData: [{
-            //         num: '1',
-            //         title: '王小虎1'
-
-            //     }, {
-            //         num: '2',
-            //         title: '王小虎2'
-
-            //     }, {
-            //         num: '3',
-            //         title: '王小虎3'
-
-            //     },
-            //     {
-            //         num: '4',
-            //         title: '王小虎4'
-
-            //     }, {
-            //         num: '5',
-            //         title: '王小虎5'
-
-            //     },
-            //     {
-            //         num: '6',
-            //         title: '王小虎6'
-
-            //     }]
-            // },
             defaultProps: {
                 children: 'children',
                 label: 'label'
             },
             tableData3: [{
                 date: '2018-10-30',
-                title: '（脱贫攻坚）新疆和田：黑山村的致富路',
+                title: '这是一条测试稿件20181031',
                 address: '脱贫攻坚',
                 number: 3578,
                 state: '待审',
@@ -376,7 +337,7 @@ export default {
                 preData: ''
             }, {
                 date: '2018-10-29',
-                title: '（脱贫攻坚）羊信发“羊财”',
+                title: '脱贫攻坚羊信发“羊财”',
                 address: '脱贫攻坚',
                 number: 768,
                 state: '待审',
@@ -388,7 +349,19 @@ export default {
                 preData: ''
             }, {
                 date: '2016-05-04',
-                title: '（脱贫攻坚）“80后”移民夫妻“百元计...',
+                title: '脱贫攻坚“80后”移民夫妻“百元计...',
+                address: '脱贫攻坚',
+                number: 1024,
+                state: '待审',
+                deliverer: '方立新',
+                processingTime: '2018-10-29 10:45',
+                dealingPeople: '方立新',
+                firstAuthor: '方立新',
+                medio: '新华每日电讯',
+                preData: ''
+            }, {
+                date: '2016-05-04',
+                title: '脱贫攻坚“80后”移民夫妻“百元计...',
                 address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',
