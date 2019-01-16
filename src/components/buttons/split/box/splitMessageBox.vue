@@ -70,7 +70,7 @@ export default {
                 fontNum: '1518'
             }, {
                 num: '2',
-                title: '绿色发展之路',
+                title: '一个西红柿的“世界地图”',
                 fontNum: '18'
             }]
         }

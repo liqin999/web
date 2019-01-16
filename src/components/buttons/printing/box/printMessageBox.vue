@@ -4,82 +4,96 @@
                @close="messageBoxClose()"
                :visible.sync="printData.contentShow"
                width="40%"
-               top="15vh"
+               top="0vh"
                :append-to-body="true">
         <!-- 内容区 -->
         <el-row :gutter="0"
                     class="clearfix mb15">
-                <el-col :span="7"
+                <el-col :span="9"
                         class="text-right">
                     <span>设置每行打印字数：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
             <el-row :gutter="0"
                     class="clearfix mb15">
-                <el-col :span="7"
+                <el-col :span="9"
                         class="text-right">
                     <span>设置打印栏数：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
             <el-row :gutter="0"
                     class="clearfix mb15">
-                <el-col :span="7"
+                <el-col :span="9"
                         class="text-right">
                     <span>设置打印字数大小：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
             <el-row :gutter="0"
                     class="clearfix mb15">
-                <el-col :span="7"
+                <el-col :span="9"
                         class="text-right">
                     <span>行间距大小：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
             <!-- <hr> -->
             <el-row :gutter="20">
-                <el-col :span="7" class="text-right">
+                <el-col :span="9" class="text-right">
                     <el-checkbox>左右居中打印</el-checkbox>
                 </el-col>
             </el-row>
-            <el-row  :gutter="15"
-                      class="clearfix mb15">
-                <el-col :span="5"  :offset="5" style="position:relative">
-                    <span class="left-space">左空: </span>
-                    <el-input class="input-style"></el-input>
-                    <span class="left-space">毫米</span>
+            <el-row :gutter="4"
+                    class="clearfix mb15">
+                <el-col :span="9"
+                        class="text-right">
+                    <span>左空：</span>
+                </el-col>
+                <el-col :span="3">
+                    <el-input type="number" min="0" placeholder="0"></el-input>
+                </el-col>
+                <el-col :span="7">
+                    <span>毫米</span>
                 </el-col>
             </el-row>
-            <el-row  :gutter="15" class="clearfix mb15">
-                <el-col :span="5"  :offset="5"
-                        style="position:relative">
-                    <span class="left-space">上空: </span>
-                    <el-input class="input-style"></el-input>
-                    <span class="left-space">毫米</span>
+            <el-row :gutter="4"
+                    class="clearfix mb15">
+                <el-col :span="9"
+                        class="text-right">
+                    <span>上空：</span>
+                </el-col>
+                <el-col :span="3">
+                    <el-input type="number" min="0" placeholder="0"></el-input>
+                </el-col>
+                <el-col :span="7">
+                    <span >毫米</span>
                 </el-col>
             </el-row>
-            <el-row  :gutter="15" class="clearfix mb15">
-                <el-col :span="5"  :offset="5"
-                        style="position:relative">
-                    <span class="left-space">下空: </span>
-                    <el-input class="input-style"></el-input>
-                    <span class="left-space">毫米</span>
+            <el-row :gutter="4"
+                    class="clearfix mb15">
+                <el-col :span="9"
+                        class="text-right">
+                    <span>下空：</span>
+                </el-col>
+                <el-col :span="3">
+                    <el-input type="number" min="0" placeholder="0"></el-input>
+                </el-col>
+                <el-col :span="7">
+                    <span >毫米</span>
                 </el-col>
             </el-row>
-
-            <el-row :gutter="40">
-                <el-col :span="7" class="text-right">
+            <el-row :gutter="20">
+                <el-col :span="9" class="text-right">
                     <el-checkbox>自动添加页码</el-checkbox>
                 </el-col>
             </el-row>
@@ -94,7 +108,6 @@
         </div>
     </el-dialog>
 </template>
-
 <script>
 export default {
     props: {
@@ -133,9 +146,6 @@ export default {
 .el-select {
     float: right;
 }
-.input-style{
-    padding: 0px 50px;
-}
 .left-space{
     position: absolute;
     text-align: center
@@ -145,5 +155,10 @@ export default {
     right:15px;
     top:0;
     text-align: center
+}
+</style>
+<style>
+.el-dialog {
+    min-width: 50px;
 }
 </style>

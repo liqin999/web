@@ -76,7 +76,7 @@
                                         class="message-checkbox">
                                     <el-tree :data="dataList"
                                              :default-expanded-keys="[2, 3]"
-                                             show-checkbox
+                                             :highlight-current="true"
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -85,7 +85,7 @@
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
                                              :default-expanded-keys="[2, 3]"
-                                             show-checkbox
+                                             :highlight-current="true"
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -410,4 +410,10 @@ export default {
         }
     }
 }
+</style>
+<style>
+.message-box .message-title{
+    line-height: 25px
+}
+
 </style>

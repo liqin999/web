@@ -134,17 +134,24 @@
                                    :total="100">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
-                            <i class="iconfont icon-liulan"></i>
-                            <span>浏览</span>
-                        </div>
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
-                        </div>
+                        </div> -->
+                         <download>
+                            <i slot="icon"
+                               class=""></i>
+                            <span slot="iconName">下载</span>
+                        </download>
+
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -194,6 +201,10 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import download from '@/components/buttons/download/download'
 export default {
     components: {
         searchInput,
@@ -205,13 +216,15 @@ export default {
         version,
         draftLabel,
         history,
-        printing
+        printing,
+        draftLook,
+        download
     },
     data () {
         return {
             tableData3: [{
                 date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
+                title: '“氢能小城”炼成记',
                 repDrawing: '',
                 number: 2267,
                 state: '待审',

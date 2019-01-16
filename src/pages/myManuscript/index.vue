@@ -137,17 +137,27 @@
                                :total="100">
                 </el-pagination>
                 <div class="btn-bottom">
-                    <div class="btn-nav">
+                    <!-- <div class="btn-nav">
                         <i class="iconfont icon-liulan"></i>
                         <span>浏览</span>
-                    </div>
+                    </div> -->
+                    <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                    </draft-look>
                     <div class="btn-line">
                         <span>|</span>
                     </div>
-                    <div class="btn-nav">
+                    <download>
+                            <i slot="icon"
+                               class=""></i>
+                            <span slot="iconName">下载</span>
+                        </download>
+                    <!-- <div class="btn-nav">
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>
-                    </div>
+                    </div> -->
                     <div class="btn-line">
                         <span>|</span>
                     </div>
@@ -196,6 +206,10 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import download from '@/components/buttons/download/download'
 export default {
     components: {
         searchInput,
@@ -206,7 +220,9 @@ export default {
         version,
         draftLabel,
         history,
-        printing
+        printing,
+        draftLook,
+        download
 
     },
     data () {
@@ -346,13 +362,13 @@ export default {
             },
             tableData3: [{
                 date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
+                title: '（脱贫攻坚）陕西耀州：革命老区再绘脱贫攻坚新图景',
                 repDrawing: '',
                 number: 1709,
                 state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-31 11:09',
-                firstAuthor: '强晓玲',
+                dealingPeople: '刘学奎',
+                processingTime: '2018-10-31 15:22:12',
+                firstAuthor: '李浩',
                 medio: '新华每日电讯',
                 type: '文本',
                 doubt: 0,
@@ -361,30 +377,14 @@ export default {
                 file: '.txt',
                 fujian: 0
             }, {
-                date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
+                date: '2018-10-29',
+                title: '（新华时评）下足绣花功才能啃下硬骨头',
                 repDrawing: '',
                 number: 1709,
                 state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-31 11:09',
-                firstAuthor: '强晓玲',
-                medio: '新华每日电讯',
-                type: '文本',
-                doubt: 0,
-                source: '自写稿',
-                gnumber: 1,
-                file: '.txt',
-                fujian: 0
-            }, {
-                date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
-                repDrawing: '',
-                number: 1709,
-                state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-31 11:09',
-                firstAuthor: '强晓玲',
+                dealingPeople: '方立新',
+                processingTime: '2018-10-29 10:09:34',
+                firstAuthor: '于文静',
                 medio: '新华每日电讯',
                 type: '文本',
                 doubt: 0,

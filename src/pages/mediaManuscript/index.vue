@@ -136,17 +136,27 @@
                                    :total="100">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-liulan"></i>
                             <span>浏览</span>
-                        </div>
+                        </div> -->
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
-                        </div>
+                        </div> -->
+                        <download>
+                            <i slot="icon"
+                               class=""></i>
+                            <span slot="iconName">下载</span>
+                        </download>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -196,6 +206,10 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import download from '@/components/buttons/download/download'
 export default {
     components: {
         searchInput,
@@ -207,7 +221,9 @@ export default {
         version,
         draftLabel,
         history,
-        printing
+        printing,
+        draftLook,
+        download
     },
     data () {
         return {
@@ -296,7 +312,7 @@ export default {
             },
             tableData3: [{
                 date: '2018-10-31',
-                title: '这是一条测试稿件20181031',
+                title: '一个西红柿的“世界地图”',
                 repDrawing: '',
                 number: 992,
                 state: '待审',
@@ -308,17 +324,16 @@ export default {
                 doubt: 0,
                 preData: ''
             }, {
-                date: '2018-10-29',
-                title: '这是一条测试稿件20181031',
-                repDrawing: '',
+                date: '2018-10-20',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
+                address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',
-                dealingPeople: '强晓玲',
-                processingTime: '2018-10-29 14:23',
-                firstAuthor: '强晓玲',
+                deliverer: '刘学奎',
+                processingTime: '2018-10-29 10:45',
+                dealingPeople: '方立新',
+                firstAuthor: '李浩',
                 medio: '新华每日电讯',
-                type: '文本',
-                doubt: 0,
                 preData: ''
             }],
             multipleSelection: [],

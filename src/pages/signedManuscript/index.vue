@@ -139,17 +139,27 @@
                                    :total="100">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-liulan"></i>
                             <span>浏览</span>
-                        </div>
+                        </div> -->
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
-                        </div>
+                        </div> -->
+                        <download>
+                            <i slot="icon"
+                               class=""></i>
+                            <span slot="iconName">下载</span>
+                        </download>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -197,6 +207,10 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import download from '@/components/buttons/download/download'
 export default {
     components: {
         searchInput,
@@ -206,7 +220,9 @@ export default {
         version,
         draftLabel,
         history,
-        printing
+        printing,
+        draftLook,
+        download
     },
     data () {
         return {
@@ -417,19 +433,6 @@ export default {
 
             ],
             tableData3: [{
-                zugao: '',
-                number: '20181029000029',
-                title: '这是一条测试稿件20181031',
-                repDrawing: '',
-                state: '已处理',
-                banmian: '一版',
-                size: '3578',
-                dealingPeople: '唐牛',
-                data: '10-31',
-                medio: '新华每日资讯',
-                firstAuthor: '郝玉',
-                type: '文本'
-            }, {
                 zugao: '',
                 number: '20181030000037',
                 title: '（新华全媒头条）西藏阿里楚松村四代房：中国边境的...',

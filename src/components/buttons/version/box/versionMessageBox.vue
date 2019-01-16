@@ -20,10 +20,12 @@
                                  label="版本">
                 </el-table-column>
                 <el-table-column prop="title"
-                                 label="标题">
+                                 width="150px"
+                                 label="标题"
+                                 show-overflow-tooltip>
                 </el-table-column>
                 <el-table-column prop="date"
-                                 width="100px"
+                                 width="150px"
                                  label="处理时间">
                 </el-table-column>
                 <el-table-column prop="dealPerson"
@@ -47,12 +49,20 @@
         <div slot="footer"
              class="dialog-footer">
             <div class="left-group">
-                <el-button class="primary-btn"
-                           @click="downFn()">下载</el-button>
+                <!-- <el-button class="primary-btn"
+                           @click="downFn()">下载</el-button> -->
+                <!-- <el-upload
+                        action="https://jsonplaceholder.typicode.com/posts/">
+                        <el-button  class="primary-btn">下载</el-button>
+                </el-upload> -->
                 <el-button class="primary-btn"
                            @click="sendDetailFn()">文本痕迹</el-button>
                 <el-button class="primary-btn"
                            @click="imagePreviewFn()">图片预览</el-button>
+
+                <el-upload action="https://jsonplaceholder.typicode.com/posts/">
+                        <el-button  class="primary-btn ac">下载</el-button>
+                </el-upload>
             </div>
             <el-button class="reset-btn"
                        @click="versionData.contentShow = false">关 闭</el-button>

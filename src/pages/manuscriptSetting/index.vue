@@ -156,17 +156,19 @@
                             </span>
                         </div>
                         <!-- 建稿按钮组件 -->
-                        <send-draft2>
+                        <create-draft>
                             <span slot="iconName">建稿</span>
-                        </send-draft2>
+                        </create-draft>
                         <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
-                        <div data-v-6eb3df45=""
+                        <!-- <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">留稿</span>
                             </span>
-                        </div>
+                        </div> -->
+
+                        <stay-draft></stay-draft>
 
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
@@ -178,7 +180,6 @@
                                 <span data-v-6eb3df45="">翻译</span>
                             </span>
                         </div>
-
                     </div>
                 </el-header>
                 <el-main ref="mainTable">
@@ -195,6 +196,7 @@
                         <el-table-column prop="id"
                                          label="稿号"
                                          width="120px">
+
                         </el-table-column>
                         <el-table-column prop="name"
                                          label="标题"
@@ -238,17 +240,23 @@
                                    :total="100">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
-                            <i class="iconfont icon-liulan"></i>
-                            <span>浏览</span>
-                        </div>
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-wenben1"></i>
-                            <span>留稿</span>
-                        </div>
+                        <!-- <div class="btn-nav">
+                            <i class="el-icon-download"></i>
+                            <span>下载</span>
+                        </div> -->
+                        <download>
+                            <i slot="icon"
+                               class=""></i>
+                            <span slot="iconName">下载</span>
+                        </download>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -292,17 +300,26 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 建稿按钮弹框
-import sendDraft2 from '@/pages/manuscriptSetting/sendDraft2/sendDraft2'
+import createDraft from '@/pages/manuscriptSetting/createDraft/createDraft'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 留稿按钮弹框
+import stayDraft from '@/pages/manuscriptSetting/stayDraft/stayDraft'
+// 下载弹框按钮
+import download from '@/components/buttons/download/download'
 export default {
     components: {
         leftMenu,
         sendDraft,
         draftLabel,
         history,
-        sendDraft2,  // 建稿按钮弹框
-        printing
+        createDraft,  // 建稿按钮弹框
+        printing,
+        draftLook,
+        stayDraft,
+        download
     },
     data () {
         return {
@@ -419,70 +436,6 @@ export default {
                 }
 
             ],
-            versionData: {
-                contentShow: false,
-                tableData: [{
-                    num: 1,
-                    title: '12',
-                    date: '2016-05-03',
-                    dealPerson: '1王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt',
-                    isactive: true
-                }, {
-                    num: 2,
-                    title: '333',
-                    date: '2015-05-03',
-                    dealPerson: '2王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt',
-                    isactive: true
-                }, {
-                    num: 3,
-                    title: '8888',
-                    date: '2016-05-03',
-                    dealPerson: '3王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt',
-                    isactive: true
-                }]
-            },
-            concatData: {
-                contentShow: false,
-                tableData: [{
-                    num: '1',
-                    title: '王小虎1'
-
-                }, {
-                    num: '2',
-                    title: '王小虎2'
-
-                }, {
-                    num: '3',
-                    title: '王小虎3'
-
-                },
-                {
-                    num: '4',
-                    title: '王小虎4'
-
-                }, {
-                    num: '5',
-                    title: '王小虎5'
-
-                },
-                {
-                    num: '6',
-                    title: '王小虎6'
-
-                }]
-            },
             defaultProps: {
                 children: 'children',
                 label: 'label'

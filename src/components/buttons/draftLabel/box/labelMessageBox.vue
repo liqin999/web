@@ -21,7 +21,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder="原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题"></el-input> -->
-                                    <span>原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题</span>
+                                    <span>城市生活垃圾分类的“银川模式”</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">
@@ -33,7 +33,7 @@
                                 <el-col :span="4">
                                     <!-- <el-input v-model="input"
                                               placeholder="作者"></el-input> -->
-                                    <span>作者</span>
+                                    <span>刘晶瑶</span>
                                 </el-col>
                                 <!-- 来源 -->
                                 <el-col :span="3"
@@ -53,7 +53,7 @@
                                 <el-col :span="5">
                                     <!-- <el-input v-model="input"
                                               placeholder="消息"></el-input> -->
-                                    <span>消息</span>
+                                    <span>文本</span>
                                 </el-col>
                             </el-row>
                             <!-- 分类 -->
@@ -65,7 +65,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题</span>
+                                    <span>一个西红柿的”世界地图“</span>
                                 </el-col>
                             </el-row>
                         </el-col>
@@ -102,7 +102,7 @@
                                 <el-col :span="6">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>admin</span>
+                                    <span>郝玉</span>
                                 </el-col>
                                 <!-- 电话 -->
                                 <el-col :span="4"

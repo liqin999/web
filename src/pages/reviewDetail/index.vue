@@ -152,10 +152,15 @@
                                :total="100">
                 </el-pagination>
                 <div class="btn-bottom">
-                    <div class="btn-nav">
+                    <!-- <div class="btn-nav">
                         <i class="iconfont icon-liulan"></i>
                         <span>浏览</span>
-                    </div>
+                    </div> -->
+                    <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                    </draft-look>
                     <div class="btn-line">
                         <span>|</span>
                     </div>
@@ -205,12 +210,15 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
 export default {
     components: {
         leftMenu,
         draftLabel,
         history,
-        printing
+        printing,
+        draftLook
     },
     data () {
         return {

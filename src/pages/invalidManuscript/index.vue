@@ -29,7 +29,7 @@
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
                     <template v-for="label in radioLabel2">
-                        <el-col :span="12"
+                        <el-col :span="17"
                                 class="text-overflow"
                                 :key="label">
                             <el-radio v-model="radioName2"
@@ -91,12 +91,15 @@
                             <el-button class="primary-btn">恢复</el-button>
                             <el-button class="primary-btn">编辑</el-button>
                             <el-button class="primary-btn">选送</el-button>
-                            <el-button class="primary-btn">撤稿</el-button>
-                            <!-- <send-draft>
+                            <!-- <el-button class="primary-btn">撤稿</el-button> -->
+                            <send-draft>
                                 <span slot="iconName">撤稿</span>
-                            </send-draft> -->
+                            </send-draft>
                             <el-button class="primary-btn">内容</el-button>
-                            <el-button class="primary-btn">历史</el-button>
+                            <!-- <el-button class="primary-btn">历史</el-button> -->
+                            <history class="primary-btn">
+                                <span slot="iconName">历史</span>
+                            </history>
                         </div>
                     </el-col>
                     <el-col :span="24">
@@ -219,10 +222,13 @@
 </template>
 <script>
 // 撤稿按钮组件
-// import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// 历史按钮组件
+import history from '@/components/buttons/history/history.vue'
 export default {
     components: {
-        // sendDraft
+        sendDraft,
+        history
 
     },
     data () {
@@ -393,7 +399,7 @@ export default {
         }
         .main-content {
             .btn-group {
-                line-height: 35px;
+                line-height: 15px;
                 @extend .text-right;
                 .primary-btn {
                     margin: 0px;

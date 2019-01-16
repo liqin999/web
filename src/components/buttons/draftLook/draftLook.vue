@@ -1,35 +1,36 @@
 <template>
     <div class="btn-nav">
         <slot name="icon"></slot>
-        <span @click="historyIcon">
+        <span @click="draftLabelIcon()">
             <slot name="iconName"></slot>
         </span>
-        <!-- 弹框 -->
-        <history-message-box ref="historyBox"
-                             :historyData="historyData">
-        </history-message-box>
+        <!-- 浏览弹框 -->
+        <look-message-box ref="labelBox"
+                           :lookData="lookData">
+        </look-message-box>
     </div>
 </template>
+
 <script>
 // 弹出框
-import historyMessageBox from './box/historyMessageBox'
+import lookMessageBox from './box/lookMessageBox'
 export default {
     components: {
-        historyMessageBox
+        lookMessageBox
     },
     data () {
         return {
-            historyData: {
+            lookData: {
                 labelList: [],
                 contentShow: false
             }
         }
     },
     methods: {
-        // 点击传稿按钮
-        historyIcon () {
+        // 点击浏览按钮
+        draftLabelIcon () {
             // 弹窗出现
-            this.historyData.contentShow = true
+            this.lookData.contentShow = true
         }
     }
 }
