@@ -29,12 +29,9 @@
                                 <span data-v-6eb3df45="">审稿</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">淘汰</span>
-                            </span>
-                        </div>
-
+                        <eliminate>
+                            <span slot="iconName">淘汰</span>
+                        </eliminate>
                         <version>
                             <span slot="iconName">版本</span>
                         </version>
@@ -44,11 +41,9 @@
                                 <span data-v-6eb3df45="">编辑</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">提交</span>
-                            </span>
-                        </div>
+                        <submit>
+                            <span slot="iconName">提交</span>
+                        </submit>
                         <split>
                             <span slot="iconName">拆分</span>
                         </split>
@@ -79,7 +74,19 @@
                                          label="标题">
                         </el-table-column>
                         <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
                                          label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="number"
                                          label="字数">
@@ -124,10 +131,11 @@
                                    :total="100">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
-                            <i class="iconfont icon-liulan"></i>
-                            <span>浏览</span>
-                        </div>
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -186,8 +194,14 @@ import concat from '@/components/buttons/concat/concat'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 提交按钮
+import submit from '@/components/buttons/submit/submit.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
+// 浏览按钮
+import draftLook from '@/components/buttons/draftLook/draftLook.vue'
 export default {
     components: {
         searchInput,
@@ -199,10 +213,33 @@ export default {
         version,
         draftLabel,
         history,
-        printing
+        submit,
+        printing,
+        eliminate,
+        draftLook
     },
     data () {
         return {
+            concatData: {
+                contentShow: false,
+                tableData: [{
+                    num: '20181029000029',
+                    title: '普惠小微企业 减税再出新举措'
+
+                }, {
+                    num: '20181029000030',
+                    title: '秦岭违建别墅整治始末 一抓到底正风纪'
+
+                }, {
+                    num: '20181029000030',
+                    title: '唱响新时代的英雄赞歌'
+
+                }, {
+                    num: '20181029000032',
+                    title: '商务部：中美在京举行经贸问题副部级磋商'
+
+                }]
+            },
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -212,9 +249,6 @@ export default {
                 media: '',
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
-            },
-            concat: {
-
             },
             allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
             data2: [
@@ -317,6 +351,7 @@ export default {
                 title: '（新华每日电讯）千年古镇里走中药种植路 百折不挠尝！',
                 address: '脱贫攻坚',
                 number: 3578,
+                picture: 'http://img5.imgtn.bdimg.com/it/u=4052202813,3675351786&fm=11&gp=0.jpg',
                 state: '已审',
                 deliverer: '方立新',
                 processingTime: '2018-10-30 14:23',
@@ -329,6 +364,8 @@ export default {
                 title: '（脱贫攻坚）羊信发“羊财”',
                 address: '脱贫攻坚',
                 number: 768,
+                picture: 'https://inews.gtimg.com/newsapp_bt/0/4836031414/1000',
+
                 state: '待审',
                 deliverer: '方立新',
                 processingTime: '2018-10-29 17:18',
@@ -342,6 +379,7 @@ export default {
                 address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',
+                picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 deliverer: '刘学奎',
                 processingTime: '2018-10-29 10:45',
                 dealingPeople: '方立新',

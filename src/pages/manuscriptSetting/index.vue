@@ -156,9 +156,9 @@
                             </span>
                         </div>
                         <!-- 建稿按钮组件 -->
-                        <send-draft2>
+                        <create-draft>
                             <span slot="iconName">建稿</span>
-                        </send-draft2>
+                        </create-draft>
                         <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
@@ -292,7 +292,7 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 建稿按钮弹框
-import sendDraft2 from '@/pages/manuscriptSetting/sendDraft2/sendDraft2'
+import createDraft from '@/pages/manuscriptSetting/createDraft/createDraft'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
 export default {
@@ -301,7 +301,7 @@ export default {
         sendDraft,
         draftLabel,
         history,
-        sendDraft2,  // 建稿按钮弹框
+        createDraft,  // 建稿按钮弹框
         printing
     },
     data () {

@@ -90,13 +90,18 @@
                         <div class="btn-group">
                             <el-button class="primary-btn">恢复</el-button>
                             <el-button class="primary-btn">编辑</el-button>
-                            <el-button class="primary-btn">选送</el-button>
-                            <el-button class="primary-btn">撤稿</el-button>
-                            <!-- <send-draft>
+                            <pick class="primary-btn">
+                                <span slot="iconName">选送</span>
+                            </pick>
+                            <!-- <el-button class="primary-btn">撤稿</el-button> -->
+                            <send-draft class="primary-btn">
                                 <span slot="iconName">撤稿</span>
-                            </send-draft> -->
+                            </send-draft>
                             <el-button class="primary-btn">内容</el-button>
-                            <el-button class="primary-btn">历史</el-button>
+                            <!-- <el-button class="primary-btn">历史</el-button> -->
+                            <history class="primary-btn">
+                                <span slot="iconName" >历史</span>
+                            </history>
                         </div>
                     </el-col>
                     <el-col :span="24">
@@ -219,10 +224,15 @@
 </template>
 <script>
 // 撤稿按钮组件
-// import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+import history from '@/components/buttons/history/history.vue'
+// 选送按钮
+import pick from '@/components/buttons/pick/pick.vue'
 export default {
     components: {
-        // sendDraft
+        sendDraft,
+        history,
+        pick
 
     },
     data () {
@@ -393,7 +403,7 @@ export default {
         }
         .main-content {
             .btn-group {
-                line-height: 35px;
+                line-height: 17px;
                 @extend .text-right;
                 .primary-btn {
                     margin: 0px;

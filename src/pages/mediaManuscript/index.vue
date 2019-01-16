@@ -43,11 +43,9 @@
                                 <span data-v-6eb3df45="">审稿</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">淘汰</span>
-                            </span>
-                        </div>
+                        <eliminate>
+                            <span slot="iconName">淘汰</span>
+                        </eliminate>
 
                         <version :data="versionData">
                             <span slot="iconName">版本</span>
@@ -58,11 +56,9 @@
                                 <span data-v-6eb3df45="">编辑</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">提交</span>
-                            </span>
-                        </div>
+                        <submit>
+                            <span slot="iconName">提交</span>
+                        </submit>
                         <!-- <split>
                             <span slot="iconName">拆分</span>
                         </split>
@@ -196,6 +192,10 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 提交弹框按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -207,7 +207,9 @@ export default {
         version,
         draftLabel,
         history,
-        printing
+        printing,
+        submit,
+        eliminate
     },
     data () {
         return {
