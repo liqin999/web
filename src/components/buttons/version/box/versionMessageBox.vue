@@ -48,21 +48,19 @@
         <!-- 内容区 结束 -->
         <div slot="footer"
              class="dialog-footer">
+             <!-- <div class="text-right"> -->
+                <!-- <download>
+                    <span slot="iconName"  class="primary-btn">下载</span>
+                </download> -->
+             <!-- </div> -->
             <div class="left-group">
-                <!-- <el-button class="primary-btn"
-                           @click="downFn()">下载</el-button> -->
-                <!-- <el-upload
-                        action="https://jsonplaceholder.typicode.com/posts/">
-                        <el-button  class="primary-btn">下载</el-button>
-                </el-upload> -->
+                <download class="primary-btn">
+                    <span slot="iconName">下载</span>
+                </download>
                 <el-button class="primary-btn"
                            @click="sendDetailFn()">文本痕迹</el-button>
                 <el-button class="primary-btn"
                            @click="imagePreviewFn()">图片预览</el-button>
-
-                <el-upload action="https://jsonplaceholder.typicode.com/posts/">
-                        <el-button  class="primary-btn ac">下载</el-button>
-                </el-upload>
             </div>
             <el-button class="reset-btn"
                        @click="versionData.contentShow = false">关 闭</el-button>
@@ -71,7 +69,12 @@
 </template>
 
 <script>
+// 下载弹框按钮
+import download from '@/components/buttons/download/download'
 export default {
+    components: {
+        download
+    },
     props: {
         versionData: {
             type: Object

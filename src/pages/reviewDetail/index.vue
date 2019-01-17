@@ -164,10 +164,15 @@
                     <div class="btn-line">
                         <span>|</span>
                     </div>
-                    <div class="btn-nav">
+                    <!-- <div class="btn-nav">
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>
-                    </div>
+                    </div> -->
+                    <download>
+                        <i slot="icon"
+                             class="el-icon-download"></i>
+                        <span slot="iconName">下载</span>
+                    </download>
                     <div class="btn-line">
                         <span>|</span>
                     </div>
@@ -212,13 +217,16 @@ import history from '@/components/buttons/history/history.vue'
 import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import download from '@/components/buttons/download/download'
 export default {
     components: {
         leftMenu,
         draftLabel,
         history,
         printing,
-        draftLook
+        draftLook,
+        download
     },
     data () {
         return {

@@ -163,7 +163,10 @@
                                   v-model="textarea">
                         </el-input>
                         <div class="btn-group pt10">
-                            <el-button class="primary-btn">选择分类</el-button>
+                            <classify class="primary-btn">
+                                <span slot="iconName">选择分类</span>
+                            </classify>
+                            <!-- <el-button class="primary-btn">选择分类</el-button> -->
                             <el-button class="primary-btn">详细稿签</el-button>
                         </div>
                     </el-col>
@@ -221,8 +224,11 @@
     </el-container>
 </template>
 <script>
+// 选择分类按钮组件
+import classify from '@/components/buttons/classify/classify'
 export default {
     components: {
+        classify
 
     },
     data () {
@@ -230,13 +236,13 @@ export default {
             tableData: [
                 { id: '20181031000034',
                     name: '一个西红柿的“世界地图”',
-                    source: '自写稿',
-                    type: '文本'
+                    source: 'C: Document and Setting',
+                    type: '图片'
                 }
             ],
             kanfaData: [1, 2, 3, 4, 5],
             kanfaValue: 1,
-            // checked: false, // 备选项
+            checked: false, // 备选项
             input: null,
             textarea: null,
             // 栏目选择

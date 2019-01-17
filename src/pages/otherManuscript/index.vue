@@ -148,7 +148,7 @@
                         </div> -->
                          <download>
                             <i slot="icon"
-                               class=""></i>
+                               class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
                         </download>
 

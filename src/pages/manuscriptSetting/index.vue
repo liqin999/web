@@ -150,6 +150,11 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
+                        <!-- <div class="text-left">
+                            <stay-draft>
+                                <span slot="iconName" class="primary-btn">留稿</span>
+                            </stay-draft>
+                        </div> -->
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">刷新</span>
@@ -162,24 +167,23 @@
                         <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
-                        <!-- <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">留稿</span>
-                            </span>
-                        </div> -->
-
-                        <stay-draft></stay-draft>
-
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">约稿</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
+                        <!-- <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">翻译</span>
                             </span>
-                        </div>
+                        </div> -->
+                        <translate class="primary-btn">
+                            <span slot="iconName">翻译</span>
+                        </translate>
+                        <!-- 留搞组建按钮 -->
+                            <stay-draft  class="primary-btn">
+                                <span slot="iconName">留稿</span>
+                            </stay-draft>
                     </div>
                 </el-header>
                 <el-main ref="mainTable">
@@ -254,7 +258,7 @@
                         </div> -->
                         <download>
                             <i slot="icon"
-                               class=""></i>
+                               class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
                         </download>
                         <div class="btn-line">
@@ -309,6 +313,8 @@ import draftLook from '@/components/buttons/draftLook/draftLook'
 import stayDraft from '@/pages/manuscriptSetting/stayDraft/stayDraft'
 // 下载弹框按钮
 import download from '@/components/buttons/download/download'
+// 翻译弹框按钮
+import translate from '@/components/buttons/translate/translate'
 export default {
     components: {
         leftMenu,
@@ -319,7 +325,8 @@ export default {
         printing,
         draftLook,
         stayDraft,
-        download
+        download,
+        translate
     },
     data () {
         return {
