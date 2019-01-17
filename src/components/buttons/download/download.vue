@@ -1,0 +1,39 @@
+<template>
+    <div class="btn-nav">
+        <slot name="icon"></slot>
+        <span @click="download">
+            <slot name="iconName"></slot>
+        </span>
+    </div>
+</template>
+<script>
+export default {
+    components: {
+
+    },
+    data () {
+        return {
+            historyData: {
+                labelList: [],
+                contentShow: false
+            }
+        }
+    },
+    methods: {
+        // 下载文件
+        download (data) {
+            if (!data) {
+                return
+            }
+            let url = window.URL.createObjectURL(new Blob([data]))
+            let link = document.createElement('a')
+            link.style.display = 'none'
+            link.href = url
+            link.setAttribute('download', 'draft.txt')
+
+            document.body.appendChild(link)
+            link.click()
+        }
+    }
+}
+</script>

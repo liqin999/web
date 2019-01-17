@@ -87,7 +87,19 @@
                                          label="标题">
                         </el-table-column>
                         <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
                                          label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="number"
                                          label="字数">
@@ -309,6 +321,7 @@ export default {
             tableData3: [{
                 date: '2018-10-31',
                 title: '（脱贫攻坚）陕西耀州：革命老区再绘脱贫攻坚新图景',
+                // picture: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg',
                 repDrawing: '',
                 number: 1709,
                 state: '待审',
@@ -325,6 +338,7 @@ export default {
             }, {
                 date: '2018-10-29',
                 title: '（新华时评）下足绣花功才能啃下硬骨头',
+                // picture: 'http://img.mix.sina.com.cn/api/auto/resize?size=320_0&img=//n.sinaimg.cn/news/100/w1500h1000/20190109/62cT-hrkkweh1616013.jpg',
                 repDrawing: '',
                 number: 1709,
                 state: '待审',

@@ -139,10 +139,11 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-wenben1"></i>
-                            <span>留稿</span>
-                        </div>
+                        <downLoad>
+                            <i slot="icon"
+                               class="el-icon-download"></i>
+                            <span slot="iconName">下载</span>
+                        </downLoad>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -202,6 +203,7 @@ import printing from '@/components/buttons/printing/printing.vue'
 import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 // 浏览按钮
 import draftLook from '@/components/buttons/draftLook/draftLook.vue'
+import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 export default {
     components: {
         searchInput,
@@ -216,7 +218,8 @@ export default {
         submit,
         printing,
         eliminate,
-        draftLook
+        draftLook,
+        downLoad
     },
     data () {
         return {

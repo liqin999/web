@@ -89,7 +89,9 @@
                     <el-col :span="21">
                         <div class="btn-group">
                             <el-button class="primary-btn">恢复</el-button>
-                            <el-button class="primary-btn">内容</el-button>
+                            <content-box class="primary-btn">
+                                <span slot="iconName">内容</span>
+                            </content-box>
                             <el-button class="primary-btn">历史</el-button>
                         </div>
                     </el-col>
@@ -130,9 +132,21 @@
                             <el-table-column prop="type"
                                              label="类型">
                             </el-table-column>
-                            <el-table-column prop="map"
-                                             label="代表图">
-                            </el-table-column>
+                            <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
+                                         label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
+                        </el-table-column>
                             <el-table-column prop="format"
                                              label="文件格式">
                             </el-table-column>
@@ -182,9 +196,21 @@
                             <el-table-column prop="type"
                                              label="类型">
                             </el-table-column>
-                            <el-table-column prop="map"
-                                             label="代表图">
-                            </el-table-column>
+                            <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
+                                         label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
+                        </el-table-column>
                             <el-table-column prop="format"
                                              label="文件格式">
                             </el-table-column>
@@ -209,9 +235,10 @@
     </el-container>
 </template>
 <script>
+import contentBox from '@/components/buttons/content/content.vue'
 export default {
     components: {
-
+        contentBox
     },
     data () {
         return {
@@ -219,6 +246,7 @@ export default {
                 {
                     id: '2018103100',
                     name: '脱贫攻坚羊信发“羊财”',
+                    picture: 'https://inews.gtimg.com/newsapp_bt/0/4836031414/1000',
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',
@@ -235,6 +263,7 @@ export default {
                     id: '2018103103',
                     name: '城市生活垃圾分类',
                     media: '新华每日电讯',
+                    picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2340162773,1500754957&fm=85&app=57&f=JPEG?w=121&h=75&s=E8424693405671D2042DD66E03003064',
                     status: '已审',
                     time: '2019-1-11',
                     author: '刘晶瑶',
@@ -325,7 +354,7 @@ export default {
         }
         .main-content {
             .btn-group {
-                line-height: 35px;
+                line-height: 17px;
                 @extend .text-right;
                 .primary-btn {
                     margin: 0px;

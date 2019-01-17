@@ -89,7 +89,19 @@
                                          label="标题">
                         </el-table-column>
                         <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
                                          label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="number"
                                          label="字数">
@@ -299,6 +311,7 @@ export default {
             tableData3: [{
                 date: '2018-10-31',
                 title: '一个西红柿的“世界地图”',
+                // picture: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=692414099,3457311515&fm=27&gp=0.jpg',
                 repDrawing: '',
                 number: 992,
                 state: '待审',
@@ -313,7 +326,9 @@ export default {
                 date: '2018-10-20',
                 title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
                 address: '脱贫攻坚',
+                picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 number: 1024,
+                type: '图片',
                 state: '待审',
                 deliverer: '刘学奎',
                 processingTime: '2018-10-29 10:45',

@@ -87,7 +87,19 @@
                                          label="标题">
                         </el-table-column>
                         <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
                                          label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="number"
                                          label="字数">
@@ -227,6 +239,7 @@ export default {
             }, {
                 date: '2018-10-29',
                 title: '龙海市：文化沁人心  廉洁清风来',
+                picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
                 repDrawing: '',
                 number: 163,
                 state: '待审',
