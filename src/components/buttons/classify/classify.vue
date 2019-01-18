@@ -6,7 +6,7 @@
         </span>
         <!-- 浏览弹框 -->
         <classify-message-box ref="labelBox"
-                           :lookData="lookData">
+                           :classifyData="classifyData">
         </classify-message-box>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     },
     data () {
         return {
-            lookData: {
+            classifyData: {
                 labelList: [],
                 contentShow: false
             }
@@ -30,7 +30,7 @@ export default {
         // 点击浏览按钮
         draftLabelIcon () {
             // 弹窗出现
-            this.lookData.contentShow = true
+            this.classifyData.contentShow = true
         }
     }
 }

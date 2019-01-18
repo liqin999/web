@@ -29,8 +29,8 @@ export default {
                     title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
                     date: '2018-10-31 11:23:24',
                     dealPerson: '强晓玲',
-                    img: '',
-                    type: '文本',
+                    img: 'https://inews.gtimg.com/newsapp_bt/0/4836031414/1000',
+                    type: '图片',
                     doubt: '0',
                     textFormat: 'txt'
                 }, {

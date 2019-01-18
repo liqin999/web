@@ -41,11 +41,9 @@
                                 <span data-v-6eb3df45="">审稿</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">淘汰</span>
-                            </span>
-                        </div>
+                        <eliminate>
+                            <span slot="iconName">淘汰</span>
+                        </eliminate>
 
                         <version :data="versionData">
                             <span slot="iconName">版本</span>
@@ -56,11 +54,9 @@
                                 <span data-v-6eb3df45="">编辑</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">提交</span>
-                            </span>
-                        </div>
+                        <submit>
+                            <span slot="iconName">提交</span>
+                        </submit>
                         <!-- <split>
                             <span slot="iconName">拆分</span>
                         </split>
@@ -91,7 +87,19 @@
                                          label="标题">
                         </el-table-column>
                         <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
                                          label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="number"
                                          label="字数">
@@ -150,11 +158,11 @@
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
                         </div> -->
-                        <download>
+                        <downLoad>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </download>
+                        </downLoad>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -207,7 +215,11 @@ import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
-import download from '@/components/buttons/download/download'
+import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交弹框按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -221,7 +233,9 @@ export default {
         history,
         printing,
         draftLook,
-        download
+        downLoad,
+        submit,
+        eliminate
     },
     data () {
         return {
@@ -323,6 +337,7 @@ export default {
             tableData3: [{
                 date: '2018-10-31',
                 title: '（脱贫攻坚）陕西耀州：革命老区再绘脱贫攻坚新图景',
+                // picture: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg',
                 repDrawing: '',
                 number: 1709,
                 state: '待审',
@@ -339,6 +354,7 @@ export default {
             }, {
                 date: '2018-10-29',
                 title: '（新华时评）下足绣花功才能啃下硬骨头',
+                // picture: 'http://img.mix.sina.com.cn/api/auto/resize?size=320_0&img=//n.sinaimg.cn/news/100/w1500h1000/20190109/62cT-hrkkweh1616013.jpg',
                 repDrawing: '',
                 number: 1709,
                 state: '待审',

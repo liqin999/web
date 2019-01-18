@@ -199,8 +199,7 @@
                         </el-table-column>
                         <el-table-column prop="id"
                                          label="稿号"
-                                         width="120px">
-
+                                         width="110">
                         </el-table-column>
                         <el-table-column prop="name"
                                          label="标题"
@@ -256,11 +255,11 @@
                             <i class="el-icon-download"></i>
                             <span>下载</span>
                         </div> -->
-                        <download>
+                        <downLoad>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </download>
+                        </downLoad>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -312,7 +311,7 @@ import draftLook from '@/components/buttons/draftLook/draftLook'
 // 留稿按钮弹框
 import stayDraft from '@/pages/manuscriptSetting/stayDraft/stayDraft'
 // 下载弹框按钮
-import download from '@/components/buttons/download/download'
+import downLoad from '@/components/buttons/downLoad/downLoad'
 // 翻译弹框按钮
 import translate from '@/components/buttons/translate/translate'
 export default {
@@ -325,7 +324,7 @@ export default {
         printing,
         draftLook,
         stayDraft,
-        download,
+        downLoad,
         translate
     },
     data () {

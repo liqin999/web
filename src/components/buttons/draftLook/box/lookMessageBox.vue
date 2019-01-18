@@ -64,7 +64,7 @@
                     <!-- 文字内容 -->
                     <div>
                         <el-col :span="23">
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016年1月5日，习近平总书记在重庆召开推动长江经济带发展座谈会并发表重要讲话，他强调，推动长江经济带发展必须从中华民族长远利益考虑，走生态优先、绿色发展之路，使绿水青山产生巨大生态效益、经济效益、社会效益，使母亲河永葆生机活力。</p>
+                            <p class="main">2016年1月5日，习近平总书记在重庆召开推动长江经济带发展座谈会并发表重要讲话，他强调，推动长江经济带发展必须从中华民族长远利益考虑，走生态优先、绿色发展之路，使绿水青山产生巨大生态效益、经济效益、社会效益，使母亲河永葆生机活力。</p>
                         </el-col>
                     </div>
                     <!-- 图片 -->
@@ -74,7 +74,7 @@
                     </div>
                     <!--图片链接  -->
                     <div class="texts text-left">
-                        <a href='https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg' target="_blank"><b>原图</b></a>
+                        <a href='https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg' target="_blank"><b>清晰原图</b></a>
                     </div>
                     <!-- 底部按钮 -->
                     <div class="text-right">
@@ -121,6 +121,12 @@ export default {
 }
 .texts{
     text-decoration:underline ;
+}
+p.main {
+    text-align:justify;
+}
+p {
+    text-indent:30px;
 }
 </style>
 <style>

@@ -21,7 +21,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder="原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题"></el-input> -->
-                                    <span>城市生活垃圾分类的“银川模式”</span>
+                                    <span>脱贫攻坚</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">

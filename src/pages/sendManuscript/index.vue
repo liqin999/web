@@ -27,8 +27,8 @@
                             <el-col :span="8"
                                     class="select-default">
                                 <template>
-                                    <el-select v-model="kanfaValue">
-                                        <el-option v-for="item in kanfaData"
+                                    <el-select v-model="mainDraftValue">
+                                        <el-option v-for="item in mainDraftData"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -68,13 +68,15 @@
                                                  label="序号">
                                 </el-table-column>
                                 <el-table-column prop="name"
-                                                 label="标题">
+                                                 label="标题"
+                                                 width="280">
                                 </el-table-column>
                                 <el-table-column prop="type"
                                                  label="类型">
                                 </el-table-column>
                                 <el-table-column prop="source"
-                                                 label="源文件">
+                                                 label="源文件"
+                                                 show-overflow-tooltip>
                                 </el-table-column>
                             </el-table>
                         </template>
@@ -106,7 +108,7 @@
                         <span>第一作者</span>
                     </el-col>
                     <el-col :span="18">
-                        <el-input v-model="input"
+                        <el-input v-model="author"
                                   placeholder="作者"></el-input>
                         <!-- <span>作者</span> -->
                     </el-col>
@@ -127,8 +129,8 @@
                         <span>稿件来源</span>
                     </el-col>
                     <el-col :span="18">
-                        <el-select v-model="kanfaValue">
-                            <el-option v-for="item in kanfaData"
+                        <el-select v-model="draftSourceValue">
+                            <el-option v-for="item in draftSourceData"
                                        :key="item"
                                        :label="item"
                                        :value="item">
@@ -142,8 +144,8 @@
                         <span>稿件体裁</span>
                     </el-col>
                     <el-col :span="18">
-                        <el-select v-model="kanfaValue">
-                            <el-option v-for="item in kanfaData"
+                        <el-select v-model="draftGenreValue">
+                            <el-option v-for="item in draftGenreData"
                                        :key="item"
                                        :label="item"
                                        :value="item">
@@ -167,7 +169,10 @@
                                 <span slot="iconName">选择分类</span>
                             </classify>
                             <!-- <el-button class="primary-btn">选择分类</el-button> -->
-                            <el-button class="primary-btn">详细稿签</el-button>
+                            <!-- <el-button class="primary-btn">详细稿签</el-button> -->
+                            <draft-label class="primary-btn">
+                                <span slot="iconName">详细稿签</span>
+                            </draft-label>
                         </div>
                     </el-col>
                 </el-row>
@@ -226,24 +231,40 @@
 <script>
 // 选择分类按钮组件
 import classify from '@/components/buttons/classify/classify'
+// 详细稿签按钮组件
+import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 export default {
     components: {
-        classify
+        classify,
+        draftLabel
 
     },
     data () {
         return {
+            checked: '',
             tableData: [
                 { id: '20181031000034',
                     name: '一个西红柿的“世界地图”',
-                    source: 'C: Document and Setting',
-                    type: '图片'
+                    source: 'c:\\Documents and Set',
+                    type: '文本'
                 }
             ],
-            kanfaData: [1, 2, 3, 4, 5],
-            kanfaValue: 1,
-            checked: false, // 备选项
-            input: null,
+            // 作者
+            author: '强晓玲',
+            input: '一个西红柿的“世界地图”',
+            // 类型
+            kanfaData: ['文本'],
+            kanfaValue: '文本',
+            // 主稿件
+            mainDraftData: [],
+            mainDraftValue: '',
+            // 稿件来源
+            draftSourceData: ['自写稿'],
+            draftSourceValue: '自写稿',
+            // 稿件体裁
+            draftGenreData: ['消息'],
+            draftGenreValue: '消息',
+            // checked: false, // 备选项
             textarea: null,
             // 栏目选择
             radioName: '栏目库',

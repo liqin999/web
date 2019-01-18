@@ -1,8 +1,8 @@
 <template>
-    <el-dialog class="look-message"
+    <el-dialog class="classify-message"
                title="选择分类"
                @close="messageBoxClose()"
-               :visible.sync="lookData.contentShow"
+               :visible.sync="classifyData.contentShow"
                :append-to-body="true">
         <!-- 内容区 -->
        <div class="message-box">
@@ -23,7 +23,7 @@
             <el-button class="primary-btn"
                        @click="draftConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="lookData.contentShow = false">取消</el-button>
+                       @click="classifyData.contentShow = false">取消</el-button>
         </div>
 
         </div>
@@ -33,7 +33,7 @@
 <script>
 export default {
     props: {
-        lookData: {
+        classifyData: {
             type: Object
         }
     },
@@ -159,7 +159,7 @@ export default {
 }
 </style>
 <style>
-.look-message .el-dialog {
+.classify-message .el-dialog {
     width: 30%
 }
 </style>

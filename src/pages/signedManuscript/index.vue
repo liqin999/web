@@ -98,7 +98,19 @@
                                          label="标题">
                         </el-table-column>
                         <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                        align="center"
+                                        width="130px"
                                          label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover
+                                    placement="right"
+                                    title=""
+                                    trigger="hover">
+                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
                         </el-table-column>
                         <el-table-column prop="state"
                                          label="状态">
@@ -155,11 +167,11 @@
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
                         </div> -->
-                        <download>
+                        <downLoad>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </download>
+                        </downLoad>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -210,7 +222,7 @@ import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
-import download from '@/components/buttons/download/download'
+import downLoad from '@/components/buttons/downLoad/downLoad'
 export default {
     components: {
         searchInput,
@@ -222,7 +234,7 @@ export default {
         history,
         printing,
         draftLook,
-        download
+        downLoad
     },
     data () {
         return {
@@ -436,6 +448,7 @@ export default {
                 zugao: '',
                 number: '20181030000037',
                 title: '（新华全媒头条）西藏阿里楚松村四代房：中国边境的...',
+                picture: 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=778549431,2241230358&fm=85&s=57B337C54AE3E8D41811C12603006051',
                 repDrawing: '',
                 state: '已处理',
                 banmian: '一版',
@@ -444,11 +457,12 @@ export default {
                 data: '10-31',
                 medio: '新华每日资讯',
                 firstAuthor: '国内部',
-                type: '文本'
+                type: '图片'
             }, {
                 zugao: '',
                 number: '20181030000057',
                 title: '巾帼心向党  奋进新时代',
+                // picture: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4070437,3402210601&fm=85&app=57&f=JPEG?w=121&h=75&s=A482F9B7C4809BE918B06CB603007011',
                 repDrawing: '',
                 state: '已处理',
                 banmian: '一版',

@@ -168,11 +168,11 @@
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>
                     </div> -->
-                    <download>
+                    <downLoad>
                         <i slot="icon"
                              class="el-icon-download"></i>
                         <span slot="iconName">下载</span>
-                    </download>
+                    </downLoad>
                     <div class="btn-line">
                         <span>|</span>
                     </div>
@@ -218,7 +218,7 @@ import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
-import download from '@/components/buttons/download/download'
+import downLoad from '@/components/buttons/downLoad/downLoad'
 export default {
     components: {
         leftMenu,
@@ -226,7 +226,7 @@ export default {
         history,
         printing,
         draftLook,
-        download
+        downLoad
     },
     data () {
         return {

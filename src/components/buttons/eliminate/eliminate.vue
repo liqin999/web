@@ -1,6 +1,6 @@
 <template>
   <div class="primary-btn">
-    <span @click="sendConcatIcon()">
+    <span @click="eliminateConcatIcon()">
       <slot name="iconName"></slot>
     </span>
   </div>
@@ -20,20 +20,20 @@ export default {
     mounted () {
     },
     methods: {
-        sendConcatIcon () {
-            this.$confirm('你确定要提交吗?', '提示', {
+        eliminateConcatIcon () {
+            this.$confirm('你确定要淘汰吗?', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
                 this.$message({
                     type: 'success',
-                    message: '提交成功!'
+                    message: '淘汰成功!'
                 })
             }).catch(() => {
                 this.$message({
                     type: 'info',
-                    message: '已取消提交'
+                    message: '已取消淘汰'
                 })
             })
         }

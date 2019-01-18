@@ -1,5 +1,5 @@
 <template>
-    <el-dialog class="iconfont icon-ico_print"
+    <el-dialog class="iconfont icon-ico_print "
                title="打印设置"
                @close="messageBoxClose()"
                :visible.sync="printData.contentShow"
@@ -47,6 +47,7 @@
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
+            <div class="line"></div>
             <!-- <hr> -->
             <el-row :gutter="20">
                 <el-col :span="9" class="text-right">
