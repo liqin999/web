@@ -8,10 +8,10 @@
         <!-- 内容区 -->
         <div class="message-box clearfix">
 
-            <!-- 选项内容区 -->
+            <!-- 建稿内容区 -->
             <el-row :gutter="20"
                     class="message-content clearfix">
-                <!-- 送往 -->
+                <!-- 建稿 -->
                 <el-col :span="24">
                     <el-row :gutter="20">
 

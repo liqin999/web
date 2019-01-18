@@ -12,7 +12,7 @@
                     </el-col>
                 </el-row>
             <el-tree
-                :data="data2"
+                :data="data"
                 show-checkbox
                 node-key="id"
                 :default-expanded-keys="[2, 3]"
@@ -39,7 +39,7 @@ export default {
     },
     data () {
         return {
-            data2: [{
+            data: [{
                 id: 1,
                 label: '国际新闻信息分类',
                 children: [{
@@ -149,11 +149,6 @@ export default {
         draftConfirm () {
 
         }
-    },
-    computed: {
-        dataList1 () {
-            return this.dataList
-        }
     }
 }
 </script>
@@ -161,12 +156,6 @@ export default {
 <style lang="scss" scoped>
 .message-box {
     line-height: 35px;
-}
-.ft-red {
-    color: red;
-}
-.texts{
-    text-decoration:underline ;
 }
 </style>
 <style>

@@ -15,7 +15,7 @@
                                 placeholder="城市生活垃圾分类的“银川模式”"></el-input>
                     </el-col>
                 </el-row>
-                <el-row :gutter="20">
+                <el-row :gutter="15">
                     <!-- 作者 -->
                         <el-col :span="2">
                             <b>作者：</b>

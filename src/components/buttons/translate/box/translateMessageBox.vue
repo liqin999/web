@@ -19,10 +19,6 @@
                                     <el-radio v-model="radioName"
                                              :label="label"
                                             @change="labelChange">{{ label }}</el-radio>
-                                             <!-- <el-radio v-model="radioName1"
-                                                  label="1">入库前提示 </el-radio>
-                                        <el-radio v-model="radioName1"
-                                                  label="2">直接入库</el-radio> -->
                                 </el-col>
                             </template>
                     </el-col>
@@ -127,7 +123,7 @@ export default {
 }
 </style>
 <style>
-.el-dialog {
+.translate-message.el-dialog {
     width: 50%;
     min-width: 500px;
 }
