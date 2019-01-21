@@ -48,8 +48,7 @@
 
                 </div>
             </el-header>
-            <el-main ref="mainTable">
-
+            <el-header height="55px">
                 <el-tabs v-model="activeTreeName1"
                          :stretch="true"
                          @tab-click="switchTreeMemu1">
@@ -82,7 +81,8 @@
                                  name="second2b31">
                     </el-tab-pane>
                 </el-tabs>
-
+            </el-header>
+            <el-main ref="mainTable">
                 <el-table ref="multipleTable"
                           :data="tableData3"
                           @row-click="tabclick"

@@ -96,8 +96,7 @@
                                 </el-col>
                                 <template>
                                     <el-col :span="7"
-                                            class="text-overflow"
-                                            :key="label">
+                                            class="text-overflow">
                                         <el-radio v-model="radioName1"
                                                   label="1">入库前提示 </el-radio>
                                         <el-radio v-model="radioName1"
@@ -327,7 +326,7 @@ export default {
         draftConfirm () {
             // 路由的跳转
             this.$router.push({
-                path: '/columnsLayout'
+                path: '/review'
             })
         },
         handleCheckChange1 (data) {
