@@ -29,7 +29,7 @@
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
                     <template v-for="label in radioLabel2">
-                        <el-col :span="12"
+                        <el-col :span="17"
                                 class="text-overflow"
                                 :key="label">
                             <el-radio v-model="radioName2"

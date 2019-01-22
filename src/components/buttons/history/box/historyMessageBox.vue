@@ -30,21 +30,23 @@
             <!-- 电讯稿库历史 -->
             <el-row :gutter="20"
                     class="message-content clearfix">
-                <el-col :span="24"
-                        class="tab-padding">
-                    <b class="message-title">工作稿库历史</b>
-                    <template>
-                        <el-select v-model="topValue"
-                                   placeholder="请选择">
-                            <el-option v-for="item in topTitle"
-                                       :key="item.label"
-                                       :label="item.label"
-                                       :value="item.value"
-                                       @change="topChange">
-                            </el-option>
-                        </el-select>
-                    </template>
-                </el-col>
+                <el-row :gutter="20">
+                    <el-col :span="24"
+                            class="tab-padding">
+                        <b class="message-title">工作稿库历史</b>
+                        <template>
+                            <el-select v-model="topValue"
+                                    placeholder="请选择">
+                                <el-option v-for="item in topTitle"
+                                        :key="item.label"
+                                        :label="item.label"
+                                        :value="item.value"
+                                        @change="topChange">
+                                </el-option>
+                            </el-select>
+                        </template>
+                    </el-col>
+                </el-row>
                 <el-row :gutter="20"
                         class="pb10">
                     <el-col :span="6">
@@ -98,67 +100,11 @@ export default {
             topTitle: [
                 {
                     value: '1',
-                    label: '新华每日电讯',
-                    list: [
-                        {
-                            id: 2,
-                            label: '新华每日电讯 2',
-                            children: [{
-                                id: 5,
-                                label: '新华每日电讯 2-1'
-                            },
-                            {
-                                id: 6,
-                                label: '新华每日电讯 2-2'
-                            }]
-                        },
-                        {
-                            id: 3,
-                            label: '新华每日电讯 3',
-                            children: [
-                                {
-                                    id: 7,
-                                    label: '新华每日电讯 3-1'
-                                },
-                                {
-                                    id: 8,
-                                    label: '新华每日电讯 3-2'
-                                }
-                            ]
-                        }
-                    ]
+                    label: '新华每日电讯'
                 },
                 {
-                    value: '2',
-                    label: '每日电讯微博',
-                    list: [
-                        {
-                            id: 2,
-                            label: '每日电讯微博 2',
-                            children: [{
-                                id: 5,
-                                label: '每日电讯微博 2-1'
-                            },
-                            {
-                                id: 6,
-                                label: '每日电讯微博 2-2'
-                            }]
-                        },
-                        {
-                            id: 3,
-                            label: '每日电讯微博 3',
-                            children: [
-                                {
-                                    id: 7,
-                                    label: '每日电讯微博 3-1'
-                                },
-                                {
-                                    id: 8,
-                                    label: '每日电讯微博 3-2'
-                                }
-                            ]
-                        }
-                    ]
+                    value: '5',
+                    label: '每日电讯微博'
                 }
             ]
         }

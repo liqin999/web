@@ -48,9 +48,15 @@
         <!-- 内容区 结束 -->
         <div slot="footer"
              class="dialog-footer">
+             <!-- <div class="text-right"> -->
+                <!-- <download>
+                    <span slot="iconName"  class="primary-btn">下载</span>
+                </download> -->
+             <!-- </div> -->
             <div class="left-group">
-                <el-button class="primary-btn"
-                           @click="downFn()">下载</el-button>
+                <down-load class="primary-btn">
+                    <span slot="iconName">下载</span>
+                </down-load>
                 <el-button class="primary-btn"
                            @click="sendDetailFn()">文本痕迹</el-button>
                 <el-button class="primary-btn"
@@ -63,7 +69,12 @@
 </template>
 
 <script>
+// 下载弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad'
 export default {
+    components: {
+        downLoad
+    },
     props: {
         versionData: {
             type: Object

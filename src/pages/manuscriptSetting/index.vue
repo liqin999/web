@@ -150,6 +150,11 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
+                        <!-- <div class="text-left">
+                            <stay-draft>
+                                <span slot="iconName" class="primary-btn">留稿</span>
+                            </stay-draft>
+                        </div> -->
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">刷新</span>
@@ -164,21 +169,21 @@
                         </send-draft>
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
-                                <span data-v-6eb3df45="">留稿</span>
-                            </span>
-                        </div>
-
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
                                 <span data-v-6eb3df45="">约稿</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
+                        <!-- <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">翻译</span>
                             </span>
-                        </div>
-
+                        </div> -->
+                        <translate class="primary-btn">
+                            <span slot="iconName">翻译</span>
+                        </translate>
+                        <!-- 留搞组建按钮 -->
+                            <stay-draft  class="primary-btn">
+                                <span slot="iconName">留稿</span>
+                            </stay-draft>
                     </div>
                 </el-header>
                 <el-main ref="mainTable">
@@ -235,20 +240,26 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="3">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
-                            <i class="iconfont icon-liulan"></i>
-                            <span>浏览</span>
-                        </div>
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-wenben1"></i>
-                            <span>留稿</span>
-                        </div>
+                        <!-- <div class="btn-nav">
+                            <i class="el-icon-download"></i>
+                            <span>下载</span>
+                        </div> -->
+                        <down-load>
+                            <i slot="icon"
+                               class="el-icon-download"></i>
+                            <span slot="iconName">下载</span>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -295,6 +306,14 @@ import history from '@/components/buttons/history/history.vue'
 import createDraft from '@/pages/manuscriptSetting/createDraft/createDraft'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 留稿按钮弹框
+import stayDraft from '@/pages/manuscriptSetting/stayDraft/stayDraft'
+// 下载弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad'
+// 翻译弹框按钮
+import translate from '@/components/buttons/translate/translate'
 export default {
     components: {
         leftMenu,
@@ -302,7 +321,11 @@ export default {
         draftLabel,
         history,
         createDraft,  // 建稿按钮弹框
-        printing
+        printing,
+        draftLook,
+        stayDraft,
+        downLoad,
+        translate
     },
     data () {
         return {

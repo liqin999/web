@@ -65,6 +65,7 @@
                                                  width="55">
                                 </el-table-column>
                                 <el-table-column prop="id"
+                                                 type="index"
                                                  label="序号">
                                 </el-table-column>
                                 <el-table-column prop="name"
@@ -165,7 +166,10 @@
                                   v-model="textarea">
                         </el-input>
                         <div class="btn-group pt10">
-                            <el-button class="primary-btn">选择分类</el-button>
+                            <classify class="primary-btn">
+                                <span slot="iconName">选择分类</span>
+                            </classify>
+                            <!-- <el-button class="primary-btn">选择分类</el-button> -->
                             <el-button class="primary-btn">详细稿签</el-button>
                         </div>
                     </el-col>
@@ -223,35 +227,43 @@
     </el-container>
 </template>
 <script>
+// 选择分类按钮组件
+import classify from '@/components/buttons/classify/classify'
 export default {
     components: {
+        classify
 
     },
     data () {
         return {
             tableData: [
-                { id: '20181031000034',
-                    name: '一个西红柿的“世界地图”',
+                {
+                    name: '一个灵魂的旅行',
+                    source: 'c:\\Documents and Set',
+                    type: '文本'
+                },
+                {
+                    name: '学会每天问自己是个问题',
                     source: 'c:\\Documents and Set',
                     type: '文本'
                 }
             ],
             // 作者
             author: '强晓玲',
-            input: '一个西红柿的“世界地图”',
+            input: '学会每天问自己是个问题',
             // 类型
-            kanfaData: ['文本'],
+            kanfaData: ['文本', '图片', '图表', '视频', '音频', '歌曲', '应用'],
             kanfaValue: '文本',
             // 主稿件
-            mainDraftData: [],
-            mainDraftValue: '',
+            mainDraftData: [1, 2],
+            mainDraftValue: 2,
             // 稿件来源
-            draftSourceData: ['自写稿'],
+            draftSourceData: ['自写稿', '新采编'],
             draftSourceValue: '自写稿',
             // 稿件体裁
-            draftGenreData: ['消息'],
+            draftGenreData: ['消息', '通讯', '专访'],
             draftGenreValue: '消息',
-            // checked: false, // 备选项
+            checked: false, // 备选项
             textarea: null,
             // 栏目选择
             radioName: '栏目库',

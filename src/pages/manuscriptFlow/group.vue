@@ -57,7 +57,7 @@
                                :current-page="currentPage"
                                :page-size="20"
                                layout="total, prev, pager, next"
-                               :total="100">
+                               :total="2">
                 </el-pagination>
                 <div class="btn-bottom">
                     <div class="btn-nav">

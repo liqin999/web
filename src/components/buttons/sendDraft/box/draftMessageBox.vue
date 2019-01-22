@@ -132,13 +132,6 @@
                             <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
                             <span class="redColor">（不超过255个字）</span>
                         </el-col>
-                        <!-- <el-col :span="24"
-                                class="clearfix"> -->
-                                <!-- <b class="message-title padding-bottom10 inline-block" v-if='sendData'>撤稿意见</b>
-                                <b class="message-title padding-bottom10 inline-block" v-else-if='!sendData'>撤稿意见</b> -->
-                                <!-- <span class="redColor">（不超过255个字）</span> -->
-                                <!-- </el-col> -->
-                        <!-- <el-row> -->
                         <el-col :span="24">
                             <el-input type="textarea"
                                       :rows="12"
@@ -247,66 +240,24 @@ export default {
                 {
                     value: '1',
                     label: '新华每日电讯',
-                    list: [
+                    children: [
                         {
-                            id: 2,
-                            label: '新华每日电讯 2',
-                            children: [{
-                                id: 5,
-                                label: '新华每日电讯 2-1'
-                            },
-                            {
-                                id: 6,
-                                label: '新华每日电讯 2-2'
-                            }]
+                            value: '2',
+                            label: '国内新闻'
                         },
                         {
-                            id: 3,
-                            label: '新华每日电讯 3',
-                            children: [
-                                {
-                                    id: 7,
-                                    label: '新华每日电讯 3-1'
-                                },
-                                {
-                                    id: 8,
-                                    label: '新华每日电讯 3-2'
-                                }
-                            ]
+                            value: '3',
+                            label: '脱贫攻坚'
+                        },
+                        {
+                            value: '4',
+                            label: '脱贫攻坚'
                         }
                     ]
                 },
                 {
-                    value: '2',
-                    label: '每日电讯微博',
-                    list: [
-                        {
-                            id: 2,
-                            label: '每日电讯微博 2',
-                            children: [{
-                                id: 5,
-                                label: '每日电讯微博 2-1'
-                            },
-                            {
-                                id: 6,
-                                label: '每日电讯微博 2-2'
-                            }]
-                        },
-                        {
-                            id: 3,
-                            label: '每日电讯微博 3',
-                            children: [
-                                {
-                                    id: 7,
-                                    label: '每日电讯微博 3-1'
-                                },
-                                {
-                                    id: 8,
-                                    label: '每日电讯微博 3-2'
-                                }
-                            ]
-                        }
-                    ]
+                    value: '5',
+                    label: '每日电讯微博'
                 }
             ],
             // 多选框列表

@@ -45,6 +45,7 @@
                             <span slot="iconName">提交</span>
                         </submit>
                         <split>
+                            <span @click="splitConcatIcon()"></span>
                             <span slot="iconName">拆分</span>
                         </split>
                         <concat :data="concatData"
@@ -77,7 +78,7 @@
                                          header-align="center"
                                         align="center"
                                         width="130px"
-                                         label="代表图">
+                                        label="代表图">
                             <template slot-scope="scope">
                                 <el-popover
                                     placement="right"
@@ -128,7 +129,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="3">
                     </el-pagination>
                     <div class="btn-bottom">
                         <draft-look>
@@ -139,18 +140,14 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <downLoad>
+                        <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </downLoad>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <!-- <div class="btn-nav">
-                            <i class="iconfont icon-ico_print"></i>
-                            <span>打印</span>
-                        </div> -->
                         <printing>
                             <i slot="icon"
                                class="iconfont icon-ico_print"></i>
@@ -199,11 +196,12 @@ import history from '@/components/buttons/history/history.vue'
 import submit from '@/components/buttons/submit/submit.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 // 淘汰按钮
 import eliminate from '@/components/buttons/eliminate/eliminate.vue'
-// 浏览按钮
-import draftLook from '@/components/buttons/draftLook/draftLook.vue'
-import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 export default {
     components: {
         searchInput,
@@ -215,10 +213,10 @@ export default {
         version,
         draftLabel,
         history,
-        submit,
         printing,
-        eliminate,
         draftLook,
+        submit,
+        eliminate,
         downLoad
     },
     data () {
@@ -262,17 +260,17 @@ export default {
                         {
                             id: 46,
                             label: '头版',
-                            icon: 'iconfont icon-file-b- ft-ffd658',
-                            children: [
-                                {
-                                    id: 469,
-                                    label: '头版1-1'
-                                },
-                                {
-                                    id: 4697,
-                                    label: '头版1-2'
-                                }
-                            ]
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                            // children: [
+                            //     {
+                            //         id: 469,
+                            //         label: '头版1-1'
+                            //     },
+                            //     {
+                            //         id: 4697,
+                            //         label: '头版1-2'
+                            //     }
+                            // ]
                         },
                         {
                             id: 12,
@@ -354,7 +352,7 @@ export default {
                 title: '（新华每日电讯）千年古镇里走中药种植路 百折不挠尝！',
                 address: '脱贫攻坚',
                 number: 3578,
-                picture: 'http://img5.imgtn.bdimg.com/it/u=4052202813,3675351786&fm=11&gp=0.jpg',
+                picture: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg',
                 state: '已审',
                 deliverer: '方立新',
                 processingTime: '2018-10-30 14:23',
@@ -404,6 +402,23 @@ export default {
         }
     },
     methods: {
+        splitConcatIcon () {
+            this.$confirm('只能选择一条数据', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                this.$message({
+                    type: 'success',
+                    message: '选择成功！'
+                })
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消选择'
+                })
+            })
+        },
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
         },

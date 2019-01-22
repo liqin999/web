@@ -11,31 +11,31 @@
                 <el-row :gutter="20">
                     <el-col :span="12">
                         <el-form-item label="标题">
-                            <el-input v-model="title"></el-input>
+                            <el-input></el-input>
                         </el-form-item>
                         <el-row :gutter="20" style="height: 47px">
                             <el-col :span="12">
                                 <el-form-item label="创建人">
-                                    <el-input v-model="title"></el-input>
+                                    <el-input></el-input>
                                 </el-form-item>
                             </el-col>
                             <el-col :span="12">
                                 <el-form-item label="媒体">
-                                    <el-input v-model="media"></el-input>
+                                    <el-input></el-input>
                                 </el-form-item>
                             </el-col>
                         </el-row>
                         <el-form-item label="原内容" style="height:92px">
-                            <el-input class="input-height" v-model="content"></el-input>
+                            <el-input class="input-height"></el-input>
                         </el-form-item>
                         <el-form-item label="补充内容" style="height:92px">
-                            <el-input class="input-height" v-model="content1"></el-input>
+                            <el-input class="input-height"></el-input>
                         </el-form-item>
                         <el-form-item label="原备注" style="height:92px">
-                            <el-input class="input-height" v-model="content1"></el-input>
+                            <el-input class="input-height"></el-input>
                         </el-form-item>
                         <el-form-item label="补充备注" style="height:92px">
-                            <el-input class="input-height" v-model="content1"></el-input>
+                            <el-input class="input-height"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="11">

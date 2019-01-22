@@ -1,5 +1,5 @@
 <template>
-    <el-dialog class="iconfont icon-ico_print "
+    <el-dialog class="print-message"
                title="打印设置"
                @close="messageBoxClose()"
                :visible.sync="printData.contentShow"
@@ -13,7 +13,7 @@
                         class="text-right">
                     <span>设置每行打印字数：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
@@ -23,7 +23,7 @@
                         class="text-right">
                     <span>设置打印栏数：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
@@ -33,7 +33,7 @@
                         class="text-right">
                     <span>设置打印字数大小：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
@@ -43,7 +43,7 @@
                         class="text-right">
                     <span>行间距大小：</span>
                 </el-col>
-                <el-col :span="8">
+                <el-col :span="7">
                     <el-input  clearable></el-input>
                 </el-col>
             </el-row>
@@ -93,7 +93,6 @@
                     <span >毫米</span>
                 </el-col>
             </el-row>
-
             <el-row :gutter="20">
                 <el-col :span="9" class="text-right">
                     <el-checkbox>自动添加页码</el-checkbox>
@@ -110,7 +109,6 @@
         </div>
     </el-dialog>
 </template>
-
 <script>
 export default {
     props: {
@@ -140,29 +138,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icon-ico_print{
+.print-message .icon-ico_print{
     line-height: 30px;
 }
-.label-border {
+.print-message .label-border {
     @include border(bottom, 1px, solid, $tint-border-color);
 }
-.el-select {
+.print-message .el-select {
     float: right;
 }
-.left-space{
+.print-message .left-space{
     position: absolute;
     text-align: center
 
 }
-.left-space~.left-space{
+.print-message .left-space~.left-space{
     right:15px;
     top:0;
     text-align: center
 }
 </style>
 <style>
-.el-dialog {
+.print-message .el-dialog {
     min-width: 76px;
 }
-
 </style>
