@@ -19,8 +19,7 @@
                                     <b>原稿标题：</b>
                                 </el-col>
                                 <el-col :span="20">
-                                    <!-- <el-input v-model="input"
-                                              placeholder="原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题"></el-input> -->
+
                                     <span>脱贫攻坚</span>
                                 </el-col>
                             </el-row>
@@ -31,8 +30,6 @@
                                     <b>第一作者：</b>
                                 </el-col>
                                 <el-col :span="4">
-                                    <!-- <el-input v-model="input"
-                                              placeholder="作者"></el-input> -->
                                     <span>刘晶瑶</span>
                                 </el-col>
                                 <!-- 来源 -->
@@ -41,8 +38,6 @@
                                     <b>来源：</b>
                                 </el-col>
                                 <el-col :span="5">
-                                    <!-- <el-input v-model="input"
-                                              placeholder="自写稿"></el-input> -->
                                     <span>自写稿</span>
                                 </el-col>
                                 <!-- 体裁 -->
@@ -51,9 +46,7 @@
                                     <b>体裁：</b>
                                 </el-col>
                                 <el-col :span="5">
-                                    <!-- <el-input v-model="input"
-                                              placeholder="消息"></el-input> -->
-                                    <span>文本</span>
+                                    <span>消息</span>
                                 </el-col>
                             </el-row>
                             <!-- 分类 -->
@@ -63,9 +56,7 @@
                                     <b>分类：</b>
                                 </el-col>
                                 <el-col :span="20">
-                                    <!-- <el-input v-model="input"
-                                              placeholder=""></el-input> -->
-                                    <span>一个西红柿的”世界地图“</span>
+                                    <span></span>
                                 </el-col>
                             </el-row>
                         </el-col>
@@ -77,16 +68,22 @@
                                 <template>
                                     <el-table :data="tableData"
                                               style="width: 100%">
-                                        <el-table-column prop="date"
-                                                         label="日期"
+                                        <el-table-column prop="id"
+                                                         label="序号"
                                                          width="180">
                                         </el-table-column>
                                         <el-table-column prop="name"
                                                          label="姓名"
                                                          width="180">
                                         </el-table-column>
-                                        <el-table-column prop="address"
-                                                         label="地址">
+                                        <el-table-column prop="penName"
+                                                         label="笔名">
+                                        </el-table-column>
+                                        <el-table-column prop="authorType"
+                                                         label="作者类型">
+                                        </el-table-column>
+                                        <el-table-column prop="editUser"
+                                                         label="采编用户">
                                         </el-table-column>
                                     </el-table>
                                 </template>
@@ -100,8 +97,6 @@
                                     <span>姓名：</span>
                                 </el-col>
                                 <el-col :span="6">
-                                    <!-- <el-input v-model="input"
-                                              placeholder=""></el-input> -->
                                     <span>郝玉</span>
                                 </el-col>
                                 <!-- 电话 -->
@@ -184,7 +179,15 @@ export default {
         return {
             textarea: null,
             input: null,
-            tableData: []
+            tableData: [
+                {
+                    id: '1',
+                    name: '刘晶瑶',
+                    penName: '',
+                    authorType: '',
+                    editUser: '是'
+                }
+            ]
         }
     },
     methods: {

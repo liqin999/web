@@ -92,7 +92,10 @@
                             <content-box class="primary-btn">
                                 <span slot="iconName">内容</span>
                             </content-box>
-                            <el-button class="primary-btn">历史</el-button>
+                            <!-- <el-button class="primary-btn">历史</el-button> -->
+                            <history class="primary-btn">
+                                <span slot="iconName" >历史</span>
+                            </history>
                         </div>
                     </el-col>
                     <el-col :span="24">
@@ -235,10 +238,15 @@
     </el-container>
 </template>
 <script>
+// 内容按钮组件
 import contentBox from '@/components/buttons/content/content.vue'
+// 历史按钮组件
+import history from '@/components/buttons/history/history.vue'
 export default {
     components: {
-        contentBox
+        contentBox,
+        history
+
     },
     data () {
         return {

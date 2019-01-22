@@ -26,13 +26,24 @@
                         <el-col :span="8"
                                 class="times-select">
                             <template>
-                                <span>处理时间</span>
+                                <span>刊发时间</span>
                                 <el-date-picker v-model="pickerTime"
                                                 type="date"
                                                 placeholder="选择日期"
                                                 @change="pickerChange">
                                 </el-date-picker>
                             </template>
+                        </el-col>
+                        <el-col :span="3">
+                                <el-time-select
+                                    v-model="value1"
+                                    :picker-options="{
+                                        start: '08:30',
+                                        step: '00:15',
+                                        end: '18:30'
+                                    }"
+                                    placeholder="选择时间">
+                                </el-time-select>
                         </el-col>
                         <!-- 刊发位次 -->
                         <el-col :span="6"
@@ -50,7 +61,7 @@
                             </template>
                         </el-col>
                         <!-- checkbox -->
-                        <el-col :span="10">
+                        <el-col :span="13">
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <template v-for="item in checkLabel">
@@ -88,7 +99,7 @@
                         <div>
                             <el-col :span="4">
                                 <template>
-                                    <el-checkbox v-model="checked">备选项</el-checkbox>
+                                    <el-checkbox v-model="checked1">主标题</el-checkbox>
                                 </template>
                             </el-col>
                             <el-col :span="6">
@@ -131,7 +142,7 @@
                         <div>
                             <el-col :span="4">
                                 <template>
-                                    <el-checkbox v-model="checked">备选项</el-checkbox>
+                                    <el-checkbox v-model="checked2">副标题</el-checkbox>
                                 </template>
                             </el-col>
                             <el-col :span="6">
@@ -174,7 +185,7 @@
                         <div>
                             <el-col :span="4">
                                 <template>
-                                    <el-checkbox v-model="checked">备选项</el-checkbox>
+                                    <el-checkbox v-model="checked3">肩题</el-checkbox>
                                 </template>
                             </el-col>
                             <el-col :span="6">
@@ -202,7 +213,7 @@
                             <el-col :span="6">
                                 <template>
                                     <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
+                                        <el-option v-for="item in fontData2"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -266,11 +277,15 @@ export default {
     },
     data () {
         return {
-            checked: '',
+            value1: '',
+            checked1: '',
+            checked2: '',
+            checked3: '',
             textarea: '请输入文字',
             textarea2: '请输入文字',
             radioName: '版面库',
             radioLabel: [
+                '媒体公共库',
                 '版面库',
                 '栏目库'
             ],
@@ -278,6 +293,10 @@ export default {
             fontValue: '宋体',
             fontData: [
                 '宋体',
+                '微软雅黑'
+            ],
+            fontData2: [
+                '五号',
                 '微软雅黑'
             ],
             kanfaValue: 1,

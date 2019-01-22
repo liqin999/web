@@ -244,22 +244,39 @@ export default {
             checked: '',
             tableData: [
                 { id: '20181031000034',
-                    name: '一个西红柿的“世界地图”',
+                    name: '每天学会问自己是十个问题',
                     source: 'c:\\Documents and Set',
                     type: '文本'
                 }
             ],
             // 作者
             author: '强晓玲',
-            input: '一个西红柿的“世界地图”',
+            input: '每天学会问自己是十个问题',
             // 类型
-            kanfaData: ['文本'],
+            kanfaData: [
+                '文本',
+                '原图',
+                '网上图片',
+                '图表',
+                '视频',
+                '音频',
+                '歌曲',
+                '应用'
+            ],
             kanfaValue: '文本',
             // 主稿件
-            mainDraftData: [],
+            mainDraftData: [
+                '001',
+                '002',
+                '003',
+                '004'
+            ],
             mainDraftValue: '',
             // 稿件来源
-            draftSourceData: ['自写稿'],
+            draftSourceData: [
+                '自写稿',
+                '新采编'
+            ],
             draftSourceValue: '自写稿',
             // 稿件体裁
             draftGenreData: ['消息'],
@@ -322,6 +339,7 @@ export default {
         .aside-content {
             .btn-group {
                 display: flex;
+                line-height: 1;
                 justify-content: space-between;
                 .primary-btn {
                     margin: 0px;

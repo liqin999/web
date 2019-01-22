@@ -26,7 +26,7 @@ export default {
         }
     },
     methods: {
-        // 点击传稿按钮
+        // 点击历史按钮
         historyIcon () {
             // 弹窗出现
             this.historyData.contentShow = true

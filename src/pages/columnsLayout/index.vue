@@ -45,6 +45,7 @@
                             <span slot="iconName">提交</span>
                         </submit>
                         <split>
+                            <span @click="splitConcatIcon()"></span>
                             <span slot="iconName">拆分</span>
                         </split>
                         <concat :data="concatData"
@@ -77,7 +78,7 @@
                                          header-align="center"
                                         align="center"
                                         width="130px"
-                                         label="代表图">
+                                        label="代表图">
                             <template slot-scope="scope">
                                 <el-popover
                                     placement="right"
@@ -128,7 +129,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="3">
                     </el-pagination>
                     <div class="btn-bottom">
                         <draft-look>
@@ -259,17 +260,7 @@ export default {
                         {
                             id: 46,
                             label: '头版',
-                            icon: 'iconfont icon-file-b- ft-ffd658',
-                            children: [
-                                {
-                                    id: 469,
-                                    label: '头版1-1'
-                                },
-                                {
-                                    id: 4697,
-                                    label: '头版1-2'
-                                }
-                            ]
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
                             id: 12,
@@ -309,6 +300,11 @@ export default {
                         {
                             id: 20,
                             label: '原创',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 21,
+                            label: '经济·民生',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
@@ -401,6 +397,23 @@ export default {
         }
     },
     methods: {
+        splitConcatIcon () {
+            this.$confirm('只能选择一条数据', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                this.$message({
+                    type: 'success',
+                    message: '选择成功！'
+                })
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消选择'
+                })
+            })
+        },
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
         },

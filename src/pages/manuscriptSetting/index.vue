@@ -31,9 +31,9 @@
                             <el-form-item label="稿件状态:">
                                 <el-select v-model="searchForm.state1"
                                            placeholder="稿件状态">
-                                    <el-option label="全部"
+                                    <!-- <el-option label="全部"
                                                value="shanghai">
-                                    </el-option>
+                                    </el-option> -->
                                     <el-option label="待审"
                                                value="beijing">
                                     </el-option>
@@ -50,14 +50,17 @@
                             <el-form-item label="稿件来源:">
                                 <el-select v-model="searchForm.source"
                                            placeholder="稿件来源">
-                                    <el-option label="全部"
+                                    <el-option label="邮件稿件"
                                                value="shanghai">
                                     </el-option>
-                                    <el-option label="来源1"
+                                    <el-option label="eNews稿件"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="来源2"
+                                    <el-option label="自采稿"
                                                value="shan22ghai">
+                                    </el-option>
+                                    <el-option label="数据服务平台"
+                                               value="sha3n22ghai">
                                     </el-option>
                                 </el-select>
                             </el-form-item>
@@ -240,7 +243,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="3">
                     </el-pagination>
                     <div class="btn-bottom">
                         <draft-look>

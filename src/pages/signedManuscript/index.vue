@@ -148,7 +148,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="2">
                     </el-pagination>
                     <div class="btn-bottom">
                         <!-- <div class="btn-nav">
@@ -320,25 +320,50 @@ export default {
                     label: '每日电讯微博',
                     children: [
                         {
-                            id: 5,
-                            label: '一版',
-                            icon: 'iconfont icon-file1'
+                            id: 46,
+                            label: '头版',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        }, {
+                            id: 12,
+                            label: '国内新闻',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
+                            id: 1222,
+                            label: '脱贫攻坚',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 7,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
+                            id: 4,
+                            label: '新闻焦点',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 8,
-                            label: '四版',
-                            icon: 'iconfont icon-file1'
+                            id: 15,
+                            label: '图片',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 16,
+                            label: '评论声音',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 17,
+                            label: '新闻纵深',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 18,
+                            label: '世界报道',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 20,
+                            label: '原创',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         }
+
                     ]
                 }
 

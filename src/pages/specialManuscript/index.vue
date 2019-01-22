@@ -122,7 +122,8 @@
                                          show-overflow-tooltip>
                         </el-table-column>
                         <el-table-column prop="preData"
-                                         label="预计刊登日期">
+                                         label="预计刊登日期"
+                                         width="100px">
                         </el-table-column>
                         <el-table-column prop="type"
                                          label="类型">
@@ -139,7 +140,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="2">
                     </el-pagination>
                     <div class="btn-bottom">
                         <!-- <div class="btn-nav">
