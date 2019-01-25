@@ -65,6 +65,7 @@
                                                  width="55">
                                 </el-table-column>
                                 <el-table-column prop="id"
+                                                 type="index"
                                                  label="序号">
                                 </el-table-column>
                                 <el-table-column prop="name"
@@ -241,47 +242,34 @@ export default {
     },
     data () {
         return {
-            checked: '',
             tableData: [
-                { id: '20181031000034',
-                    name: '每天学会问自己是十个问题',
+                {
+                    name: '一个灵魂的旅行',
+                    source: 'c:\\Documents and Set',
+                    type: '文本'
+                },
+                {
+                    name: '学会每天问自己是个问题',
                     source: 'c:\\Documents and Set',
                     type: '文本'
                 }
             ],
             // 作者
             author: '强晓玲',
-            input: '每天学会问自己是十个问题',
+            input: '学会每天问自己是个问题',
             // 类型
-            kanfaData: [
-                '文本',
-                '原图',
-                '网上图片',
-                '图表',
-                '视频',
-                '音频',
-                '歌曲',
-                '应用'
-            ],
+            kanfaData: ['文本', '图片', '图表', '视频', '音频', '歌曲', '应用'],
             kanfaValue: '文本',
             // 主稿件
-            mainDraftData: [
-                '001',
-                '002',
-                '003',
-                '004'
-            ],
-            mainDraftValue: '',
+            mainDraftData: [1, 2],
+            mainDraftValue: 2,
             // 稿件来源
-            draftSourceData: [
-                '自写稿',
-                '新采编'
-            ],
+            draftSourceData: ['自写稿', '新采编'],
             draftSourceValue: '自写稿',
             // 稿件体裁
-            draftGenreData: ['消息'],
+            draftGenreData: ['消息', '通讯', '专访'],
             draftGenreValue: '消息',
-            // checked: false, // 备选项
+            checked: false, // 备选项
             textarea: null,
             // 栏目选择
             radioName: '栏目库',

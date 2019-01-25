@@ -103,7 +103,7 @@
                             </content-box>
                             <!-- <el-button class="primary-btn">历史</el-button> -->
                             <history class="primary-btn">
-                                <span slot="iconName" >历史</span>
+                                <span slot="iconName">历史</span>
                             </history>
                         </div>
                     </el-col>
@@ -228,7 +228,6 @@
 <script>
 // 撤稿按钮组件
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
-// 历史按钮组件
 import history from '@/components/buttons/history/history.vue'
 // 选送按钮
 import pick from '@/components/buttons/pick/pick.vue'

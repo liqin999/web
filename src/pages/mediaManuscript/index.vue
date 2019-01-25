@@ -90,16 +90,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
+                                         align="center"
+                                         width="130px"
                                          label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -171,7 +174,7 @@
                         </div>
                         <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
                         </printing>
                         <div class="btn-line">
@@ -215,14 +218,14 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
-// 浏览弹框按钮
-import draftLook from '@/components/buttons/draftLook/draftLook'
-// 下载弹框按钮
-import downLoad from '@/components/buttons/downLoad/downLoad'
 // 提交弹框按钮
 import submit from '@/components/buttons/submit/submit.vue'
 // 淘汰按钮
 import eliminate from '@/components/buttons/eliminate/eliminate.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad'
 export default {
     components: {
         searchInput,
@@ -235,10 +238,10 @@ export default {
         draftLabel,
         history,
         printing,
-        draftLook,
-        downLoad,
         submit,
-        eliminate
+        eliminate,
+        draftLook,
+        downLoad
     },
     data () {
         return {

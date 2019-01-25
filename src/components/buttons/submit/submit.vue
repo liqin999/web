@@ -1,12 +1,17 @@
 <template>
-  <div class="primary-btn">
-    <span @click="sendConcatIcon()">
-      <slot name="iconName"></slot>
-    </span>
-  </div>
+    <div class="primary-btn">
+        <span @click="submitIcon()">
+            <slot name="iconName"></slot>
+        </span>
+    </div>
 </template>
 <script>
 export default {
+    props: {
+        submitData: {
+            type: Array
+        }
+    },
     data () {
         return {
         }
@@ -14,7 +19,7 @@ export default {
     mounted () {
     },
     methods: {
-        sendConcatIcon () {
+        submitIcon () {
             this.$confirm('你确定要提交吗?', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',

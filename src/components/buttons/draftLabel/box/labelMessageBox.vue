@@ -1,12 +1,12 @@
 <template>
-    <el-dialog class=""
+    <el-dialog class="label-message"
                title="稿签信息"
                @close="messageBoxClose()"
                :visible.sync="labelData.contentShow"
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-            <el-row :gutter="20"
+            <el-row :gutter="50"
                     class="clearfix">
                 <!-- 左侧 -->
                 <el-col :span="18">
@@ -19,7 +19,8 @@
                                     <b>原稿标题：</b>
                                 </el-col>
                                 <el-col :span="20">
-
+                                    <!-- <el-input v-model="input"
+                                              placeholder="原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题"></el-input> -->
                                     <span>脱贫攻坚</span>
                                 </el-col>
                             </el-row>
@@ -30,6 +31,8 @@
                                     <b>第一作者：</b>
                                 </el-col>
                                 <el-col :span="4">
+                                    <!-- <el-input v-model="input"
+                                              placeholder="作者"></el-input> -->
                                     <span>刘晶瑶</span>
                                 </el-col>
                                 <!-- 来源 -->
@@ -46,6 +49,8 @@
                                     <b>体裁：</b>
                                 </el-col>
                                 <el-col :span="5">
+                                    <!-- <el-input v-model="input"
+                                              placeholder="消息"></el-input> -->
                                     <span>消息</span>
                                 </el-col>
                             </el-row>
@@ -56,7 +61,9 @@
                                     <b>分类：</b>
                                 </el-col>
                                 <el-col :span="20">
-                                    <span></span>
+                                    <!-- <el-input v-model="input"
+                                              placeholder=""></el-input> -->
+                                    <span>文本</span>
                                 </el-col>
                             </el-row>
                         </el-col>
@@ -151,11 +158,26 @@
                 <!-- 右侧 -->
                 <el-col :span="6">
                     <b>附件</b>
-                    <el-input type="textarea"
-                              :rows="16"
-                              placeholder="请输入内容"
-                              v-model="textarea">
-                    </el-input>
+                    <el-row :gutter="20"
+                            class='message-content'>
+                        <el-col class="message-checkbox"
+                                :span="24">
+                            <el-row :gutter="2"
+                                    style="line-height: 30px">
+                                <el-col :span="2">
+                                    <i class="el-icon-document"></i>
+                                </el-col>
+                                <el-col :span="17">
+                                    <!-- <a href="/review" style="font-size: 1px">(脱贫攻坚)羊信发"羊财"</a> -->
+                                    <span style="font-size: 1px"
+                                          @click="fileClick">(脱贫攻坚)羊信发"羊财"</span>
+                                </el-col>
+                                <el-col :span="5">
+                                    <span style="font-size: 1px">9.52MB</span>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
                 </el-col>
             </el-row>
         </div>
@@ -191,6 +213,9 @@ export default {
         }
     },
     methods: {
+        fileClick () {
+            this.$router.push({ path: '/review' })
+        },
         messageBoxClose () {
 
         },
@@ -214,10 +239,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.message-box {
+.label-message .message-box {
     line-height: 35px;
     .label-border {
         @include border(bottom, 1px, solid, $tint-border-color);
+    }
+    .message-content {
+        .message-checkbox {
+            height: 365px;
+            @include border(all);
+            border-radius: $border-radius;
+        }
+    }
+    .message-content[data-v-49e2cde9] {
+        padding-top: 1px;
+        line-height: 15px;
     }
 }
 </style>

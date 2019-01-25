@@ -32,16 +32,20 @@
                                  label="处理人">
                 </el-table-column>
                 <el-table-column prop="img"
-                                header-align="center"
-                                align="center"
-                                width="130px"
-                                label="代表图">
-                        <template slot-scope="scope">
-                            <el-popover trigger="hover">
-                                <img v-bind:src="scope.row.img" style="max-height: 300px;max-width: 1000px">
-                                <img slot="reference" :src="scope.row.img" :alt="scope.row.img" style="max-height: 30px;max-width: 120px">
-                            </el-popover>
-                        </template>
+                                 header-align="center"
+                                 align="center"
+                                 width="130px"
+                                 label="代表图">
+                    <template slot-scope="scope">
+                        <el-popover trigger="hover">
+                            <img v-bind:src="scope.row.img"
+                                 style="max-height: 300px;max-width: 1000px">
+                            <img slot="reference"
+                                 :src="scope.row.img"
+                                 :alt="scope.row.img"
+                                 style="max-height: 30px;max-width: 120px">
+                        </el-popover>
+                    </template>
                 </el-table-column>
                 <el-table-column prop="type"
                                  label="类型">
@@ -58,9 +62,9 @@
         <div slot="footer"
              class="dialog-footer">
             <div class="left-group">
-                <downLoad class="primary-btn">
+                <down-load class="primary-btn">
                     <span slot="iconName">下载</span>
-                </downLoad>
+                </down-load>
                 <el-button class="primary-btn"
                            @click="sendDetailFn()">文本痕迹</el-button>
                 <el-button class="primary-btn"

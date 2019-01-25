@@ -129,7 +129,7 @@ p {
 }
 </style>
 <style>
-.el-dialog {
+.look-message .el-dialog {
     width: 60%;
     min-width: 600px;
 }

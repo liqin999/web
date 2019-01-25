@@ -184,9 +184,9 @@
                             <span slot="iconName">翻译</span>
                         </translate>
                         <!-- 留搞组建按钮 -->
-                            <stay-draft  class="primary-btn">
-                                <span slot="iconName">留稿</span>
-                            </stay-draft>
+                        <stay-draft class="primary-btn">
+                            <span slot="iconName">留稿</span>
+                        </stay-draft>
                     </div>
                 </el-header>
                 <el-main ref="mainTable">
@@ -258,17 +258,17 @@
                             <i class="el-icon-download"></i>
                             <span>下载</span>
                         </div> -->
-                        <downLoad>
+                        <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </downLoad>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
                         <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
                         </printing>
                         <div class="btn-line">

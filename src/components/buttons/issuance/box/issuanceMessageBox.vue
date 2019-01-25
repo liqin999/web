@@ -1,5 +1,5 @@
 <template>
-    <el-dialog class=""
+    <el-dialog class="issuance-message"
                title="签发"
                @close="messageBoxClose()"
                :visible.sync="issuanceData.contentShow"
@@ -35,15 +35,14 @@
                             </template>
                         </el-col>
                         <el-col :span="3">
-                                <el-time-select
-                                    v-model="value1"
-                                    :picker-options="{
+                            <el-time-select v-model="value1"
+                                            :picker-options="{
                                         start: '08:30',
                                         step: '00:15',
                                         end: '18:30'
                                     }"
-                                    placeholder="选择时间">
-                                </el-time-select>
+                                            placeholder="选择时间">
+                            </el-time-select>
                         </el-col>
                         <!-- 刊发位次 -->
                         <el-col :span="6"
@@ -84,7 +83,8 @@
                             class="font16">
                         <div>
                             <el-col :span="18"
-                                    :offset="4" class="tab-padding rtab-padding">
+                                    :offset="4"
+                                    class="tab-padding rtab-padding">
                                 <el-col :span="8"
                                         class="ac"><span>标题字体</span></el-col>
                                 <el-col :span="8"
@@ -99,13 +99,14 @@
                         <div>
                             <el-col :span="4">
                                 <template>
-                                    <el-checkbox v-model="checked1">主标题</el-checkbox>
+                                    <el-checkbox v-model="mainTitle.checked">主标题</el-checkbox>
                                 </template>
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
+                                    <el-select v-model="mainTitle.fontValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in mainTitle.fontData"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -115,8 +116,9 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
+                                    <el-select v-model="mainTitle.hengValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in mainTitle.hengData"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -126,51 +128,9 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
-                                                   :key="item"
-                                                   :label="item"
-                                                   :value="item">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-col>
-                        </div>
-                    </el-row>
-                    <el-row :gutter="20"
-                            class="font-select">
-                        <div>
-                            <el-col :span="4">
-                                <template>
-                                    <el-checkbox v-model="checked2">副标题</el-checkbox>
-                                </template>
-                            </el-col>
-                            <el-col :span="6">
-                                <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
-                                                   :key="item"
-                                                   :label="item"
-                                                   :value="item">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-col>
-                            <el-col :span="6">
-                                <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
-                                                   :key="item"
-                                                   :label="item"
-                                                   :value="item">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-col>
-                            <el-col :span="6">
-                                <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
+                                    <el-select v-model="mainTitle.shuValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in mainTitle.shuData"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -185,13 +145,14 @@
                         <div>
                             <el-col :span="4">
                                 <template>
-                                    <el-checkbox v-model="checked3">肩题</el-checkbox>
+                                    <el-checkbox v-model="fuTitle.checked">副标题</el-checkbox>
                                 </template>
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
+                                    <el-select v-model="fuTitle.fontValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in fuTitle.fontData"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -201,8 +162,9 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData"
+                                    <el-select v-model="fuTitle.hengValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in fuTitle.hengData"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -212,8 +174,55 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="fontValue" class="issuance-select">
-                                        <el-option v-for="item in fontData2"
+                                    <el-select v-model="fuTitle.shuValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in fuTitle.shuData"
+                                                   :key="item"
+                                                   :label="item"
+                                                   :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                        </div>
+                    </el-row>
+                    <el-row :gutter="20"
+                            class="font-select">
+                        <div>
+                            <el-col :span="4">
+                                <template>
+                                    <el-checkbox v-model="jianti.checked">肩题</el-checkbox>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="jianti.fontValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in jianti.fontData"
+                                                   :key="item"
+                                                   :label="item"
+                                                   :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="jianti.hengValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in jianti.hengData"
+                                                   :key="item"
+                                                   :label="item"
+                                                   :value="item">
+                                        </el-option>
+                                    </el-select>
+                                </template>
+                            </el-col>
+                            <el-col :span="6">
+                                <template>
+                                    <el-select v-model="jianti.shuValue"
+                                               class="issuance-select">
+                                        <el-option v-for="item in jianti.shuData"
                                                    :key="item"
                                                    :label="item"
                                                    :value="item">
@@ -231,26 +240,52 @@
                 <el-col :span="3"
                         class="tab-padding"><b class="message-title">签发目标</b></el-col>
                 <el-col :span="21">
-                    <el-row>
-                        <el-col :span="8">
-                            <el-input type="textarea"
-                                      :rows="12"
-                                      placeholder="请输入内容"
-                                      v-model="textarea"
-                                      @change="textareaChange">
-                            </el-input>
+                    <el-row class='message-content'>
+                        <el-col :span="8"
+                                class="message-checkbox">
+                            <el-tree :data="dataList"
+                                     :default-expanded-keys="[2, 3]"
+                                     :highlight-current="true"
+                                     node-key="id"
+                                     :props="defaultProps">
+                            </el-tree>
                         </el-col>
                         <el-col :span="16">
                             <el-col :span="5"
                                     class="text-right"><b class="message-title">签发意见</b></el-col>
                             <el-col :span="19"
                                     class="pl10">
-                                <el-input type="textarea"
-                                          :rows="8"
-                                          placeholder="请输入内容"
-                                          v-model="textarea2"
-                                          @change="textareaChange2">
-                                </el-input>
+                                <el-row>
+                                    <el-input type="textarea"
+                                              :rows="3"
+                                              placeholder="请输入内容"
+                                              v-model="textarea2"
+                                              @change="textareaChange2">
+                                    </el-input>
+
+                                    <el-col :span="14">
+                                        <b style="color: red">2018-11-08 四版 预安排稿件/线索 0</b>
+                                    </el-col>
+                                    <el-col :span="24">
+                                        <el-table>
+                                            <el-table-column label="稿号"></el-table-column>
+                                            <el-table-column label="标题"></el-table-column>
+                                            <el-table-column label="资源"></el-table-column>
+                                            <el-table-column label="类型"></el-table-column>
+                                        </el-table>
+                                    </el-col>
+                                </el-row>
+                                <el-row>
+                                    <el-col :span="14">
+                                        <b style="color: blue">2018-11-08 四版 已签发稿数 0</b>
+                                    </el-col>
+                                    <el-col :span="24">
+                                        <el-table>
+                                            <el-table-column label="稿号"></el-table-column>
+                                            <el-table-column label="标题"></el-table-column>
+                                        </el-table>
+                                    </el-col>
+                                </el-row>
                             </el-col>
                         </el-col>
                     </el-row>
@@ -277,12 +312,9 @@ export default {
     },
     data () {
         return {
-            value1: '',
-            checked1: '',
-            checked2: '',
-            checked3: '',
-            textarea: '请输入文字',
-            textarea2: '请输入文字',
+            checked: '',
+            textarea: '',
+            textarea2: '',
             radioName: '版面库',
             radioLabel: [
                 '媒体公共库',
@@ -290,15 +322,86 @@ export default {
                 '栏目库'
             ],
             kanfaData: [1, 2, 3, 4, 5],
-            fontValue: '宋体',
-            fontData: [
-                '宋体',
-                '微软雅黑'
+            // 主标题
+            mainTitle: {
+                checked: '',
+                // 标题字体
+                fontValue: '宋体',
+                fontData: [
+                    '宋体',
+                    '微软雅黑'
+                ],
+                // 横向字号
+                hengValue: '五号',
+                hengData: ['初号', '小初', '一号', '小一', '二号', '小二', '三号', '小三', '四号', '小四', '五号', '小五'],
+                // 纵向字号
+                shuValue: '五号',
+                shuData: ['初号', '小初', '一号', '小一', '二号', '小二', '三号', '小三', '四号', '小四', '五号', '小五']
+            },
+            // 副标题
+            fuTitle: {
+                checked: '',
+                // 标题字体
+                fontValue: '宋体',
+                fontData: [
+                    '宋体',
+                    '微软雅黑'
+                ],
+                // 横向字号
+                hengValue: '五号',
+                hengData: ['初号', '小初', '一号', '小一', '二号', '小二', '三号', '小三', '四号', '小四', '五号', '小五'],
+                // 纵向字号
+                shuValue: '五号',
+                shuData: ['初号', '小初', '一号', '小一', '二号', '小二', '三号', '小三', '四号', '小四', '五号', '小五']
+            },
+            // 肩题
+            jianti: {
+                checked: '',
+                // 标题字体
+                fontValue: '宋体',
+                fontData: [
+                    '宋体',
+                    '微软雅黑'
+                ],
+                // 横向字号
+                hengValue: '五号',
+                hengData: ['初号', '小初', '一号', '小一', '二号', '小二', '三号', '小三', '四号', '小四', '五号', '小五'],
+                // 纵向字号
+                shuValue: '五号',
+                shuData: ['初号', '小初', '一号', '小一', '二号', '小二', '三号', '小三', '四号', '小四', '五号', '小五']
+            },
+            // 签发目标
+            dataList: [
+                {
+                    id: 2,
+                    label: 'A叠',
+                    children: [{
+                        id: 5,
+                        label: '一版'
+                    },
+                    {
+                        id: 6,
+                        label: '二版'
+                    },
+                    {
+                        id: 55,
+                        label: '三版'
+                    },
+                    {
+                        id: 56,
+                        label: '四版'
+                    },
+                    {
+                        id: 546,
+                        label: '五版'
+                    }]
+                }
+
             ],
-            fontData2: [
-                '五号',
-                '微软雅黑'
-            ],
+            defaultProps: {
+                children: 'children',
+                label: 'label'
+            },
             kanfaValue: 1,
             pickerTime: '',
             checkLabel: [
@@ -355,8 +458,42 @@ export default {
     // .text-right{
     //     padding-left: 40px;
     // }
-    .issuance-select{
+    .issuance-select {
         width: 100%;
     }
+    .message-content {
+        .message-checkbox {
+            height: 200px;
+            @include border(all);
+            border-radius: $border-radius;
+        }
+    }
+    .el-tree {
+        position: relative;
+        cursor: default;
+        background: #fff;
+        color: #606266;
+        /* padding-right: 5px; */
+        padding-left: 30px;
+    }
+    .message-content .message-checkbox[data-v-55926a36] {
+        height: 292px;
+        border: 1px solid #cbcbcb;
+        border-radius: 3px;
+    }
+}
+</style>
+<style>
+.issuance-message .el-table thead th {
+    padding: 0px 0;
+    color: #676767;
+    background-color: #ebebeb;
+}
+.issuance-message .el-table__empty-block {
+    position: relative;
+    min-height: 45px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
 }
 </style>

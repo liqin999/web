@@ -36,8 +36,8 @@
                         </span>
                     </div>
                     <eliminate>
-                            <span slot="iconName">淘汰</span>
-                        </eliminate>
+                        <span slot="iconName">淘汰</span>
+                    </eliminate>
 
                     <version :data="versionData">
                         <span slot="iconName">版本</span>
@@ -72,67 +72,70 @@
                     <el-table-column type="selection">
                     </el-table-column>
                     <el-table-column label="入库时间"
-                                         width="100px">
-                            <template slot-scope="scope">{{ scope.row.date }}</template>
-                        </el-table-column>
-                        <el-table-column prop="title"
-                                         width="180px"
-                                         show-overflow-tooltip
-                                         label="标题">
-                        </el-table-column>
-                        <el-table-column prop="repDrawing"
-                                         header-align="center"
-                                        align="center"
-                                        width="130px"
-                                         label="代表图">
-                            <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
-                                </el-popover>
-                            </template>
-                        </el-table-column>
-                        <el-table-column prop="number"
-                                         label="字数">
-                        </el-table-column>
-                        <el-table-column prop="state"
-                                         label="状态">
-                        </el-table-column>
-                        <el-table-column prop="dealingPeople"
-                                         label="处理人">
-                        </el-table-column>
-                        <el-table-column prop="processingTime"
-                                         label="处理时间"
-                                         width="180px">
-                        </el-table-column>
-                        <el-table-column prop="firstAuthor"
-                                         label="第一作者">
-                        </el-table-column>
-                        <el-table-column prop="medio"
-                                         label="媒体"
-                                         show-overflow-tooltip>
-                        </el-table-column>
-                        <el-table-column prop="type"
-                                         label="类型">
-                        </el-table-column>
-                        <el-table-column prop="doubt"
-                                         label="疑点">
-                        </el-table-column>
-                        <el-table-column prop="source"
-                                         label="来源">
-                        </el-table-column>
-                        <el-table-column prop="gnumber"
-                                         label="稿数">
-                        </el-table-column>
-                        <el-table-column prop="file"
-                                         label="文件格式">
-                        </el-table-column>
-                        <el-table-column prop="fujian"
-                                         label="附件">
-                        </el-table-column>
+                                     width="100px">
+                        <template slot-scope="scope">{{ scope.row.date }}</template>
+                    </el-table-column>
+                    <el-table-column prop="title"
+                                     width="180px"
+                                     show-overflow-tooltip
+                                     label="标题">
+                    </el-table-column>
+                    <el-table-column prop="repDrawing"
+                                     header-align="center"
+                                     align="center"
+                                     width="130px"
+                                     label="代表图">
+                        <template slot-scope="scope">
+                            <el-popover placement="right"
+                                        title=""
+                                        trigger="hover">
+                                <img v-bind:src="scope.row.picture"
+                                     style="max-height: 300px;max-width: 1000px">
+                                <img slot="reference"
+                                     :src="scope.row.picture"
+                                     :alt="scope.row.picture"
+                                     style="max-height: 30px;max-width: 120px">
+                            </el-popover>
+                        </template>
+                    </el-table-column>
+                    <el-table-column prop="number"
+                                     label="字数">
+                    </el-table-column>
+                    <el-table-column prop="state"
+                                     label="状态">
+                    </el-table-column>
+                    <el-table-column prop="dealingPeople"
+                                     label="处理人">
+                    </el-table-column>
+                    <el-table-column prop="processingTime"
+                                     label="处理时间"
+                                     width="180px">
+                    </el-table-column>
+                    <el-table-column prop="firstAuthor"
+                                     label="第一作者">
+                    </el-table-column>
+                    <el-table-column prop="medio"
+                                     label="媒体"
+                                     show-overflow-tooltip>
+                    </el-table-column>
+                    <el-table-column prop="type"
+                                     label="类型">
+                    </el-table-column>
+                    <el-table-column prop="doubt"
+                                     label="疑点">
+                    </el-table-column>
+                    <el-table-column prop="source"
+                                     label="来源">
+                    </el-table-column>
+                    <el-table-column prop="gnumber"
+                                     label="稿数">
+                    </el-table-column>
+                    <el-table-column prop="file"
+                                     label="文件格式">
+                    </el-table-column>
+                    <el-table-column prop="fujian"
+                                     label="附件">
+                    </el-table-column>
                 </el-table>
             </el-main>
             <el-footer height="70px">
@@ -150,18 +153,18 @@
                         <span>浏览</span>
                     </div> -->
                     <draft-look>
-                            <i slot="icon"
-                               class="iconfont icon-liulan"></i>
-                            <span slot="iconName">浏览</span>
+                        <i slot="icon"
+                           class="iconfont icon-liulan"></i>
+                        <span slot="iconName">浏览</span>
                     </draft-look>
                     <div class="btn-line">
                         <span>|</span>
                     </div>
-                    <downLoad>
-                            <i slot="icon"
-                               class="el-icon-download"></i>
-                            <span slot="iconName">下载</span>
-                        </downLoad>
+                    <down-load>
+                        <i slot="icon"
+                           class="el-icon-download"></i>
+                        <span slot="iconName">下载</span>
+                    </down-load>
                     <!-- <div class="btn-nav">
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>
@@ -171,7 +174,7 @@
                     </div>
                     <printing>
                         <i slot="icon"
-                            class="iconfont icon-ico_print"></i>
+                           class="iconfont icon-ico_print"></i>
                         <span slot="iconName">打印</span>
                     </printing>
                     <div class="btn-line">
@@ -214,14 +217,14 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
-// 浏览弹框按钮
-import draftLook from '@/components/buttons/draftLook/draftLook'
-// 下载弹框按钮
-import downLoad from '@/components/buttons/downLoad/downLoad'
 // 提交弹框按钮
 import submit from '@/components/buttons/submit/submit.vue'
 // 淘汰按钮
 import eliminate from '@/components/buttons/eliminate/eliminate.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad'
 export default {
     components: {
         searchInput,
@@ -233,10 +236,10 @@ export default {
         draftLabel,
         history,
         printing,
-        draftLook,
-        downLoad,
         submit,
-        eliminate
+        eliminate,
+        draftLook,
+        downLoad
 
     },
     data () {
@@ -453,7 +456,7 @@ export default {
 }
 </script>
 <style>
-.el-container .right-container{
-    background-color: #ffffff
+.el-container .right-container {
+    background-color: #ffffff;
 }
 </style>

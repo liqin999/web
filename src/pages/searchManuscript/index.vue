@@ -94,7 +94,7 @@
                             </content-box>
                             <!-- <el-button class="primary-btn">历史</el-button> -->
                             <history class="primary-btn">
-                                <span slot="iconName" >历史</span>
+                                <span slot="iconName">历史</span>
                             </history>
                         </div>
                     </el-col>
@@ -113,7 +113,7 @@
                             </el-table-column>
                             <el-table-column prop="name"
                                              label="标题"
-                                              width="170">
+                                             width="170">
                             </el-table-column>
                             <el-table-column prop="media"
                                              label="所属媒体"
@@ -136,20 +136,23 @@
                                              label="类型">
                             </el-table-column>
                             <el-table-column prop="repDrawing"
-                                         header-align="center"
-                                        align="center"
-                                        width="130px"
-                                         label="代表图">
-                            <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
-                                </el-popover>
-                            </template>
-                        </el-table-column>
+                                             header-align="center"
+                                             align="center"
+                                             width="130px"
+                                             label="代表图">
+                                <template slot-scope="scope">
+                                    <el-popover placement="right"
+                                                title=""
+                                                trigger="hover">
+                                        <img v-bind:src="scope.row.picture"
+                                             style="max-height: 300px;max-width: 1000px">
+                                        <img slot="reference"
+                                             :src="scope.row.picture"
+                                             :alt="scope.row.picture"
+                                             style="max-height: 30px;max-width: 120px">
+                                    </el-popover>
+                                </template>
+                            </el-table-column>
                             <el-table-column prop="format"
                                              label="文件格式">
                             </el-table-column>
@@ -200,20 +203,23 @@
                                              label="类型">
                             </el-table-column>
                             <el-table-column prop="repDrawing"
-                                         header-align="center"
-                                        align="center"
-                                        width="130px"
-                                         label="代表图">
-                            <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
-                                </el-popover>
-                            </template>
-                        </el-table-column>
+                                             header-align="center"
+                                             align="center"
+                                             width="130px"
+                                             label="代表图">
+                                <template slot-scope="scope">
+                                    <el-popover placement="right"
+                                                title=""
+                                                trigger="hover">
+                                        <img v-bind:src="scope.row.picture"
+                                             style="max-height: 300px;max-width: 1000px">
+                                        <img slot="reference"
+                                             :src="scope.row.picture"
+                                             :alt="scope.row.picture"
+                                             style="max-height: 30px;max-width: 120px">
+                                    </el-popover>
+                                </template>
+                            </el-table-column>
                             <el-table-column prop="format"
                                              label="文件格式">
                             </el-table-column>
@@ -260,7 +266,7 @@ export default {
                     time: '2018-10-31',
                     author: '强晓玲',
                     source: '自写稿',
-                    type: '文本',
+                    type: '图片',
                     map: '',
                     format: '.txt',
                     wordNumber: '1345',
@@ -271,7 +277,7 @@ export default {
                     id: '2018103103',
                     name: '城市生活垃圾分类',
                     media: '新华每日电讯',
-                    picture: '',
+                    // picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2340162773,1500754957&fm=85&app=57&f=JPEG?w=121&h=75&s=E8424693405671D2042DD66E03003064',
                     status: '已审',
                     time: '2019-1-11',
                     author: '刘晶瑶',
