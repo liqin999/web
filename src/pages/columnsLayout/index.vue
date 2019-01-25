@@ -408,6 +408,10 @@ export default {
                 that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
+        // 测试请求的接口的调用
+        this.$api.text1().then(res => {
+
+        })
     },
     methods: {
         splitConcatIcon () {

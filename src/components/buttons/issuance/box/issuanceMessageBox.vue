@@ -312,6 +312,7 @@ export default {
     },
     data () {
         return {
+            value1: '',
             checked: '',
             textarea: '',
             textarea2: '',

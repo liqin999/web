@@ -129,9 +129,8 @@ export const routes = [{
 {
     path: '/signedManuscript',
     name: 'signedManuscript',
-    components: {
-        default: signedManuscript
-    }
+    component: signedManuscript
+
 },
 {
     path: '/reviewDetail',
