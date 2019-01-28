@@ -167,9 +167,9 @@
                         <create-draft>
                             <span slot="iconName">建稿</span>
                         </create-draft>
-                        <send-draft :sendData="true">
+                        <!-- <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
-                        </send-draft>
+                        </send-draft> -->
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">约稿</span>
@@ -301,7 +301,7 @@
     </el-container>
 </template>
 <script>
-import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
@@ -320,7 +320,7 @@ import translate from '@/components/buttons/translate/translate'
 export default {
     components: {
         leftMenu,
-        sendDraft,
+        // sendDraft,
         draftLabel,
         history,
         createDraft,  // 建稿按钮弹框

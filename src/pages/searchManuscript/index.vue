@@ -84,8 +84,78 @@
             </el-aside>
             <el-main class="main-content">
                 <el-row :gutter="20"
+                        class="pl10 pr10">
+                    <el-col :span="24"><b class="font18">稿源库</b></el-col>
+                    <el-col :span="24">
+                        <el-table ref="multipleTable"
+                                  class="mt10"
+                                  height="160"
+                                  :data="tableData3"
+                                  tooltip-effect="dark"
+                                  @selection-change="handleSelectionChange">
+                            <el-table-column type="selection">
+                            </el-table-column>
+                            <el-table-column label="稿号"
+                                             width="100">
+                                <template slot-scope="scope">{{ scope.row.id }}</template>
+                            </el-table-column>
+                            <el-table-column prop="name"
+                                             label="标题"
+                                             width="170">
+                            </el-table-column>
+                            <el-table-column prop="media"
+                                             label="所属媒体"
+                                             show-overflow-tooltip>
+                            </el-table-column>
+                            <el-table-column prop="status"
+                                             label="状态">
+                            </el-table-column>
+                            <el-table-column prop="time"
+                                             label="创建时间"
+                                             width="100">
+                            </el-table-column>
+                            <el-table-column prop="author"
+                                             label="第一作者">
+                            </el-table-column>
+                            <el-table-column prop="type"
+                                             label="类型">
+                            </el-table-column>
+                            <el-table-column prop="repDrawing"
+                                             header-align="center"
+                                             align="center"
+                                             width="130px"
+                                             label="代表图">
+                                <template slot-scope="scope">
+                                    <el-popover placement="right"
+                                                title=""
+                                                trigger="hover">
+                                        <img v-bind:src="scope.row.picture"
+                                             style="max-height: 300px;max-width: 1000px">
+                                        <img slot="reference"
+                                             :src="scope.row.picture"
+                                             :alt="scope.row.picture"
+                                             style="max-height: 30px;max-width: 120px">
+                                    </el-popover>
+                                </template>
+                            </el-table-column>
+                            <el-table-column prop="format"
+                                             label="文件格式">
+                            </el-table-column>
+                            <el-table-column prop="wordNumber"
+                                             label="字数">
+                            </el-table-column>
+                            <el-table-column prop="articleNumber"
+                                             label="稿数">
+                            </el-table-column>
+                            <el-table-column prop="source"
+                                             label="来源">
+                            </el-table-column>
+                        </el-table>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <el-col :span="3"><b class="font18">电讯稿库</b></el-col>
+                    <el-col :span="3"><b class="font18">其他稿库</b></el-col>
                     <el-col :span="21">
                         <div class="btn-group">
                             <el-button class="primary-btn">恢复</el-button>
@@ -165,76 +235,7 @@
                         </el-table>
                     </el-col>
                 </el-row>
-                <el-row :gutter="20"
-                        class="pl10 pr10">
-                    <el-col :span="24"><b class="font18">稿源库</b></el-col>
-                    <el-col :span="24">
-                        <el-table ref="multipleTable"
-                                  class="mt10"
-                                  height="160"
-                                  :data="tableData3"
-                                  tooltip-effect="dark"
-                                  @selection-change="handleSelectionChange">
-                            <el-table-column type="selection">
-                            </el-table-column>
-                            <el-table-column label="稿号"
-                                             width="100">
-                                <template slot-scope="scope">{{ scope.row.id }}</template>
-                            </el-table-column>
-                            <el-table-column prop="name"
-                                             label="标题"
-                                             width="170">
-                            </el-table-column>
-                            <el-table-column prop="media"
-                                             label="所属媒体"
-                                             show-overflow-tooltip>
-                            </el-table-column>
-                            <el-table-column prop="status"
-                                             label="状态">
-                            </el-table-column>
-                            <el-table-column prop="time"
-                                             label="创建时间"
-                                             width="100">
-                            </el-table-column>
-                            <el-table-column prop="author"
-                                             label="第一作者">
-                            </el-table-column>
-                            <el-table-column prop="type"
-                                             label="类型">
-                            </el-table-column>
-                            <el-table-column prop="repDrawing"
-                                             header-align="center"
-                                             align="center"
-                                             width="130px"
-                                             label="代表图">
-                                <template slot-scope="scope">
-                                    <el-popover placement="right"
-                                                title=""
-                                                trigger="hover">
-                                        <img v-bind:src="scope.row.picture"
-                                             style="max-height: 300px;max-width: 1000px">
-                                        <img slot="reference"
-                                             :src="scope.row.picture"
-                                             :alt="scope.row.picture"
-                                             style="max-height: 30px;max-width: 120px">
-                                    </el-popover>
-                                </template>
-                            </el-table-column>
-                            <el-table-column prop="format"
-                                             label="文件格式">
-                            </el-table-column>
-                            <el-table-column prop="wordNumber"
-                                             label="字数">
-                            </el-table-column>
-                            <el-table-column prop="articleNumber"
-                                             label="稿数">
-                            </el-table-column>
-                            <el-table-column prop="source"
-                                             label="来源">
-                            </el-table-column>
-                        </el-table>
-                    </el-col>
-                </el-row>
+
             </el-main>
         </el-container>
         <el-footer height="60px">
