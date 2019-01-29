@@ -21,7 +21,7 @@
                                     </el-select>
                                 </template>
                             </el-col>
-                            <el-col :span="3">
+                            <!-- <el-col :span="3">
                                 <el-checkbox v-model="checked">组稿</el-checkbox>
                             </el-col>
                             <el-col :span="8"
@@ -36,7 +36,7 @@
                                     </el-select>
                                 </template>
                                 <span class="pl10">为主稿件</span>
-                            </el-col>
+                            </el-col> -->
                         </el-row>
                         <el-row :gutter="20"
                                 class="pt10">
@@ -87,14 +87,19 @@
                         </div>
                     </el-col>
                 </el-row>
-                <el-row :gutter="20"
+                <el-row :gutter="50"
                         class="mb15 pl10 pr10">
-                    <el-col :span="3"><b class="font18">内容</b></el-col>
-                    <el-col :span="21"
+                    <el-col :span="12">
+                        <b class="font18">图片预览</b>
+                        <img style="width:100%;height:100%"
+                             src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg">
+                    </el-col>
+                    <el-col :span="12"
                             class="tab-padding">
+                        <b class="font18">添加说明</b>
                         <el-input type="textarea"
-                                  :rows="6"
-                                  placeholder="请输入内容"
+                                  :rows="8"
+                                  placeholder="详细说明"
                                   v-model="textarea">
                         </el-input>
                     </el-col>
@@ -234,6 +239,7 @@
 import classify from '@/components/buttons/classify/classify'
 // 详细稿签按钮组件
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
+
 export default {
     components: {
         classify,
@@ -245,14 +251,10 @@ export default {
             tableData: [
                 {
                     name: '一个灵魂的旅行',
-                    source: 'c:\\Documents and Set',
-                    type: '文本'
-                },
-                {
-                    name: '学会每天问自己是个问题',
-                    source: 'c:\\Documents and Set',
-                    type: '文本'
+                    source: 'C:\\Documents\\1.jpg',
+                    type: '图片'
                 }
+
             ],
             // 作者
             author: '强晓玲',
