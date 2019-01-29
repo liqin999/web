@@ -104,10 +104,22 @@
                                     <el-option label="全部"
                                                value="shangddhai12">
                                     </el-option>
-                                    <el-option label="类型1"
+                                    <el-option label="文本"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="类型2"
+                                    <el-option label="图片"
+                                               value="12的方法">
+                                    </el-option>
+                                    <el-option label="图表"
+                                               value="12的方法">
+                                    </el-option>
+                                    <el-option label="视频"
+                                               value="12的方法">
+                                    </el-option>
+                                    <el-option label="音频"
+                                               value="12的方法">
+                                    </el-option>
+                                    <el-option label="多媒体"
                                                value="12的方法">
                                     </el-option>
                                 </el-select>
@@ -376,7 +388,7 @@ export default {
                 productType: ''
 
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,

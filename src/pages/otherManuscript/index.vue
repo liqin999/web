@@ -8,12 +8,14 @@
                     <el-col :span="6"
                             slot="media">
                         <el-form-item label="媒体:">
-                            <el-select v-model="searchForm.media"
+                            <el-select v-model="topValue"
                                        placeholder="请选择媒体">
-                                <el-option label="媒体一"
-                                           value="shanghai"></el-option>
-                                <el-option label="媒体二"
-                                           value="beijing"></el-option>
+                                <el-option v-for="item in topTitle"
+                                           :key="item.label"
+                                           :label="item.label"
+                                           :value="item.value"
+                                           @change="topChange">
+                                </el-option>
                             </el-select>
                         </el-form-item>
                     </el-col>
@@ -277,7 +279,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -380,7 +382,19 @@ export default {
                 // }
             ],
             multipleSelection: [],
-            mainTableHeight: null
+            mainTableHeight: null,
+            topValue: '新华每日电讯',
+            topTitle: [
+                {
+                    value: '1',
+                    label: '新华每日电讯'
+                },
+                {
+                    value: '5',
+                    label: '每日电讯微博'
+                }
+            ]
+
         }
     },
     mounted () {
@@ -393,6 +407,9 @@ export default {
         }
     },
     methods: {
+        topChange (value) {
+            // this.topValue = value;
+        },
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
         },

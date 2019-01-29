@@ -29,22 +29,23 @@
 
 <script>
 export default {
-  data () {
-    return {
-      showDate: new Date().getTime(),
-      imageUrl: '../static/img/bm_logo.jpg',
-      activeIndex: '1'
-    }
-  },
-  methods: {
-    // eventBus传值
-    eventBus (choose) {
-      Bus.$emit('getTarget', choose)
+    data () {
+        return {
+            Bus: '',
+            showDate: new Date().getTime(),
+            imageUrl: '../static/img/bm_logo.jpg',
+            activeIndex: '1'
+        }
     },
-    handleSelect (data) {
-      console.log('选中得是', data)
+    methods: {
+    // eventBus传值
+        eventBus (choose) {
+            // Bus.$emit('getTarget', choose)
+        },
+        handleSelect (data) {
+            console.log('选中得是', data)
+        }
     }
-  }
 }
 </script>
 

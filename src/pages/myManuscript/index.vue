@@ -251,7 +251,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,

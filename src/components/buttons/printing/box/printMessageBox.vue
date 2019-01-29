@@ -1,5 +1,5 @@
 <template>
-    <el-dialog class="iconfont icon-ico_print "
+    <el-dialog class="print-message"
                title="打印设置"
                @close="messageBoxClose()"
                :visible.sync="printData.contentShow"
@@ -138,28 +138,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icon-ico_print{
+.print-message .icon-ico_print{
     line-height: 30px;
 }
-.label-border {
+.print-message .label-border {
     @include border(bottom, 1px, solid, $tint-border-color);
 }
-.el-select {
+.print-message .el-select {
     float: right;
 }
-.left-space{
+.print-message .left-space{
     position: absolute;
     text-align: center
 
 }
-.left-space~.left-space{
+.print-message .left-space~.left-space{
     right:15px;
     top:0;
     text-align: center
 }
 </style>
 <style>
-.el-dialog {
-    min-width: 50px;
+.print-message .el-dialog {
+    min-width: 76px;
 }
 </style>

@@ -251,25 +251,25 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
                     label: '新华每日电讯',
                     children: [
+                        // {
+                        //     id: 46,
+                        //     label: '头版',
+                        //     icon: 'iconfont icon-file-b- ft-ffd658'
+                        // },
                         {
-                            id: 46,
-                            label: '头版',
+                            id: 1222,
+                            label: '脱贫攻坚',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
                             id: 12,
                             label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 1222,
-                            label: '脱贫攻坚',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {

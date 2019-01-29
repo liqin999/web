@@ -129,6 +129,6 @@ export default {
 <style>
 .translate-message.el-dialog {
     width: 50%;
-    min-width: 500px;
+    /* min-width: 500px; */
 }
 </style>

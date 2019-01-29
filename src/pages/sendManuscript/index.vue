@@ -65,6 +65,7 @@
                                                  width="55">
                                 </el-table-column>
                                 <el-table-column prop="id"
+                                                 type="index"
                                                  label="序号">
                                 </el-table-column>
                                 <el-table-column prop="name"
@@ -243,8 +244,13 @@ export default {
         return {
             checked: '',
             tableData: [
-                { id: '20181031000034',
-                    name: '每天学会问自己是十个问题',
+                {
+                    name: '一个灵魂的旅行',
+                    source: 'c:\\Documents and Set',
+                    type: '文本'
+                },
+                {
+                    name: '学会每天问自己是个问题',
                     source: 'c:\\Documents and Set',
                     type: '文本'
                 }
@@ -279,7 +285,7 @@ export default {
             ],
             draftSourceValue: '自写稿',
             // 稿件体裁
-            draftGenreData: ['消息'],
+            draftGenreData: ['消息', '通讯', '专访'],
             draftGenreValue: '消息',
             // checked: false, // 备选项
             textarea: null,

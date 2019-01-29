@@ -37,15 +37,15 @@ export default {
         },
         // 向右拖拽
         rightMove () {
-            var el_dialog = document.getElementById('box')
-            var minHeight = el_dialog.getAttribute('minheight')
-            var minWidth = el_dialog.getAttribute('minwidth')
-            var maxWidth = el_dialog.getAttribute('maxWidth')
+            // var el_dialog = document.getElementById('box')
+            // var minHeight = el_dialog.getAttribute('minheight')
+            // var minWidth = el_dialog.getAttribute('minwidth')
+            // var maxWidth = el_dialog.getAttribute('maxWidth')
             var right = document.getElementById('dlg_right')
             var mouseStart = {}
-            var divStart = {}
+            // var divStart = {}
             var rightStart = {}
-            var bottomStart = {}
+            // var bottomStart = {}
             // drag from right
             right.onmousedown = function (ev) {
                 var oEvent = ev || event
@@ -70,10 +70,10 @@ export default {
                 }
             }
             function doDragToRightBottomToRight (ev) {
-                var oEvent = ev || event
-                var l = oEvent.clientX - mouseStart.x + rightStart.x
+                // var oEvent = ev || event
+                // var l = oEvent.clientX - mouseStart.x + rightStart.x
                 // 53这个数，根据实际情况调整，也可以为 0
-                el_dialog.style.width = (l) + 'px'
+                // el_dialog.style.width = (l) + 'px'
                 // if (l>maxWidth){
                 //     el_dialog.style.width = maxWidth
                 // }

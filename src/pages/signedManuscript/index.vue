@@ -127,7 +127,7 @@
                         </el-table-column>
                         <el-table-column prop="data"
                                          label="刊发日期"
-                                         width="180px">
+                                         width="100px">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -151,10 +151,6 @@
                                    :total="2">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <!-- <div class="btn-nav">
-                            <i class="iconfont icon-liulan"></i>
-                            <span>浏览</span>
-                        </div> -->
                         <draft-look>
                             <i slot="icon"
                                class="iconfont icon-liulan"></i>
@@ -163,10 +159,6 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <!-- <div class="btn-nav">
-                            <i class="iconfont icon-wenben1"></i>
-                            <span>留稿</span>
-                        </div> -->
                         <downLoad>
                             <i slot="icon"
                                class="el-icon-download"></i>
@@ -249,7 +241,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,

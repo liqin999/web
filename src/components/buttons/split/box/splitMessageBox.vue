@@ -3,7 +3,7 @@
                title="拆分"
                @close="messageBoxClose()"
                :visible.sync="splitData.contentShow"
-               width="70%"
+               width="50%"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->

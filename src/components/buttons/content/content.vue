@@ -7,7 +7,7 @@
     </div>
 </template>
 <script>
-import contentMessageBox from './box/contentMessageBox'
+import contentMessageBox from './box/contentMessageBox2'
 export default {
     components: {
         contentMessageBox

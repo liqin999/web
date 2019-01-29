@@ -71,7 +71,7 @@ export default {
         allTypes: {
             type: [Array, Function],
             default: function () {
-                return ['文本', '图片', '图表', '视频', '音频', '应用']
+                return ['文本', '图片', '图表', '视频', '音频', '多媒体']
             }
         },
         showKeyWords: {
