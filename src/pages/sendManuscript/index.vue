@@ -258,7 +258,7 @@ export default {
             ],
             // 作者
             author: '强晓玲',
-            input: '学会每天问自己是个问题',
+            input: '一个灵魂的旅行',
             // 类型
             kanfaData: ['文本', '图片', '图表', '视频', '音频', '歌曲', '应用'],
             kanfaValue: '文本',
