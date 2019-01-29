@@ -84,8 +84,22 @@
             </el-aside>
             <el-main class="main-content">
                 <el-row :gutter="20"
-                        class="pl10 pr10">
-                    <el-col :span="24"><b class="font18">稿源库</b></el-col>
+                        class="pl10 pr10 mb10">
+                    <el-row>
+                        <el-col :span="3"><b class="font18 pl10">稿源库</b></el-col>
+                        <el-col :span="21">
+                            <div class="btn-group">
+                                <el-button class="primary-btn">恢复</el-button>
+                                <content-box class="primary-btn">
+                                    <span slot="iconName">内容</span>
+                                </content-box>
+                                <!-- <el-button class="primary-btn">历史</el-button> -->
+                                <history class="primary-btn">
+                                    <span slot="iconName">历史</span>
+                                </history>
+                            </div>
+                        </el-col>
+                    </el-row>
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
@@ -156,18 +170,7 @@
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
                     <el-col :span="3"><b class="font18">其他稿库</b></el-col>
-                    <el-col :span="21">
-                        <div class="btn-group">
-                            <el-button class="primary-btn">恢复</el-button>
-                            <content-box class="primary-btn">
-                                <span slot="iconName">内容</span>
-                            </content-box>
-                            <!-- <el-button class="primary-btn">历史</el-button> -->
-                            <history class="primary-btn">
-                                <span slot="iconName">历史</span>
-                            </history>
-                        </div>
-                    </el-col>
+
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
