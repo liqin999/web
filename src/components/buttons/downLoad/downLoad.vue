@@ -1,7 +1,7 @@
 <template>
     <div class="btn-nav">
         <slot name="icon"></slot>
-        <span @click="download">
+        <span @click="downLoad">
             <slot name="iconName"></slot>
         </span>
     </div>
@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         // 下载文件
-        download (data) {
+        downLoad (data) {
             if (!data) {
                 return
             }
@@ -29,7 +29,7 @@ export default {
             let link = document.createElement('a')
             link.style.display = 'none'
             link.href = url
-            link.setAttribute('download', 'draft.txt')
+            link.setAttribute('downLoad', 'draft.txt')
 
             document.body.appendChild(link)
             link.click()
