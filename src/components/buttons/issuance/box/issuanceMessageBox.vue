@@ -24,7 +24,7 @@
                     </el-row>
                     <el-row class="clearfix pt10 pb10">
                         <!-- 刊发时间 -->
-                        <el-col :span="7"
+                        <el-col :span="9"
                                 class="times-select">
                             <template>
                                 <span>刊发时间</span>

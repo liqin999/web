@@ -99,27 +99,18 @@
                         </el-col>
                         <el-col :span="6">
                             <el-form-item label="产品类型:">
-                                <el-select v-model="searchForm.source"
+                                <el-select v-model="searchForm.source2"
                                            placeholder="产品类型">
-                                    <el-option label="全部"
+                                    <el-option label="新华社客户端"
                                                value="shangddhai12">
                                     </el-option>
-                                    <el-option label="文本"
+                                    <el-option label="微信"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="图片"
+                                    <el-option label="新浪微博"
                                                value="12的方法">
                                     </el-option>
-                                    <el-option label="图表"
-                                               value="12的方法">
-                                    </el-option>
-                                    <el-option label="视频"
-                                               value="12的方法">
-                                    </el-option>
-                                    <el-option label="音频"
-                                               value="12的方法">
-                                    </el-option>
-                                    <el-option label="多媒体"
+                                    <el-option label="报刊"
                                                value="12的方法">
                                     </el-option>
                                 </el-select>
