@@ -51,7 +51,7 @@
                                 <el-col :span="5">
                                     <!-- <el-input v-model="input"
                                               placeholder="消息"></el-input> -->
-                                    <span>消息</span>
+                                    <span>新闻报道</span>
                                 </el-col>
                             </el-row>
                             <!-- 分类 -->
@@ -114,7 +114,7 @@
                                 <el-col :span="6">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>12345543222</span>
+                                    <span>13512345678</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">
@@ -136,7 +136,7 @@
                                 <el-col :span="5">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>0989000</span>
+                                    <span>100000</span>
                                 </el-col>
                             </el-row>
                             <!-- 地址 -->
@@ -148,7 +148,7 @@
                                 <el-col :span="13">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>北京市新华社</span>
+                                    <span>北京市西城区宣武门西大街</span>
                                 </el-col>
 
                             </el-row>

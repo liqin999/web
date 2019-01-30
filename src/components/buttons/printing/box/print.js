@@ -35,7 +35,7 @@ Print.prototype = {
             str += styles[i].outerHTML;
         }
         str += "<style>" + (this.options.noPrint ? this.options.noPrint : '.no-print') + "{display:none;}</style>";
-
+        str += "<style media='print'>" + ('@page') + "{size:auto;margin: 0mm;}</style>";
         return str;
     },
 
@@ -83,17 +83,20 @@ Print.prototype = {
     },
 
     writeIframe: function (content) {
-        var w, doc, iframe = document.createElement('iframe'),
+        let w, doc, iframe = document.createElement('iframe'),
             f = document.body.appendChild(iframe);
         iframe.id = "myIframe";
         //iframe.style = "position:absolute;width:0;height:0;top:-10px;left:-10px;";
         iframe.setAttribute('style', 'position:absolute;width:0;height:0;top:-10px;left:-10px;');
+
         w = f.contentWindow || f.contentDocument;
         doc = f.contentDocument || f.contentWindow.document;
         doc.open();
         doc.write(content);
+        // doc.appendChild(content);
         doc.close();
-        var _this = this
+        let _this = this
+
         iframe.onload = function () {
             _this.toPrint(w);
             setTimeout(function () {
@@ -101,7 +104,6 @@ Print.prototype = {
             }, 100)
         }
     },
-
     toPrint: function (frameWindow) {
         try {
             setTimeout(function () {
