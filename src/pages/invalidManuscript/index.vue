@@ -97,7 +97,10 @@
                             <send-draft class="primary-btn">
                                 <span slot="iconName">撤稿</span>
                             </send-draft>
-                            <el-button class="primary-btn">内容</el-button>
+                            <!-- <el-button class="primary-btn">内容</el-button> -->
+                            <content-box class="primary-btn">
+                                <span slot="iconName">内容</span>
+                            </content-box>
                             <!-- <el-button class="primary-btn">历史</el-button> -->
                             <history class="primary-btn">
                                 <span slot="iconName" >历史</span>
@@ -144,7 +147,7 @@
                             <el-table-column prop="type"
                                              label="类型">
                             </el-table-column>
-                            <el-table-column prop="map"
+                            <el-table-column prop="picture"
                                              label="代表图">
                             </el-table-column>
                             <el-table-column prop="format"
@@ -197,7 +200,7 @@
                                              label="类型">
                             </el-table-column>
 
-                            <el-table-column prop="map"
+                            <el-table-column prop="picture"
                                              label="代表图">
                             </el-table-column>
 
@@ -225,15 +228,18 @@
 <script>
 // 撤稿按钮组件
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// 历史按钮组件
 import history from '@/components/buttons/history/history.vue'
 // 选送按钮
 import pick from '@/components/buttons/pick/pick.vue'
+// 内容按钮组件
+import contentBox from '@/components/buttons/content/content.vue'
 export default {
     components: {
         sendDraft,
         history,
-        pick
-
+        pick,
+        contentBox
     },
     data () {
         return {
@@ -248,7 +254,7 @@ export default {
                     author: '赵倩',
                     source: '自写稿',
                     type: '文本',
-                    map: '',
+                    picture: '',
                     format: '.txt',
                     wordNumber: '1345',
                     articleNumber: '1'
@@ -265,7 +271,7 @@ export default {
                     author: '强晓玲',
                     source: '自写稿',
                     type: '文本',
-                    map: '',
+                    picture: '',
                     format: '.txt',
                     wordNumber: '1345',
                     articleNumber: '1'
@@ -279,7 +285,7 @@ export default {
                     author: '郝玉',
                     source: '自写稿',
                     type: '文本',
-                    map: '',
+                    picture: '',
                     format: '.txt',
                     wordNumber: '1345',
                     articleNumber: '1'
@@ -293,7 +299,7 @@ export default {
                     author: '刘晶瑶',
                     source: '自写稿',
                     type: '文本',
-                    map: '',
+                    picture: '',
                     format: '.txt',
                     wordNumber: '1345',
                     articleNumber: '1'
@@ -307,7 +313,7 @@ export default {
                     time: '2019-1-3 9:09:34',
                     author: '赵倩',
                     type: '文本',
-                    map: '',
+                    picture: '',
                     format: '.txt',
                     wordNumber: '1345',
                     source: '自写稿'
@@ -318,7 +324,7 @@ export default {
                     time: '2018-10-31 11:09:34',
                     author: '刘晶瑶',
                     type: '文本',
-                    map: '',
+                    picture: '',
                     format: '.txt',
                     wordNumber: '1345',
                     source: '自写稿'

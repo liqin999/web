@@ -6,28 +6,27 @@
                :append-to-body="true">
         <!-- 内容区 -->
        <div class="message-box">
-                <el-row :gutter="10">
+                <el-row :gutter="30">
                     <!-- 原文 -->
-                    <el-col :span="2">
+                    <el-col :span="5">
                         <b>原文：</b>
                     </el-col>
                     <!-- 选框 -->
                     <el-col :span="18">
+                        <el-radio-group v-model="radioName">
                             <template v-for="label in radioLabel">
                                 <el-col :span="6"
                                         :key="label">
-                                    <el-radio v-model="radioName"
-                                             :label="label"
-                                            @change="labelChange">{{ label }}</el-radio>
-                                             <!-- <el-radio v-model="radioName1"
-                                                  label="1">入库前提示 </el-radio>
-                                        <el-radio v-model="radioName1"
-                                                  label="2">直接入库</el-radio> -->
+                                    <el-radio :label="label"
+                                              @change="labelChange">{{ label }}
+                                    </el-radio>
                                 </el-col>
                             </template>
+                        </el-radio-group>
                     </el-col>
+                </el-row>
                 <!--文本框  -->
-                    <el-row>
+                <el-row>
                     <el-col :span="20">
                             <el-input type="textarea"
                                       :rows="7"
@@ -38,12 +37,13 @@
                         </el-col>
                     </el-row>
                 <!--译文 -->
-                    <el-row>
+                <el-row>
                     <el-col :span="2">
                         <b>译文：</b>
                     </el-col>
-                    </el-row>
+                </el-row>
                 <!-- 文本框 -->
+                <el-row>
                     <el-col :span="20">
                             <el-input type="textarea"
                                       :rows="7"

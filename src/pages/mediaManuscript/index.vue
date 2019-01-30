@@ -124,7 +124,8 @@
                                          show-overflow-tooltip>
                         </el-table-column>
                         <el-table-column prop="preData"
-                                         label="预计刊登日期">
+                                         label="预计刊登日期"
+                                         width="100px">
                         </el-table-column>
                         <el-table-column prop="type"
                                          label="类型">

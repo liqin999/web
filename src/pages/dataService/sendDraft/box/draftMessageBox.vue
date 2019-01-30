@@ -134,6 +134,7 @@ export default {
     },
     data () {
         return {
+            label: '',
             // radioData: '1',
             submitData: null,
             radioName1: '1',

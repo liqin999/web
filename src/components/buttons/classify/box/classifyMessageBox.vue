@@ -1,8 +1,8 @@
 <template>
-    <el-dialog class="look-message"
+    <el-dialog class="classify-message"
                title="选择分类"
                @close="messageBoxClose()"
-               :visible.sync="lookData.contentShow"
+               :visible.sync="classifyData.contentShow"
                :append-to-body="true">
         <!-- 内容区 -->
        <div class="message-box">
@@ -12,7 +12,7 @@
                     </el-col>
                 </el-row>
             <el-tree
-                :data="data2"
+                :data="data"
                 show-checkbox
                 node-key="id"
                 :default-expanded-keys="[2, 3]"
@@ -23,7 +23,7 @@
             <el-button class="primary-btn"
                        @click="draftConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="lookData.contentShow = false">取消</el-button>
+                       @click="classifyData.contentShow = false">取消</el-button>
         </div>
 
         </div>
@@ -33,13 +33,13 @@
 <script>
 export default {
     props: {
-        lookData: {
+        classifyData: {
             type: Object
         }
     },
     data () {
         return {
-            data2: [{
+            data: [{
                 id: 1,
                 label: '国际新闻信息分类',
                 children: [{
@@ -149,11 +149,6 @@ export default {
         draftConfirm () {
 
         }
-    },
-    computed: {
-        dataList1 () {
-            return this.dataList
-        }
     }
 }
 </script>
@@ -162,15 +157,9 @@ export default {
 .message-box {
     line-height: 35px;
 }
-.ft-red {
-    color: red;
-}
-.texts{
-    text-decoration:underline ;
-}
 </style>
 <style>
-.look-message .el-dialog {
+.classify-message .el-dialog {
     width: 30%
 }
 </style>

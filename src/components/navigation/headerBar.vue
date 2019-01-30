@@ -120,6 +120,24 @@ export default {
                     id: '9',
                     path: '/manuscriptSetting'
                 },
+                // {
+                //     name: '投稿',
+                //     icon: 'el-icon-index',
+                //     id: '13',
+                //     path: '/sendManuscript'
+                // },
+                // {
+                //     name: '废稿库',
+                //     icon: 'el-icon-index',
+                //     id: '11',
+                //     path: '/invalidManuscript'
+                // },
+                // {
+                //     name: '写稿器',
+                //     icon: 'el-icon-index',
+                //     id: '12',
+                //     path: '/writeManuscript'
+                // }
 
                 {
                     name: '更多',
@@ -142,7 +160,6 @@ export default {
                             id: '10-2',
                             path: '/writeManuscript'
                         }
-
                         // {
                         //     name: '新闻日历',
                         //     id: '10-3',

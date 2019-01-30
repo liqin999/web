@@ -122,7 +122,8 @@
                                          show-overflow-tooltip>
                         </el-table-column>
                         <el-table-column prop="preData"
-                                         label="预计刊登日期">
+                                         label="预计刊登日期"
+                                         width="100px">
                         </el-table-column>
                         <el-table-column prop="type"
                                          label="类型">
@@ -239,6 +240,7 @@ export default {
     },
     data () {
         return {
+            versionData: '',
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -298,6 +300,11 @@ export default {
                         {
                             id: 13,
                             label: '副刊部（新华视界）',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 14,
+                            label: '创意策划中心',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 

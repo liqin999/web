@@ -97,7 +97,7 @@
                 <!-- 专题 -->
                 <el-col :span="9">
                     <el-row :gutter="10">
-                        <!-- <el-col :span="24"
+                        <el-col :span="24"
                                 class="clearfix"><b class="message-title padding-bottom10">专题</b></el-col>
                         <el-col :span="17">
                             <template>
@@ -115,12 +115,12 @@
                                     </el-date-picker>
                                 </div>
                             </template>
-                        </el-col> -->
-                        <!-- <el-col :span="7">
+                        </el-col>
+                         <el-col :span="7">
                             <el-button plain
                                        class="btn-inquire"
                                        @click="searchTime">查询</el-button>
-                        </el-col> -->
+                        </el-col>
                         <!-- </el-row> -->
                     </el-row>
                     <!-- 传稿意见 -->
@@ -128,8 +128,8 @@
                             class="">
                         <el-col :span="24"
                                 class="tab-padding">
-                            <b class="message-title" v-if='sendData'>待传稿件</b>
-                            <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
+                            <b class="message-title" v-if='sendData'>传稿意见</b>
+                            <b class="message-title" v-else-if='!sendData'>撤稿意见</b>
                             <span class="redColor">（不超过255个字）</span>
                         </el-col>
                         <el-col :span="24">
@@ -329,13 +329,6 @@ export default {
     },
     computed: {
         dataList1 () {
-            // let idx = 0;
-            // this.topTitle.forEach((item,index) => {
-            //     if (this.topValue == item.label){
-            //         idx = index;
-            //     }
-            // });
-            // let dataList = this.topTitle[0].list;
             return this.dataList
         }
     }

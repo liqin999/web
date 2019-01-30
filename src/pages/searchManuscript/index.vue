@@ -61,7 +61,7 @@
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <el-checkbox label="稿源库"></el-checkbox>
-                                    <el-checkbox label="电讯稿库"></el-checkbox>
+                                    <el-checkbox label="其他稿库"></el-checkbox>
                                 </el-checkbox-group>
                             </template>
                         </el-col>
@@ -85,14 +85,17 @@
             <el-main class="main-content">
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <el-col :span="3"><b class="font18">电讯稿库</b></el-col>
+                    <el-col :span="3"><b class="font18">稿源库</b></el-col>
                     <el-col :span="21">
                         <div class="btn-group">
                             <el-button class="primary-btn">恢复</el-button>
                             <content-box class="primary-btn">
                                 <span slot="iconName">内容</span>
                             </content-box>
-                            <el-button class="primary-btn">历史</el-button>
+                            <!-- <el-button class="primary-btn">历史</el-button> -->
+                            <history class="primary-btn">
+                                <span slot="iconName" >历史</span>
+                            </history>
                         </div>
                     </el-col>
                     <el-col :span="24">
@@ -161,7 +164,7 @@
                 </el-row>
                 <el-row :gutter="20"
                         class="pl10 pr10">
-                    <el-col :span="24"><b class="font18">稿源库</b></el-col>
+                    <el-col :span="24"><b class="font18">其他稿库</b></el-col>
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
@@ -193,6 +196,9 @@
                             <el-table-column prop="author"
                                              label="第一作者">
                             </el-table-column>
+                            <el-table-column prop="source"
+                                             label="来源">
+                            </el-table-column>
                             <el-table-column prop="type"
                                              label="类型">
                             </el-table-column>
@@ -220,9 +226,6 @@
                             <el-table-column prop="articleNumber"
                                              label="稿数">
                             </el-table-column>
-                            <el-table-column prop="source"
-                                             label="来源">
-                            </el-table-column>
                         </el-table>
                     </el-col>
                 </el-row>
@@ -235,10 +238,15 @@
     </el-container>
 </template>
 <script>
+// 内容按钮组件
 import contentBox from '@/components/buttons/content/content.vue'
+// 历史按钮组件
+import history from '@/components/buttons/history/history.vue'
 export default {
     components: {
-        contentBox
+        contentBox,
+        history
+
     },
     data () {
         return {
@@ -263,7 +271,7 @@ export default {
                     id: '2018103103',
                     name: '城市生活垃圾分类',
                     media: '新华每日电讯',
-                    // picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2340162773,1500754957&fm=85&app=57&f=JPEG?w=121&h=75&s=E8424693405671D2042DD66E03003064',
+                    picture: '',
                     status: '已审',
                     time: '2019-1-11',
                     author: '刘晶瑶',
@@ -288,7 +296,7 @@ export default {
             radioName2: '资源类型',
             radioLabel2: [
                 '稿件',
-                '线索/采访单/专题'
+                '线索/专题'
             ],
             // 栏目选择
             radioName: '栏目库',

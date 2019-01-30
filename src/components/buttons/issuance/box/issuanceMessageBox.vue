@@ -23,12 +23,12 @@
                     </el-row>
                     <el-row class="clearfix pt10 pb10">
                         <!-- 处理时间 -->
-                        <el-col :span="8"
+                        <el-col :span="7"
                                 class="times-select">
                             <template>
                                 <span>刊发时间</span>
                                 <el-date-picker v-model="pickerTime"
-                                                type="date"
+                                                type="datetime"
                                                 placeholder="选择日期"
                                                 @change="pickerChange">
                                 </el-date-picker>
@@ -50,7 +50,7 @@
                             </template>
                         </el-col>
                         <!-- checkbox -->
-                        <el-col :span="10">
+                        <el-col :span="11">
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <template v-for="item in checkLabel">
@@ -297,6 +297,7 @@ export default {
             textarea2: '',
             radioName: '版面库',
             radioLabel: [
+                '媒体公共库',
                 '版面库',
                 '栏目库'
             ],

@@ -122,7 +122,8 @@
                                          show-overflow-tooltip>
                         </el-table-column>
                         <el-table-column prop="preData"
-                                         label="预计刊登日期">
+                                         label="预计刊登日期"
+                                         width="100px">
                         </el-table-column>
                         <el-table-column prop="type"
                                          label="类型">
@@ -243,6 +244,7 @@ export default {
                 number: 2267,
                 state: '待审',
                 dealingPeople: '卢刚',
+                picture: '',
                 processingTime: '2018-10-31 14:23',
                 firstAuthor: '卢刚',
                 medio: '新华每日电讯',
@@ -293,7 +295,16 @@ export default {
                             }, {
                                 id: 11,
                                 label: '王晓林'
-                            }]
+                            },
+                            {
+                                id: 12,
+                                label: '李仁虎'
+                            },
+                            {
+                                id: 13,
+                                label: '王明浩'
+                            }
+                            ]
                         },
                         {
                             id: 7,
@@ -304,7 +315,36 @@ export default {
                             }, {
                                 id: 13,
                                 label: '卢刚'
-                            }]
+                            },
+                            {
+                                id: 14,
+                                label: '黄国清'
+                            },
+                            {
+                                id: 15,
+                                label: '董健'
+                            },
+                            {
+                                id: 16,
+                                label: '梁红卿'
+                            },
+                            {
+                                id: 17,
+                                label: '孙侠'
+                            },
+                            {
+                                id: 18,
+                                label: '李思源'
+                            },
+                            {
+                                id: 18,
+                                label: '张超'
+                            },
+                            {
+                                id: 19,
+                                label: '刘梦妮'
+                            }
+                            ]
                         },
                         {
                             id: 8,

@@ -170,7 +170,10 @@
                                 <span slot="iconName">选择分类</span>
                             </classify>
                             <!-- <el-button class="primary-btn">选择分类</el-button> -->
-                            <el-button class="primary-btn">详细稿签</el-button>
+                            <!-- <el-button class="primary-btn">详细稿签</el-button> -->
+                            <draft-label class="primary-btn">
+                                <span slot="iconName">详细稿签</span>
+                            </draft-label>
                         </div>
                     </el-col>
                 </el-row>
@@ -229,13 +232,17 @@
 <script>
 // 选择分类按钮组件
 import classify from '@/components/buttons/classify/classify'
+// 详细稿签按钮组件
+import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 export default {
     components: {
-        classify
+        classify,
+        draftLabel
 
     },
     data () {
         return {
+            checked: '',
             tableData: [
                 {
                     name: '一个灵魂的旅行',
@@ -263,7 +270,6 @@ export default {
             // 稿件体裁
             draftGenreData: ['消息', '通讯', '专访'],
             draftGenreValue: '消息',
-            checked: false, // 备选项
             textarea: null,
             // 栏目选择
             radioName: '栏目库',
@@ -321,6 +327,7 @@ export default {
         .aside-content {
             .btn-group {
                 display: flex;
+                line-height: 1;
                 justify-content: space-between;
                 .primary-btn {
                     margin: 0px;

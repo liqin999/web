@@ -258,28 +258,13 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 46,
-                            label: '头版',
+                            id: 1222,
+                            label: '脱贫攻坚',
                             icon: 'iconfont icon-file-b- ft-ffd658'
-                            // children: [
-                            //     {
-                            //         id: 469,
-                            //         label: '头版1-1'
-                            //     },
-                            //     {
-                            //         id: 4697,
-                            //         label: '头版1-2'
-                            //     }
-                            // ]
                         },
                         {
                             id: 12,
                             label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 1222,
-                            label: '脱贫攻坚',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
@@ -310,6 +295,11 @@ export default {
                         {
                             id: 20,
                             label: '原创',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 21,
+                            label: '经济·民生',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 

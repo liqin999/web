@@ -32,7 +32,16 @@
                                  label="处理人">
                 </el-table-column>
                 <el-table-column prop="img"
-                                 label="代表图">
+                                header-align="center"
+                                align="center"
+                                width="130px"
+                                label="代表图">
+                        <template slot-scope="scope">
+                            <el-popover trigger="hover">
+                                <img v-bind:src="scope.row.img" style="max-height: 300px;max-width: 1000px">
+                                <img slot="reference" :src="scope.row.img" :alt="scope.row.img" style="max-height: 30px;max-width: 120px">
+                            </el-popover>
+                        </template>
                 </el-table-column>
                 <el-table-column prop="type"
                                  label="类型">
@@ -48,11 +57,6 @@
         <!-- 内容区 结束 -->
         <div slot="footer"
              class="dialog-footer">
-             <!-- <div class="text-right"> -->
-                <!-- <download>
-                    <span slot="iconName"  class="primary-btn">下载</span>
-                </download> -->
-             <!-- </div> -->
             <div class="left-group">
                 <down-load class="primary-btn">
                     <span slot="iconName">下载</span>
