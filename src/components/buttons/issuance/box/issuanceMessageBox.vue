@@ -36,7 +36,7 @@
                             </template>
                         </el-col>
                         <!-- 刊发位次 -->
-                        <el-col :span="6"
+                        <el-col :span="4"
                                 class="text-right">
                             <template>
                                 <span>刊发位次</span>
