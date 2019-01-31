@@ -76,16 +76,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
-                                        label="代表图">
+                                         align="center"
+                                         width="130px"
+                                         label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -261,6 +264,16 @@ export default {
                             id: 1222,
                             label: '脱贫攻坚',
                             icon: 'iconfont icon-file-b- ft-ffd658'
+                            // children: [
+                            //     {
+                            //         id: 469,
+                            //         label: '头版1-1'
+                            //     },
+                            //     {
+                            //         id: 4697,
+                            //         label: '头版1-2'
+                            //     }
+                            // ]
                         },
                         {
                             id: 12,
@@ -390,6 +403,10 @@ export default {
                 that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
+        // 测试请求的接口的调用
+        this.$api.text1().then(res => {
+
+        })
     },
     methods: {
         splitConcatIcon () {

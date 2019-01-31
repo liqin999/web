@@ -157,9 +157,9 @@
                         <span>浏览</span>
                     </div> -->
                     <draft-look>
-                            <i slot="icon"
-                               class="iconfont icon-liulan"></i>
-                            <span slot="iconName">浏览</span>
+                        <i slot="icon"
+                           class="iconfont icon-liulan"></i>
+                        <span slot="iconName">浏览</span>
                     </draft-look>
                     <div class="btn-line">
                         <span>|</span>
@@ -170,7 +170,7 @@
                     </div> -->
                     <down-load>
                         <i slot="icon"
-                             class="el-icon-download"></i>
+                           class="el-icon-download"></i>
                         <span slot="iconName">下载</span>
                     </down-load>
                     <div class="btn-line">
@@ -178,7 +178,7 @@
                     </div>
                     <printing>
                         <i slot="icon"
-                            class="iconfont icon-ico_print"></i>
+                           class="iconfont icon-ico_print"></i>
                         <span slot="iconName">打印</span>
                     </printing>
                     <div class="btn-line">

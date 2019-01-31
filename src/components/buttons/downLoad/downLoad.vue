@@ -13,10 +13,6 @@ export default {
     },
     data () {
         return {
-            historyData: {
-                labelList: [],
-                contentShow: false
-            }
         }
     },
     methods: {

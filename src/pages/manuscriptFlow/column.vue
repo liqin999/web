@@ -37,7 +37,7 @@
                                      label="状态">
                     </el-table-column>
                     <el-table-column prop="author"
-                                     label="第一作者">
+                                     label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
                                      label="处理时间">

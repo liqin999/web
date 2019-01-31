@@ -88,16 +88,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
+                                         align="center"
+                                         width="130px"
                                          label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -155,20 +158,19 @@
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
                         </div> -->
-                         <down-load>
+                        <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
                         </down-load>
-
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                       <printing>
+                        <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
-                       </printing>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>

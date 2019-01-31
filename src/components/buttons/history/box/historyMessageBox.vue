@@ -10,9 +10,8 @@
             <!-- 稿源库历史 -->
             <el-row :gutter="20"
                     class="message-content clearfix">
-                    <el-col :span="24"
-                            class="tab-padding"><b class="message-title">稿源库历史</b>
-                    </el-col>
+                <el-col :span="24"
+                        class="tab-padding"><b class="message-title">稿源库历史</b></el-col>
                 <el-row :gutter="20"
                         class="pb10 label-border">
                     <el-col :span="6">
@@ -83,7 +82,7 @@
                     </el-col>
                     <el-col :span="18">
                         <el-col :span="24">
-                            <span>由【电讯领导-方立新】 初投 到新华每日电讯-脱贫攻坚 栏目库 </span>
+                            <span>由【电讯领导-方立新】 初投 到新华每日电讯-脱贫攻坚 栏目库</span>
                         </el-col>
                         <el-col :span="24">
                             <span>*处理意见：稿库建稿</span>
@@ -121,20 +120,13 @@ export default {
                     value: '5',
                     label: '每日电讯微博'
                 }
-            ],
-            // 多选框列表
-            defaultProps: {
-                children: 'children',
-                label: 'label'
-            }
+            ]
         }
     },
     methods: {
-        // 点击关闭回调函数
         messageBoxClose () {
 
         },
-        // 一级栏目选择变化（下拉框）
         topChange (value) {
             // this.topValue = value;
         }

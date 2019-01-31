@@ -1,5 +1,5 @@
 <template>
-    <el-container class="clearfix">
+    <el-container class="person-container clearfix">
         <el-aside class="aside-content"
                   width="250px">
             <div class="search-list2">
@@ -32,7 +32,7 @@
         <el-container>
             <el-main ref="mainTable">
                 <el-table ref="multipleTable"
-                          height="calc(100vh - 240px)"
+                          :height="mainTableHeight"
                           :data="tableData3"
                           tooltip-effect="dark"
                           style="width: 100%"
@@ -60,7 +60,7 @@
                                      label="状态">
                     </el-table-column>
                     <el-table-column prop="author"
-                                     label="第一作者">
+                                     label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
                                      label="处理时间">
@@ -231,11 +231,18 @@ export default {
                 handlePeople: '张三',
                 type2: '文本'
             }],
-            multipleSelection: []
+            multipleSelection: [],
+            mainTableHeight: null
         }
     },
     mounted () {
-
+        let that = this
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
+        window.onresize = () => {
+            return (() => {
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
+            })()
+        }
     },
     methods: {
         getTreeObj (data) { // 获得树形菜单的对象

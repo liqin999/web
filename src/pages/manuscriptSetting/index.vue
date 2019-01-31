@@ -50,14 +50,17 @@
                             <el-form-item label="稿件来源:">
                                 <el-select v-model="searchForm.source"
                                            placeholder="稿件来源">
-                                    <el-option label="邮件稿件"
+                                    <el-option label="全部"
                                                value="shanghai">
                                     </el-option>
+                                    <el-option label="邮件稿件"
+                                               value="邮件稿件">
+                                    </el-option>
                                     <el-option label="eNews稿件"
-                                               value="beijing">
+                                               value="eNews稿件">
                                     </el-option>
                                     <el-option label="自采稿"
-                                               value="shan22ghai">
+                                               value="自采稿">
                                     </el-option>
                                     <el-option label="数据服务平台"
                                                value="sha3n22ghai">
@@ -81,7 +84,7 @@
                         <el-col :span="6">
                             <el-form-item label="约稿状态:">
                                 <el-select v-model="searchForm.state2"
-                                           placeholder="稿件状态">
+                                           placeholder="约稿状态">
                                     <el-option label="全部"
                                                value="shanghai">
                                     </el-option>
@@ -99,16 +102,31 @@
                         </el-col>
                         <el-col :span="6">
                             <el-form-item label="产品类型:">
-                                <el-select v-model="searchForm.source"
+                                <el-select v-model="searchForm.type"
                                            placeholder="产品类型">
                                     <el-option label="全部"
                                                value="shangddhai12">
                                     </el-option>
-                                    <el-option label="类型1"
+                                    <el-option label="新华社客户端"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="类型2"
+                                    <el-option label="微信"
                                                value="12的方法">
+                                    </el-option>
+                                    <el-option label="新浪微博"
+                                               value="1的方法">
+                                    </el-option>
+                                    <el-option label="Twitter"
+                                               value="方法">
+                                    </el-option>
+                                    <el-option label="Facebook"
+                                               value="法">
+                                    </el-option>
+                                    <el-option label="Youtube"
+                                               value="12的">
+                                    </el-option>
+                                    <el-option label="成品素材"
+                                               value="1">
                                     </el-option>
                                 </el-select>
                             </el-form-item>
@@ -167,9 +185,9 @@
                         <create-draft>
                             <span slot="iconName">建稿</span>
                         </create-draft>
-                        <send-draft :sendData="true">
+                        <!-- <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
-                        </send-draft>
+                        </send-draft> -->
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">约稿</span>
@@ -184,9 +202,9 @@
                             <span slot="iconName">翻译</span>
                         </translate>
                         <!-- 留搞组建按钮 -->
-                            <stay-draft  class="primary-btn">
-                                <span slot="iconName">留稿</span>
-                            </stay-draft>
+                        <stay-draft class="primary-btn">
+                            <span slot="iconName">留稿</span>
+                        </stay-draft>
                     </div>
                 </el-header>
                 <el-main ref="mainTable">
@@ -268,7 +286,7 @@
                         </div>
                         <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
                         </printing>
                         <div class="btn-line">
@@ -301,7 +319,7 @@
     </el-container>
 </template>
 <script>
-import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
@@ -320,7 +338,7 @@ import translate from '@/components/buttons/translate/translate'
 export default {
     components: {
         leftMenu,
-        sendDraft,
+        // sendDraft,
         draftLabel,
         history,
         createDraft,  // 建稿按钮弹框
@@ -373,6 +391,7 @@ export default {
                 keyWords: '',
                 author: '',
                 source: '',
+                type: '',
                 productType: ''
 
             },

@@ -90,16 +90,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
+                                         align="center"
+                                         width="130px"
                                          label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -171,7 +174,7 @@
                         </div>
                         <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
                         </printing>
                         <div class="btn-line">
@@ -332,7 +335,7 @@ export default {
                 repDrawing: '',
                 number: 992,
                 state: '待审',
-                dealingPeople: '强晓玲',
+                dealingPeople: '刘学奎',
                 processingTime: '2018-10-31 14:23',
                 firstAuthor: '强晓玲',
                 medio: '新华每日电讯',
@@ -346,7 +349,7 @@ export default {
                 picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 number: 1024,
                 type: '图片',
-                state: '待审',
+                state: '已审',
                 deliverer: '刘学奎',
                 processingTime: '2018-10-29 10:45',
                 dealingPeople: '方立新',

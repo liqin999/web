@@ -25,7 +25,8 @@
                     <el-col :span="4"
                             class="text-right">
 
-                        <el-button class="primary-btn">建稿</el-button>
+                        <el-button class="primary-btn"
+                                   @click="confirmBtn">建稿</el-button>
                         <el-button class="reset-btn"
                                    @click="closeFn">关闭</el-button>
                     </el-col>
@@ -103,6 +104,11 @@ export default {
         }
     },
     methods: {
+        confirmBtn () {
+            this.$router.push({
+                path: '/columnsLayout'
+            })
+        },
         closeFn () {
             this.$router.go('-1')
         }
@@ -135,13 +141,13 @@ export default {
         }
         .border-line {
             @include border;
-            padding-bottom: 15px;
+            padding-bottom: 35px;
         }
         .red {
             color: red;
         }
         .message-lists {
-            padding: 10px;
+            padding: 35px 10px;
             .message-list {
                 .el-col {
                     @extend .text-overflow;

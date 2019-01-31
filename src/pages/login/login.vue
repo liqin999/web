@@ -49,7 +49,7 @@ export default {
              */
             // 用户输入非空判断
             if (isNotBlank(this.userForm.userName) && isNotBlank(this.userForm.password)) {
-                this.$api.loginuser(this.userForm).then(res => {
+                this.$api.doLogin(this.userForm).then(res => {
 
                 })
                 this.$router.push({

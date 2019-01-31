@@ -12,7 +12,7 @@
                             <el-select v-model="searchForm.media"
                                        class="w100"
                                        size="small"
-                                       placeholder="请选择媒体">
+                                       placeholder="稿件状态">
                                 <el-option label="全部"
                                            value="1"></el-option>
                                 <el-option label="待审"
@@ -99,16 +99,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
+                                         align="center"
+                                         width="130px"
                                          label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -177,7 +180,7 @@
                         </div>
                         <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
                         </printing>
                         <div class="btn-line">

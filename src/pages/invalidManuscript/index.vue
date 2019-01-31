@@ -61,7 +61,7 @@
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <el-checkbox label="稿源库"></el-checkbox>
-                                    <el-checkbox label="电讯稿库"></el-checkbox>
+                                    <el-checkbox label="工作稿库"></el-checkbox>
                                 </el-checkbox-group>
                             </template>
                         </el-col>
@@ -103,7 +103,7 @@
                             </content-box>
                             <!-- <el-button class="primary-btn">历史</el-button> -->
                             <history class="primary-btn">
-                                <span slot="iconName" >历史</span>
+                                <span slot="iconName">历史</span>
                             </history>
                         </div>
                     </el-col>
@@ -228,7 +228,6 @@
 <script>
 // 撤稿按钮组件
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
-// 历史按钮组件
 import history from '@/components/buttons/history/history.vue'
 // 选送按钮
 import pick from '@/components/buttons/pick/pick.vue'
@@ -343,7 +342,7 @@ export default {
             radioName2: '稿件',
             radioLabel2: [
                 '稿件',
-                '线索/采访单/专题'
+                '线索/专题'
             ],
             // 栏目选择
             radioName: '栏目库',
