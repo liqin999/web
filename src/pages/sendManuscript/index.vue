@@ -87,22 +87,38 @@
                         </div>
                     </el-col>
                 </el-row>
-                <el-row :gutter="50"
+                <el-row :gutter="20"
                         class="mb15 pl10 pr10">
-                    <el-col :span="12">
-                        <b class="font18">图片预览</b>
-                        <img style="width:100%;height:100%"
-                             src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg">
-                    </el-col>
-                    <el-col :span="12"
-                            class="tab-padding">
-                        <b class="font18">添加说明</b>
-                        <el-input type="textarea"
-                                  :rows="8"
-                                  placeholder="详细说明"
-                                  v-model="textarea">
-                        </el-input>
-                    </el-col>
+                    <template v-if="kanfaValue === '文本'">
+                        <el-col :span="3">
+                            <b class="font18">内容</b>
+                        </el-col>
+                        <el-col :span="21">
+                            <el-input type="textarea"
+                                      :rows="8"
+                                      placeholder="详细说明"
+                                      v-model="textarea">
+                            </el-input>
+                        </el-col>
+                    </template>
+
+                    <template v-if="kanfaValue === '图片'">
+                        <el-col :span="12">
+                            <b class="font18">图片预览</b>
+                            <img style="width:100%;height:100%"
+                                 src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg">
+                        </el-col>
+                        <el-col :span="12"
+                                class="tab-padding">
+                            <b class="font18">添加说明</b>
+                            <el-input type="textarea"
+                                      :rows="8"
+                                      placeholder="详细说明"
+                                      v-model="textarea">
+                            </el-input>
+                        </el-col>
+                    </template>
+
                 </el-row>
             </el-main>
             <el-aside width="400px"
@@ -191,17 +207,17 @@
                             <template v-for="label in radioLabel">
                                 <el-col :span="12"
                                         class="text-overflow tab-padding"
-                                        :key="label">
+                                        :key="label.id">
                                     <el-radio v-model="radioName"
-                                              :label="label"
-                                              @change="labelChange">{{ label }}</el-radio>
+                                              :label="label.name"
+                                              @change="labelChange(label)">{{ label.name }}</el-radio>
                                 </el-col>
                             </template>
                         </el-col>
-                        <el-col :span="6"
+                        <!-- <el-col :span="6"
                                 class="choose-btn">
                             <el-button class="primary-btn">选择</el-button>
-                        </el-col>
+                        </el-col> -->
                     </el-row>
                 </el-row>
                 <el-row :gutter="20"
@@ -210,11 +226,23 @@
                     <el-row :gutter="20"
                             class="pl10 pr10 mb10">
                         <el-col :span="24">
-                            <el-input type="textarea"
+                            <!-- <el-input type="textarea"
                                       :rows="2"
                                       placeholder="请输入内容"
                                       v-model="textarea">
-                            </el-input>
+                            </el-input> -->
+                            <div class="select-position">
+                                <template v-for="label in getSecondRadio">
+                                    <el-col :span="10"
+                                            :offset="1"
+                                            class="text-overflow tab-padding"
+                                            :key="label.id">
+                                        <el-radio v-model="selectRadioName"
+                                                  :label="label.name"
+                                                  @change="selectLabelChange">{{ label.name }}</el-radio>
+                                    </el-col>
+                                </template>
+                            </div>
                         </el-col>
                         <el-col :span="24">
                             <template>
@@ -275,15 +303,80 @@ export default {
             textarea: null,
             // 栏目选择
             radioName: '栏目库',
+            selectRadioName: '',
+            firstRadioId: '1',
             radioLabel: [
-                '栏目库',
-                '版面库',
-                '媒体公共库',
-                '其他稿库'
+                {
+                    id: '1',
+                    name: '栏目库',
+                    children: [
+                        {
+                            id: '1-1',
+                            name: '头版'
+                        }, {
+                            id: '1-2',
+                            name: '要闻'
+                        }, {
+                            id: '1-3',
+                            name: '国内新闻'
+                        }, {
+                            id: '1-4',
+                            name: '新闻焦点'
+                        }
+                    ]
+                }, {
+                    id: '2',
+                    name: '版面库',
+                    children: [
+                        {
+                            id: '2-1',
+                            name: '一版'
+
+                        }, {
+                            id: '2-2',
+                            name: '二版'
+
+                        }, {
+                            id: '2-3',
+                            name: '三版'
+
+                        }, {
+                            id: '2-4',
+                            name: '四版'
+                        }
+                    ]
+
+                }, {
+                    id: '3',
+                    name: '媒体公共库',
+                    children: [
+                        {
+                            id: '3-1',
+                            name: '新华每日电讯'
+                        },
+                        {
+                            id: '3-2',
+                            name: '每日电讯微博'
+                        }
+                    ]
+                }, {
+                    id: '4',
+                    name: '其他稿库',
+                    children: [
+                        {
+                            id: '4-1',
+                            name: '科技'
+                        },
+                        {
+                            id: '4-2',
+                            name: '文化'
+                        }
+                    ]
+                }
             ],
-            // radioOpsition: [
-            //     '新华每日电讯'
-            // ],
+            radioOpsition: [
+                '新华每日电讯'
+            ],
             checkList: [
                 '原稿保护', '本地存留'
             ]
@@ -292,8 +385,18 @@ export default {
     mounted () {
 
     },
+    computed: {
+        getSecondRadio () {
+            return this.radioLabel[this.firstRadioId - 1].children
+        }
+    },
     methods: {
-        labelChange () { }
+        labelChange (label) {
+            this.firstRadioId = label.id
+        },
+        selectLabelChange () {
+
+        }
     }
 }
 </script>
@@ -345,6 +448,11 @@ export default {
                 }
             }
         }
+    }
+    .select-position {
+        border: 1px solid #ddd;
+        height: 180px;
+        overflow: auto;
     }
 }
 </style>
