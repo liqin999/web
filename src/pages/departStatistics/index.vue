@@ -407,23 +407,6 @@ export default {
         })
     },
     methods: {
-        splitConcatIcon () {
-            this.$confirm('只能选择一条数据', '提示', {
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
-                type: 'warning'
-            }).then(() => {
-                this.$message({
-                    type: 'success',
-                    message: '选择成功！'
-                })
-            }).catch(() => {
-                this.$message({
-                    type: 'info',
-                    message: '已取消选择'
-                })
-            })
-        },
         // 合并表格
         objectSpanMethod ({ row, column, rowIndex, columnIndex }) {
             if (columnIndex === 0) {
@@ -493,15 +476,6 @@ export default {
         },
         handleCurrentChange (val) {
 
-        },
-        getConcatData (data) { // 获得合并的元素的参数信息
-            console.log('获得子组件的合并的元素数据', data)
-        },
-        getConcatDataUp (data) { // 获得合并弹框的上移操作
-            console.log('获得合并子组件弹框的上移操作元素数据', data)
-        },
-        getConcatDataDown (data) { // 获得合并弹框的下移操作
-            console.log('获得合并子组件弹框的下移操作元素数据', data)
         },
         statistics () {
             this.$emit('sendFormData', this.searchForm)
