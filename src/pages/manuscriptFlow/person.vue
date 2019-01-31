@@ -40,7 +40,7 @@
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
-                                     width="180">
+                                     width="120">
                     </el-table-column>
 
                     <el-table-column prop="type"
@@ -53,9 +53,10 @@
                                      label="状态">
                     </el-table-column>
                     <el-table-column prop="author"
-                                     label="第一作者">
+                                     label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
+                                     width="150"
                                      label="处理时间">
                     </el-table-column>
                     <el-table-column prop="handlePeople"
@@ -63,6 +64,9 @@
                     </el-table-column>
                     <el-table-column prop="type2"
                                      label="类型">
+                    </el-table-column>
+                    <el-table-column prop="picture"
+                                     label="代表图">
                     </el-table-column>
                 </el-table>
             </template>
@@ -128,9 +132,10 @@ export default {
                 location: 'A叠-十四版',
                 status: '待审',
                 author: '赵倩',
-                processingTime: '10-29 10:31',
+                processingTime: '2018-10-29 10:31',
                 handlePeople: '刘晶瑶',
-                type2: '文本'
+                type2: '文本',
+                picture: ''
             }]
         }
     },

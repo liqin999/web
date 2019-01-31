@@ -19,7 +19,9 @@
                                     <b>原稿标题：</b>
                                 </el-col>
                                 <el-col :span="20">
-                                    <span>(脱贫攻坚)羊信发"羊财"</span>
+                                    <!-- <el-input v-model="input"
+                                              placeholder="原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题"></el-input> -->
+                                    <span>脱贫攻坚</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">
@@ -29,6 +31,8 @@
                                     <b>第一作者：</b>
                                 </el-col>
                                 <el-col :span="4">
+                                    <!-- <el-input v-model="input"
+                                              placeholder="作者"></el-input> -->
                                     <span>刘晶瑶</span>
                                 </el-col>
                                 <!-- 来源 -->
@@ -45,7 +49,9 @@
                                     <b>体裁：</b>
                                 </el-col>
                                 <el-col :span="5">
-                                    <span>消息</span>
+                                    <!-- <el-input v-model="input"
+                                              placeholder="消息"></el-input> -->
+                                    <span>新闻报道</span>
                                 </el-col>
                             </el-row>
                             <!-- 分类 -->
@@ -108,7 +114,7 @@
                                 <el-col :span="6">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>12345543222</span>
+                                    <span>13512345678</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">
@@ -130,7 +136,7 @@
                                 <el-col :span="5">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>0989000</span>
+                                    <span>100000</span>
                                 </el-col>
                             </el-row>
                             <!-- 地址 -->
@@ -142,7 +148,7 @@
                                 <el-col :span="13">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>北京市新华社</span>
+                                    <span>北京市西城区宣武门西大街</span>
                                 </el-col>
 
                             </el-row>
@@ -152,18 +158,22 @@
                 <!-- 右侧 -->
                 <el-col :span="6">
                     <b>附件</b>
-                    <el-row :gutter="20" class='message-content'>
-                        <el-col class="message-checkbox" :span="24">
-                            <el-row :gutter="2" style="line-height: 30px">
-                                <el-col :span="2" >
+                    <el-row :gutter="20"
+                            class='message-content'>
+                        <el-col class="message-checkbox"
+                                :span="24">
+                            <el-row :gutter="2"
+                                    style="line-height: 30px">
+                                <el-col :span="2">
                                     <i class="el-icon-document"></i>
                                 </el-col>
                                 <el-col :span="17">
                                     <!-- <a href="/review" style="font-size: 1px">(脱贫攻坚)羊信发"羊财"</a> -->
-                                    <span style="font-size: 1px" @click="fileClick">(脱贫攻坚)羊信发"羊财"</span>
+                                    <span style="font-size: 1px"
+                                          @click="fileClick">(脱贫攻坚)羊信发"羊财"</span>
                                 </el-col>
                                 <el-col :span="5">
-                                     <span style="font-size: 1px">9.52MB</span>
+                                    <span style="font-size: 1px">9.52MB</span>
                                 </el-col>
                             </el-row>
                         </el-col>

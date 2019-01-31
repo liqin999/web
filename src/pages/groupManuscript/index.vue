@@ -10,9 +10,9 @@
                         <el-form-item label="媒体:">
                             <el-select v-model="searchForm.media"
                                        placeholder="请选择媒体">
-                                <el-option label="媒体一"
+                                <el-option label="新华每日电讯"
                                            value="shanghai"></el-option>
-                                <el-option label="媒体二"
+                                <el-option label="新华每日微博"
                                            value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
@@ -88,16 +88,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
+                                         align="center"
+                                         width="130px"
                                          label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -115,7 +118,7 @@
                                          width="180px">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -159,17 +162,17 @@
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
                         </div> -->
-                        <downLoad>
+                        <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </downLoad>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
                         <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
                         </printing>
                         <div class="btn-line">
@@ -251,7 +254,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -345,15 +348,17 @@ export default {
                 address: '脱贫攻坚',
                 number: 768,
                 type: '图片',
-                state: '待审',
+                state: '已处理',
                 deliverer: '方立新',
-                processingTime: '2018-10-29 17:18',
+                processingTime: '2018-10-31 17:18',
                 dealingPeople: '刘学奎',
-                firstAuthor: '徐海波',
+                firstAuthor: '徐海波，方立新',
                 medio: '新华每日电讯',
+                doubt: 0,
                 preData: ''
+
             }, {
-                date: '2018-10-20',
+                date: '2018-12-24',
                 title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
                 picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 address: '脱贫攻坚',
@@ -361,10 +366,11 @@ export default {
                 type: '图片',
                 state: '待审',
                 deliverer: '刘学奎',
-                processingTime: '2018-10-29 10:45',
+                processingTime: '2018-12-25 14:45',
                 dealingPeople: '方立新',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',
+                doubt: 0,
                 preData: ''
             }],
             multipleSelection: [],

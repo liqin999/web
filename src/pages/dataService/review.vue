@@ -112,6 +112,11 @@ export default {
         }
     },
     methods: {
+        confirmBtn () {
+            this.$router.push({
+                path: '/columnsLayout'
+            })
+        },
         closeFn () {
             this.$router.go('-1')
         }
@@ -144,13 +149,13 @@ export default {
         }
         .border-line {
             @include border;
-            padding-bottom: 15px;
+            padding-bottom: 35px;
         }
         .red {
             color: red;
         }
         .message-lists {
-            padding: 10px;
+            padding: 35px 10px;
             .message-list {
                 .el-col {
                     @extend .text-overflow;

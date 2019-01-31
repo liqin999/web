@@ -10,13 +10,13 @@
             <!-- 稿源库历史 -->
             <el-row :gutter="20"
                     class="message-content clearfix">
-                    <el-col :span="24"
-                            class="tab-padding"><b class="message-title">稿源库历史</b>
-                    </el-col>
+                <el-col :span="24"
+                        class="tab-padding"><b class="message-title">稿源库历史</b>
+                </el-col>
                 <el-row :gutter="20"
                         class="pb10 label-border">
                     <el-col :span="6">
-                        <span>2018-10-31 12:34:56</span>
+                        <span>2018-10-31 15:34:56</span>
                     </el-col>
                     <el-col :span="18">
                         <el-col :span="24">
@@ -35,7 +35,7 @@
                 <el-col :span="24"
                         class="tab-padding">
                     <b class="message-title">工作稿库历史</b>
-                     <template>
+                    <template>
                         <el-select v-model="topValue"
                                     placeholder="请选择">
                                 <el-option v-for="item in topTitle"
@@ -48,47 +48,47 @@
                     </template>
                 </el-col>
             </el-row>
-                <el-row :gutter="20"
-                        class="pb10">
-                    <el-col :span="6">
-                        <span>2019-1-1 13:50:56</span>
+            <el-row :gutter="20"
+                    class="pb10">
+                <el-col :span="6">
+                    <span>2019-1-1 08:50:56</span>
+                </el-col>
+                <el-col :span="18">
+                    <el-col :span="24">
+                        <span>由【编辑策划中心-强晓玲】 编辑 </span>
                     </el-col>
-                    <el-col :span="18">
-                        <el-col :span="24">
-                            <span>由【编辑策划中心-强晓玲】 编辑 </span>
-                        </el-col>
-                        <el-col :span="24">
-                            <span>*处理意见：2019-1-1 13:50:56 开始编辑</span>
-                        </el-col>
+                    <el-col :span="24">
+                        <span>*处理意见：2019-1-1 13:50:56 开始编辑</span>
                     </el-col>
-                </el-row>
-                <el-row :gutter="20"
-                        class="pb10">
-                    <el-col :span="6">
-                        <span>2019-1-11 12:34:56</span>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20"
+                    class="pb10">
+                <el-col :span="6">
+                    <span>2019-1-11 09:34:56</span>
+                </el-col>
+                <el-col :span="18">
+                    <el-col :span="24">
+                        <span>由【创意策划中心-强晓玲】 编辑 </span>
                     </el-col>
-                    <el-col :span="18">
-                        <el-col :span="24">
-                            <span>由【创意策划中心-强晓玲】 编辑 </span>
-                        </el-col>
-                        <el-col :span="24">
-                            <span>*处理意见：2019-1-11 18:24:56 结束编辑</span>
-                        </el-col>
+                    <el-col :span="24">
+                        <span>*处理意见：2019-1-11 18:24:56 结束编辑</span>
                     </el-col>
-                </el-row>
-                <el-row :gutter="20"
-                        class="pb10">
-                    <el-col :span="6">
-                        <span>2019-1-23 12:34:56</span>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20"
+                    class="pb10">
+                <el-col :span="6">
+                    <span>2019-1-23 12:34:56</span>
+                </el-col>
+                <el-col :span="18">
+                    <el-col :span="24">
+                        <span>由【电讯领导-方立新】 初投 到新华每日电讯-脱贫攻坚 栏目库 </span>
                     </el-col>
-                    <el-col :span="18">
-                        <el-col :span="24">
-                            <span>由【电讯领导-方立新】 初投 到新华每日电讯-脱贫攻坚 栏目库 </span>
-                        </el-col>
-                        <el-col :span="24">
-                            <span>*处理意见：稿库建稿</span>
-                        </el-col>
+                    <el-col :span="24">
+                        <span>*处理意见：稿库建稿</span>
                     </el-col>
+                </el-col>
                 </el-row>
             </el-row>
         </div>

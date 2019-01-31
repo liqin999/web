@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2019-01-03 18:36:57
+ * @LastEditTime: 2019-01-14 16:44:13
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $nav-height: 40px !default; //导航条行高（默认）
@@ -281,10 +281,8 @@ $header-title-color: #515151; //头部标题颜色
 .el-aside {
     background-color: nth($bg-color, 1);
     @include border(right, 1px, solid, $tint-border-color);
-   .filter-tree {
-        @extend .scroll-y;
-        @extend .scroll-x;
-   }
+    @extend .scroll-y;
+    @extend .scroll-x;
 }
 // 右侧
 .main-header-group {

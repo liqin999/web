@@ -90,16 +90,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
+                                         align="center"
+                                         width="130px"
                                          label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -117,7 +120,7 @@
                                          width="180px">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -157,20 +160,20 @@
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
                         </div> -->
-                         <downLoad>
+                         <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </downLoad>
+                        </down-load>
 
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                       <printing>
+                        <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
-                       </printing>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -259,10 +262,10 @@ export default {
                 picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
                 repDrawing: '',
                 number: 163,
-                state: '待审',
+                state: '已处理',
                 dealingPeople: '刘学奎',
                 processingTime: '2018-10-29 17:18 ',
-                firstAuthor: '刘学奎',
+                firstAuthor: '刘学奎，方立新',
                 medio: '新华每日电讯',
                 type: '图片',
                 doubt: 0,
@@ -279,7 +282,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,

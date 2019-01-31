@@ -156,11 +156,6 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
-                        <!-- <div class="text-left">
-                            <stay-draft>
-                                <span slot="iconName" class="primary-btn">留稿</span>
-                            </stay-draft>
-                        </div> -->
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">刷新</span>
@@ -170,9 +165,9 @@
                         <create-draft>
                             <span slot="iconName">建稿</span>
                         </create-draft>
-                        <send-draft :sendData="true">
+                        <!-- <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
-                        </send-draft>
+                        </send-draft> -->
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">约稿</span>
@@ -187,9 +182,9 @@
                             <span slot="iconName">翻译</span>
                         </translate>
                         <!-- 留搞组建按钮 -->
-                            <stay-draft  class="primary-btn">
-                                <span slot="iconName">留稿</span>
-                            </stay-draft>
+                        <stay-draft class="primary-btn">
+                            <span slot="iconName">留稿</span>
+                        </stay-draft>
                     </div>
                 </el-header>
                 <el-main ref="mainTable">
@@ -261,17 +256,17 @@
                             <i class="el-icon-download"></i>
                             <span>下载</span>
                         </div> -->
-                        <downLoad>
+                        <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </downLoad>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
                         <printing>
                             <i slot="icon"
-                                class="iconfont icon-ico_print"></i>
+                               class="iconfont icon-ico_print"></i>
                             <span slot="iconName">打印</span>
                         </printing>
                         <div class="btn-line">
@@ -304,7 +299,7 @@
     </el-container>
 </template>
 <script>
-import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// import sendDraft from '@/components/buttons/sendDraft/sendDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
@@ -323,7 +318,7 @@ import translate from '@/components/buttons/translate/translate'
 export default {
     components: {
         leftMenu,
-        sendDraft,
+        // sendDraft,
         draftLabel,
         history,
         createDraft,  // 建稿按钮弹框
@@ -379,7 +374,7 @@ export default {
                 productType: ''
 
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,

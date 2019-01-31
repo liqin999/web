@@ -93,7 +93,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版</span>
+                                <span class="t2">A叠-五版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-二版</span>
+                                <span class="t2">A叠-六版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-三版</span>
+                                <span class="t2">A叠-七版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-四版</span>
+                                <span class="t2">A叠-八版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -157,9 +157,9 @@
                         <span>浏览</span>
                     </div> -->
                     <draft-look>
-                            <i slot="icon"
-                               class="iconfont icon-liulan"></i>
-                            <span slot="iconName">浏览</span>
+                        <i slot="icon"
+                           class="iconfont icon-liulan"></i>
+                        <span slot="iconName">浏览</span>
                     </draft-look>
                     <div class="btn-line">
                         <span>|</span>
@@ -168,17 +168,17 @@
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>
                     </div> -->
-                    <downLoad>
+                    <down-load>
                         <i slot="icon"
                              class="el-icon-download"></i>
                         <span slot="iconName">下载</span>
-                    </downLoad>
+                    </down-load>
                     <div class="btn-line">
                         <span>|</span>
                     </div>
                     <printing>
                         <i slot="icon"
-                            class="iconfont icon-ico_print"></i>
+                           class="iconfont icon-ico_print"></i>
                         <span slot="iconName">打印</span>
                     </printing>
                     <div class="btn-line">

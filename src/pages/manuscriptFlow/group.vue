@@ -16,7 +16,7 @@
                           @selection-change="handleSelectionChange">
                     <el-table-column prop="id"
                                      label="稿号"
-                                     width="180">
+                                     width="150">
                     </el-table-column>
                     <el-table-column prop="title"
                                      show-overflow-tooltip
@@ -24,7 +24,7 @@
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
-                                     width="180">
+                                     width="120">
                     </el-table-column>
 
                     <el-table-column prop="type"
@@ -37,7 +37,7 @@
                                      label="状态">
                     </el-table-column>
                     <el-table-column prop="author"
-                                     label="第一作者">
+                                     label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
                                      label="处理时间">
@@ -47,6 +47,9 @@
                     </el-table-column>
                     <el-table-column prop="type2"
                                      label="类型">
+                    </el-table-column>
+                    <el-table-column prop="picture"
+                                     label="代表图">
                     </el-table-column>
                 </el-table>
             </el-main>
@@ -193,7 +196,9 @@ export default {
                 author: '郝玉',
                 processingTime: '10-29 10:31',
                 handlePeople: '刘晶瑶',
-                type2: '文本'
+                type2: '文本',
+                picture: ''
+
             }, {
                 id: '20181029000029',
                 title: '一个西红柿的”世界地图“',
@@ -204,7 +209,8 @@ export default {
                 author: '郝玉',
                 processingTime: '10-29 10:31',
                 handlePeople: '赵倩',
-                type2: '文本'
+                type2: '文本',
+                picture: ''
             }],
             multipleSelection: [],
             mainTableHeight: null

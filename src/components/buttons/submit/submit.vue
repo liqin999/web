@@ -1,9 +1,9 @@
 <template>
-  <div class="primary-btn">
-    <span @click="submitIcon()">
-      <slot name="iconName"></slot>
-    </span>
-  </div>
+    <div class="primary-btn">
+        <span @click="submitIcon()">
+            <slot name="iconName"></slot>
+        </span>
+    </div>
 </template>
 <script>
 export default {

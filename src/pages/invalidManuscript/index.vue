@@ -103,7 +103,7 @@
                             </content-box>
                             <!-- <el-button class="primary-btn">历史</el-button> -->
                             <history class="primary-btn">
-                                <span slot="iconName" >历史</span>
+                                <span slot="iconName">历史</span>
                             </history>
                         </div>
                     </el-col>

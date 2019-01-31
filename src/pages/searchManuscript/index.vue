@@ -61,7 +61,7 @@
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <el-checkbox label="稿源库"></el-checkbox>
-                                    <el-checkbox label="电讯稿库"></el-checkbox>
+                                    <el-checkbox label="其他稿库"></el-checkbox>
                                 </el-checkbox-group>
                             </template>
                         </el-col>
@@ -85,86 +85,21 @@
             <el-main class="main-content">
                 <el-row :gutter="20"
                         class="pl10 pr10 mb10">
-                    <el-col :span="3"><b class="font18">电讯稿库</b></el-col>
-                    <el-col :span="21">
-                        <div class="btn-group">
-                            <el-button class="primary-btn">恢复</el-button>
-                            <content-box class="primary-btn">
-                                <span slot="iconName">内容</span>
-                            </content-box>
-                            <!-- <el-button class="primary-btn">历史</el-button> -->
-                            <history class="primary-btn">
-                                <span slot="iconName" >历史</span>
-                            </history>
-                        </div>
-                    </el-col>
-                    <el-col :span="24">
-                        <el-table ref="multipleTable"
-                                  class="mt10"
-                                  height="160"
-                                  :data="tableData3"
-                                  tooltip-effect="dark"
-                                  @selection-change="handleSelectionChange">
-                            <el-table-column type="selection">
-                            </el-table-column>
-                            <el-table-column label="稿号"
-                                             width="100">
-                                <template slot-scope="scope">{{ scope.row.id }}</template>
-                            </el-table-column>
-                            <el-table-column prop="name"
-                                             label="标题"
-                                              width="170">
-                            </el-table-column>
-                            <el-table-column prop="media"
-                                             label="所属媒体"
-                                             show-overflow-tooltip>
-                            </el-table-column>
-                            <el-table-column prop="status"
-                                             label="状态">
-                            </el-table-column>
-                            <el-table-column prop="time"
-                                             label="处理时间"
-                                             width="100">
-                            </el-table-column>
-                            <el-table-column prop="author"
-                                             label="第一作者">
-                            </el-table-column>
-                            <el-table-column prop="source"
-                                             label="来源">
-                            </el-table-column>
-                            <el-table-column prop="type"
-                                             label="类型">
-                            </el-table-column>
-                            <el-table-column prop="repDrawing"
-                                         header-align="center"
-                                        align="center"
-                                        width="130px"
-                                         label="代表图">
-                            <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
-                                </el-popover>
-                            </template>
-                        </el-table-column>
-                            <el-table-column prop="format"
-                                             label="文件格式">
-                            </el-table-column>
-                            <el-table-column prop="wordNumber"
-                                             label="字数">
-                            </el-table-column>
-                            <el-table-column prop="articleNumber"
-                                             label="稿数">
-                            </el-table-column>
-                        </el-table>
-                    </el-col>
-                </el-row>
-                <el-row :gutter="20"
-                        class="pl10 pr10">
-                    <el-col :span="24"><b class="font18">稿源库</b></el-col>
+                    <el-row>
+                        <el-col :span="3"><b class="font18 pl10">稿源库</b></el-col>
+                        <el-col :span="21">
+                            <div class="btn-group">
+                                <el-button class="primary-btn">恢复</el-button>
+                                <content-box class="primary-btn">
+                                    <span slot="iconName">内容</span>
+                                </content-box>
+                                <!-- <el-button class="primary-btn">历史</el-button> -->
+                                <history class="primary-btn">
+                                    <span slot="iconName">历史</span>
+                                </history>
+                            </div>
+                        </el-col>
+                    </el-row>
                     <el-col :span="24">
                         <el-table ref="multipleTable"
                                   class="mt10"
@@ -194,26 +129,29 @@
                                              width="100">
                             </el-table-column>
                             <el-table-column prop="author"
-                                             label="第一作者">
+                                             label="作者">
                             </el-table-column>
                             <el-table-column prop="type"
                                              label="类型">
                             </el-table-column>
                             <el-table-column prop="repDrawing"
-                                         header-align="center"
-                                        align="center"
-                                        width="130px"
-                                         label="代表图">
-                            <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
-                                </el-popover>
-                            </template>
-                        </el-table-column>
+                                             header-align="center"
+                                             align="center"
+                                             width="130px"
+                                             label="代表图">
+                                <template slot-scope="scope">
+                                    <el-popover placement="right"
+                                                title=""
+                                                trigger="hover">
+                                        <img v-bind:src="scope.row.picture"
+                                             style="max-height: 300px;max-width: 1000px">
+                                        <img slot="reference"
+                                             :src="scope.row.picture"
+                                             :alt="scope.row.picture"
+                                             style="max-height: 30px;max-width: 120px">
+                                    </el-popover>
+                                </template>
+                            </el-table-column>
                             <el-table-column prop="format"
                                              label="文件格式">
                             </el-table-column>
@@ -229,6 +167,78 @@
                         </el-table>
                     </el-col>
                 </el-row>
+                <el-row :gutter="20"
+                        class="pl10 pr10 mb10">
+                    <el-col :span="3"><b class="font18">其他稿库</b></el-col>
+
+                    <el-col :span="24">
+                        <el-table ref="multipleTable"
+                                  class="mt10"
+                                  height="160"
+                                  :data="tableData3"
+                                  tooltip-effect="dark"
+                                  @selection-change="handleSelectionChange">
+                            <el-table-column type="selection">
+                            </el-table-column>
+                            <el-table-column label="稿号"
+                                             width="100">
+                                <template slot-scope="scope">{{ scope.row.id }}</template>
+                            </el-table-column>
+                            <el-table-column prop="name"
+                                             label="标题"
+                                             width="170">
+                            </el-table-column>
+                            <el-table-column prop="media"
+                                             label="所属媒体"
+                                             show-overflow-tooltip>
+                            </el-table-column>
+                            <el-table-column prop="status"
+                                             label="状态">
+                            </el-table-column>
+                            <el-table-column prop="time"
+                                             label="处理时间"
+                                             width="100">
+                            </el-table-column>
+                            <el-table-column prop="author"
+                                             label="作者">
+                            </el-table-column>
+                            <el-table-column prop="source"
+                                             label="来源">
+                            </el-table-column>
+                            <el-table-column prop="type"
+                                             label="类型">
+                            </el-table-column>
+                            <el-table-column prop="repDrawing"
+                                             header-align="center"
+                                             align="center"
+                                             width="130px"
+                                             label="代表图">
+                                <template slot-scope="scope">
+                                    <el-popover placement="right"
+                                                title=""
+                                                trigger="hover">
+                                        <img v-bind:src="scope.row.picture"
+                                             style="max-height: 300px;max-width: 1000px">
+                                        <img slot="reference"
+                                             :src="scope.row.picture"
+                                             :alt="scope.row.picture"
+                                             style="max-height: 30px;max-width: 120px">
+                                    </el-popover>
+                                </template>
+                            </el-table-column>
+                            <el-table-column prop="format"
+                                             label="文件格式">
+                            </el-table-column>
+                            <el-table-column prop="wordNumber"
+                                             label="字数">
+                            </el-table-column>
+                            <el-table-column prop="articleNumber"
+                                             label="稿数">
+                            </el-table-column>
+                        </el-table>
+                    </el-col>
+                </el-row>
+
             </el-main>
         </el-container>
         <el-footer height="60px">
@@ -274,7 +284,7 @@ export default {
                     // picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2340162773,1500754957&fm=85&app=57&f=JPEG?w=121&h=75&s=E8424693405671D2042DD66E03003064',
                     status: '已审',
                     time: '2019-1-11',
-                    author: '刘晶瑶',
+                    author: '刘晶瑶，于文静',
                     source: '自写稿',
                     type: '文本',
                     map: '',
@@ -296,7 +306,7 @@ export default {
             radioName2: '资源类型',
             radioLabel2: [
                 '稿件',
-                '线索/采访单/专题'
+                '线索/专题'
             ],
             // 栏目选择
             radioName: '栏目库',

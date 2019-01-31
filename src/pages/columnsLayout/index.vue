@@ -76,16 +76,19 @@
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
-                                        align="center"
-                                        width="130px"
-                                        label="代表图">
+                                         align="center"
+                                         width="130px"
+                                         label="代表图">
                             <template slot-scope="scope">
-                                <el-popover
-                                    placement="right"
-                                    title=""
-                                    trigger="hover">
-                                    <img v-bind:src="scope.row.picture" style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference" :src="scope.row.picture" :alt="scope.row.picture" style="max-height: 30px;max-width: 120px">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
                         </el-table-column>
@@ -110,7 +113,7 @@
                                          label="处理人">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -140,11 +143,11 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <downLoad>
+                        <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
-                        </downLoad>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -251,7 +254,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '多媒体'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -343,7 +346,7 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2018-10-30',
+                date: '2018-10-25',
                 title: '（新华每日电讯）千年古镇里走中药种植路 百折不挠尝！',
                 address: '脱贫攻坚',
                 number: 3578,
@@ -352,11 +355,11 @@ export default {
                 deliverer: '方立新',
                 processingTime: '2018-10-30 14:23',
                 dealingPeople: '强晓玲',
-                firstAuthor: '关俏俏',
+                firstAuthor: '关俏俏，于文静',
                 medio: '新华每日电讯',
                 preData: ''
             }, {
-                date: '2018-10-29',
+                date: '2018-11-11',
                 title: '（脱贫攻坚）羊信发“羊财”',
                 address: '脱贫攻坚',
                 number: 768,
@@ -364,20 +367,20 @@ export default {
 
                 state: '待审',
                 deliverer: '方立新',
-                processingTime: '2018-10-29 17:18',
+                processingTime: '2018-12-25 17:18',
                 dealingPeople: '刘学奎',
                 firstAuthor: '徐海波',
                 medio: '新华每日电讯',
                 preData: ''
             }, {
-                date: '2018-10-20',
+                date: '2019-01-15',
                 title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
                 address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',
                 picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 deliverer: '刘学奎',
-                processingTime: '2018-10-29 10:45',
+                processingTime: '2019-01-20 10:45',
                 dealingPeople: '方立新',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',
@@ -395,6 +398,10 @@ export default {
                 that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
+        // 测试请求的接口的调用
+        this.$api.text1().then(res => {
+
+        })
     },
     methods: {
         splitConcatIcon () {
