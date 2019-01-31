@@ -2,14 +2,16 @@
     <div>
         <el-header>
             <div class="search-wrap">
+            <!--检索设定  -->
             <el-row :gutter="20"
-                    class="mb15 pl10 pr10" style="padding:14px">
+                    class="pl10 pr10" style="padding:8px">
                 <el-col :span="10">
                     <b class="font18">检索设定</b>
                 </el-col>
             </el-row>
-            <el-row :gutter="20"
-                    class="mb15 pl10 pr10">
+            <!-- 日期 -->
+            <el-row :gutter="15"
+                    class="pl10 pr10">
                 <el-col :span="6">
                     <template>
                         <span>日期：</span>
@@ -26,6 +28,7 @@
                         <el-checkbox v-model="checked">仅统计成品稿</el-checkbox>
                 </el-col>
             </el-row>
+            <!-- 类型 -->
             <el-row :gutter="20">
                     <el-col :span="24">
                             <el-form :inline="true"
@@ -33,7 +36,7 @@
                                 <el-form-item label="类型:">
                                     <el-checkbox :indeterminate="searchForm.isIndeterminate"
                                                 v-model="searchForm.checkAll"
-                                                @change="handleCheckAllChange">全不选</el-checkbox>
+                                                @change="handleCheckAllChange">全选</el-checkbox>
                                     <el-checkbox-group v-model="searchForm.checkedTypes"
                                                     @change="handleCheckedTypesChange">
                                         <el-checkbox v-for="type in allTypes"
@@ -50,6 +53,7 @@
             </el-row>
             </div>
         </el-header>
+        <!-- 稿件 -->
         <el-main ref="mainTable">
             <el-row :gutter="15"
                     class="mb15 pl10 pr10">
@@ -60,6 +64,7 @@
                     <el-button class="primary-btn">详情</el-button>
                 </el-col>
             </el-row>
+            <!-- 表中内容 -->
                 <el-row :gutter="15"
                         class="mb15 pl10 pr10">
                             <el-col :span="24"
@@ -95,6 +100,7 @@
                             </el-col>
                 </el-row>
         </el-main>
+        <!-- 分页 -->
              <el-footer height="50px">
                     <el-pagination @size-change="handleSizeChange"
                                    @current-change="handleCurrentChange"
@@ -122,7 +128,9 @@ export default {
                 checkedTypes: ['文字', '图片'],
                 isIndeterminate: true
             },
+            // 类型
             allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
+            // 表中数据
             tableData: [
                 {
                     type: '文本',
@@ -181,23 +189,28 @@ export default {
         getFormData (data) { // 搜索表单的选项
             console.log('获得自组件的搜索框数据', data)
         },
+        // 统计按钮
         onSearch () {
             console.log(this.searchForm)
         },
+        // 全选
         handleCheckAllChange (val) {
             this.searchForm.checkedTypes = val ? this.allTypes : []
             this.searchForm.isIndeterminate = false
             this.$store.dispatch('checkedCurTypes', this.searchForm.checkedTypes)
         },
+        // 类型改变
         handleCheckedTypesChange (value) {
             let checkedCount = value.length
             this.searchForm.checkAll = checkedCount === this.allTypes.length
             this.searchForm.isIndeterminate = checkedCount > 0 && checkedCount < this.allTypes.length
             this.$store.dispatch('checkedCurTypes', this.searchForm.checkedTypes)
         },
+        // 分页条数
         handleSizeChange (val) {
 
         },
+        // 当前页
         handleCurrentChange (val) {
 
         }
@@ -210,6 +223,9 @@ export default {
 }
 .el-form-item{
     padding-left: 14px;
+}
+.el-checkbox+.el-checkbox{
+    margin-left: 6px;
 }
 /* .message-box{
     @include border(all);
