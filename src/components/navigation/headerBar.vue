@@ -2,7 +2,7 @@
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2019-01-10 14:46:19
+ * @LastEditTime: 2019-01-31 10:23:34
  * @Description: 导航条样式改版
  -->
 <template>
@@ -147,18 +147,28 @@ export default {
                     chiled: [// 展示二级路由
                         {
                             name: '投稿',
-                            id: '10-4',
+                            id: '10-1',
                             path: '/sendManuscript'
                         },
                         {
                             name: '废稿库',
-                            id: '10-1',
+                            id: '10-2',
                             path: '/invalidManuscript'
                         },
                         {
                             name: '写稿器',
-                            id: '10-2',
+                            id: '10-3',
                             path: '/writeManuscript'
+                        },
+                        {
+                            name: '个人工作量统计',
+                            id: '10-4',
+                            path: '/personStatistics'
+                        },
+                        {
+                            name: '部门已签稿统计',
+                            id: '10-5',
+                            path: '/departStatistics'
                         }
                         // {
                         //     name: '新闻日历',

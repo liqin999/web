@@ -95,7 +95,7 @@
                    href='https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1545644425&di=ba2067c2aa490f737157a78ccace21c2&src=http://img.pptjia.com/image/20180117/f4b76385a3ccdbac48893cc6418806d5.jpg'
                    target="_blank"><b>清晰原图</b></a>
                 <el-button class="reset-btn"
-                           @click="lookData.contentShow = false">选送</el-button>
+                           @click="lookData.contentShow = false">传稿</el-button>
 
             </div>
         </div>

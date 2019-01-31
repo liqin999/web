@@ -16,6 +16,9 @@
     新闻日历      newsCalendar
     废稿库       invalidManuscript
     后台管理      systemBackground
+    个人工作量统计   personStatistics
+    部门已签稿统计   departStatistics
+
  */
 const review = r => require.ensure([], () => r(require('@/pages/dataService/review.vue')), 'review')
 const dataService = r => require.ensure([], () => r(require('@/pages/dataService/dataService.vue')), 'dataService')
@@ -47,6 +50,10 @@ const other = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/ot
 const page = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/page.vue')), 'page')
 const column = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/column.vue')), 'column')
 const special = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/special.vue')), 'special')
+
+// 统计
+const personStatistics = r => require.ensure([], () => r(require('@/pages/personStatistics/index.vue')), 'personStatistics')
+const departStatistics = r => require.ensure([], () => r(require('@/pages/departStatistics/index.vue')), 'departStatistics')
 
 // 后台设置
 const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet/mediaSet.vue')), 'mediaSet')
@@ -185,6 +192,14 @@ export const routes = [{
 {
     path: '/writeManuscript',
     component: writeManuscript
+},
+{
+    path: '/personStatistics',
+    component: personStatistics
+},
+{
+    path: '/departStatistics',
+    component: departStatistics
 },
 {
     path: '/sendManuscript',
