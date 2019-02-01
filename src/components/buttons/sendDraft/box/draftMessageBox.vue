@@ -118,7 +118,7 @@
                         </el-col>
                          <el-col :span="7">
                             <el-button plain
-                                       class="btn-inquire"
+                                       class="primary-btn"
                                        @click="searchTime">查询</el-button>
                         </el-col>
                         <!-- </el-row> -->
@@ -140,11 +140,9 @@
                                       @change="textareaChange">
                             </el-input>
                         </el-col>
-                        <!-- </el-row> -->
                     </el-row>
                 </el-col>
             </el-row>
-            <!-- 送往 栏目列表 -->
         </div>
         <!-- 内容区 结束 -->
         <div slot="footer"
@@ -169,7 +167,7 @@ export default {
     },
     data () {
         return {
-            submitData: null,
+            // submitData: null,
             textarea: '请输入文字',
             // 栏目选择
             radioName: '版面/栏目稿库',
@@ -181,7 +179,6 @@ export default {
                 '其他人员库',
                 '专题库'
             ],
-            topValue: '新华每日电讯',
             dataList: [
                 {
                     id: 2,
@@ -236,24 +233,25 @@ export default {
                 }
 
             ],
+            topValue: '新华每日电讯',
             topTitle: [
                 {
                     value: '1',
-                    label: '新华每日电讯',
-                    children: [
-                        {
-                            value: '2',
-                            label: '国内新闻'
-                        },
-                        {
-                            value: '3',
-                            label: '脱贫攻坚'
-                        },
-                        {
-                            value: '4',
-                            label: '脱贫攻坚'
-                        }
-                    ]
+                    label: '新华每日电讯'
+                    // children: [
+                    //     {
+                    //         value: '2',
+                    //         label: '国内新闻'
+                    //     },
+                    //     {
+                    //         value: '3',
+                    //         label: '脱贫攻坚'
+                    //     },
+                    //     {
+                    //         value: '4',
+                    //         label: '脱贫攻坚'
+                    //     }
+                    // ]
                 },
                 {
                     value: '5',
@@ -352,6 +350,9 @@ export default {
             @include border(all);
             border-radius: $border-radius;
         }
+    }
+    .redColor{
+        color: red;
     }
 }
 </style>

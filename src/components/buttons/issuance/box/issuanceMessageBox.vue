@@ -3,7 +3,8 @@
                title="签发"
                @close="messageBoxClose()"
                :visible.sync="issuanceData.contentShow"
-               width="80%"
+               width="63%"
+               height="40%"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
@@ -22,19 +23,19 @@
                         </template>
                     </el-row>
                     <el-row class="clearfix pt10 pb10">
-                        <!-- 处理时间 -->
-                        <el-col :span="8"
+                        <!-- 刊发时间 -->
+                        <el-col :span="9"
                                 class="times-select">
                             <template>
                                 <span>刊发时间</span>
                                 <el-date-picker v-model="pickerTime"
-                                                type="date"
+                                                type="datetime"
                                                 placeholder="选择日期"
                                                 @change="pickerChange">
                                 </el-date-picker>
                             </template>
                         </el-col>
-                        <el-col :span="3">
+                        <!-- <el-col :span="3">
                             <el-time-select v-model="value1"
                                             :picker-options="{
                                         start: '08:30',
@@ -43,9 +44,9 @@
                                     }"
                                             placeholder="选择时间">
                             </el-time-select>
-                        </el-col>
+                        </el-col> -->
                         <!-- 刊发位次 -->
-                        <el-col :span="6"
+                        <el-col :span="4"
                                 class="text-right">
                             <template>
                                 <span>刊发位次</span>
@@ -60,7 +61,7 @@
                             </template>
                         </el-col>
                         <!-- checkbox -->
-                        <el-col :span="13">
+                        <el-col :span="11">
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <template v-for="item in checkLabel">
@@ -103,6 +104,7 @@
                                 </template>
                             </el-col>
                             <el-col :span="6">
+                                <!-- 设置字体 -->
                                 <template>
                                     <el-select v-model="mainTitle.fontValue"
                                                class="issuance-select">
@@ -115,6 +117,7 @@
                                 </template>
                             </el-col>
                             <el-col :span="6">
+                                <!--横向设置字号  -->
                                 <template>
                                     <el-select v-model="mainTitle.hengValue"
                                                class="issuance-select">
@@ -127,6 +130,7 @@
                                 </template>
                             </el-col>
                             <el-col :span="6">
+                                <!-- 纵向设置字号 -->
                                 <template>
                                     <el-select v-model="mainTitle.shuValue"
                                                class="issuance-select">
@@ -220,8 +224,7 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="jianti.shuValue"
-                                               class="issuance-select">
+                                    <el-select v-model="jianti.shuValue" class="issuance-select">
                                         <el-option v-for="item in jianti.shuData"
                                                    :key="item"
                                                    :label="item"
@@ -312,7 +315,6 @@ export default {
     },
     data () {
         return {
-            value1: '',
             checked: '',
             textarea: '',
             textarea2: '',
@@ -497,4 +499,5 @@ export default {
     width: 100%;
     height: 100%;
 }
+
 </style>

@@ -8,12 +8,14 @@
                     <el-col :span="6"
                             slot="media">
                         <el-form-item label="媒体:">
-                            <el-select v-model="searchForm.media"
+                            <el-select v-model="topValue"
                                        placeholder="请选择媒体">
-                                <el-option label="媒体一"
-                                           value="shanghai"></el-option>
-                                <el-option label="媒体二"
-                                           value="beijing"></el-option>
+                                <el-option v-for="item in topTitle"
+                                           :key="item.label"
+                                           :label="item.label"
+                                           :value="item.value"
+                                           @change="topChange">
+                                </el-option>
                             </el-select>
                         </el-form-item>
                     </el-col>
@@ -118,7 +120,7 @@
                                          width="180px">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -158,7 +160,7 @@
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
                         </div> -->
-                        <down-load>
+                         <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
@@ -213,14 +215,14 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
-// 提交弹框按钮
-import submit from '@/components/buttons/submit/submit.vue'
-// 淘汰按钮
-import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交弹框按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -233,10 +235,10 @@ export default {
         draftLabel,
         history,
         printing,
-        submit,
-        eliminate,
         draftLook,
-        downLoad
+        downLoad,
+        submit,
+        eliminate
     },
     data () {
         return {
@@ -260,10 +262,10 @@ export default {
                 picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
                 repDrawing: '',
                 number: 163,
-                state: '待审',
+                state: '已处理',
                 dealingPeople: '刘学奎',
                 processingTime: '2018-10-29 17:18 ',
-                firstAuthor: '刘学奎',
+                firstAuthor: '刘学奎，方立新',
                 medio: '新华每日电讯',
                 type: '图片',
                 doubt: 0,
@@ -280,7 +282,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -383,7 +385,19 @@ export default {
                 // }
             ],
             multipleSelection: [],
-            mainTableHeight: null
+            mainTableHeight: null,
+            topValue: '新华每日电讯',
+            topTitle: [
+                {
+                    value: '1',
+                    label: '新华每日电讯'
+                },
+                {
+                    value: '5',
+                    label: '每日电讯微博'
+                }
+            ]
+
         }
     },
     mounted () {
@@ -396,6 +410,9 @@ export default {
         }
     },
     methods: {
+        topChange (value) {
+            // this.topValue = value;
+        },
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
         },

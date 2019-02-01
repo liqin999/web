@@ -6,7 +6,6 @@
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box">
-
             <el-collapse v-model="activeName"
                          accordion>
                 <el-collapse-item title="更多"
@@ -161,9 +160,9 @@ p {
     width: 60%;
     min-width: 600px;
 }
-.message-box .el-collapse-item__wrap {
-    /* border: none; */
-}
+/* .message-box .el-collapse-item__wrap {
+    border: none;
+} */
 .message-box .el-collapse {
     border-top: none;
 }

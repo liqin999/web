@@ -61,7 +61,7 @@
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <el-checkbox label="稿源库"></el-checkbox>
-                                    <el-checkbox label="电讯稿库"></el-checkbox>
+                                    <el-checkbox label="其他稿库"></el-checkbox>
                                 </el-checkbox-group>
                             </template>
                         </el-col>
@@ -129,7 +129,7 @@
                                              width="100">
                             </el-table-column>
                             <el-table-column prop="author"
-                                             label="第一作者">
+                                             label="作者">
                             </el-table-column>
                             <el-table-column prop="type"
                                              label="类型">
@@ -200,7 +200,7 @@
                                              width="100">
                             </el-table-column>
                             <el-table-column prop="author"
-                                             label="第一作者">
+                                             label="作者">
                             </el-table-column>
                             <el-table-column prop="source"
                                              label="来源">
@@ -284,7 +284,7 @@ export default {
                     // picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2340162773,1500754957&fm=85&app=57&f=JPEG?w=121&h=75&s=E8424693405671D2042DD66E03003064',
                     status: '已审',
                     time: '2019-1-11',
-                    author: '刘晶瑶',
+                    author: '刘晶瑶，于文静',
                     source: '自写稿',
                     type: '文本',
                     map: '',
@@ -306,7 +306,7 @@ export default {
             radioName2: '资源类型',
             radioLabel2: [
                 '稿件',
-                '线索/采访单/专题'
+                '线索/专题'
             ],
             // 栏目选择
             radioName: '栏目库',

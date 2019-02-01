@@ -112,7 +112,7 @@
                                      width="180px">
                     </el-table-column>
                     <el-table-column prop="firstAuthor"
-                                     label="第一作者">
+                                     label="作者">
                     </el-table-column>
                     <el-table-column prop="medio"
                                      label="媒体"
@@ -161,10 +161,10 @@
                         <span>|</span>
                     </div>
                     <down-load>
-                        <i slot="icon"
-                           class="el-icon-download"></i>
-                        <span slot="iconName">下载</span>
-                    </down-load>
+                            <i slot="icon"
+                               class="el-icon-download"></i>
+                            <span slot="iconName">下载</span>
+                        </down-load>
                     <!-- <div class="btn-nav">
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>
@@ -217,14 +217,14 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
-// 提交弹框按钮
-import submit from '@/components/buttons/submit/submit.vue'
-// 淘汰按钮
-import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交弹框按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -236,10 +236,10 @@ export default {
         draftLabel,
         history,
         printing,
-        submit,
-        eliminate,
         draftLook,
-        downLoad
+        downLoad,
+        submit,
+        eliminate
 
     },
     data () {
@@ -254,7 +254,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -388,11 +388,11 @@ export default {
                 processingTime: '2018-10-31 15:22:12',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',
-                type: '文本',
+                type: '图片',
                 doubt: 0,
                 source: '自写稿',
                 gnumber: 1,
-                file: '.txt',
+                file: '.jpg',
                 fujian: 0
             }, {
                 date: '2018-10-29',
@@ -403,13 +403,13 @@ export default {
                 state: '待审',
                 dealingPeople: '方立新',
                 processingTime: '2018-10-29 10:09:34',
-                firstAuthor: '于文静',
+                firstAuthor: '于文静，徐海波',
                 medio: '新华每日电讯',
-                type: '文本',
+                type: '图片',
                 doubt: 0,
-                source: '自写稿',
+                source: '邮件稿件',
                 gnumber: 1,
-                file: '.txt',
+                file: '.jpg',
                 fujian: 0
             }],
             multipleSelection: [],

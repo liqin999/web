@@ -93,7 +93,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-一版</span>
+                                <span class="t2">A叠-五版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-二版</span>
+                                <span class="t2">A叠-六版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-三版</span>
+                                <span class="t2">A叠-七版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-四版</span>
+                                <span class="t2">A叠-八版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                     </div> -->
                     <down-load>
                         <i slot="icon"
-                           class="el-icon-download"></i>
+                             class="el-icon-download"></i>
                         <span slot="iconName">下载</span>
                     </down-load>
                     <div class="btn-line">

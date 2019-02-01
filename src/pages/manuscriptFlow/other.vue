@@ -16,15 +16,16 @@
                           @selection-change="handleSelectionChange">
                     <el-table-column prop="id"
                                      label="稿号"
-                                     width="180">
+                                     width="160">
                     </el-table-column>
                     <el-table-column prop="title"
+                                     width="160"
                                      show-overflow-tooltip
                                      label="标题">
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
-                                     width="180">
+                                     width="120">
                     </el-table-column>
 
                     <el-table-column prop="type"
@@ -37,9 +38,10 @@
                                      label="状态">
                     </el-table-column>
                     <el-table-column prop="author"
-                                     label="第一作者">
+                                     label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
+                                     width="140"
                                      label="处理时间">
                     </el-table-column>
                     <el-table-column prop="handlePeople"
@@ -47,6 +49,21 @@
                     </el-table-column>
                     <el-table-column prop="type2"
                                      label="类型">
+                    </el-table-column>
+                    <el-table-column prop="picture"
+                                     label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
                     </el-table-column>
                 </el-table>
             </el-main>
@@ -175,26 +192,28 @@ export default {
             },
             tableData3: [{
                 id: '20181029000029',
-                title: '城市生活垃圾分类的“银川模式”',
+                title: '“氢能小城”炼成记',
                 media: '新华每日电讯',
                 type: '版面',
-                location: 'A叠-十四版',
+                location: 'A叠-十版',
                 status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31',
-                handlePeople: '刘晶瑶',
+                author: '卢刚',
+                picture: '',
+                processingTime: '2018-10-31 14:23',
+                handlePeople: '卢刚',
                 type2: '文本'
             }, {
                 id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
+                title: '龙海市：文化沁人心  廉洁清风来',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',
                 status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31',
-                handlePeople: '张三',
-                type2: '文本'
+                author: '刘学奎',
+                picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
+                processingTime: '2018-10-29 17:18',
+                handlePeople: '刘学奎',
+                type2: '图片'
             }],
             multipleSelection: [],
             mainTableHeight: null

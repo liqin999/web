@@ -126,7 +126,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             pickerOptions2: {
                 shortcuts: [{
                     text: '最近一周',
