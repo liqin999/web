@@ -47,33 +47,7 @@
                         </template>
                     </el-col>
                 </el-row>
-                <el-row :gutter="20"
-                        class="pb10">
-                    <el-col :span="6">
-                        <span>2019-1-1 08:50:56</span>
-                    </el-col>
-                    <el-col :span="18">
-                        <el-col :span="24">
-                            <span>由【编辑策划中心-强晓玲】 编辑 </span>
-                        </el-col>
-                    </el-col>
-                </el-row>
-                <el-row :gutter="20"
-                        class="pb10">
-                    <el-col :span="6">
-                        <span>2019-1-1 13:50:56</span>
-                    </el-col>
 
-                </el-row>
-                <el-row :gutter="20"
-                        class="pb10">
-                    <el-col :span="6">
-                        <span>2019-1-11 09:34:56</span>
-                    </el-col>
-                    <el-col :span="18">
-                        <span>由【创意策划中心-强晓玲】 编辑 </span>
-                    </el-col>
-                </el-row>
                 <el-row :gutter="20"
                         class="pb10">
                     <el-col :span="6">
