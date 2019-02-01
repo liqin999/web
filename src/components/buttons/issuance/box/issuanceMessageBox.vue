@@ -35,16 +35,6 @@
                                 </el-date-picker>
                             </template>
                         </el-col>
-                        <!-- <el-col :span="3">
-                            <el-time-select v-model="value1"
-                                            :picker-options="{
-                                        start: '08:30',
-                                        step: '00:15',
-                                        end: '18:30'
-                                    }"
-                                            placeholder="选择时间">
-                            </el-time-select>
-                        </el-col> -->
                         <!-- 刊发位次 -->
                         <el-col :span="4"
                                 class="text-right">
@@ -61,7 +51,7 @@
                             </template>
                         </el-col>
                         <!-- checkbox -->
-                        <el-col :span="11">
+                        <el-col :span="10">
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <template v-for="item in checkLabel">
@@ -224,7 +214,8 @@
                             </el-col>
                             <el-col :span="6">
                                 <template>
-                                    <el-select v-model="jianti.shuValue" class="issuance-select">
+                                    <el-select v-model="jianti.shuValue"
+                                               class="issuance-select">
                                         <el-option v-for="item in jianti.shuData"
                                                    :key="item"
                                                    :label="item"
@@ -499,5 +490,4 @@ export default {
     width: 100%;
     height: 100%;
 }
-
 </style>

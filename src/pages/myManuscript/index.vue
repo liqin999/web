@@ -161,10 +161,10 @@
                         <span>|</span>
                     </div>
                     <down-load>
-                            <i slot="icon"
-                               class="el-icon-download"></i>
-                            <span slot="iconName">下载</span>
-                        </down-load>
+                        <i slot="icon"
+                           class="el-icon-download"></i>
+                        <span slot="iconName">下载</span>
+                    </down-load>
                     <!-- <div class="btn-nav">
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>
@@ -385,7 +385,7 @@ export default {
                 number: 1709,
                 state: '待审',
                 dealingPeople: '刘学奎',
-                processingTime: '2018-10-31 15:22:12',
+                processingTime: '2018-10-31 15:22',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',
                 type: '图片',

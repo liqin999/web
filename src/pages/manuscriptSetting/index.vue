@@ -50,14 +50,17 @@
                             <el-form-item label="稿件来源:">
                                 <el-select v-model="searchForm.source"
                                            placeholder="稿件来源">
-                                    <el-option label="邮件稿件"
+                                    <el-option label="全部"
                                                value="shanghai">
                                     </el-option>
+                                    <el-option label="邮件稿件"
+                                               value="邮件稿件">
+                                    </el-option>
                                     <el-option label="eNews稿件"
-                                               value="beijing">
+                                               value="eNews稿件">
                                     </el-option>
                                     <el-option label="自采稿"
-                                               value="shan22ghai">
+                                               value="自采稿">
                                     </el-option>
                                     <el-option label="数据服务平台"
                                                value="sha3n22ghai">
@@ -81,7 +84,7 @@
                         <el-col :span="6">
                             <el-form-item label="约稿状态:">
                                 <el-select v-model="searchForm.state2"
-                                           placeholder="稿件状态">
+                                           placeholder="约稿状态">
                                     <el-option label="全部"
                                                value="shanghai">
                                     </el-option>
@@ -112,6 +115,21 @@
                                     </el-option>
                                     <el-option label="报刊"
                                                value="12的方法">
+                                    </el-option>
+                                    <el-option label="新浪微博"
+                                               value="1的方法">
+                                    </el-option>
+                                    <el-option label="Twitter"
+                                               value="方法">
+                                    </el-option>
+                                    <el-option label="Facebook"
+                                               value="法">
+                                    </el-option>
+                                    <el-option label="Youtube"
+                                               value="12的">
+                                    </el-option>
+                                    <el-option label="成品素材"
+                                               value="1">
                                     </el-option>
                                 </el-select>
                             </el-form-item>
@@ -371,6 +389,7 @@ export default {
                 keyWords: '',
                 author: '',
                 source: '',
+                type: '',
                 productType: ''
 
             },

@@ -1,5 +1,5 @@
 <template>
-    <el-container class="clearfix">
+    <el-container class="person-container clearfix">
         <el-aside class="aside-content"
                   width="250px">
             <div class="search-list2">
@@ -251,7 +251,8 @@ export default {
                 handlePeople: '方立新',
                 type2: '文本'
             }],
-            multipleSelection: []
+            multipleSelection: [],
+            mainTableHeight: null
         }
     },
     mounted () {

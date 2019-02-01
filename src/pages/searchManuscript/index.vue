@@ -128,8 +128,10 @@
                                              label="创建时间"
                                              width="100">
                             </el-table-column>
-                            <el-table-column prop="author"
-                                             label="作者">
+                            <el-table-column width="110"
+                                             prop="author"
+                                             label="作者"
+                                             show-overflow-tooltip>
                             </el-table-column>
                             <el-table-column prop="type"
                                              label="类型">
@@ -200,7 +202,9 @@
                                              width="100">
                             </el-table-column>
                             <el-table-column prop="author"
-                                             label="作者">
+                                             label="作者"
+                                             show-overflow-tooltip
+                                             width="110">
                             </el-table-column>
                             <el-table-column prop="source"
                                              label="来源">
@@ -268,7 +272,7 @@ export default {
                     media: '新华每日电讯',
                     status: '待审',
                     time: '2018-10-31',
-                    author: '强晓玲',
+                    author: '强晓玲,刘晶瑶',
                     source: '自写稿',
                     type: '图片',
                     map: '',

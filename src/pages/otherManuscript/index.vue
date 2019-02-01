@@ -165,7 +165,6 @@
                                class="el-icon-download"></i>
                             <span slot="iconName">下载</span>
                         </down-load>
-
                         <div class="btn-line">
                             <span>|</span>
                         </div>

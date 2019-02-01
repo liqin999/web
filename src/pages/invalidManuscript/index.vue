@@ -61,7 +61,7 @@
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <el-checkbox label="稿源库"></el-checkbox>
-                                    <el-checkbox label="电讯稿库"></el-checkbox>
+                                    <el-checkbox label="工作稿库"></el-checkbox>
                                 </el-checkbox-group>
                             </template>
                         </el-col>
@@ -343,7 +343,7 @@ export default {
             radioName2: '稿件',
             radioLabel2: [
                 '稿件',
-                '线索/采访单/专题'
+                '线索/专题'
             ],
             // 栏目选择
             radioName: '栏目库',

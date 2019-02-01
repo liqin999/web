@@ -35,6 +35,7 @@
                                      width="180">
                     </el-table-column>
                     <el-table-column prop="title"
+                                     width="180px"
                                      show-overflow-tooltip
                                      label="标题">
                     </el-table-column>
@@ -47,7 +48,8 @@
                                      label="类型">
                     </el-table-column>
                     <el-table-column prop="location"
-                                     label="位置">
+                                     label="位置"
+                                     width="100px">
                     </el-table-column>
                     <el-table-column prop="status"
                                      label="状态">
@@ -65,8 +67,23 @@
                     <el-table-column prop="type2"
                                      label="类型">
                     </el-table-column>
-                    <el-table-column prop="picture"
+                    <el-table-column prop="repDrawing"
+                                     header-align="center"
+                                     align="center"
+                                     width="130px"
                                      label="代表图">
+                        <template slot-scope="scope">
+                            <el-popover placement="right"
+                                        title=""
+                                        trigger="hover">
+                                <img v-bind:src="scope.row.picture"
+                                     style="max-height: 300px;max-width: 1000px">
+                                <img slot="reference"
+                                     :src="scope.row.picture"
+                                     :alt="scope.row.picture"
+                                     style="max-height: 30px;max-width: 120px">
+                            </el-popover>
+                        </template>
                     </el-table-column>
                 </el-table>
             </template>
@@ -126,16 +143,17 @@ export default {
             value: '',
             tableData: [{
                 id: '20181026000005',
-                title: '城市生活垃圾分类的“银川模式”',
+                title: '（脱贫攻坚）陕西耀州：革命老区再绘脱贫攻坚新图景',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',
                 status: '待审',
-                author: '赵倩',
-                processingTime: '2018-10-29 10:31',
-                handlePeople: '刘晶瑶',
-                type2: '文本',
-                picture: ''
+                author: '李浩',
+                processingTime: '10-31 15:22',
+                handlePeople: '刘学奎',
+                type2: '图片',
+                picture: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg'
+
             }]
         }
     },
