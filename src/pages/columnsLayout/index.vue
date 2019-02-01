@@ -113,7 +113,7 @@
                                          label="处理人">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -254,26 +254,21 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
                     label: '新华每日电讯',
                     children: [
+                        // {
+                        //     id: 46,
+                        //     label: '头版',
+                        //     icon: 'iconfont icon-file-b- ft-ffd658'
+                        // },
                         {
                             id: 1222,
                             label: '脱贫攻坚',
                             icon: 'iconfont icon-file-b- ft-ffd658'
-                            // children: [
-                            //     {
-                            //         id: 469,
-                            //         label: '头版1-1'
-                            //     },
-                            //     {
-                            //         id: 4697,
-                            //         label: '头版1-2'
-                            //     }
-                            // ]
                         },
                         {
                             id: 12,
@@ -351,7 +346,7 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2018-10-30',
+                date: '2018-10-25',
                 title: '（新华每日电讯）千年古镇里走中药种植路 百折不挠尝！',
                 address: '脱贫攻坚',
                 number: 3578,
@@ -360,11 +355,11 @@ export default {
                 deliverer: '方立新',
                 processingTime: '2018-10-30 14:23',
                 dealingPeople: '强晓玲',
-                firstAuthor: '关俏俏',
+                firstAuthor: '关俏俏，于文静',
                 medio: '新华每日电讯',
                 preData: ''
             }, {
-                date: '2018-10-29',
+                date: '2018-11-11',
                 title: '（脱贫攻坚）羊信发“羊财”',
                 address: '脱贫攻坚',
                 number: 768,
@@ -372,20 +367,20 @@ export default {
 
                 state: '待审',
                 deliverer: '方立新',
-                processingTime: '2018-10-29 17:18',
+                processingTime: '2018-12-25 17:18',
                 dealingPeople: '刘学奎',
                 firstAuthor: '徐海波',
                 medio: '新华每日电讯',
                 preData: ''
             }, {
-                date: '2018-10-20',
+                date: '2019-01-15',
                 title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
                 address: '脱贫攻坚',
                 number: 1024,
                 state: '待审',
                 picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 deliverer: '刘学奎',
-                processingTime: '2018-10-29 10:45',
+                processingTime: '2019-01-20 10:45',
                 dealingPeople: '方立新',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',

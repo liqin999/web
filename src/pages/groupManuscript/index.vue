@@ -10,9 +10,9 @@
                         <el-form-item label="媒体:">
                             <el-select v-model="searchForm.media"
                                        placeholder="请选择媒体">
-                                <el-option label="媒体一"
+                                <el-option label="新华每日电讯"
                                            value="shanghai"></el-option>
-                                <el-option label="媒体二"
+                                <el-option label="新华每日微博"
                                            value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
@@ -118,7 +118,7 @@
                                          width="180px">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -216,14 +216,14 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
-// 提交按钮
-import submit from '@/components/buttons/submit/submit.vue'
-// 淘汰按钮
-import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -236,10 +236,10 @@ export default {
         draftLabel,
         history,
         printing,
-        submit,
-        eliminate,
         draftLook,
-        downLoad
+        downLoad,
+        submit,
+        eliminate
     },
     data () {
         return {
@@ -254,7 +254,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -348,15 +348,17 @@ export default {
                 address: '脱贫攻坚',
                 number: 768,
                 type: '图片',
-                state: '待审',
+                state: '已处理',
                 deliverer: '方立新',
-                processingTime: '2018-10-29 17:18',
+                processingTime: '2018-10-31 17:18',
                 dealingPeople: '刘学奎',
-                firstAuthor: '徐海波',
+                firstAuthor: '徐海波，方立新',
                 medio: '新华每日电讯',
+                doubt: 0,
                 preData: ''
+
             }, {
-                date: '2018-10-20',
+                date: '2018-12-24',
                 title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
                 picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 address: '脱贫攻坚',
@@ -364,10 +366,11 @@ export default {
                 type: '图片',
                 state: '已审',
                 deliverer: '刘学奎',
-                processingTime: '2018-10-28 10:45',
+                processingTime: '2018-12-25 14:45',
                 dealingPeople: '方立新',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',
+                doubt: 0,
                 preData: ''
             }],
             multipleSelection: [],

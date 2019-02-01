@@ -64,6 +64,12 @@
                 </el-header> -->
                 <!-- 统计表 -->
                 <el-main ref="mainTable">
+                    <el-row :gutter="20"
+                            class="mb10 pl10 pr10">
+                        <el-col :span="7">
+                            <b class="font18">稿件统计（稿数/字数）</b>
+                        </el-col>
+                    </el-row>
                     <el-table ref="multipleTable"
                               :data="tableData3"
                               border
@@ -395,10 +401,10 @@ export default {
     },
     mounted () {
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 60
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 60
             })()
         }
         // 测试请求的接口的调用

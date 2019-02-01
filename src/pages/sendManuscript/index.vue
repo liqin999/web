@@ -288,17 +288,17 @@ export default {
             author: '强晓玲',
             input: '一个灵魂的旅行',
             // 类型
-            kanfaData: ['文本', '图片', '动图', '图集', '视频', '音频', '多媒体'],
-            kanfaValue: '图片',
+            kanfaData: ['文本', '图片', '图表', '视频', '音频', '歌曲', '应用'],
+            kanfaValue: '文本',
             // 主稿件
             mainDraftData: [1, 2],
             mainDraftValue: 2,
             // 稿件来源
-            draftSourceData: ['自写稿', '邮件稿件', 'eNews稿件', '数据服务平台'],
+            draftSourceData: ['自写稿', '新采编'],
             draftSourceValue: '自写稿',
             // 稿件体裁
-            draftGenreData: ['新闻报道', '新闻分析', '年终专稿'],
-            draftGenreValue: '新闻报道',
+            draftGenreData: ['消息', '通讯', '专访'],
+            draftGenreValue: '消息',
             checked: false, // 备选项
             textarea: null,
             // 栏目选择

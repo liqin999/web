@@ -3,7 +3,8 @@
                title="签发"
                @close="messageBoxClose()"
                :visible.sync="issuanceData.contentShow"
-               width="80%"
+               width="63%"
+               height="40%"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
@@ -22,20 +23,20 @@
                         </template>
                     </el-row>
                     <el-row class="clearfix pt10 pb10">
-                        <!-- 处理时间 -->
-                        <el-col :span="8"
+                        <!-- 刊发时间 -->
+                        <el-col :span="9"
                                 class="times-select">
                             <template>
                                 <span>刊发时间</span>
                                 <el-date-picker v-model="pickerTime"
-                                                type="date"
+                                                type="datetime"
                                                 placeholder="选择日期"
                                                 @change="pickerChange">
                                 </el-date-picker>
                             </template>
                         </el-col>
                         <!-- 刊发位次 -->
-                        <el-col :span="6"
+                        <el-col :span="4"
                                 class="text-right">
                             <template>
                                 <span>刊发位次</span>
@@ -92,6 +93,7 @@
                                 </template>
                             </el-col>
                             <el-col :span="6">
+                                <!-- 设置字体 -->
                                 <template>
                                     <el-select v-model="mainTitle.fontValue" class="issuance-select">
                                         <el-option v-for="item in mainTitle.fontData"
@@ -103,6 +105,7 @@
                                 </template>
                             </el-col>
                             <el-col :span="6">
+                                <!--横向设置字号  -->
                                 <template>
                                     <el-select v-model="mainTitle.hengValue" class="issuance-select">
                                         <el-option v-for="item in mainTitle.hengData"
@@ -114,6 +117,7 @@
                                 </template>
                             </el-col>
                             <el-col :span="6">
+                                <!-- 纵向设置字号 -->
                                 <template>
                                     <el-select v-model="mainTitle.shuValue" class="issuance-select">
                                         <el-option v-for="item in mainTitle.shuData"
@@ -476,4 +480,5 @@ export default {
     width: 100%;
     height: 100%;
 }
+
 </style>

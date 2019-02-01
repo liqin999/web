@@ -15,7 +15,7 @@
                           @selection-change="handleSelectionChange">
                     <el-table-column prop="id"
                                      label="稿号"
-                                     width="180">
+                                     width="150">
                     </el-table-column>
                     <el-table-column prop="title"
                                      show-overflow-tooltip
@@ -24,7 +24,7 @@
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
-                                     width="180">
+                                     width="120">
                     </el-table-column>
 
                     <el-table-column prop="type"

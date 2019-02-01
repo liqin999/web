@@ -15,7 +15,7 @@
                 <el-row :gutter="20"
                         class="pb10 label-border">
                     <el-col :span="6">
-                        <span>2018-10-31 12:34:56</span>
+                        <span>2018-10-31 15:34:56</span>
                     </el-col>
                     <el-col :span="18">
                         <el-col :span="24">

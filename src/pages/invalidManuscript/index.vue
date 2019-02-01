@@ -228,6 +228,7 @@
 <script>
 // 撤稿按钮组件
 import sendDraft from '@/components/buttons/sendDraft/sendDraft'
+// 历史按钮组件
 import history from '@/components/buttons/history/history.vue'
 // 选送按钮
 import pick from '@/components/buttons/pick/pick.vue'

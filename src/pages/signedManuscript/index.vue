@@ -130,14 +130,14 @@
                         </el-table-column>
                         <el-table-column prop="data"
                                          label="刊发日期"
-                                         width="180px">
+                                         width="100px">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
                                          show-overflow-tooltip>
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="type"
                                          label="类型">
@@ -154,10 +154,6 @@
                                    :total="2">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <!-- <div class="btn-nav">
-                            <i class="iconfont icon-liulan"></i>
-                            <span>浏览</span>
-                        </div> -->
                         <draft-look>
                             <i slot="icon"
                                class="iconfont icon-liulan"></i>
@@ -166,10 +162,6 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <!-- <div class="btn-nav">
-                            <i class="iconfont icon-wenben1"></i>
-                            <span>留稿</span>
-                        </div> -->
                         <down-load>
                             <i slot="icon"
                                class="el-icon-download"></i>
@@ -252,7 +244,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -440,51 +432,91 @@ export default {
             data3: [
                 {
                     id: 1,
-                    label: '11新华每日电讯',
+                    label: '新华每日电讯',
                     children: [
                         {
-                            id: 47,
-                            label: '22头版1',
-                            icon: 'el-icon-success'
+                            id: 46,
+                            label: '头版',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 1222,
+                            label: '脱贫攻坚',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
                             id: 12,
-                            label: '33国内新闻',
+                            label: '国内新闻',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 4,
+                            label: '新闻焦点',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 15,
+                            label: '图片',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 16,
+                            label: '评论声音',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 17,
+                            label: '新闻纵深',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 18,
+                            label: '世界报道',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 20,
+                            label: '原创',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 21,
+                            label: '经济·民生',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
                     ]
                 },
                 {
                     id: 2,
-                    label: '6A叠【版面】',
+                    label: '每日电讯微博',
                     children: [
-                        {
-                            id: 5,
-                            label: '一版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        }
+                        // {
+                        //     id: 5,
+                        //     label: '一版',
+                        //     icon: 'iconfont icon-file1'
+                        // },
+                        // {
+                        //     id: 6,
+                        //     label: '二版',
+                        //     icon: 'iconfont icon-file1'
+                        // }
                     ]
                 }
 
             ],
             tableData3: [{
                 zugao: '',
-                number: '20181030000037',
+                number: '20181030000032',
                 title: '（新华全媒头条）西藏阿里楚松村四代房：中国边境的...',
                 picture: 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=778549431,2241230358&fm=85&s=57B337C54AE3E8D41811C12603006051',
                 repDrawing: '',
-                state: '已处理',
+                state: '待处理',
                 banmian: '一版',
                 size: '378',
-                dealingPeople: '唐牛',
-                data: '10-31',
+                dealingPeople: '刘学奎',
+                data: '2018-10-31',
                 medio: '新华每日资讯',
-                firstAuthor: '国内部',
+                firstAuthor: '于文静，强晓玲',
                 type: '图片'
             }, {
                 zugao: '',
@@ -496,7 +528,7 @@ export default {
                 banmian: '一版',
                 size: '328',
                 dealingPeople: '唐牛',
-                data: '10-31',
+                data: '2018-12-25',
                 medio: '新华每日资讯',
                 firstAuthor: '杨维汉',
                 type: '文本'

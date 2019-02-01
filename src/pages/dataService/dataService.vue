@@ -136,6 +136,7 @@
 
 </template>
 <script>
+// 建稿按钮组件
 import sendDraft from '@/pages/dataService/sendDraft/sendDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 

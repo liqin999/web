@@ -107,18 +107,24 @@
                         <el-table-column prop="number"
                                          label="字数">
                         </el-table-column>
+                        <el-table-column prop="address"
+                                         label="位置">
+                        </el-table-column>
                         <el-table-column prop="state"
                                          label="状态">
+                        </el-table-column>
+                        <el-table-column prop="deliverer"
+                                         label="投送人">
                         </el-table-column>
                         <el-table-column prop="dealingPeople"
                                          label="处理人">
                         </el-table-column>
                         <el-table-column prop="processingTime"
                                          label="处理时间"
-                                         width="180px">
+                                         width="160px">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -216,14 +222,14 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
-// 提交弹框按钮
-import submit from '@/components/buttons/submit/submit.vue'
-// 淘汰按钮
-import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交弹框按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -236,10 +242,10 @@ export default {
         draftLabel,
         history,
         printing,
-        submit,
-        eliminate,
         draftLook,
-        downLoad
+        downLoad,
+        submit,
+        eliminate
     },
     data () {
         return {
@@ -253,7 +259,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -344,7 +350,9 @@ export default {
                 // picture: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=657448908,3491892813&fm=26&gp=0.jpg',
                 repDrawing: '',
                 number: 1709,
-                state: '待审',
+                address: '科技',
+                state: '已处理',
+                deliverer: '李浩',
                 dealingPeople: '刘学奎',
                 processingTime: '2018-10-31 15:22:12',
                 firstAuthor: '李浩',
@@ -356,15 +364,17 @@ export default {
                 file: '.txt',
                 fujian: 0
             }, {
-                date: '2018-10-29',
+                date: '2018-12-29',
                 title: '（新华时评）下足绣花功才能啃下硬骨头',
                 // picture: 'http://img.mix.sina.com.cn/api/auto/resize?size=320_0&img=//n.sinaimg.cn/news/100/w1500h1000/20190109/62cT-hrkkweh1616013.jpg',
                 repDrawing: '',
-                number: 1709,
+                number: 3240,
+                address: '科技',
                 state: '待审',
+                deliverer: '于文静',
                 dealingPeople: '方立新',
-                processingTime: '2018-10-29 10:09:34',
-                firstAuthor: '于文静',
+                processingTime: '2018-12-30 10:09:34',
+                firstAuthor: '于文静,强晓玲',
                 medio: '新华每日电讯',
                 type: '文本',
                 doubt: 0,

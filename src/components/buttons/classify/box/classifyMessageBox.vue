@@ -1,6 +1,7 @@
 <template>
     <el-dialog class="classify-message"
                title="选择分类"
+
                @close="messageBoxClose()"
                :visible.sync="classifyData.contentShow"
                :append-to-body="true">

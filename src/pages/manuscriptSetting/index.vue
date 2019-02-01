@@ -104,13 +104,16 @@
                             <el-form-item label="产品类型:">
                                 <el-select v-model="searchForm.type"
                                            placeholder="产品类型">
-                                    <el-option label="全部"
+                                    <el-option label="新华社客户端"
                                                value="shangddhai12">
                                     </el-option>
-                                    <el-option label="新华社客户端"
+                                    <el-option label="微信"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="微信"
+                                    <el-option label="新浪微博"
+                                               value="12的方法">
+                                    </el-option>
+                                    <el-option label="报刊"
                                                value="12的方法">
                                     </el-option>
                                     <el-option label="新浪微博"
@@ -171,11 +174,6 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
-                        <!-- <div class="text-left">
-                            <stay-draft>
-                                <span slot="iconName" class="primary-btn">留稿</span>
-                            </stay-draft>
-                        </div> -->
                         <div data-v-6eb3df45=""
                              class="primary-btn"><span>
                                 <span data-v-6eb3df45="">刷新</span>
@@ -395,7 +393,7 @@ export default {
                 productType: ''
 
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,

@@ -288,7 +288,7 @@ export default {
                     // picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2340162773,1500754957&fm=85&app=57&f=JPEG?w=121&h=75&s=E8424693405671D2042DD66E03003064',
                     status: '已审',
                     time: '2019-1-11',
-                    author: '刘晶瑶',
+                    author: '刘晶瑶，于文静',
                     source: '自写稿',
                     type: '文本',
                     map: '',

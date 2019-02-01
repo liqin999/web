@@ -25,8 +25,10 @@
                     <el-col :span="4"
                             class="text-right">
 
-                        <el-button class="primary-btn"
-                                   @click="confirmBtn">建稿</el-button>
+                        <!-- <el-button class="primary-btn">建稿</el-button> -->
+                        <send-draft class="primary-btn">
+                            <span slot="iconName">建稿</span>
+                        </send-draft>
                         <el-button class="reset-btn"
                                    @click="closeFn">关闭</el-button>
                     </el-col>
@@ -78,7 +80,13 @@
     </el-container>
 </template>
 <script>
+// 建稿按钮组件
+import sendDraft from '@/pages/dataService/sendDraft/sendDraft'
 export default {
+    components: {
+        sendDraft
+
+    },
     data () {
         return {
             draftList: [

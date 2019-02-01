@@ -41,7 +41,7 @@
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
-                                     width="180">
+                                     width="120">
                     </el-table-column>
 
                     <el-table-column prop="type"

@@ -120,7 +120,7 @@
                                          width="180px">
                         </el-table-column>
                         <el-table-column prop="firstAuthor"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="medio"
                                          label="媒体"
@@ -218,14 +218,14 @@ import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
-// 提交弹框按钮
-import submit from '@/components/buttons/submit/submit.vue'
-// 淘汰按钮
-import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交弹框按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -238,10 +238,10 @@ export default {
         draftLabel,
         history,
         printing,
-        submit,
-        eliminate,
         draftLook,
-        downLoad
+        downLoad,
+        submit,
+        eliminate
     },
     data () {
         return {
@@ -255,7 +255,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -334,10 +334,10 @@ export default {
                 // picture: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=692414099,3457311515&fm=27&gp=0.jpg',
                 repDrawing: '',
                 number: 992,
-                state: '待审',
-                dealingPeople: '刘学奎',
+                state: '待处理',
+                dealingPeople: '强晓玲',
                 processingTime: '2018-10-31 14:23',
-                firstAuthor: '强晓玲',
+                firstAuthor: '强晓玲，方立新',
                 medio: '新华每日电讯',
                 type: '文本',
                 doubt: 0,
@@ -355,6 +355,7 @@ export default {
                 dealingPeople: '方立新',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',
+                doubt: 0,
                 preData: ''
             }],
             multipleSelection: [],

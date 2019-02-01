@@ -62,9 +62,9 @@
         <div slot="footer"
              class="dialog-footer">
             <div class="left-group">
-                <down-load class="primary-btn">
+                <downLoad class="primary-btn">
                     <span slot="iconName">下载</span>
-                </down-load>
+                </downLoad>
                 <el-button class="primary-btn"
                            @click="sendDetailFn()">文本痕迹</el-button>
                 <el-button class="primary-btn"
