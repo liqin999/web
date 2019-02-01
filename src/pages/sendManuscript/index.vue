@@ -364,19 +364,52 @@ export default {
                             name: '每日电讯微博'
                         }
                     ]
-                }, {
+                },
+                {
                     id: '4',
-                    name: '其他稿库',
+                    name: '组室公共库',
                     children: [
                         {
                             id: '4-1',
-                            name: '科技'
+                            name: '新华每日电讯'
                         },
                         {
                             id: '4-2',
+                            name: '每日电讯微博'
+                        }
+                    ]
+                }, {
+                    id: '5',
+                    name: '我的稿库',
+                    children: [
+                        {
+                            id: '5-1',
+                            name: '科技'
+                        },
+                        {
+                            id: '5-2',
                             name: '文化'
                         }
                     ]
+                },
+                {
+                    id: '6',
+                    name: '专题库',
+                    children: [
+                        {
+                            id: '6-1',
+                            name: '专题一'
+                        },
+                        {
+                            id: '6-2',
+                            name: '专题二'
+                        }
+                    ]
+                },
+                {
+                    id: '7',
+                    name: '其他人员库'
+
                 }
             ],
             radioOpsition: [

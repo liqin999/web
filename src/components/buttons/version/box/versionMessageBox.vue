@@ -69,10 +69,61 @@
                            @click="sendDetailFn()">文本痕迹</el-button>
                 <el-button class="primary-btn"
                            @click="imagePreviewFn()">图片预览</el-button>
+                <el-button class="primary-btn"
+                           @click="recoveryFn()">恢复</el-button>
             </div>
             <el-button class="reset-btn"
                        @click="versionData.contentShow = false">关 闭</el-button>
         </div>
+
+        <template>
+            <el-dialog width="50%"
+                       top="15vh"
+                       title="文本信息"
+                       :visible.sync="txtVisible"
+                       append-to-body>
+                <div>
+                    中国农历新年春节即将到来。春节期间，很多同胞都会选择出境游。
+                    <p class="center-line1"> 旅行安全问题对我们所有人来说都是最重要的问题，没有之一。</p>
+                    我们建议中国公民计划出境旅游时，切实提高风险防范意识，认真了解有关出入境规定，慎重选择旅游项目，妥善安排旅游行程，注意各方面安全。我也要提醒广大同胞了解并遵守当地法律法规，尊重当地风俗习惯
+                    ，爱护环境，文明出游，自觉展现并维护中国游客的良好形象。
+                </div>
+                <div slot="footer"
+                     class="dialog-footer">
+                    <div>
+                        <el-button class="primary-btn">后一版本</el-button>
+                        <el-button class="primary-btn">前一版本</el-button>
+                    </div>
+                    <el-button class="primary-btn"
+                               @click="txtVisible = false">关闭</el-button>
+                </div>
+
+            </el-dialog>
+        </template>
+
+        <template>
+            <el-dialog width="50%"
+                       top="15vh"
+                       title="图片信息"
+                       :visible.sync="imgVisible"
+                       append-to-body>
+                <div>
+                    <img v-if="viewImg"
+                         class="viewImg"
+                         :src="viewImg">
+                </div>
+                <div slot="footer"
+                     class="dialog-footer">
+                    <div>
+                        <el-button class="primary-btn">后一版本</el-button>
+                        <el-button class="primary-btn">前一版本</el-button>
+                    </div>
+                    <el-button class="primary-btn"
+                               @click="imgVisible = false">关闭</el-button>
+                </div>
+
+            </el-dialog>
+        </template>
     </el-dialog>
 </template>
 
@@ -90,7 +141,10 @@ export default {
     },
     data () {
         return {
-            multipleSelection: []
+            multipleSelection: [],
+            txtVisible: false,
+            imgVisible: false,
+            viewImg: ''
         }
     },
     methods: {
@@ -99,14 +153,38 @@ export default {
         },
         handleSelectionChange (val) { // 多选的操作
             this.multipleSelection = val
+            this.viewImg = val[0].img
         },
         downFn () { // 下载按钮
             this.$emit('sendConcatData', this.multipleSelection)
         },
         sendDetailFn () { // 文本痕迹
-
+            if (this.multipleSelection.length === 0) {
+                this.$confirm('请选择一条数据', '提示', {
+                    type: 'warning',
+                    showConfirmButton: false,
+                    showCancelButton: false
+                })
+            } else {
+                if (this.multipleSelection[0].type === '文本') {
+                    this.txtVisible = true
+                }
+            }
         },
         imagePreviewFn () { // 图片预览
+            if (this.multipleSelection.length === 0) {
+                this.$confirm('请选择一条数据', '提示', {
+                    type: 'warning',
+                    showConfirmButton: false,
+                    showCancelButton: false
+                })
+            } else {
+                if (this.multipleSelection[0].type === '图片') {
+                    this.imgVisible = true
+                }
+            }
+        },
+        recoveryFn () {
 
         }
 
@@ -117,6 +195,13 @@ export default {
 .dialog-footer {
     display: flex;
     justify-content: space-between;
+}
+.viewImg {
+    width: 100%;
+}
+.center-line1 {
+    text-decoration: line-through;
+    color: #38f5a6;
 }
 </style>
 <style lang="scss">
