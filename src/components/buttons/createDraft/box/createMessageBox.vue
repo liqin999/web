@@ -1,22 +1,19 @@
 <template>
     <el-dialog title="建稿"
                @close="messageBoxClose()"
-               :visible.sync="draftData.contentShow"
+               :visible.sync="createData.contentShow"
                top="15vh"
                width="400px"
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-
             <!-- 选项内容区 -->
             <el-row :gutter="20"
                     class="message-content clearfix">
                 <!-- 送往 -->
                 <el-col :span="24">
                     <el-row :gutter="20">
-
                         <el-col :span="24">
-
                             <el-row>
                                 <el-col :span="3">
                                     <span class="message-title">目标：</span>
@@ -64,7 +61,7 @@
                                         class="message-checkbox">
                                     <el-tree :data="dataList1"
                                              ref="tree1"
-                                             @check-change="handleCheckChange1"
+                                             @node-click="handleCheckChange1"
                                              :highlight-current="true"
                                              :default-expand-all="true"
                                              node-key="id"
@@ -75,7 +72,7 @@
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
                                              ref="tree2"
-                                             @check-change="handleCheckChange2"
+                                             @node-click="handleCheckChange2"
                                              :highlight-current="true"
                                              :default-expand-all="true"
                                              node-key="id"
@@ -119,7 +116,7 @@
             <el-button class="primary-btn"
                        @click="draftConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="draftData.contentShow = false">取消</el-button>
+                       @click="createData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
 </template>
@@ -127,17 +124,15 @@
 <script>
 export default {
     props: {
-        draftData: {
+        createData: {
             type: Object
         }
     },
     data () {
         return {
             label: '',
-            // radioData: '1',
             submitData: null,
             radioName1: '1',
-            textarea: '请输入文字',
             // 栏目选择
             radioName: '栏目稿库',
             radioLabel: [
@@ -172,7 +167,7 @@ export default {
             ],
             dataList2: [
                 {
-                    id: 2,
+                    id: '2',
                     label: 'A叠',
                     children: [
                         {
@@ -266,89 +261,44 @@ export default {
                 children: 'children',
                 label: 'label'
             },
-            pickerOptions: {
-                shortcuts: [
-                    {
-                        text: '最近一周',
-                        onClick (picker) {
-                            const end = new Date()
-                            const start = new Date()
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
-                            picker.$emit('pick', [start, end])
-                        }
-                    },
-                    {
-                        text: '最近一个月',
-                        onClick (picker) {
-                            const end = new Date()
-                            const start = new Date()
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
-                            picker.$emit('pick', [start, end])
-                        }
-                    },
-                    {
-                        text: '最近三个月',
-                        onClick (picker) {
-                            const end = new Date()
-                            const start = new Date()
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
-                            picker.$emit('pick', [start, end])
-                        }
-                    }
-                ]
-            },
+
             pickerValue: ''
         }
     },
     methods: {
         // 栏目选择变化（单选）
         labelChange (value) {
-            // this.radioName = value;
+            if (value === '我的稿库') {
+                this.$refs.tree1.setCurrentNode([])
+                this.$refs.tree2.setCurrentNode([])
+            }
         },
         // 一级栏目选择变化（下拉框）
         topChange (value) {
             // this.topValue = value;
         },
-        // 点击关闭回调函数
-        messageBoxClose () {
-        },
-        // 日期选择值
-        pickerChange (val) {
-            // this.pickerValue = val;
-        },
-        // 选择日期查询
-        searchTime () {
-        },
-        // 传稿意见
-        textareaChange (val) {
-            // this.textarea = val;
-        },
         // 点击确定按钮（提交）
         draftConfirm () {
-            // 路由的跳转
             this.$router.push({
                 path: '/columnsLayout'
             })
         },
         handleCheckChange1 (data) {
             let arr = ['1', '1-1', '1-2', '1-3', '1-4']
-            let getCheckedKeys = this.$refs.tree1.getCheckedKeys()
-            getCheckedKeys.forEach(item => {
-                if (arr.indexOf(item) > -1) {
-                    this.radioName = '栏目稿库'
-                }
-            })
-            this.$refs.tree2.setCheckedKeys([])
+            if (arr.indexOf(data.id) > -1) {
+                this.radioName = '栏目稿库'
+            }
+            this.$refs.tree2.setCurrentNode([])
         },
         handleCheckChange2 (data) {
             let arr = ['2', '2-1', '2-2', '2-3', '2-4']
-            let getCheckedKeys = this.$refs.tree2.getCheckedKeys()
-            getCheckedKeys.forEach(item => {
-                if (arr.indexOf(item) > -1) {
-                    this.radioName = '版面稿库'
-                }
-            })
-            this.$refs.tree1.setCheckedKeys([])
+            if (arr.indexOf(data.id) > -1) {
+                this.radioName = '版面稿库'
+            }
+            this.$refs.tree1.setCurrentNode([])
+        },
+        messageBoxClose () {
+
         }
     },
     computed: {

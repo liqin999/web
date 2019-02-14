@@ -322,7 +322,7 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 建稿按钮弹框
-import createDraft from '@/pages/manuscriptSetting/createDraft/createDraft'
+import createDraft from '@/components/buttons/createDraft/createDraft'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
