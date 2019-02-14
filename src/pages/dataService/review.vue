@@ -26,8 +26,9 @@
                             class="text-right">
 
                         <!-- <el-button class="primary-btn">建稿</el-button> -->
-                        <send-draft class="primary-btn">
-                            <span slot="iconName">建稿</span>
+                        <send-draft>
+                            <el-button class="primary-btn"
+                                       slot="iconName">建稿</el-button>
                         </send-draft>
                         <el-button class="reset-btn"
                                    @click="closeFn">关闭</el-button>

@@ -327,7 +327,7 @@ export default {
         draftConfirm () {
             // 路由的跳转
             this.$router.push({
-                path: '/review'
+                path: '/columnsLayout'
             })
         },
         handleCheckChange1 (data) {

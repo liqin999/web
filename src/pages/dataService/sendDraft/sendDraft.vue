@@ -1,5 +1,5 @@
 <template>
-    <div class="primary-btn">
+    <div class="inline-block">
         <span @click="sendDraftIcon()">
             <slot name="iconName"></slot>
         </span>
@@ -73,3 +73,8 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+.inline-block {
+    display: inline-block;
+}
+</style>
