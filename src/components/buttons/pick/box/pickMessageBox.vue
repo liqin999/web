@@ -73,7 +73,7 @@
             <!-- 内容 -->
             <el-row :gutter="20"
                     class="message-lists clearfix ac">
-                <span  v-bind="pickData.name" style="color: red;text-align:center">我的稿库——[上次选中：{{pickData.name}}]</span>
+                <span style="color: red;text-align:center">我的稿库——[上次选中：{{pickData.name}}]</span>
             </el-row>
             <!-- 内容 -->
             <el-row :gutter="20"
@@ -354,6 +354,9 @@ export default {
         // 点击确定按钮（提交）
         draftConfirm () {
             this.draftData.contentShow = false
+        },
+        onSearch () {
+
         }
     },
     computed: {

@@ -61,7 +61,7 @@
                             <template>
                                 <el-checkbox-group v-model="checkList">
                                     <el-checkbox label="稿源库"></el-checkbox>
-                                    <el-checkbox label="电讯稿库"></el-checkbox>
+                                    <el-checkbox label="工作稿库"></el-checkbox>
                                 </el-checkbox-group>
                             </template>
                         </el-col>
@@ -253,7 +253,7 @@ export default {
                     time: '2019-1-11 11:09:34',
                     author: '赵倩',
                     source: '自写稿',
-                    type: '文本',
+                    type: '文字',
                     picture: '',
                     format: '.txt',
                     wordNumber: '1345',
@@ -270,7 +270,7 @@ export default {
                     time: '2018-4-31 11:09:34',
                     author: '强晓玲',
                     source: '自写稿',
-                    type: '文本',
+                    type: '文字',
                     picture: '',
                     format: '.txt',
                     wordNumber: '1345',
@@ -284,7 +284,7 @@ export default {
                     time: '2018-10-31 11:09:34',
                     author: '郝玉',
                     source: '自写稿',
-                    type: '文本',
+                    type: '文字',
                     picture: '',
                     format: '.txt',
                     wordNumber: '1345',
@@ -298,7 +298,7 @@ export default {
                     time: '2018-01-31 11:09:34',
                     author: '刘晶瑶',
                     source: '自写稿',
-                    type: '文本',
+                    type: '文字',
                     picture: '',
                     format: '.txt',
                     wordNumber: '1345',
@@ -312,7 +312,7 @@ export default {
                     title: '城市垃圾分类“银川模式”',
                     time: '2019-1-3 9:09:34',
                     author: '赵倩',
-                    type: '文本',
+                    type: '文字',
                     picture: '',
                     format: '.txt',
                     wordNumber: '1345',
@@ -323,7 +323,7 @@ export default {
                     title: '一次建成里程最长高铁',
                     time: '2018-10-31 11:09:34',
                     author: '刘晶瑶',
-                    type: '文本',
+                    type: '文字',
                     picture: '',
                     format: '.txt',
                     wordNumber: '1345',
@@ -343,7 +343,7 @@ export default {
             radioName2: '稿件',
             radioLabel2: [
                 '稿件',
-                '线索/采访单/专题'
+                '线索/专题'
             ],
             // 栏目选择
             radioName: '栏目库',

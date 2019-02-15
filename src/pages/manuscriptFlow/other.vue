@@ -25,14 +25,15 @@
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
-                                     width="120">
+                                     width="100">
                     </el-table-column>
 
                     <el-table-column prop="type"
                                      label="类型">
                     </el-table-column>
                     <el-table-column prop="location"
-                                     label="位置">
+                                     label="位置"
+                                     width="100">
                     </el-table-column>
                     <el-table-column prop="status"
                                      label="状态">
@@ -41,8 +42,8 @@
                                      label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
-                                     width="140"
-                                     label="处理时间">
+                                     label="处理时间"
+                                     width="100">
                     </el-table-column>
                     <el-table-column prop="handlePeople"
                                      label="最近处理人">
@@ -50,8 +51,11 @@
                     <el-table-column prop="type2"
                                      label="类型">
                     </el-table-column>
-                    <el-table-column prop="picture"
-                                     label="代表图">
+                    <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                         align="center"
+                                         width="130px"
+                                         label="代表图">
                             <template slot-scope="scope">
                                 <el-popover placement="right"
                                             title=""
@@ -64,7 +68,7 @@
                                          style="max-height: 30px;max-width: 120px">
                                 </el-popover>
                             </template>
-                    </el-table-column>
+                        </el-table-column>
                 </el-table>
             </el-main>
             <el-footer height="70">
@@ -198,19 +202,18 @@ export default {
                 location: 'A叠-十版',
                 status: '待审',
                 author: '卢刚',
-                picture: '',
-                processingTime: '2018-10-31 14:23',
+                processingTime: '10-31 14:23',
                 handlePeople: '卢刚',
-                type2: '文本'
+                type2: '文字'
             }, {
                 id: '20181029000029',
                 title: '龙海市：文化沁人心  廉洁清风来',
+                picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
                 media: '新华每日电讯',
                 type: '版面',
                 location: 'A叠-十四版',
                 status: '待审',
                 author: '刘学奎',
-                picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
                 processingTime: '2018-10-29 17:18',
                 handlePeople: '刘学奎',
                 type2: '图片'

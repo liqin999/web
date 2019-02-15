@@ -364,7 +364,7 @@ export default {
                 address: '脱贫攻坚',
                 number: 1024,
                 type: '图片',
-                state: '待审',
+                state: '已审',
                 deliverer: '刘学奎',
                 processingTime: '2018-12-25 14:45',
                 dealingPeople: '方立新',

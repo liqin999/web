@@ -12,7 +12,7 @@
                             <el-select v-model="searchForm.media"
                                        class="w100"
                                        size="small"
-                                       placeholder="请选择媒体">
+                                       placeholder="稿件状态">
                                 <el-option label="全部"
                                            value="1"></el-option>
                                 <el-option label="待审"
@@ -531,7 +531,7 @@ export default {
                 data: '2018-12-25',
                 medio: '新华每日资讯',
                 firstAuthor: '杨维汉',
-                type: '文本'
+                type: '文字'
             }],
             multipleSelection: [],
             mainTableHeight: null

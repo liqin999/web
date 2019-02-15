@@ -21,7 +21,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder="原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题"></el-input> -->
-                                    <span>脱贫攻坚</span>
+                                    <span>一个灵魂的旅行</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">
@@ -33,7 +33,7 @@
                                 <el-col :span="4">
                                     <!-- <el-input v-model="input"
                                               placeholder="作者"></el-input> -->
-                                    <span>刘晶瑶</span>
+                                    <span>强晓玲</span>
                                 </el-col>
                                 <!-- 来源 -->
                                 <el-col :span="3"
@@ -63,7 +63,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>文本</span>
+                                    <span>图片</span>
                                 </el-col>
                             </el-row>
                         </el-col>
@@ -170,7 +170,7 @@
                                 <el-col :span="17">
                                     <!-- <a href="/review" style="font-size: 1px">(脱贫攻坚)羊信发"羊财"</a> -->
                                     <span style="font-size: 1px"
-                                          @click="fileClick">(脱贫攻坚)羊信发"羊财"</span>
+                                          @click="fileClick">一个灵魂的旅行</span>
                                 </el-col>
                                 <el-col :span="5">
                                     <span style="font-size: 1px">9.52MB</span>
@@ -204,7 +204,7 @@ export default {
             tableData: [
                 {
                     id: '1',
-                    name: '刘晶瑶',
+                    name: '强晓玲',
                     penName: '',
                     authorType: '',
                     editUser: '是'

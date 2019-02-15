@@ -20,7 +20,8 @@
                     </el-table-column>
                     <el-table-column prop="title"
                                      show-overflow-tooltip
-                                     label="标题">
+                                     label="标题"
+                                     width="180">
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
@@ -31,7 +32,8 @@
                                      label="类型">
                     </el-table-column>
                     <el-table-column prop="location"
-                                     label="位置">
+                                     label="位置"
+                                     width="100">
                     </el-table-column>
                     <el-table-column prop="status"
                                      label="状态">
@@ -40,7 +42,8 @@
                                      label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
-                                     label="处理时间">
+                                     label="处理时间"
+                                     width="100">
                     </el-table-column>
                     <el-table-column prop="handlePeople"
                                      label="最近处理人">
@@ -48,9 +51,24 @@
                     <el-table-column prop="type2"
                                      label="类型">
                     </el-table-column>
-                    <el-table-column prop="picture"
-                                     label="代表图">
-                    </el-table-column>
+                    <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                         align="center"
+                                         width="130px"
+                                         label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
+                        </el-table-column>
                 </el-table>
             </el-main>
             <el-footer height="70">
@@ -188,29 +206,28 @@ export default {
             },
             tableData3: [{
                 id: '20181029000029',
-                title: '城市生活垃圾分类的“银川模式”',
+                title: '（脱贫攻坚）羊信发“羊财”',
                 media: '新华每日电讯',
                 type: '版面',
-                location: 'A叠-十四版',
+                location: 'A叠-三版',
                 status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31',
-                handlePeople: '刘晶瑶',
-                type2: '文本',
-                picture: ''
-
+                author: '徐海波',
+                processingTime: '10-29 17:18',
+                handlePeople: '刘学奎',
+                type2: '图片',
+                picture: 'https://inews.gtimg.com/newsapp_bt/0/4836031414/1000'
             }, {
                 id: '20181029000029',
-                title: '一个西红柿的”世界地图“',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
+                picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
                 media: '新华每日电讯',
                 type: '版面',
-                location: 'A叠-十四版',
+                location: 'A叠-四版',
                 status: '已审',
-                author: '郝玉',
-                processingTime: '10-29 10:31',
+                author: '李浩',
+                processingTime: '10-28 10:45',
                 handlePeople: '赵倩',
-                type2: '文本',
-                picture: ''
+                type2: '图片'
             }],
             multipleSelection: [],
             mainTableHeight: null

@@ -280,14 +280,11 @@ export default {
             ],
             mainDraftValue: '',
             // 稿件来源
-            draftSourceData: [
-                '自写稿',
-                '新采编'
-            ],
+            draftSourceData: ['自写稿', '邮件稿件', 'eNews稿件', '数据服务平台'],
             draftSourceValue: '自写稿',
             // 稿件体裁
-            draftGenreData: ['消息', '通讯', '专访'],
-            draftGenreValue: '消息',
+            draftGenreData: ['新闻报道', '新闻分析', '年终专稿'],
+            draftGenreValue: '新闻报道',
             checked: false, // 备选项
             textarea: null,
             // 栏目选择

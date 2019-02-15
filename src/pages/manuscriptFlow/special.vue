@@ -1,5 +1,5 @@
 <template>
-    <el-container class="clearfix">
+    <el-container class="person-container clearfix">
         <el-aside class="aside-content"
                   width="250px">
             <div class="search-list2">
@@ -237,7 +237,7 @@ export default {
                 picture: '',
                 processingTime: '2018-10-31 15:22',
                 handlePeople: '刘学奎',
-                type2: '文本'
+                type2: '文字'
             }, {
                 id: '20181029000029',
                 title: '新华时评）下足绣花功才能啃下硬骨头',
@@ -249,9 +249,10 @@ export default {
                 picture: '',
                 processingTime: '2018-12-25 17:18',
                 handlePeople: '方立新',
-                type2: '文本'
+                type2: '文字'
             }],
-            multipleSelection: []
+            multipleSelection: [],
+            mainTableHeight: null
         }
     },
     mounted () {

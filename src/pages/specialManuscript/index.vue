@@ -256,7 +256,7 @@ export default {
                 keywords: '',
                 checkAll: false,
                 media: '',
-                checkedTypes: ['文本', '图片'],
+                checkedTypes: ['文字', '图片'],
                 isIndeterminate: true
             },
             allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
@@ -357,7 +357,7 @@ export default {
                 processingTime: '2018-10-31 15:22:12',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',
-                type: '文本',
+                type: '文字',
                 doubt: 0,
                 source: '自写稿',
                 gnumber: 1,
@@ -376,7 +376,7 @@ export default {
                 processingTime: '2018-12-30 10:09:34',
                 firstAuthor: '于文静,强晓玲',
                 medio: '新华每日电讯',
-                type: '文本',
+                type: '文字',
                 doubt: 0,
                 source: '自写稿',
                 gnumber: 1,
@@ -397,10 +397,10 @@ export default {
         // 监听浏览器窗口大小改变 高度
         // this.mainHeight = document.getElementById('main-padding').offsetHeight
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
     },
