@@ -73,7 +73,7 @@
             <!-- 内容 -->
             <el-row :gutter="20"
                     class="message-lists clearfix ac">
-                <span style="color: red;text-align:center">我的稿库——[上次选中：{{pickData.name}}]</span>
+                <span class="redColor">我的稿库——[上次选中：{{pickData.name}}]</span>
             </el-row>
             <!-- 内容 -->
             <el-row :gutter="20"
@@ -391,6 +391,9 @@ export default {
             @include border(all);
             border-radius: $border-radius;
         }
+    }
+    .redColor{
+        color: red;
     }
 }
 </style>
