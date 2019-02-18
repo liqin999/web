@@ -161,10 +161,10 @@
                         <span>|</span>
                     </div>
                     <down-load>
-                            <i slot="icon"
-                               class="el-icon-download"></i>
-                            <span slot="iconName">下载</span>
-                        </down-load>
+                        <i slot="icon"
+                           class="el-icon-download"></i>
+                        <span slot="iconName">下载</span>
+                    </down-load>
                     <!-- <div class="btn-nav">
                         <i class="iconfont icon-wenben1"></i>
                         <span>留稿</span>

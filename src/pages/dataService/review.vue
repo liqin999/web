@@ -26,9 +26,9 @@
                             class="text-right">
 
                         <!-- <el-button class="primary-btn">建稿</el-button> -->
-                        <send-draft class="primary-btn">
+                        <create-draft>
                             <span slot="iconName">建稿</span>
-                        </send-draft>
+                        </create-draft>
                         <el-button class="reset-btn"
                                    @click="closeFn">关闭</el-button>
                     </el-col>
@@ -81,10 +81,10 @@
 </template>
 <script>
 // 建稿按钮组件
-import sendDraft from '@/pages/dataService/sendDraft/sendDraft'
+import createDraft from '@/components/buttons/createDraft/createDraft'
 export default {
     components: {
-        sendDraft
+        createDraft
 
     },
     data () {

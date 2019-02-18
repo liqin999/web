@@ -51,23 +51,23 @@
                                      label="类型">
                     </el-table-column>
                     <el-table-column prop="repDrawing"
-                                         header-align="center"
-                                         align="center"
-                                         width="130px"
-                                         label="代表图">
-                            <template slot-scope="scope">
-                                <el-popover placement="right"
-                                            title=""
-                                            trigger="hover">
-                                    <img v-bind:src="scope.row.picture"
-                                         style="max-height: 300px;max-width: 1000px">
-                                    <img slot="reference"
-                                         :src="scope.row.picture"
-                                         :alt="scope.row.picture"
-                                         style="max-height: 30px;max-width: 120px">
-                                </el-popover>
-                            </template>
-                        </el-table-column>
+                                     header-align="center"
+                                     align="center"
+                                     width="130px"
+                                     label="代表图">
+                        <template slot-scope="scope">
+                            <el-popover placement="right"
+                                        title=""
+                                        trigger="hover">
+                                <img v-bind:src="scope.row.picture"
+                                     style="max-height: 300px;max-width: 1000px">
+                                <img slot="reference"
+                                     :src="scope.row.picture"
+                                     :alt="scope.row.picture"
+                                     style="max-height: 30px;max-width: 120px">
+                            </el-popover>
+                        </template>
+                    </el-table-column>
                 </el-table>
             </el-main>
             <el-footer height="70">

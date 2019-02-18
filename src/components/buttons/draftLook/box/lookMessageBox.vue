@@ -6,6 +6,7 @@
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box">
+            <!-- accordion是否为手风琴模式，默认值为false -->
             <el-collapse v-model="activeName"
                          accordion>
                 <el-collapse-item title="更多"

@@ -69,7 +69,7 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="第一作者:">
+                            <el-form-item label="作者:">
                                 <el-input v-model="searchForm.author"
                                           placeholder=""></el-input>
                             </el-form-item>
@@ -85,16 +85,16 @@
                             <el-form-item label="约稿状态:">
                                 <el-select v-model="searchForm.state2"
                                            placeholder="约稿状态">
-                                    <el-option label="全部"
+                                    <el-option label="约稿"
                                                value="shanghai">
                                     </el-option>
-                                    <el-option label="待审"
+                                    <el-option label="在译"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="待处理"
+                                    <el-option label="已译"
                                                value="shan22ghai">
                                     </el-option>
-                                    <el-option label="已处理"
+                                    <el-option label="其他"
                                                value="be1ijing">
                                     </el-option>
                                 </el-select>
@@ -102,7 +102,7 @@
                         </el-col>
                         <el-col :span="6">
                             <el-form-item label="产品类型:">
-                                <el-select v-model="searchForm.type"
+                                <el-select v-model="searchForm.source2"
                                            placeholder="产品类型">
                                     <el-option label="新华社客户端"
                                                value="shangddhai12">
@@ -242,7 +242,7 @@
                                          label="创建日期">
                         </el-table-column>
                         <el-table-column prop="author"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="authorType"
                                          label="作者类型">
@@ -322,7 +322,7 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
 // 建稿按钮弹框
-import createDraft from '@/pages/manuscriptSetting/createDraft/createDraft'
+import createDraft from '@/components/buttons/createDraft/createDraft'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
