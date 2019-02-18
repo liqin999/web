@@ -10,9 +10,9 @@
                         <el-form-item label="媒体:">
                             <el-select v-model="searchForm.media"
                                        placeholder="请选择媒体">
-                                <el-option label="媒体一"
+                                <el-option label="新华每日电讯"
                                            value="shanghai"></el-option>
-                                <el-option label="媒体二"
+                                <el-option label="新华每日微博"
                                            value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
@@ -30,7 +30,7 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
-                        <send-draft>
+                        <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
                         <issuance>
@@ -41,11 +41,9 @@
                                 <span data-v-6eb3df45="">审稿</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">淘汰</span>
-                            </span>
-                        </div>
+                        <eliminate>
+                            <span slot="iconName">淘汰</span>
+                        </eliminate>
 
                         <version :data="versionData">
                             <span slot="iconName">版本</span>
@@ -56,11 +54,9 @@
                                 <span data-v-6eb3df45="">编辑</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">提交</span>
-                            </span>
-                        </div>
+                        <submit>
+                            <span slot="iconName">提交</span>
+                        </submit>
                         <!-- <split>
                             <span slot="iconName">拆分</span>
                         </split>
@@ -81,15 +77,62 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="日期">
+                        <el-table-column label="入库时间"
+                                         width="100px">
                             <template slot-scope="scope">{{ scope.row.date }}</template>
                         </el-table-column>
-                        <el-table-column prop="name"
-                                         label="姓名">
+                        <el-table-column prop="title"
+                                         width="180px"
+                                         show-overflow-tooltip
+                                         label="标题">
                         </el-table-column>
-                        <el-table-column prop="address"
-                                         label="地址"
+                        <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                         align="center"
+                                         width="130px"
+                                         label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="number"
+                                         label="字数">
+                        </el-table-column>
+                        <el-table-column prop="state"
+                                         label="状态">
+                        </el-table-column>
+                        <el-table-column prop="dealingPeople"
+                                         label="处理人">
+                        </el-table-column>
+                        <el-table-column prop="processingTime"
+                                         label="处理时间"
+                                         width="180px">
+                        </el-table-column>
+                        <el-table-column prop="firstAuthor"
+                                         label="作者">
+                        </el-table-column>
+                        <el-table-column prop="medio"
+                                         label="媒体"
                                          show-overflow-tooltip>
+                        </el-table-column>
+                        <el-table-column prop="preData"
+                                         label="预计刊登日期"
+                                         width="100px">
+                        </el-table-column>
+                        <el-table-column prop="type"
+                                         label="类型">
+                        </el-table-column>
+                        <el-table-column prop="doubt"
+                                         label="疑点">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -100,27 +143,38 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="2">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-liulan"></i>
                             <span>浏览</span>
-                        </div>
+                        </div> -->
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
-                        </div>
+                        </div> -->
+                        <down-load>
+                            <i slot="icon"
+                               class="el-icon-download"></i>
+                            <span slot="iconName">下载</span>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-ico_print"></i>
-                            <span>打印</span>
-                        </div>
+                        <printing>
+                            <i slot="icon"
+                               class="iconfont icon-ico_print"></i>
+                            <span slot="iconName">打印</span>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -160,6 +214,16 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -170,10 +234,16 @@ export default {
         // concat,
         version,
         draftLabel,
-        history
+        history,
+        printing,
+        draftLook,
+        downLoad,
+        submit,
+        eliminate
     },
     data () {
         return {
+            versionData: '',
             draft: [],
             currentPage: 1,
             searchForm: {
@@ -184,7 +254,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -201,13 +271,43 @@ export default {
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
+                            id: 19,
+                            label: '第二编辑中心',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 18,
+                            label: '总编室',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
                             id: 4,
                             label: '副刊部（草地周刊）',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
+                            id: 17,
+                            label: '文摘室',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 21,
+                            label: '评论部',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 22,
+                            label: '办公室',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
                             id: 13,
                             label: '副刊部（新华视界）',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 14,
+                            label: '创意策划中心',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
@@ -215,189 +315,63 @@ export default {
                 },
                 {
                     id: 2,
-                    label: 'A叠【版面】',
+                    label: '每日电讯微博',
                     children: [
                         {
                             id: 5,
-                            label: '一版',
-                            icon: 'iconfont icon-file1'
-                        },
+                            label: '网络部',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    label: '公共部门',
+                    children: [
                         {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 7,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 8,
-                            label: '四版',
-                            icon: 'iconfont icon-file1'
+                            id: 11,
+                            label: '技术部',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         }
                     ]
                 }
 
             ],
-            versionData: {
-                contentShow: false,
-                tableData: [{
-                    num: 1,
-                    title: '12',
-                    date: '2016-05-03',
-                    dealPerson: '1王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }, {
-                    num: 2,
-                    title: '333',
-                    date: '2015-05-03',
-                    dealPerson: '2王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }, {
-                    num: 3,
-                    title: '8888',
-                    date: '2016-05-03',
-                    dealPerson: '3王小虎',
-                    img: '',
-                    type: '文本',
-                    doubt: '0',
-                    textFormat: 'txt'
-                }]
-            },
-            concatData: {
-                contentShow: false,
-                tableData: [{
-                    num: '1',
-                    title: '王小虎1'
-
-                }, {
-                    num: '2',
-                    title: '王小虎2'
-
-                }, {
-                    num: '3',
-                    title: '王小虎3'
-
-                },
-                {
-                    num: '4',
-                    title: '王小虎4'
-
-                }, {
-                    num: '5',
-                    title: '王小虎5'
-
-                },
-                {
-                    num: '6',
-                    title: '王小虎6'
-
-                }]
-            },
             defaultProps: {
                 children: 'children',
                 label: 'label'
             },
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2018-10-29',
+                title: '（脱贫攻坚）羊信发“羊财”',
+                picture: 'https://inews.gtimg.com/newsapp_bt/0/4836031414/1000',
+                address: '脱贫攻坚',
+                number: 768,
+                type: '图片',
+                state: '已处理',
+                deliverer: '方立新',
+                processingTime: '2018-10-31 17:18',
+                dealingPeople: '刘学奎',
+                firstAuthor: '徐海波，方立新',
+                medio: '新华每日电讯',
+                doubt: 0,
+                preData: ''
+
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2018-12-24',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
+                picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg',
+                address: '脱贫攻坚',
+                number: 1024,
+                type: '图片',
+                state: '已审',
+                deliverer: '刘学奎',
+                processingTime: '2018-10-28 10:45',
+                dealingPeople: '方立新',
+                firstAuthor: '李浩',
+                medio: '新华每日电讯',
+                doubt: 0,
+                preData: ''
             }],
             multipleSelection: [],
             mainTableHeight: null

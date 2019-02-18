@@ -4,7 +4,7 @@
         <el-aside width="250px">
             <div class="tabTree">
                 <el-tabs v-model="activeTreeName"
-                         stretch="true"
+                         :stretch="true"
                          @tab-click="switchTreeMemu">
                     <el-tab-pane label="成品稿"
                                  name="first">
@@ -25,9 +25,9 @@
             <el-header height="40px">
                 <div class="main-header-group">
                     <!-- 引入按钮的组的插件 -->
-                    <send-draft>
+                    <create-draft>
                         <span slot="iconName">建稿</span>
-                    </send-draft>
+                    </create-draft>
 
                     <div data-v-6eb3df45=""
                          class="primary-btn"><span>
@@ -48,10 +48,9 @@
 
                 </div>
             </el-header>
-            <el-main ref="mainTable">
-
+            <el-header height="55px">
                 <el-tabs v-model="activeTreeName1"
-                         stretch="true"
+                         :stretch="true"
                          @tab-click="switchTreeMemu1">
                     <el-tab-pane label="全部(12888)"
                                  name="first1">
@@ -82,7 +81,8 @@
                                  name="second2b31">
                     </el-tab-pane>
                 </el-tabs>
-
+            </el-header>
+            <el-main ref="mainTable">
                 <el-table ref="multipleTable"
                           :data="tableData3"
                           @row-click="tabclick"
@@ -127,7 +127,7 @@
                                :current-page="currentPage"
                                :page-size="20"
                                layout="total, prev, pager, next"
-                               :total="100">
+                               :total="2">
                 </el-pagination>
 
             </el-footer>
@@ -136,13 +136,14 @@
 
 </template>
 <script>
-import sendDraft from '@/pages/dataService/sendDraft/sendDraft'
+// 建稿按钮组件
+import createDraft from '@/components/buttons/createDraft/createDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 
 export default {
     components: {
         leftMenu,
-        sendDraft
+        createDraft
 
     },
     data () {
@@ -150,7 +151,7 @@ export default {
             activeTreeName: 'first',
             activeTreeName1: 'first1',
             draft: [],
-            currentPage: 2,
+            currentPage: 0,
             searchForm: {
                 dateValue: '',
                 keywords: '',
@@ -316,115 +317,19 @@ export default {
                 a: '新疆和田：黑山村的致富路',
                 b: '1200',
                 c: '辛未悦',
-                d: '2018-12-31 15:00',
+                d: '2019-1-5 15:00',
                 e: '技术局-中心签稿室',
                 f: '王建',
                 g: '刘畅'
             },
             {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            }, {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            }, {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            }, {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
-            },
-            {
-                a: '新疆和田：黑山村的致富路',
-                b: '1200',
-                c: '辛未悦',
-                d: '2018-12-31 15:00',
-                e: '技术局-中心签稿室',
-                f: '王建',
-                g: '刘畅'
+                a: '创新社会治理 夯实平安之基',
+                b: '200',
+                c: '孙鑫',
+                d: '2019-1-5 09:00',
+                e: '摄影部-发稿中心',
+                f: '周斌',
+                g: '孙科'
             }
 
             ],

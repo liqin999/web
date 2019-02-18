@@ -14,7 +14,11 @@
     写稿         writeManuscript
     投稿         sendManuscript
     新闻日历      newsCalendar
+    废稿库       invalidManuscript
     后台管理      systemBackground
+    个人工作量统计   personStatistics
+    部门已签稿统计   departStatistics
+
  */
 const review = r => require.ensure([], () => r(require('@/pages/dataService/review.vue')), 'review')
 const dataService = r => require.ensure([], () => r(require('@/pages/dataService/dataService.vue')), 'dataService')
@@ -35,6 +39,7 @@ const manuscriptSetting = r => require.ensure([], () => r(require('@/pages/manus
 const writeManuscript = r => require.ensure([], () => r(require('@/pages/writeManuscript/index.vue')), 'writeManuscript')
 const sendManuscript = r => require.ensure([], () => r(require('@/pages/sendManuscript/index.vue')), 'sendManuscript')
 const newsCalendar = r => require.ensure([], () => r(require('@/pages/newsCalendar/index.vue')), 'newsCalendar')
+const invalidManuscript = r => require.ensure([], () => r(require('@/pages/invalidManuscript/index.vue')), 'invalidManuscript')
 const systemBackground = r => require.ensure([], () => r(require('@/pages/systemBackground/index.vue')), 'systemBackground')
 
 // 媒体流向的二级菜单
@@ -45,6 +50,10 @@ const other = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/ot
 const page = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/page.vue')), 'page')
 const column = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/column.vue')), 'column')
 const special = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/special.vue')), 'special')
+
+// 统计
+const personStatistics = r => require.ensure([], () => r(require('@/pages/personStatistics/index.vue')), 'personStatistics')
+const departStatistics = r => require.ensure([], () => r(require('@/pages/departStatistics/index.vue')), 'departStatistics')
 
 // 后台设置
 const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet/mediaSet.vue')), 'mediaSet')
@@ -116,6 +125,10 @@ export const routes = [{
     component: groupManuscript
 },
 {
+    path: '/invalidManuscript',
+    component: invalidManuscript
+},
+{
     path: '/specialManuscript',
     component: specialManuscript
 },
@@ -123,9 +136,8 @@ export const routes = [{
 {
     path: '/signedManuscript',
     name: 'signedManuscript',
-    components: {
-        default: signedManuscript
-    }
+    component: signedManuscript
+
 },
 {
     path: '/reviewDetail',
@@ -180,6 +192,14 @@ export const routes = [{
 {
     path: '/writeManuscript',
     component: writeManuscript
+},
+{
+    path: '/personStatistics',
+    component: personStatistics
+},
+{
+    path: '/departStatistics',
+    component: departStatistics
 },
 {
     path: '/sendManuscript',
@@ -280,7 +300,7 @@ export const routes = [{
 
     ]
 },
-// buttons路由定义
+  // buttons路由定义
 {
     path: '/sendDraft',
     component: sendDraft
@@ -321,7 +341,7 @@ export const routes = [{
     path: '/draftLabel',
     component: draftLabel
 },
-// buttons弹窗路由
+  // buttons弹窗路由
 {
     path: '/draftMessageBox',
     component: draftMessageBox

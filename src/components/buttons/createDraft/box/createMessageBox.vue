@@ -1,22 +1,19 @@
 <template>
     <el-dialog title="建稿"
                @close="messageBoxClose()"
-               :visible.sync="draftData.contentShow"
+               :visible.sync="createData.contentShow"
                top="15vh"
                width="400px"
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-
             <!-- 选项内容区 -->
             <el-row :gutter="20"
                     class="message-content clearfix">
                 <!-- 送往 -->
                 <el-col :span="24">
                     <el-row :gutter="20">
-
                         <el-col :span="24">
-
                             <el-row>
                                 <el-col :span="3">
                                     <span class="message-title">目标：</span>
@@ -63,8 +60,10 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList1"
-                                             default-expand-all="true"
-                                             show-checkbox
+                                             ref="tree1"
+                                             @node-click="handleCheckChange1"
+                                             :highlight-current="true"
+                                             :default-expand-all="true"
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -72,8 +71,10 @@
                                 <el-col :span="12"
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
-                                             default-expand-all="true"
-                                             show-checkbox
+                                             ref="tree2"
+                                             @node-click="handleCheckChange2"
+                                             :highlight-current="true"
+                                             :default-expand-all="true"
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -92,8 +93,7 @@
                                 </el-col>
                                 <template>
                                     <el-col :span="7"
-                                            class="text-overflow"
-                                            :key="label">
+                                            class="text-overflow">
                                         <el-radio v-model="radioName1"
                                                   label="1">入库前提示 </el-radio>
                                         <el-radio v-model="radioName1"
@@ -116,7 +116,7 @@
             <el-button class="primary-btn"
                        @click="draftConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="draftData.contentShow = false">取消</el-button>
+                       @click="createData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
 </template>
@@ -124,15 +124,15 @@
 <script>
 export default {
     props: {
-        draftData: {
+        createData: {
             type: Object
         }
     },
     data () {
         return {
+            label: '',
             submitData: null,
             radioName1: '1',
-            textarea: '请输入文字',
             // 栏目选择
             radioName: '栏目稿库',
             radioLabel: [
@@ -143,21 +143,21 @@ export default {
             topValue: '新华每日电讯',
             dataList1: [
                 {
-                    id: 1,
+                    id: '1',
                     label: '栏目',
                     children: [{
-                        id: 5,
+                        id: '1-1',
                         label: '头版'
                     },
                     {
-                        id: 6,
+                        id: '1-2',
                         label: '要闻'
                     }, {
-                        id: 54,
+                        id: '1-3',
                         label: '国内新闻'
                     },
                     {
-                        id: 62,
+                        id: '1-4',
                         label: '新闻焦点'
                     }
 
@@ -167,23 +167,23 @@ export default {
             ],
             dataList2: [
                 {
-                    id: 3,
+                    id: '2',
                     label: 'A叠',
                     children: [
                         {
-                            id: 7,
+                            id: '2-1',
                             label: '一版'
                         },
                         {
-                            id: 8,
+                            id: '2-2',
                             label: '二版'
                         },
                         {
-                            id: 6,
+                            id: '2-3',
                             label: '三版'
                         },
                         {
-                            id: 2,
+                            id: '2-4',
                             label: '四版'
                         }
 
@@ -261,69 +261,44 @@ export default {
                 children: 'children',
                 label: 'label'
             },
-            pickerOptions: {
-                shortcuts: [
-                    {
-                        text: '最近一周',
-                        onClick (picker) {
-                            const end = new Date()
-                            const start = new Date()
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
-                            picker.$emit('pick', [start, end])
-                        }
-                    },
-                    {
-                        text: '最近一个月',
-                        onClick (picker) {
-                            const end = new Date()
-                            const start = new Date()
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
-                            picker.$emit('pick', [start, end])
-                        }
-                    },
-                    {
-                        text: '最近三个月',
-                        onClick (picker) {
-                            const end = new Date()
-                            const start = new Date()
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
-                            picker.$emit('pick', [start, end])
-                        }
-                    }
-                ]
-            },
+
             pickerValue: ''
         }
     },
     methods: {
         // 栏目选择变化（单选）
         labelChange (value) {
-            // this.radioName = value;
+            if (value === '我的稿库') {
+                this.$refs.tree1.setCurrentNode([])
+                this.$refs.tree2.setCurrentNode([])
+            }
         },
         // 一级栏目选择变化（下拉框）
         topChange (value) {
             // this.topValue = value;
         },
-        // 点击关闭回调函数
-        messageBoxClose () {
-        },
-        // 日期选择值
-        pickerChange (val) {
-            // this.pickerValue = val;
-        },
-        // 选择日期查询
-        searchTime () {
-        },
-        // 传稿意见
-        textareaChange (val) {
-            // this.textarea = val;
-        },
         // 点击确定按钮（提交）
         draftConfirm () {
-            // 路由的跳转
             this.$router.push({
                 path: '/columnsLayout'
             })
+        },
+        handleCheckChange1 (data) {
+            let arr = ['1', '1-1', '1-2', '1-3', '1-4']
+            if (arr.indexOf(data.id) > -1) {
+                this.radioName = '栏目稿库'
+            }
+            this.$refs.tree2.setCurrentNode([])
+        },
+        handleCheckChange2 (data) {
+            let arr = ['2', '2-1', '2-2', '2-3', '2-4']
+            if (arr.indexOf(data.id) > -1) {
+                this.radioName = '版面稿库'
+            }
+            this.$refs.tree1.setCurrentNode([])
+        },
+        messageBoxClose () {
+
         }
     },
     computed: {

@@ -24,7 +24,11 @@
                     </el-col>
                     <el-col :span="4"
                             class="text-right">
-                        <el-button class="primary-btn">查询</el-button>
+
+                        <!-- <el-button class="primary-btn">建稿</el-button> -->
+                        <create-draft>
+                            <span slot="iconName">建稿</span>
+                        </create-draft>
                         <el-button class="reset-btn"
                                    @click="closeFn">关闭</el-button>
                     </el-col>
@@ -76,7 +80,13 @@
     </el-container>
 </template>
 <script>
+// 建稿按钮组件
+import createDraft from '@/components/buttons/createDraft/createDraft'
 export default {
+    components: {
+        createDraft
+
+    },
     data () {
         return {
             draftList: [
@@ -92,25 +102,21 @@ export default {
                 }
             ],
             options: [{
-                value: '新华社本数据库提交待编',
-                label: '新华社本数据库提交待编'
+                value: '新华社每日电讯',
+                label: '新华社每日电讯'
             }, {
-                value: '选项2',
-                label: '新华社本数据库提交待编'
-            }, {
-                value: '选项3',
-                label: '新华社本数据库提交待编'
-            }, {
-                value: '选项4',
-                label: '新华社本数据库提交待编'
-            }, {
-                value: '选项5',
-                label: '新华社本数据库提交待编'
+                value: '每日电讯微博',
+                label: '每日电讯微博'
             }],
-            value: '新华社本数据库提交待编'
+            value: '新华社每日电讯'
         }
     },
     methods: {
+        confirmBtn () {
+            this.$router.push({
+                path: '/columnsLayout'
+            })
+        },
         closeFn () {
             this.$router.go('-1')
         }
@@ -143,13 +149,13 @@ export default {
         }
         .border-line {
             @include border;
-            padding-bottom: 15px;
+            padding-bottom: 35px;
         }
         .red {
             color: red;
         }
         .message-lists {
-            padding: 10px;
+            padding: 35px 10px;
             .message-list {
                 .el-col {
                     @extend .text-overflow;

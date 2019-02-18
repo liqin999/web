@@ -1,12 +1,12 @@
 <template>
-    <el-dialog class=""
+    <el-dialog class="label-message"
                title="稿签信息"
                @close="messageBoxClose()"
                :visible.sync="labelData.contentShow"
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-            <el-row :gutter="20"
+            <el-row :gutter="50"
                     class="clearfix">
                 <!-- 左侧 -->
                 <el-col :span="18">
@@ -21,7 +21,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder="原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题"></el-input> -->
-                                    <span>原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题</span>
+                                    <span>一个灵魂的旅行</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">
@@ -33,7 +33,7 @@
                                 <el-col :span="4">
                                     <!-- <el-input v-model="input"
                                               placeholder="作者"></el-input> -->
-                                    <span>作者</span>
+                                    <span>强晓玲</span>
                                 </el-col>
                                 <!-- 来源 -->
                                 <el-col :span="3"
@@ -41,8 +41,6 @@
                                     <b>来源：</b>
                                 </el-col>
                                 <el-col :span="5">
-                                    <!-- <el-input v-model="input"
-                                              placeholder="自写稿"></el-input> -->
                                     <span>自写稿</span>
                                 </el-col>
                                 <!-- 体裁 -->
@@ -53,7 +51,7 @@
                                 <el-col :span="5">
                                     <!-- <el-input v-model="input"
                                               placeholder="消息"></el-input> -->
-                                    <span>消息</span>
+                                    <span>新闻报道</span>
                                 </el-col>
                             </el-row>
                             <!-- 分类 -->
@@ -65,7 +63,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>原稿标题原稿标题原稿标题原稿标题原稿标题原稿标题</span>
+                                    <span>图片</span>
                                 </el-col>
                             </el-row>
                         </el-col>
@@ -77,16 +75,22 @@
                                 <template>
                                     <el-table :data="tableData"
                                               style="width: 100%">
-                                        <el-table-column prop="date"
-                                                         label="日期"
+                                        <el-table-column prop="id"
+                                                         label="序号"
                                                          width="180">
                                         </el-table-column>
                                         <el-table-column prop="name"
                                                          label="姓名"
                                                          width="180">
                                         </el-table-column>
-                                        <el-table-column prop="address"
-                                                         label="地址">
+                                        <el-table-column prop="penName"
+                                                         label="笔名">
+                                        </el-table-column>
+                                        <el-table-column prop="authorType"
+                                                         label="作者类型">
+                                        </el-table-column>
+                                        <el-table-column prop="editUser"
+                                                         label="采编用户">
                                         </el-table-column>
                                     </el-table>
                                 </template>
@@ -100,9 +104,7 @@
                                     <span>姓名：</span>
                                 </el-col>
                                 <el-col :span="6">
-                                    <!-- <el-input v-model="input"
-                                              placeholder=""></el-input> -->
-                                    <span>admin</span>
+                                    <span>郝玉</span>
                                 </el-col>
                                 <!-- 电话 -->
                                 <el-col :span="4"
@@ -112,7 +114,7 @@
                                 <el-col :span="6">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>12345543222</span>
+                                    <span>13512345678</span>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="20">
@@ -134,7 +136,7 @@
                                 <el-col :span="5">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>0989000</span>
+                                    <span>100000</span>
                                 </el-col>
                             </el-row>
                             <!-- 地址 -->
@@ -146,7 +148,7 @@
                                 <el-col :span="13">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>北京市新华社</span>
+                                    <span>北京市西城区宣武门西大街</span>
                                 </el-col>
 
                             </el-row>
@@ -156,11 +158,26 @@
                 <!-- 右侧 -->
                 <el-col :span="6">
                     <b>附件</b>
-                    <el-input type="textarea"
-                              :rows="16"
-                              placeholder="请输入内容"
-                              v-model="textarea">
-                    </el-input>
+                    <el-row :gutter="20"
+                            class='message-content'>
+                        <el-col class="message-checkbox"
+                                :span="24">
+                            <el-row :gutter="2"
+                                    style="line-height: 30px">
+                                <el-col :span="2">
+                                    <i class="el-icon-document"></i>
+                                </el-col>
+                                <el-col :span="17">
+                                    <!-- <a href="/review" style="font-size: 1px">(脱贫攻坚)羊信发"羊财"</a> -->
+                                    <span style="font-size: 1px"
+                                          @click="fileClick">一个灵魂的旅行</span>
+                                </el-col>
+                                <el-col :span="5">
+                                    <span style="font-size: 1px">9.52MB</span>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
                 </el-col>
             </el-row>
         </div>
@@ -184,10 +201,21 @@ export default {
         return {
             textarea: null,
             input: null,
-            tableData: []
+            tableData: [
+                {
+                    id: '1',
+                    name: '强晓玲',
+                    penName: '',
+                    authorType: '',
+                    editUser: '是'
+                }
+            ]
         }
     },
     methods: {
+        fileClick () {
+            this.$router.push({ path: '/review' })
+        },
         messageBoxClose () {
 
         },
@@ -211,10 +239,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.message-box {
+.label-message .message-box {
     line-height: 35px;
     .label-border {
         @include border(bottom, 1px, solid, $tint-border-color);
+    }
+    .message-content {
+        .message-checkbox {
+            height: 365px;
+            @include border(all);
+            border-radius: $border-radius;
+        }
+    }
+    .message-content[data-v-49e2cde9] {
+        padding-top: 1px;
+        line-height: 15px;
     }
 }
 </style>

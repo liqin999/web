@@ -31,10 +31,7 @@ axios.interceptors.request.use(config => {
 
 // 响应拦截器即异常处理
 axios.interceptors.response.use(response => {
-    console.log('response', response)
-
-    let data
-    // IE9时response.data是undefined，因此需要使用response.request.responseText(Stringify后的字符串)
+    let data = null
     if (response.data === undefined) {
         data = response.request.responseText
     } else {

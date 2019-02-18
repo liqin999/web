@@ -2,10 +2,13 @@
     <el-dialog custom-class="split-dialog"
                title="拆分"
                @close="messageBoxClose()"
+               <<<<<<<
+               HEAD
                :visible.sync="contentShow"
-               width="70%"
-               top="15vh"
-               :append-to-body="true">
+               width="70%"=======:visible.sync="splitData.contentShow"
+               width="50%">>>>>>> origin/develop
+        top="15vh"
+        :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box">
             <el-row :gutter="20">
@@ -52,9 +55,9 @@
         <div slot="footer"
              class="dialog-footer">
             <el-button class="primary-btn"
-                       @click="splitConfirm">确认</el-button>
+                       @click="splitConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="splitCancleConfirm">取消</el-button>
+                       @click="splitData.contentShow = false">取消</el-button>
         </div>
     </el-dialog>
 </template>
@@ -70,70 +73,66 @@ export default {
         return {
             contentShow: false,
             textarea: '',
-            content: '', // 内容区域
-            listData: null, // 当前操作的数据
-            newContent: '', // 形成新的内容
-            tableData: []
+            title: '一个西红柿的“世界地图”',
+            fontNum: '18'
+        }]
+    }
+},
+
+watch: {   // 使用监听的方式，监听数据的变化
+    splitData(val) {
+        this.content = (val && val.tableData[0] && val.tableData[0].content) || ''
+    }
+},
+
+mounted() {
+    console.log('splitbox', this.splitData)
+},
+
+methods: {
+    messageBoxClose() {
+        // 点击关闭回调函数
+    },
+    splitConfirm() { // 确认按钮
+        if (this.tableData.length === 0) {
+            this.$message({
+                message: '先点击左侧生成的稿件',
+                type: 'warning'
+            })
+            return false
+        } else {
+            this.$emit('sendSplitData', this.tableData)
         }
     },
-
-    watch: {   // 使用监听的方式，监听数据的变化
-        splitData (val) {
-            this.listData = val
-            this.content = (val && val.tableData[0] && val.tableData[0].content) || ''
+    splitCancleConfirm() {
+        this.$emit('splitCancleConfirm')
+    },
+    getSelectText() {
+        let userSelection = ''
+        if (window.getSelection) {
+            userSelection = window.getSelection()
+        } else if (document.selection) {
+            userSelection = document.selection.createRange()
         }
-    },
+        if (userSelection.toString().length > 0) {
+            this.newContent = userSelection.toString()
 
-    mounted () {
-        console.log('splitbox', this.splitData)
-    },
-
-    methods: {
-        messageBoxClose () {
-            // 点击关闭回调函数
-        },
-        splitConfirm () { // 确认按钮
-            if (this.tableData.length === 0) {
-                this.$message({
-                    message: '先点击左侧生成的稿件',
-                    type: 'warning'
-                })
-                return false
-            } else {
-                this.$emit('sendSplitData', this.tableData)
+            let _index = 10
+            if (this.newContent.indexOf('。') !== -1) {
+                _index = this.newContent.indexOf('。')
+            } else if (this.newContent.indexOf(',') !== -1) {
+                _index = this.newContent.indexOf(',')
+            } else if (this.newContent.indexOf('，') !== -1) {
+                _index = this.newContent.indexOf('，')
             }
-        },
-        splitCancleConfirm () {
-            this.$emit('splitCancleConfirm')
-        },
-        getSelectText () {
-            let userSelection = ''
-            if (window.getSelection) {
-                userSelection = window.getSelection()
-            } else if (document.selection) {
-                userSelection = document.selection.createRange()
-            }
-            if (userSelection.toString().length > 0) {
-                this.newContent = userSelection.toString()
 
-                let _index = 10
-                if (this.newContent.indexOf('。') !== -1) {
-                    _index = this.newContent.indexOf('。')
-                } else if (this.newContent.indexOf(',') !== -1) {
-                    _index = this.newContent.indexOf(',')
-                } else if (this.newContent.indexOf('，') !== -1) {
-                    _index = this.newContent.indexOf('，')
-                }
+        },
+        concatConfirm() {
 
-                this.tableData.push({
-                    seqNum: this.tableData.length + 1,
-                    leadinLine: this.newContent.substring(0, _index),
-                    wordNum: this.newContent.length,
-                    content: this.newContent
-                })
-                let regExp = new RegExp(this.newContent.replace(/\s*/g, ''), 'g')
-                this.content = this.content.replace(/\s*/g, '').toString().replace(regExp, '')
-            }
+        },
+        // 取消按钮
+        concatData() {
+
         }
     }
 }

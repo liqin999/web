@@ -28,10 +28,8 @@
                         <el-table-column type="selection"
                                          width="55">
                         </el-table-column>
-
-                        <el-table-column prop="abstractt"
-                                         label="摘要"
-                                         width="80">
+                        <el-table-column prop="num"
+                                         label="稿号">
                         </el-table-column>
                         <el-table-column prop="content"
                                          show-overflow-tooltip

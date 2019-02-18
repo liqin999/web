@@ -1,5 +1,5 @@
 <template>
-    <el-container class="person-container">
+    <el-container class="media-container">
         <el-aside width="250px">
             <left-menu :treeData="data2"
                        :defaultProps="defaultProps"
@@ -7,22 +7,66 @@
         </el-aside>
         <el-container>
             <el-main ref="mainTable">
-                <el-table :height="mainTableHeight"
+                <el-table ref="multipleTable"
+                          :height="mainTableHeight"
                           :data="tableData3"
                           tooltip-effect="dark"
                           style="width: 100%"
                           @selection-change="handleSelectionChange">
-                    <el-table-column type="selection">
+                    <el-table-column prop="id"
+                                     label="稿号"
+                                     width="150">
                     </el-table-column>
-                    <el-table-column label="日期">
-                        <template slot-scope="scope">{{ scope.row.date }}</template>
+                    <el-table-column prop="title"
+                                     show-overflow-tooltip
+                                     label="标题"
+                                     width="180">
                     </el-table-column>
-                    <el-table-column prop="name"
-                                     label="姓名">
+                    <el-table-column prop="media"
+                                     label="媒体"
+                                     width="120">
                     </el-table-column>
-                    <el-table-column prop="address"
-                                     label="地址"
-                                     show-overflow-tooltip>
+
+                    <el-table-column prop="type"
+                                     label="类型">
+                    </el-table-column>
+                    <el-table-column prop="location"
+                                     label="位置"
+                                     width="100">
+                    </el-table-column>
+                    <el-table-column prop="status"
+                                     label="状态">
+                    </el-table-column>
+                    <el-table-column prop="author"
+                                     label="作者">
+                    </el-table-column>
+                    <el-table-column prop="processingTime"
+                                     label="处理时间"
+                                     width="100">
+                    </el-table-column>
+                    <el-table-column prop="handlePeople"
+                                     label="最近处理人">
+                    </el-table-column>
+                    <el-table-column prop="type2"
+                                     label="类型">
+                    </el-table-column>
+                    <el-table-column prop="repDrawing"
+                                     header-align="center"
+                                     align="center"
+                                     width="130px"
+                                     label="代表图">
+                        <template slot-scope="scope">
+                            <el-popover placement="right"
+                                        title=""
+                                        trigger="hover">
+                                <img v-bind:src="scope.row.picture"
+                                     style="max-height: 300px;max-width: 1000px">
+                                <img slot="reference"
+                                     :src="scope.row.picture"
+                                     :alt="scope.row.picture"
+                                     style="max-height: 30px;max-width: 120px">
+                            </el-popover>
+                        </template>
                     </el-table-column>
                 </el-table>
             </el-main>
@@ -33,7 +77,7 @@
                                :current-page="currentPage"
                                :page-size="20"
                                layout="total, prev, pager, next"
-                               :total="100">
+                               :total="2">
                 </el-pagination>
                 <div class="btn-bottom">
                     <div class="btn-nav">
@@ -76,54 +120,15 @@ export default {
                 {
                     id: 1,
                     label: '新华每日电讯',
+                    icon: 'iconfont icon-file-b- ft-ffd658',
                     children: [
-                        {
-                            id: 4,
-                            label: '头版1',
-                            icon: 'el-icon-success'
-                        },
-                        {
-                            id: 12,
-                            label: '国内新闻',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 4,
-                            label: '国际焦点',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        },
-                        {
-                            id: 12,
-                            label: '评论声音',
-                            icon: 'iconfont icon-file-b- ft-ffd658'
-                        }
-
                     ]
                 },
                 {
                     id: 2,
-                    label: 'A叠【版面】',
+                    label: '新华每日电讯',
+                    icon: 'iconfont icon-file-b- ft-ffd658',
                     children: [
-                        {
-                            id: 5,
-                            label: '一版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 5,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 6,
-                            label: '四版',
-                            icon: 'iconfont icon-file1'
-                        }
                     ]
                 }
 
@@ -134,97 +139,28 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '一个西红柿的“世界地图”',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-四版',
+                status: '待审',
+                author: '强晓玲',
+                processingTime: '10-31 14:23',
+                handlePeople: '刘学奎',
+                type2: '文本'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十版',
+                status: '已审',
+                author: '李浩',
+                processingTime: '10-29 10:31',
+                handlePeople: '方立新',
+                type2: '图片',
+                picture: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1210290735,1132136499&fm=11&gp=0.jpg'
             }],
             multipleSelection: [],
             mainTableHeight: null
@@ -232,10 +168,10 @@ export default {
     },
     mounted () {
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
     },

@@ -1,17 +1,20 @@
 <template>
     <el-dialog class=""
-               title="传稿"
+               :title="sendData ? '传稿' : '撤稿'"
                @close="messageBoxClose()"
                :visible.sync="draftData.contentShow"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box clearfix">
-            <!-- 待传稿件列表 -->
+            <!-- 待撤稿/传稿件列表 -->
             <el-row :gutter="20"
                     class="message-lists clearfix">
                 <el-col :span="3"
-                        class="tab-padding"><b class="message-title">待传稿件</b></el-col>
+                        class="tab-padding">
+                            <b class="message-title" v-if='sendData'>待传稿件</b>
+                            <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
+                        </el-col>
                 <el-col :span="21"
                         class="tab-padding">
                     <template v-for="(item,index) in draftData.draftList">
@@ -73,7 +76,7 @@
                                         class="message-checkbox">
                                     <el-tree :data="dataList"
                                              :default-expanded-keys="[2, 3]"
-                                             show-checkbox
+                                             :highlight-current="true"
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -82,7 +85,7 @@
                                         class="message-checkbox">
                                     <el-tree :data="dataList2"
                                              :default-expanded-keys="[2, 3]"
-                                             show-checkbox
+                                             :highlight-current="true"
                                              node-key="id"
                                              :props="defaultProps">
                                     </el-tree>
@@ -94,7 +97,7 @@
                 <!-- 专题 -->
                 <el-col :span="9">
                     <el-row :gutter="10">
-                        <!-- <el-col :span="24"
+                        <el-col :span="24"
                                 class="clearfix"><b class="message-title padding-bottom10">专题</b></el-col>
                         <el-col :span="17">
                             <template>
@@ -112,20 +115,23 @@
                                     </el-date-picker>
                                 </div>
                             </template>
-                        </el-col> -->
-                        <!-- <el-col :span="7">
+                        </el-col>
+                         <el-col :span="7">
                             <el-button plain
-                                       class="btn-inquire"
+                                       class="primary-btn"
                                        @click="searchTime">查询</el-button>
-                        </el-col> -->
+                        </el-col>
                         <!-- </el-row> -->
                     </el-row>
                     <!-- 传稿意见 -->
                     <el-row :gutter="10"
                             class="">
                         <el-col :span="24"
-                                class="clearfix"><b class="message-title padding-bottom10 inline-block">传稿意见</b><span class="redColor">（不超过255个字）</span></el-col>
-                        <!-- <el-row> -->
+                                class="tab-padding">
+                            <b class="message-title" v-if='sendData'>传稿意见</b>
+                            <b class="message-title" v-else-if='!sendData'>撤稿意见</b>
+                            <span class="redColor">（不超过255个字）</span>
+                        </el-col>
                         <el-col :span="24">
                             <el-input type="textarea"
                                       :rows="12"
@@ -134,11 +140,9 @@
                                       @change="textareaChange">
                             </el-input>
                         </el-col>
-                        <!-- </el-row> -->
                     </el-row>
                 </el-col>
             </el-row>
-            <!-- 送往 栏目列表 -->
         </div>
         <!-- 内容区 结束 -->
         <div slot="footer"
@@ -154,13 +158,16 @@
 <script>
 export default {
     props: {
+        sendData: {
+            type: Boolean
+        },
         draftData: {
             type: Object
         }
     },
     data () {
         return {
-            submitData: null,
+            // submitData: null,
             textarea: '请输入文字',
             // 栏目选择
             radioName: '版面/栏目稿库',
@@ -172,7 +179,6 @@ export default {
                 '其他人员库',
                 '专题库'
             ],
-            topValue: '新华每日电讯',
             dataList: [
                 {
                     id: 2,
@@ -227,70 +233,29 @@ export default {
                 }
 
             ],
+            topValue: '新华每日电讯',
             topTitle: [
                 {
                     value: '1',
-                    label: '新华每日电讯',
-                    list: [
-                        {
-                            id: 2,
-                            label: '新华每日电讯 2',
-                            children: [{
-                                id: 5,
-                                label: '新华每日电讯 2-1'
-                            },
-                            {
-                                id: 6,
-                                label: '新华每日电讯 2-2'
-                            }]
-                        },
-                        {
-                            id: 3,
-                            label: '新华每日电讯 3',
-                            children: [
-                                {
-                                    id: 7,
-                                    label: '新华每日电讯 3-1'
-                                },
-                                {
-                                    id: 8,
-                                    label: '新华每日电讯 3-2'
-                                }
-                            ]
-                        }
-                    ]
+                    label: '新华每日电讯'
+                    // children: [
+                    //     {
+                    //         value: '2',
+                    //         label: '国内新闻'
+                    //     },
+                    //     {
+                    //         value: '3',
+                    //         label: '脱贫攻坚'
+                    //     },
+                    //     {
+                    //         value: '4',
+                    //         label: '脱贫攻坚'
+                    //     }
+                    // ]
                 },
                 {
-                    value: '2',
-                    label: '每日电讯微博',
-                    list: [
-                        {
-                            id: 2,
-                            label: '每日电讯微博 2',
-                            children: [{
-                                id: 5,
-                                label: '每日电讯微博 2-1'
-                            },
-                            {
-                                id: 6,
-                                label: '每日电讯微博 2-2'
-                            }]
-                        },
-                        {
-                            id: 3,
-                            label: '每日电讯微博 3',
-                            children: [
-                                {
-                                    id: 7,
-                                    label: '每日电讯微博 3-1'
-                                },
-                                {
-                                    id: 8,
-                                    label: '每日电讯微博 3-2'
-                                }
-                            ]
-                        }
-                    ]
+                    value: '5',
+                    label: '每日电讯微博'
                 }
             ],
             // 多选框列表
@@ -362,13 +327,6 @@ export default {
     },
     computed: {
         dataList1 () {
-            // let idx = 0;
-            // this.topTitle.forEach((item,index) => {
-            //     if (this.topValue == item.label){
-            //         idx = index;
-            //     }
-            // });
-            // let dataList = this.topTitle[0].list;
             return this.dataList
         }
     }
@@ -393,5 +351,14 @@ export default {
             border-radius: $border-radius;
         }
     }
+    .redColor{
+        color: red;
+    }
 }
+</style>
+<style>
+.message-box .message-title{
+    line-height: 25px
+}
+
 </style>

@@ -8,12 +8,14 @@
                     <el-col :span="6"
                             slot="media">
                         <el-form-item label="媒体:">
-                            <el-select v-model="searchForm.media"
+                            <el-select v-model="topValue"
                                        placeholder="请选择媒体">
-                                <el-option label="媒体一"
-                                           value="shanghai"></el-option>
-                                <el-option label="媒体二"
-                                           value="beijing"></el-option>
+                                <el-option v-for="item in topTitle"
+                                           :key="item.label"
+                                           :label="item.label"
+                                           :value="item.value"
+                                           @change="topChange">
+                                </el-option>
                             </el-select>
                         </el-form-item>
                     </el-col>
@@ -30,7 +32,7 @@
                 <el-header height="40px">
                     <div class="main-header-group">
                         <!-- 引入按钮的组的插件 -->
-                        <send-draft>
+                        <send-draft :sendData="true">
                             <span slot="iconName">传稿</span>
                         </send-draft>
                         <issuance>
@@ -41,11 +43,9 @@
                                 <span data-v-6eb3df45="">审稿</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">淘汰</span>
-                            </span>
-                        </div>
+                        <eliminate>
+                            <span slot="iconName">淘汰</span>
+                        </eliminate>
 
                         <version :data="versionData">
                             <span slot="iconName">版本</span>
@@ -56,11 +56,9 @@
                                 <span data-v-6eb3df45="">编辑</span>
                             </span>
                         </div>
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">提交</span>
-                            </span>
-                        </div>
+                        <submit>
+                            <span slot="iconName">提交</span>
+                        </submit>
                         <!-- <split>
                             <span slot="iconName">拆分</span>
                         </split>
@@ -81,15 +79,62 @@
                               @selection-change="handleSelectionChange">
                         <el-table-column type="selection">
                         </el-table-column>
-                        <el-table-column label="日期">
+                        <el-table-column label="入库时间"
+                                         width="100px">
                             <template slot-scope="scope">{{ scope.row.date }}</template>
                         </el-table-column>
-                        <el-table-column prop="name"
-                                         label="姓名">
+                        <el-table-column prop="title"
+                                         width="180px"
+                                         show-overflow-tooltip
+                                         label="标题">
                         </el-table-column>
-                        <el-table-column prop="address"
-                                         label="地址"
+                        <el-table-column prop="repDrawing"
+                                         header-align="center"
+                                         align="center"
+                                         width="130px"
+                                         label="代表图">
+                            <template slot-scope="scope">
+                                <el-popover placement="right"
+                                            title=""
+                                            trigger="hover">
+                                    <img v-bind:src="scope.row.picture"
+                                         style="max-height: 300px;max-width: 1000px">
+                                    <img slot="reference"
+                                         :src="scope.row.picture"
+                                         :alt="scope.row.picture"
+                                         style="max-height: 30px;max-width: 120px">
+                                </el-popover>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="number"
+                                         label="字数">
+                        </el-table-column>
+                        <el-table-column prop="state"
+                                         label="状态">
+                        </el-table-column>
+                        <el-table-column prop="dealingPeople"
+                                         label="处理人">
+                        </el-table-column>
+                        <el-table-column prop="processingTime"
+                                         label="处理时间"
+                                         width="180px">
+                        </el-table-column>
+                        <el-table-column prop="firstAuthor"
+                                         label="作者">
+                        </el-table-column>
+                        <el-table-column prop="medio"
+                                         label="媒体"
                                          show-overflow-tooltip>
+                        </el-table-column>
+                        <el-table-column prop="preData"
+                                         label="预计刊登日期"
+                                         width="100px">
+                        </el-table-column>
+                        <el-table-column prop="type"
+                                         label="类型">
+                        </el-table-column>
+                        <el-table-column prop="doubt"
+                                         label="疑点">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -100,27 +145,34 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="100">
+                                   :total="2">
                     </el-pagination>
                     <div class="btn-bottom">
-                        <div class="btn-nav">
-                            <i class="iconfont icon-liulan"></i>
-                            <span>浏览</span>
-                        </div>
+                        <draft-look>
+                            <i slot="icon"
+                               class="iconfont icon-liulan"></i>
+                            <span slot="iconName">浏览</span>
+                        </draft-look>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
+                        <!-- <div class="btn-nav">
                             <i class="iconfont icon-wenben1"></i>
                             <span>留稿</span>
-                        </div>
+                        </div> -->
+                         <down-load>
+                            <i slot="icon"
+                               class="el-icon-download"></i>
+                            <span slot="iconName">下载</span>
+                        </down-load>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <div class="btn-nav">
-                            <i class="iconfont icon-ico_print"></i>
-                            <span>打印</span>
-                        </div>
+                        <printing>
+                            <i slot="icon"
+                               class="iconfont icon-ico_print"></i>
+                            <span slot="iconName">打印</span>
+                        </printing>
                         <div class="btn-line">
                             <span>|</span>
                         </div>
@@ -160,6 +212,16 @@ import leftMenu from '@/components/treeMenu/leftTree.vue'
 import version from '@/components/buttons/version/version.vue'
 import draftLabel from '@/components/buttons/draftLabel/draftLabel'
 import history from '@/components/buttons/history/history.vue'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
+// 浏览弹框按钮
+import draftLook from '@/components/buttons/draftLook/draftLook'
+// 下载弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad'
+// 提交弹框按钮
+import submit from '@/components/buttons/submit/submit.vue'
+// 淘汰按钮
+import eliminate from '@/components/buttons/eliminate/eliminate.vue'
 export default {
     components: {
         searchInput,
@@ -170,56 +232,44 @@ export default {
         // concat,
         version,
         draftLabel,
-        history
+        history,
+        printing,
+        draftLook,
+        downLoad,
+        submit,
+        eliminate
     },
     data () {
         return {
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                date: '2018-10-31',
+                title: '“氢能小城”炼成记',
+                repDrawing: '',
+                number: 2267,
+                state: '待审',
+                dealingPeople: '卢刚',
+                picture: '',
+                processingTime: '2018-10-31 14:23',
+                firstAuthor: '卢刚',
+                medio: '新华每日电讯',
+                type: '文本',
+                doubt: 0,
+                preData: ''
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }
-            ],
+                date: '2018-10-29',
+                title: '龙海市：文化沁人心  廉洁清风来',
+                picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
+                repDrawing: '',
+                number: 163,
+                state: '已处理',
+                dealingPeople: '刘学奎',
+                processingTime: '2018-10-29 17:18 ',
+                firstAuthor: '刘学奎，方立新',
+                medio: '新华每日电讯',
+                type: '图片',
+                doubt: 0,
+                preData: ''
+            }],
             draft: [],
             versionData: null,
             currentPage: 1,
@@ -231,7 +281,7 @@ export default {
                 checkedTypes: ['文本', '图片'],
                 isIndeterminate: true
             },
-            allTypes: ['文本', '图片', '图表', '视频', '音频', '应用'],
+            allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
             data2: [
                 {
                     id: 1,
@@ -242,27 +292,70 @@ export default {
                             label: '电讯领导',
                             children: [{
                                 id: 9,
-                                label: '方立新',
-                                icon: 'iconfont icon-file-b- ft-ffd658'
+                                label: '方立新'
                             }, {
                                 id: 10,
-                                label: '李仁虎',
-                                icon: 'iconfont icon-file-b- ft-ffd658'
-
-                            }]
+                                label: '李仁虎'
+                            }, {
+                                id: 11,
+                                label: '王晓林'
+                            },
+                            {
+                                id: 12,
+                                label: '李仁虎'
+                            },
+                            {
+                                id: 13,
+                                label: '王明浩'
+                            }
+                            ]
                         },
                         {
                             id: 7,
                             label: '总编室',
                             children: [{
                                 id: 12,
-                                label: '留学室',
-                                icon: 'iconfont icon-file1'
-
+                                label: '刘学奎'
                             }, {
                                 id: 13,
-                                label: '卢刚',
-                                icon: 'iconfont icon-file1'
+                                label: '卢刚'
+                            },
+                            {
+                                id: 14,
+                                label: '黄国清'
+                            },
+                            {
+                                id: 15,
+                                label: '董健'
+                            },
+                            {
+                                id: 16,
+                                label: '梁红卿'
+                            },
+                            {
+                                id: 17,
+                                label: '孙侠'
+                            },
+                            {
+                                id: 18,
+                                label: '李思源'
+                            },
+                            {
+                                id: 18,
+                                label: '张超'
+                            },
+                            {
+                                id: 19,
+                                label: '刘梦妮'
+                            }
+                            ]
+                        },
+                        {
+                            id: 8,
+                            label: '技术部',
+                            children: [{
+                                id: 256,
+                                label: '王二虎'
                             }]
                         }
                     ]
@@ -291,7 +384,19 @@ export default {
                 // }
             ],
             multipleSelection: [],
-            mainTableHeight: null
+            mainTableHeight: null,
+            topValue: '新华每日电讯',
+            topTitle: [
+                {
+                    value: '1',
+                    label: '新华每日电讯'
+                },
+                {
+                    value: '5',
+                    label: '每日电讯微博'
+                }
+            ]
+
         }
     },
     mounted () {
@@ -304,6 +409,9 @@ export default {
         }
     },
     methods: {
+        topChange (value) {
+            // this.topValue = value;
+        },
         getTreeObj (data) { // 获得树形菜单的对象
             console.log('获得自组件的点击的节点对象', data)
         },

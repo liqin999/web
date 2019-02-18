@@ -14,17 +14,60 @@
                           tooltip-effect="dark"
                           style="width: 100%"
                           @selection-change="handleSelectionChange">
-                    <el-table-column type="selection">
+                    <el-table-column prop="id"
+                                     label="稿号"
+                                     width="160">
                     </el-table-column>
-                    <el-table-column label="日期">
-                        <template slot-scope="scope">{{ scope.row.date }}</template>
+                    <el-table-column prop="title"
+                                     width="160"
+                                     show-overflow-tooltip
+                                     label="标题">
                     </el-table-column>
-                    <el-table-column prop="name"
-                                     label="姓名">
+                    <el-table-column prop="media"
+                                     label="媒体"
+                                     width="120">
                     </el-table-column>
-                    <el-table-column prop="address"
-                                     label="地址"
-                                     show-overflow-tooltip>
+
+                    <el-table-column prop="type"
+                                     label="类型">
+                    </el-table-column>
+                    <el-table-column prop="location"
+                                     label="位置"
+                                     width="100">
+                    </el-table-column>
+                    <el-table-column prop="status"
+                                     label="状态">
+                    </el-table-column>
+                    <el-table-column prop="author"
+                                     label="作者">
+                    </el-table-column>
+                    <el-table-column prop="processingTime"
+                                     label="处理时间"
+                                     width="100">
+                    </el-table-column>
+                    <el-table-column prop="handlePeople"
+                                     label="最近处理人">
+                    </el-table-column>
+                    <el-table-column prop="type2"
+                                     label="类型">
+                    </el-table-column>
+                    <el-table-column prop="repDrawing"
+                                     header-align="center"
+                                     align="center"
+                                     width="130px"
+                                     label="代表图">
+                        <template slot-scope="scope">
+                            <el-popover placement="right"
+                                        title=""
+                                        trigger="hover">
+                                <img v-bind:src="scope.row.picture"
+                                     style="max-height: 300px;max-width: 1000px">
+                                <img slot="reference"
+                                     :src="scope.row.picture"
+                                     :alt="scope.row.picture"
+                                     style="max-height: 30px;max-width: 120px">
+                            </el-popover>
+                        </template>
                     </el-table-column>
                 </el-table>
             </el-main>
@@ -35,7 +78,7 @@
                                :current-page="currentPage"
                                :page-size="20"
                                layout="total, prev, pager, next"
-                               :total="100">
+                               :total="2">
                 </el-pagination>
                 <div class="btn-bottom">
                     <div class="btn-nav">
@@ -80,23 +123,43 @@ export default {
                     label: '新华每日电讯',
                     children: [
                         {
-                            id: 4,
-                            label: '头版1',
-                            icon: 'el-icon-success'
+                            id: 1,
+                            label: '电讯领导',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
-                            label: '国内新闻',
+                            id: 2,
+                            label: '总编室',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 3,
+                            label: '副刊部（草地周刊）',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
                             id: 4,
-                            label: '国际焦点',
+                            label: '文摘室',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         },
                         {
-                            id: 12,
-                            label: '评论声音',
+                            id: 5,
+                            label: '评论部',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 6,
+                            label: '办公室',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 5,
+                            label: '其他',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
+                        },
+                        {
+                            id: 13,
+                            label: '编委',
                             icon: 'iconfont icon-file-b- ft-ffd658'
                         }
 
@@ -104,27 +167,23 @@ export default {
                 },
                 {
                     id: 2,
-                    label: 'A叠【版面】',
+                    label: '每日电讯微博',
                     children: [
                         {
-                            id: 5,
-                            label: '一版',
+                            id: 1,
+                            label: '网络部',
                             icon: 'iconfont icon-file1'
-                        },
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    label: '公共部门',
+                    children: [
                         {
-                            id: 6,
-                            label: '二版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 5,
-                            label: '三版',
-                            icon: 'iconfont icon-file1'
-                        },
-                        {
-                            id: 6,
-                            label: '四版',
-                            icon: 'iconfont icon-file1'
+                            id: 1,
+                            label: '网络部',
+                            icon: 'iconfont icon-file-b- ft-ffd658'
                         }
                     ]
                 }
@@ -136,97 +195,28 @@ export default {
                 label: 'label'
             },
             tableData3: [{
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '“氢能小城”炼成记',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十版',
+                status: '待审',
+                author: '卢刚',
+                processingTime: '10-31 14:23',
+                handlePeople: '卢刚',
+                type2: '文本'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+                id: '20181029000029',
+                title: '龙海市：文化沁人心  廉洁清风来',
+                picture: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2688328310,3218509955&fm=173&app=49&f=GIF?w=394&h=262&s=1A114D87081383DA8235F8BF03004001',
+                media: '新华每日电讯',
+                type: '版面',
+                location: 'A叠-十四版',
+                status: '待审',
+                author: '郝玉',
+                processingTime: '10-29 10:31',
+                handlePeople: '刘学奎',
+                type2: '图片'
             }],
             multipleSelection: [],
             mainTableHeight: null

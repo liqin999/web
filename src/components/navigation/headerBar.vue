@@ -2,7 +2,7 @@
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2018-12-28 16:37:26
+ * @LastEditTime: 2019-01-31 10:23:34
  * @Description: 导航条样式改版
  -->
 <template>
@@ -120,9 +120,27 @@ export default {
                     id: '9',
                     path: '/manuscriptSetting'
                 },
+                // {
+                //     name: '投稿',
+                //     icon: 'el-icon-index',
+                //     id: '13',
+                //     path: '/sendManuscript'
+                // },
+                // {
+                //     name: '废稿库',
+                //     icon: 'el-icon-index',
+                //     id: '11',
+                //     path: '/invalidManuscript'
+                // },
+                // {
+                //     name: '写稿器',
+                //     icon: 'el-icon-index',
+                //     id: '12',
+                //     path: '/writeManuscript'
+                // }
 
                 {
-                    name: '写稿',
+                    name: '更多',
                     icon: 'el-icon-index',
                     id: '10',
                     path: '',
@@ -133,24 +151,38 @@ export default {
                             path: '/sendManuscript'
                         },
                         {
-                            name: '写稿器',
+                            name: '废稿库',
                             id: '10-2',
+                            path: '/invalidManuscript'
+                        },
+                        {
+                            name: '写稿器',
+                            id: '10-3',
                             path: '/writeManuscript'
                         },
-
                         {
-                            name: '新闻日历',
-                            id: '10-3',
-                            path: '/newsCalendar'
+                            name: '个人工作量统计',
+                            id: '10-4',
+                            path: '/personStatistics'
+                        },
+                        {
+                            name: '部门已签稿统计',
+                            id: '10-5',
+                            path: '/departStatistics'
                         }
+                        // {
+                        //     name: '新闻日历',
+                        //     id: '10-3',
+                        //     path: '/newsCalendar'
+                        // }
                     ]
-                },
-                {
-                    name: '后台管理',
-                    icon: 'el-icon-index',
-                    id: '11',
-                    path: '/systemBackground'
                 }
+                // {
+                //     name: '后台管理',
+                //     icon: 'el-icon-index',
+                //     id: '11',
+                //     path: '/systemBackground'
+                // }
 
             ]
         }
@@ -160,7 +192,7 @@ export default {
     },
     methods: {
         handleSelect (key, keyPath) {
-            // console.log(key, keyPath);
+            console.log(key, keyPath)
         }
     }
 }

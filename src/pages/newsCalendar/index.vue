@@ -1,6 +1,6 @@
 <template>
     <div>
-        newCalendar 新闻日历
+        <!-- newCalendar 新闻日历 -->
     </div>
 </template>
 <script>
