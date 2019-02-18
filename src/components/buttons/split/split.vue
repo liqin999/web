@@ -5,6 +5,8 @@
         </span>
         <!-- 拆分按钮 -->
         <split-message-box ref="splitBox"
+                           @sendSplitData="sendSplitData"
+                           @splitCancleConfirm="splitCancleConfirm"
                            :splitData="splitData"></split-message-box>
     </div>
 
@@ -17,18 +19,37 @@ export default {
         splitMessageBox
     },
     props: {
-
+        splitData: {
+            type: Object
+        }
     },
     data () {
         return {
-            splitData: {
-                contentShow: false
-            }
+
         }
     },
     methods: {
+        sendSplitData (concatData) {
+            this.$emit('sendSplitData', concatData)
+            this.$refs.splitBox.contentShow = false
+            this.$refs.splitBox.tableData.length = 0
+            this.$refs.splitBox.newContent = ''
+        },
+        splitCancleConfirm () {
+            this.$emit('splitCancleConfirm')
+            this.$refs.splitBox.contentShow = false
+            this.$refs.splitBox.tableData.length = 0
+            this.$refs.splitBox.newContent = ''
+        },
         sendSplitIcon () {
-            this.splitData.contentShow = true
+            if (this.splitData.tableData.length !== 1) {
+                this.$message({
+                    message: '只能选择一条数据',
+                    type: 'warning'
+                })
+                return
+            }
+            this.$refs.splitBox.contentShow = true
         }
     }
 }

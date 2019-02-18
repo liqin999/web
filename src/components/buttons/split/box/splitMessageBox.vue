@@ -2,7 +2,7 @@
     <el-dialog custom-class="split-dialog"
                title="拆分"
                @close="messageBoxClose()"
-               :visible.sync="splitData.contentShow"
+               :visible.sync="contentShow"
                width="70%"
                top="15vh"
                :append-to-body="true">
@@ -11,11 +11,12 @@
             <el-row :gutter="20">
                 <el-col :span="10">
                     <div class="split-content bg-purple">
-                        <b class="message-title">原稿件内容</b><span class="ft-red">（可拖动内容到右上列表）</span>
+                        <b class="message-title">原稿件内容</b><span class="ft-red">（鼠标右键选中，形成新稿件）</span>
                         <div class="split-box">
-                            <span>原稿件内容</span>
+                            <span>{{content || ''}}</span>
                         </div>
-                        <el-button class="primary-btn mt10">形成新稿件</el-button>
+                        <el-button class="primary-btn mt10"
+                                   @click="getSelectText">形成新稿件</el-button>
                     </div>
                 </el-col>
                 <el-col :span="14">
@@ -23,22 +24,26 @@
                         <b class="message-title">新稿件列表</b>
                         <template>
                             <el-table :data="tableData"
+                                      height="145"
+                                      tooltip-effect="dark"
                                       style="width: 100%;">
-                                <el-table-column prop="num"
+                                <el-table-column prop="seqNum"
                                                  label="序号"
                                                  width="80">
+
                                 </el-table-column>
-                                <el-table-column prop="title"
+                                <el-table-column prop="leadinLine"
+                                                 show-overflow-tooltip
                                                  label="标题">
                                 </el-table-column>
                                 <el-table-column width="80"
-                                                 prop="fontNum"
+                                                 prop="wordNum"
                                                  label="字数">
                                 </el-table-column>
                             </el-table>
                         </template>
                         <b class="message-title">新稿件内容</b>
-                        <div class="new-content"></div>
+                        <div class="new-content">{{newContent}}</div>
                     </div>
                 </el-col>
             </el-row>
@@ -47,9 +52,9 @@
         <div slot="footer"
              class="dialog-footer">
             <el-button class="primary-btn"
-                       @click="concatConfirm()">确认</el-button>
+                       @click="splitConfirm">确认</el-button>
             <el-button class="reset-btn"
-                       @click="concatData.contentShow = false">取消</el-button>
+                       @click="splitCancleConfirm">取消</el-button>
         </div>
     </el-dialog>
 </template>
@@ -63,24 +68,72 @@ export default {
     },
     data () {
         return {
+            contentShow: false,
             textarea: '',
-            tableData: [{
-                num: '2',
-                title: '王小虎',
-                fontNum: '1518'
-            }, {
-                num: '3',
-                title: '王小虎',
-                fontNum: '18'
-            }]
+            content: '', // 内容区域
+            listData: null, // 当前操作的数据
+            newContent: '', // 形成新的内容
+            tableData: []
         }
     },
+
+    watch: {   // 使用监听的方式，监听数据的变化
+        splitData (val) {
+            this.listData = val
+            this.content = (val && val.tableData[0] && val.tableData[0].content) || ''
+        }
+    },
+
+    mounted () {
+        console.log('splitbox', this.splitData)
+    },
+
     methods: {
         messageBoxClose () {
             // 点击关闭回调函数
         },
         splitConfirm () { // 确认按钮
+            if (this.tableData.length === 0) {
+                this.$message({
+                    message: '先点击左侧生成的稿件',
+                    type: 'warning'
+                })
+                return false
+            } else {
+                this.$emit('sendSplitData', this.tableData)
+            }
+        },
+        splitCancleConfirm () {
+            this.$emit('splitCancleConfirm')
+        },
+        getSelectText () {
+            let userSelection = ''
+            if (window.getSelection) {
+                userSelection = window.getSelection()
+            } else if (document.selection) {
+                userSelection = document.selection.createRange()
+            }
+            if (userSelection.toString().length > 0) {
+                this.newContent = userSelection.toString()
 
+                let _index = 10
+                if (this.newContent.indexOf('。') !== -1) {
+                    _index = this.newContent.indexOf('。')
+                } else if (this.newContent.indexOf(',') !== -1) {
+                    _index = this.newContent.indexOf(',')
+                } else if (this.newContent.indexOf('，') !== -1) {
+                    _index = this.newContent.indexOf('，')
+                }
+
+                this.tableData.push({
+                    seqNum: this.tableData.length + 1,
+                    leadinLine: this.newContent.substring(0, _index),
+                    wordNum: this.newContent.length,
+                    content: this.newContent
+                })
+                let regExp = new RegExp(this.newContent.replace(/\s*/g, ''), 'g')
+                this.content = this.content.replace(/\s*/g, '').toString().replace(regExp, '')
+            }
         }
     }
 }
@@ -88,7 +141,8 @@ export default {
 <style lang="scss" scoped>
 .split-box {
     width: 100%;
-    height: 248px;
+    height: 328px;
+    overflow-y: auto;
     padding: 10px;
     @include border(all);
     border-radius: $border-radius;
@@ -98,8 +152,9 @@ export default {
 }
 .new-content {
     width: 100%;
-    height: 100px;
+    height: 150px;
     padding: 10px;
+    overflow-y: auto;
     @include border(all);
     border-radius: $border-radius;
 }

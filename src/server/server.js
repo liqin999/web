@@ -16,7 +16,28 @@ export const loginuser = param => {
     return req.post('/user/loginuser', param)
 }
 
+// 版面和栏目获得列表数据
+export const getColumnsList = param => {
+    return req.post('doc/getList', param)
+}
+
+// 版面和栏目合并
+export const columnsListMerge = param => {
+    return req.post('doc/merge', param)
+}
+
+// 版面和栏目拆分
+export const columnsListSplit = param => {
+    return req.post('doc/split', param)
+}
+
+// 版面和栏目合并的操作  /api/v1/doc/merge  /api/v1/doc/split
+
 export default {
     loginuser,
-    groupMap
+    groupMap,
+    getColumnsList,
+    columnsListMerge,
+    columnsListSplit
+
 }
