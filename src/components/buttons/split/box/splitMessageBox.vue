@@ -2,24 +2,20 @@
     <el-dialog custom-class="split-dialog"
                title="拆分"
                @close="messageBoxClose()"
-               <<<<<<<
-               HEAD
-               :visible.sync="contentShow"
-               width="70%"=======:visible.sync="splitData.contentShow"
-               width="50%">>>>>>> origin/develop
-        top="15vh"
-        :append-to-body="true">
+               :visible.sync="splitData.contentShow"
+               width="50%"
+               top="15vh"
+               :append-to-body="true">
         <!-- 内容区 -->
         <div class="message-box">
             <el-row :gutter="20">
                 <el-col :span="10">
                     <div class="split-content bg-purple">
-                        <b class="message-title">原稿件内容</b><span class="ft-red">（鼠标右键选中，形成新稿件）</span>
+                        <b class="message-title">原稿件内容</b><span class="ft-red">（可拖动内容到右上列表）</span>
                         <div class="split-box">
-                            <span>{{content || ''}}</span>
+                            <span>2016年1月5日，习近平总书记在重庆召开推动长江经济带发展座谈会并发表重要讲话，他强调，推动长江经济带发展必须从中华民族长远利益考虑，走生态优先、绿色发展之路，使绿水青山产生巨大生态效益、经济效益、社会效益，使母亲河永葆生机活力。</span>
                         </div>
-                        <el-button class="primary-btn mt10"
-                                   @click="getSelectText">形成新稿件</el-button>
+                        <el-button class="primary-btn mt10">形成新稿件</el-button>
                     </div>
                 </el-col>
                 <el-col :span="14">
@@ -27,26 +23,22 @@
                         <b class="message-title">新稿件列表</b>
                         <template>
                             <el-table :data="tableData"
-                                      height="145"
-                                      tooltip-effect="dark"
                                       style="width: 100%;">
-                                <el-table-column prop="seqNum"
+                                <el-table-column prop="num"
                                                  label="序号"
                                                  width="80">
-
                                 </el-table-column>
-                                <el-table-column prop="leadinLine"
-                                                 show-overflow-tooltip
+                                <el-table-column prop="title"
                                                  label="标题">
                                 </el-table-column>
                                 <el-table-column width="80"
-                                                 prop="wordNum"
+                                                 prop="fontNum"
                                                  label="字数">
                                 </el-table-column>
                             </el-table>
                         </template>
                         <b class="message-title">新稿件内容</b>
-                        <div class="new-content">{{newContent}}</div>
+                        <div class="new-content"></div>
                     </div>
                 </el-col>
             </el-row>
@@ -71,67 +63,30 @@ export default {
     },
     data () {
         return {
-            contentShow: false,
             textarea: '',
-            title: '一个西红柿的“世界地图”',
-            fontNum: '18'
-        }]
-    }
-},
-
-watch: {   // 使用监听的方式，监听数据的变化
-    splitData(val) {
-        this.content = (val && val.tableData[0] && val.tableData[0].content) || ''
-    }
-},
-
-mounted() {
-    console.log('splitbox', this.splitData)
-},
-
-methods: {
-    messageBoxClose() {
-        // 点击关闭回调函数
-    },
-    splitConfirm() { // 确认按钮
-        if (this.tableData.length === 0) {
-            this.$message({
-                message: '先点击左侧生成的稿件',
-                type: 'warning'
-            })
-            return false
-        } else {
-            this.$emit('sendSplitData', this.tableData)
+            tableData: [{
+                num: '1',
+                title: '习近平把脉长江',
+                fontNum: '1518'
+            }, {
+                num: '2',
+                title: '一个西红柿的“世界地图”',
+                fontNum: '18'
+            }]
         }
     },
-    splitCancleConfirm() {
-        this.$emit('splitCancleConfirm')
-    },
-    getSelectText() {
-        let userSelection = ''
-        if (window.getSelection) {
-            userSelection = window.getSelection()
-        } else if (document.selection) {
-            userSelection = document.selection.createRange()
-        }
-        if (userSelection.toString().length > 0) {
-            this.newContent = userSelection.toString()
-
-            let _index = 10
-            if (this.newContent.indexOf('。') !== -1) {
-                _index = this.newContent.indexOf('。')
-            } else if (this.newContent.indexOf(',') !== -1) {
-                _index = this.newContent.indexOf(',')
-            } else if (this.newContent.indexOf('，') !== -1) {
-                _index = this.newContent.indexOf('，')
-            }
+    methods: {
+        messageBoxClose () {
+            // 点击关闭回调函数
+        },
+        splitConfirm () { // 确认按钮
 
         },
-        concatConfirm() {
+        concatConfirm () {
 
         },
         // 取消按钮
-        concatData() {
+        concatData () {
 
         }
     }
@@ -140,8 +95,7 @@ methods: {
 <style lang="scss" scoped>
 .split-box {
     width: 100%;
-    height: 328px;
-    overflow-y: auto;
+    height: 248px;
     padding: 10px;
     @include border(all);
     border-radius: $border-radius;
@@ -151,9 +105,8 @@ methods: {
 }
 .new-content {
     width: 100%;
-    height: 150px;
+    height: 100px;
     padding: 10px;
-    overflow-y: auto;
     @include border(all);
     border-radius: $border-radius;
 }

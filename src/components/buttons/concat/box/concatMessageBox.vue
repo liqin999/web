@@ -2,7 +2,7 @@
     <el-dialog custom-class="concat-dialog"
                title="合并稿件"
                @close="messageBoxClose()"
-               :visible.sync="contentShow"
+               :visible.sync="concatData.contentShow"
                width="50%"
                top="15vh"
                :append-to-body="true">
@@ -22,7 +22,6 @@
                 <template>
                     <el-table :data="concatData.tableData"
                               ref="multipleTable"
-                              tooltip-effect="dark"
                               @selection-change="handleSelectionChange"
                               style="width: 100%">
                         <el-table-column type="selection"
@@ -31,9 +30,8 @@
                         <el-table-column prop="num"
                                          label="稿号">
                         </el-table-column>
-                        <el-table-column prop="content"
-                                         show-overflow-tooltip
-                                         label="内容">
+                        <el-table-column prop="title"
+                                         label="标题">
                         </el-table-column>
                         <el-table-column width="100"
                                          prop="fontNum"
@@ -56,7 +54,7 @@
             <el-button class="primary-btn"
                        @click="concatConfirm()">确认</el-button>
             <el-button class="reset-btn"
-                       @click="contentShow = false">取消</el-button>
+                       @click="concatData.contentShow = false">取消</el-button>
         </div>
         <!-- 内容区 结束 -->
     </el-dialog>
@@ -71,8 +69,7 @@ export default {
     },
     data () {
         return {
-            multipleSelection: [],
-            contentShow: false
+            multipleSelection: []
 
         }
     },
@@ -81,7 +78,7 @@ export default {
             // 点击关闭回调函数
         },
         concatConfirm () { // 确认按钮
-            this.$emit('sendConcatData', this.concatData.tableData)
+            this.$emit('sendConcatData', this.multipleSelection)
         },
         handleUpClick (index) { // 上移
             let temp = this.concatData.tableData[index - 1]
@@ -99,11 +96,7 @@ export default {
             this.multipleSelection = val
         },
         removeSelection () { // 移除选中的项
-            this.multipleSelection.forEach((item, index) => {
-                if (this.concatData.tableData.indexOf(item) > -1) {
-                    this.concatData.tableData.splice(this.concatData.tableData.indexOf(item), 1)
-                }
-            })
+            this.$refs.multipleTable.clearSelection()
         },
         handleMoreUpClick () { // 批量的上移
             this.multipleSelection.forEach((item, index) => {
@@ -119,9 +112,6 @@ export default {
                 this.concatData.tableData.push(item)
             })
         }
-    },
-    computed: {
-
     }
 }
 </script>

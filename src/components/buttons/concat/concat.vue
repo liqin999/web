@@ -4,8 +4,8 @@
             <slot name="iconName"></slot>
         </span>
         <!-- 合并按钮 -->
-        <concat-message-box ref="concatBox"
-                            :concatData="concatData"
+        <concat-message-box ref="splitBox"
+                            :concatData="data"
                             @sendConcatData="sendConcatData"
                             @sendConcatDataUp="sendConcatDataUp"
                             @sendConcatDataDown="sendConcatDataDown"></concat-message-box>
@@ -20,8 +20,9 @@ export default {
         concatMessageBox
     },
     props: {
-        concatData: {
-            type: Object
+        data: {
+            type: Object,
+            required: true
         }
     },
     data () {
@@ -31,18 +32,16 @@ export default {
     },
     methods: {
         sendConcatIcon () {
-            this.$refs.concatBox.contentShow = true
-            console.log(this.concatData)
+            this.data.contentShow = true
         },
-        sendConcatData (concatData) {
-            this.$refs.concatBox.contentShow = false
-            this.$emit('sendConcatData', concatData)
+        sendConcatData (data) {
+            this.$emit('sendConcatData', data)
         },
-        sendConcatDataUp (concatData) {
-            this.$emit('sendConcatDataUp', concatData)
+        sendConcatDataUp (data) {
+            this.$emit('sendConcatDataUp', data)
         },
-        sendConcatDataDown (concatData) {
-            this.$emit('sendConcatDataDown', concatData)
+        sendConcatDataDown (data) {
+            this.$emit('sendConcatDataDown', data)
         }
     }
 }
