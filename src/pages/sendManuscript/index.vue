@@ -300,7 +300,7 @@ export default {
             draftGenreData: ['消息', '通讯', '专访'],
             draftGenreValue: '消息',
             checked: false, // 备选项
-            textarea: null,
+            textarea: '军事',
             // 栏目选择
             radioName: '栏目库',
             selectRadioName: '',

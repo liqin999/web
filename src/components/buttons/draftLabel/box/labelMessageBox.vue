@@ -63,7 +63,7 @@
                                 <el-col :span="20">
                                     <!-- <el-input v-model="input"
                                               placeholder=""></el-input> -->
-                                    <span>图片</span>
+                                    <span>社会</span>
                                 </el-col>
                             </el-row>
                         </el-col>
