@@ -5,7 +5,7 @@
  *  common可以写公共请求的接口
  *  当前文件的同级文件夹的命名和pages文件夹的名字一致
  */
-import req from "../util/serviceUtil"
+import req from '../util/serviceUtil'
 import * as common from './common/index.js'
 import * as columnsLayout from './columnsLayout/index.js'
 import * as dataService from './dataService/index.js'
@@ -43,18 +43,6 @@ export const columnsListSplit = param => {
 // 版面和栏目合并的操作  /api/v1/doc/merge  /api/v1/doc/split
 
 export default {
-    <<
-    <<
-    << < HEAD
-    loginuser,
-    groupMap,
-    getColumnsList,
-    columnsListMerge,
-    columnsListSplit
-
-    ===
-    ===
-    =
     ...common,
     ...columnsLayout,
     ...dataService,
@@ -72,7 +60,5 @@ export default {
     ...sendManuscript,
     ...signedManuscript,
     ...specialManuscript,
-    ...writeManuscript >>>
-    >>>
-    > origin / develop
+    ...writeManuscript
 }

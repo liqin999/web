@@ -12,9 +12,11 @@
                     class="message-lists clearfix">
                 <el-col :span="3"
                         class="tab-padding">
-                            <b class="message-title" v-if='sendData'>待传稿件</b>
-                            <b class="message-title" v-else-if='!sendData'>待撤稿件</b>
-                        </el-col>
+                    <b class="message-title"
+                       v-if='sendData'>待传稿件</b>
+                    <b class="message-title"
+                       v-else-if='!sendData'>待撤稿件</b>
+                </el-col>
                 <el-col :span="21"
                         class="tab-padding">
                     <template v-for="(item,index) in draftData.draftList">
@@ -116,7 +118,7 @@
                                 </div>
                             </template>
                         </el-col>
-                         <el-col :span="7">
+                        <el-col :span="7">
                             <el-button plain
                                        class="primary-btn"
                                        @click="searchTime">查询</el-button>
@@ -128,8 +130,10 @@
                             class="">
                         <el-col :span="24"
                                 class="tab-padding">
-                            <b class="message-title" v-if='sendData'>传稿意见</b>
-                            <b class="message-title" v-else-if='!sendData'>撤稿意见</b>
+                            <b class="message-title"
+                               v-if='sendData'>传稿意见</b>
+                            <b class="message-title"
+                               v-else-if='!sendData'>撤稿意见</b>
                             <span class="redColor">（不超过255个字）</span>
                         </el-col>
                         <el-col :span="24">
@@ -351,14 +355,13 @@ export default {
             border-radius: $border-radius;
         }
     }
-    .redColor{
+    .redColor {
         color: red;
     }
 }
 </style>
 <style>
-.message-box .message-title{
-    line-height: 25px
+.message-box .message-title {
+    line-height: 25px;
 }
-
 </style>

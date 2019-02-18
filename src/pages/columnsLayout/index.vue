@@ -48,7 +48,7 @@
                             <span @click="splitConcatIcon()"></span>
                             <span slot="iconName">拆分</span>
                         </split>
-                        <concat :concatData="concatData"
+                        <concat :data="concatData"
                                 @sendConcatData="getConcatData"
                                 @sendConcatDataUp="getConcatDataUp"
                                 @sendConcatDataDown="getConcatDataDown">
@@ -72,7 +72,7 @@
                         <el-table-column prop="title"
                                          width="180px"
                                          show-overflow-tooltip
-                                         label="内容">
+                                         label="标题">
                         </el-table-column>
                         <el-table-column prop="repDrawing"
                                          header-align="center"
@@ -98,17 +98,6 @@
                         <el-table-column prop="address"
                                          label="位置"
                                          show-overflow-tooltip>
-                        </el-table-column> -->
-
-                        <el-table-column label="摘要">
-                            <template slot-scope="scope">{{ scope.row.docContentsVo.abstractt }}</template>
-                        </el-table-column>
-                        <el-table-column label="内容"
-                                         show-overflow-tooltip>
-                            <template slot-scope="scope">{{ scope.row.docContentsVo.content }}</template>
-                        </el-table-column>
-                        <el-table-column label="引题">
-                            <template slot-scope="scope">{{ scope.row.docContentsVo.leadinLine }}</template>
                         </el-table-column>
                         <el-table-column prop="state"
                                          label="状态">
@@ -399,7 +388,6 @@ export default {
             }],
             multipleSelection: [],
             mainTableHeight: null
-
         }
     },
     mounted () {
@@ -441,54 +429,15 @@ export default {
         },
         handleSelectionChange (val) {
             this.multipleSelection = val
-            console.log(this.multipleSelection)
         },
         handleSizeChange (val) {
 
         },
         handleCurrentChange (val) {
-            this.tempSearchForm.page = val
-            this.findList()
-        },
-        getConcatData (checkData) { // 获得合并的元素的参数信息
-            let param = {}
-            let arr = []
-            checkData.forEach(item => {
-                arr.push({
-                    docId: item.docId
-                })
-            })
-            param.count = checkData.length
-            param.data = (arr)
-            // columnsListMerge(param).then(res => {
-            //     this.findList()
-            // })
-        },
-        getSplitData (checkData) {
-            console.log('checkData', checkData)
-            let param = {}
-            let arr = []
-            param.count = checkData.length
-            checkData.forEach((item, index) => {
-                arr.push({
-                    DocContentsVo: {
-                        'abstractt': `摘要${index}`,
-                        'leadinLine': item.leadinLine,
-                        'seqNum': item.seqNum,
-                        'wordNum': item.wordNum,
-                        'content': item.content
-                    }
-                })
-            })
-            param.data = (arr)
 
-            // columnsListSplit(param).then(res => {
-            //     this.findList()
-            // })
         },
-
-        splitCancleConfirm () {
-            this.findList()
+        getConcatData (data) { // 获得合并的元素的参数信息
+            console.log('获得子组件的合并的元素数据', data)
         },
         getConcatDataUp (data) { // 获得合并弹框的上移操作
             console.log('获得合并子组件弹框的上移操作元素数据', data)
@@ -498,16 +447,6 @@ export default {
         }
     },
     computed: {
-        // concatData () {
-        //     return {
-        //         tableData: this.multipleSelection
-        //     }
-        // },
-        splitData () {
-            return {
-                tableData: this.multipleSelection
-            }
-        }
     }
 }
 </script>
