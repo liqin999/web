@@ -3,48 +3,48 @@
         <el-header height="85px">
             <div class="search-wrap">
                 <el-form :inline="true"
-                    :model="searchForm"
-                    class="search-form">
+                         :model="searchForm"
+                         class="search-form">
                     <el-row :gutter="20">
                         <el-col :span="24">
                             <el-row :gutter="20">
                                 <el-col :span="7">
                                     <el-form-item label="日期:"
-                                        class="search-time">
+                                                  class="search-time">
                                         <el-date-picker v-model="searchForm.dateValue"
-                                                type="daterange"
-                                                align="right"
-                                                unlink-panels
-                                                range-separator="至"
-                                                start-placeholder="开始日期"
-                                                end-placeholder="结束日期"
-                                                :picker-options="pickerOptions2">
+                                                        type="daterange"
+                                                        align="right"
+                                                        unlink-panels
+                                                        range-separator="至"
+                                                        start-placeholder="开始日期"
+                                                        end-placeholder="结束日期"
+                                                        :picker-options="pickerOptions2">
                                         </el-date-picker>
                                     </el-form-item>
                                 </el-col>
                                 <!-- <el-col :span="2"> -->
-                                    <el-form-item>
-                                        <el-checkbox v-model="searchForm.checked">仅统计成品稿</el-checkbox>
-                                    </el-form-item>
+                                <el-form-item>
+                                    <el-checkbox v-model="searchForm.checked">仅统计成品稿</el-checkbox>
+                                </el-form-item>
                                 <!-- </el-col> -->
                             </el-row>
                             <el-row :gutter="20">
                                 <el-col :span="24">
                                     <el-form-item label="类型:"
-                                                class="search-check">
+                                                  class="search-check">
                                         <el-checkbox :indeterminate="searchForm.isIndeterminate"
-                                                    v-model="searchForm.checkAll"
-                                                    @change="handleCheckAllChange">全选</el-checkbox>
+                                                     v-model="searchForm.checkAll"
+                                                     @change="handleCheckAllChange">全选</el-checkbox>
                                         <el-checkbox-group v-model="searchForm.checkedTypes"
-                                                        @change="handleCheckedTypesChange">
+                                                           @change="handleCheckedTypesChange">
                                             <el-checkbox v-for="type in allTypes"
-                                                        :label="type"
-                                                        :key="type">{{type}}</el-checkbox>
+                                                         :label="type"
+                                                         :key="type">{{type}}</el-checkbox>
                                         </el-checkbox-group>
                                     </el-form-item>
                                     <el-form-item class="search-btn">
                                         <el-button class="primary-btn"
-                                                @click="statistics">统计</el-button>
+                                                   @click="statistics">统计</el-button>
                                     </el-form-item>
                                 </el-col>
                             </el-row>
@@ -53,7 +53,7 @@
                 </el-form>
             </div>
         </el-header>
-        <el-container >
+        <el-container>
             <el-aside width="250px">
                 <left-menu :treeData="data2"
                            :defaultProps="defaultProps"
@@ -74,31 +74,29 @@
                               :data="tableData3"
                               border
                               :span-method="objectSpanMethod"
-                              :summary-method="getSummaries"
-                              show-summary
                               :height="mainTableHeight"
                               tooltip-effect="dark"
                               @selection-change="handleSelectionChange">
                         <el-table-column prop="person"
-                                        label="人员">
+                                         label="人员">
                         </el-table-column>
                         <el-table-column prop="type"
-                                        label="类型">
+                                         label="类型">
                         </el-table-column>
                         <el-table-column prop="write"
-                                        label="采写">
+                                         label="采写">
                         </el-table-column>
                         <el-table-column prop="translate"
-                                        label="翻译">
+                                         label="翻译">
                         </el-table-column>
                         <el-table-column prop="edit"
-                                        label="编审">
+                                         label="编审">
                         </el-table-column>
                         <el-table-column prop="issue"
-                                        label="签发">
+                                         label="签发">
                         </el-table-column>
                         <el-table-column prop="total"
-                                        label="合计">
+                                         label="合计">
                         </el-table-column>
                     </el-table>
                 </el-main>
@@ -109,7 +107,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="3">
+                                   :total="14">
                     </el-pagination>
                     <div class="btn-bottom">
                         <down-load>
@@ -134,6 +132,8 @@
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad.vue'
+
+import { getTotalAverage } from '@/util/common'
 
 export default {
     components: {
@@ -408,6 +408,7 @@ export default {
             })()
         }
         // 测试请求的接口的调用
+        this.tableData3 = getTotalAverage(this.tableData3, 'person')
         this.$api.text1().then(res => {
 
         })
@@ -415,16 +416,18 @@ export default {
     methods: {
         // 合并表格
         objectSpanMethod ({ row, column, rowIndex, columnIndex }) {
-            if (columnIndex === 0) {
-                if (rowIndex % 7 === 0) {
-                    return {
-                        rowspan: 7,
-                        colspan: 1
-                    }
-                } else {
-                    return {
-                        rowspan: 0,
-                        colspan: 0
+            if (rowIndex < this.tableData3.length - 2) {
+                if (columnIndex === 0) {
+                    if (rowIndex % 7 === 0) {
+                        return {
+                            rowspan: 7,
+                            colspan: 1
+                        }
+                    } else {
+                        return {
+                            rowspan: 0,
+                            colspan: 0
+                        }
                     }
                 }
             }

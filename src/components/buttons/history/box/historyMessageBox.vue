@@ -36,31 +36,18 @@
                         <b class="message-title">工作稿库历史</b>
                         <template>
                             <el-select v-model="topValue"
-                                    placeholder="请选择">
+                                       placeholder="请选择">
                                 <el-option v-for="item in topTitle"
-                                        :key="item.label"
-                                        :label="item.label"
-                                        :value="item.value"
-                                        @change="topChange">
+                                           :key="item.label"
+                                           :label="item.label"
+                                           :value="item.value"
+                                           @change="topChange">
                                 </el-option>
                             </el-select>
                         </template>
                     </el-col>
                 </el-row>
-                <el-row :gutter="20"
-                        class="pb10">
-                    <el-col :span="6">
-                        <span>2019-1-1 13:50:56</span>
-                    </el-col>
-                    <el-col :span="18">
-                        <el-col :span="24">
-                            <span>由【编辑策划中心-强晓玲】 编辑 </span>
-                        </el-col>
-                        <el-col :span="24">
-                            <span>*处理意见：2019-1-1 13:50:56 开始编辑</span>
-                        </el-col>
-                    </el-col>
-                </el-row>
+
                 <el-row :gutter="20"
                         class="pb10">
                     <el-col :span="6">

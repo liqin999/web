@@ -25,9 +25,9 @@
             <el-header height="40px">
                 <div class="main-header-group">
                     <!-- 引入按钮的组的插件 -->
-                    <send-draft>
+                    <create-draft>
                         <span slot="iconName">建稿</span>
-                    </send-draft>
+                    </create-draft>
 
                     <div data-v-6eb3df45=""
                          class="primary-btn"><span>
@@ -137,13 +137,13 @@
 </template>
 <script>
 // 建稿按钮组件
-import sendDraft from '@/pages/dataService/sendDraft/sendDraft'
+import createDraft from '@/components/buttons/createDraft/createDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
 
 export default {
     components: {
         leftMenu,
-        sendDraft
+        createDraft
 
     },
     data () {
