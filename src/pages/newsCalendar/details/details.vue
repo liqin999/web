@@ -27,7 +27,7 @@
 
                         <!-- <el-button class="primary-btn">建稿</el-button> -->
                         <create-draft>
-                            <span slot="iconName" >建稿</span>
+                            <span slot="iconName">建稿</span>
                         </create-draft>
                         <el-button class="reset-btn"
                                    @click="closeFn">关闭</el-button>
@@ -56,7 +56,7 @@
                         均归新华社所有。</span>
                 </el-col>
                 <div class="clearfix"></div>
-                <el-row :gutter="20"
+                <!-- <el-row :gutter="20"
                         class="message-lists clearfix">
                     <el-col :span="3"
                             class="span-title"><span>相似稿件</span></el-col>
@@ -74,7 +74,7 @@
                 <el-row class="clearfix mt15 mb15">
                     <el-button class="primary-btn">打印全部(稿签和正文)</el-button>
                     <el-button class="primary-btn">打印正文</el-button>
-                </el-row>
+                </el-row> -->
             </el-row>
         </el-main>
     </el-container>

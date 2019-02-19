@@ -159,7 +159,7 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <draft-label>
+                        <draft-label :drafftLabelData="multipleSelection">
                             <i slot="icon"
                                class="iconfont icon-wenben1"></i>
                             <span slot="iconName">稿签</span>

@@ -36,7 +36,7 @@
                             </template>
                         </el-col>
                         <!-- 刊发位次 -->
-                        <el-col :span="4"
+                        <el-col :span="5"
                                 class="text-right">
                             <template>
                                 <span>刊发位次</span>
@@ -257,7 +257,7 @@
                                               @change="textareaChange2">
                                     </el-input>
 
-                                    <el-col :span="14">
+                                    <el-col :span="16">
                                         <b style="color: red">2018-11-08 四版 预安排稿件/线索 0</b>
                                     </el-col>
                                     <el-col :span="24">

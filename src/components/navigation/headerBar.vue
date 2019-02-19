@@ -169,12 +169,12 @@ export default {
                             name: '部门已签稿统计',
                             id: '10-5',
                             path: '/departStatistics'
+                        },
+                        {
+                            name: '新闻日历',
+                            id: '10-6',
+                            path: '/newsCalendar'
                         }
-                        // {
-                        //     name: '新闻日历',
-                        //     id: '10-3',
-                        //     path: '/newsCalendar'
-                        // }
                     ]
                 }
                 // {

@@ -21,7 +21,7 @@
                                     </el-select>
                                 </template>
                             </el-col>
-                            <el-col :span="3">
+                            <!-- <el-col :span="3">
                                 <el-checkbox v-model="checked">组稿</el-checkbox>
                             </el-col>
                             <el-col :span="8"
@@ -36,7 +36,7 @@
                                     </el-select>
                                 </template>
                                 <span class="pl10">为主稿件</span>
-                            </el-col>
+                            </el-col> -->
                         </el-row>
                         <el-row :gutter="20"
                                 class="pt10">
@@ -300,19 +300,14 @@ export default {
             ],
             kanfaValue: '原图',
             // 主稿件
-            mainDraftData: [
-                '001',
-                '002',
-                '003',
-                '004'
-            ],
-            mainDraftValue: '',
+            mainDraftData: [1, 2],
+            mainDraftValue: 2,
             // 稿件来源
             draftSourceData: ['自写稿', '邮件稿件', 'eNews稿件', '数据服务平台'],
             draftSourceValue: '自写稿',
             // 稿件体裁
-            draftGenreData: ['新闻报道', '新闻分析', '年终专稿'],
-            draftGenreValue: '新闻报道',
+            draftGenreData: ['消息', '通讯', '专访'],
+            draftGenreValue: '消息',
             checked: false, // 备选项
             textarea: '军事',
             // 栏目选择
