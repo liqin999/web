@@ -399,9 +399,9 @@ export default {
             })()
         }
         // 测试请求的接口的调用
-        this.$api.text1().then(res => {
+        // this.$api.text1().then(res => {
 
-        })
+        // })
     },
     methods: {
         splitConcatIcon () {
