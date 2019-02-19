@@ -89,7 +89,7 @@
                 </el-row>
                 <el-row :gutter="20"
                         class="mb15 pl10 pr10">
-                    <template v-if="kanfaValue === '文本'">
+                    <template v-if="kanfaValue === '文字'">
                         <el-col :span="3">
                             <b class="font18">内容</b>
                         </el-col>
@@ -290,7 +290,7 @@ export default {
             // 类型
             kanfaData: [
                 '文字',
-                '原图',
+                '图片',
                 '网上图片',
                 '图表',
                 '视频',

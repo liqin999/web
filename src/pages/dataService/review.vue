@@ -27,7 +27,7 @@
 
                         <!-- <el-button class="primary-btn">建稿</el-button> -->
                         <create-draft>
-                            <span slot="iconName">建稿</span>
+                            <span slot="iconName" >建稿</span>
                         </create-draft>
                         <el-button class="reset-btn"
                                    @click="closeFn">关闭</el-button>
