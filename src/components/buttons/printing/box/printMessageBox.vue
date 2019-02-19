@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <el-dialog class="print-message"
                    title="打印设置"
                    @close="messageBoxClose()"
