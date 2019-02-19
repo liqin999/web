@@ -1,7 +1,7 @@
 <template>
     <el-container>
         <el-header style="height:40px;position:relative">
-            <img :src="imgUrl"
+            <!-- <img :src="imgUrl"
                  alt=""
                  style="width:100%;height:100%">
             <div @click="switchDataService"
@@ -13,7 +13,8 @@
                         cursor: pointer;
                         top: 0px;">
 
-            </div>
+            </div> -->
+            <top-header></top-header>
         </el-header>
         <el-container>
             <template v-if="showNavBar">
@@ -50,6 +51,7 @@
     </el-container>
 </template>
 <script>
+import topHeader from '@/components/navigation/topHeaderBar'
 // import leftMenu from "@/components/leftmenu/leftMenu.vue";
 import headerBar from '@/components/navigation/headerBar.vue'
 // import navigationBar from "@/components/navigation/navigationBar.vue";
@@ -74,7 +76,8 @@ export default {
     components: {
         // leftMenu,
         // navigationBar,
-        headerBar
+        headerBar,
+        topHeader
 
     },
     mounted () {
