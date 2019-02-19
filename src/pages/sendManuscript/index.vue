@@ -314,7 +314,7 @@ export default {
             draftGenreData: ['新闻报道', '新闻分析', '年终专稿'],
             draftGenreValue: '新闻报道',
             checked: false, // 备选项
-            textarea: null,
+            textarea: '军事',
             // 栏目选择
             radioName: '栏目库',
             selectRadioName: '',
