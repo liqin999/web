@@ -200,7 +200,8 @@ import submit from '@/components/buttons/submit/submit.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
-import draftLook from '@/components/buttons/draftLook/draftLook'
+// import draftLook from '@/components/buttons/draftLook/draftLook'
+import draftLook from '@/components/buttons/draftLook/audioMessageBox'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 // 淘汰按钮
