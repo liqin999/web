@@ -155,39 +155,35 @@ export const routes = [{
 {
     path: '/manuscriptFlow',
     component: manuscriptFlow,
-    children: [{
-        path: '',
-        redirect: '/manuscriptFlow/person',
-        component: person
-    },
-    {
-        path: '/manuscriptFlow/person',
-        component: person
-    },
-    {
-        path: '/manuscriptFlow/media',
-        component: media
-    },
-    {
-        path: '/manuscriptFlow/group',
-        component: group
-    },
-    {
-        path: '/manuscriptFlow/other',
-        component: other
-    },
-    {
-        path: '/manuscriptFlow/page',
-        component: page
-    },
-    {
-        path: '/manuscriptFlow/column',
-        component: column
-    },
-    {
-        path: '/manuscriptFlow/special',
-        component: special
-    }
+    children: [
+        {
+            path: '/manuscriptFlow/person',
+            component: person
+        },
+        {
+            path: '/manuscriptFlow/media',
+            component: media
+        },
+        {
+            path: '/manuscriptFlow/group',
+            component: group
+        },
+        {
+            path: '/manuscriptFlow/other',
+            component: other
+        },
+        {
+            path: '/manuscriptFlow/page',
+            component: page
+        },
+        {
+            path: '/manuscriptFlow/column',
+            component: column
+        },
+        {
+            path: '/manuscriptFlow/special',
+            component: special
+        }
     ]
 },
 {
@@ -305,7 +301,7 @@ export const routes = [{
 
     ]
 },
-  // buttons路由定义
+// buttons路由定义
 {
     path: '/sendDraft',
     component: sendDraft
@@ -346,7 +342,7 @@ export const routes = [{
     path: '/draftLabel',
     component: draftLabel
 },
-  // buttons弹窗路由
+// buttons弹窗路由
 {
     path: '/draftMessageBox',
     component: draftMessageBox

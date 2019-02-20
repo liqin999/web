@@ -234,15 +234,15 @@ export default {
             return this.params.fontNum
         },
         setContentStyle () {
+            let fontSize = Number(this.params.fontSize) || 20
             return {
-                'fontSize': this.params.fontSize + 'px',
+                'fontSize': fontSize + 'px',
                 'column-count': this.params.columnNum,
                 'line-height': this.params.lineSpace * this.params.fontSize + 'px',
                 'padding-left': this.params.leftSpace * 2.5 + 'px',
                 'padding-right': this.params.leftSpace * 2.5 + 'px',
                 'padding-top': this.params.topSpace * 2.5 + 'px',
                 'padding-bottom': this.params.bottomSpace * 2.5 + 'px'
-
             }
         }
     }

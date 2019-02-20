@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2019-02-19 16:21:14
+ * @LastEditTime: 2019-02-20 16:53:20
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $nav-height: 40px !default; //导航条行高（默认）
@@ -668,7 +668,6 @@ $color: $border-color) {
   color: $wcolor !important;
 }
 
-.header-nav .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
-  @extend %gradient-bgcolor;
-  border: none !important;
-}
+// .header-nav .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+//   @extend %gradient-bgcolor;
+// }

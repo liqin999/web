@@ -192,27 +192,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-.system-aside {
-    padding: 10px 0;
-    .el-menu {
-        background: none !important;
-        border: none !important;
-        .el-menu-item,
-        .el-submenu__title {
-            height: 30px;
-            line-height: 30px;
-        }
-    }
-}
-.el-menu-item.is-active {
-    color: nth($primary-color, 1);
-    background-color: #fff;
-    border-left: 4px solid nth($primary-color, 1);
-}
-.el-menu-item:focus,
-.el-menu-item:hover {
-    color: nth($primary-color, 1);
-    background-color: #fff;
-}
-</style>
