@@ -21,6 +21,7 @@
 
  */
 const review = r => require.ensure([], () => r(require('@/pages/dataService/review.vue')), 'review')
+const details = r => require.ensure([], () => r(require('@/pages/newsCalendar/details/details.vue')), 'details')
 const dataService = r => require.ensure([], () => r(require('@/pages/dataService/dataService.vue')), 'dataService')
 const columnsLayout = r => require.ensure([], () => r(require('@/pages/columnsLayout/index.vue')), 'columnsLayout')
 const myManuscript = r => require.ensure([], () => r(require('@/pages/myManuscript/index.vue')), 'myManuscript')
@@ -102,6 +103,10 @@ export const routes = [{
 {
     path: '/review',
     component: review
+},
+{
+    path: '/details',
+    component: details
 },
 {
     path: '/columnsLayout',

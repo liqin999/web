@@ -19,7 +19,6 @@
                                      width="160">
                     </el-table-column>
                     <el-table-column prop="title"
-                                     width="160"
                                      show-overflow-tooltip
                                      label="标题">
                     </el-table-column>
