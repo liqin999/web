@@ -53,26 +53,18 @@
         </div>
         <div style="position:absolute;right:0px;">
          <el-menu class="menu2">
-            <!-- <el-menu-item index="10" style="padding-left:0px;padding-right: 0px"> -->
                 <el-button size="mini" round>+快讯</el-button>
-            <!-- </el-menu-item> -->
-            <!-- <el-menu-item index="11" style="padding-left: 0px "> -->
                 <el-button size="mini" round>+</el-button>
-            <!-- </el-menu-item> -->
-            <!-- <el-menu-item index="12" style="padding-left:0px;padding-right: 0px"> -->
                 <img src="../../assets/img/messageN2.png"/>
-            <!-- </el-menu-item> -->
             <el-menu-item index="13" style="padding-left:0px;padding-right: 0px">
                 <img src="../../assets/img/screenAllN2.png"/>
             </el-menu-item>
             <el-menu-item index="14" style="padding-left:0px;padding-right: 0px">
                 <img src="../../assets/img/broadcast2.png"/>
             </el-menu-item>
-            <!-- <el-menu-item index="15" style="padding-left:0px;padding-right: 0px"> -->
-                <!-- <img src="../../assets/img/pointer.png"/> -->
                 <el-dropdown trigger="click">
                     <span class="el-dropdown-link">
-                        <img src="../../assets/img/pointer.png"/>
+                        测试部门-测试组-测试<i class="el-icon-arrow-down el-icon--right"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown" class="dropDownWidth" style="width: 180px">
                         <el-dropdown-item>切换身份/角色</el-dropdown-item>
@@ -81,12 +73,11 @@
                         <el-dropdown-item><i class="el-icon-setting"></i> 修改密码</el-dropdown-item>
                         <el-dropdown-item ><i class="el-icon-question"></i> 版本(0.9.1)</el-dropdown-item>
                         <el-dropdown-item ><i class="el-icon-question"></i> 帮助</el-dropdown-item>
-                        <!-- <el-dropdown-item divided><el-button size="mini">退出</el-button></el-dropdown-item> -->
-                        <div style="text-align:center"><el-button  size="mini" style="padding: 7px 40px">退出</el-button></div>
-
+                        <div style="text-align:center">
+                            <el-button  size="mini" style="padding: 7px 40px">退出</el-button>
+                        </div>
                     </el-dropdown-menu>
                 </el-dropdown>
-            <!-- </el-menu-item> -->
             <el-menu-item index="16" style="padding-left:0px;padding-right: 0px">
                 <img src="../../assets/img/chatN2.png"/>
             </el-menu-item>
@@ -349,5 +340,9 @@ export default {
     text-align:center;
     margin: 0 auto;
     line-height:40px
+}
+.top-header-bar .el-dropdown {
+    color: #fff;
+    font-size: 14px;
 }
 </style>
