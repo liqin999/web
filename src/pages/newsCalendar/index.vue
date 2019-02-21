@@ -1,5 +1,4 @@
 <template>
-
     <el-container class="newsCalender">
         <!-- 左侧菜单 -->
         <el-aside width="250px">
@@ -29,7 +28,6 @@
                          @tab-click="switchTreeMemu1">
                     <el-tab-pane label="全部(12888)"
                                  name="all">
-
                     </el-tab-pane>
                     <el-tab-pane label="事件"
                                  name="event">
@@ -90,7 +88,6 @@
                                layout="total, prev, pager, next"
                                :total="3">
                 </el-pagination>
-
             </el-footer>
         </el-container>
     </el-container>
