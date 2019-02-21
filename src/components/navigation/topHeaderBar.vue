@@ -17,6 +17,7 @@
                                    :class="item.icon"></i>{{ item.name }}
                             </template>
                             <el-menu-item v-for="(subItem,i) in item.chiled"
+                                          @click="openUrl(subItem.path)"
                                           :index="item.id"
                                           :key="i">
                                 {{ subItem.name }}
@@ -25,6 +26,7 @@
                     </template>
                     <template v-else>
                         <el-menu-item :key="item.id"
+                                      @click="openUrl(item.path)"
                                       :index="item.id">
                             <template><span>
                                     <i class="menu_icon"
@@ -54,6 +56,7 @@
         <div style="position:absolute;right:0px;">
          <el-menu class="menu2">
                 <el-button size="mini" round>+快讯</el-button>
+                <el-button size="mini" round>+Flash</el-button>
                 <el-button size="mini" round>+</el-button>
                 <img src="../../assets/img/messageN2.png"/>
             <el-menu-item index="13" style="padding-left:0px;padding-right: 0px">
@@ -63,16 +66,31 @@
                 <img src="../../assets/img/broadcast2.png"/>
             </el-menu-item>
                 <el-dropdown trigger="click">
-                    <span class="el-dropdown-link">
-                        测试部门-测试组-测试<i class="el-icon-arrow-down el-icon--right"></i>
-                    </span>
+                    <el-tooltip content="验收测试终审发稿人2 测试部门-测试组-编辑" placement="bottom" effect="light">
+                        <span class="el-dropdown-link">
+                            验收测试终审发稿人2<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                    </el-tooltip>
                     <el-dropdown-menu slot="dropdown" class="dropDownWidth" style="width: 180px">
                         <el-dropdown-item>切换身份/角色</el-dropdown-item>
-                        <div class="userEdit"><span >测试部门-测试组-测试</span></div>
-                        <el-dropdown-item><i class="el-icon-setting"></i> 验校</el-dropdown-item>
+                        <div class="userEdit"><span >测试部门-测试组-编辑</span></div>
+                        <el-dropdown-item>
+                            <template>
+                                <span @click="openUrl('http://edit.xinhua-news.cn:8888/checker/deptex')">
+                                    <i class="el-icon-setting"></i> 验校
+                                </span>
+                            </template>
+                        </el-dropdown-item>
                         <el-dropdown-item><i class="el-icon-setting"></i> 修改密码</el-dropdown-item>
                         <el-dropdown-item ><i class="el-icon-question"></i> 版本(0.9.1)</el-dropdown-item>
-                        <el-dropdown-item ><i class="el-icon-question"></i> 帮助</el-dropdown-item>
+                        <el-dropdown-item >
+                            <template>
+                                <span @click="openUrl('http://cmp.xinhua-news.cn/ai-help/guide/tree?sys=1')">
+                                    <i class="el-icon-question"></i> 帮助
+                                </span>
+                            </template>
+
+                            </el-dropdown-item>
                         <div style="text-align:center">
                             <el-button  size="mini" style="padding: 7px 40px">退出</el-button>
                         </div>
@@ -97,47 +115,20 @@ export default {
                 {
                     name: '我的首页', // 导航的名字
                     icon: 'el-icon-index', // 导航对应的icon
-                    id: '1' // 唯一标示
-                    // path: '/columnsLayout'// 路由标示
+                    id: '1', // 唯一标示
+                    path: 'http://home.cmp.xinhua-news.cn/home#/'// 路由标示
                 },
                 {
                     name: '工作台',
                     icon: 'el-icon-index',
-                    id: '2'
-                    // path: ''
+                    id: '2',
+                    path: 'http://edit.xinhua-news.cn:8888/work/home/group/story/3/1550712191520'
                 },
                 {
-                    name: '大数据',
+                    name: '新媒体',
                     icon: 'el-icon-index',
-                    id: '3',
-                    // path: '',
-                    chiled: [// 展示二级路由
-                        {
-                            name: '新闻热点',
-                            id: '3-1'
-                            // path: ''
-                        },
-                        {
-                            name: '新闻线索',
-                            id: '3-2'
-                            // path: ''
-                        },
-                        {
-                            name: '影响力',
-                            id: '3-3'
-                            // path: ''
-                        },
-                        {
-                            name: '采用统计',
-                            id: '3-4'
-                            // path: ''
-                        },
-                        {
-                            name: '专题分析',
-                            id: '3-5'
-                            // path: ''
-                        }
-                    ]
+                    id: '3'
+                    // path: ''
                 },
                 {
                     name: '资源库',
@@ -147,117 +138,171 @@ export default {
                     chiled: [// 展示二级路由
                         {
                             name: '未定稿',
-                            id: '4-1'
-                            // path: ''
+                            id: '4-1',
+                            path: 'http://edit.xinhua-news.cn:8888/resource/halfStory'
                         },
                         {
                             name: '成品稿',
-                            id: '4-2'
-                            // path: ''
+                            id: '4-2',
+                            path: 'http://edit.xinhua-news.cn:8888/resource/finishedStory/channel/0'
                         },
                         {
                             name: '社外电讯',
-                            id: '4-3'
-                            // path: ''
+                            id: '4-3',
+                            path: 'http://edit.xinhua-news.cn:8888/resource/externalTeleInfo/date-line/0'
                         },
                         {
                             name: '订阅',
-                            id: '4-4'
-                            // path: ''
+                            id: '4-4',
+                            path: 'http://edit.xinhua-news.cn:8888/resource/subscription/0/resource'
                         },
                         {
                             name: '内部网站',
-                            id: '4-5'
-                            // path: ''
+                            id: '4-5',
+                            path: 'http://static.cms.xinhua-news.cn/'
                         },
                         {
                             name: '高清视频资料',
-                            id: '4-6'
-                            // path: ''
-                        },
-                        {
-                            name: '现场云',
-                            id: '4-7'
-                            // path: ''
+                            id: '4-6',
+                            path: 'http://video.xinhua-news.cn/index.php?user/openPlatform&verifycode=token-c0dc4b8d-a3ca-436c-9d5f-3fe9a0270e2a-E678E0368D4CF07A59F051FEA2104A5E-2a8f0ff4-5688-4e30-a1b7-869b3af776b6&app=zlk'
                         }
-
                     ]
                 },
                 {
-                    name: '指挥台',
+                    name: '大数据',
                     icon: 'el-icon-index',
                     id: '5',
+                    // path: '',
+                    chiled: [// 展示二级路由
+                        {
+                            name: '新闻热点',
+                            id: '5-1',
+                            path: 'http://hotspot.xinhua-news.cn/dist/main.html#/plan/hotheadline?hotNav=1&amp;menutype=hot'
+                        },
+                        {
+                            name: '新闻线索',
+                            id: '5-2',
+                            path: 'http://hotspot.xinhua-news.cn/dist/index.html#/plan/timecue/focus?clueNav=11&amp;menutype=news'
+                        },
+                        {
+                            name: '影响力',
+                            id: '5-3',
+                            path: 'http://hotspot.xinhua-news.cn/dist/index.html#/plan/InfluenceList?infVal=1&amp;menutype=influ'
+                        },
+                        {
+                            name: '采用统计',
+                            id: '5-4'
+                            // path: ''
+                        },
+                        {
+                            name: '业务管理',
+                            id: '5-5',
+                            path: 'http://bms.xinhua-news.cn/xhs/html/index.html'
+                        },
+                        {
+                            name: '专题分析',
+                            id: '5-6',
+                            path: 'http://hotspot.xinhua-news.cn/dist/main.html#/plan/eventanalysis/eventmanagement?menutype=event'
+                        }
+                    ]
+                },
+                {
+                    name: '指挥',
+                    icon: 'el-icon-index',
+                    id: '6',
                     path: '',
                     chiled: [// 展示二级路由
                         {
                             name: '报道指挥',
-                            id: '5-1',
-                            path: ''
-                        },
-                        {
-                            name: '业务管理',
-                            id: '5-2',
-                            path: ''
+                            id: '6-1',
+                            path: 'http://report.xinhua-news.cn/report/myPending/MY'
                         }
                     ]
                 },
                 {
                     name: '实验室',
                     icon: 'el-icon-index',
-                    id: '6',
+                    id: '7',
                     path: '',
                     chiled: [// 展示二级路由
                         {
                             name: '写稿机器人',
-                            id: '6-1',
-                            path: ''
+                            id: '7-1',
+                            path: 'http://home.cmp.xinhua-news.cn/storywriterrobot'
                         },
                         {
                             name: '突发事件预警',
-                            id: '6-2',
-                            path: ''
+                            id: '7-2',
+                            path: 'http://home.cmp.xinhua-news.cn/emergencywarning'
                         },
                         {
                             name: '协同工作台',
-                            id: '6-3',
-                            path: ''
+                            id: '7-3',
+                            path: 'http://home.cmp.xinhua-news.cn/collaborativeplatform'
                         },
                         {
                             name: '人脸识别',
-                            id: '6-4',
+                            id: '7-4',
+                            path: 'http://edit.xinhua-news.cn/CVDemoPage/'
+                        },
+                        {
+                            name: '语音转写',
+                            id: '7-5',
                             path: ''
                         },
                         {
-                            name: '语音识别工具',
-                            id: '6-5',
-                            path: ''
+                            name: '语音建稿',
+                            id: '7-6',
+                            path: 'http://edit.xinhua-news.cn:8888/VoiceToText/#/'
                         },
                         {
                             name: '自动翻译',
-                            id: '6-6',
-                            path: ''
+                            id: '7-7',
+                            path: 'http://edit.xinhua-news.cn:8888/ai/translatePage/'
+                        },
+                        {
+                            name: '语音建稿（新）',
+                            id: '7-8',
+                            path: 'http://edit.xinhua-news.cn:8888/AudioToText/#/main/home'
+                        },
+                        {
+                            name: '智能校验',
+                            id: '7-9',
+                            path: 'http://edit.xinhua-news.cn:8888/api/v1/ai/check_web/'
                         }
                     ]
                 },
                 {
                     name: '工具箱',
                     icon: 'el-icon-index',
-                    id: '7'
-                    // path: ''
+                    id: '8',
+                    path: 'http://home.cmp.xinhua-news.cn/toolbox#/'
                 },
                 {
                     name: '协同办公',
                     icon: 'el-icon-index',
-                    id: '8'
-                    // path: ''
+                    id: '9',
+                    path: 'http://home.cmp.xinhua-news.cn/remind'
                 },
                 {
                     name: '网盘',
                     icon: 'el-icon-index',
-                    id: '9'
+                    id: '10'
                     // path: ''
+                },
+                {
+                    name: '资源库V2',
+                    icon: 'el-icon-index',
+                    id: '11',
+                    path: 'http://edit.xinhua-news.cn:8888/resourcev2/main.html#/resource/halfStory'
+
                 }
             ]
+        }
+    },
+    methods: {
+        openUrl (url) {
+            window.open(url)
         }
     }
 }
@@ -344,5 +389,11 @@ export default {
 .top-header-bar .el-dropdown {
     color: #fff;
     font-size: 14px;
+}
+.top-header-bar .menu2 .el-button--mini, .el-button--mini.is-round {
+    padding: 5px 11px;
+}
+.el-button+.el-button {
+    margin-left: 0px;
 }
 </style>

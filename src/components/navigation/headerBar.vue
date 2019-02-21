@@ -193,10 +193,10 @@ export default {
     },
     methods: {
         saveStateRouter () {
-            this.activeIndex = sessionStorage.getItem("activeIndex")
+            this.activeIndex = sessionStorage.getItem('activeIndex')
         },
         handleSelect (key, keyPath) {
-            sessionStorage.setItem("activeIndex", key)
+            sessionStorage.setItem('activeIndex', key)
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header style="height:40px;position:relative">
+        <el-header style="height:40px;position:relative;min-width:1336px">
             <!-- <img :src="imgUrl"
                  alt=""
                  style="width:100%;height:100%">
