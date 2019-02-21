@@ -76,7 +76,7 @@
                         <div class="userEdit"><span >测试部门-测试组-编辑</span></div>
                         <el-dropdown-item>
                             <template>
-                                <span @click="openUrl('http://edit.xinhua-news.cn:8888/checker/deptex')">
+                                <span @click="openUrl('http://cmp.xinhua-news.cn/checker/deptex')">
                                     <i class="el-icon-setting"></i> 验校
                                 </span>
                             </template>

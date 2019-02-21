@@ -115,7 +115,8 @@ export default {
             expandedKeys: [],
             expireTimeOption: {
                 disabledDate (time) {
-                    return time.getFullYear() < new Date().getFullYear();//如果没有后面的-8.64e7就是不可以选择今天的 
+                    // 如果没有后面的-8.64e7就是不可以选择今天的
+                    return time.getFullYear() !== new Date().getFullYear()
                 }
             },
             activeTreeName: 'first',
