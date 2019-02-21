@@ -2,12 +2,12 @@
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
  * @LastEditors: 史薇薇
- * @LastEditTime: 2019-02-20 16:39:35
+ * @LastEditTime: 2019-02-21 10:13:10
  * @Description: 导航条样式改版
  -->
 <template>
     <div class="header-nav">
-        <el-menu :default-active="$route.path"
+        <el-menu :default-active='activeIndex'
                  mode="horizontal"
                  :router="true"
                  active-text-color="#fff"
@@ -31,7 +31,7 @@
                 </template>
                 <template v-else>
                     <el-menu-item :key="item.id"
-                                  :index="item.path"
+                                  :index="item.id"
                                   :route='{ path: item.path }'>
                         <template><span>
                                 <i class="menu_icon"
@@ -48,6 +48,7 @@
 export default {
     data () {
         return {
+            activeIndex: '1',
             navBar: [
                 {
                     name: '栏目/版面库', // 导航的名字
@@ -188,11 +189,14 @@ export default {
         }
     },
     mounted () {
-
+        this.saveStateRouter()
     },
     methods: {
+        saveStateRouter () {
+            this.activeIndex = sessionStorage.getItem('activeIndex')
+        },
         handleSelect (key, keyPath) {
-            console.log(key, keyPath)
+            sessionStorage.setItem('activeIndex', key)
         }
     }
 }
