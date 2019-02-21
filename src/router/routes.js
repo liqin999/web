@@ -41,7 +41,7 @@ const writeManuscript = r => require.ensure([], () => r(require('@/pages/writeMa
 const sendManuscript = r => require.ensure([], () => r(require('@/pages/sendManuscript/index.vue')), 'sendManuscript')
 const newsCalendar = r => require.ensure([], () => r(require('@/pages/newsCalendar/index.vue')), 'newsCalendar')
 const invalidManuscript = r => require.ensure([], () => r(require('@/pages/invalidManuscript/index.vue')), 'invalidManuscript')
-const systemBackground = r => require.ensure([], () => r(require('@/pages/systemBackground/index.vue')), 'systemBackground')
+// const systemBackground = r => require.ensure([], () => r(require('@/pages/systemBackground/index.vue')), 'systemBackground')
 
 // 媒体流向的二级菜单
 const person = r => require.ensure([], () => r(require('@/pages/manuscriptFlow/person.vue')), 'person')
@@ -57,28 +57,28 @@ const personStatistics = r => require.ensure([], () => r(require('@/pages/person
 const departStatistics = r => require.ensure([], () => r(require('@/pages/departStatistics/index.vue')), 'departStatistics')
 
 // 后台设置
-const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet/mediaSet.vue')), 'mediaSet')
-const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand/mediaExpand.vue')), 'mediaExpand')
-const pageSet = r => require.ensure([], () => r(require('@/pages/systemBackground/pageSet/pageSet.vue')), 'pageSet')
-const stackSet = r => require.ensure([], () => r(require('@/pages/systemBackground/stackSet/stackSet.vue')), 'stackSet')
-const columnSet = r => require.ensure([], () => r(require('@/pages/systemBackground/columnSet/columnSet.vue')), 'columnSet')
-const specialSet = r => require.ensure([], () => r(require('@/pages/systemBackground/specialSet/specialSet.vue')), 'specialSet')
+// const mediaSet = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaSet/mediaSet.vue')), 'mediaSet')
+// const mediaExpand = r => require.ensure([], () => r(require('@/pages/systemBackground/mediaExpand/mediaExpand.vue')), 'mediaExpand')
+// const pageSet = r => require.ensure([], () => r(require('@/pages/systemBackground/pageSet/pageSet.vue')), 'pageSet')
+// const stackSet = r => require.ensure([], () => r(require('@/pages/systemBackground/stackSet/stackSet.vue')), 'stackSet')
+// const columnSet = r => require.ensure([], () => r(require('@/pages/systemBackground/columnSet/columnSet.vue')), 'columnSet')
+// const specialSet = r => require.ensure([], () => r(require('@/pages/systemBackground/specialSet/specialSet.vue')), 'specialSet')
 
-const role = r => require.ensure([], () => r(require('@/pages/systemBackground/role/role.vue')), 'role')
-const authority = r => require.ensure([], () => r(require('@/pages/systemBackground/authority/authority.vue')), 'authority')
-const userManage = r => require.ensure([], () => r(require('@/pages/systemBackground/userManage/userManage.vue')), 'userManage')
-const menu = r => require.ensure([], () => r(require('@/pages/systemBackground/menu/menu.vue')), 'menu')
-const interfaces = r => require.ensure([], () => r(require('@/pages/systemBackground/interfaces/interfaces.vue')), 'interfaces')
-const department = r => require.ensure([], () => r(require('@/pages/systemBackground/department/department.vue')), 'department')
+// const role = r => require.ensure([], () => r(require('@/pages/systemBackground/role/role.vue')), 'role')
+// const authority = r => require.ensure([], () => r(require('@/pages/systemBackground/authority/authority.vue')), 'authority')
+// const userManage = r => require.ensure([], () => r(require('@/pages/systemBackground/userManage/userManage.vue')), 'userManage')
+// const menu = r => require.ensure([], () => r(require('@/pages/systemBackground/menu/menu.vue')), 'menu')
+// const interfaces = r => require.ensure([], () => r(require('@/pages/systemBackground/interfaces/interfaces.vue')), 'interfaces')
+// const department = r => require.ensure([], () => r(require('@/pages/systemBackground/department/department.vue')), 'department')
 
-const clueSource = r => require.ensure([], () => r(require('@/pages/systemBackground/clueSource/clueSource.vue')), 'clueSource')
-const commonParam = r => require.ensure([], () => r(require('@/pages/systemBackground/commonParam/commonParam.vue')), 'commonParam')
-const manuscriptType = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptType/manuscriptType.vue')), 'manuscriptType')
-const authorType = r => require.ensure([], () => r(require('@/pages/systemBackground/authorType/authorType.vue')), 'authorType')
-const telecProducts = r => require.ensure([], () => r(require('@/pages/systemBackground/telecProducts/telecProducts.vue')), 'telecProducts')
-const manuscriptTheme = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptTheme/manuscriptTheme.vue')), 'manuscriptTheme')
-const manuscriptSource = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptSource/manuscriptSource.vue')), 'manuscriptSource')
-const manuscriptClassify = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptClassify/manuscriptClassify.vue')), 'manuscriptClassify')
+// const clueSource = r => require.ensure([], () => r(require('@/pages/systemBackground/clueSource/clueSource.vue')), 'clueSource')
+// const commonParam = r => require.ensure([], () => r(require('@/pages/systemBackground/commonParam/commonParam.vue')), 'commonParam')
+// const manuscriptType = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptType/manuscriptType.vue')), 'manuscriptType')
+// const authorType = r => require.ensure([], () => r(require('@/pages/systemBackground/authorType/authorType.vue')), 'authorType')
+// const telecProducts = r => require.ensure([], () => r(require('@/pages/systemBackground/telecProducts/telecProducts.vue')), 'telecProducts')
+// const manuscriptTheme = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptTheme/manuscriptTheme.vue')), 'manuscriptTheme')
+// const manuscriptSource = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptSource/manuscriptSource.vue')), 'manuscriptSource')
+// const manuscriptClassify = r => require.ensure([], () => r(require('@/pages/systemBackground/manuscriptClassify/manuscriptClassify.vue')), 'manuscriptClassify')
 
 // buttons路由
 const sendDraft = r => require.ensure([], () => r(require('@/components/buttons/sendDraft/sendDraft.vue')), 'sendDraft')
@@ -214,97 +214,97 @@ export const routes = [{
     path: '/newsCalendar',
     component: newsCalendar
 },
-{
-    path: '/systemBackground',
-    component: systemBackground,
-    children: [{
-        path: '',
-        redirect: '/mediaSet',
-        component: mediaSet
-    },
-    {
-        path: '/mediaSet',
-        component: mediaSet
-    },
-    {
-        path: '/mediaExpand',
-        component: mediaExpand
-    },
-    {
-        path: '/pageSet',
-        component: pageSet
-    },
-    {
-        path: '/stackSet',
-        component: stackSet
-    },
-    {
-        path: '/columnSet',
-        component: columnSet
-    },
-    {
-        path: '/specialSet',
-        component: specialSet
-    },
-    {
-        path: '/role',
-        component: role
-    },
-    {
-        path: '/authority',
-        component: authority
-    },
-    {
-        path: '/userManage',
-        component: userManage
-    },
-    {
-        path: '/menu',
-        component: menu
-    },
-    {
-        path: '/interfaces',
-        component: interfaces
-    },
-    {
-        path: '/department',
-        component: department
-    },
-    {
-        path: '/clueSource',
-        component: clueSource
-    },
-    {
-        path: '/commonParam',
-        component: commonParam
-    },
-    {
-        path: '/manuscriptType',
-        component: manuscriptType
-    },
-    {
-        path: '/authorType',
-        component: authorType
-    },
-    {
-        path: '/telecProducts',
-        component: telecProducts
-    },
-    {
-        path: '/manuscriptTheme',
-        component: manuscriptTheme
-    },
-    {
-        path: '/manuscriptSource',
-        component: manuscriptSource
-    },
-    {
-        path: '/manuscriptClassify',
-        component: manuscriptClassify
-    }
+  // {
+  //     path: '/systemBackground',
+  //     component: systemBackground,
+  //     children: [{
+  //         path: '',
+  //         redirect: '/mediaSet',
+  //         component: mediaSet
+  //     },
+  //     {
+  //         path: '/mediaSet',
+  //         component: mediaSet
+  //     },
+  //     {
+  //         path: '/mediaExpand',
+  //         component: mediaExpand
+  //     },
+  //     {
+  //         path: '/pageSet',
+  //         component: pageSet
+  //     },
+  //     {
+  //         path: '/stackSet',
+  //         component: stackSet
+  //     },
+  //     {
+  //         path: '/columnSet',
+  //         component: columnSet
+  //     },
+  //     {
+  //         path: '/specialSet',
+  //         component: specialSet
+  //     },
+  //     {
+  //         path: '/role',
+  //         component: role
+  //     },
+  //     {
+  //         path: '/authority',
+  //         component: authority
+  //     },
+  //     {
+  //         path: '/userManage',
+  //         component: userManage
+  //     },
+  //     {
+  //         path: '/menu',
+  //         component: menu
+  //     },
+  //     {
+  //         path: '/interfaces',
+  //         component: interfaces
+  //     },
+  //     {
+  //         path: '/department',
+  //         component: department
+  //     },
+  //     {
+  //         path: '/clueSource',
+  //         component: clueSource
+  //     },
+  //     {
+  //         path: '/commonParam',
+  //         component: commonParam
+  //     },
+  //     {
+  //         path: '/manuscriptType',
+  //         component: manuscriptType
+  //     },
+  //     {
+  //         path: '/authorType',
+  //         component: authorType
+  //     },
+  //     {
+  //         path: '/telecProducts',
+  //         component: telecProducts
+  //     },
+  //     {
+  //         path: '/manuscriptTheme',
+  //         component: manuscriptTheme
+  //     },
+  //     {
+  //         path: '/manuscriptSource',
+  //         component: manuscriptSource
+  //     },
+  //     {
+  //         path: '/manuscriptClassify',
+  //         component: manuscriptClassify
+  //     }
 
-    ]
-},
+  //     ]
+  // },
   // buttons路由定义
 {
     path: '/sendDraft',

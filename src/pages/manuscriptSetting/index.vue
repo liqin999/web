@@ -81,7 +81,8 @@
                                           placeholder=""></el-input>
                             </el-form-item>
                         </el-col>
-                        <el-col :span="6">
+                        <el-col :span="6"
+                                style="display:none">
                             <el-form-item label="约稿状态:">
                                 <el-select v-model="searchForm.state2"
                                            placeholder="约稿状态">
@@ -183,22 +184,17 @@
                         <create-draft>
                             <span slot="iconName">建稿</span>
                         </create-draft>
-                        <!-- <send-draft :sendData="true">
-                            <span slot="iconName">传稿</span>
-                        </send-draft> -->
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
+
+                        <!-- 约稿和翻译暂时隐藏 modify by 2019.2.19-->
+                        <!-- <div class="primary-btn"><span>
                                 <span data-v-6eb3df45="">约稿</span>
                             </span>
                         </div>
-                        <!-- <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">翻译</span>
-                            </span>
-                        </div> -->
-                        <translate class="primary-btn">
+                        -->
+                        <!-- <translate class="primary-btn">
                             <span slot="iconName">翻译</span>
-                        </translate>
+                        </translate> -->
+
                         <!-- 留搞组建按钮 -->
                         <stay-draft class="primary-btn">
                             <span slot="iconName">留稿</span>
@@ -332,7 +328,7 @@ import stayDraft from '@/pages/manuscriptSetting/stayDraft/stayDraft'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad'
 // 翻译弹框按钮
-import translate from '@/components/buttons/translate/translate'
+// import translate from '@/components/buttons/translate/translate'
 export default {
     components: {
         leftMenu,
@@ -343,8 +339,8 @@ export default {
         printing,
         draftLook,
         stayDraft,
-        downLoad,
-        translate
+        downLoad
+
     },
     data () {
         return {
