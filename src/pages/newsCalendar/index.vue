@@ -1,35 +1,37 @@
 <template>
-
     <el-container class="newsCalender">
-        <!-- 左侧菜单 -->
-        <el-aside width="250px">
-                <left-menu :treeData="data2"
-                           :defaultProps="defaultProps"
-                           @sendTreeObj="getTreeObj"></left-menu>
-            </el-aside>
-        <el-container>
-            <el-header height="40px">
-                <div class="main-header-group">
-                    <!-- 引入按钮组的插件 -->
-                    <create-draft>
-                        <span slot="iconName">建稿</span>
-                    </create-draft>
+        <el-header height="96px">
+            <div class="tree-wrap">
+                <span>选择时间:</span>
+                <el-date-picker class="tree-search"
+                                v-model="monthText"
+                                value-format="yyyy-MM-dd"
+                                type="date"
+                                :picker-options="expireTimeOption"
+                                placeholder="选择日期">
+                </el-date-picker>
+            </div>
 
-                    <div data-v-6eb3df45=""
-                         class="primary-btn"><span>
-                            <span data-v-6eb3df45="">刷新</span>
-                        </span>
-                    </div>
-
+            <div class="main-header-group">
+                <!-- 引入按钮组的插件 -->
+                <create-draft>
+                    <span slot="iconName">建稿</span>
+                </create-draft>
+                <div data-v-6eb3df45=""
+                     class="primary-btn"><span>
+                        <span data-v-6eb3df45="">刷新</span>
+                    </span>
                 </div>
-            </el-header>
+            </div>
+        </el-header>
+
+        <el-container>
             <el-header height="55px">
                 <el-tabs v-model="activeTreeName1"
                          :stretch="true"
                          @tab-click="switchTreeMemu1">
                     <el-tab-pane label="全部(12888)"
                                  name="all">
-
                     </el-tab-pane>
                     <el-tab-pane label="事件"
                                  name="event">
@@ -81,116 +83,45 @@
                     </el-table-column>
                 </el-table>
             </el-main>
-            <el-footer height="70px">
-                <el-pagination @size-change="handleSizeChange"
-                               @current-change="handleCurrentChange"
-                               class="ac"
-                               :current-page="currentPage"
-                               :page-size="20"
-                               layout="total, prev, pager, next"
-                               :total="3">
-                </el-pagination>
-
-            </el-footer>
         </el-container>
+
+        <el-footer height="70px">
+            <el-pagination @size-change="handleSizeChange"
+                           @current-change="handleCurrentChange"
+                           class="ac"
+                           :current-page="currentPage"
+                           :page-size="20"
+                           layout="total, prev, pager, next"
+                           :total="3">
+            </el-pagination>
+
+        </el-footer>
+
     </el-container>
 
 </template>
 <script>
 // 建稿按钮组件
 import createDraft from '@/components/buttons/createDraft/createDraft'
-import leftMenu from '@/pages/newsCalendar/treeMenu/leftTree.vue'
-
 export default {
     components: {
-        leftMenu,
         createDraft
 
     },
     data () {
         return {
+            monthText: new Date(),
+            expandedKeys: [],
+            expireTimeOption: {
+                disabledDate (time) {
+                    return time.getFullYear() < new Date().getFullYear();//如果没有后面的-8.64e7就是不可以选择今天的 
+                }
+            },
             activeTreeName: 'first',
             activeTreeName1: 'first1',
             draft: [],
             currentPage: 0,
-            data2: [
-                {
-                    id: 1,
-                    label: '01'
-                },
-                {
-                    id: 2,
-                    label: '02'
-                },
-                {
-                    id: 3,
-                    label: '03'
-                },
-                {
-                    id: 4,
-                    label: '04'
-                },
-                {
-                    id: 5,
-                    label: '05'
-                },
-                {
-                    id: 6,
-                    label: '06'
-                },
-                {
-                    id: 7,
-                    label: '07'
-                },
-                {
-                    id: 8,
-                    label: '08'
-                },
-                {
-                    id: 9,
-                    label: '09'
-                },
-                {
-                    id: 10,
-                    label: '10'
-                },
-                {
-                    id: 11,
-                    label: '11'
-                },
-                {
-                    id: 12,
-                    label: '12'
-                },
-                {
-                    id: 13,
-                    label: '13'
-                },
-                {
-                    id: 14,
-                    label: '14'
-                },
-                {
-                    id: 15,
-                    label: '15'
-                },
-                {
-                    id: 16,
-                    label: '16'
-                },
-                {
-                    id: 17,
-                    label: '17'
-                },
-                {
-                    id: 18,
-                    label: '18'
-                }
-            ],
-            defaultProps: {
-                children: 'children',
-                label: 'label'
-            },
+
             tableData3: [{
                 year: '2018',
                 a: '新疆和田：黑山村的致富路',
@@ -265,7 +196,17 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+.tree-wrap {
+    background: #ebebeb;
+    @include mar-pad(padding, 10px, 0px, 10px, 10px);
+    .tree-search {
+        width: 200px;
+        @include mar-pad(padding, 0, 10px, 0, 10px);
+        .el-input__suffix {
+            right: 10px;
+        }
+    }
+}
 </style>
 <style lang="scss">
 .newsCalender .el-input__prefix {
