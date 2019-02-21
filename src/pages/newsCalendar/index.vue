@@ -1,28 +1,29 @@
 <template>
     <el-container class="newsCalender">
         <el-header height="96px">
-            <div class="tree-wrap">
-                <span>选择时间:</span>
-                <el-date-picker class="tree-search"
-                                v-model="monthText"
-                                value-format="yyyy-MM-dd"
-                                type="date"
-                                :picker-options="expireTimeOption"
-                                placeholder="选择日期">
-                </el-date-picker>
-            </div>
-
-            <div class="main-header-group">
-                <!-- 引入按钮组的插件 -->
-                <create-draft>
-                    <span slot="iconName">建稿</span>
-                </create-draft>
-                <div data-v-6eb3df45=""
-                     class="primary-btn"><span>
-                        <span data-v-6eb3df45="">刷新</span>
-                    </span>
+            <div>
+                <div class="tree-wrap">
+                    <span>选择时间:</span>
+                    <el-date-picker class="tree-search"
+                                    v-model="monthText"
+                                    value-format="yyyy-MM-dd"
+                                    type="date"
+                                    :picker-options="expireTimeOption"
+                                    placeholder="选择日期">
+                    </el-date-picker>
+                </div>
+                <div class="main-header-group">
+                    <create-draft>
+                        <span slot="iconName">建稿</span>
+                    </create-draft>
+                    <div data-v-6eb3df45=""
+                         class="primary-btn"><span>
+                            <span data-v-6eb3df45="">刷新</span>
+                        </span>
+                    </div>
                 </div>
             </div>
+
         </el-header>
 
         <el-container>
@@ -209,6 +210,9 @@ export default {
 }
 </style>
 <style lang="scss">
+.newsCalender {
+    background: #fff;
+}
 .newsCalender .el-input__prefix {
     left: 10px;
 }
