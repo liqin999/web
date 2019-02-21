@@ -218,7 +218,7 @@ export default {
                 author: '徐海波',
                 processingTime: '2018-12-25 17:18',
                 handlePeople: '刘学奎',
-                type2: '文本'
+                type2: '文字'
             }],
             multipleSelection: [],
             mainTableHeight: null

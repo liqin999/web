@@ -69,7 +69,7 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="第一作者:">
+                            <el-form-item label="作者:">
                                 <el-input v-model="searchForm.author"
                                           placeholder=""></el-input>
                             </el-form-item>
@@ -86,16 +86,16 @@
                             <el-form-item label="约稿状态:">
                                 <el-select v-model="searchForm.state2"
                                            placeholder="约稿状态">
-                                    <el-option label="全部"
+                                    <el-option label="约稿"
                                                value="shanghai">
                                     </el-option>
-                                    <el-option label="待审"
+                                    <el-option label="在译"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="待处理"
+                                    <el-option label="已译"
                                                value="shan22ghai">
                                     </el-option>
-                                    <el-option label="已处理"
+                                    <el-option label="其他"
                                                value="be1ijing">
                                     </el-option>
                                 </el-select>
@@ -238,7 +238,7 @@
                                          label="创建日期">
                         </el-table-column>
                         <el-table-column prop="author"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="authorType"
                                          label="作者类型">
@@ -471,7 +471,7 @@ export default {
                 createDate: '201810-31 ',
                 author: '赵倩',
                 authorType: '',
-                type: '文本'
+                type: '文字'
             }, {
                 id: '20181029011',
                 name: '城市生活垃圾分类的“银川模式”',
@@ -481,7 +481,7 @@ export default {
                 createDate: '201810-31 ',
                 author: '郝玉',
                 authorType: '',
-                type: '文本'
+                type: '文字'
             }, {
                 id: '20181029050',
                 name: '腾讯体育是中国知名的体育门户网站',
@@ -491,7 +491,7 @@ export default {
                 createDate: '201810-31 ',
                 author: '刘晶瑶',
                 authorType: '',
-                type: '文本'
+                type: '文字'
             }],
             multipleSelection: [],
             mainTableHeight: null

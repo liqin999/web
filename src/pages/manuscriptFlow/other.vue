@@ -24,7 +24,7 @@
                     </el-table-column>
                     <el-table-column prop="media"
                                      label="媒体"
-                                     width="120">
+                                     width="100">
                     </el-table-column>
 
                     <el-table-column prop="type"
@@ -203,7 +203,7 @@ export default {
                 author: '卢刚',
                 processingTime: '10-31 14:23',
                 handlePeople: '卢刚',
-                type2: '文本'
+                type2: '文字'
             }, {
                 id: '20181029000029',
                 title: '龙海市：文化沁人心  廉洁清风来',
@@ -212,8 +212,8 @@ export default {
                 type: '版面',
                 location: 'A叠-十四版',
                 status: '待审',
-                author: '郝玉',
-                processingTime: '10-29 10:31',
+                author: '刘学奎',
+                processingTime: '2018-10-29 17:18',
                 handlePeople: '刘学奎',
                 type2: '图片'
             }],

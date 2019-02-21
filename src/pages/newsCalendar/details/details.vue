@@ -24,7 +24,6 @@
                     </el-col>
                     <el-col :span="4"
                             class="text-right">
-
                         <!-- <el-button class="primary-btn">建稿</el-button> -->
                         <create-draft>
                             <span slot="iconName">建稿</span>
@@ -89,18 +88,18 @@ export default {
     },
     data () {
         return {
-            draftList: [
-                {
-                    title: '23728784374374372983982378478refergege',
-                    name: '西虹市首富',
-                    size: '329084字'
-                },
-                {
-                    title: '23728784374374372983982378478refergege',
-                    name: '西虹市首富',
-                    size: '329084字'
-                }
-            ],
+            // draftList: [
+            //     {
+            //         title: '23728784374374372983982378478refergege',
+            //         name: '西虹市首富',
+            //         size: '329084字'
+            //     },
+            //     {
+            //         title: '23728784374374372983982378478refergege',
+            //         name: '西虹市首富',
+            //         size: '329084字'
+            //     }
+            // ],
             options: [{
                 value: '新华社每日电讯',
                 label: '新华社每日电讯'

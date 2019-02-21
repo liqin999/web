@@ -290,7 +290,7 @@ export default {
                     time: '2019-1-11',
                     author: '刘晶瑶，于文静',
                     source: '自写稿',
-                    type: '文本',
+                    type: '文字',
                     map: '',
                     format: '.doc',
                     wordNumber: '65231',
