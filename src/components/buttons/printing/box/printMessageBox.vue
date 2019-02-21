@@ -8,115 +8,107 @@
                    top="0vh"
                    :append-to-body="true">
             <!-- 内容区 -->
-            <el-row :gutter="0"
-                    class="clearfix mb15">
-                <el-col :span="9"
-                        class="text-right">
-                    <span>设置每行打印字数：</span>
-                </el-col>
-                <el-col :span="7">
-                    <el-input clearable
-                              v-model="params.fontNum"></el-input>
-                </el-col>
-            </el-row>
-            <el-row :gutter="0"
-                    class="clearfix mb15">
-                <el-col :span="9"
-                        class="text-right">
-                    <span>设置打印栏数：</span>
-                </el-col>
-                <el-col :span="7">
-                    <el-input clearable
-                              v-model="params.columnNum"></el-input>
-                </el-col>
-            </el-row>
-            <el-row :gutter="0"
-                    class="clearfix mb15">
-                <el-col :span="9"
-                        class="text-right">
-                    <span>设置打印字数大小：</span>
-                </el-col>
-                <el-col :span="7">
-                    <el-input clearable
-                              v-model="params.fontSize"></el-input>
-                </el-col>
-            </el-row>
-            <el-row :gutter="0"
-                    class="clearfix mb15">
-                <el-col :span="9"
-                        class="text-right">
-                    <span>行间距大小：</span>
-                </el-col>
-                <el-col :span="7">
-                    <el-input clearable
-                              v-model="params.lineSpace"></el-input>
-                </el-col>
-            </el-row>
-            <div class="line"></div>
-            <!-- <hr> -->
-            <el-row :gutter="20">
-                <el-col :span="9"
-                        class="text-right">
+            <el-form :model="params" :rules="rules" ref="params" label-width="150px" class="demo-ruleForm">
+                <el-row>
+                    <el-col :span="14" :offset="3">
+                        <el-form-item label="设置每行打印字数：" prop="fontNum"  class="mb15">
+                            <el-input type="number" v-model.number="params.fontNum"></el-input>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :span="14" :offset="3">
+                        <el-form-item label="设置打印栏数：" prop="columnNum" class="mb15">
+                            <el-input type="number" v-model.number="params.columnNum"></el-input>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :span="14" :offset="3">
+                        <el-form-item label="设置打印字数大小：" prop="fontSize" class="mb15">
+                            <el-input type="number" v-model.number="params.fontSize"></el-input>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+
+                <el-row>
+                    <el-col :span="14" :offset="3">
+                        <el-form-item label="行间距大小：" prop="lineSpace" class="mb15">
+                            <el-input type="number" v-model.number="params.lineSpace"></el-input>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+
+                <div class="line"></div>
+
+                <el-form-item>
                     <el-checkbox v-model="params.printCenter">左右居中打印</el-checkbox>
-                </el-col>
-            </el-row>
-            <el-row :gutter="4"
-                    class="clearfix mb15">
-                <el-col :span="9"
-                        class="text-right">
-                    <span>左空：</span>
-                </el-col>
-                <el-col :span="6">
-                    <el-input type="number"
-                              min="0"
-                              class="numSpace"
-                              v-model="params.leftSpace"
-                              placeholder="0"></el-input>
-                </el-col>
-                <el-col :span="4">
-                    <span>毫米</span>
-                </el-col>
-            </el-row>
-            <el-row :gutter="4"
-                    class="clearfix mb15">
-                <el-col :span="9"
-                        class="text-right">
-                    <span>上空：</span>
-                </el-col>
-                <el-col :span="6">
-                    <el-input type="number"
-                              class="numSpace"
-                              v-model="params.topSpace"
-                              min="0"
-                              placeholder="0"></el-input>
-                </el-col>
-                <el-col :span="4">
-                    <span>毫米</span>
-                </el-col>
-            </el-row>
-            <el-row :gutter="4"
-                    class="clearfix mb15">
-                <el-col :span="9"
-                        class="text-right">
-                    <span>下空：</span>
-                </el-col>
-                <el-col :span="6">
-                    <el-input type="number"
-                              min="0"
-                              class="numSpace"
-                              v-model="params.bottomSpace"
-                              placeholder="0"></el-input>
-                </el-col>
-                <el-col :span="4">
-                    <span>毫米</span>
-                </el-col>
-            </el-row>
-            <el-row :gutter="20">
-                <el-col :span="9"
-                        class="text-right">
+                </el-form-item>
+
+                <el-row>
+                    <el-col :span="14" :offset="3">
+                        <el-form-item label="左空：" prop="leftSpace" class="mb15">
+                            <el-row :gutter="4"
+                                    class="clearfix">
+                                <el-col :span="14">
+                                    <el-input type="number"
+                                            min="0"
+                                            class="numSpace"
+                                            v-model.number="params.leftSpace"
+                                            placeholder="0"></el-input>
+                                </el-col>
+                                <el-col :span="8">
+                                    <span>毫米</span>
+                                </el-col>
+                            </el-row>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+
+                <el-row>
+                    <el-col :span="14" :offset="3">
+                        <el-form-item label="上空：" prop="topSpace" class="mb15">
+                            <el-row :gutter="4"
+                                    class="clearfix">
+                                <el-col :span="14">
+                                    <el-input type="number"
+                                            min="0"
+                                            class="numSpace"
+                                            v-model.number="params.topSpace"
+                                            placeholder="0"></el-input>
+                                </el-col>
+                                <el-col :span="8">
+                                    <span>毫米</span>
+                                </el-col>
+                            </el-row>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+
+                <el-row>
+                    <el-col :span="14" :offset="3">
+                        <el-form-item label="下空：" prop="bottomSpace" class="mb15">
+                            <el-row :gutter="4"
+                                    class="clearfix">
+                                <el-col :span="14">
+                                    <el-input type="number"
+                                            min="0"
+                                            class="numSpace"
+                                            v-model.number="params.bottomSpace"
+                                            placeholder="0"></el-input>
+                                </el-col>
+                                <el-col :span="8">
+                                    <span>毫米</span>
+                                </el-col>
+                            </el-row>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+
+                <el-form-item>
                     <el-checkbox v-model="params.autoPage">自动添加页码</el-checkbox>
-                </el-col>
-            </el-row>
+                </el-form-item>
+            </el-form>
             <!-- 内容区 结束 -->
             <div slot="footer"
                  class="dialog-footer ac">
@@ -137,7 +129,6 @@
                        v-html="item"></p>
                 </div>
             </div>
-
         </el-dialog>
 
     </div>
@@ -153,6 +144,7 @@ export default {
             type: Object
         }
     },
+
     data () {
         return {
             // topValue: '新华每日电讯'
@@ -167,6 +159,38 @@ export default {
                 topSpace: 20, // 显示的是上侧的边距
                 bottomSpace: 20, // 显示的是下侧的边距
                 autoPage: true
+            },
+
+            rules: {
+                fontNum: [
+                    { required: true, message: '设置每行打印字数', trigger: 'blur' },
+                    { type: 'number', message: '字数必须为数字值' }
+                ],
+                columnNum: [
+                    { required: true, message: '设置打印栏数', trigger: 'blur' },
+                    { type: 'number', message: '栏数必须为数字值' }
+                ],
+                fontSize: [
+                    { required: true, message: '设置打印字数大小', trigger: 'blur' },
+                    { type: 'number', message: '字数大小必须为数字值' }
+                ],
+                lineSpace: [
+                    { required: true, message: '行间距大小', trigger: 'blur' },
+                    { type: 'number', message: '行间距必须为数字值' }
+                ],
+                leftSpace: [
+                    { required: true, message: '请输入左空', trigger: 'blur' },
+                    { type: 'number', message: '左空必须为数字值' }
+                ],
+                topSpace: [
+                    { required: true, message: '请输入上空', trigger: 'blur' },
+                    { type: 'number', message: '上空必须为数字值' }
+                ],
+                bottomSpace: [
+                    { required: true, message: '请输入下空', trigger: 'blur' },
+                    { type: 'number', message: '下空必须为数字值' }
+                ]
+
             },
             content: [
                 '1新华社北京1月27日电（记者李忠发、潘洁）中共中央总书记、国家主席习近平和夫人彭丽媛27日在北京会见以朝鲜劳动党中央政治局委员、中央副委员长、国际部部长李洙墉为团长的朝鲜友好艺术团。',
@@ -185,6 +209,7 @@ export default {
             // 实现打印的插件
             this.isShow = true
             setTimeout(() => {
+                // 使用打印机
                 this.$print(this.$refs.print)
             }, 1000)
         },
@@ -196,18 +221,21 @@ export default {
             let strTemp = ''
             let reg = /<br>/g
             if (reg.test(str)) {
+                // 替换前导空格和后导空格
                 str = str.replace(reg, '').replace(/(^\s+)|(\s+$)/g, '')
             }
             let len = str.length
+
             if (len > n) { // 如果字符的长度大于指定的长度
                 if (len === originStrLen) {
-                    strTemp = str.substring(0, n - 2)// 那么截取指定长度的字符串 开头有缩紧
+                    strTemp = str.substring(0, n - 2)// 那么截取指定长度的字符串 开头有缩进
                 } else {
                     strTemp = str.substring(0, n)
                 }
                 if (!strTemp) {
                     return
                 }
+
                 str = str.substring(n, len)// 截取剩余的字符串
                 return strTemp + `<br>` + this.insertEnter(str, n)
             } else {
@@ -288,5 +316,10 @@ export default {
 <style>
 .print-message .el-dialog {
     min-width: 76px;
+}
+</style>
+<style lang="scss" scoped>
+.mb15 {
+    margin-bottom: 15px;
 }
 </style>

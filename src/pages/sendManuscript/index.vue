@@ -89,7 +89,7 @@
                 </el-row>
                 <el-row :gutter="20"
                         class="mb15 pl10 pr10">
-                    <template v-if="kanfaValue === '文本'">
+                    <template v-if="kanfaValue === '文字'">
                         <el-col :span="3">
                             <b class="font18">内容</b>
                         </el-col>
@@ -288,8 +288,17 @@ export default {
             author: '强晓玲',
             input: '一个灵魂的旅行',
             // 类型
-            kanfaData: ['文本', '图片', '动图', '图集', '视频', '音频', '多媒体'],
-            kanfaValue: '图片',
+            kanfaData: [
+                '文字',
+                '图片',
+                '网上图片',
+                '图表',
+                '视频',
+                '音频',
+                '歌曲',
+                '应用'
+            ],
+            kanfaValue: '原图',
             // 主稿件
             mainDraftData: [1, 2],
             mainDraftValue: 2,

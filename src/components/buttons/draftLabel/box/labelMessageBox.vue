@@ -28,7 +28,7 @@
                                 <!-- 作者 -->
                                 <el-col :span="4"
                                         class="tab-padding">
-                                    <b>第一作者：</b>
+                                    <b>作者：</b>
                                 </el-col>
                                 <el-col :span="4">
                                     <!-- <el-input v-model="input"
@@ -126,7 +126,7 @@
                                 <el-col :span="6">
                                     <!-- <el-input v-model="input"
                                               placeholder="E-mail"></el-input> -->
-                                    <span>12345@163.com</span>
+                                    <span>14532345@163.com</span>
                                 </el-col>
                                 <!-- 邮编 -->
                                 <el-col :span="4"

@@ -29,16 +29,22 @@
                         <span slot="iconName">建稿</span>
                     </create-draft>
 
-                    <div data-v-6eb3df45=""
+                    <printing class="primary-btn">
+                        <span slot="iconName">打印</span>
+                    </printing>
+
+                    <!-- <div data-v-6eb3df45=""
                          class="primary-btn"><span>
                             <span data-v-6eb3df45="">打印</span>
                         </span>
-                    </div>
-
-                    <div data-v-6eb3df45=""
+                    </div> -->
+                    <down-load class="primary-btn">
+                        <span slot="iconName">导出</span>
+                    </down-load>
+                    <!-- <div data-v-6eb3df45=""
                          class="primary-btn">
                         <span data-v-6eb3df45="">导出</span>
-                    </div>
+                    </div> -->
 
                     <div data-v-6eb3df45=""
                          class="primary-btn"><span>
@@ -139,11 +145,16 @@
 // 建稿按钮组件
 import createDraft from '@/components/buttons/createDraft/createDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
-
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
+// 导出弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 export default {
     components: {
         leftMenu,
-        createDraft
+        createDraft,
+        printing,
+        downLoad
 
     },
     data () {

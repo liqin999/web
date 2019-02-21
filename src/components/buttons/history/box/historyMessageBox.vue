@@ -3,6 +3,7 @@
                title="历史"
                @close="messageBoxClose()"
                :visible.sync="historyData.contentShow"
+               width="50%"
                top="15vh"
                :append-to-body="true">
         <!-- 内容区 -->
@@ -11,7 +12,8 @@
             <el-row :gutter="20"
                     class="message-content clearfix">
                 <el-col :span="24"
-                        class="tab-padding"><b class="message-title">稿源库历史</b></el-col>
+                        class="tab-padding"><b class="message-title">稿源库历史</b>
+                </el-col>
                 <el-row :gutter="20"
                         class="pb10 label-border">
                     <el-col :span="6">
@@ -48,6 +50,7 @@
                     </el-col>
                 </el-row>
 
+                <!-- 工作稿库历史 -->
                 <el-row :gutter="20"
                         class="pb10">
                     <el-col :span="6">

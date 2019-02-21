@@ -252,7 +252,7 @@ export default {
                 processingTime: '2018-10-31 14:23',
                 firstAuthor: '卢刚',
                 medio: '新华每日电讯',
-                type: '文本',
+                type: '文字',
                 doubt: 0,
                 preData: ''
             }, {
@@ -278,7 +278,7 @@ export default {
                 keywords: '',
                 checkAll: false,
                 media: '',
-                checkedTypes: ['文本', '图片'],
+                checkedTypes: ['文字', '图片'],
                 isIndeterminate: true
             },
             allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],

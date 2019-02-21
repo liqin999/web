@@ -58,7 +58,7 @@
                                      label="作者">
                     </el-table-column>
                     <el-table-column prop="processingTime"
-                                     width="150"
+                                     width="100px"
                                      label="处理时间">
                     </el-table-column>
                     <el-table-column prop="handlePeople"

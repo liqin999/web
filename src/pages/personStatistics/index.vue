@@ -108,7 +108,7 @@
                                    :current-page="currentPage"
                                    :page-size="20"
                                    layout="total, prev, pager, next"
-                                   :total="6">
+                                   :total="7">
                     </el-pagination>
              </el-footer>
     </div>
@@ -133,7 +133,7 @@ export default {
             // 表中数据
             tableData: [
                 {
-                    type: '文本',
+                    type: '文字',
                     write: '13/11818',
                     translate: '0/0',
                     editor: '12/10341',
@@ -165,6 +165,14 @@ export default {
                     total: '0/0'
                 },
                 {
+                    type: '动图',
+                    write: '0/0',
+                    translate: '0/0',
+                    editor: '0/0',
+                    issuance: '0/0',
+                    total: '0/0'
+                },
+                {
                     type: '音频',
                     write: '0/0',
                     translate: '0/0',
@@ -173,7 +181,7 @@ export default {
                     total: '0/0'
                 },
                 {
-                    type: '应用',
+                    type: '多媒体',
                     write: '7/73',
                     translate: '0/0',
                     editor: '4/54',
