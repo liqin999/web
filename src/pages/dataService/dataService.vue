@@ -3,17 +3,29 @@
     <el-container>
         <el-aside width="250px">
             <div class="tabTree">
-                <el-tabs v-model="activeTreeName"
+                <el-tabs v-model="activeTabName"
                          :stretch="true"
                          @tab-click="switchTreeMemu">
+                    <el-tab-pane label="未定稿"
+                                 name="undefinedDraft">
+                        <left-menu :treeData="data3"
+                                   :defaultProps="defaultProps"
+                                   @sendTreeObj="getTreeObj"></left-menu>
+                    </el-tab-pane>
                     <el-tab-pane label="成品稿"
-                                 name="first">
+                                 name="finishedDraft">
                         <left-menu :treeData="data2"
                                    :defaultProps="defaultProps"
                                    @sendTreeObj="getTreeObj"></left-menu>
                     </el-tab-pane>
-                    <el-tab-pane label="未定稿"
-                                 name="second">
+                    <el-tab-pane label="社外电讯"
+                                 name="telecDraft">
+                        <left-menu :treeData="data3"
+                                   :defaultProps="defaultProps"
+                                   @sendTreeObj="getTreeObj"></left-menu>
+                    </el-tab-pane>
+                    <el-tab-pane label="订阅"
+                                 name="orderDraft">
                         <left-menu :treeData="data3"
                                    :defaultProps="defaultProps"
                                    @sendTreeObj="getTreeObj"></left-menu>
@@ -159,7 +171,7 @@ export default {
     },
     data () {
         return {
-            activeTreeName: 'first',
+            dataResource: sessionStorage.getItem('dataResource'),
             activeTreeName1: 'first1',
             draft: [],
             currentPage: 0,
@@ -356,6 +368,8 @@ export default {
                 that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
+
+        console.log(this.$store.state.nav.dataResourceName)
     },
     methods: {
         tabclick () {
@@ -391,7 +405,11 @@ export default {
         }
     },
     computed: {
+        activeTabName () {
+            return this.$store.state.nav.dataResourceName
+        }
     }
+
 }
 </script>
 <style lang="scss" scoped>
@@ -405,5 +423,12 @@ export default {
 <style lang="scss">
 .el-tabs__header {
     margin: 0px 10px 15px 10px;
+}
+.tabTree {
+    .el-tabs__item {
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+        font-size: 12px;
+    }
 }
 </style>

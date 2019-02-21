@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import flow from './modules/flow'
+import nav from './modules/nav'
 // 引入当前开发者的状态管理.js
 import {
     Loading
@@ -88,6 +89,7 @@ export const store = new Vuex.Store({
         }
     },
     modules: {
-        flow: flow
+        flow: flow,
+        nav: nav
     }
 })
