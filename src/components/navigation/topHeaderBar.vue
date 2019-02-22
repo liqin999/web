@@ -431,4 +431,9 @@ export default {
 .el-button + .el-button {
     margin-left: 0px;
 }
+.top-header-bar .el-menu--horizontal>.el-submenu:hover .el-submenu__title,
+.top-header-bar .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    background-color: #069cec !important;
+    color: #fff !important;
+}
 </style>
