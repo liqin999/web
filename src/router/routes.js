@@ -99,264 +99,264 @@ const labelMessageBox = r => require.ensure([], () => r(require('@/components/bu
 export const routes = [{
     path: '/dataService',
     component: dataService
-  },
-  {
+},
+{
     path: '/review',
     component: review
-  },
-  {
+},
+{
     path: '/details',
     component: details
-  },
-  {
+},
+{
     path: '/columnsLayout',
     component: columnsLayout
-  },
-  {
+},
+{
     path: '/myManuscript',
     component: myManuscript
-  },
-  {
+},
+{
     path: '/otherManuscript',
     component: otherManuscript
-  },
+},
 
-  {
+{
     path: '/mediaManuscript',
     component: mediaManuscript
-  },
-  {
+},
+{
     path: '/groupManuscript',
     component: groupManuscript
-  },
-  {
+},
+{
     path: '/invalidManuscript',
     component: invalidManuscript
-  },
-  {
+},
+{
     path: '/specialManuscript',
     component: specialManuscript
-  },
+},
 
-  {
+{
     path: '/signedManuscript',
     name: 'signedManuscript',
     component: signedManuscript
 
-  },
-  {
+},
+{
     path: '/reviewDetail',
     component: reviewDetail
-  },
-  {
+},
+{
     path: '/searchManuscript',
     component: searchManuscript
-  },
-  {
+},
+{
     path: '/manuscriptFlow',
     component: manuscriptFlow,
     children: [{
         path: '',
         redirect: '/manuscriptFlow/person',
         component: person
-      },
-      {
+    },
+    {
         path: '/manuscriptFlow/person',
         component: person
-      },
-      {
+    },
+    {
         path: '/manuscriptFlow/media',
         component: media
-      },
-      {
+    },
+    {
         path: '/manuscriptFlow/group',
         component: group
-      },
-      {
+    },
+    {
         path: '/manuscriptFlow/other',
         component: other
-      },
-      {
+    },
+    {
         path: '/manuscriptFlow/page',
         component: page
-      },
-      {
+    },
+    {
         path: '/manuscriptFlow/column',
         component: column
-      },
-      {
+    },
+    {
         path: '/manuscriptFlow/special',
         component: special
-      }
+    }
     ]
-  },
-  {
+},
+{
     path: '/manuscriptSetting',
     component: manuscriptSetting
-  },
-  {
+},
+{
     path: '/writeManuscript',
     component: writeManuscript
-  },
-  {
+},
+{
     path: '/personStatistics',
     component: personStatistics
-  },
-  {
+},
+{
     path: '/departStatistics',
     component: departStatistics
-  },
-  {
+},
+{
     path: '/sendManuscript',
     component: sendManuscript
-  },
-  {
+},
+{
     path: '/newsCalendar',
     component: newsCalendar
-  },
-  // {
-  //     path: '/systemBackground',
-  //     component: systemBackground,
-  //     children: [{
-  //         path: '',
-  //         redirect: '/mediaSet',
-  //         component: mediaSet
-  //     },
-  //     {
-  //         path: '/mediaSet',
-  //         component: mediaSet
-  //     },
-  //     {
-  //         path: '/mediaExpand',
-  //         component: mediaExpand
-  //     },
-  //     {
-  //         path: '/pageSet',
-  //         component: pageSet
-  //     },
-  //     {
-  //         path: '/stackSet',
-  //         component: stackSet
-  //     },
-  //     {
-  //         path: '/columnSet',
-  //         component: columnSet
-  //     },
-  //     {
-  //         path: '/specialSet',
-  //         component: specialSet
-  //     },
-  //     {
-  //         path: '/role',
-  //         component: role
-  //     },
-  //     {
-  //         path: '/authority',
-  //         component: authority
-  //     },
-  //     {
-  //         path: '/userManage',
-  //         component: userManage
-  //     },
-  //     {
-  //         path: '/menu',
-  //         component: menu
-  //     },
-  //     {
-  //         path: '/interfaces',
-  //         component: interfaces
-  //     },
-  //     {
-  //         path: '/department',
-  //         component: department
-  //     },
-  //     {
-  //         path: '/clueSource',
-  //         component: clueSource
-  //     },
-  //     {
-  //         path: '/commonParam',
-  //         component: commonParam
-  //     },
-  //     {
-  //         path: '/manuscriptType',
-  //         component: manuscriptType
-  //     },
-  //     {
-  //         path: '/authorType',
-  //         component: authorType
-  //     },
-  //     {
-  //         path: '/telecProducts',
-  //         component: telecProducts
-  //     },
-  //     {
-  //         path: '/manuscriptTheme',
-  //         component: manuscriptTheme
-  //     },
-  //     {
-  //         path: '/manuscriptSource',
-  //         component: manuscriptSource
-  //     },
-  //     {
-  //         path: '/manuscriptClassify',
-  //         component: manuscriptClassify
-  //     }
+},
+// {
+//     path: '/systemBackground',
+//     component: systemBackground,
+//     children: [{
+//         path: '',
+//         redirect: '/mediaSet',
+//         component: mediaSet
+//     },
+//     {
+//         path: '/mediaSet',
+//         component: mediaSet
+//     },
+//     {
+//         path: '/mediaExpand',
+//         component: mediaExpand
+//     },
+//     {
+//         path: '/pageSet',
+//         component: pageSet
+//     },
+//     {
+//         path: '/stackSet',
+//         component: stackSet
+//     },
+//     {
+//         path: '/columnSet',
+//         component: columnSet
+//     },
+//     {
+//         path: '/specialSet',
+//         component: specialSet
+//     },
+//     {
+//         path: '/role',
+//         component: role
+//     },
+//     {
+//         path: '/authority',
+//         component: authority
+//     },
+//     {
+//         path: '/userManage',
+//         component: userManage
+//     },
+//     {
+//         path: '/menu',
+//         component: menu
+//     },
+//     {
+//         path: '/interfaces',
+//         component: interfaces
+//     },
+//     {
+//         path: '/department',
+//         component: department
+//     },
+//     {
+//         path: '/clueSource',
+//         component: clueSource
+//     },
+//     {
+//         path: '/commonParam',
+//         component: commonParam
+//     },
+//     {
+//         path: '/manuscriptType',
+//         component: manuscriptType
+//     },
+//     {
+//         path: '/authorType',
+//         component: authorType
+//     },
+//     {
+//         path: '/telecProducts',
+//         component: telecProducts
+//     },
+//     {
+//         path: '/manuscriptTheme',
+//         component: manuscriptTheme
+//     },
+//     {
+//         path: '/manuscriptSource',
+//         component: manuscriptSource
+//     },
+//     {
+//         path: '/manuscriptClassify',
+//         component: manuscriptClassify
+//     }
 
-  //     ]
-  // },
-  // buttons路由定义
-  {
+//     ]
+// },
+// buttons路由定义
+{
     path: '/sendDraft',
     component: sendDraft
-  },
-  {
+},
+{
     path: '/deleteDraft',
     component: deleteDraft
-  },
-  {
+},
+{
     path: '/edit',
     component: edit
-  },
-  {
+},
+{
     path: '/issuance',
     component: issuance
-  },
-  {
+},
+{
     path: '/markRead',
     component: markRead
-  },
-  {
+},
+{
     path: '/reviewers',
     component: reviewers
-  },
-  {
+},
+{
     path: '/split',
     component: split
-  },
-  {
+},
+{
     path: '/submit',
     component: submit
-  },
-  {
+},
+{
     path: '/version',
     component: version
-  },
-  {
+},
+{
     path: '/draftLabel',
     component: draftLabel
-  },
-  // buttons弹窗路由
-  {
+},
+// buttons弹窗路由
+{
     path: '/draftMessageBox',
     component: draftMessageBox
-  },
-  {
+},
+{
     path: '/issuanceMessageBox',
     component: issuanceMessageBox
-  },
-  {
+},
+{
     path: '/labelMessageBox',
     component: labelMessageBox
-  }
+}
 ]

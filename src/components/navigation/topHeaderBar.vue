@@ -54,52 +54,52 @@
             </el-menu> -->
         </div>
         <div style="position:absolute;right:0px;">
-         <el-menu class="menu2">
+            <el-menu class="menu2">
                 <el-button size="mini" round>+快讯</el-button>
                 <el-button size="mini" round>+Flash</el-button>
                 <el-button size="mini" round>+</el-button>
                 <img src="../../assets/img/messageN2.png"/>
-            <el-menu-item index="13" style="padding-left:0px;padding-right: 0px">
-                <img src="../../assets/img/screenAllN2.png"/>
-            </el-menu-item>
-            <el-menu-item index="14" style="padding-left:0px;padding-right: 0px">
-                <img src="../../assets/img/broadcast2.png"/>
-            </el-menu-item>
-                <el-dropdown trigger="click">
-                    <el-tooltip content="验收测试终审发稿人2 测试部门-测试组-编辑" placement="bottom" effect="light">
-                        <span class="el-dropdown-link">
-                            验收测试终审发稿人2<i class="el-icon-arrow-down el-icon--right"></i>
-                        </span>
-                    </el-tooltip>
-                    <el-dropdown-menu slot="dropdown" class="dropDownWidth" style="width: 180px">
-                        <el-dropdown-item>切换身份/角色</el-dropdown-item>
-                        <div class="userEdit"><span >测试部门-测试组-编辑</span></div>
-                        <el-dropdown-item>
-                            <template>
-                                <span @click="openUrl('http://cmp.xinhua-news.cn/checker/deptex')">
-                                    <i class="el-icon-setting"></i> 验校
-                                </span>
-                            </template>
-                        </el-dropdown-item>
-                        <el-dropdown-item><i class="el-icon-setting"></i> 修改密码</el-dropdown-item>
-                        <el-dropdown-item ><i class="el-icon-question"></i> 版本(0.9.1)</el-dropdown-item>
-                        <el-dropdown-item >
-                            <template>
-                                <span @click="openUrl('http://cmp.xinhua-news.cn/ai-help/guide/tree?sys=1')">
-                                    <i class="el-icon-question"></i> 帮助
-                                </span>
-                            </template>
-
+                <el-menu-item index="13" style="padding-left:0px;padding-right: 0px">
+                    <img src="../../assets/img/screenAllN2.png"/>
+                </el-menu-item>
+                <el-menu-item index="14" style="padding-left:0px;padding-right: 0px">
+                    <img src="../../assets/img/broadcast2.png"/>
+                </el-menu-item>
+                    <el-dropdown trigger="click">
+                        <el-tooltip content="验收测试终审发稿人2 测试部门-测试组-编辑" placement="bottom" effect="light">
+                            <span class="el-dropdown-link">
+                                验收测试终审发稿人2<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                        </el-tooltip>
+                        <el-dropdown-menu slot="dropdown" class="dropDownWidth" style="width: 180px">
+                            <el-dropdown-item>切换身份/角色</el-dropdown-item>
+                            <div class="userEdit"><span >测试部门-测试组-编辑</span></div>
+                            <el-dropdown-item>
+                                <template>
+                                    <span @click="openUrl('http://cmp.xinhua-news.cn/checker/deptex')">
+                                        <i class="el-icon-setting"></i> 验校
+                                    </span>
+                                </template>
                             </el-dropdown-item>
-                        <div style="text-align:center">
-                            <el-button  size="mini" style="padding: 7px 40px">退出</el-button>
-                        </div>
-                    </el-dropdown-menu>
-                </el-dropdown>
-            <el-menu-item index="16" style="padding-left:0px;padding-right: 0px">
-                <img src="../../assets/img/chatN2.png"/>
-            </el-menu-item>
-        </el-menu>
+                            <el-dropdown-item><i class="el-icon-setting"></i> 修改密码</el-dropdown-item>
+                            <el-dropdown-item ><i class="el-icon-question"></i> 版本(0.9.1)</el-dropdown-item>
+                            <el-dropdown-item >
+                                <template>
+                                    <span @click="openUrl('http://cmp.xinhua-news.cn/ai-help/guide/tree?sys=1')">
+                                        <i class="el-icon-question"></i> 帮助
+                                    </span>
+                                </template>
+
+                                </el-dropdown-item>
+                            <div style="text-align:center">
+                                <el-button  size="mini" style="padding: 7px 40px">退出</el-button>
+                            </div>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                <el-menu-item index="16" style="padding-left:0px;padding-right: 0px">
+                    <img src="../../assets/img/chatN2.png"/>
+                </el-menu-item>
+            </el-menu>
 
         </div>
 

@@ -6,7 +6,7 @@
                     <span>选择时间:</span>
                     <el-date-picker class="tree-search"
                                     v-model="monthText"
-                                    value-format="yyyy-MM-dd"
+                                    value-format="MM-dd"
                                     type="date"
                                     :picker-options="expireTimeOption"
                                     placeholder="选择日期">
