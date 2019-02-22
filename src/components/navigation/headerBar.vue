@@ -2,7 +2,7 @@
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2019-02-22 09:40:51
+ * @LastEditTime: 2019-02-22 15:41:35
  * @Description: 导航条样式改版
  -->
 <template>
@@ -205,6 +205,21 @@ export default {
 <style lang="scss" scoped>
 // 若导航条有下拉菜单
 .el-menu--horizontal .el-submenu.is-active {
+    @extend %gradient-bgcolor;
+    .el-submenu__title {
+        @extend %gradient-bgcolor;
+    }
+}
+.el-menu--horizontal .el-submenu.is-active.is-opened :hover {
+    @extend %gradient-bgcolor;
+}
+.el-menu--horizontal .el-submenu.is-active.is-opened :focus-within {
+    @extend %gradient-bgcolor;
+}
+.el-menu--horizontal.childMenu .el-menu .el-menu-item.is-active {
+    color: #3871f5 !important;
+}
+.el-menu--horizontal .el-submenu.is-active.is-opened {
     @extend %gradient-bgcolor;
 }
 </style>
