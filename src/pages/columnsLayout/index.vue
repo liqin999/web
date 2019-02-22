@@ -206,7 +206,8 @@ import submit from '@/components/buttons/submit/submit.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
-import draftLook from '@/components/buttons/draftLook/draftLook'
+// import draftLook from '@/components/buttons/draftLook/draftLook'
+import draftLook from '@/components/buttons/draftLook/audioMessageBox'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 // 淘汰按钮
@@ -257,7 +258,7 @@ export default {
                 keywords: '',
                 checkAll: false,
                 media: '',
-                checkedTypes: ['文本', '图片'],
+                checkedTypes: ['文字', '图片'],
                 isIndeterminate: true
             },
             allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],

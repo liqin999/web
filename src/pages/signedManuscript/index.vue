@@ -531,7 +531,7 @@ export default {
                 data: '2018-12-25',
                 medio: '新华每日资讯',
                 firstAuthor: '杨维汉',
-                type: '文本'
+                type: '文字'
             }],
             multipleSelection: [],
             mainTableHeight: null

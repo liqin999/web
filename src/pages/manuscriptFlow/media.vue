@@ -148,7 +148,7 @@ export default {
                 author: '强晓玲',
                 processingTime: '10-31 14:23',
                 handlePeople: '刘学奎',
-                type2: '文本'
+                type2: '文字'
             }, {
                 id: '20181029000029',
                 title: '（脱贫攻坚）“80后”移民夫妻“百元计划”筹谋新生活',

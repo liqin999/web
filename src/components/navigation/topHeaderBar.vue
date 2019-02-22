@@ -2,10 +2,10 @@
     <div class="top-header-bar header-nav el-menu-demo">
         <img src="../../assets/img/topHead.png">
         <div class="title">
-            <span >全媒体采标系统</span>
+            <span>全媒体采标系统</span>
         </div>
         <div>
-            <el-menu default-active="1"
+            <el-menu :default-active="activeIndex"
                      mode="horizontal">
                 <template v-for="item in navBar">
                     <template v-if="item.chiled">
@@ -55,49 +55,61 @@
         </div>
         <div style="position:absolute;right:0px;">
             <el-menu class="menu2">
-                <el-button size="mini" round>+快讯</el-button>
-                <el-button size="mini" round>+Flash</el-button>
-                <el-button size="mini" round>+</el-button>
-                <img src="../../assets/img/messageN2.png"/>
-                <el-menu-item index="13" style="padding-left:0px;padding-right: 0px">
-                    <img src="../../assets/img/screenAllN2.png"/>
+                <el-button size="mini"
+                           round>+快讯</el-button>
+                <el-button size="mini"
+                           round>+Flash</el-button>
+                <el-button size="mini"
+                           round>+</el-button>
+                <img src="../../assets/img/messageN2.png" />
+                <el-menu-item index="13"
+                              style="padding-left:0px;padding-right: 0px">
+                    <img src="../../assets/img/screenAllN2.png" />
                 </el-menu-item>
-                <el-menu-item index="14" style="padding-left:0px;padding-right: 0px">
-                    <img src="../../assets/img/broadcast2.png"/>
+                <el-menu-item index="14"
+                              style="padding-left:0px;padding-right: 0px">
+                    <img src="../../assets/img/broadcast2.png" />
                 </el-menu-item>
-                    <el-dropdown trigger="click">
-                        <el-tooltip content="验收测试终审发稿人2 测试部门-测试组-编辑" placement="bottom" effect="light">
-                            <span class="el-dropdown-link">
-                                验收测试终审发稿人2<i class="el-icon-arrow-down el-icon--right"></i>
-                            </span>
-                        </el-tooltip>
-                        <el-dropdown-menu slot="dropdown" class="dropDownWidth" style="width: 180px">
-                            <el-dropdown-item>切换身份/角色</el-dropdown-item>
-                            <div class="userEdit"><span >测试部门-测试组-编辑</span></div>
-                            <el-dropdown-item>
-                                <template>
-                                    <span @click="openUrl('http://cmp.xinhua-news.cn/checker/deptex')">
-                                        <i class="el-icon-setting"></i> 验校
-                                    </span>
-                                </template>
-                            </el-dropdown-item>
-                            <el-dropdown-item><i class="el-icon-setting"></i> 修改密码</el-dropdown-item>
-                            <el-dropdown-item ><i class="el-icon-question"></i> 版本(0.9.1)</el-dropdown-item>
-                            <el-dropdown-item >
-                                <template>
-                                    <span @click="openUrl('http://cmp.xinhua-news.cn/ai-help/guide/tree?sys=1')">
-                                        <i class="el-icon-question"></i> 帮助
-                                    </span>
-                                </template>
+                <el-dropdown trigger="click">
+                    <el-tooltip content="验收测试终审发稿人2 测试部门-测试组-编辑"
+                                placement="bottom"
+                                effect="light">
+                        <span class="el-dropdown-link">
+                            验收测试终审发稿人2<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                    </el-tooltip>
+                    <el-dropdown-menu slot="dropdown"
+                                      class="dropDownWidth"
+                                      style="width: 180px">
+                        <el-dropdown-item>切换身份/角色</el-dropdown-item>
+                        <div class="userEdit"><span>测试部门-测试组-编辑</span></div>
+                        <el-dropdown-item>
+                            <template>
+                                <span @click="openUrl('http://cmp.xinhua-news.cn/checker/deptex')">
+                                    <i class="el-icon-setting"></i> 验校
+                                </span>
+                            </template>
+                        </el-dropdown-item>
+                        <el-dropdown-item><i class="el-icon-setting"></i> 修改密码</el-dropdown-item>
+                        <el-dropdown-item><i class="el-icon-question"></i> 版本(0.9.1)</el-dropdown-item>
+                        <el-dropdown-item>
+                            <template>
+                                <span @click="openUrl('http://cmp.xinhua-news.cn/ai-help/guide/tree?sys=1')">
+                                    <i class="el-icon-question"></i> 帮助
+                                </span>
+                            </template>
 
-                                </el-dropdown-item>
-                            <div style="text-align:center">
-                                <el-button  size="mini" style="padding: 7px 40px">退出</el-button>
-                            </div>
-                        </el-dropdown-menu>
-                    </el-dropdown>
-                <el-menu-item index="16" style="padding-left:0px;padding-right: 0px">
-                    <img src="../../assets/img/chatN2.png"/>
+                        </el-dropdown-item>
+                        <div style="text-align:center">
+                            <el-button @click="loginOut"
+                                       size="mini"
+                                       style="padding: 7px 40px">退出</el-button>
+                        </div>
+                    </el-dropdown-menu>
+                </el-dropdown>
+                <el-menu-item index="16"
+                              style="padding-left:0px;padding-right: 0px">
+                    <img src="../../assets/img/chatN2.png" />
                 </el-menu-item>
             </el-menu>
 
@@ -110,7 +122,7 @@
 export default {
     data () {
         return {
-            activeIndex: '',
+            activeIndex: '4',
             navBar: [
                 {
                     name: '我的首页', // 导航的名字
@@ -122,14 +134,14 @@ export default {
                     name: '工作台',
                     icon: 'el-icon-index',
                     id: '2',
-                    path: 'http://edit.xinhua-news.cn:8888/work/home/group/story/3/1550712191520'
+                    path: '/columnsLayout'
                 },
-                {
-                    name: '新媒体',
-                    icon: 'el-icon-index',
-                    id: '3'
-                    // path: ''
-                },
+                // {
+                //     name: '新媒体',
+                //     icon: 'el-icon-index',
+                //     id: '3',
+                //     path: ''
+                // },
                 {
                     name: '资源库',
                     icon: 'el-icon-index',
@@ -139,22 +151,22 @@ export default {
                         {
                             name: '未定稿',
                             id: '4-1',
-                            path: 'http://edit.xinhua-news.cn:8888/resource/halfStory'
+                            path: 'undefinedDraft'
                         },
                         {
                             name: '成品稿',
                             id: '4-2',
-                            path: 'http://edit.xinhua-news.cn:8888/resource/finishedStory/channel/0'
+                            path: 'finishedDraft'
                         },
                         {
                             name: '社外电讯',
                             id: '4-3',
-                            path: 'http://edit.xinhua-news.cn:8888/resource/externalTeleInfo/date-line/0'
+                            path: 'telecDraft'
                         },
                         {
                             name: '订阅',
                             id: '4-4',
-                            path: 'http://edit.xinhua-news.cn:8888/resource/subscription/0/resource'
+                            path: 'orderDraft'
                         },
                         {
                             name: '内部网站',
@@ -302,7 +314,25 @@ export default {
     },
     methods: {
         openUrl (url) {
-            window.open(url)
+            let reg = /(http|https):\/\/([\w.]+\/?)\S*/g
+            if (url === '/columnsLayout') {
+                this.$router.push({
+                    path: '/columnsLayout'
+                })
+            } else
+                if (reg.test(url)) {
+                    window.open(url)
+                } else {
+                    this.$router.push({
+                        path: '/dataService'
+                    })
+                    this.$store.commit('changeResourceName', url)
+                }
+        },
+        loginOut () {
+            this.$router.push({
+                path: '/login'
+            })
         }
     }
 }
@@ -348,12 +378,15 @@ export default {
     background: #0ba9ef !important;
     color: #fff;
 }
-.top-header-bar .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
+.top-header-bar
+    .el-menu--horizontal
+    > .el-submenu.is-active
+    .el-submenu__title {
     background: #0ba9ef !important;
 }
 .top-header-bar .el-menu--horizontal > .el-menu-item {
     border: none !important;
-    color: #fff
+    color: #fff;
 }
 .top-header-bar .el-menu--horizontal > .el-submenu .el-submenu__title {
     color: #fff;
@@ -372,28 +405,35 @@ export default {
     font-family: inherit;
     font-size: 14px;
 }
-.top-header-bar .menu2 .el-button--mini, .el-button--mini.is-round {
+.top-header-bar .menu2 .el-button--mini,
+.el-button--mini.is-round {
     padding: 4px 15px;
 }
-.top-header-bar .menu2-item .el-menu-item{
+.top-header-bar .menu2-item .el-menu-item {
     padding: 0px 0px;
 }
 .userEdit {
     background: #e5f7f5;
     height: 40px;
-    width:150px;
-    text-align:center;
+    width: 150px;
+    text-align: center;
     margin: 0 auto;
-    line-height:40px
+    line-height: 40px;
 }
 .top-header-bar .el-dropdown {
     color: #fff;
     font-size: 14px;
 }
-.top-header-bar .menu2 .el-button--mini, .el-button--mini.is-round {
+.top-header-bar .menu2 .el-button--mini,
+.el-button--mini.is-round {
     padding: 5px 11px;
 }
-.el-button+.el-button {
+.el-button + .el-button {
     margin-left: 0px;
+}
+.top-header-bar .el-menu--horizontal>.el-submenu:hover .el-submenu__title,
+.top-header-bar .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    background-color: #069cec !important;
+    color: #fff !important;
 }
 </style>

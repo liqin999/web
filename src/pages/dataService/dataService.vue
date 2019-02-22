@@ -3,17 +3,29 @@
     <el-container>
         <el-aside width="250px">
             <div class="tabTree">
-                <el-tabs v-model="activeTreeName"
+                <el-tabs v-model="activeTabName"
                          :stretch="true"
                          @tab-click="switchTreeMemu">
+                    <el-tab-pane label="未定稿"
+                                 name="undefinedDraft">
+                        <left-menu :treeData="data3"
+                                   :defaultProps="defaultProps"
+                                   @sendTreeObj="getTreeObj"></left-menu>
+                    </el-tab-pane>
                     <el-tab-pane label="成品稿"
-                                 name="first">
+                                 name="finishedDraft">
                         <left-menu :treeData="data2"
                                    :defaultProps="defaultProps"
                                    @sendTreeObj="getTreeObj"></left-menu>
                     </el-tab-pane>
-                    <el-tab-pane label="未定稿"
-                                 name="second">
+                    <el-tab-pane label="社外电讯"
+                                 name="telecDraft">
+                        <left-menu :treeData="data3"
+                                   :defaultProps="defaultProps"
+                                   @sendTreeObj="getTreeObj"></left-menu>
+                    </el-tab-pane>
+                    <el-tab-pane label="订阅"
+                                 name="orderDraft">
                         <left-menu :treeData="data3"
                                    :defaultProps="defaultProps"
                                    @sendTreeObj="getTreeObj"></left-menu>
@@ -29,16 +41,22 @@
                         <span slot="iconName">建稿</span>
                     </create-draft>
 
-                    <div data-v-6eb3df45=""
+                    <printing class="primary-btn">
+                        <span slot="iconName">打印</span>
+                    </printing>
+
+                    <!-- <div data-v-6eb3df45=""
                          class="primary-btn"><span>
                             <span data-v-6eb3df45="">打印</span>
                         </span>
-                    </div>
-
-                    <div data-v-6eb3df45=""
+                    </div> -->
+                    <down-load class="primary-btn">
+                        <span slot="iconName">导出</span>
+                    </down-load>
+                    <!-- <div data-v-6eb3df45=""
                          class="primary-btn">
                         <span data-v-6eb3df45="">导出</span>
-                    </div>
+                    </div> -->
 
                     <div data-v-6eb3df45=""
                          class="primary-btn"><span>
@@ -139,16 +157,21 @@
 // 建稿按钮组件
 import createDraft from '@/components/buttons/createDraft/createDraft'
 import leftMenu from '@/components/treeMenu/leftTree.vue'
-
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
+// 导出弹框按钮
+import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 export default {
     components: {
         leftMenu,
-        createDraft
+        createDraft,
+        printing,
+        downLoad
 
     },
     data () {
         return {
-            activeTreeName: 'first',
+            dataResource: sessionStorage.getItem('dataResource'),
             activeTreeName1: 'first1',
             draft: [],
             currentPage: 0,
@@ -345,6 +368,8 @@ export default {
                 that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
             })()
         }
+
+        console.log(this.$store.state.nav.dataResourceName)
     },
     methods: {
         tabclick () {
@@ -380,7 +405,11 @@ export default {
         }
     },
     computed: {
+        activeTabName () {
+            return this.$store.state.nav.dataResourceName
+        }
     }
+
 }
 </script>
 <style lang="scss" scoped>
@@ -394,5 +423,12 @@ export default {
 <style lang="scss">
 .el-tabs__header {
     margin: 0px 10px 15px 10px;
+}
+.tabTree {
+    .el-tabs__item {
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+        font-size: 12px;
+    }
 }
 </style>

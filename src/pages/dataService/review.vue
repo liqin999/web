@@ -24,7 +24,6 @@
                     </el-col>
                     <el-col :span="4"
                             class="text-right">
-
                         <!-- <el-button class="primary-btn">建稿</el-button> -->
                         <create-draft>
                             <span slot="iconName">建稿</span>
@@ -72,8 +71,13 @@
                     </el-col>
                 </el-row>
                 <el-row class="clearfix mt15 mb15">
-                    <el-button class="primary-btn">打印全部(稿签和正文)</el-button>
-                    <el-button class="primary-btn">打印正文</el-button>
+                   <button class="primary-btn" onclick="window.print()">打印全部(稿签和正文)</button>
+                    <!-- <el-button class="primary-btn">打印全部(稿签和正文)</el-button> -->
+
+                    <printing class="primary-btn" style="line-height:18px">
+                        <span slot="iconName">打印正文</span>
+                    </printing>
+                    <!-- <el-button class="primary-btn">打印正文</el-button> -->
                 </el-row>
             </el-row>
         </el-main>
@@ -82,9 +86,12 @@
 <script>
 // 建稿按钮组件
 import createDraft from '@/components/buttons/createDraft/createDraft'
+// 打印弹框按钮
+import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
-        createDraft
+        createDraft,
+        printing
 
     },
     data () {
@@ -119,6 +126,9 @@ export default {
         },
         closeFn () {
             this.$router.go('-1')
+        },
+        print: function () {
+            window.print()
         }
     }
 }

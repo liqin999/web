@@ -100,6 +100,7 @@
                         </el-table-column>
                     </el-table>
                 </el-main>
+                <!-- 分页展示 -->
                 <el-footer height="70px">
                     <el-pagination @size-change="handleSizeChange"
                                    @current-change="handleCurrentChange"
