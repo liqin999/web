@@ -311,7 +311,6 @@ export default {
     text-indent: 2em;
     column-count: 1;
     column-gap: 20px;
-    padding: 25px;
 }
 .printContent p{
     text-align: justify;
@@ -321,7 +320,7 @@ export default {
     overflow: auto;
 }
 .text-indent-2 {
-    padding: 20;
+    // padding: 20;
     text-indent: 2em;
 }
 </style>
