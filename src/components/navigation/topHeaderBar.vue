@@ -5,7 +5,7 @@
             <span>全媒体采编发系统</span>
         </div>
         <div>
-            <el-menu :default-active="activeIndex"
+            <el-menu :default-active="menuActive.activeIndex"
                      mode="horizontal">
                 <template v-for="item in navBar">
                     <template v-if="item.chiled">
@@ -122,7 +122,9 @@
 export default {
     data () {
         return {
-            activeIndex: '2',
+            menuActive: {
+                activeIndex: '2'
+            },
             navBar: [
                 {
                     name: '我的首页', // 导航的名字
@@ -319,6 +321,9 @@ export default {
                 this.$router.push({
                     path: '/columnsLayout'
                 })
+                setTimeout(() => {
+                    this.$set(this.menuActive, 'activeIndex', '2')
+                }, 2000)
             } else
                 if (reg.test(url)) {
                     window.open(url)
@@ -334,7 +339,18 @@ export default {
                 path: '/login'
             })
         }
+    },
+    watch: {
+        $route (to, from) {
+            if (to.path === '/columnsLayout') {
+                this.$set(this.menuActive, 'activeIndex', '1')
+                setTimeout(() => {
+                    this.$set(this.menuActive, 'activeIndex', '2')
+                }, 500)
+            }
+        }
     }
+
 }
 </script>
 
@@ -431,7 +447,7 @@ export default {
 .el-button + .el-button {
     margin-left: 0px;
 }
-.top-header-bar .el-menu--horizontal>.el-submenu:hover .el-submenu__title,
+.top-header-bar .el-menu--horizontal > .el-submenu:hover .el-submenu__title,
 .top-header-bar .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
     background-color: #069cec !important;
     color: #fff !important;
