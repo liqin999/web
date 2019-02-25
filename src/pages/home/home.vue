@@ -162,4 +162,7 @@ export default {
     font-size: 30px !important;
     color: #fff;
 }
+.el-container {
+    background-color: #ffffff;
+}
 </style>

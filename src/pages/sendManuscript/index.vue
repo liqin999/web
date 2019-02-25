@@ -192,9 +192,9 @@
                             </classify>
                             <!-- <el-button class="primary-btn">选择分类</el-button> -->
                             <!-- <el-button class="primary-btn">详细稿签</el-button> -->
-                            <draft-label class="primary-btn">
+                            <detailed-draft class="primary-btn">
                                 <span slot="iconName">详细稿签</span>
-                            </draft-label>
+                            </detailed-draft>
                         </div>
                     </el-col>
                 </el-row>
@@ -266,12 +266,12 @@
 // 选择分类按钮组件
 import classify from '@/components/buttons/classify/classify'
 // 详细稿签按钮组件
-import draftLabel from '@/components/buttons/draftLabel/draftLabel'
+import detailedDraft from '@/components/buttons/detailedDraft/detailedDraft'
 
 export default {
     components: {
         classify,
-        draftLabel
+        detailedDraft
 
     },
     data () {

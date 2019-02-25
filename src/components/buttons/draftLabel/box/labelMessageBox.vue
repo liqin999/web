@@ -76,12 +76,10 @@
                                     <el-table :data="tableData"
                                               style="width: 100%">
                                         <el-table-column prop="id"
-                                                         label="序号"
-                                                         width="180">
+                                                         label="序号">
                                         </el-table-column>
                                         <el-table-column prop="name"
-                                                         label="姓名"
-                                                         width="180">
+                                                         label="姓名">
                                         </el-table-column>
                                         <el-table-column prop="penName"
                                                          label="笔名">
