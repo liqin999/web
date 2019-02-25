@@ -12,21 +12,21 @@
                 <el-row>
                     <el-col :span="14" :offset="3">
                         <el-form-item label="设置每行打印字数：" prop="fontNum"  class="mb15">
-                            <el-input type="number" v-model.number="params.fontNum"></el-input>
+                            <el-input type="number" placeholder="50" v-model.number="params.fontNum"></el-input>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
                     <el-col :span="14" :offset="3">
                         <el-form-item label="设置打印栏数：" prop="columnNum" class="mb15">
-                            <el-input type="number" v-model.number="params.columnNum"></el-input>
+                            <el-input type="number" placeholder="1" v-model.number="params.columnNum"></el-input>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
                     <el-col :span="14" :offset="3">
                         <el-form-item label="设置打印字数大小：" prop="fontSize" class="mb15">
-                            <el-input type="number" v-model.number="params.fontSize"></el-input>
+                            <el-input type="number" placeholder="16" v-model.number="params.fontSize"></el-input>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -34,7 +34,7 @@
                 <el-row>
                     <el-col :span="14" :offset="3">
                         <el-form-item label="行间距大小：" prop="lineSpace" class="mb15">
-                            <el-input type="number" v-model.number="params.lineSpace"></el-input>
+                            <el-input type="number" placeholder="1" v-model.number="params.lineSpace"></el-input>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -55,7 +55,7 @@
                                             min="0"
                                             class="numSpace"
                                             v-model.number="params.leftSpace"
-                                            placeholder="0"></el-input>
+                                            placeholder="20"></el-input>
                                 </el-col>
                                 <el-col :span="8">
                                     <span>毫米</span>
@@ -75,7 +75,7 @@
                                             min="0"
                                             class="numSpace"
                                             v-model.number="params.topSpace"
-                                            placeholder="0"></el-input>
+                                            placeholder="20"></el-input>
                                 </el-col>
                                 <el-col :span="8">
                                     <span>毫米</span>
@@ -95,7 +95,7 @@
                                             min="0"
                                             class="numSpace"
                                             v-model.number="params.bottomSpace"
-                                            placeholder="0"></el-input>
+                                            placeholder="20"></el-input>
                                 </el-col>
                                 <el-col :span="8">
                                     <span>毫米</span>
@@ -231,6 +231,13 @@ export default {
                     strTemp = str.substring(0, n - 2)// 那么截取指定长度的字符串 开头有缩进
                 } else {
                     strTemp = str.substring(0, n)
+                    // let regWord = /[^\u4e00-\u9fa5]/g
+                    // let nstr = strTemp.match(regWord)
+                    // nstr = nstr ? nstr.length : 0
+                    // strTemp = str.substring(0, n - nstr)
+                    console.log(strTemp)
+                    // strTemp = str.substring(0, n)
+                   // console.log('er', nstr)
                 }
                 if (!strTemp) {
                     return
@@ -305,11 +312,15 @@ export default {
     column-count: 1;
     column-gap: 20px;
 }
+.printContent p{
+    text-align: justify;
+}
 .print-wrap {
     max-height: 200px;
     overflow: auto;
 }
 .text-indent-2 {
+    padding: 20;
     text-indent: 2em;
 }
 </style>

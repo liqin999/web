@@ -214,98 +214,98 @@ export const routes = [{
     path: '/newsCalendar',
     component: newsCalendar
 },
-// {
-//     path: '/systemBackground',
-//     component: systemBackground,
-//     children: [{
-//         path: '',
-//         redirect: '/mediaSet',
-//         component: mediaSet
-//     },
-//     {
-//         path: '/mediaSet',
-//         component: mediaSet
-//     },
-//     {
-//         path: '/mediaExpand',
-//         component: mediaExpand
-//     },
-//     {
-//         path: '/pageSet',
-//         component: pageSet
-//     },
-//     {
-//         path: '/stackSet',
-//         component: stackSet
-//     },
-//     {
-//         path: '/columnSet',
-//         component: columnSet
-//     },
-//     {
-//         path: '/specialSet',
-//         component: specialSet
-//     },
-//     {
-//         path: '/role',
-//         component: role
-//     },
-//     {
-//         path: '/authority',
-//         component: authority
-//     },
-//     {
-//         path: '/userManage',
-//         component: userManage
-//     },
-//     {
-//         path: '/menu',
-//         component: menu
-//     },
-//     {
-//         path: '/interfaces',
-//         component: interfaces
-//     },
-//     {
-//         path: '/department',
-//         component: department
-//     },
-//     {
-//         path: '/clueSource',
-//         component: clueSource
-//     },
-//     {
-//         path: '/commonParam',
-//         component: commonParam
-//     },
-//     {
-//         path: '/manuscriptType',
-//         component: manuscriptType
-//     },
-//     {
-//         path: '/authorType',
-//         component: authorType
-//     },
-//     {
-//         path: '/telecProducts',
-//         component: telecProducts
-//     },
-//     {
-//         path: '/manuscriptTheme',
-//         component: manuscriptTheme
-//     },
-//     {
-//         path: '/manuscriptSource',
-//         component: manuscriptSource
-//     },
-//     {
-//         path: '/manuscriptClassify',
-//         component: manuscriptClassify
-//     }
+  // {
+  //     path: '/systemBackground',
+  //     component: systemBackground,
+  //     children: [{
+  //         path: '',
+  //         redirect: '/mediaSet',
+  //         component: mediaSet
+  //     },
+  //     {
+  //         path: '/mediaSet',
+  //         component: mediaSet
+  //     },
+  //     {
+  //         path: '/mediaExpand',
+  //         component: mediaExpand
+  //     },
+  //     {
+  //         path: '/pageSet',
+  //         component: pageSet
+  //     },
+  //     {
+  //         path: '/stackSet',
+  //         component: stackSet
+  //     },
+  //     {
+  //         path: '/columnSet',
+  //         component: columnSet
+  //     },
+  //     {
+  //         path: '/specialSet',
+  //         component: specialSet
+  //     },
+  //     {
+  //         path: '/role',
+  //         component: role
+  //     },
+  //     {
+  //         path: '/authority',
+  //         component: authority
+  //     },
+  //     {
+  //         path: '/userManage',
+  //         component: userManage
+  //     },
+  //     {
+  //         path: '/menu',
+  //         component: menu
+  //     },
+  //     {
+  //         path: '/interfaces',
+  //         component: interfaces
+  //     },
+  //     {
+  //         path: '/department',
+  //         component: department
+  //     },
+  //     {
+  //         path: '/clueSource',
+  //         component: clueSource
+  //     },
+  //     {
+  //         path: '/commonParam',
+  //         component: commonParam
+  //     },
+  //     {
+  //         path: '/manuscriptType',
+  //         component: manuscriptType
+  //     },
+  //     {
+  //         path: '/authorType',
+  //         component: authorType
+  //     },
+  //     {
+  //         path: '/telecProducts',
+  //         component: telecProducts
+  //     },
+  //     {
+  //         path: '/manuscriptTheme',
+  //         component: manuscriptTheme
+  //     },
+  //     {
+  //         path: '/manuscriptSource',
+  //         component: manuscriptSource
+  //     },
+  //     {
+  //         path: '/manuscriptClassify',
+  //         component: manuscriptClassify
+  //     }
 
-//     ]
-// },
-// buttons路由定义
+  //     ]
+  // },
+  // buttons路由定义
 {
     path: '/sendDraft',
     component: sendDraft
@@ -346,7 +346,7 @@ export const routes = [{
     path: '/draftLabel',
     component: draftLabel
 },
-// buttons弹窗路由
+  // buttons弹窗路由
 {
     path: '/draftMessageBox',
     component: draftMessageBox

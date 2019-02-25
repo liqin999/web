@@ -2,7 +2,7 @@
     <div class="top-header-bar header-nav el-menu-demo">
         <img src="../../assets/img/topHead.png">
         <div class="title">
-            <span>全媒体采标系统</span>
+            <span>全媒体采编发系统</span>
         </div>
         <div>
             <el-menu :default-active="activeIndex"

@@ -25,7 +25,7 @@ export default {
             let link = document.createElement('a')
             link.style.display = 'none'
             link.href = url
-            link.setAttribute('downLoad', 'draft.txt')
+            link.setAttribute('downLoad', '千年古镇里走中药种植路.txt')
 
             document.body.appendChild(link)
             link.click()
