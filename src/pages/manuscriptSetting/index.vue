@@ -543,3 +543,8 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+.search-wrap {
+    min-width: 1200px;
+}
+</style>

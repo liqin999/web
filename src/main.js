@@ -62,7 +62,6 @@ window.Bus = new Vue()
 new Vue({
     el: '#app',
     router,
-    // i18n,
     components: {
         App
     },

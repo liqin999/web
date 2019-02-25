@@ -2,7 +2,7 @@
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2019-02-22 15:41:35
+ * @LastEditTime: 2019-02-25 12:42:55
  * @Description: 导航条样式改版
  -->
 <template>
@@ -199,6 +199,7 @@ export default {
             sessionStorage.setItem('activeIndex', key)
         }
     }
+
 }
 </script>
 

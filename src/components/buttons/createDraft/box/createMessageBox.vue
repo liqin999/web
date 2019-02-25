@@ -104,7 +104,7 @@
                         </el-col>
 
                     </el-row>
-                    <el-row>
+                    <el-row style="display:none">
                         <el-col :span="24">
                             <el-row>
                                 <el-col :span="3">
@@ -113,24 +113,32 @@
                                 <template>
                                     <el-col :span="21"
                                             class="text-overflow">
-                                        <el-form :model="contactForm" :rules="rules" ref="contactForm" label-width="100px" >
+                                        <el-form :model="contactForm"
+                                                 :rules="rules"
+                                                 ref="contactForm"
+                                                 label-width="100px">
                                             <el-row :gutter="20">
                                                 <el-col :span="12">
-                                                    <el-form-item label="姓名:" prop="name">
-                                                        <el-input  v-model="contactForm.name" ></el-input>
+                                                    <el-form-item label="姓名:"
+                                                                  prop="name">
+                                                        <el-input v-model="contactForm.name"></el-input>
                                                     </el-form-item>
-                                                    <el-form-item label="邮箱:" prop="email">
+                                                    <el-form-item label="邮箱:"
+                                                                  prop="email">
                                                         <el-input v-model="contactForm.email"></el-input>
                                                     </el-form-item>
-                                                    <el-form-item label="地址:" prop="address">
+                                                    <el-form-item label="地址:"
+                                                                  prop="address">
                                                         <el-input v-model="contactForm.address"></el-input>
                                                     </el-form-item>
                                                 </el-col>
                                                 <el-col :span="12">
-                                                    <el-form-item label="电话:" prop="phone">
-                                                        <el-input v-model="contactForm.phone" ></el-input>
+                                                    <el-form-item label="电话:"
+                                                                  prop="phone">
+                                                        <el-input v-model="contactForm.phone"></el-input>
                                                     </el-form-item>
-                                                    <el-form-item label="邮编:" prop="zipCode">
+                                                    <el-form-item label="邮编:"
+                                                                  prop="zipCode">
                                                         <el-input v-model="contactForm.zipCode"></el-input>
                                                     </el-form-item>
                                                 </el-col>
@@ -382,14 +390,14 @@ export default {
             },
             rules: {
                 phone: [
-                    {validator: checkPhone, trigger: 'blur'}
+                    { validator: checkPhone, trigger: 'blur' }
                 ],
                 email: [
-                    {validator: checkEmail, trigger: 'blur'},
+                    { validator: checkEmail, trigger: 'blur' },
                     { type: 'email', message: '请输入正确的邮箱格式', trigger: ['blur', 'change'] }
                 ],
                 zipCode: [
-                    {validator: checkZipCode, trigger: 'blur'}
+                    { validator: checkZipCode, trigger: 'blur' }
                 ]
             }
         }
@@ -464,7 +472,7 @@ export default {
         }
     }
 }
-.is-error{
+.is-error {
     height: 57px;
 }
 </style>
