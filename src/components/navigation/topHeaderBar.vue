@@ -122,7 +122,7 @@
 export default {
     data () {
         return {
-            activeIndex: '4',
+            activeIndex: '2',
             navBar: [
                 {
                     name: '我的首页', // 导航的名字
@@ -383,6 +383,7 @@ export default {
     > .el-submenu.is-active
     .el-submenu__title {
     background: #0ba9ef !important;
+    color: #fff;
 }
 .top-header-bar .el-menu--horizontal > .el-menu-item {
     border: none !important;

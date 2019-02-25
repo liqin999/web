@@ -1,5 +1,6 @@
 <template>
-    <el-dialog title="建稿"
+    <el-dialog class="create-messageBox"
+               title="建稿"
                @close="messageBoxClose()"
                :visible.sync="createData.contentShow"
                top="15vh"
@@ -114,12 +115,12 @@
                                     <el-col :span="21"
                                             class="text-overflow">
                                         <el-form :model="contactForm" :rules="rules" ref="contactForm" label-width="100px" >
-                                            <el-row :gutter="20">
+                                            <el-row :gutter="24">
                                                 <el-col :span="12">
                                                     <el-form-item label="姓名:" prop="name">
                                                         <el-input  v-model="contactForm.name" ></el-input>
                                                     </el-form-item>
-                                                    <el-form-item label="邮箱:" prop="email">
+                                                    <el-form-item label="E-mail:" prop="email">
                                                         <el-input v-model="contactForm.email"></el-input>
                                                     </el-form-item>
                                                     <el-form-item label="地址:" prop="address">
@@ -466,5 +467,11 @@ export default {
 }
 .is-error{
     height: 57px;
+}
+
+</style>
+<style>
+.create-messageBox .el-form-item__label {
+    text-align: left
 }
 </style>
