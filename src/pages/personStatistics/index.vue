@@ -239,5 +239,4 @@ export default {
     @include border(all);
     border-radius: $border-radius;
 } */
-
 </style>
