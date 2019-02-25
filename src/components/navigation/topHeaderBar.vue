@@ -122,7 +122,7 @@
 export default {
     data () {
         return {
-            activeIndex: '4',
+            activeIndex: '2',
             navBar: [
                 {
                     name: '我的首页', // 导航的名字
