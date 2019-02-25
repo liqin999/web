@@ -18,6 +18,11 @@ export default {
     components: {
         labelMessageBox
     },
+    props: {
+        draftLabelData: {
+            type: Array
+        }
+    },
     data () {
         return {
             labelData: {

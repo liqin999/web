@@ -64,6 +64,12 @@
                 </el-header> -->
                 <!-- 统计表 -->
                 <el-main ref="mainTable">
+                    <el-row :gutter="20"
+                            class="mb10 pl10 pr10">
+                        <el-col :span="7">
+                            <b class="font18">稿件统计（稿数/字数）</b>
+                        </el-col>
+                    </el-row>
                     <el-table ref="multipleTable"
                               :data="tableData3"
                               border
@@ -94,6 +100,7 @@
                         </el-table-column>
                     </el-table>
                 </el-main>
+                <!-- 分页展示 -->
                 <el-footer height="70px">
                     <el-pagination @size-change="handleSizeChange"
                                    @current-change="handleCurrentChange"
@@ -395,10 +402,10 @@ export default {
     },
     mounted () {
         let that = this
-        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 20
+        this.mainTableHeight = this.$refs.mainTable.$el.clientHeight - 60
         window.onresize = () => {
             return (() => {
-                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 20
+                that.mainTableHeight = that.$refs.mainTable.$el.clientHeight - 60
             })()
         }
         // 测试请求的接口的调用
@@ -408,23 +415,6 @@ export default {
         })
     },
     methods: {
-        splitConcatIcon () {
-            this.$confirm('只能选择一条数据', '提示', {
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
-                type: 'warning'
-            }).then(() => {
-                this.$message({
-                    type: 'success',
-                    message: '选择成功！'
-                })
-            }).catch(() => {
-                this.$message({
-                    type: 'info',
-                    message: '已取消选择'
-                })
-            })
-        },
         // 合并表格
         objectSpanMethod ({ row, column, rowIndex, columnIndex }) {
             if (rowIndex < this.tableData3.length - 2) {
@@ -496,15 +486,6 @@ export default {
         },
         handleCurrentChange (val) {
 
-        },
-        getConcatData (data) { // 获得合并的元素的参数信息
-            console.log('获得子组件的合并的元素数据', data)
-        },
-        getConcatDataUp (data) { // 获得合并弹框的上移操作
-            console.log('获得合并子组件弹框的上移操作元素数据', data)
-        },
-        getConcatDataDown (data) { // 获得合并弹框的下移操作
-            console.log('获得合并子组件弹框的下移操作元素数据', data)
         },
         statistics () {
             this.$emit('sendFormData', this.searchForm)

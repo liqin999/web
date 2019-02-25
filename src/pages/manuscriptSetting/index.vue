@@ -69,7 +69,7 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="第一作者:">
+                            <el-form-item label="作者:">
                                 <el-input v-model="searchForm.author"
                                           placeholder=""></el-input>
                             </el-form-item>
@@ -81,20 +81,21 @@
                                           placeholder=""></el-input>
                             </el-form-item>
                         </el-col>
-                        <el-col :span="6">
+                        <el-col :span="6"
+                                style="display:none">
                             <el-form-item label="约稿状态:">
                                 <el-select v-model="searchForm.state2"
                                            placeholder="约稿状态">
-                                    <el-option label="全部"
+                                    <el-option label="约稿"
                                                value="shanghai">
                                     </el-option>
-                                    <el-option label="待审"
+                                    <el-option label="在译"
                                                value="beijing">
                                     </el-option>
-                                    <el-option label="待处理"
+                                    <el-option label="已译"
                                                value="shan22ghai">
                                     </el-option>
-                                    <el-option label="已处理"
+                                    <el-option label="其他"
                                                value="be1ijing">
                                     </el-option>
                                 </el-select>
@@ -183,22 +184,17 @@
                         <create-draft>
                             <span slot="iconName">建稿</span>
                         </create-draft>
-                        <!-- <send-draft :sendData="true">
-                            <span slot="iconName">传稿</span>
-                        </send-draft> -->
-                        <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
+
+                        <!-- 约稿和翻译暂时隐藏 modify by 2019.2.19-->
+                        <!-- <div class="primary-btn"><span>
                                 <span data-v-6eb3df45="">约稿</span>
                             </span>
                         </div>
-                        <!-- <div data-v-6eb3df45=""
-                             class="primary-btn"><span>
-                                <span data-v-6eb3df45="">翻译</span>
-                            </span>
-                        </div> -->
-                        <translate class="primary-btn">
+                        -->
+                        <!-- <translate class="primary-btn">
                             <span slot="iconName">翻译</span>
-                        </translate>
+                        </translate> -->
+
                         <!-- 留搞组建按钮 -->
                         <stay-draft class="primary-btn">
                             <span slot="iconName">留稿</span>
@@ -242,7 +238,7 @@
                                          label="创建日期">
                         </el-table-column>
                         <el-table-column prop="author"
-                                         label="第一作者">
+                                         label="作者">
                         </el-table-column>
                         <el-table-column prop="authorType"
                                          label="作者类型">
@@ -332,7 +328,7 @@ import stayDraft from '@/pages/manuscriptSetting/stayDraft/stayDraft'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad'
 // 翻译弹框按钮
-import translate from '@/components/buttons/translate/translate'
+// import translate from '@/components/buttons/translate/translate'
 export default {
     components: {
         leftMenu,
@@ -343,8 +339,8 @@ export default {
         printing,
         draftLook,
         stayDraft,
-        downLoad,
-        translate
+        downLoad
+
     },
     data () {
         return {
@@ -475,7 +471,7 @@ export default {
                 createDate: '201810-31 ',
                 author: '赵倩',
                 authorType: '',
-                type: '文本'
+                type: '文字'
             }, {
                 id: '20181029011',
                 name: '城市生活垃圾分类的“银川模式”',
@@ -485,7 +481,7 @@ export default {
                 createDate: '201810-31 ',
                 author: '郝玉',
                 authorType: '',
-                type: '文本'
+                type: '文字'
             }, {
                 id: '20181029050',
                 name: '腾讯体育是中国知名的体育门户网站',
@@ -495,7 +491,7 @@ export default {
                 createDate: '201810-31 ',
                 author: '刘晶瑶',
                 authorType: '',
-                type: '文本'
+                type: '文字'
             }],
             multipleSelection: [],
             mainTableHeight: null

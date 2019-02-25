@@ -187,7 +187,7 @@ export default {
                     ]
                 },
                 {
-                    id: 2,
+                    id: 3,
                     label: '公共部门',
                     children: [
                         {

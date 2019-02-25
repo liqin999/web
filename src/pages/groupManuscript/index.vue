@@ -366,7 +366,7 @@ export default {
                 type: '图片',
                 state: '已审',
                 deliverer: '刘学奎',
-                processingTime: '2018-10-28 10:45',
+                processingTime: '2018-12-25 14:45',
                 dealingPeople: '方立新',
                 firstAuthor: '李浩',
                 medio: '新华每日电讯',

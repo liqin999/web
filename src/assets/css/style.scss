@@ -1,7 +1,7 @@
 /*
  * @Author: 史薇薇
  * @Date: 2018-12-24 14:08:15
- * @LastEditTime: 2019-01-14 16:44:13
+ * @LastEditTime: 2019-02-20 16:53:20
  * @Description: scss定义全局样式变量 12.24样式设计（第一版）
  */
 $nav-height: 40px !default; //导航条行高（默认）
@@ -20,15 +20,16 @@ $border-radius: 3px; //边角弧度
 
 // 背景色渐变
 %gradient-bgcolor {
-    background: -webkit-linear-gradient(left, #3c6cde, #6d99ff);
-    /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(left, #3c6cde, #6d99ff);
-    /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(left, #3c6cde, #6d99ff);
-    /* Firefox 3.6 - 15 */
-    background: linear-gradient(left, #3c6cde, #6d99ff);
-    /* 标准的语法 */
+  background: -webkit-linear-gradient(#3c6cde, #6d99ff);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#3c6cde, #6d99ff);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#3c6cde, #6d99ff);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#3c6cde, #6d99ff);
+  /* 标准的语法 */
 }
+
 // 使用方法 @extend %gradient-bgcolor;
 // 结束
 
@@ -39,526 +40,634 @@ $header-border-color: #c9c9c9; //头部下边框颜色
 $header-title-color: #515151; //头部标题颜色
 
 // 公共样式应用
-*{
-    -moz-box-sizing: border-box;  
-    -webkit-box-sizing: border-box; 
-    -o-box-sizing: border-box; 
-    -ms-box-sizing: border-box; 
-    box-sizing: border-box; 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.clearfix{
-    zoom: 1;
-    &:before,&:after{
-        content:"";
-        display:table;
-    }
-    &:after {
-        clear:both;
-        overflow:hidden;
-    }
+
+.clearfix {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+    overflow: hidden;
+  }
 }
-.ac{
-    text-align: center;
+
+.ac {
+  text-align: center;
 }
+
 // 清除浮动  加类.clearfix
 // margin
 .mt15 {
-    margin-top: 15px;
+  margin-top: 15px;
 }
+
 .mb15 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
 .mt10 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
+
 .mb10 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 // padding  标准10px
 .tab-padding {
-    padding-left: 0px !important;
+  padding-left: 0px !important;
 }
+
 .rtab-padding {
-    padding-right: 0px !important;
+  padding-right: 0px !important;
 }
+
 .pt10 {
-    padding-top: 10px;
+  padding-top: 10px;
 }
+
 .pr10 {
-    padding-right: 10px;
+  padding-right: 10px;
 }
+
 .pb10 {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
+
 .pl10 {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 // margin padding 混合宏 传值 mOp = margin or padding 默认为0
 @mixin mar-pad($mOp, $top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
-    #{$mOp}: $top $right $bottom $left;
+  #{$mOp}: $top $right $bottom $left;
 }
+
 // 用法示例
 .el-example {
-    @include mar-pad(padding, 23px, 24px, 45px, 89px); //设置padding各边距
-    @include mar-pad(margin, 23px, 24px, 45px, 89px); //设置margin各边距
+  @include mar-pad(padding, 23px, 24px, 45px, 89px); //设置padding各边距
+  @include mar-pad(margin, 23px, 24px, 45px, 89px); //设置margin各边距
 }
+
 .el-example {
-    @include mar-pad(
-        padding,
-        24px,
-        89px
-    ); //设置padding各边距 padding: 24px 89px 0px 0px;
-    @include mar-pad(margin); //设置margin各边距 margin: 0px 0px 0px 0px;
+  @include mar-pad(padding,
+  24px,
+  89px); //设置padding各边距 padding: 24px 89px 0px 0px;
+  @include mar-pad(margin); //设置margin各边距 margin: 0px 0px 0px 0px;
 }
+
 // 边框样式颜色宽度设置
 // 默认border-bottom  若$option = all 则设置整个边框
-@mixin border(
-    $option: bottom,
-    $width: 1px,
-    $style: solid,
-    $color: $border-color
-) {
-    @if $option==all {
-        border: $width $style $color;
-    } @else {
-        border-#{$option}: $width $style $color;
-    }
+@mixin border($option: bottom,
+$width: 1px,
+$style: solid,
+$color: $border-color) {
+  @if $option==all {
+    border: $width $style $color;
+  }
+
+  @else {
+    border-#{$option}: $width $style $color;
+  }
 }
+
 // 示例
 .el-example {
-    @include border; // border-bottom: 1px solid #737373;
-    @include border(
-        all,
-        3px,
-        solid,
-        $border-color
-    );
-    @include border(bottom, 3px, solid, $border-color);
+  @include border; // border-bottom: 1px solid #737373;
+  @include border(all,
+  3px,
+  solid,
+  $border-color);
+  @include border(bottom, 3px, solid, $border-color);
 }
 
 // 滚动条样式设置
 %scroll {
-    &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: nth($primary-color, 1);
-        border-radius: 10px;
-    }
-    &::-webkit-scrollbar-track {
-        border-radius: 10px;
-    }
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: nth($primary-color, 1);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
 }
+
 .scroll-y {
-    //纵向滚动条
-    overflow-y: auto;
-    @extend %scroll;
+  //纵向滚动条
+  overflow-y: auto;
+  @extend %scroll;
 }
+
 .scroll-x {
-    //横向滚动条
-    overflow-x: auto;
-    @extend %scroll;
+  //横向滚动条
+  overflow-x: auto;
+  @extend %scroll;
 }
+
 // 示例
 .el-example {
-    @extend .scroll-y; //纵向滚动条
+  @extend .scroll-y; //纵向滚动条
 }
+
 // 文本、字体、省略号等样式设置
 .text-overflow {
-    // 超出内容区，显示省略号
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  // 超出内容区，显示省略号
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 // 用法 1、直接加类.text-overflow  或者 @extend .text-overflow;
 @mixin text-option($option) {
-    text-align: $option;
+  text-align: $option;
 }
+
 // 文字居中显示  直接加类 .ac
 // 文字居右显示  直接加类 .text-right
 .text-right {
-    @include text-option(right);
+  @include text-option(right);
 }
+
 // 字体设置
 .font12 {
-    font-size: nth($font-size, 1);
+  font-size: nth($font-size, 1);
 }
+
 .font14 {
-    font-size: nth($font-size, 2);
+  font-size: nth($font-size, 2);
 }
+
 .font16 {
-    font-size: nth($font-size, 3);
+  font-size: nth($font-size, 3);
 }
+
 .font18 {
-    font-size: nth($font-size, 3);
+  font-size: nth($font-size, 3);
 }
+
 // 用法  直接加类.font12   或者设置font-size: nth($font-size,3)  或者 @extend .font12
 
 // 组件按钮样式设置 用法直接加类 .primary-btn（确定）.reset-btn（取消）
 .primary-btn {
-    display: inline-block;
-    padding: 5px 16px;
-    margin-right: 5px;
-    font-size: nth($font-size, 2);
+  display: inline-block;
+  padding: 5px 16px;
+  margin-right: 5px;
+  font-size: nth($font-size, 2);
+  color: $wcolor;
+  background: nth($primary-color, 1);
+  border-radius: $border-radius;
+  border-color: nth($primary-color, 1);
+  cursor: pointer;
+
+  //hover状态
+  &:hover {
     color: $wcolor;
-    background: nth($primary-color, 1);
-    border-radius: $border-radius;
-    border-color: nth($primary-color, 1);
-    cursor: pointer;
-    //hover状态
-    &:hover {
-        color: $wcolor;
-        background: nth($primary-color, 2);
-        border-color: nth($primary-color, 2);
-        
-    }
+    background: nth($primary-color, 2);
+    border-color: nth($primary-color, 2);
+
+  }
 }
+
 // 取消按钮样式
 .reset-btn {
-    display: inline-block;
-    padding: 5px 16px;
-    color: nth($primary-color, 1);
-    background: $wcolor;
-    border-radius: $border-radius;
-    border-color: nth($primary-color, 1);
-    cursor: pointer;
-    //hover状态
-    &:hover {
-        color: nth($primary-color, 2);
-        border-color: nth($primary-color, 2);
-    }
+  display: inline-block;
+  padding: 5px 16px;
+  color: nth($primary-color, 1);
+  background: $wcolor;
+  border-radius: $border-radius;
+  border-color: nth($primary-color, 1);
+  cursor: pointer;
+
+  //hover状态
+  &:hover {
+    color: nth($primary-color, 2);
+    border-color: nth($primary-color, 2);
+  }
 }
 
 // 页面二级导航样式
-.search-wrap{
-    @include mar-pad(padding,5px,10px,0px,10px);
-    background: nth($bg-color,2);
-    @include border(bottom, 1px, solid, $tint-border-color);
-    // 处理时间 选择框宽度控制
-    .search-form {
-        .search-time .el-form-item__content {
-            width: 70%;
-        }
-        // 多选框
-        .search-check {
-            padding-right: 8px;
-            .el-form-item__content {
-                height: 40px !important;
-            }
-            .el-checkbox-group {
-                display: inline-block;
-                margin-left: 8px;
-            }
-            .el-checkbox + .el-checkbox {
-                margin-left: 8px;
-            }
-            .el-checkbox__label {
-                padding-left: 8px;
-            }
-        }
+.search-wrap {
+  @include mar-pad(padding, 5px, 10px, 0px, 10px);
+  background: nth($bg-color, 2);
+  @include border(bottom, 1px, solid, $tint-border-color);
+
+  // 处理时间 选择框宽度控制
+  .search-form {
+    .search-time .el-form-item__content {
+      width: 70%;
     }
+
+    // 多选框
+    .search-check {
+      padding-right: 8px;
+
+      .el-form-item__content {
+        height: 40px !important;
+      }
+
+      .el-checkbox-group {
+        display: inline-block;
+        margin-left: 8px;
+      }
+
+      .el-checkbox+.el-checkbox {
+        margin-left: 8px;
+      }
+
+      .el-checkbox__label {
+        padding-left: 8px;
+      }
+    }
+  }
 }
+
 // 页面内容区（左右结构）
-#app{
-    height: 100%;
+#app {
+  height: 100%;
 }
-.el-container{
-    height: 100%;
+
+.el-container {
+  height: 100%;
 }
+
 .el-main {
-    position: relative;
-    padding: 10px;
-    /* 滚动条的宽度 */
-    ::-webkit-scrollbar {
-        width: 6px!important;
-        height: 6px!important;
-    }
+  position: relative;
+  padding: 10px;
+
+  /* 滚动条的宽度 */
+  ::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+  }
 }
+
 // 左侧
 .el-aside {
-    background-color: nth($bg-color, 1);
-    @include border(right, 1px, solid, $tint-border-color);
-    @extend .scroll-y;
-    @extend .scroll-x;
+  background-color: nth($bg-color, 1);
+  @include border(right, 1px, solid, $tint-border-color);
+  @extend .scroll-y;
+  @extend .scroll-x;
 }
+
 // 右侧
 .main-header-group {
-    padding: 10px 10px 0px 10px;
+  padding: 10px 10px 0px 10px;
 }
-.el-footer{
-    padding:0px 20px 0px 20px;
-    .btn-bottom {
-        display: flex;
-        display: -webkit-flex;
-        justify-content: flex-end;
-        padding: 10px;
-        @extend .text-right;
-        @extend .clearfix;
-        .btn-line {
-            padding: 0px 10px;
-        }
-        .btn-nav {
-            cursor: pointer;
-            &:hover {
-                color: nth($primary-color, 1);
-            }
-        }
+
+.el-footer {
+  padding: 0px 20px 0px 20px;
+
+  .btn-bottom {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    padding: 10px;
+    @extend .text-right;
+    @extend .clearfix;
+
+    .btn-line {
+      padding: 0px 10px;
     }
+
+    .btn-nav {
+      cursor: pointer;
+
+      &:hover {
+        color: nth($primary-color, 1);
+      }
+    }
+  }
 }
 
 // 搜索页
-.input-manuscript{
-    background: nth($bg-color, 2);
-    overflow: hidden;
-    .el-container {
-        padding: 10px;
-        .aside-content {
-            padding: 10px;
-            background: $wcolor;
-            border: none !important;
-            box-shadow: 0px 0px 5px #cacaca;
-            @extend .scroll-y;
-            @extend .scroll-x;
-            b {
-                display: inline-block;
-                line-height: 35px;
-            }
-        }
-        .main-content {
-            @extend .aside-content;
-            margin:0px;
-        }
+.input-manuscript {
+  background: nth($bg-color, 2);
+  overflow: hidden;
+
+  .el-container {
+    padding: 10px;
+
+    .aside-content {
+      padding: 10px;
+      background: $wcolor;
+      border: none !important;
+      box-shadow: 0px 0px 5px #cacaca;
+      @extend .scroll-y;
+      @extend .scroll-x;
+
+      b {
+        display: inline-block;
+        line-height: 35px;
+      }
     }
-    .el-footer {
-        padding: 15px 10px 5px;
-        @extend .ac;
-        button {
-            padding: 10px 25px;
-        }
+
+    .main-content {
+      @extend .aside-content;
+      margin: 0px;
     }
+  }
+
+  .el-footer {
+    padding: 15px 10px 5px;
+    @extend .ac;
+
+    button {
+      padding: 10px 25px;
+    }
+  }
 }
 
 // 修改elm组件样式（待定）
 // 布局样式修改
-.el-header{
-    padding:0px;
+.el-header {
+  padding: 0px;
 }
+
 .el-form-item {
-    margin-bottom: 0px;
-    margin-right: 0;
+  margin-bottom: 0px;
+  margin-right: 0;
 }
+
 // 弹出框样式修改
 .el-dialog {
-    width: 70%;
-    min-width: $box-width;
-    @extend .scroll-x;
-    @extend .scroll-y;
+  width: 70%;
+  min-width: $box-width;
+  @extend .scroll-x;
+  @extend .scroll-y;
 }
+
 .el-dialog__header {
-    background: $header-bg-Color;
-    border-bottom: 1px solid $header-border-color;
+  background: $header-bg-Color;
+  border-bottom: 1px solid $header-border-color;
 }
+
 .el-dialog__title {
-    font-weight: bold;
-    color: $header-title-color;
+  font-weight: bold;
+  color: $header-title-color;
 }
+
 .el-dialog__body {
-    padding: 20px;
+  padding: 20px;
 }
+
 .message-box {
-    padding: 0px 10px;
-    .message-content {
-        padding-top: 15px;
-        line-height: 30px;
-    }
+  padding: 0px 10px;
+
+  .message-content {
+    padding-top: 15px;
+    line-height: 30px;
+  }
 }
 
 // 弹出框标题
-.message-title{
-    font-size:nth($font-size,3);
-    line-height: 35px;
+.message-title {
+  font-size: nth($font-size, 3);
+  line-height: 35px;
 }
+
 // 下拉框样式修改
 .el-select .el-input.is-focus .el-input__inner {
-    border-color: nth($primary-color,1);
+  border-color: nth($primary-color, 1);
 }
+
 .el-select:hover .el-input__inner {
-    border-color: $border-color;
+  border-color: $border-color;
 }
+
 .el-select-dropdown__item.selected {
-    color: nth($primary-color,1);
+  color: nth($primary-color, 1);
 }
+
 .el-select-dropdown__item:hover {
-    color: nth($font-color,1);
-    background-color: nth($bg-color,2);
+  color: nth($font-color, 1);
+  background-color: nth($bg-color, 2);
 }
+
 // input框样式修改
 .el-input__inner {
-    height: $line-height;
-    line-height: $line-height;
-    border-radius: $border-radius;
-    border-color: $border-color;
+  height: $line-height;
+  line-height: $line-height;
+  border-radius: $border-radius;
+  border-color: $border-color;
 }
+
 .el-input__inner:hover {
-    border-color: $border-color;
+  border-color: $border-color;
 }
+
 .el-input__icon {
-    line-height: $line-height;
+  line-height: $line-height;
 }
+
 .el-input {
-    font-size: nth($font-size, 1);
+  font-size: nth($font-size, 1);
 }
-.el-input.is-active .el-input__inner, .el-input__inner:focus{
-    border-color: nth($primary-color,1);
+
+.el-input.is-active .el-input__inner,
+.el-input__inner:focus {
+  border-color: nth($primary-color, 1);
 }
+
 // 单选框样式修改
 .el-radio__label {
-    padding-left: 5px;
+  padding-left: 5px;
 }
+
 .el-radio__inner {
-    border: 1px solid $border-color;
+  border: 1px solid $border-color;
 }
+
 .el-radio__inner:hover {
-    border-color: $border-color;
+  border-color: $border-color;
 }
+
 .el-radio__input.is-checked+.el-radio__label {
-    color: nth($primary-color,1);
+  color: nth($primary-color, 1);
 }
+
 .el-radio__input.is-checked .el-radio__inner {
-    background: $wcolor;
-    border-color: nth($primary-color,1);
+  background: $wcolor;
+  border-color: nth($primary-color, 1);
 }
+
 .el-radio__inner::after {
-    width: 6px;
-    height: 6px;
-    background-color: nth($primary-color,1);
+  width: 6px;
+  height: 6px;
+  background-color: nth($primary-color, 1);
 }
+
 // 多选框修改
-.el-checkbox{
-    color: nth($font-color,1);
+.el-checkbox {
+  color: nth($font-color, 1);
 }
+
 .el-checkbox__inner {
-    border: 1px solid $border-color;
+  border: 1px solid $border-color;
 }
-.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: nth($primary-color,1);
-    border-color: nth($primary-color,1);
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: nth($primary-color, 1);
+  border-color: nth($primary-color, 1);
 }
+
 .el-checkbox__inner:hover {
-    border-color: nth($primary-color,1);
+  border-color: nth($primary-color, 1);
 }
+
 .el-checkbox__input.is-checked+.el-checkbox__label {
-    color: nth($primary-color,1);
+  color: nth($primary-color, 1);
 }
+
 // 提交框样式修改
 .el-example__inner {
-    border: 1px solid $tint-border-color;
-    border-radius: $border-radius;
+  border: 1px solid $tint-border-color;
+  border-radius: $border-radius;
 }
+
 .el-example__inner:focus {
-    border-color: $border-color;
+  border-color: $border-color;
 }
+
 // 时间插件修改样式
-.el-date-editor.el-input, .el-date-editor.el-input__inner {
-    width: 100%;
-    padding: 3px 6px;
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner {
+  width: 100%;
+  padding: 3px 6px;
 }
+
 .el-date-editor .el-range-separator {
-    display: inline-block;
-    width: 12px;
-    padding: 0px;
-    color: nth($font-color,2);
-    line-height: 22px;
-    text-align: center;
+  display: inline-block;
+  width: 12px;
+  padding: 0px;
+  color: nth($font-color, 2);
+  line-height: 22px;
+  text-align: center;
 }
+
 .el-date-editor .el-range__icon {
-    line-height: 22px;
+  line-height: 22px;
 }
+
 .el-date-editor .el-range-input,
 .el-date-editor .el-range-separator {
-    font-size: nth($font-size, 1);
+  font-size: nth($font-size, 1);
 }
-.el-range-editor.is-active, .el-range-editor.is-active:hover{
-    border-color: nth($primary-color,1);
+
+.el-range-editor.is-active,
+.el-range-editor.is-active:hover {
+  border-color: nth($primary-color, 1);
 }
+
 .el-date-editor .el-range__close-icon {
-    width: 20px;
-    margin-right: -5px;
-    font-size: 12px;
-    line-height: 22px;
+  width: 20px;
+  margin-right: -5px;
+  font-size: 12px;
+  line-height: 22px;
 }
+
 // 表格样式
-.el-table{
-    font-size: 13px;
-    color:nth($font-color,2);
-    @include border(all, 1px, solid, $tint-border-color);
-    border-radius: $border-radius;
-    .el-table__body-wrapper{
-        @extend .scroll-x;
-        @extend .scroll-y;
-    }
-    thead th{
-        padding: 5px 0;
-        @extend .font12;
-        color:nth($font-color,2);
-        background-color: nth($bg-color,2);
-    }
-    td{
-        padding: 7px 0px;
-    }
-    td, & th.is-leaf {
-        border-bottom: 1px solid $tint-border-color;
-    }
+.el-table {
+  font-size: 13px;
+  color: nth($font-color, 2);
+  @include border(all, 1px, solid, $tint-border-color);
+  border-radius: $border-radius;
+
+  .el-table__body-wrapper {
+    @extend .scroll-x;
+    @extend .scroll-y;
+  }
+
+  thead th {
+    padding: 5px 0;
+    @extend .font12;
+    color: nth($font-color, 2);
+    background-color: nth($bg-color, 2);
+  }
+
+  td {
+    padding: 7px 0px;
+  }
+
+  td,
+  & th.is-leaf {
+    border-bottom: 1px solid $tint-border-color;
+  }
 }
+
 // 分页样式修改
 .el-pager li.active {
-    color: nth($primary-color,1);
-    cursor: default;
+  color: nth($primary-color, 1);
+  cursor: default;
 }
+
 .el-pager li:hover {
-    color: nth($primary-color,1);
+  color: nth($primary-color, 1);
 }
+
 .el-pagination button:hover {
-    color: nth($primary-color,1);
+  color: nth($primary-color, 1);
 }
 
 
 // 页面导航条样式
 // 导航条样式修改
-.el-menu--horizontal>.el-menu-item{
-    height: 40px;
-    line-height: 40px;
+.el-menu--horizontal>.el-menu-item {
+  height: 40px;
+  line-height: 40px;
 }
-.el-menu--horizontal>.el-menu-item.is-active{
-    color:nth($primary-color,1);
+
+.el-menu--horizontal>.el-menu-item.is-active {
+  color: nth($primary-color, 1);
 }
+
 .el-menu--horizontal {
-    @include border(bottom, 1px, solid, $tint-border-color);
+  @include border(bottom, 1px, solid, $tint-border-color);
 }
-.header-nav .el-menu--horizontal > .el-menu-item {
-    border: none !important;
+
+.header-nav .el-menu--horizontal>.el-menu-item {
+  border: none !important;
 }
-.header-nav .el-menu--horizontal > .el-submenu .el-submenu__title {
-    height: $nav-height;
-    line-height: $nav-height;
-    border-bottom: 0px solid transparent;
+
+.header-nav .el-menu--horizontal>.el-submenu .el-submenu__title {
+  height: $nav-height;
+  line-height: $nav-height;
+  border-bottom: 0px solid transparent;
 }
+
 .header-nav .el-menu--horizontal .el-menu-item.is-active {
-    @extend %gradient-bgcolor;
+  @extend %gradient-bgcolor;
 }
-.header-nav .el-menu--horizontal > .el-submenu:focus .el-submenu__title,
-.header-nav .el-menu--horizontal > .el-submenu:hover .el-submenu__title,
+
+.header-nav .el-menu--horizontal>.el-submenu:focus .el-submenu__title,
+.header-nav .el-menu--horizontal>.el-submenu:hover .el-submenu__title,
 .header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
 .header-nav .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
-    color: nth($primary-color, 1);
+  color: nth($primary-color, 1);
 }
+
 .header-nav .el-submenu.is-active .el-submenu__title i {
-    color: $wcolor !important;
+  color: $wcolor !important;
 }
-.header-nav .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
-    @extend %gradient-bgcolor;
-    border: none !important;
-}
+
+// .header-nav .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+//   @extend %gradient-bgcolor;
+// }

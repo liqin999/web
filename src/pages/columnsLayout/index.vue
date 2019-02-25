@@ -9,6 +9,12 @@
             </div>
         </el-header>
         <el-container>
+            <!-- <div>
+                <el-button @click="openNewPage">打开新页面1</el-button><br>
+                <el-button @click="openNewPage2">打开新页面2</el-button><br>
+                <el-button @click="openNewPage3">打开新页面3</el-button><br>
+                <el-button @click="openNewPage4">打开新页面4</el-button><br>
+            </div> -->
             <el-aside width="250px">
                 <left-menu :treeData="data2"
                            :defaultProps="defaultProps"
@@ -159,7 +165,7 @@
                         <div class="btn-line">
                             <span>|</span>
                         </div>
-                        <draft-label>
+                        <draft-label :drafftLabelData="multipleSelection">
                             <i slot="icon"
                                class="iconfont icon-wenben1"></i>
                             <span slot="iconName">稿签</span>
@@ -200,7 +206,8 @@ import submit from '@/components/buttons/submit/submit.vue'
 // 打印弹框按钮
 import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
-import draftLook from '@/components/buttons/draftLook/draftLook'
+// import draftLook from '@/components/buttons/draftLook/draftLook'
+import draftLook from '@/components/buttons/draftLook/audioMessageBox'
 // 下载弹框按钮
 import downLoad from '@/components/buttons/downLoad/downLoad.vue'
 // 淘汰按钮
@@ -251,7 +258,7 @@ export default {
                 keywords: '',
                 checkAll: false,
                 media: '',
-                checkedTypes: ['文本', '图片'],
+                checkedTypes: ['文字', '图片'],
                 isIndeterminate: true
             },
             allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
@@ -399,11 +406,24 @@ export default {
             })()
         }
         // 测试请求的接口的调用
-        this.$api.text1().then(res => {
+        // this.$api.text1().then(res => {
 
-        })
+        // })
     },
     methods: {
+        // openNewPage () {
+        //     window.open('http://hotspot.xinhua-news.cn/dist/main.html#/plan/hotheadline?hotNav=1&amp;menutype=hot')
+        // },
+        // openNewPage2 () {
+        //     window.open('http://hotspot.xinhua-news.cn/dist/main.html#/plan/InfluenceList?infVal=1&amp;menutype=influ')
+        // },
+        // openNewPage3 () {
+        //     window.open(' http://edit.xinhua-news.cn:8888/resource/externalTeleInfo/date-line/0')
+        // },
+        // openNewPage4 () {
+        //     window.open('http://edit.xinhua-news.cn:8888/resource/finishedStory/channel/0')
+        // },
+
         splitConcatIcon () {
             this.$confirm('只能选择一条数据', '提示', {
                 confirmButtonText: '确定',

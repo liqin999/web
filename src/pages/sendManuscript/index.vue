@@ -21,7 +21,7 @@
                                     </el-select>
                                 </template>
                             </el-col>
-                            <el-col :span="3">
+                            <!-- <el-col :span="3">
                                 <el-checkbox v-model="checked">组稿</el-checkbox>
                             </el-col>
                             <el-col :span="8"
@@ -36,7 +36,7 @@
                                     </el-select>
                                 </template>
                                 <span class="pl10">为主稿件</span>
-                            </el-col>
+                            </el-col> -->
                         </el-row>
                         <el-row :gutter="20"
                                 class="pt10">
@@ -89,7 +89,7 @@
                 </el-row>
                 <el-row :gutter="20"
                         class="mb15 pl10 pr10">
-                    <template v-if="kanfaValue === '文本'">
+                    <template v-if="kanfaValue === '文字'">
                         <el-col :span="3">
                             <b class="font18">内容</b>
                         </el-col>
@@ -288,22 +288,26 @@ export default {
             author: '强晓玲',
             input: '一个灵魂的旅行',
             // 类型
-            kanfaData: ['文本', '图片', '动图', '图集', '视频', '音频', '多媒体'],
-            kanfaValue: '图片',
-            // 主稿件
-            mainDraftData: [
-                '001',
-                '002',
-                '003',
-                '004'
+            kanfaData: [
+                '文字',
+                '图片',
+                '网上图片',
+                '图表',
+                '视频',
+                '音频',
+                '歌曲',
+                '应用'
             ],
-            mainDraftValue: '',
+            kanfaValue: '原图',
+            // 主稿件
+            mainDraftData: [1, 2],
+            mainDraftValue: 2,
             // 稿件来源
             draftSourceData: ['自写稿', '邮件稿件', 'eNews稿件', '数据服务平台'],
             draftSourceValue: '自写稿',
             // 稿件体裁
-            draftGenreData: ['新闻报道', '新闻分析', '年终专稿'],
-            draftGenreValue: '新闻报道',
+            draftGenreData: ['消息', '通讯', '专访'],
+            draftGenreValue: '消息',
             checked: false, // 备选项
             textarea: '军事',
             // 栏目选择

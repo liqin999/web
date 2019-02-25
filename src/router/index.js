@@ -5,45 +5,45 @@ import login from '../pages/login/login.vue'
 import logint from '../pages/login/loginAccount.vue'
 import table from '../components/home/homeTable.vue'
 import testTable from '../components/table/testTable.vue'
-import {
-    routes
-} from './routes.js'
+import { routes } from './routes.js'
 
 Vue.use(Router)
 let router = new Router({
-    mode: 'history',
+    mode: 'hash',
     // base: '/dist-demo/',
-    routes: [{
-        path: '*',
-        component: login
-    },
-    {
-        path: '/home',
-        component: home,
-        meta: {
-            'loginTag': true
-        },
-        children: [{
-            path: 'hometable',
-            name: '表格',
-            component: table
+    routes: [
+        {
+            path: '*',
+            component: login
         },
         {
-            path: 'testTable',
-            name: '多级表头（万能）表格',
-            component: testTable
+            path: '/home',
+            component: home,
+            meta: {
+                loginTag: true
+            },
+            children: [
+                {
+                    path: 'hometable',
+                    name: '表格',
+                    component: table
+                },
+                {
+                    path: 'testTable',
+                    name: '多级表头（万能）表格',
+                    component: testTable
+                },
+                ...routes
+            ]
         },
-            ...routes
-        ]
-    },
-    {
-        path: '/',
-        component: login
-    },
-    {
-        path: '/logint',
-        component: logint
-    }
+        {
+            path: '/',
+            component: login
+        },
+        {
+            path: '/logint',
+            component: logint
+        }
     ]
 })
 // 路由拦截

@@ -252,7 +252,7 @@ export default {
                 keywords: '',
                 checkAll: false,
                 media: '',
-                checkedTypes: ['文本', '图片'],
+                checkedTypes: ['文字', '图片'],
                 isIndeterminate: true
             },
             allTypes: ['文字', '图片', '动图', '图集', '视频', '音频', '多媒体'],
@@ -271,7 +271,7 @@ export default {
                     date: '2016-05-03',
                     dealPerson: '1王小虎',
                     img: '',
-                    type: '文本',
+                    type: '文字',
                     doubt: '0',
                     textFormat: 'txt'
                 }, {
@@ -280,7 +280,7 @@ export default {
                     date: '2015-05-03',
                     dealPerson: '2王小虎',
                     img: '',
-                    type: '文本',
+                    type: '文字',
                     doubt: '0',
                     textFormat: 'txt'
                 }, {
@@ -289,7 +289,7 @@ export default {
                     date: '2016-05-03',
                     dealPerson: '3王小虎',
                     img: '',
-                    type: '文本',
+                    type: '文字',
                     doubt: '0',
                     textFormat: 'txt'
                 }]
@@ -334,12 +334,12 @@ export default {
                 // picture: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=692414099,3457311515&fm=27&gp=0.jpg',
                 repDrawing: '',
                 number: 992,
-                state: '待审',
-                dealingPeople: '刘学奎',
+                state: '待处理',
+                dealingPeople: '强晓玲',
                 processingTime: '2018-10-31 14:23',
                 firstAuthor: '强晓玲，方立新',
                 medio: '新华每日电讯',
-                type: '文本',
+                type: '文字',
                 doubt: 0,
                 preData: ''
             }, {

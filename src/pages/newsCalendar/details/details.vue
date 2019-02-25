@@ -55,7 +55,7 @@
                         均归新华社所有。</span>
                 </el-col>
                 <div class="clearfix"></div>
-                <el-row :gutter="20"
+                <!-- <el-row :gutter="20"
                         class="message-lists clearfix">
                     <el-col :span="3"
                             class="span-title"><span>相似稿件</span></el-col>
@@ -71,14 +71,9 @@
                     </el-col>
                 </el-row>
                 <el-row class="clearfix mt15 mb15">
-                   <button class="primary-btn" onclick="window.print()">打印全部(稿签和正文)</button>
-                    <!-- <el-button class="primary-btn">打印全部(稿签和正文)</el-button> -->
-
-                    <printing class="primary-btn" style="line-height:18px">
-                        <span slot="iconName">打印正文</span>
-                    </printing>
-                    <!-- <el-button class="primary-btn">打印正文</el-button> -->
-                </el-row>
+                    <el-button class="primary-btn">打印全部(稿签和正文)</el-button>
+                    <el-button class="primary-btn">打印正文</el-button>
+                </el-row> -->
             </el-row>
         </el-main>
     </el-container>
@@ -86,28 +81,25 @@
 <script>
 // 建稿按钮组件
 import createDraft from '@/components/buttons/createDraft/createDraft'
-// 打印弹框按钮
-import printing from '@/components/buttons/printing/printing.vue'
 export default {
     components: {
-        createDraft,
-        printing
+        createDraft
 
     },
     data () {
         return {
-            draftList: [
-                {
-                    title: '23728784374374372983982378478refergege',
-                    name: '西虹市首富',
-                    size: '329084字'
-                },
-                {
-                    title: '23728784374374372983982378478refergege',
-                    name: '西虹市首富',
-                    size: '329084字'
-                }
-            ],
+            // draftList: [
+            //     {
+            //         title: '23728784374374372983982378478refergege',
+            //         name: '西虹市首富',
+            //         size: '329084字'
+            //     },
+            //     {
+            //         title: '23728784374374372983982378478refergege',
+            //         name: '西虹市首富',
+            //         size: '329084字'
+            //     }
+            // ],
             options: [{
                 value: '新华社每日电讯',
                 label: '新华社每日电讯'
@@ -126,9 +118,6 @@ export default {
         },
         closeFn () {
             this.$router.go('-1')
-        },
-        print: function () {
-            window.print()
         }
     }
 }

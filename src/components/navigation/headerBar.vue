@@ -2,12 +2,12 @@
  * @Author: 史薇薇
  * @Date: 2018-12-19 09:34:45
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2019-01-31 10:23:34
+ * @LastEditTime: 2019-02-22 15:41:35
  * @Description: 导航条样式改版
  -->
 <template>
     <div class="header-nav">
-        <el-menu :default-active="$route.path"
+        <el-menu :default-active='activeIndex'
                  mode="horizontal"
                  :router="true"
                  active-text-color="#fff"
@@ -31,7 +31,7 @@
                 </template>
                 <template v-else>
                     <el-menu-item :key="item.id"
-                                  :index="item.path"
+                                  :index="item.id"
                                   :route='{ path: item.path }'>
                         <template><span>
                                 <i class="menu_icon"
@@ -48,6 +48,7 @@
 export default {
     data () {
         return {
+            activeIndex: '1',
             navBar: [
                 {
                     name: '栏目/版面库', // 导航的名字
@@ -169,12 +170,12 @@ export default {
                             name: '部门已签稿统计',
                             id: '10-5',
                             path: '/departStatistics'
+                        },
+                        {
+                            name: '新闻日历',
+                            id: '10-6',
+                            path: '/newsCalendar'
                         }
-                        // {
-                        //     name: '新闻日历',
-                        //     id: '10-3',
-                        //     path: '/newsCalendar'
-                        // }
                     ]
                 }
                 // {
@@ -188,11 +189,14 @@ export default {
         }
     },
     mounted () {
-
+        this.saveStateRouter()
     },
     methods: {
+        saveStateRouter () {
+            this.activeIndex = sessionStorage.getItem('activeIndex')
+        },
         handleSelect (key, keyPath) {
-            console.log(key, keyPath)
+            sessionStorage.setItem('activeIndex', key)
         }
     }
 }
@@ -200,7 +204,22 @@ export default {
 
 <style lang="scss" scoped>
 // 若导航条有下拉菜单
-.el-menu--horizontal .el-menu-item.is-active {
+.el-menu--horizontal .el-submenu.is-active {
+    @extend %gradient-bgcolor;
+    .el-submenu__title {
+        @extend %gradient-bgcolor;
+    }
+}
+.el-menu--horizontal .el-submenu.is-active.is-opened :hover {
+    @extend %gradient-bgcolor;
+}
+.el-menu--horizontal .el-submenu.is-active.is-opened :focus-within {
+    @extend %gradient-bgcolor;
+}
+.el-menu--horizontal.childMenu .el-menu .el-menu-item.is-active {
+    color: #3871f5 !important;
+}
+.el-menu--horizontal .el-submenu.is-active.is-opened {
     @extend %gradient-bgcolor;
 }
 </style>
