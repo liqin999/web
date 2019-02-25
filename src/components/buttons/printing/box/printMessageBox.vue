@@ -311,6 +311,7 @@ export default {
     text-indent: 2em;
     column-count: 1;
     column-gap: 20px;
+    padding: 25px;
 }
 .printContent p{
     text-align: justify;
