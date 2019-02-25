@@ -48,7 +48,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-二版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-三版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-四版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-五版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-六版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-七版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="texts">
                                 <b class="t1">新华每日电讯</b>
-                                <span class="t2">A叠-八版</span>
+                                <span class="t2">A叠-一版</span>
                                 <span class="t3">已建</span>
                             </div>
                         </div>
@@ -152,10 +152,7 @@
                                :total="8">
                 </el-pagination>
                 <div class="btn-bottom">
-                    <!-- <div class="btn-nav">
-                        <i class="iconfont icon-liulan"></i>
-                        <span>浏览</span>
-                    </div> -->
+                    <!-- 浏览组件 -->
                     <draft-look>
                         <i slot="icon"
                            class="iconfont icon-liulan"></i>
@@ -164,46 +161,43 @@
                     <div class="btn-line">
                         <span>|</span>
                     </div>
-                    <!-- <div class="btn-nav">
-                        <i class="iconfont icon-wenben1"></i>
-                        <span>留稿</span>
-                    </div> -->
+                    <!-- 下载组件 -->
                     <down-load>
                         <i slot="icon"
                              class="el-icon-download"></i>
                         <span slot="iconName">下载</span>
                     </down-load>
-                    <div class="btn-line">
+                    <!-- <div class="btn-line">
                         <span>|</span>
-                    </div>
-                    <printing>
+                    </div> -->
+                    <!-- <printing>
                         <i slot="icon"
                            class="iconfont icon-ico_print"></i>
                         <span slot="iconName">打印</span>
-                    </printing>
-                    <div class="btn-line">
+                    </printing> -->
+                    <!-- <div class="btn-line">
                         <span>|</span>
-                    </div>
-                    <draft-label>
+                    </div> -->
+                    <!-- <draft-label>
                         <i slot="icon"
                            class="iconfont icon-wenben1"></i>
                         <span slot="iconName">稿签</span>
                     </draft-label>
                     <div class="btn-line">
                         <span>|</span>
-                    </div>
-                    <history>
+                    </div> -->
+                    <!-- <history>
                         <i slot="icon"
                            class="iconfont icon-ic_history"></i>
                         <span slot="iconName">历史</span>
                     </history>
                     <div class="btn-line">
                         <span>|</span>
-                    </div>
-                    <div class="btn-nav">
+                    </div> -->
+                    <!-- <div class="btn-nav">
                         <i class="iconfont icon-guanbi"></i>
                         <span>关闭</span>
-                    </div>
+                    </div> -->
                 </div>
             </el-footer>
         </el-container>
@@ -211,10 +205,10 @@
 </template>
 <script>
 import leftMenu from '@/components/treeMenu/leftTree.vue'
-import draftLabel from '@/components/buttons/draftLabel/draftLabel'
-import history from '@/components/buttons/history/history.vue'
+// import draftLabel from '@/components/buttons/draftLabel/draftLabel'
+// import history from '@/components/buttons/history/history.vue'
 // 打印弹框按钮
-import printing from '@/components/buttons/printing/printing.vue'
+// import printing from '@/components/buttons/printing/printing.vue'
 // 浏览弹框按钮
 import draftLook from '@/components/buttons/draftLook/draftLook'
 // 下载弹框按钮
@@ -222,9 +216,9 @@ import downLoad from '@/components/buttons/downLoad/downLoad'
 export default {
     components: {
         leftMenu,
-        draftLabel,
-        history,
-        printing,
+        // draftLabel,
+        // history,
+        // printing,
         draftLook,
         downLoad
     },
