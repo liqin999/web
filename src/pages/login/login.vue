@@ -100,7 +100,7 @@ export default {
                 }
             } else {
                 // 用户登录成功后！
-                this.$router.push('/dataService')
+                this.$router.push('/columnsLayout')
             }
         }
     },
