@@ -22,7 +22,8 @@
                                 <b>标题：</b>
                             </el-col>
                             <el-col :span="20">
-                                <el-input v-model="title"></el-input>
+                                <span>{{title}}</span>
+                                <!-- <el-input v-model="title"></el-input> -->
                             </el-col>
                         </el-row>
                         <el-row :gutter="15"
@@ -31,21 +32,24 @@
                                 <b>作者：</b>
                             </el-col>
                             <el-col :span="5">
-                                <el-input v-model="author"></el-input>
+                                <span>{{author}}</span>
+                                <!-- <el-input v-model="author"></el-input> -->
                             </el-col>
                             <el-col :span="2"
                                     class="text-right">
                                 <b>来源：</b>
                             </el-col>
                             <el-col :span="5">
-                                <el-input v-model="resource"></el-input>
+                                <span>{{resource}}</span>
+                                <!-- <el-input v-model="resource"></el-input> -->
                             </el-col>
                             <el-col :span="3"
                                     class="text-right">
                                 <b>体裁：</b>
                             </el-col>
                             <el-col :span="5">
-                                <el-input v-model="type"></el-input>
+                                <span>{{type}}</span>
+                                <!-- <el-input v-model="type"></el-input> -->
                             </el-col>
                         </el-row>
                         <el-row :gutter="10"
@@ -54,7 +58,8 @@
                                 <b>分类：</b>
                             </el-col>
                             <el-col :span="20">
-                                <el-input v-model="classify"></el-input>
+                                <span>{{classify}}</span>
+                                <!-- <el-input v-model="classify"></el-input> -->
                             </el-col>
                         </el-row>
                     </el-collapse-item>
@@ -65,14 +70,14 @@
                     </el-col>
                     <el-button class="reset-btn"
                                style="margin-top:5px"
-                               @click="speech">翻译</el-button>
+                               @click="speech">音频转文字</el-button>
                 </div>
                 <!-- 文字内容 -->
                 <div class="clearfix">
                     <el-col :span="25">
                         <audio src="http://www.w3school.com.cn/i/song.ogg"
                                controls="controls"></audio>
-                        <p class="main">翻译内容</p>
+                        <p class="main">文字内容</p>
                     </el-col>
                 </div>
                 <div class="texts clearfix">
