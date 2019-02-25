@@ -1,28 +1,31 @@
 <template>
     <!-- 登录页面 -->
     <div class="login-account">
-            <!-- 背景图片 -->
-            <div class="show-image"
-                 :key="item"
-                 v-for="item in showImages"
-                 :style="'background-image:url(' + item.src + ')'"></div>
-                <!-- 登录 -->
-            <div class="login">
-                <div class="title">
-                    <h3>社办报刊全媒体采编系统</h3>
-                </div>
-                <!-- 登录信息 -->
-                <div class="input">
-                    <el-input  v-model="reqUser.userName"
-                              placeholder="| 用户名"  style="border-radius: 20px;">
-                                <i slot="prefix" class="iconfont icon-icon"></i>
-                            </el-input>
-                    <el-input  v-model="reqUser.password"
-                              type="password"
-                              placeholder="| 密码">
-                                <i slot="prefix" class="iconfont icon-mima1"></i>
-                            </el-input>
-                    <!-- <div class="createCode">
+        <!-- 背景图片 -->
+        <div class="show-image"
+             :key="item"
+             v-for="item in showImages"
+             :style="'background-image:url(' + item.src + ')'"></div>
+        <!-- 登录 -->
+        <div class="login">
+            <div class="title">
+                <h3>社办报刊全媒体采编系统</h3>
+            </div>
+            <!-- 登录信息 -->
+            <div class="input">
+                <el-input v-model="reqUser.userName"
+                          placeholder="| 用户名"
+                          style="border-radius: 20px;">
+                    <i slot="prefix"
+                       class="iconfont icon-icon"></i>
+                </el-input>
+                <el-input v-model="reqUser.password"
+                          type="password"
+                          placeholder="| 密码">
+                    <i slot="prefix"
+                       class="iconfont icon-mima1"></i>
+                </el-input>
+                <!-- <div class="createCode">
                         <el-input v-model="userCode"
                                   prefix-icon="el-icon-ump-key"
                                   placeholder="验证码"
@@ -32,12 +35,12 @@
                             {{ loginCode }}
                         </span>
                     </div> -->
-                    <div class="sign-in">
-                        <el-button round
-                                   @click="signIn()">登录</el-button>
-                    </div>
+                <div class="sign-in">
+                    <el-button round
+                               @click="signIn()">登录</el-button>
                 </div>
             </div>
+        </div>
     </div>
 </template>
 
@@ -88,16 +91,16 @@ export default {
                         message: '请输入密码',
                         type: 'warning'
                     })
-                // } else if (userCode !== loginCode) {
-                //     this.$message({
-                //         message: '效验码不正确',
-                //         type: 'warning'
-                //     })
-                //     // this.createCode()
+                    // } else if (userCode !== loginCode) {
+                    //     this.$message({
+                    //         message: '效验码不正确',
+                    //         type: 'warning'
+                    //     })
+                    //     // this.createCode()
                 }
             } else {
                 // 用户登录成功后！
-                this.$router.push('/dataService')
+                this.$router.push('/columnsLayout')
             }
         }
     },
@@ -169,7 +172,7 @@ export default {
 <style>
 .login-account .input .el-input {
     margin-bottom: 30px;
-    font-size:14px;
+    font-size: 14px;
 }
 .login-account .input .el-input__inner {
     background: transparent;
