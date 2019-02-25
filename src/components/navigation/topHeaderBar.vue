@@ -321,9 +321,6 @@ export default {
                 this.$router.push({
                     path: '/columnsLayout'
                 })
-                setTimeout(() => {
-                    this.$set(this.menuActive, 'activeIndex', '2')
-                }, 2000)
             } else
                 if (reg.test(url)) {
                     window.open(url)
